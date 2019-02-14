@@ -1,0 +1,15 @@
+{
+  "docs": {
+    "Architecture": ["interfaces"],
+    "DApp Development": [
+      "connecting-apps",
+      "account-management",
+      "sending-transaction",
+      "seed-node"
+    ],
+    "Mining": ["connecting-mining"]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}

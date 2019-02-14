@@ -1,0 +1,10 @@
+{
+  "name": "zilliqa-devp",
+  "version": "0.0.1",
+  "description": "Central repository for technical documentation and guides.",
+  "main": "index.js",
+  "repository": "https://github.com/Zilliqa/dev-portal",
+  "author": "Ian Tan (ian@zilliqa.com)",
+  "license": "GPLv3",
+  "private": true
+}
