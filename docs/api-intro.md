@@ -1,5 +1,5 @@
 ---
-id: api
+id: api-intro
 title: Introduction
 ---
 
@@ -22,3 +22,5 @@ All requests follow the standard JSON-RPC format and include 4 variables in the 
 | `jsonrpc` |    e.g. `"2.0"`   |
 | `method` | e.g. `"GetBalance"` |
 | `params` | e.g. `["1"]` |
+
+To find out more about the JSON-RPC methods available, please visit the [API documentation](https://apidocs.zilliqa.com/#introduction)
