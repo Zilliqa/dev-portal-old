@@ -17,5 +17,21 @@
       "exchange-getting-started",
       "exchange-account-management",
       "exchange-transaction-management"
+    ],
+    "Mining": [
+      "mining-general-info",
+      "mining-hardware-requirement",
+      "mining-initial-setup",
+      "mining-zilclient-setup",
+      "mining-zilminer-setup",
+      "mining-monitoring"
+    ],
+    "API": [
+      "api-intro",
+      "api-blockchain",
+      "api-transaction",
+      "api-contract",
+      "api-account"
     ]
-  }}
+  }
+}
