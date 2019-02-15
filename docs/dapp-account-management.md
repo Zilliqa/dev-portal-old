@@ -1,5 +1,5 @@
 ---
-id: account-management
+id: dapp-account-management
 title: Account Management
 ---
 

@@ -1,7 +1,6 @@
 ---
-id: seed-node
-title: Running as Seed Node
-sidebar_label: Seed Nodes
+id: exchange-account-management
+title: Account Management
 ---
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.

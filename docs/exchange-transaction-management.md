@@ -1,6 +1,6 @@
 ---
-id: connecting-apps
-title: Connecting to the Blockchain
+id: exchange-transaction-management
+title: Transaction Management
 ---
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.

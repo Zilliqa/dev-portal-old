@@ -1,15 +1,21 @@
 {
   "docs": {
-    "Architecture": ["interfaces"],
-    "DApp Development": [
-      "connecting-apps",
-      "account-management",
-      "sending-transaction",
-      "seed-node"
+    "Architecture": [
+      "arch-overview",
+      "arch-ds",
+      "arch-shard",
+      "arch-lookup-seed"
     ],
-    "Mining": ["connecting-mining"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
-  }
-}
+    "DApp Development": [
+      "dapp-getting-started",
+      "dapp-account-management",
+      "dapp-sending-transactions",
+      "dapp-deploying-smart-contract",
+      "dapp-interacting-smart-contract"
+    ],
+    "Exchange Integration": [
+      "exchange-getting-started",
+      "exchange-account-management",
+      "exchange-transaction-management"
+    ]
+  }}
