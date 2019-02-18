@@ -146,7 +146,7 @@ following changes are required:
 Once the preliminary steps have been completed, join the network is relatively
 straightforward.
 
-```
+```sh
 # NOTE: run only ONE of the following.
 # for Docker setup
 $ ./launch_docker.sh
