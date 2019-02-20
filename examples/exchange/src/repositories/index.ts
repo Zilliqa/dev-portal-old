@@ -1,0 +1,1 @@
+export { DepositRepository } from './deposit';
