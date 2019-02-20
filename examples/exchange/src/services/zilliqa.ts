@@ -28,10 +28,22 @@ export class ZilliqaService {
     return this.zil.wallet.addByMnemonic(mnemonic, index);
   }
 
+  async getTxBlock() {
+    const res = await this.zil.blockchain.getLatestTxBlock();
+
+    return parseInt(res.result!.header.BlockNum, 10);
+  }
+
   async getDeposits(addresses: string[], block: number) {
     const res = await this.zil.blockchain.getTransactionsForTxBlock(block);
 
     if (res.error) {
+      // in this case, there are no transactions in the block; we can return
+      // an empty array.
+      if (res.error.code === -1) {
+        return [];
+      }
+
       // you may not wish to throw, depending on the response.
       throw res.error;
     }
@@ -44,7 +56,7 @@ export class ZilliqaService {
     // filter out everything that isn't in the list of deposit addresses we
     // are interested in.
     return transactions.filter(
-      tx => addresses.indexOf(tx.txParams.toAddr) !== -1,
+      tx => addresses.indexOf(tx.txParams.toAddr.toLowerCase()) !== -1,
     );
   }
 

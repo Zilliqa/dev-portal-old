@@ -32,9 +32,12 @@ const depositRepo = new repositories.DepositRepository(depositDB);
 
 // initialise services
 // TODO: parameterise the api
-const zilliqaSvc = new services.ZilliqaService('https://api.aws.zilliqa.com', {
-  [MNEMONIC]: 8,
-});
+const zilliqaSvc = new services.ZilliqaService(
+  'https://stress-test-api.aws.z7a.xyz',
+  {
+    [MNEMONIC]: 8,
+  },
+);
 
 // boot up cron jobs
 // these can also be destroyed
