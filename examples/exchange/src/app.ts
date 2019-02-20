@@ -46,9 +46,11 @@ depositCron.start();
 
 // instantiate controllers
 const depositController = new controllers.DepositController(depositRepo);
+const withdrawalController = new controllers.WithdrawalController(zilliqaSvc);
 
 // setup routes
 routes.deposit.get(router, depositController);
+routes.withdraw.create(router, withdrawalController);
 
 // setup middleware
 app.use(parser.json());

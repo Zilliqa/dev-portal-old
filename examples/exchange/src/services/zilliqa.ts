@@ -1,5 +1,6 @@
 import pMap from 'p-map';
 import {flatten, range} from 'lodash';
+import {isValidChecksumAddress} from '@Zilliqa-js/crypto';
 import {BN, Long, units, bytes} from '@Zilliqa-js/util';
 import {Zilliqa} from '@zilliqa-js/zilliqa';
 
@@ -21,6 +22,11 @@ export class ZilliqaService {
         this.accounts.push(address);
       });
     }
+  }
+
+  addAccount(privateKey: string) {
+    // this returns the address of the newly-added account.
+    return this.zil.wallet.addByPrivateKey(privateKey);
   }
 
   createAccount(mnemonic: string, index: number) {
@@ -62,7 +68,19 @@ export class ZilliqaService {
 
   async withdraw(from: string, to: string, amount: BN) {
     try {
+      // always check whether the to minimally passes the checksum.
+      // this prevents users from trying to withdraw native ZILs to an
+      // ethereum address, and subsequently being unable to recover them!
+      if (!isValidChecksumAddress(to)) {
+        throw new Error(`${to} is not a valid Zilliqa checksum address!`);
+      }
+
+      if (!this.zil.wallet.accounts[from]) {
+        throw new Error(`We do not control the ${from} address!`);
+      }
+
       const fromPubKey = this.zil.wallet.accounts[from].publicKey;
+
       const tx = await this.zil.blockchain.createTransaction(
         this.zil.transactions.new({
           version: bytes.pack(2, 1),
@@ -74,7 +92,7 @@ export class ZilliqaService {
         }),
       );
 
-      if (tx.isRejected) {
+      if (tx.isRejected()) {
         // you may not wish to throw.
         // this should generally be caught in the catch block
         throw new Error('Transaction was rejected');
@@ -82,11 +100,13 @@ export class ZilliqaService {
 
       return tx;
     } catch (err) {
+      console.log(err);
       // handle the error
       // can be:
       // - timeout
       // - insufficient balance
       // - wrong nonce
+      // - did not pass checksum validation
       // - js error
     }
   }
