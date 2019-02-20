@@ -1,7 +1,8 @@
 import pMap from 'p-map';
 import {flatten, range} from 'lodash';
-import {isValidChecksumAddress} from '@Zilliqa-js/crypto';
-import {BN, Long, units, bytes} from '@Zilliqa-js/util';
+import {util} from '@zilliqa-js/account';
+import {isValidChecksumAddress, sign} from '@zilliqa-js/crypto';
+import {BN, Long, units, bytes} from '@zilliqa-js/util';
 import {Zilliqa} from '@zilliqa-js/zilliqa';
 
 export class ZilliqaService {
@@ -81,7 +82,9 @@ export class ZilliqaService {
 
       const fromPubKey = this.zil.wallet.accounts[from].publicKey;
 
-      const tx = await this.zil.blockchain.createTransaction(
+      // can also be sent using this.zil.blockchain.createTransaction
+      // use the manual way here to demonstrate lower-level functions
+      const tx = await this.zil.wallet.signWith(
         this.zil.transactions.new({
           version: bytes.pack(2, 1),
           amount,
@@ -90,15 +93,32 @@ export class ZilliqaService {
           toAddr: to, // toAddr is self-explanatory
           pubKey: fromPubKey, // this determines which account is used to send the tx
         }),
+        from,
       );
 
-      if (tx.isRejected()) {
-        // you may not wish to throw.
-        // this should generally be caught in the catch block
-        throw new Error('Transaction was rejected');
+      const res = await this.zil.provider.send(
+        'CreateTransaction',
+        tx.txParams,
+      );
+
+      if (res.error) {
+        throw res.error;
       }
 
-      return tx;
+      tx.confirm(res.result.TranID, 33, 1000).then(tx => {
+        // at this point, the tx has been confirmed
+        // we don't wait for the confirmation before resonding to the request,
+        // but we can use the final result to update the database, etc.
+        console.log(`Transaction successfully confirmed.`);
+
+        if (tx.isRejected()) {
+          // you may not wish to throw. instead, you may wish to log this
+          // failed confirmation to some database, or retry.
+          throw new Error('Transaction was rejected');
+        }
+      });
+
+      return res.result;
     } catch (err) {
       console.log(err);
       // handle the error

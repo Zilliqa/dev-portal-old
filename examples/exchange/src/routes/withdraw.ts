@@ -11,12 +11,12 @@ export const create = (router: Router, ctrl: WithdrawalController) => {
     // you would probably populate your request context with the user making
     // such an address. for convenience, we use a mock address as the
     // withdraw-to destination.
-    const tx = await ctrl.withdraw(
+    const result = await ctrl.withdraw(
       toChecksumAddress(DEMO_WITHDRAWAL_ADDRESS),
       new BN(amount),
     );
 
-    console.log('Successfully withdrew: ', tx);
-    res.status(200).json({ txHash: tx && tx.id });
+    console.log('Created withdrawal with transaction hash: ', result.TranID);
+    res.status(200).json({ txHash: result.TranID });
   });
 };
