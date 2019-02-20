@@ -4,6 +4,7 @@ import lusca from 'lusca';
 import morgan from 'morgan';
 import PouchDB from 'pouchdb';
 import pouchFind from 'pouchdb-find';
+import pouchMemoryAdapter from 'pouchdb-adapter-memory';
 
 import * as controllers from './controllers';
 import * as repositories from './repositories';
@@ -24,6 +25,7 @@ const router = express.Router();
 // initialise data layer
 // use an in-memory db
 PouchDB.plugin(pouchFind);
+PouchDB.plugin(pouchMemoryAdapter);
 const depositDB = new PouchDB('deposits', {adapter: 'memory'});
 depositDB.createIndex({index: {fields: ['address']}});
 const depositRepo = new repositories.DepositRepository(depositDB);
