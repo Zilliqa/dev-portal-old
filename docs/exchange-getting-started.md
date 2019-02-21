@@ -3,26 +3,164 @@ id: exchange-getting-started
 title: Getting Started
 ---
 
-Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
+While it's possible to use the public endpoint provided by Zilliqa to interact
+with the blockchain, we recommend that all exchanges who wish to support
+trading on the main net set up seed nodes. This document walks you through the
+basic steps needed to get up and running.
 
-## Lorem
+## KYC and IP whitelisting
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
+As seed nodes do not draw data directly from lookup or shard nodes, it is
+necessary for exchanges to be whitelisted by Zilliqa in order to receive data
+broadcasts about the blockchain and its state. This requires a static, public
+IP address with minimally two open ports (inbound and outbound) at which it
+can be reached.
 
-## Mauris In Code
+Additionally, as seed node providers will receive rewards, we require all
+exchanges and individuals who wish to set up seed nodes to go through a KYC
+process. You may initiate this process by filling out our
+[form](https://docs.google.com/forms/d/e/1FAIpQLScopeiLXU_10i6OzsZApIDyRYHpw4JqePDDe0Aoa5JIZo1muw/viewform). Note that you will not be able to set up a seed
+node before KYC is completed.
 
+## Minimum Hardware Requirements
+
+- x64 Linux OS (Ubuntu 16.04 preferred)
+- Dual-core CPU or higher (e.g. Intel i5 processor)
+- 8gb DDR3 RAM or better
+- 500gb Solid State Drive
+- 100mb/s upload and download bandwidth
+
+## Preparing the machine
+
+Before you start, please choose and note down a port you wish to reserve for
+your seed node to communicate on. This step is critical, as failing to provide
+the correct part will result in failure.
+
+### Docker setup
+
+> Note: if you use AWS, you may simply create an instance with **ami-0812864268c7448b6** and skip this step.
+
+We highly recommend using [Docker](https://docker.com) to set up a seed node,
+as we provide a tested, production-ready image for your use. If you have not
+yet setup docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
+
+Once you have set up Docker, you may proceed to download the configuration
+tarball for the mainnet:
+
+```sh
+# create a directory
+$ mkdir my_seed && cd my_seed
+$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ tar -zxvf configuration.tar.gz
+
+# Contents:
+#
+# launch.sh
+# constants.xml
+# launch_docker.sh
+# dsnodes.xml
+# download_and_verify.sh
+# fetchHistorical.py
+# fetchHistorical.sh
+# config.xml
 ```
-Mauris vestibulum ullamcorper nibh, ut semper purus pulvinar ut. Donec volutpat orci sit amet mauris malesuada, non pulvinar augue aliquam. Vestibulum ultricies at urna ut suscipit. Morbi iaculis, erat at imperdiet semper, ipsum nulla sodales erat, eget tincidunt justo dui quis justo. Pellentesque dictum bibendum diam at aliquet. Sed pulvinar, dolor quis finibus ornare, eros odio facilisis erat, eu rhoncus nunc dui sed ex. Nunc gravida dui massa, sed ornare arcu tincidunt sit amet. Maecenas efficitur sapien neque, a laoreet libero feugiat ut.
+
+Once you have successfully uncompressed the tarball, you should generate a new
+keypair, like so:
+
+```sh
+$ ./launch_docker.sh --genkeypair
+$ mv mykey.txt verifier.txt
 ```
 
-## Nulla
+### Native setup
 
-Nulla facilisi. Maecenas sodales nec purus eget posuere. Sed sapien quam, pretium a risus in, porttitor dapibus erat. Sed sit amet fringilla ipsum, eget iaculis augue. Integer sollicitudin tortor quis ultricies aliquam. Suspendisse fringilla nunc in tellus cursus, at placerat tellus scelerisque. Sed tempus elit a sollicitudin rhoncus. Nulla facilisi. Morbi nec dolor dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras et aliquet lectus. Pellentesque sit amet eros nisi. Quisque ac sapien in sapien congue accumsan. Nullam in posuere ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin lacinia leo a nibh fringilla pharetra.
+> Note: this approach has only been tested on **Ubuntu 16.04** and involves compiling
+C++. We strongly recommend you consider using the Docker image provided above.
 
-## Orci
+If you cannot or do not wish to use Docker, you may also build the Zilliqa
+binary from source and run it as such.
 
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis lectus dui, vel ultrices ante bibendum hendrerit. Aenean egestas feugiat dui id hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur in tellus laoreet, eleifend nunc id, viverra leo. Proin vulputate non dolor vel vulputate. Curabitur pretium lobortis felis, sit amet finibus lorem suscipit ut. Sed non mollis risus. Duis sagittis, mi in euismod tincidunt, nunc mauris vestibulum urna, at euismod est elit quis erat. Phasellus accumsan vitae neque eu placerat. In elementum arcu nec tellus imperdiet, eget maximus nulla sodales. Curabitur eu sapien eget nisl sodales fermentum.
+```sh
+# clone Zilliqa source files
+$ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout
+<<commit_sha>> && cd Zilliqa
 
-## Phasellus
+# install system dependencies
+$ sudo apt-get update && sudo apt-get install \
+    git \
+    libboost-system-dev \
+    libboost-filesystem-dev \
+    libboost-test-dev \
+    libssl-dev \
+    libleveldb-dev \
+    libjsoncpp-dev \
+    libsnapp-dev \
+    cmake \
+    libmicrohttpd-dev \
+    libjsonrpccpp-dev \
+    build-essential \
+    pkg-config \
+    libevent-dev \
+    libminiupnpc-dev \
+    libprotobuf-dev \
+    protobuf-compiler \
+    libcurl4-openssl-dev \
+    libboost-program-options-dev \
+    libssl-dev
 
-Phasellus pulvinar ex id commodo imperdiet. Praesent odio nibh, sollicitudin sit amet faucibus id, placerat at metus. Donec vitae eros vitae tortor hendrerit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque vitae purus dolor. Duis suscipit ac nulla et finibus. Phasellus ac sem sed dui dictum gravida. Phasellus eleifend vestibulum facilisis. Integer pharetra nec enim vitae mattis. Duis auctor, lectus quis condimentum bibendum, nunc dolor aliquam massa, id bibendum orci velit quis magna. Ut volutpat nulla nunc, sed interdum magna condimentum non. Sed urna metus, scelerisque vitae consectetur a, feugiat quis magna. Donec dignissim ornare nisl, eget tempor risus malesuada quis.
+# build the binary. this may take awhile.
+$ ./build.sh
+```
+
+The build should exit with no errors. Once it is complete, download the
+configuration tarball, and generate a keypair:
+
+```sh
+# make a separate folder for keys and configuration
+$ cd ../ && mkdir my_seed && cd my_seed
+$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ tar -zxvf configuration.tar.gz
+
+# generate a keypair
+$ ../Zilliqa/build/bin/genkeypair > verifier.txt
+```
+
+## Configuring the Node
+
+The node requires some configuration before it can successfully join the
+network. Most configuration is contained in `constants.xml`, which should be
+in the directory we extracted `configuration.tar.gz` to. Minimally, the
+following changes are required:
+
+- Change the value of `VERIFIER_PUBKEY` to the output of `cat verifier.txt | cut -d ' ' -f1`
+- Change the value of `SEED_PORT` to `33133` (default), or a port of your choice (if
+  any). Be sure to note this down for a subsequent step, if you do not select
+  `33133`.
+
+## Joining the Network
+
+> Note: before proceeding with this step, make sure you have completed the
+> necessary KYC.
+
+Once the preliminary steps have been completed, join the network is relatively
+straightforward.
+
+```sh
+# NOTE: run only ONE of the following.
+# for Docker setup
+$ ./launch_docker.sh
+# for native setup
+$ ./launch.sh
+```
+
+You will be asked a series of questions. When asked to enter your IP address
+and listening port, please enter the values you provided us when you submitted
+the KYC form. This is crucial, as your node **will not work** with anything
+else.
+
+## Next Steps
+
+If you have successfully completed the above steps, you should have
+a functioning seed node that exposes an RPC API on `localhost:4201`. You may
+further check the logs at `zilliqa-00001-log.txt`.

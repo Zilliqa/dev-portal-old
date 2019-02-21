@@ -52,7 +52,10 @@ Now, you should be able to find your file containing your passphrase-encrypted
 private key at the path you specified. Remember to always keep this file, and
 especially your passphrase, secret!
 
-## Importing a Web3 Secret Storage Account
+## Importing an Account 
+
+> NOTE: Ethereum's implementation differs from Zilliqa's. You will **not** be
+> able to decrypt a Zilliqa keystore file using web3 and vice-versa.
 
 At this point, you are probably wondering how you can use your encrypted
 account file. Don't you worry child.
@@ -68,3 +71,4 @@ const myDecryptedAccount = Account.fromFile(file, 'very_stronk_passphrase');
 Your encrypted file has now been decrypted using your passphrase, and you may
 freely use it to sign and send transactions, deployed smart contracts, and
 more.
+
