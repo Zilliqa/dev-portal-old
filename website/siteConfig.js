@@ -12,7 +12,7 @@ const siteConfig = {
   title: 'Zilliqa Developer Portal', // Title for your website.
   tagline: 'Technical and API documentation for participating in the Zilliqa network.',
   url: 'https://zilliqa.github.io', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  baseUrl: '/dev-portal/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
