@@ -13,6 +13,8 @@ import * as routes from './routes';
 import * as services from './services';
 import * as crons from './cron';
 
+const demoAddress = '8f4f6a13cbb1724800079d9f699b3a02c91246ba';
+
 async function main() {
   const app = express();
   const logger = morgan('combined');
@@ -40,7 +42,7 @@ async function main() {
 
   // boot up cron jobs
   // these can also be destroyed
-  const depositCron = new crons.DepositCron('* * * * *', zilliqaSvc);
+  const depositCron = new crons.DepositCron('* * * * *', zilliqaSvc, [demoAddress]);
   depositCron.start();
 
   // instantiate controllers
