@@ -29,7 +29,7 @@ const siteConfig = {
     {doc: 'exchange-getting-started', label: 'Exchanges'},
     {doc: 'mining-general-info', label: "Miners"},
     // {doc: 'dapp-getting-started', label: 'DApps'},
-    {page: 'help', label: 'Help'},
+    // {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
   ],
 
@@ -38,7 +38,7 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/zilliqa-logo_1zilliqa-logo.png',
-  footerIcon: 'img/docusaurus.svg',
+  footerIcon: 'img/zilliqa-logo_1zilliqa-logo.png',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
