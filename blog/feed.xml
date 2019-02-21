@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>Zilliqa Developer Portal Blog</title>
-        <link>https://zilliqa.github.io/blog</link>
+        <link>https://zilliqa.github.io/dev-portal/blog</link>
         <description>The best place to stay up-to-date with the latest Zilliqa Developer Portal news and events.</description>
         <lastBuildDate>Fri, 11 Mar 2016 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Zilliqa Developer Portal Blog</title>
-            <url>https://zilliqa.github.io/img/zilliqa-logo_1zilliqa-logo.png</url>
-            <link>https://zilliqa.github.io/blog</link>
+            <url>https://zilliqa.github.io/dev-portal/img/zilliqa-logo_1zilliqa-logo.png</url>
+            <link>https://zilliqa.github.io/dev-portal/blog</link>
         </image>
         <copyright>Copyright © 2019 Zilliqa Research Pte. Ltd.</copyright>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://zilliqa.github.io/blog/2016/03/11/blog-post.html</link>
-            <guid>https://zilliqa.github.io/blog/2016/03/11/blog-post.html</guid>
+            <link>https://zilliqa.github.io/dev-portal/blog/2016/03/11/blog-post.html</link>
+            <guid>https://zilliqa.github.io/dev-portal/blog/2016/03/11/blog-post.html</guid>
             <pubDate>Fri, 11 Mar 2016 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>Hello!</p>
 ]]></description>

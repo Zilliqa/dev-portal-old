@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://zilliqa.github.io/blog</id>
+    <id>https://zilliqa.github.io/dev-portal/blog</id>
     <title>Zilliqa Developer Portal Blog</title>
     <updated>2016-03-11T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
-    <link rel="alternate" href="https://zilliqa.github.io/blog"/>
+    <link rel="alternate" href="https://zilliqa.github.io/dev-portal/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Zilliqa Developer Portal news and events.</subtitle>
-    <logo>https://zilliqa.github.io/img/zilliqa-logo_1zilliqa-logo.png</logo>
+    <logo>https://zilliqa.github.io/dev-portal/img/zilliqa-logo_1zilliqa-logo.png</logo>
     <rights>Copyright © 2019 Zilliqa Research Pte. Ltd.</rights>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>https://zilliqa.github.io/blog/2016/03/11/blog-post.html</id>
-        <link href="https://zilliqa.github.io/blog/2016/03/11/blog-post.html">
+        <id>https://zilliqa.github.io/dev-portal/blog/2016/03/11/blog-post.html</id>
+        <link href="https://zilliqa.github.io/dev-portal/blog/2016/03/11/blog-post.html">
         </link>
         <updated>2016-03-11T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>Hello!</p>
