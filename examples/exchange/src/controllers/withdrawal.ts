@@ -1,23 +1,31 @@
 import BN from 'bn.js';
 import {getAddressFromPrivateKey} from '@zilliqa-js/crypto';
 import {Request, Response} from 'express';
+import {config} from '../config';
 import {ZilliqaService} from '../services/zilliqa';
 
-const HOT_WALLET_PKEY = '1CC85C5F4791232D7D9A6FC35F2FF15EFAAC4A6E0E9F4A565FD2CCCCB73FCA3B';
+// in reality, you should of course, never do this.
+const HOT_WALLET_PASSPHRASE = 'stronk_passphrase';
 
 export class WithdrawalController {
+  address: string = '';
   zsvc: ZilliqaService;
 
   // DI the service in.
   constructor(zsvc: ZilliqaService) {
     // add your hot wallet keys
-    zsvc.addAccount(HOT_WALLET_PKEY);
     this.zsvc = zsvc;
   }
 
-  withdraw(to: string, amount: BN) {
-    const from = getAddressFromPrivateKey(HOT_WALLET_PKEY);
+  async init() {
+    const address = await this.zsvc.addKeystoreFile(
+      config.get('keystore'),
+      HOT_WALLET_PASSPHRASE,
+    );
+    this.address = address;
+  }
 
-    return this.zsvc.withdraw(from, to, amount);
+  withdraw(to: string, amount: BN) {
+    return this.zsvc.withdraw(this.address, to, amount);
   }
 }

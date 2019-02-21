@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import pify from 'pify';
 import pMap from 'p-map';
 import {flatten, range} from 'lodash';
 import {util} from '@zilliqa-js/account';
@@ -13,9 +15,7 @@ export class ZilliqaService {
     const zilliqa = new Zilliqa(api);
     this.zil = zilliqa;
 
-    // use mnemonics to manage/generate a large number of accounts
-    // you can use this strategy for adding pre-existing accounts that you
-    // want to use.
+    // you can use one or more mnemonics to manage/generate a large number of accounts
     for (let m in mnemonics) {
       const num = mnemonics[m];
       range(num).forEach(i => {
@@ -28,6 +28,14 @@ export class ZilliqaService {
   addAccount(privateKey: string) {
     // this returns the address of the newly-added account.
     return this.zil.wallet.addByPrivateKey(privateKey);
+  }
+
+  async addKeystoreFile(path: string, passphrase: string) {
+    const buf = await pify(fs.readFile)(path);
+    const json = buf.toString();
+    const address = await this.zil.wallet.addByKeystore(json, passphrase);
+
+    return address;
   }
 
   createAccount(mnemonic: string, index: number) {
