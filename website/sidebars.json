@@ -14,12 +14,6 @@
       "mining-zilminer-setup",
       "mining-monitoring"
     ],
-    "API": [
-      "api-intro",
-      "api-blockchain",
-      "api-transaction",
-      "api-contract",
-      "api-account"
-    ]
+    "API": ["api-intro"]
   }
 }
