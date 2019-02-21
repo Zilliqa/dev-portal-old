@@ -24,7 +24,7 @@ can be reached.
 Additionally, as seed node providers will receive rewards, we require all
 exchanges and individuals who wish to set up seed nodes to go through a KYC
 process. You may initiate this process by filling out our
-[form](https://docs.google.com/forms/d/e/1FAIpQLScopeiLXU_10i6OzsZApIDyRYHpw4JqePDDe0Aoa5JIZo1muw/viewform). Note that you will not be able to set up a seed
+[**>>form<<**](https://docs.google.com/forms/d/e/1FAIpQLScopeiLXU_10i6OzsZApIDyRYHpw4JqePDDe0Aoa5JIZo1muw/viewform). Note that you will not be able to set up a seed
 node before KYC is completed.
 
 ## Minimum Hardware Requirements
