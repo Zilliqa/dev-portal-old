@@ -15,6 +15,6 @@
       "mining-zilminer-setup",
       "mining-monitoring"
     ],
-    "API": ["api-intro"]
+    "API": ["api-intro", "api-sdk"]
   }
 }
