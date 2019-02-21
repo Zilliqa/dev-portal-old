@@ -1,6 +1,7 @@
 {
   "docs": {
     "Exchange Integration": [
+      "exchange-timeline",
       "exchange-getting-started",
       "exchange-account-management",
       "exchange-sending-transactions",
