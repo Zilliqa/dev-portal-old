@@ -3,6 +3,11 @@ id: exchange-getting-started
 title: Getting Started
 ---
 
+---
+# NOTICE TO EXCHANGES
+> Interim Zillings (“Interim ZILs”) for Zillings (“ZILs”) are not available for offer, sale or transfer to U.S persons (as defined in Regulation S of the U.S. Securities Act of 1933). Please ensure that, at the time of exchange of Interim ZILs for ZILs, each holder of ZILs confirms that it is not a U.S person (as defined in Regulation S of the U.S. Securities Act of 1933).
+---
+
 While it's possible to use the public endpoint provided by Zilliqa to interact
 with the blockchain, we recommend that all exchanges who wish to support
 trading on the main net set up seed nodes. This document walks you through the

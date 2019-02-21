@@ -3,6 +3,11 @@ id: exchange-polling-deposits
 title: Polling for Deposits
 ---
 
+---
+# NOTICE TO EXCHANGES
+> Interim Zillings (“Interim ZILs”) for Zillings (“ZILs”) are not available for offer, sale or transfer to U.S persons (as defined in Regulation S of the U.S. Securities Act of 1933). Please ensure that, at the time of exchange of Interim ZILs for ZILs, each holder of ZILs confirms that it is not a U.S person (as defined in Regulation S of the U.S. Securities Act of 1933).
+---
+
 Apart from sending transactions, an exchange also needs a way to listen for
 transactions sent to their addresses (deposits). We won't cover how this can
 be done for ERC20-like smart contracts on Zilliqa in this tutorial, but the
