@@ -1,7 +1,7 @@
 # dev-portal
 
 This repository holds the source files for Zilliqa's developer portal website.
-All static files are generated using [Docusaurus](https//docusaurus.io).
+All static files are generated using [Docusaurus](https://docusaurus.io).
 
 ## Contributing
 
