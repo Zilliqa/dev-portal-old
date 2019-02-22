@@ -11,7 +11,7 @@ title: Token Swap Timeline & Overview
 
 The following flowchart illustrates the token swap procedure for exchanges.
 
-![token swap](/dev-portal/img/token_swap_210119_2.png)
+![token swap](/dev-portal/img/token_swap_210119_3.png)
 
 The high level overview, from the exchange's perspective, is as follows:
 
