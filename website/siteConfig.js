@@ -30,7 +30,7 @@ const siteConfig = {
     {doc: 'mining-general-info', label: "Miners"},
     // {doc: 'dapp-getting-started', label: 'DApps'},
     // {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    // {blog: true, label: 'Blog'},
   ],
 
   // If you have users set above, you add it here:
