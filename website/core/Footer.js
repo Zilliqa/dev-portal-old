@@ -47,7 +47,7 @@ class Footer extends React.Component {
           <div>
             <h5>Community</h5>
             <a
-              href="https://twitter.com/"
+              href="https://twitter.com/zilliqa"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
