@@ -5,7 +5,7 @@ title: General Information
 
 ## Mining setup architecture
 
-The mining setup architecture differs from the regular setup you may be familiar with where both the node and miner are one single instance (i.e. mining Ethereum or Bitcoin). Below is an illustration of how the Zilliqa mining setup looks like. All communications between these two parties is via the JSON-RPC protocol.
+The mining setup architecture differs from the regular setup you may be familiar with where both the node and miner are one single instance (i.e. mining Ethereum or Bitcoin). Below is an illustration of how the Zilliqa mining setup looks like. All communications between these two parties are via the JSON-RPC protocol.
 
 ![1-to-many](https://i.imgur.com/qReRpRx.jpg)
 
@@ -52,7 +52,7 @@ In the Zilliqa network, rewards are split into:
 * **[25% of total] Base rewards** for all validating nodes (DS/shard) in the network.
 * **[70% of total] Flexible rewards** that are based on the amount of valid and accepted (first 2/3 signers within a shard) signatures submitted by a node during a TX epoch while doing the pBFT consensus.
 
-Both base rewards and flexible rewards has the same weightage for both DS and shard nodes. All rewards are consolidated over an entire DS epoch and only distributed during the vacuous epoch.
+Both base rewards and flexible rewards have the same weightage for both DS and shard nodes. All rewards are consolidated over an entire DS epoch and only distributed during the vacuous epoch.
 
 Do note that the last **5%** of the rewards are given to the lookup and seed nodes.
 
