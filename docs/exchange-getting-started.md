@@ -172,4 +172,5 @@ further check the logs at `zilliqa-00001-log.txt`.
 
 The following articles in this series will demonstrate a simple set of
 functions that can be used as a starting point for exhcange developers to implement
-their own custom business logic around the Zilliqa blockchain.
+their own custom business logic around the Zilliqa blockchain. You may find
+the full source code of the example app in the [same repository](https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange).
