@@ -7,6 +7,8 @@ title: Account Management
 > Interim Zillings (“Interim ZILs”) for Zillings (“ZILs”) are not available for offer, sale or transfer to U.S persons (as defined in Regulation S of the U.S. Securities Act of 1933). Please ensure that, at the time of exchange of Interim ZILs for ZILs, each holder of ZILs confirms that it is not a U.S person (as defined in Regulation S of the U.S. Securities Act of 1933).
 ---
 
+The code in this tutorial is derived from the [example application](https://github.com/Zilliqa/dev-portal/blob/master/examples/exchange/src/services/zilliqa.ts).
+
 ## Generating Numerous Accounts
 
 A common task for exchanges is to safely and predictably generate a large

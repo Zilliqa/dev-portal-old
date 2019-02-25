@@ -14,6 +14,8 @@ nodes do not provide an API for signing transactions on your behalf, you will
 have to do so locally using an SDK of your choosing. We provide examples using
 zilliqa-js, the official JavaScript SDK.
 
+The code in this tutorial is derived from the [example application](https://github.com/Zilliqa/dev-portal/blob/master/examples/exchange/src/services/zilliqa.ts).
+
 ## Constructing the Transaction Object
 
 There are several ways to construct a `Transaction` instance. We recommend

@@ -169,3 +169,7 @@ else.
 If you have successfully completed the above steps, you should have
 a functioning seed node that exposes an RPC API on `localhost:4201`. You may
 further check the logs at `zilliqa-00001-log.txt`.
+
+The following articles in this series will demonstrate a simple set of
+functions that can be used as a starting point for exhcange developers to implement
+their own custom business logic around the Zilliqa blockchain.
