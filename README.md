@@ -5,7 +5,7 @@ All static files are generated using [Docusaurus](https://docusaurus.io).
 
 ## Contributing
 
-PRs and feedback is welcome.
+PRs and feedback are welcome.
 
 ## Examples
 
