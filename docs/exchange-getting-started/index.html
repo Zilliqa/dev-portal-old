@@ -120,9 +120,14 @@ C++. We strongly recommend you consider using the Docker image provided above.</
 </blockquote>
 <p>If you cannot or do not wish to use Docker, you may also build the Zilliqa
 binary from source and run it as such.</p>
+<blockquote>
+<p><strong>Note:</strong> please ensure that you checkout the latest version. For example,
+at the time of writing, the latest release commit can be found at tag
+<code>v4.2.0</code>, which has a commit SHA of ed3f345.</p>
+</blockquote>
 <pre><code class="hljs css language-sh"><span class="hljs-comment"># clone Zilliqa source files</span>
 $ git <span class="hljs-built_in">clone</span> https://github.com/Zilliqa/Zilliqa.git &amp;&amp; <span class="hljs-built_in">cd</span> Zilliqa &amp;&amp; git checkout
-&lt;&lt;commit_sha&gt;&gt; &amp;&amp; <span class="hljs-built_in">cd</span> Zilliqa
+&lt;&lt;commit_sha&gt;&gt;
 
 <span class="hljs-comment"># install system dependencies</span>
 $ sudo apt-get update &amp;&amp; sudo apt-get install \
