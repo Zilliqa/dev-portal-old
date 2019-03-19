@@ -55,7 +55,7 @@ tarball for the mainnet:
 ```sh
 # create a directory
 $ mkdir my_seed && cd my_seed
-$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ curl -O https://mainnet-hollandvillage-seedjoin.aws.zilliqa.com/configuration.tar.gz
 $ tar -zxvf configuration.tar.gz
 
 # Contents:
@@ -124,7 +124,7 @@ configuration tarball, and generate a keypair:
 ```sh
 # make a separate folder for keys and configuration
 $ cd ../ && mkdir my_seed && cd my_seed
-$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ curl -O https://mainnet-hollandvillage-seedjoin.aws.zilliqa.com/configuration.tar.gz
 $ tar -zxvf configuration.tar.gz
 
 # generate a keypair
