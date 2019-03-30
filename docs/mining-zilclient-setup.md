@@ -38,14 +38,22 @@ title: Zilliqa Client Setup for CPU node
         <OPENCL_GPU_MINE>false</OPENCL_GPU_MINE>
         <REMOTE_MINE>false</REMOTE_MINE>
         ```
+        
+7. Install the python dependencies:
+    
+    ```shell
+    sudo apt install python-pip
+    export LC_ALL=C
+    pip install request requests clint futures
+    ```
 
-7. Run the shell script in your command prompt to launch your docker image.
+8. Run the shell script in your command prompt to launch your docker image:
 
     ```shell
     ./launch_docker.sh
     ```
 
-8. You will be prompted to enter some information as shown below:
+9. You will be prompted to enter some information as shown below:
 
     > **NOTE:** **DO NOT** duplicate your IP address and use different ports to create different CPU nodes. You will be blacklisted by the network and hence not be able to receive any rewards.
 
@@ -54,5 +62,3 @@ title: Zilliqa Client Setup for CPU node
     - `Enter your IP address ('NAT' or *.*.*.*):` <br> [Key in your IP address as found in step 5 **OR** `NAT` if you chose [Option 1b](mining-initial-setup#option-1b) for network setup]
 
     - `Enter your listening port (default: 33133):` <br> [Press **Enter** to skip if using default]
-
-    

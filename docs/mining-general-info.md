@@ -37,13 +37,16 @@ Zilliqa is using [**Ethash**](https://github.com/ethereum/wiki/wiki/Ethash) for 
 
 ## Network Difficulty
 
-The bootstrapped difficulty level for the mainnet is set at `10`. This difficulty level is dynamic and adjusts by `+/- 1` for every `+/- 100` deviation from the target `1810` PoW submissions per DS epoch.
+The bootstrapped difficulty level for the mainnet is set at `10`. This difficulty level is dynamic and adjusts by `+/- 1` for every `+/- 99` deviation from the target `1810` PoW submissions per DS epoch. Maximum increase per DS epochs is `+/- 1`.
 
 > **NOTE:** Difficulty level is the log2(Difficulty).
 
-Say if there are `1810` seats available in the network but there are `1910` PoW submissions, the difficulty level will increase by `1` for the next DS epoch.
+Say if there are `1810` seats available in the network:
 
-Say if there are `1810` seats available in the network but there are `1710` PoW submissions, the difficulty level will decrease by `1` for the next DS epoch.
+* But there are `1909` PoW submissions, the shard difficulty level will increase by `0.125` for the next DS epoch.
+* But there are `2602` PoW submissions, the shard difficulty level will increase by `1` for the next DS epoch.
+* But there are `1711` PoW submissions, the shard difficulty level will decrease by `0.125` for the next DS epoch.
+* But there are `1018` PoW submissions, the shard difficulty level will decrease by `1` for the next DS epoch.
 
 ## Network Reward Mechanism
 
