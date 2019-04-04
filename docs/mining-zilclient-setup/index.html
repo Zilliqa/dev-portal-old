@@ -78,7 +78,12 @@ tar zxvf configuration.tar.gz
 &lt;REMOTE_MINE&gt;false&lt;/REMOTE_MINE&gt;
 </code></pre></li>
 </ul></li>
-<li><p>Run the shell script in your command prompt to launch your docker image.</p>
+<li><p>Install the python dependencies:</p>
+<pre><code class="hljs css language-shell">sudo apt install python-pip
+export LC_ALL=C
+pip install request requests clint futures
+</code></pre></li>
+<li><p>Run the shell script in your command prompt to launch your docker image:</p>
 <pre><code class="hljs css language-shell">./launch_docker.sh
 </code></pre></li>
 <li><p>You will be prompted to enter some information as shown below:</p>
