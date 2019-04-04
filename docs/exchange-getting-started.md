@@ -55,6 +55,7 @@ tarball for the mainnet:
 ```sh
 # create a directory
 $ mkdir my_seed && cd my_seed
+# download the seed node configuration files
 $ curl -O https://mainnet-seedjoin.zilliqa.com/configuration.tar.gz
 $ tar -zxvf configuration.tar.gz
 
@@ -124,6 +125,7 @@ configuration tarball, and generate a keypair:
 ```sh
 # make a separate folder for keys and configuration
 $ cd ../ && mkdir my_seed && cd my_seed
+# download the seed node configuration files
 $ curl -O https://mainnet-seedjoin.zilliqa.com/configuration.tar.gz
 $ tar -zxvf configuration.tar.gz
 
