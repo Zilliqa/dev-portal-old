@@ -39,7 +39,7 @@
 ```sh
 # create a directory
 $ mkdir my_seed && cd my_seed
-$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ curl -O https://mainnet-seedjoin.aws.zilliqa.com
 $ tar -zxvf configuration.tar.gz
 
 # Contents:
@@ -104,7 +104,7 @@ $ ./build.sh
 ```sh
 # make a separate folder for keys and configuration
 $ cd ../ && mkdir my_seed && cd my_seed
-$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ curl -O https://mainnet-seedjoin.aws.zilliqa.com
 $ tar -zxvf configuration.tar.gz
 
 # generate a keypair
