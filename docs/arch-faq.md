@@ -4,9 +4,8 @@ title: FAQ
 ---
 
 This document contains some frequently asked questions that developers coming
-from Ethereum-based blockchains typically have. Please read through carefully,
-as your questions will not be entertained if you ask a question that has an
-answer in these documents.
+from Ethereum-based blockchains typically have. Please read this document
+thoroughly to avoid asking questions answered within this document.
 
 ## _How many confirmations must I wait for?_
 

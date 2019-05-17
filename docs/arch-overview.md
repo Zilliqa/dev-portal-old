@@ -38,7 +38,7 @@ types of blocks:
 
 1. DS Block: metadata on the composition of the DS committee, and the state of
    the network in general. The time between DS blocks is referred to as a DS
-   epoch. These span a number of Transaction Blocks (Tx Block).
+   epoch. DS blocks are "mined" every 100 Transaction Blocks (Tx Block).
 2. Transaction Block: analogous to a block in Ethereum/Blockchain. These
    blocks are simply aggregations of transactions processed by every shard
    during a given window of time. The time between Tx Blocks is referred to as
