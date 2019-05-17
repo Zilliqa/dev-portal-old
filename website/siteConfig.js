@@ -26,6 +26,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    {doc: 'arch-overview', label: 'Overview'},
     {doc: 'exchange-getting-started', label: 'Exchanges'},
     {doc: 'mining-general-info', label: "Miners"},
     // {doc: 'dapp-getting-started', label: 'DApps'},

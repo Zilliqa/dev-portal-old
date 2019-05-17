@@ -1,5 +1,10 @@
 {
   "docs": {
+    "Architecture": [
+      "arch-overview",
+      "arch-tx-lifecycle",
+      "arch-faq"
+    ],
     "Exchange Integration": [
       "exchange-timeline",
       "exchange-getting-started",
