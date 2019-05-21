@@ -10,6 +10,8 @@ use these as analogies.
 
 # Structure and Consensus
 
+![topology](assets/network_topology.svg)
+
 The Zilliqa network is composed of one DS Committee (a special type of shard),
 and `n` normal shards. Each shard has a number of nodes, with one node being a
 `leader` and `k` number of `backups`.
