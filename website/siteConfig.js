@@ -10,12 +10,10 @@
 
 const siteConfig = {
   title: 'Zilliqa Developer Portal', // Title for your website.
-  tagline: 'Technical and API documentation for participating in the Zilliqa network.',
+  tagline:
+    'Technical and API documentation for participating in the Zilliqa network.',
   url: 'https://zilliqa.github.io', // Your website URL
   baseUrl: '/dev-portal/', // Base URL for your project */
-  // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
 
   // Used for publishing and more
   projectName: 'dev-portal',
@@ -28,7 +26,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'arch-overview', label: 'Overview'},
     {doc: 'exchange-getting-started', label: 'Exchanges'},
-    {doc: 'mining-general-info', label: "Miners"},
+    {doc: 'mining-general-info', label: 'Miners'},
     // {doc: 'dapp-getting-started', label: 'DApps'},
     // {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
@@ -46,6 +44,14 @@ const siteConfig = {
   colors: {
     primaryColor: '#02172d',
     secondaryColor: '#23a5a8',
+  },
+
+  algolia: {
+    apiKey: '578197aca0b5d63327a461d068153853',
+    indexName: 'zilliqa',
+    algoliaOptions: {
+      facetFilters: ['language:LANGUAGE'],
+    },
   },
 
   /* Custom fonts for website */
