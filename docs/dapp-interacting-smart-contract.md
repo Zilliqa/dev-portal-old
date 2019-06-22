@@ -12,7 +12,6 @@ These "databases" are further divided into _immutable_ and _mutable_ data:
 * _Immutable_ data are parameters that you initiate during contract deployment, and you cannot change them once it is deployed. We usually refer to these as initialising parameters, `init`
 * _Mutable_ data are data fields that you can manipulate on the contracts. For example, if you are deploying a token contract which keeps a ledger of who owns how much tokens, the balance is a mutable field since users can transfer tokens to one another. We usually call mutable data, `state`.
 
-
 In the subsequent chapters, we will illustrate how to query the blockchain. You can follow the step-by-step tutorial written in Javascript with the `zilliqa-js` SDK, or jump straight to use the [JSON-RPC requests](#RPC-Methods) directly.
 
 On the devnet, we have deployed a sample fungible-token contract (_ala ERC20_) contract to illustrate how you can query the blockchain. The contract is deployed at [zil1tyu0ezhcyfg26m83mgamjt625qzukfcht8es69](https://viewblock.io/zilliqa/address/zil1tyu0ezhcyfg26m83mgamjt625qzukfcht8es69?network=testnet&tab=code)
@@ -83,9 +82,11 @@ Immutable data cannot be changed once it is deployed:
   }
 ]
 ```
+
 All the data fields objects on scilla has three parameters: `vname`, `type` and `value`. `vname` is the name of the variable. Variables with a leading underscores are system-variables that are added by the blockchain.
 
 All smart contracts will have three system-defined immutable variables:
+
 * `_scilla_version`: The __major__ version of smart contract that the miners will interpret the smart contract on
 * `_this_address`: The `ByStr20` address that the smart contract is located on the blockchain
 * `_creation_block`: The TX-Block that the contract is deployed on the blockchain. Blockchain does not have timestamp, so `_creation_block` represents the time of deployment.
@@ -95,7 +96,7 @@ All smart contracts will have three system-defined immutable variables:
 You can fetch the mutable data through the `blockchain` package without `zilliqa-js`. The `getSmartContractState` currently takes in a `ByStr20` address (without 0x prefix) and sends it to the RPC server.
 
 ```javascript
-  const address = "zil1tyu0ezhcyfg26m83mgamjt625qzukfcht8es69"; 
+  const address = "zil1tyu0ezhcyfg26m83mgamjt625qzukfcht8es69";
 
   // getSmartContractState currently only supports ByStr20 addresses without 0x prefix
  const state = await zilliqa.blockchain.getSmartContractState(
@@ -184,7 +185,6 @@ And there, you will have your balance objects:
     }
 ]
 ```
-
 
 You can download the full script [here](https://github.com/Zilliqa/dev-portal/tree/master/examples/dapp/query-data.js).
 

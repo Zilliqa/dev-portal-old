@@ -6,7 +6,8 @@
       "arch-faq"
     ],
     "DApp Development": [
-      "dapp-getting-started"
+      "dapp-getting-started",
+      "dapp-interacting-smart-contract"
     ],
     "Exchange Integration": [
       "exchange-timeline",

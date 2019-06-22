@@ -61,4 +61,5 @@ const isContract = async (address) =>{
   return result;
 }
 ```
+
 Example code: [validate-contract.js](https://github.com/Zilliqa/dev-portal/tree/master/examples/dapp/validate-contract.js)
