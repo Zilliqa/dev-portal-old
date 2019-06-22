@@ -78,9 +78,9 @@ Deriving a Zilliqa address takes the following steps:
    significant bytes.)
 
 Note that this results in a 20-byte address that looks **exactly** like an
-Ethereum address. In order to work around the confusion, we currently
-implement
-a [checksum](https://github.com/Zilliqa/Zilliqa-JavaScript-Library/blob/dev/packages/zilliqa-js-crypto/src/util.ts#L106)
+Ethereum address. In order to work around the confusion, we have implemented [checksum](https://github.com/Zilliqa/Zilliqa-JavaScript-Library/blob/dev/packages/zilliqa-js-crypto/src/util.ts#L106)
 similar to the one in
 [EIP55](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md). However,
 we instead take the 6th bit to decide whether or not to use uppercase.
+
+We also support `bech32` address format to prevent confusion from Ethereum's address format. For more info, refer to [this blog post](https://blog.zilliqa.com/zilliqa-migrates-to-new-address-format-bf1fa6d7e41d) or this [page](./dapp-getting-started#addresses).
