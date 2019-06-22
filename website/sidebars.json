@@ -5,6 +5,9 @@
       "arch-tx-lifecycle",
       "arch-faq"
     ],
+    "DApp Development": [
+      "dapp-getting-started"
+    ],
     "Exchange Integration": [
       "exchange-timeline",
       "exchange-getting-started",

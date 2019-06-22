@@ -5,24 +5,45 @@ title: Getting Started
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
 
-## Lorem
+## Getting started with dApp development
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
+This section aims to give developers an idea on how to get started with development on Zilliqa.
 
-## Mauris In Code
+We try to make this guide concise, but yet easy enough for a developer with no experience in blockchain development. As many applications developers are `javascript` developers, we will use `javascript` in code snippet examples. Zilliqa Research currently actively maintains one official SDK in Javascript [`zilliqa-js`](https://github.com/Zilliqa/Zilliqa-JavaScript-Library). However, there are SDKs provided in [other languages](https://zilliqa.github.io/dev-portal/docs/en/api-sdk) that are maintained by the community.
 
+### What are dApps?
+
+Decentralised Apps ("dApps") are applications that interact with smart contracts on the blockchain. An application can have a user-facing components ("client"), which could be a web application or mobile app. These applications can interact with smart contracts on Zilliqa blockchain. 
+
+![Overview](../assets/dapps-overview.png)
+
+The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but it does makes your life easier.
+
+Saw the `0x1`, `0x2`... addresses on the entities on the blockchain? Those are [addresses](#addresses). Addresses are an identifier to an entity on the blockchain. An entity on the blockchain can be either a user or a contract.
+
+### Addresses
+
+Zilliqa currently supports two address formats.
+
+* `ByStr20`: 20 byte hexadecimal string
+* `bech32`: A [bech32](https://en.bitcoin.it/wiki/Bech32) with a human-readable prefix of `zil`
+
+The reason behind this design is to prevent confusion with Ethereum addresses. For more detailed explanation on the address, refer to [this post](https://blog.zilliqa.com/zilliqa-migrates-to-new-address-format-bf1fa6d7e41d)
+
+```javascript
+const { toBech32Address, toChecksumAddress } = require("@zilliqa-js/crypto");
+
+// not checksummed address (will not be accepted by blockchain)
+const address = '573EC96638C8BB1C386394602E1460634F02ADDA';
+
+// checksummed ByStr20
+const checksummedAddresses = toChecksumAddress(address);
+// returns '0x573EC96638C8bB1c386394602E1460634F02aDdA'
+
+const bech32_address = toBech32Address(address);
+// returns zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p
 ```
-Mauris vestibulum ullamcorper nibh, ut semper purus pulvinar ut. Donec volutpat orci sit amet mauris malesuada, non pulvinar augue aliquam. Vestibulum ultricies at urna ut suscipit. Morbi iaculis, erat at imperdiet semper, ipsum nulla sodales erat, eget tincidunt justo dui quis justo. Pellentesque dictum bibendum diam at aliquet. Sed pulvinar, dolor quis finibus ornare, eros odio facilisis erat, eu rhoncus nunc dui sed ex. Nunc gravida dui massa, sed ornare arcu tincidunt sit amet. Maecenas efficitur sapien neque, a laoreet libero feugiat ut.
-```
 
-## Nulla
+We __strong recommend__ developers to use `bech32` when it comes to token transfers. This prevents users from mistaking zilliqa's token transfer from Ethereum's. 
 
-Nulla facilisi. Maecenas sodales nec purus eget posuere. Sed sapien quam, pretium a risus in, porttitor dapibus erat. Sed sit amet fringilla ipsum, eget iaculis augue. Integer sollicitudin tortor quis ultricies aliquam. Suspendisse fringilla nunc in tellus cursus, at placerat tellus scelerisque. Sed tempus elit a sollicitudin rhoncus. Nulla facilisi. Morbi nec dolor dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras et aliquet lectus. Pellentesque sit amet eros nisi. Quisque ac sapien in sapien congue accumsan. Nullam in posuere ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin lacinia leo a nibh fringilla pharetra.
-
-## Orci
-
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis lectus dui, vel ultrices ante bibendum hendrerit. Aenean egestas feugiat dui id hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur in tellus laoreet, eleifend nunc id, viverra leo. Proin vulputate non dolor vel vulputate. Curabitur pretium lobortis felis, sit amet finibus lorem suscipit ut. Sed non mollis risus. Duis sagittis, mi in euismod tincidunt, nunc mauris vestibulum urna, at euismod est elit quis erat. Phasellus accumsan vitae neque eu placerat. In elementum arcu nec tellus imperdiet, eget maximus nulla sodales. Curabitur eu sapien eget nisl sodales fermentum.
-
-## Phasellus
-
-Phasellus pulvinar ex id commodo imperdiet. Praesent odio nibh, sollicitudin sit amet faucibus id, placerat at metus. Donec vitae eros vitae tortor hendrerit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque vitae purus dolor. Duis suscipit ac nulla et finibus. Phasellus ac sem sed dui dictum gravida. Phasellus eleifend vestibulum facilisis. Integer pharetra nec enim vitae mattis. Duis auctor, lectus quis condimentum bibendum, nunc dolor aliquam massa, id bibendum orci velit quis magna. Ut volutpat nulla nunc, sed interdum magna condimentum non. Sed urna metus, scelerisque vitae consectetur a, feugiat quis magna. Donec dignissim ornare nisl, eget tempor risus malesuada quis.
+`ByStr20` checksummed addresses is supported by [RPC](https://api-docs.zilliqa.com), SDKs and `scilla` contracts.
