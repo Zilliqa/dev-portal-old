@@ -37,8 +37,11 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
+            <a href={this.docUrl('dapp-getting-started', this.props.language)}>
+              Developers
+            </a>
             <a href={this.docUrl('mining-general-info', this.props.language)}>
-              General Information for Miners
+              Miners
             </a>
             <a href={this.docUrl('exchange-getting-started', this.props.language)}>
               Exchange Integration

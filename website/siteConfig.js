@@ -29,7 +29,7 @@ const siteConfig = {
     {doc: 'arch-overview', label: 'Overview'},
     {doc: 'exchange-getting-started', label: 'Exchanges'},
     {doc: 'mining-general-info', label: "Miners"},
-    // {doc: 'dapp-getting-started', label: 'DApps'},
+    {doc: 'dapp-getting-started', label: 'Developer'},
     // {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
