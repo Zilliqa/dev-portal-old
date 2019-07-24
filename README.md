@@ -19,7 +19,11 @@ yarn global add docusaurus-init
 
 2. Change directory to the `/website`
 3. Install dependencies: `yarn install`
-4.Start live reloading. The page should be hosted on `localhost:3000`. Ensure that your page works before creating a PR.
+4. Start live reloading. The page should be hosted on `localhost:3000`. Ensure that your page works before creating a PR.
+
+## Publishing
+1. change directory to the `/website`
+2. Follow this guide [Getting started on publishing](https://github.com/facebook/docusaurus/blob/master/docs/getting-started-publishing.md)
 
 ## Contributing
 
