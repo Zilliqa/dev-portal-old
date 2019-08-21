@@ -13,7 +13,7 @@ with the blockchain, we recommend that all exchanges who wish to support
 trading on the main net set up seed nodes. This document walks you through the
 basic steps needed to get up and running.
 
-## KYC and IP whitelisting
+## IP whitelisting
 
 As seed nodes do not draw data directly from lookup or shard nodes, it is
 necessary for exchanges to be whitelisted by Zilliqa in order to receive data
@@ -21,11 +21,13 @@ broadcasts about the blockchain and its state. This requires a static, public
 IP address with minimally two open ports (inbound and outbound) at which it
 can be reached.
 
+<!--
 Additionally, as seed node providers will receive rewards, we require all
 exchanges and individuals who wish to set up seed nodes to go through a KYC
 process. You may initiate this process by filling out our
 [**>>form<<**](https://docs.google.com/forms/d/e/1FAIpQLScopeiLXU_10i6OzsZApIDyRYHpw4JqePDDe0Aoa5JIZo1muw/viewform). Note that you will not be able to set up a seed
 node before KYC is completed.
+--> 
 
 ## Minimum Hardware Requirements
 
