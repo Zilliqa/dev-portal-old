@@ -23,7 +23,8 @@ on this repository.
 
 ## Go
 
-- [zilean](https://github.com/GincoInc/zillean)
+- ~~[zilean](https://github.com/GincoInc/zillean) (Discontinued)~~
+- [LaksaGo](https://github.com/FireStack-Lab/LaksaGo)
 
 ## Ruby
 
