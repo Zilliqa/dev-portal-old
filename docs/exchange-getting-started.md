@@ -103,7 +103,7 @@ $ sudo apt-get update && sudo apt-get install \
     libssl-dev \
     libleveldb-dev \
     libjsoncpp-dev \
-    libsnapp-dev \
+    libsnappy-dev \
     cmake \
     libmicrohttpd-dev \
     libjsonrpccpp-dev \
@@ -116,6 +116,10 @@ $ sudo apt-get update && sudo apt-get install \
     libcurl4-openssl-dev \
     libboost-program-options-dev \
     libssl-dev
+
+$ sudo apt install python-pip
+$ export LC_ALL=C
+$ pip install request requests clint futures
 
 # build the binary. this may take awhile.
 $ ./build.sh
