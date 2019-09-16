@@ -30,12 +30,14 @@ node before KYC is completed.
 --> 
 
 ## Minimum Hardware Requirements
-
-- x64 Linux OS (Ubuntu 16.04 preferred)
-- Dual-core CPU or higher (e.g. Intel i5 processor)
-- 8gb DDR3 RAM or better
-- 500gb Solid State Drive
-- 100mb/s upload and download bandwidth
+- x64 Linux operating system (e.g Ubuntu 16.04.05)
+- Recent dual core processor @ 2.2 GHZ. Examples:
+   - Intel Core i5 or i7 (Skylake)
+   - Intel Xeon (Skylake)
+- 8GB DRR3 RAM or higher
+- Public IP address
+- 500GB Solid State Drive
+- 100MB/s upload and download bandwidth
 
 ## Preparing the machine
 
