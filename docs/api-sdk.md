@@ -24,7 +24,7 @@ on this repository.
 ## Go
 
 - ~~[zilean](https://github.com/GincoInc/zillean) (Discontinued)~~
-- [LaksaGo](https://github.com/FireStack-Lab/LaksaGo)
+- [GoZilliqa SDK (formerly LaksaGo)](https://github.com/Zilliqa/gozilliqa-sdk)
 
 ## Ruby
 
