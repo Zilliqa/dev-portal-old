@@ -32,7 +32,7 @@ The high level overview, from the exchange's perspective, is as follows:
 During this phase, no transactions are being processed on the network. No
 action is required from exchanges at this time.
 
-### Token Swap Phase: Apr - Jun 2019
+### Token Swap Phase: Apr - TBD
 
 Exchanges should select a date within this range and inform Zilliqa of it at least
 **one month** in advance. Thereafter, the exchange should perform the one-time
@@ -46,8 +46,8 @@ network.
 Thereafter, exchanges should, using the [example application](https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange) as a guide,
 support trading of ZIL only on Zilliqa to the exclusion of ERC20 trading.
 
-### Freeze and Burn: July 2019
+### Freeze and Burn: TBD
 
-On 1 July 2019, all ERC20 ZIL sent to `ZilSwap` will be burned, and further
+On the freezing date, all ERC20 ZIL sent to `ZilSwap` will be burned, and further
 transfers of all remaining ERC20 ZIL (i.e., unswapped ZIL) will be frozen.
 This outstanding ERC20 ZIL will not be swappable.
