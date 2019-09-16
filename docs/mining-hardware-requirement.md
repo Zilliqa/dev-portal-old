@@ -11,10 +11,14 @@ Both **AMD** (with OpenCL) and **Nvidia** (with OpenCL or CUDA) GPUs are support
 
 The **minimum** requirements for running the **Zilliqa client** are:
 
-- x64 Linux operating system (i.e Ubuntu 16.04/18.04)
-- Intel i5 processor or later
+- x64 Linux operating system (e.g Ubuntu 16.04.05)
+- Recent dual core processor @ 2.2 GHZ. Examples:
+   - Intel Core i5 or i7 (Skylake)
+   - Intel Xeon (Skylake)
+   - AMD Ryzen
 - 4GB DRR3 RAM or higher
 - NAT environment **OR** Public IP address
+- Any GPUs with at least 2 GB vRAM
 
 The **minimum** requirements for running **Zilminers** are:
 
