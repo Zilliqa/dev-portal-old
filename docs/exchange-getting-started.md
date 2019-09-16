@@ -111,11 +111,9 @@ $ sudo apt-get update && sudo apt-get install \
     pkg-config \
     libevent-dev \
     libminiupnpc-dev \
-    libprotobuf-dev \
-    protobuf-compiler \
     libcurl4-openssl-dev \
     libboost-program-options-dev \
-    libssl-dev
+    gawk
 
 $ sudo apt install python-pip
 $ export LC_ALL=C
