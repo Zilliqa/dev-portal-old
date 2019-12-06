@@ -23,7 +23,7 @@ The following types of data are currently supported for querying:
 
 - **New TxBlock**. This includes the recently generated Tx block and hashes of all the transactions processed within this block.
 - **Event log**. This includes all the event logs generated for the specified contract address.
-- **Unsubscribe**. Which tells the server to unsubscribe certain topic for the client
+- **Unsubscribe**. This tells the server to unsubscribe the client from a certain topic.
 
 ## Exception handling
 
