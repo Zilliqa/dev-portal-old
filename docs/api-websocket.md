@@ -393,7 +393,7 @@ Notification:
 
 ```
 
-And in the next tx block, the client won't be receiving `NewBlock` in notification
+After the above message, during the next Tx block, the client will no longer receive a `NewBlock` in the notification.
 
 ## Example using Zilliqa-JavaScript-Library
 
