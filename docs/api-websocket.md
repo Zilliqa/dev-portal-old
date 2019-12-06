@@ -1,6 +1,6 @@
 ---
 id: api-websocket
-title: Zilliqa WebSocket Service
+title: Zilliqa Websocket Server (ZWS)
 ---
 
 This page describes the protocol, between the Zilliqa Websocket Server and the sdk client, for querying subscription and message pushing.
@@ -19,7 +19,7 @@ The following types of data are the current main focus that we want to consider 
 
 ## Exception handling
 
-Usually an **error message** will be responded to the client if the query failed, it may looks like
+Usually an **error message** will be sent to the client if the query failed, it may looks like
 
 ```json
 {
@@ -123,7 +123,7 @@ The followings are case by case for each subscription:
 
 #### response message
 
-Once succsfully subscribed, server will echo the query message to the client, otherwise will return error message.
+Once successfully subscribed, server will echo the query message to the client, otherwise will return error message.
 
 Special error message:
 
@@ -195,7 +195,7 @@ Special error message:
 
 #### response message
 
-Once succesfully subscribed, server will echo the query message to the client,
+Once successfully subscribed, server will echo the query message to the client,
 otherwise will return error message.
 
 Special error message:
