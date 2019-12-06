@@ -397,8 +397,7 @@ After the above message, during the next Tx block, the client will no longer rec
 
 ## Example using Zilliqa-JavaScript-Library
 
-Besides, if you are using [Zilliqa-JavaScript-Library](https://github.com/Zilliqa/Zilliqa-JavaScript-Library), there are
-easier ways to subscribe topics:
+Our [Zilliqa-JavaScript-Library](https://github.com/Zilliqa/Zilliqa-JavaScript-Library) provides an easier way to subscribe to topics.
 
 ### Subscribe New Block
 
