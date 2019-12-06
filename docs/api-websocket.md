@@ -1,6 +1,6 @@
 ---
 id: api-websocket
-title: Zilliqa Websocket Server (ZWS)
+title: Zilliqa WebSocket Server (ZWS)
 ---
 
 This page describes the protocol - between the Zilliqa WebSocket Server and the SDK client - for querying subscription and message pushing.
