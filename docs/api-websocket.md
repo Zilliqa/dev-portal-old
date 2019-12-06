@@ -7,9 +7,11 @@ This page describes the protocol, between the Zilliqa Websocket Server and the s
 
 ## Introduction
 
-Zilliqa Websocket Server is way to let dapp developers (or other engineers who might be building something based on our blockchain platform) subscribe to specific targets (e.g., new block has been produced、payment transaction has been confirmed, events issued by smart contracts).
+Zilliqa WebSocket Server provides WebSocket service, enabling dApp developers or other builders on Zilliqa blockchain to subscribe to specific topics (e.g., new block has been produced, payment transaction has been confirmed, events issued by smart contracts). With the WebSocket service, developers need not to use polling the blockchain routinely in order to get specific information.
 
-Without websocket support, these developers need to poll everything they want, which is resource-consuming for their machine or our API endpoint. In the case of real time dapp, poll mode might also not satisfy their requirements. Anyone can use Zilliqa Websocket Server via wss://dev-ws.zilliqa.com (for community devnet) and wss://ws.zilliqa.com (for mainnet).
+WebSocket endpoints:
+- Mainnet: wss://ws.zilliqa.com
+- Testnet: wss://dev-ws.zilliqa.com
 
 ## Feature workflow
 
