@@ -264,7 +264,7 @@ Special error message:
 
 - **invalid type field**, which tells the client the type field is invalid, if could either be not found, malformed or not available.
 
-#### expected field in notification
+#### Sample notification
 
 ```json
 {
