@@ -19,7 +19,7 @@ Clients can subscribe to or unsubscribe from certain topics by sending a query. 
 
 ## Supported query
 
-The following types of data are the current main focus that we want to consider to be supported by ZWS:
+The following types of data are currently supported for querying:
 
 - **New TxBlock**. This includes the recently generated Tx block and hashes of all the transactions processed within this block.
 - **Event log**. Which includes all the event log generated for interested contract address
