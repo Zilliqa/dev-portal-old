@@ -10,7 +10,7 @@ This page describes the protocol - between the Zilliqa Websocket Server and the 
 Zilliqa WebSocket Server provides WebSocket service, enabling dApp developers or other builders on Zilliqa blockchain to subscribe to specific topics (e.g., new block has been produced, payment transaction has been confirmed, events issued by smart contracts). With the WebSocket service, developers need not to use polling the blockchain routinely in order to get specific information.
 
 WebSocket endpoints:
-- Mainnet: wss://ws.zilliqa.com
+- Mainnet: wss://api-ws.zilliqa.com
 - Testnet: wss://dev-ws.zilliqa.com
 
 ## Feature workflow
@@ -27,7 +27,7 @@ The following types of data are currently supported for querying:
 
 ## Exception handling
 
-Usually an **error message** will be sent to the client if the query failed, it may looks like
+An **error message** will usually be sent to the client if a query fails:
 
 ```json
 {
@@ -36,9 +36,9 @@ Usually an **error message** will be sent to the client if the query failed, it 
 }
 ```
 
-The following error messages will be applied to all kinds of query if being invalid:
+The following error message applies to all kinds of invalid queries:
 
-- **invalid query field**. Which tells the client if the query is invalid, it could be not found, empty, malformed, or not available
+- **invalid query field**. This informs the client that the query is invalid, cannot be found, empty, malformed, or not available.
 
 ## Message encoding
 
@@ -117,11 +117,11 @@ The epoch message will be presented in this way:
 }
 ```
 
-The followings are case by case for each subscription:
+The following sections provide the details for each subscription topic.
 
 ### Subscribe New Block
 
-#### query message
+#### Query message
 
 ```json
 {
@@ -129,15 +129,15 @@ The followings are case by case for each subscription:
 }
 ```
 
-#### response message
+#### Response message
 
-Once successfully subscribed, server will echo the query message to the client, otherwise will return error message.
+Once successfully subscribed, the server will echo the query message to the client. Otherwise, the server will return an error message.
 
-Special error message:
+#### Special error message
 
-- **NA**
+None
 
-#### expected field in notification
+#### Sample notification
 
 ```json
 {
@@ -189,7 +189,7 @@ Special error message:
 
 ### Subscribe Event Log
 
-#### query message
+#### Query message
 
 ```json
 {
@@ -201,17 +201,16 @@ Special error message:
 }
 ```
 
-#### response message
+#### Response message
 
-Once successfully subscribed, server will echo the query message to the client,
-otherwise will return error message.
+Once successfully subscribed, the server will echo the query message to the client. Otherwise, the server will return an error message.
 
-Special error message:
+#### Special error message
 
-- **invalid addresses field**, which tells the client the addresses field is invalid, it could either be not found, malformed or empty
-- **no contract found in list**, which tells the client the addresses provided are all of non contract
+- **invalid addresses field**. This tells the client that the addresses field is invalid, meaning it could not be found or is either malformed or empty.
+- **no contract found in list**. This tells the client that the addresses provided are all non-contracts.
 
-#### expected field in notification
+#### Sample notification
 
 ```json
 {
@@ -246,7 +245,7 @@ Notice that for address `0x1111111111111111111111111111111111111111` is not pres
 
 ### Unsubscribe
 
-#### query message
+#### Query message
 
 ```json
 {
@@ -255,14 +254,14 @@ Notice that for address `0x1111111111111111111111111111111111111111` is not pres
 }
 ```
 
-#### response message
+#### Response message
 
 Once succesfully ubsubscribed, server will echo the query message to the client,
 otherwise will return error message.
 
-Special error message:
+#### Special error message
 
-- **invalid type field**, which tells the client the type field is invalid, if could either be not found, malformed or not available.
+- **invalid type field**. This tells the client that the type field is invalid, meaning it could not be found or is either malformed or empty.
 
 #### Sample notification
 
