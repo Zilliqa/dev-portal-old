@@ -5,6 +5,12 @@ title: Zilliqa Websocket Server (ZWS)
 
 This page describes the protocol, between the Zilliqa Websocket Server and the sdk client, for querying subscription and message pushing.
 
+## Introduction
+
+Zilliqa Websocket Server is way to let dapp developers (or other engineers who might be building something based on our blockchain platform) subscribe to specific targets (e.g., new block has been produced、payment transaction has been confirmed, events issued by smart contracts).
+
+Without websocket support, these developers need to poll everything they want, which is resource-consuming for their machine or our API endpoint. In the case of real time dapp, poll mode might also not satisfy their requirements. Anyone can use Zilliqa Websocket Server via wss://dev-ws.zilliqa.com (for community devnet) and wss://ws.zilliqa.com (for mainnet).
+
 ## Feature workflow
 
 Client can subscribe their interested topics or unsubscribe certain topic by sending query, if the query failed they will normally be informed immediately with related error message. For every Tx block(epoch), the subscribed content will be sent from server to each client in one message where an array contains all their subscribed topic if updated, which we name **notification**.
