@@ -15,7 +15,7 @@ WebSocket endpoints:
 
 ## Feature workflow
 
-Client can subscribe their interested topics or unsubscribe certain topic by sending query, if the query failed they will normally be informed immediately with related error message. For every Tx block(epoch), the subscribed content will be sent from server to each client in one message where an array contains all their subscribed topic if updated, which we name **notification**.
+Clients can subscribe to or unsubscribe from certain topics by sending a query. If the query fails, clients will normally be informed immediately through a relevant error message. For every Tx block, the subscribed content will be sent out by the server to each client in one message. This message (herein referred to as the **notification**) includes an array that contains all the updates to subscribed topics.
 
 ## Supported query
 
