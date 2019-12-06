@@ -133,7 +133,7 @@ The following sections provide the details for each subscription topic.
 
 Once successfully subscribed, the server will echo the query message to the client. Otherwise, the server will return an error message.
 
-#### Special error message
+#### Error messages specific to this topic
 
 None
 
@@ -205,7 +205,7 @@ None
 
 Once successfully subscribed, the server will echo the query message to the client. Otherwise, the server will return an error message.
 
-#### Special error message
+#### Error messages specific to this topic
 
 - **invalid addresses field**. This tells the client that the addresses field is invalid, meaning it could not be found or is either malformed or empty.
 - **no contract found in list**. This tells the client that the addresses provided are all non-contracts.
@@ -256,10 +256,9 @@ Notice that for address `0x1111111111111111111111111111111111111111` is not pres
 
 #### Response message
 
-Once succesfully ubsubscribed, server will echo the query message to the client,
-otherwise will return error message.
+Once successfully unsubscribed, the server will echo the query message to the client. Otherwise, the server will return an error message.
 
-#### Special error message
+#### Error messages specific to this topic
 
 - **invalid type field**. This tells the client that the type field is invalid, meaning it could not be found or is either malformed or empty.
 
