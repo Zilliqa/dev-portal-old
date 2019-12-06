@@ -395,7 +395,7 @@ Notification:
 
 And in the next tx block, the client won't be receiving `NewBlock` in notification
 
-## Use Zilliqa-JavaScript-Library
+## Example using Zilliqa-JavaScript-Library
 
 Besides, if you are using [Zilliqa-JavaScript-Library](https://github.com/Zilliqa/Zilliqa-JavaScript-Library), there are
 easier ways to subscribe topics:
