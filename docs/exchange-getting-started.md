@@ -47,8 +47,6 @@ the correct part will result in failure.
 
 ### Docker setup
 
-> Note: if you use AWS, you may simply create an instance with **ami-0812864268c7448b6** and skip this step.
-
 We highly recommend using [Docker](https://docker.com) to set up a seed node,
 as we provide a tested, production-ready image for your use. If you have not
 yet setup docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
