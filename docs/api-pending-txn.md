@@ -1,7 +1,7 @@
 ---
 id: api-pending-txn
 title: Pending transaction API
---- 
+---
 
 This page describes the Lookup API used to query the pending transactions in the system.
 
