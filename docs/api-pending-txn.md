@@ -9,16 +9,16 @@ At the end of every Tx epoch, lookup nodes receive information from the shards a
 
 ## Usage
 
-Three types of pending transactions would be reported
+These are the types of responses that are reported by the API.
 
-1. Nonce too high : if in a shard’s mempool a transaction is pending which has a nonce greater than the current nonce of the account.
+1. `Nonce too high`: the transaction is pending because its nonce is larger than expected.
 2. Could not fit in as microblock gas limit reached : if the transaction in the mempool wasn't able to fit in the current microblock due to current gas limit being exceeded.
-3. Transaction valid but consensus not reached : Due to consensus failure at shard or DS level, this transaction is pending.
-4. Not Present : The transaction hash being quried is not pending.
+3. `Transaction valid but consensus not reached`: the transaction is pending due to consensus failure within the network.
+4. `Txn not pending`: the transaction being queried is not pending (i.e., it does not exist in the transaction pool).
 
 ## Limitation
 
-The API would only tell if a transaction is pending or not. It cannot tell if it is dropped.
+This API relies on the contents of the transaction pool and can therefore only indicate whether a transaction is pending or not (for the reasons listed above). As such, it cannot be used to determine if a transaction was processed and intentionally dropped or rejected by the network.
 
 ## Example:
 
