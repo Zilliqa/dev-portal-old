@@ -12,7 +12,7 @@ At the end of every Tx epoch, lookup nodes receive information from the shards a
 These are the types of responses that are reported by the API.
 
 1. `Nonce too high`: the transaction is pending because its nonce is larger than expected.
-2. Could not fit in as microblock gas limit reached : if the transaction in the mempool wasn't able to fit in the current microblock due to current gas limit being exceeded.
+2. `Could not fit in as microblock gas limit reached`: the transaction is pending because it would cause the microblock to exceed the current gas limit.
 3. `Transaction valid but consensus not reached`: the transaction is pending due to consensus failure within the network.
 4. `Txn not pending`: the transaction being queried is not pending (i.e., it does not exist in the transaction pool).
 
