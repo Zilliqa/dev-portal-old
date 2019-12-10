@@ -24,6 +24,6 @@
       "mining-zilminer-setup",
       "mining-monitoring"
     ],
-    "API": ["api-intro","api-websocket","api-sdk"]
+    "API": ["api-intro","api-websocket","api-pending-txn","api-sdk"]
   }
 }
