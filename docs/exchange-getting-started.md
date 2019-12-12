@@ -152,7 +152,7 @@ following changes are required:
 ## Joining the Network
 
 > Note: before proceeding with this step, make sure you have completed the
-> necessary KYC.
+> necessary KYC (for individual).
 
 Once the preliminary steps have been completed, join the network is relatively
 straightforward.
