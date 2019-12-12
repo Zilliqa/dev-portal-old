@@ -69,6 +69,10 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('exchange-getting-started')}>For Exchanges</Button>
           </PromoSection>
         </div>
+        <br/>
+        <a target="_blank" href="https://blog.zilliqa.com/mark-your-calendars-with-the-zilliqa-token-swap-deadline-15-february-2020-20e3ea5fc0b7">
+          <img width="50%" height="50%" src={`${baseUrl}img/zilliqa_token_swap_enddate.gif`} />
+        </a>
       </SplashContainer>
     );
   }
