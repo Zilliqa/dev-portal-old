@@ -43,9 +43,8 @@ your Transaction included in TxBlock 101, or 102.
 
 ## _Is there a WS API?_
 
-There is no WebSocket API. Please use long polling to listen for new
-transactions. A general technique for doing this is detailed in [this
-document](exchange-tracking-deposits.md).
+Yes (Zilliqa v6.0.0 onwards). Please refer to 
+[Zilliqa WebSocket Server (ZWS)](arch-faq.md).
 
 ## _What is the wire format?_
 
