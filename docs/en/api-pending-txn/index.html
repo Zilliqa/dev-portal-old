@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Pending transaction API · Zilliqa Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This page describes the Lookup API used to query the pending transactions in the system."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Pending transaction API · Zilliqa Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://zilliqa.github.io/dev-portal/"/><meta property="og:description" content="This page describes the Lookup API used to query the pending transactions in the system."/><meta property="og:image" content="https://zilliqa.github.io/dev-portal/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://zilliqa.github.io/dev-portal/img/docusaurus.png"/><link rel="shortcut icon" href="/dev-portal/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/dev-portal/js/scrollSpy.js"></script><link rel="stylesheet" href="/dev-portal/css/main.css"/><script src="/dev-portal/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/dev-portal/en"><img class="logo" src="/dev-portal/img/zilliqa-logo_1zilliqa-logo.png" alt="Zilliqa Developer Portal"/><h2 class="headerTitleWithLogo">Zilliqa Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/dev-portal/docs/en/arch-overview" target="_self">Overview</a></li><li class="siteNavGroupActive"><a href="/dev-portal/docs/en/exchange-getting-started" target="_self">Exchanges</a></li><li class="siteNavGroupActive"><a href="/dev-portal/docs/en/mining-general-info" target="_self">Miners</a></li><li class="siteNavGroupActive"><a href="/dev-portal/docs/en/dapp-getting-started" target="_self">Developer</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/dev-portal/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/dev-portal/docs/zh-CN/api-pending-txn">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Architecture</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/arch-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/arch-tx-lifecycle">Transaction Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/arch-faq">FAQ</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DApp Development</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/dapp-getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/dapp-interacting-smart-contract">Interacting with your Smart Contract</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Exchange Integration</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/exchange-timeline">Token Swap Timeline &amp; Overview</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/exchange-getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/exchange-account-management">Account Management</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/exchange-sending-transactions">Sending Transactions</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/exchange-polling-deposits">Polling for Deposits</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Mining</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/mining-general-info">General Information</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/mining-hardware-requirement">Hardware requirements</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/mining-initial-setup">Initial Setup</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/mining-zilclient-setup">Zilliqa Client Setup for CPU node</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/mining-zilminer-setup">Zilminer Setup for mining rigs</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/mining-monitoring">Monitoring progress</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/api-intro">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/dev-portal/docs/en/api-pending-txn">Pending transaction API</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/api-websocket">Zilliqa WebSocket Server (ZWS)</a></li><li class="navListItem"><a class="navItem" href="/dev-portal/docs/en/api-sdk">Zilliqa SDKs</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Pending transaction API</h1></header><article><div><span><p>This page describes the Lookup API used to query the pending transactions in the system.</p>
+<p>At the end of every Tx epoch, lookup nodes receive information from the shards about pending (i.e., unconfirmed) transactions in their transaction pool. This information is accessible through the API at the lookup nodes, and is refreshed once the latest Tx block is available.</p>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>These are the types of responses that are reported by the API.</p>
+<ol>
+<li><code>Nonce too high</code>: the transaction is pending because its nonce is larger than expected.</li>
+<li><code>Could not fit in as microblock gas limit reached</code>: the transaction is pending because it would cause the microblock to exceed the current gas limit.</li>
+<li><code>Transaction valid but consensus not reached</code>: the transaction is pending due to consensus failure within the network.</li>
+<li><code>Txn not pending</code>: the transaction being queried is not pending (i.e., it does not exist in the transaction pool).</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="limitation"></a><a href="#limitation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Limitation</h2>
+<p>This API relies on the contents of the transaction pool and can therefore only indicate whether a transaction is pending or not (for the reasons listed above). As such, it cannot be used to determine if a transaction was processed and intentionally dropped or rejected by the network.</p>
+<h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h2>
+<pre><code class="hljs css language-shell">curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetPendingTxn",
+    "params": ["b9e545ab3ed0b61a4d326425569605255e0990da7dda18b4658fdb17b390844e"]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+</code></pre>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"confirmed"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"info"</span>: <span class="hljs-string">"Txn not pending"</span>
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="example-using-zilliqa-javascript-library"></a><a href="#example-using-zilliqa-javascript-library" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example using Zilliqa-JavaScript-Library</h2>
+<p>Our <a href="https://github.com/Zilliqa/Zilliqa-JavaScript-Library">Zilliqa-JavaScript-Library</a> provides a way to query pending transaction</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { BN, Long, bytes, units } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@zilliqa-js/util'</span>);
+<span class="hljs-keyword">const</span> { Zilliqa } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@zilliqa-js/zilliqa'</span>);
+<span class="hljs-keyword">const</span> {
+  toBech32Address,
+  getAddressFromPrivateKey,
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@zilliqa-js/crypto'</span>);
+
+<span class="hljs-keyword">const</span> zilliqa = <span class="hljs-keyword">new</span> Zilliqa(<span class="hljs-string">'https://dev-api.zilliqa.com'</span>);
+
+<span class="hljs-comment">// These are set by the core protocol, and may vary per-chain.</span>
+<span class="hljs-comment">// You can manually pack the bytes according to chain id and msg version.</span>
+<span class="hljs-comment">// For more information: https://apidocs.zilliqa.com/?shell#getnetworkid</span>
+
+<span class="hljs-keyword">const</span> chainId = <span class="hljs-number">333</span>; <span class="hljs-comment">// chainId of the developer testnet</span>
+<span class="hljs-keyword">const</span> msgVersion = <span class="hljs-number">1</span>; <span class="hljs-comment">// current msgVersion</span>
+<span class="hljs-keyword">const</span> VERSION = bytes.pack(chainId, msgVersion);
+
+<span class="hljs-comment">// Populate the wallet with an account</span>
+<span class="hljs-keyword">const</span> privateKey =
+  <span class="hljs-string">'3375F915F3F9AE35E6B301B7670F53AD1A5BE15D8221EC7FD5E503F21D3450C8'</span>;
+
+zilliqa.wallet.addByPrivateKey(privateKey);
+
+<span class="hljs-keyword">const</span> address = getAddressFromPrivateKey(privateKey);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My account address is: <span class="hljs-subst">${address}</span>`</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My account bech32 address is: <span class="hljs-subst">${toBech32Address(address)}</span>`</span>);
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testBlockchain</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// Get Balance</span>
+    <span class="hljs-keyword">const</span> balance = <span class="hljs-keyword">await</span> zilliqa.blockchain.getBalance(address);
+    <span class="hljs-comment">// Get Minimum Gas Price from blockchain</span>
+    <span class="hljs-keyword">const</span> minGasPrice = <span class="hljs-keyword">await</span> zilliqa.blockchain.getMinimumGasPrice();
+
+    <span class="hljs-comment">// Account balance (See note 1)</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Your account balance is:`</span>);
+    <span class="hljs-built_in">console</span>.log(balance.result);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Current Minimum Gas Price: <span class="hljs-subst">${minGasPrice.result}</span>`</span>);
+    <span class="hljs-keyword">const</span> myGasPrice = units.toQa(<span class="hljs-string">'1000'</span>, units.Units.Li); <span class="hljs-comment">// Gas Price that will be used by all transactions</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My Gas Price <span class="hljs-subst">${myGasPrice.toString()}</span>`</span>);
+    <span class="hljs-keyword">const</span> isGasSufficient = myGasPrice.gte(<span class="hljs-keyword">new</span> BN(minGasPrice.result)); <span class="hljs-comment">// Checks if your gas price is less than the minimum gas price</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Is the gas price sufficient? <span class="hljs-subst">${isGasSufficient}</span>`</span>);
+
+    <span class="hljs-comment">// Send a transaction to the network</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Sending a payment transaction to the network...'</span>);
+    <span class="hljs-keyword">const</span> tx = <span class="hljs-keyword">await</span> zilliqa.blockchain.createTransactionWithoutConfirm(
+      <span class="hljs-comment">// Notice here we have a default function parameter named toDs which means the priority of the transaction.</span>
+      <span class="hljs-comment">// If the value of toDs is false, then the transaction will be sent to a normal shard, otherwise, the transaction.</span>
+      <span class="hljs-comment">// will be sent to ds shard. More info on design of sharding for smart contract can be found in.</span>
+      <span class="hljs-comment">// https://blog.zilliqa.com/provisioning-sharding-for-smart-contracts-a-design-for-zilliqa-cd8d012ee735.</span>
+      <span class="hljs-comment">// For payment transaction, it should always be false.</span>
+      zilliqa.transactions.new(
+        {
+          <span class="hljs-attr">version</span>: VERSION,
+          <span class="hljs-attr">toAddr</span>: <span class="hljs-string">'0xA54E49719267E8312510D7b78598ceF16ff127CE'</span>,
+          <span class="hljs-attr">amount</span>: <span class="hljs-keyword">new</span> BN(units.toQa(<span class="hljs-string">'1'</span>, units.Units.Zil)), <span class="hljs-comment">// Sending an amount in Zil (1) and converting the amount to Qa</span>
+          gasPrice: myGasPrice, <span class="hljs-comment">// Minimum gasPrice veries. Check the `GetMinimumGasPrice` on the blockchain</span>
+          gasLimit: Long.fromNumber(<span class="hljs-number">1</span>),
+        },
+        <span class="hljs-literal">false</span>,
+      ),
+    );
+
+    <span class="hljs-comment">// check the pending status</span>
+    <span class="hljs-keyword">const</span> pendingStatus = <span class="hljs-keyword">await</span> zilliqa.blockchain.getPendingTxn(tx.id);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Pending status is: `</span>);
+    <span class="hljs-built_in">console</span>.log(pendingStatus.result);
+
+    <span class="hljs-comment">// process confirm</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The transaction id is:`</span>, tx.id);
+    <span class="hljs-keyword">const</span> confirmedTxn = <span class="hljs-keyword">await</span> tx.confirm(tx.id);
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The transaction status is:`</span>);
+    <span class="hljs-built_in">console</span>.log(confirmedTxn.receipt);
+
+    <span class="hljs-comment">// check the pending status after confirming</span>
+    <span class="hljs-keyword">const</span> pendingStatusAfterConfirming = <span class="hljs-keyword">await</span> zilliqa.blockchain.getPendingTxn(
+      tx.id,
+    );
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Pending status is: `</span>);
+    <span class="hljs-built_in">console</span>.log(pendingStatusAfterConfirming.result);
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err);
+  }
+}
+
+testBlockchain();
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/dev-portal/docs/en/api-intro"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/dev-portal/docs/en/api-websocket"><span class="function-name-prevnext">Zilliqa WebSocket Server (ZWS)</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#limitation">Limitation</a></li><li><a href="#example">Example:</a></li><li><a href="#example-using-zilliqa-javascript-library">Example using Zilliqa-JavaScript-Library</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/dev-portal/" class="nav-home"><img src="/dev-portal/img/zilliqa-logo_1zilliqa-logo.png" alt="Zilliqa Developer Portal" width="66" height="58"/></a><div><h5>Docs</h5><a href="/dev-portal/docs/en/dapp-getting-started">Developers</a><a href="/dev-portal/docs/en/mining-general-info">Miners</a><a href="/dev-portal/docs/en/exchange-getting-started">Exchange Integration</a></div><div><h5>Community</h5><a href="https://twitter.com/zilliqa" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://www.reddit.com/r/zilliqa">Reddit</a><a href="https://blog.zilliqa.com/">Medium</a><a href="https://discord.gg/8tpGXrB">Discord</a><a href="https://www.youtube.com/channel/UCvinnFbf0u71cajoxKcfZIQ">YouTube</a><a href="https://t.me/zilliqachat">Telegram</a></div><div><h5>More</h5><a href="/dev-portal/blog">Blog</a><a href="https://www.github.com/Zilliqa">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Zilliqa Research Pte. Ltd.</section></footer></div></body></html>
