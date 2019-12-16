@@ -115,11 +115,16 @@ $ sudo apt-get update && sudo apt-get install \
     libminiupnpc-dev \
     libcurl4-openssl-dev \
     libboost-program-options-dev \
+    libboost-python-dev \
+    python3-dev         \
+    python3-setuptools  \
+    python3-pip         \
     gawk
 
 $ sudo apt install python-pip
 $ export LC_ALL=C
 $ pip install request requests clint futures
+$ pip3 install requests clint futures
 
 # build the binary. this may take awhile.
 $ ./build.sh
