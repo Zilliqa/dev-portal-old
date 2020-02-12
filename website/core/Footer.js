@@ -57,7 +57,7 @@ class Footer extends React.Component {
             </a>
             <a href="https://www.reddit.com/r/zilliqa">Reddit</a>
             <a href="https://blog.zilliqa.com/">Medium</a>
-            <a href="https://discord.gg/8tpGXrB">Discord</a>
+            <a href="https://discord.gg/XMRE9tt">Discord</a>
             <a href="https://www.youtube.com/channel/UCvinnFbf0u71cajoxKcfZIQ">YouTube</a>
             <a href="https://t.me/zilliqachat">Telegram</a>
           </div>
