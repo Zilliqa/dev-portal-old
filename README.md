@@ -1,6 +1,6 @@
 # Zilliqa Developer Portal
 
-[![Discord chat](https://img.shields.io/discord/370992535725932544.svg)](https://discord.gg/8tpGXrB)
+[![Discord chat](https://img.shields.io/discord/370992535725932544.svg)](https://discord.gg/XMRE9tt)
 
 <p align="center">
     <img src="https://github.com/Zilliqa/Zilliqa/blob/master/img/zilliqa-logo-color.png" width="200" height="200">
