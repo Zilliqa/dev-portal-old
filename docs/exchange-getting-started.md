@@ -78,7 +78,6 @@ keypair, like so:
 
 ```sh
 $ ./launch_docker.sh --genkeypair
-$ mv mykey.txt verifier.txt
 ```
 
 ### Native setup
@@ -139,7 +138,7 @@ $ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 
 # generate a keypair
-$ ../Zilliqa/build/bin/genkeypair > verifier.txt
+$ ../Zilliqa/build/bin/genkeypair > mykey.txt
 ```
 
 ## Configuring the Node
@@ -149,7 +148,6 @@ network. Most configuration is contained in `constants.xml`, which should be
 in the directory we extracted `configuration.tar.gz` to. Minimally, the
 following changes are required:
 
-- Change the value of `VERIFIER_PUBKEY` to the output of `cat verifier.txt | cut -d ' ' -f1`
 - Change the value of `SEED_PORT` to `33133` (default), or a port of your choice (if
   any). Be sure to note this down for a subsequent step, if you do not select
   `33133`.
