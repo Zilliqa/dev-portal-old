@@ -1,6 +1,6 @@
 ---
 id: staking-ssn-operations
-title: Staked Seed Node (SSN) operation
+title: Staked Seed Node operations
 ---
 
 # Introduction to staked seed node smart contract

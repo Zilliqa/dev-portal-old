@@ -17,7 +17,6 @@
     ],
     "Seed node staking": [
       "staking-introduction",
-      "staking-running-ssn",
       "staking-getting-started",
       "staking-ssn-operations",
       "staking-ssn-monitoring",
