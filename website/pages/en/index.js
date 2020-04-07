@@ -67,6 +67,7 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('mining-general-info')}>For Miners</Button>
             <Button href={docUrl('dapp-getting-started')}>For Developers</Button>
             <Button href={docUrl('exchange-getting-started')}>For Exchanges</Button>
+            <Button href={docUrl('staking-introduction')}>For Seed Node Staking</Button>
           </PromoSection>
         </div>
         <br/>

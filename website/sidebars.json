@@ -10,11 +10,19 @@
       "dapp-interacting-smart-contract"
     ],
     "Exchange Integration": [
-      "exchange-timeline",
       "exchange-getting-started",
       "exchange-account-management",
       "exchange-sending-transactions",
       "exchange-polling-deposits"
+    ],
+    "Seed node staking": [
+      "staking-introduction",
+      "staking-running-ssn",
+      "staking-getting-started",
+      "staking-ssn-operations",
+      "staking-ssn-maintenance",
+      "staking-ssn-monitoring-page",
+      "staking-faq"
     ],
     "Mining": [
       "mining-general-info",

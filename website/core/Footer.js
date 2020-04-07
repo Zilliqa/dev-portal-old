@@ -64,7 +64,7 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href="https://www.github.com/Zilliqa">GitHub</a>
-            <a
+            {/* <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
@@ -73,7 +73,7 @@ class Footer extends React.Component {
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
               Star
-            </a>
+            </a> */}
           </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>
