@@ -30,9 +30,19 @@ We highly recommend using [Docker](https://docker.com/) to set up a seed node, a
 
 Once you have set up Docker, you may proceed to download and uncompress the configuration tarball for the mainnet:
 
-> If you are running staked seed node on the public testnet, we will provide the tarball link seperately to you.
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Testnet-->
+```bash
+# create a directory
+$ mkdir my_seed && cd my_seed
 
+# download and extract the seed node configuration files
+$ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz
+$ tar -zxvf seed-configuration.tar.gz
 ```
+
+<!--Mainnet (not yet available)-->
+```bash
 # create a directory
 $ mkdir my_seed && cd my_seed
 
@@ -40,6 +50,8 @@ $ mkdir my_seed && cd my_seed
 $ wget https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in constants.xml, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:
 - Change the value of `ENABLE_STAKING_RPC` to `true`
@@ -81,7 +93,18 @@ $ ./build.sh
 
 The build should exit with no errors. Once it is complete, download and uncompress the configuration tarball:
 
-> If you are running staked seed node on the public testnet, we will provide the tarball link seperately to you.
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Testnet -->
+```bash
+# create a directory
+$ mkdir my_seed && cd my_seed
+
+# download and extract the seed node configuration files
+$ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz
+$ tar -zxvf seed-configuration.tar.gz
+```
+
+<!--Mainnet (not yet available)-->
 ```bash
 # create a directory
 $ mkdir my_seed && cd my_seed
@@ -90,6 +113,8 @@ $ mkdir my_seed && cd my_seed
 $ wget https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory we extracted `configuration.tar.gz` to. Minimally, the following changes are required:
 - Change the value of `ENABLE_STAKING_RPC` to `true`

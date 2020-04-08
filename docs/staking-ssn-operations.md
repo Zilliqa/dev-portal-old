@@ -21,6 +21,46 @@ For staked seed node operators, a number of smart contract transition is availab
 - `withdraw_stake_rewards()`
 - `withdraw_stake_amount()`
 
+# Smart contract information
+
+We have two smart contract, namely `proxy` and `ssnlist`. Proxy contract stores the implementation address of `ssnlist` and forwards all call to the logic contract, `ssnlist`.
+
+As such, any user who wishes to interact with the contract, should interact with `proxy` contract only.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!-- Testnet -->
+<br>
+| Type    | Address |
+| ------- | ------- |
+| Proxy   | [zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag](https://viewblock.io/zilliqa/address/zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag?network=testnet) |
+| ssnlist | [zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx](https://viewblock.io/zilliqa/address/zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx?network=testnet) |
+
+| Parameters                 | Value |
+| -------------------------- | ----- |
+| Min stake                  | 10k   |
+| Max stake                  | 100k  |
+| Overall contract max stake | 1M    |
+
+<!-- Mainnet (coming soon) -->
+<br>
+| Type    | Address |
+| ------- | ------- |
+| Proxy   | Not available yet |
+| ssnlist | Not available yet |
+
+| Parameters                 | Value        |
+| -------------------------- | ------------ |
+| Min stake                  | 10M          |
+| Max stake                  | 70M          |
+| Overall contract max stake | 700M         |
+| Reward cycle               | 15 DS blocks |
+
+These are tentative number and may subjected to change
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+> **Notice:** Please use proxy contract address if you need to call the smart contract.
+
 # SSN address and key pair management
 Each staked seed node registered in the contract is associated with a Zilliqa mainnet address. This address is used to both deposit and withdraw funds as well as withdraw the rewards using the smart contract transitions listed above. Operators should take care to exercise whatever policies are in place in their organizations for managing the key pair associated with this address.
 
@@ -38,7 +78,7 @@ Currently, our rewarding cycle is paid out once **every 15 DS epochs**. In order
 
 **CLI way to deposit stake amount**
 ```bash
-zli contract call -a <contract_address> -t stake_deposit -r "[]" -m <funds_in_Qa> -f true
+zli contract call -a <proxy contract_address> -t stake_deposit -r "[]" -m <funds_in_Qa> -f true
 ```
 
 Example:
@@ -117,7 +157,7 @@ For full withdrawal, with the rewards also fully withdrawn, your staked seed nod
 
 **Zli command: withdraw_stake_amount**
 ```bash
-zli contract call -a <contract_address> -t withdraw_stake_amount -r "[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"<amount>\"}]" -f true
+zli contract call -a <proxy contract_address> -t withdraw_stake_amount -r "[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"<amount>\"}]" -f true
 ```
 
 Example:
@@ -164,7 +204,7 @@ If the staked seed node did not achieve 100% uptime, the reward will be reduced 
 
 **Zli staking reward utility:**
 ```bash
-zli staking rewards -s ssn_operator -c contract_address -a api_endpoint
+zli staking rewards -s ssn_operator -c <proxy contract_address> -a api_endpoint
 ```
 
 Example:
@@ -191,7 +231,7 @@ For reward withdrawal, with full stake amount already withdrawn, your staked see
 
 **zli command: withdraw_stake_rewards**
 ```bash
-zli contract call -a <contract_address> -t withdraw_stake_rewards -r "[]" -f true
+zli contract call -a <proxy contract_address> -t withdraw_stake_rewards -r "[]" -f true
 ```
 
 Example:
