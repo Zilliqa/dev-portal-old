@@ -93,14 +93,14 @@ Example of stake deposit for a particular ssn address:
 **SDK sample code for getting stake buffered amount**
 | Language | Link to sample code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
+| NodeJS   | [get_stake_buffered_amount.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/get_stake_buffered_amount.js) |
 | Java     | [getStakeBufferedAmount()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L184) |
 
 
 **SDK sample code for getting stake amount (non-buffered)**
 | Language | Link to sample code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
+| NodeJS   | [get_stake_amount.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/get_stake_amount.js) |
 | Java     | [getStakeAmount()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L180) |
 
 ## Withdrawal of stake deposit
@@ -175,7 +175,7 @@ zli staking rewards -s 0x53e954391539f276c36a09167b795ab7e654fdb7 -c 343407558c9
 **SDK sample code**
 | Language | Link to sample code |
 | -------- | ------------------- |
-| NodeJS   | Coming soon |
+| NodeJS   | [get_stake_rewards.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/get_stake_rewards.js) |
 | Java     | [getStakeRewards()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L188) |
 
 
