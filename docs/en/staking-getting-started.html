@@ -90,16 +90,9 @@
 <h2><a class="anchor" aria-hidden="true" id="launching-the-node-using-docker"></a><a href="#launching-the-node-using-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Launching the node using Docker</h2>
 <p>We highly recommend using <a href="https://docker.com/">Docker</a> to set up a seed node, as we provide a tested, production-ready image for your use. If you have not yet set up docker, please follow the instructions on the <a href="https://docs.docker.com/install/">official documentation</a>.</p>
 <p>Once you have set up Docker, you may proceed to download and uncompress the configuration tarball for the mainnet:</p>
-<blockquote>
-<p>If you are running staked seed node on the public testnet, we will provide the tarball link seperately to you.</p>
-</blockquote>
-<pre><code class="hljs"><span class="hljs-comment"># create a directory</span>
-<span class="hljs-variable">$ </span>mkdir my_seed &amp;&amp; cd my_seed
-
-<span class="hljs-comment"># download and extract the seed node configuration files</span>
-<span class="hljs-variable">$ </span>wget <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/mainnet-join.zilliqa.com/seed</span>-configuration.tar.gz
-<span class="hljs-variable">$ </span>tar -zxvf seed-configuration.tar.gz
-</code></pre>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-1-tab-2" class="nav-link active" data-group="group_1" data-tab="tab-group-1-content-2">Testnet</div><div id="tab-group-1-tab-3" class="nav-link" data-group="group_1" data-tab="tab-group-1-content-3">Mainnet (not yet available)</div></div><div class="tab-content"><div id="tab-group-1-content-2" class="tab-pane active" data-group="group_1" tabindex="-1"><div><span><pre><code class="hljs css language-bash"><span class="hljs-comment"># create a directory</span><br />$ mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed<br /><br /><span class="hljs-comment"># download and extract the seed node configuration files</span><br />$ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz<br />$ tar -zxvf seed-configuration.tar.gz<br /></code></pre>
+</span></div></div><div id="tab-group-1-content-3" class="tab-pane" data-group="group_1" tabindex="-1"><div><span><pre><code class="hljs css language-bash"><span class="hljs-comment"># create a directory</span><br />$ mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed<br /><br /><span class="hljs-comment"># download and extract the seed node configuration files</span><br />$ wget https://mainnet-join.zilliqa.com/seed-configuration.tar.gz<br />$ tar -zxvf seed-configuration.tar.gz<br /></code></pre>
+</span></div></div></div></div>
 <p>The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in constants.xml, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:</p>
 <ul>
 <li>Change the value of <code>ENABLE_STAKING_RPC</code> to <code>true</code></li>
@@ -135,16 +128,9 @@ $ sudo apt-get install git libboost-system-dev libboost-filesystem-dev libboost-
 $ ./build.sh
 </code></pre>
 <p>The build should exit with no errors. Once it is complete, download and uncompress the configuration tarball:</p>
-<blockquote>
-<p>If you are running staked seed node on the public testnet, we will provide the tarball link seperately to you.</p>
-</blockquote>
-<pre><code class="hljs css language-bash"><span class="hljs-comment"># create a directory</span>
-$ mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed
-
-<span class="hljs-comment"># download and extract the seed node configuration files</span>
-$ wget https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
-$ tar -zxvf seed-configuration.tar.gz
-</code></pre>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-4-tab-5" class="nav-link active" data-group="group_4" data-tab="tab-group-4-content-5">Testnet</div><div id="tab-group-4-tab-6" class="nav-link" data-group="group_4" data-tab="tab-group-4-content-6">Mainnet (not yet available)</div></div><div class="tab-content"><div id="tab-group-4-content-5" class="tab-pane active" data-group="group_4" tabindex="-1"><div><span><pre><code class="hljs css language-bash"><span class="hljs-comment"># create a directory</span><br />$ mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed<br /><br /><span class="hljs-comment"># download and extract the seed node configuration files</span><br />$ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz<br />$ tar -zxvf seed-configuration.tar.gz<br /></code></pre>
+</span></div></div><div id="tab-group-4-content-6" class="tab-pane" data-group="group_4" tabindex="-1"><div><span><pre><code class="hljs css language-bash"><span class="hljs-comment"># create a directory</span><br />$ mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed<br /><br /><span class="hljs-comment"># download and extract the seed node configuration files</span><br />$ wget https://mainnet-join.zilliqa.com/seed-configuration.tar.gz<br />$ tar -zxvf seed-configuration.tar.gz<br /></code></pre>
+</span></div></div></div></div>
 <p>The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in <code>constants.xml</code>, which should be in the directory we extracted <code>configuration.tar.gz</code> to. Minimally, the following changes are required:</p>
 <ul>
 <li>Change the value of <code>ENABLE_STAKING_RPC</code> to <code>true</code></li>

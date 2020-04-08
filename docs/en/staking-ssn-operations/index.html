@@ -85,6 +85,55 @@
 <li><code>withdraw_stake_rewards()</code></li>
 <li><code>withdraw_stake_amount()</code></li>
 </ul>
+<h1><a class="anchor" aria-hidden="true" id="smart-contract-information"></a><a href="#smart-contract-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Smart contract information</h1>
+<p>We have two smart contract, namely <code>proxy</code> and <code>ssnlist</code>. Proxy contract stores the implementation address of <code>ssnlist</code> and forwards all call to the logic contract, <code>ssnlist</code>.</p>
+<p>As such, any user who wishes to interact with the contract, should interact with <code>proxy</code> contract only.</p>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-7-tab-8" class="nav-link active" data-group="group_7" data-tab="tab-group-7-content-8">Testnet</div><div id="tab-group-7-tab-9" class="nav-link" data-group="group_7" data-tab="tab-group-7-content-9">Mainnet (coming soon)</div></div><div class="tab-content"><div id="tab-group-7-content-8" class="tab-pane active" data-group="group_7" tabindex="-1"><div><span><p><br></p>
+<table>
+<thead>
+<tr><th>Type</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>Proxy</td><td><a href="https://viewblock.io/zilliqa/address/zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag?network=testnet">zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag</a></td></tr>
+<tr><td>ssnlist</td><td><a href="https://viewblock.io/zilliqa/address/zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx?network=testnet">zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx</a></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Parameters</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Min stake</td><td>10k</td></tr>
+<tr><td>Max stake</td><td>100k</td></tr>
+<tr><td>Overall contract max stake</td><td>1M</td></tr>
+</tbody>
+</table>
+</span></div></div><div id="tab-group-7-content-9" class="tab-pane" data-group="group_7" tabindex="-1"><div><span><p><br></p>
+<table>
+<thead>
+<tr><th>Type</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>Proxy</td><td>Not available yet</td></tr>
+<tr><td>ssnlist</td><td>Not available yet</td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Parameters</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Min stake</td><td>10M</td></tr>
+<tr><td>Max stake</td><td>70M</td></tr>
+<tr><td>Overall contract max stake</td><td>700M</td></tr>
+<tr><td>Reward cycle</td><td>15 DS blocks</td></tr>
+</tbody>
+</table>
+<p>These are tentative number and may subjected to change</p>
+</span></div></div></div></div>
+<blockquote>
+<p><strong>Notice:</strong> Please use proxy contract address if you need to call the smart contract.</p>
+</blockquote>
 <h1><a class="anchor" aria-hidden="true" id="ssn-address-and-key-pair-management"></a><a href="#ssn-address-and-key-pair-management" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSN address and key pair management</h1>
 <p>Each staked seed node registered in the contract is associated with a Zilliqa mainnet address. This address is used to both deposit and withdraw funds as well as withdraw the rewards using the smart contract transitions listed above. Operators should take care to exercise whatever policies are in place in their organizations for managing the key pair associated with this address.</p>
 <blockquote>
@@ -96,7 +145,7 @@
 <h2><a class="anchor" aria-hidden="true" id="stake-deposit-process"></a><a href="#stake-deposit-process" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stake deposit process</h2>
 <p>Currently, our rewarding cycle is paid out once <strong>every 15 DS epochs</strong>. In order to deter abuse of the reward cycle, <strong>stake deposit will first be entered as a buffered deposit</strong>. At the next multiple of 15 DS epoch, the buffered deposit will be transferred to the stake deposit. From then on, the stake deposit will be eligible for rewards.</p>
 <p><strong>CLI way to deposit stake amount</strong></p>
-<pre><code class="hljs css language-bash">zli contract call -a &lt;contract_address&gt; -t stake_deposit -r <span class="hljs-string">"[]"</span> -m &lt;funds_in_Qa&gt; -f <span class="hljs-literal">true</span>
+<pre><code class="hljs css language-bash">zli contract call -a &lt;proxy contract_address&gt; -t stake_deposit -r <span class="hljs-string">"[]"</span> -m &lt;funds_in_Qa&gt; -f <span class="hljs-literal">true</span>
 </code></pre>
 <p>Example:</p>
 <pre><code class="hljs css language-bash">zli contract call -a 0123456789012345678901234567890123456789 -t stake_deposit -r <span class="hljs-string">"[]"</span> -m 10000000000000 -f <span class="hljs-literal">true</span>
@@ -170,7 +219,7 @@
 <p>For full withdrawal, with the rewards also fully withdrawn, your staked seed node will be removed from the list of staked seed nodes. The Zilliqa team will need to re-add your seed node into the contract should you wish to participate once again in staking.</p>
 <h3><a class="anchor" aria-hidden="true" id="cli-way-to-withdraw-stake-deposit"></a><a href="#cli-way-to-withdraw-stake-deposit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI way to withdraw stake deposit</h3>
 <p><strong>Zli command: withdraw_stake_amount</strong></p>
-<pre><code class="hljs css language-bash">zli contract call -a &lt;contract_address&gt; -t withdraw_stake_amount -r <span class="hljs-string">"[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"&lt;amount&gt;\"}]"</span> -f <span class="hljs-literal">true</span>
+<pre><code class="hljs css language-bash">zli contract call -a &lt;proxy contract_address&gt; -t withdraw_stake_amount -r <span class="hljs-string">"[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"&lt;amount&gt;\"}]"</span> -f <span class="hljs-literal">true</span>
 </code></pre>
 <p>Example:</p>
 <pre><code class="hljs css language-bash">zli contract call -a 0123456789012345678901234567890123456789 -t withdraw_stake_amount -r <span class="hljs-string">"[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"500000000000\"}]"</span> -f <span class="hljs-literal">true</span>
@@ -208,7 +257,7 @@
 <p>If the staked seed node did not achieve 100% uptime, the reward will be reduced proportionally based on the number of checks passed.</p>
 <h2><a class="anchor" aria-hidden="true" id="cli-way-to-check-current-rewards"></a><a href="#cli-way-to-check-current-rewards" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI way to check current rewards</h2>
 <p><strong>Zli staking reward utility:</strong></p>
-<pre><code class="hljs css language-bash">zli staking rewards -s ssn_operator -c contract_address -a api_endpoint
+<pre><code class="hljs css language-bash">zli staking rewards -s ssn_operator -c &lt;proxy contract_address&gt; -a api_endpoint
 </code></pre>
 <p>Example:</p>
 <pre><code class="hljs css language-bash">zli staking rewards -s 0x53e954391539f276c36a09167b795ab7e654fdb7 -c 343407558c9bb1f7ae737af80b90e1edf741a37a -a https://api.zilliqa.com
@@ -229,7 +278,7 @@
 <p>For reward withdrawal, with full stake amount already withdrawn, your staked seed node will be removed from the list of staked seed nodes.</p>
 <h2><a class="anchor" aria-hidden="true" id="cli-way-to-withdraw-current-rewards"></a><a href="#cli-way-to-withdraw-current-rewards" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI way to withdraw current rewards</h2>
 <p><strong>zli command: withdraw_stake_rewards</strong></p>
-<pre><code class="hljs css language-bash">zli contract call -a &lt;contract_address&gt; -t withdraw_stake_rewards -r <span class="hljs-string">"[]"</span> -f <span class="hljs-literal">true</span>
+<pre><code class="hljs css language-bash">zli contract call -a &lt;proxy contract_address&gt; -t withdraw_stake_rewards -r <span class="hljs-string">"[]"</span> -f <span class="hljs-literal">true</span>
 </code></pre>
 <p>Example:</p>
 <pre><code class="hljs css language-bash">zli contract call -a 0123456789012345678901234567890123456789 -t withdraw_stake_rewards -r <span class="hljs-string">"[]"</span> -f <span class="hljs-literal">true</span>
