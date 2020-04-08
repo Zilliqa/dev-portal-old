@@ -14,15 +14,15 @@ Staked seed nodes are expected to provide API service to anyone in order to be e
 # Who can run a Zilliqa SSN
 
 The seed node operator candidates we are looking to get involved with the staked seed node program are 
-(i) existing crypto exchanges, 
-(ii) wallet and explorer providers, and 
-(iii) eligible operators from within the Zilliqa community.
+- existing exchanges, 
+- wallet and explorer providers, and 
+- eligible operators from within the Zilliqa community.
 
 # Minimum hardware requirements
 Ensuring your node meets the minimum hardware requirements is important. Having your staked seed node run without disruption will both enable you to get the maximum possible stake reward and guarantee to the users of your node that they can enjoy a seamless experience of the API service provided.
 
 At the moment, the minimum hardware requirements are as follows:
-- x64 Ubuntu operating system (e.g., Ubuntu 16.04.05 LTS, Ubuntu 18.04.4 LTS)
+- x64 Ubuntu operating system (e.g., `Ubuntu 16.04.05 LTS`, `Ubuntu 18.04.4 LTS`)
 - Quad-core server-grade processor (e.g., Intel Xeon Skylake family)
 - 16GB RAM
 - 300GB SSD
@@ -34,7 +34,7 @@ At the moment, the minimum hardware requirements are as follows:
 
 # Signing up as a staked seed node operator
 
-> This step is optional for those who are interested in touch with us
+> This step is optional for those who are already in touch with us
 
 For interested party who wishes to run a staked seed node and can provides the following service: 
 - run a staked seed node 

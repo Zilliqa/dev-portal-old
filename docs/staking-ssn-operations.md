@@ -34,9 +34,9 @@ Having each operator deposit an amount in the contract ensures that rewarding is
 
 ## Stake deposit process
 
-Currently, our rewarding cycle is paid out once **every 15 DS epochs**. In order to deter abuse of the reward cycle, stake deposit will first be entered as a buffered deposit. At the next multiple of 15 DS epoch, the buffered deposit will be transferred to the stake deposit. From then on, the stake deposit will be eligible for rewards.
+Currently, our rewarding cycle is paid out once **every 15 DS epochs**. In order to deter abuse of the reward cycle, **stake deposit will first be entered as a buffered deposit**. At the next multiple of 15 DS epoch, the buffered deposit will be transferred to the stake deposit. From then on, the stake deposit will be eligible for rewards.
 
-CLI way to deposit stake amount
+**CLI way to deposit stake amount**
 ```bash
 zli contract call -a <contract_address> -t stake_deposit -r "[]" -m <funds_in_Qa> -f true
 ```
@@ -46,9 +46,15 @@ Example:
 zli contract call -a 0123456789012345678901234567890123456789 -t stake_deposit -r "[]" -m 10000000000000 -f true
 ```
 
-## How to check the current stake deposit?
+**SDK sample code**
+| Language | Link to sample code |
+| -------- | ------------------- |
+| NodeJS   | [stake_deposit.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/stake_deposit.js) |
+| Java     | [stakeDeposit()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L67) |
 
-The current stake deposit can be retrieved by querying the staking contract state:
+## How to check the current stake deposit and stake buffered amount?
+
+The current stake deposit and stake buffered amount can be retrieved by querying the staking contract state:
 ```
 curl -d '{"id":"1", "jsonrpc": "2.0", "method": "GetSmartContractState", "params":["<staking_contract_address>"]}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com" 
 ```
@@ -72,7 +78,7 @@ Example of stake deposit for a particular ssn address:
            	"0", ← reward amount
            	"devapiziiliqacom",
            	"ziiliqacom",
-           	"0"
+           	"0" - stake buffered amount
         	],
         	"argtypes" : [],
         	"constructor" : "Ssn"
@@ -83,6 +89,19 @@ Example of stake deposit for a particular ssn address:
    }
 }
 ```
+
+**SDK sample code for getting stake buffered amount**
+| Language | Link to sample code |
+| -------- | ------------------- |
+| NodeJS   | coming soon |
+| Java     | [getStakeBufferedAmount()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L184) |
+
+
+**SDK sample code for getting stake amount (non-buffered)**
+| Language | Link to sample code |
+| -------- | ------------------- |
+| NodeJS   | coming soon |
+| Java     | [getStakeAmount()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L180) |
 
 ## Withdrawal of stake deposit
 
@@ -96,7 +115,7 @@ For full withdrawal, with the rewards also fully withdrawn, your staked seed nod
 
 ### CLI way to withdraw stake deposit
 
-Zli command: withdraw_stake_amount
+**Zli command: withdraw_stake_amount**
 ```bash
 zli contract call -a <contract_address> -t withdraw_stake_amount -r "[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"<amount>\"}]" -f true
 ```
@@ -107,6 +126,12 @@ zli contract call -a 0123456789012345678901234567890123456789 -t withdraw_stake_
 ```
 
 > **Note:** param “amount” here is expressed in Qa units (1 Zil = 1,000,000,000,000 Qa).
+
+**SDK sample code**
+| Language | Link to sample code |
+| -------- | ------------------- |
+| NodeJS   | [withdraw_stake_amount.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/withdraw_stake_amount.js) |
+| Java     | [withdrawStakeAmount()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L104) |
 
 # Getting rewards
 
@@ -130,7 +155,7 @@ If the staked seed node did not achieve 100% uptime, the reward will be reduced 
 
 ## CLI way to check current rewards
 
-Zli staking reward utility:
+**Zli staking reward utility:**
 ```bash
 zli staking rewards -s ssn_operator -c contract_address -a api_endpoint
 ```
@@ -139,6 +164,13 @@ Example:
 ```bash
 zli staking rewards -s 0x53e954391539f276c36a09167b795ab7e654fdb7 -c 343407558c9bb1f7ae737af80b90e1edf741a37a -a https://api.zilliqa.com
 ```
+
+**SDK sample code**
+| Language | Link to sample code |
+| -------- | ------------------- |
+| NodeJS   | Coming soon |
+| Java     | [getStakeRewards()](https://github.com/Zilliqa/staking-contract/blob/12b9e594578429db5699e5f2e116c1ed825fca23/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L188) |
+
 
 # Withdrawing rewards 
 
@@ -150,7 +182,7 @@ For reward withdrawal, with full stake amount already withdrawn, your staked see
 
 ## CLI way to withdraw current rewards
 
-Zli command: withdraw_stake_rewards
+**zli command: withdraw_stake_rewards**
 ```bash
 zli contract call -a <contract_address> -t withdraw_stake_rewards -r "[]" -f true
 ```
@@ -159,3 +191,9 @@ Example:
 ```bash
 zli contract call -a 0123456789012345678901234567890123456789 -t withdraw_stake_rewards -r "[]" -f true
 ```
+
+**SDK sample code**
+| Language | Link to sample code |
+| -------- | ------------------- |
+| NodeJS   | [withdraw_stake_rewards.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/withdraw_stake_rewards.js) |
+| Java     | [withdrawStakeRewards()](https://github.com/Zilliqa/staking-contract/blob/master/scripts/Java/src/main/java/com/zilliqa/staking/SSNOperator.java#L104) |
