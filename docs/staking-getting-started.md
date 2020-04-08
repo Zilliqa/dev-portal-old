@@ -20,8 +20,8 @@ It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0
 Launching a seed node for staking is similar to launching a normal seed node, with some additional configuration steps.
 
 In this guide, we will demostrate on how to setup the seed node via
-1. Docker
-2. Native build
+1. [Docker](#launching-the-node-using-docker)
+2. [Native build](#launching-the-node-using-native-build)
 
 You can go for either one of the option above.
 
@@ -135,6 +135,6 @@ If you received the latest blockchain information (similar to the one below) fro
 You can use an online websocket test utility to test whether your websocket is publicly accessible.
 
 1. Visit https://www.websocket.org/echo.html
-2. Under location, put your websocket url link (e.g., `wss://<yourdomain here>`)
+2. Under location, put your websocket url link (e.g., `wss://<yourdomain here or ip:port>`)
 3. Click on connect
-4. If “CONNECTED” is shown in the log, your websocket port is publicly accessible
+4. If **“CONNECTED”** is shown in the log, your websocket port is publicly accessible
