@@ -147,7 +147,14 @@ Rewards are given once **every 15 DS epochs**. Over a period of a year, it is es
 Rewards are not added to the stake deposit; they are stored separately from the stake deposit. When calculating the reward, the Verifier only takes the stake deposit into account. As such, there is **no “compounding” effect** for the rewards.
 
 ## Reward estimator utility
+<!--
+  <script src="/js/zilliqa-staking-calculator.js"></script>
+  <div id="staking-calculator"></div>
+-->
+  
 The reward estimator utility is accessible at https://zilliqa.github.io/staking-calculator-plugin/index.html
+
+
 
 ## Penalty for rewards
 
