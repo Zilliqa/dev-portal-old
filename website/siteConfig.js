@@ -94,3 +94,6 @@ const siteConfig = {
 };
 
 module.exports = siteConfig;
+cname: 'dev.zilliqa.com'
+stylesheets: 'css/custom.css'
+themeUrl: 'css/custom.css'
