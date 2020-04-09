@@ -35,11 +35,13 @@ As such, any user who wishes to interact with the contract, should interact with
 | Proxy   | [zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag](https://viewblock.io/zilliqa/address/zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag?network=testnet) |
 | ssnlist | [zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx](https://viewblock.io/zilliqa/address/zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx?network=testnet) |
 
-| Parameters                 | Value |
-| -------------------------- | ----- |
-| Min stake                  | 10k   |
-| Max stake                  | 100k  |
-| Overall contract max stake | 1M    |
+| Parameters                 | Value       |
+| -------------------------- | ----------- |
+| Min stake                  | 10k         |
+| Max stake                  | 100k        |
+| Overall contract max stake | 1M          |
+| Reward cycle               | 6 DS blocks |
+
 
 <!-- Mainnet (coming soon) -->
 <br>
