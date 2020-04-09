@@ -3,6 +3,17 @@ id: staking-ssn-operations
 title: Staked Seed Node operations
 ---
 
+# Enrollment into the smart contract
+
+We will require you to provide us the following information via the communication channel we have established with you
+- Zilliqa address where you will deposit/withdraw stake and receive rewards*
+- Your IP and port serving the API  
+i.e `http://<ip>:<port>` or `https://<ip>:<port>`
+- Domain name and port that is serving the API (if any)  
+i.e `http://<domain>:<port>` or `https://<domain>:<port>`
+
+>  **⚠️** We highly recommend to use a secured keypair for depositing stake, withdrawing stake and withdrawing reward. Please do not reuse the keypair you use for running your staked seed node.
+
 # Introduction to staked seed node smart contract
 
 The following guide will use Zilliqa ZLI and SDK as an example for interacting with the smart contract. 
