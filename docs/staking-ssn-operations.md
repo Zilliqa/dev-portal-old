@@ -14,6 +14,19 @@ i.e `http://<domain>:<port>` or `https://<domain>:<port>`
 
 >  **⚠️** We highly recommend to use a secured keypair for depositing stake, withdrawing stake and withdrawing reward. Please do not reuse the keypair you use for running your staked seed node.
 
+Upon providing the information, the Zilliqa team will proceed to add your staked seed node information into the smart contract and informed you once it is done.
+
+# Getting testnet $ZIL
+
+To get you started, let us know the amount of testnet $ZIL you wish to get and we will send to your address. We recommend the following values
+
+| $ZIL                | Purpose |
+| ------------------- | ------- |
+| 50,000 testnet $ZIL | For depositing stake |
+| 5,000 testnet $ZIL  | For gas fees |
+
+Also, if you need a amount of testnet $ZIL from time to time, you can go to our [Testnet Faceut](https://dev-wallet.zilliqa.com/faucet) to request for it.
+
 # Introduction to staked seed node smart contract
 
 The following guide will use Zilliqa ZLI and SDK as an example for interacting with the smart contract. 
