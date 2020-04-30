@@ -55,7 +55,7 @@ As such, any user who wishes to interact with the contract, should interact with
 | Type    | Address |
 | ------- | ------- |
 | Proxy   | Bech32: [zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag](https://viewblock.io/zilliqa/address/zil1g3dj8nk3l4t5cstqpqvg6v7s2qawxvqrr3xzag?network=testnet) <br> Base16: [0x445B23CeD1fD574c416008188d33D0503Ae33003](https://viewblock.io/zilliqa/address/0x445B23CeD1fD574c416008188d33D0503Ae33003?network=testnet) |
-| ssnlist | Bech32: [zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx](https://viewblock.io/zilliqa/address/zil12n0nhujzueferf0uff9308fnw4al87k28lqhjx?network=testnet) <br> Base16: [0x54df3bf242e65391a5fc4a4B179D33757Bf3fACa](https://viewblock.io/zilliqa/address/0x54df3bf242e65391a5fc4a4B179D33757Bf3fACa?network=testnet) |
+| ssnlist | Bech32: [zil1tavr94sg0tpwqydyc9qfd05d33nhyu4gwxd06m](https://viewblock.io/zilliqa/address/zil1tavr94sg0tpwqydyc9qfd05d33nhyu4gwxd06m?network=testnet) <br> Base16: [0x5f5832d6087ac2e011a4c14096be8d8c677272a8](https://viewblock.io/zilliqa/address/0x5f5832d6087ac2e011a4c14096be8d8c677272a8?network=testnet) |
 
 | Parameters                 | Value       |
 | -------------------------- | ----------- |
