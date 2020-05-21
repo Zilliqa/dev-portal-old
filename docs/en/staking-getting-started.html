@@ -97,11 +97,12 @@
 <p>The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in constants.xml, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:</p>
 <ul>
 <li>Change the value of <code>ENABLE_STAKING_RPC</code> to <code>true</code></li>
-<li><strong>optional:</strong> Change the value of <code>SEED_PORT</code> to <code>33133</code> (default), or a port of your choice. If you do not select <code>33133</code>, be sure to note this down for the subsequent whitelisting step.</li>
-</ul>
+<li><strong>Optional:</strong> Change the value of <code>SEED_PORT</code> to <code>33133</code> (default), or a port of your choice. If you do not select <code>33133</code>, be sure to note this down for the subsequent whitelisting step.
 <blockquote>
 <p><strong>Note:</strong> If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.</p>
-</blockquote>
+</blockquote></li>
+<li><strong>Optional:</strong> Change the value of <code>ENABLE_WEBSOCKET</code> to <code>true</code> if your seed node will support websockets (refer to the <a href="https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md">Zilliqa Websocket Server</a> documentation).</li>
+</ul>
 <p>Finally, launch the seed node:</p>
 <pre><code class="hljs"><span class="hljs-variable">$ </span>./launch_docker.sh
 </code></pre>
@@ -135,11 +136,12 @@ $ ./build.sh
 <p>The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in <code>constants.xml</code>, which should be in the directory we extracted <code>configuration.tar.gz</code> to. Minimally, the following changes are required:</p>
 <ul>
 <li>Change the value of <code>ENABLE_STAKING_RPC</code> to <code>true</code></li>
-<li><strong>Optional:</strong> Change the value of <code>SEED_PORT</code> to <code>33133</code> (default), or a port of your choice. If you do not select <code>33133</code>, be sure to note this down for the subsequent whitelisting step.</li>
-</ul>
+<li><strong>Optional:</strong> Change the value of <code>SEED_PORT</code> to <code>33133</code> (default), or a port of your choice. If you do not select <code>33133</code>, be sure to note this down for the subsequent whitelisting step.
 <blockquote>
-<p><strong>Note:</strong> If you have use a port other than port 33133, please notify us immediately so that we can adjust our whitelisted port for you</p>
-</blockquote>
+<p><strong>Note:</strong> If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.</p>
+</blockquote></li>
+<li><strong>Note:</strong> Change the value of <code>ENABLE_WEBSOCKET</code> to <code>true</code>. This enables your seed node to support websockets (refer to the <a href="https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md">Zilliqa Websocket Server</a> documentation).</li>
+</ul>
 <p>Finally, launch the seed node:</p>
 <pre><code class="hljs css language-bash">$ ./launch.sh
 </code></pre>
