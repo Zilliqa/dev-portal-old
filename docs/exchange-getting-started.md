@@ -151,6 +151,8 @@ following changes are required:
 - Change the value of `SEED_PORT` to `33133` (default), or a port of your choice (if
   any). Be sure to note this down for a subsequent step, if you do not select
   `33133`.
+- Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support
+  websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 ## Joining the Network
 
