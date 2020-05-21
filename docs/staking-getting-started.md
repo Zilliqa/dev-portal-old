@@ -121,7 +121,7 @@ The staked seed node requires some configuring before it can successfully join t
 - Change the value of `ENABLE_STAKING_RPC` to `true`
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
   > **Note:** If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
-- **Optional:** Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
+- **Note:** Change the value of `ENABLE_WEBSOCKET` to `true`. This enables your seed node to support websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 Finally, launch the seed node:
 ```bash
