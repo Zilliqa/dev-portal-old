@@ -2,6 +2,10 @@
 id: staking-ssn-operations
 title: Staked Seed Node operations
 ---
+# Security audit of smart contract
+
+The smart contracts has been audited by [Quantstamp](https://quantstamp.com/). A copy of the security audit report can be found in our [Github repository](https://github.com/Zilliqa/staking-contract/blob/master/Staked_Seed_Node_SSN_Operations-Report.pdf) or on [Quantstamp certification website](https://certificate.quantstamp.com/).
+
 
 # Enrollment into the smart contract
 
