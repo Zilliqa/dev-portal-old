@@ -1,35 +1,71 @@
 {
   "docs": {
-    "Architecture": [
-      "arch-overview",
-      "arch-tx-lifecycle",
-      "arch-faq"
+    "Application Developers": [
+      {
+        "type": "subcategory",
+        "label": "Getting Started",
+        "ids": [
+          "hello-world"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Deverlopment Environments",
+        "ids": [
+          "isolated-server",
+          "testnet",
+          "mainnet"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Key Management on Web3",
+        "ids": [
+          "private-key",
+          "keystore-file",
+          "zilPay",
+          "moonlet",
+          "ledger"
+          
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Toolings for Web3",
+        "ids": [
+          "zilliqa-js",
+          "gozilliqa-sdk",
+          "java-sdk",
+          "cli-tools",
+          "scilla-ide",
+          "explorer",
+          "faucet"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Transaction Lifecycle",
+        "ids": [
+          "signing",
+          "broadcasting",
+          "polling",
+          "confirmation",
+          "receipt"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Testing and formal verification",
+        "ids": [
+          "static-checker",
+          "cashflow-analyzer",
+          "contract-testing",
+          "formal-verification"
+        ]
+      }
     ],
-    "DApp Development": [
-      "dapp-getting-started",
-      "dapp-interacting-smart-contract"
-    ],
-    "Exchange Integration": [
-      "exchange-getting-started",
-      "exchange-account-management",
-      "exchange-sending-transactions",
-      "exchange-polling-deposits"
-    ],
-    "Seed node staking": [
-      "staking-introduction",
-      "staking-getting-started",
-      "staking-ssn-operations",
-      "staking-ssn-monitoring",
-      "staking-faq"
-    ],
-    "Mining": [
-      "mining-general-info",
-      "mining-hardware-requirement",
-      "mining-initial-setup",
-      "mining-zilclient-setup",
-      "mining-zilminer-setup",
-      "mining-monitoring"
-    ],
-    "API": ["api-intro","api-pending-txn","api-websocket","api-sdk"]
+    "Validate":[
+
+    ]
   }
 }
