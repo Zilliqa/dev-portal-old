@@ -1,5 +1,5 @@
 ---
-id: mining-zilminer-setup
+id: mining-zilminer
 title: ZILMiner for mining rigs
 ---
 

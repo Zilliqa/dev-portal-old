@@ -1,5 +1,5 @@
 ---
-id: mining-zilclient-setup
+id: mining-zilclient
 title: Zilliqa client for CPU node
 ---
 

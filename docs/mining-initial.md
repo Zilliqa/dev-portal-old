@@ -1,8 +1,7 @@
 ---
-id: mining-initial-setup
+id: mining-initial
 title: Initial Setup
 ---
-
 ## Network setup for Zilliqa client
 
 > **NOTE:** If you are using a home router, you are most probably in a NAT environment.
