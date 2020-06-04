@@ -1,6 +1,6 @@
 ---
 id: mining-zilclient-setup
-title: Zilliqa Client Setup for CPU node
+title: Zilliqa client for CPU node
 ---
 
 1. Create a single local or remote CPU node instance with Ubuntu 16.04 OS installed following instructions [**HERE**](http://releases.ubuntu.com/xenial/).

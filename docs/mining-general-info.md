@@ -1,6 +1,6 @@
 ---
 id: mining-general-info
-title: General Information
+title: General information
 ---
 
 ## Mining setup architecture

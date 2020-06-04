@@ -1,6 +1,6 @@
 ---
 id: staking-ssn-monitoring
-title: Staked Seed Node monitoring
+title: Monitoring
 ---
 # Seed node status page
 We provide a webapp, Zilliqa Staking Viewer, to track all available seed node operators. You can access it at

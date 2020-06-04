@@ -1,6 +1,6 @@
 ---
 id: staking-introduction
-title: Introduction	
+title: General information	
 ---
 
 # About Zilliqa staking program

@@ -1,6 +1,6 @@
 ---
 id: staking-ssn-operations
-title: Staked Seed Node operations
+title: Operations
 ---
 # Security audit of smart contract
 

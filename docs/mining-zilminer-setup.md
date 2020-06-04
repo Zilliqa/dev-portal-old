@@ -1,6 +1,6 @@
 ---
 id: mining-zilminer-setup
-title: Zilminer Setup for mining rigs
+title: ZILMiner for mining rigs
 ---
 
 1. Install **Zilminer** on your GPU rigs:
