@@ -24,6 +24,13 @@
           "basics-zil-contract",
           "basics-zil-gas"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Zilliqa Ecosystem",
+        "ids": [
+          "overview"
+        ]
       }
     ]
   },
