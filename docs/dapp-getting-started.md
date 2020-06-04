@@ -17,7 +17,7 @@ An application can have a user-facing components ("client"), which could be a we
 
 ![Overview](../assets/dapps-overview.png)
 
-The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but it does makes your life easier.
+The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but they do make your life easier.
 
 Saw the `0x1`, `0x2` on the entities on the blockchain? Those are [addresses](#addresses). 
 
@@ -46,13 +46,13 @@ const bech32_address = toBech32Address(address);
 // returns zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p
 ```
 
-We __strong recommend__ developers to use `bech32` when it comes to token transfers. This prevents users from mistaking zilliqa's token transfer from Ethereum's. All wallets and exchanges that deals with token trasnfers currently uses `bech32` standards for security purposes.
+We __strongly recommend__ that developers use `bech32` formatted addresses for token transfers. This prevents users from mistaking Zilliqa addresses from Ethereum addresses. All wallets and exchanges that deal with token transfers currently use the `bech32` standard for security purposes.
 
 `ByStr20` checksummed addresses is supported by [RPC](https://api-docs.zilliqa.com), SDKs and `scilla` contracts.
 
-How do you know if an address is a smart contract or account? One way to go about it is to send a [`GetSmartContractInit`](https://apidocs.zilliqa.com/#getsmartcontractcode) POST request to check.
+How do you know if an address is a smart contract or an account? One way to go about it is to send a [`GetSmartContractInit`](https://apidocs.zilliqa.com/#getsmartcontractcode) POST request to check.
 
-On Javascript, you can do the following:
+In Javascript, you can do the following:
 
 ```javascript
 const isContract = async (address) =>{
