@@ -5,12 +5,12 @@ title: Interacting with your Smart Contract
 
 ## Query Data
 
-Think of blockchain as a global, distributed database. On the blockchain, there are many smart contracts, and each smart contract has it's own little "databases".
+Think of blockchain as a global, distributed database. On the blockchain, there are many smart contracts, and each smart contract has it's own little "database".
 
 These "databases" are further divided into _immutable_ and _mutable_ data:
 
-* _Immutable_ data are parameters that you initiate during contract deployment, and you cannot change them once it is deployed. We usually refer to these as initialising parameters, `init`
-* _Mutable_ data are data fields that you can manipulate on the contracts. For example, if you are deploying a token contract which keeps a ledger of who owns how much tokens, the balance is a mutable field since users can transfer tokens to one another. We usually call mutable data, `state`.
+* _Immutable_ data are parameters that you initiate during contract deployment, and you cannot change them once they are deployed. We usually refer to these as initialising parameters, `init`
+* _Mutable_ data are data fields that you can manipulate on the contracts. For example, if you are deploying a token contract which keeps a ledger of who owns how many tokens, the balance is a mutable field since users can transfer tokens to one another. We usually call mutable data, `state`.
 
 In the subsequent chapters, we will illustrate how to query the blockchain. You can follow the step-by-step tutorial written in Javascript with the `zilliqa-js` SDK, or jump straight to use the [JSON-RPC requests](#RPC-Methods) directly.
 
@@ -83,7 +83,7 @@ Immutable data cannot be changed once it is deployed:
 ]
 ```
 
-All the data fields objects on scilla has three parameters: `vname`, `type` and `value`. `vname` is the name of the variable. Variables with a leading underscores are system-variables that are added by the blockchain.
+All the data fields objects on scilla has three parameters: `vname`, `type` and `value`. `vname` is the name of the variable. Variables with leading underscores are system-variables that are added by the blockchain.
 
 All smart contracts will have three system-defined immutable variables:
 
@@ -190,7 +190,7 @@ You can download the full script [here](https://github.com/Zilliqa/dev-portal/tr
 
 ### RPC-Methods
 
-You can use the following JSON-RPC methods to interact with the smart contracts directly without using a SDK:
+You can use the following JSON-RPC methods to interact with the smart contracts directly without using an SDK:
 
 * [GetSmartContractInit](https://apidocs.zilliqa.com/#getsmartcontractinit)
 * [GetSmartContractState](https://apidocs.zilliqa.com/#getsmartcontractstate)
