@@ -94,16 +94,16 @@
     ]
   },
   "validate": {
-    "Validate":[
+    "Join As A Miner":[
       "mining-general-info",
       "mining-hardware-requirement",
       {
         "type": "subcategory",
-        "label": "Getting started",
+        "label": "Getting Started",
         "ids": [
-          "mining-initial-setup",
-          "mining-zilclient-setup",
-          "mining-zilminer-setup"
+          "mining-initial",
+          "mining-zilclient",
+          "mining-zilminer"
         ]
       },
       "mining-monitoring"
