@@ -1,31 +1,59 @@
 {
-  "docs": {
+  "basics": {
+    "Basics":[
+      {
+        "type": "subcategory",
+        "label": "Blockchain basics",
+        "ids": [
+          "basics-intro-blockchain",
+          "basics-intro-types",
+          "basics-intro-consensus",
+          "basics-intro-accounts",
+          "basics-intro-txns",
+          "basics-intro-gas"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Zilliqa Architecture",
+        "ids": [
+          "basics-zil-nodes",
+          "basics-zil-sharding",
+          "basics-zil-consensus",
+          "basics-zil-reward",
+          "basics-zil-contract",
+          "basics-zil-gas"
+        ]
+      }
+    ]
+  },
+  "develop": {
     "Application Developers": [
       {
         "type": "subcategory",
         "label": "Getting Started",
         "ids": [
-          "hello-world"
+          "dev-started-helloworld"
         ]
       },
       {
         "type": "subcategory",
-        "label": "Deverlopment Environments",
+        "label": "Development Environments",
         "ids": [
-          "isolated-server",
-          "testnet",
-          "mainnet"
+          "dev-env-isolated",
+          "dev-env-testnet",
+          "dev-env-mainnet"
         ]
       },
       {
         "type": "subcategory",
         "label": "Key Management on Web3",
         "ids": [
-          "private-key",
-          "keystore-file",
-          "zilPay",
-          "moonlet",
-          "ledger"
+          "dev-keys-pkey",
+          "dev-keys-keystore",
+          "dev-keys-zilpay",
+          "dev-keys-moonlet",
+          "dev-keys-ledger"
           
         ]
       },
@@ -33,39 +61,82 @@
         "type": "subcategory",
         "label": "Toolings for Web3",
         "ids": [
-          "zilliqa-js",
-          "gozilliqa-sdk",
-          "java-sdk",
-          "cli-tools",
-          "scilla-ide",
-          "explorer",
-          "faucet"
+          "dev-tools-zilliqajs",
+          "dev-tools-gozilliqa",
+          "dev-tools-java",
+          "dev-tools-cli",
+          "dev-tools-ide",
+          "dev-tools-explorer",
+          "dev-tools-faucet"
         ]
       },
       {
         "type": "subcategory",
         "label": "Transaction Lifecycle",
         "ids": [
-          "signing",
-          "broadcasting",
-          "polling",
-          "confirmation",
-          "receipt"
+          "dev-txn-signing",
+          "dev-txn-broadcasting",
+          "dev-txn-polling",
+          "dev-txn-confirmation",
+          "dev-txn-receipt"
         ]
       },
       {
         "type": "subcategory",
         "label": "Testing and formal verification",
         "ids": [
-          "static-checker",
-          "cashflow-analyzer",
-          "contract-testing",
-          "formal-verification"
+          "dev-test-checker",
+          "dev-test-cashflow",
+          "dev-test-condition",
+          "dev-test-formal"
         ]
       }
-    ],
+    ]
+  },
+  "validate": {
     "Validate":[
-
+      "mining-general-info",
+      "mining-hardware-requirement",
+      {
+        "type": "subcategory",
+        "label": "Getting started",
+        "ids": [
+          "mining-initial-setup",
+          "mining-zilclient-setup",
+          "mining-zilminer-setup"
+        ]
+      },
+      "mining-monitoring"
+    ]
+  },
+  "integrate": {
+    "Integrate":[
+      {
+        "type": "subcategory",
+        "label": "Exchange integration",
+        "ids": [
+          "mining-initial-setup",
+          "mining-zilclient-setup",
+          "mining-zilminer-setup"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Staked seed nodes integration",
+        "ids": [
+          "staking-introduction",
+          "staking-getting-started",
+          "staking-ssn-operations",
+          "staking-ssn-monitoring",
+          "staking-faq"
+        ]
+      }
+    ]
+  },
+  "contribute": {
+    "Contribute":[
+      "contribute-buildzil",
+      "contribute-guidelines"
     ]
   }
 }

@@ -64,10 +64,12 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl('mining-general-info')}>For Miners</Button>
-            <Button href={docUrl('hello-world')}>For Developers</Button>
-            <Button href={docUrl('exchange-getting-started')}>For Exchanges</Button>
-            <Button href={docUrl('staking-introduction')}>For Seed Node Staking</Button>
+            <Button href={docUrl('basics-intro-blockchain')}>Basics</Button>
+            <Button href={docUrl('overview')}>Overview</Button>
+            <Button href={docUrl('dev-started-helloworld')}>Develop</Button>
+            <Button href={docUrl('mining-general-info')}>Validate</Button>
+            <Button href={docUrl('staking-introduction')}>Integrate</Button>
+            <Button href={docUrl('contribute-buildzil')}>Contribute</Button>
           </PromoSection>
         </div>
         <br/>
