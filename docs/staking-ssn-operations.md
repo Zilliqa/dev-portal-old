@@ -79,8 +79,8 @@ As such, any user who wishes to interact with the contract, should interact with
 | Parameters                 | Value        |
 | -------------------------- | ------------ |
 | Min stake                  | 10M          |
-| Max stake                  | 70M          |
-| Overall contract max stake | 700M         |
+| Max stake                  | 61M          |
+| Overall contract max stake | 610M         |
 | Reward cycle               | 17 DS blocks |
 
 These numbers may subjected to changes.
