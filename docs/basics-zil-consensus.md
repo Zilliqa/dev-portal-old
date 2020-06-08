@@ -2,12 +2,10 @@
 id: basics-zil-consensus
 title: Consensus mechanism
 ---
-## PoW validator selection
+The Zilliqa network is composed of one DS Committee (a special type of shard), and `n` normal shards. Each shard has a number of nodes, with one node being a `leader` and `k` number of `backups`.
 
-## DS block consensus
+Broadly, each shard runs an algorithm called practical Byzantine fault tolerance (pBFT) to achieve consensus on the state of the blockchain at any point. A rough outline is as follows:
 
-## Micro block consensus
-
-## Final block consensus
-
-## View change
+1. Pre-prepare: the `leader` announces the state of the blockchain it has to all `backup` nodes in the shard as a **pre-prepare** message.
+2. Prepare: each node receives and validates the state received from the `leader` in the pre-prepare phase, and multicasts its decision as a **prepare** message to the rest of the nodes in the shard.
+3. Commit: upon receiving a valid **prepare** message from a super majority (2/3) of nodes, it multicasts a **commit** message to all other nodes. Once a **commit** message is recieved from a super majority, the node records the new state.
