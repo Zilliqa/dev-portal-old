@@ -73,7 +73,7 @@
 <p>Decentralised Apps (&quot;dApps&quot;) are applications that interact with smart contracts on the blockchain. As zilliqa blockchain is a decentralised network that is not hosted by a single entity, application that sits on the blockchain is <em>decentralised</em>.</p>
 <p>An application can have a user-facing components (&quot;client&quot;), which could be a web application or mobile app. These applications can interact with smart contracts on Zilliqa blockchain.</p>
 <p><img src="../assets/dapps-overview.png" alt="Overview"></p>
-<p>The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but it does makes your life easier.</p>
+<p>The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but they do make your life easier.</p>
 <p>Saw the <code>0x1</code>, <code>0x2</code> on the entities on the blockchain? Those are <a href="#addresses">addresses</a>.</p>
 <p>Addresses are an identifier to an entity on the blockchain. An entity on the blockchain can be either a user or a contract.</p>
 <h3><a class="anchor" aria-hidden="true" id="addresses"></a><a href="#addresses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Addresses</h3>
@@ -95,10 +95,10 @@
 <span class="hljs-keyword">const</span> bech32_address = toBech32Address(address);
 <span class="hljs-comment">// returns zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p</span>
 </code></pre>
-<p>We <strong>strong recommend</strong> developers to use <code>bech32</code> when it comes to token transfers. This prevents users from mistaking zilliqa's token transfer from Ethereum's. All wallets and exchanges that deals with token trasnfers currently uses <code>bech32</code> standards for security purposes.</p>
+<p>We <strong>strongly recommend</strong> that developers use <code>bech32</code> formatted addresses for token transfers. This prevents users from mistaking Zilliqa addresses from Ethereum addresses. All wallets and exchanges that deal with token transfers currently use the <code>bech32</code> standard for security purposes.</p>
 <p><code>ByStr20</code> checksummed addresses is supported by <a href="https://api-docs.zilliqa.com">RPC</a>, SDKs and <code>scilla</code> contracts.</p>
-<p>How do you know if an address is a smart contract or account? One way to go about it is to send a <a href="https://apidocs.zilliqa.com/#getsmartcontractcode"><code>GetSmartContractInit</code></a> POST request to check.</p>
-<p>On Javascript, you can do the following:</p>
+<p>How do you know if an address is a smart contract or an account? One way to go about it is to send a <a href="https://apidocs.zilliqa.com/#getsmartcontractcode"><code>GetSmartContractInit</code></a> POST request to check.</p>
+<p>In Javascript, you can do the following:</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> isContract = <span class="hljs-keyword">async</span> (address) =&gt;{
   <span class="hljs-keyword">const</span> init = <span class="hljs-keyword">await</span> zilliqa.blockchain.getSmartContractInit(address);
   <span class="hljs-keyword">const</span> result = init.result ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;

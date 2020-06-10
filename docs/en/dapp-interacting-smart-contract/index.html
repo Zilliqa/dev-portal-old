@@ -67,11 +67,11 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Interacting with your Smart Contract</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="query-data"></a><a href="#query-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Data</h2>
-<p>Think of blockchain as a global, distributed database. On the blockchain, there are many smart contracts, and each smart contract has it's own little &quot;databases&quot;.</p>
+<p>Think of blockchain as a global, distributed database. On the blockchain, there are many smart contracts, and each smart contract has it's own little &quot;database&quot;.</p>
 <p>These &quot;databases&quot; are further divided into <em>immutable</em> and <em>mutable</em> data:</p>
 <ul>
-<li><em>Immutable</em> data are parameters that you initiate during contract deployment, and you cannot change them once it is deployed. We usually refer to these as initialising parameters, <code>init</code></li>
-<li><em>Mutable</em> data are data fields that you can manipulate on the contracts. For example, if you are deploying a token contract which keeps a ledger of who owns how much tokens, the balance is a mutable field since users can transfer tokens to one another. We usually call mutable data, <code>state</code>.</li>
+<li><em>Immutable</em> data are parameters that you initiate during contract deployment, and you cannot change them once they are deployed. We usually refer to these as initialising parameters, <code>init</code></li>
+<li><em>Mutable</em> data are data fields that you can manipulate on the contracts. For example, if you are deploying a token contract which keeps a ledger of who owns how many tokens, the balance is a mutable field since users can transfer tokens to one another. We usually call mutable data, <code>state</code>.</li>
 </ul>
 <p>In the subsequent chapters, we will illustrate how to query the blockchain. You can follow the step-by-step tutorial written in Javascript with the <code>zilliqa-js</code> SDK, or jump straight to use the <a href="#RPC-Methods">JSON-RPC requests</a> directly.</p>
 <p>On the devnet, we have deployed a sample fungible-token contract (<em>ala ERC20</em>) contract to illustrate how you can query the blockchain. The contract is deployed at <a href="https://viewblock.io/zilliqa/address/zil1tyu0ezhcyfg26m83mgamjt625qzukfcht8es69?network=testnet&amp;tab=code">zil1tyu0ezhcyfg26m83mgamjt625qzukfcht8es69</a></p>
@@ -135,7 +135,7 @@
   }
 ]
 </code></pre>
-<p>All the data fields objects on scilla has three parameters: <code>vname</code>, <code>type</code> and <code>value</code>. <code>vname</code> is the name of the variable. Variables with a leading underscores are system-variables that are added by the blockchain.</p>
+<p>All the data fields objects on scilla has three parameters: <code>vname</code>, <code>type</code> and <code>value</code>. <code>vname</code> is the name of the variable. Variables with leading underscores are system-variables that are added by the blockchain.</p>
 <p>All smart contracts will have three system-defined immutable variables:</p>
 <ul>
 <li><code>_scilla_version</code>: The <strong>major</strong> version of smart contract that the miners will interpret the smart contract on</li>
@@ -225,7 +225,7 @@
 </code></pre>
 <p>You can download the full script <a href="https://github.com/Zilliqa/dev-portal/tree/master/examples/dapp/query-data.js">here</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="rpc-methods"></a><a href="#rpc-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RPC-Methods</h3>
-<p>You can use the following JSON-RPC methods to interact with the smart contracts directly without using a SDK:</p>
+<p>You can use the following JSON-RPC methods to interact with the smart contracts directly without using an SDK:</p>
 <ul>
 <li><a href="https://apidocs.zilliqa.com/#getsmartcontractinit">GetSmartContractInit</a></li>
 <li><a href="https://apidocs.zilliqa.com/#getsmartcontractstate">GetSmartContractState</a></li>
