@@ -20,6 +20,7 @@
           "basics-zil-nodes",
           "basics-zil-sharding",
           "basics-zil-consensus",
+          "basics-zil-schnorr-signatures",
           "basics-zil-reward",
           "basics-zil-contract",
           "basics-zil-gas"
