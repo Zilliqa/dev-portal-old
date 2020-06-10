@@ -1,6 +1,6 @@
 ---
 id: basics-zil-schnorr-signatures
-title: Schnorr Signatures
+title: Schnorr signatures
 ---
 
 Zilliqa employs Elliptic Curve Based Schnorr Signature Algorithm (EC-Schnorr) as the base signing algorithm. Schnorr allows for multisignatures, is faster than ECDSA, and has a smaller signature size (64 bytes).
