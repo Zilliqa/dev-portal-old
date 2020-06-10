@@ -1,5 +1,5 @@
 ---
-id: basics-zil-schnorr
+id: basics-zil-schnorr-signatures
 title: Schnorr Signatures
 ---
 
