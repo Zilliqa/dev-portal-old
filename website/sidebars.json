@@ -122,9 +122,10 @@
         "type": "subcategory",
         "label": "Exchange integration",
         "ids": [
-          "mining-initial-setup",
-          "mining-zilclient-setup",
-          "mining-zilminer-setup"
+          "exchange-getting-started",
+          "exchange-account-management",
+          "exchange-sending-transactions",
+          "exchange-tracking-deposits"
         ]
       },
       {
