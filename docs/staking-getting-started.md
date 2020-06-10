@@ -14,7 +14,7 @@ It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0
 | Inbound  | 4201/443 | [API service](https://apidocs.zilliqa.com/#introduction) |
 | Inbound  | 4401     | [Websocket servuce](api-websocket)             |
 | Inbound  | 4501     | Staking API service                            |
-| Outbound | 443      | For getting intiial node data for syncing      |                        |
+| Outbound | 443      | For getting intiial node data for syncing      |
 
 # Preparing the node
 
