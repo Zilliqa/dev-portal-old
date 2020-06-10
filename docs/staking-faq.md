@@ -26,7 +26,7 @@ This is an indication that your seed node is not currently active. It may either
 
 Yes, you may do so at any time, but take note of these items:
 - The staked seed node remains inactive until the accumulated stake deposit reaches the minimum stake amount (10,000,000 ZIL)
-- Incremental deposits are buffered and excluded from the reward calculation until the next rewarding cycle (i.e,. every 15th DS epoch) has passed
+- Incremental deposits are buffered and excluded from the reward calculation until the next rewarding cycle (i.e,. every 17th DS epoch) has passed
 
 ## Can I make multiple withdrawals from the stake deposit?
 
