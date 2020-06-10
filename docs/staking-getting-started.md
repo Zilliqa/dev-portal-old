@@ -14,7 +14,7 @@ It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0
 | Inbound  | 4201/443 | [API service](https://apidocs.zilliqa.com/#introduction) |
 | Inbound  | 4401     | [Websocket servuce](api-websocket)             |
 | Inbound  | 4501     | Staking API service                            |
-| Outbound | 443      | For getting intiial node data for syncing      |                        |
+| Outbound | 443      | For getting initial node data for syncing      |
 
 # Preparing the node
 
@@ -42,7 +42,7 @@ $ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 ```
 
-<!--Mainnet (not yet available)-->
+<!--Mainnet-->
 ```bash
 # create a directory
 $ mkdir my_seed && cd my_seed
@@ -105,7 +105,7 @@ $ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 ```
 
-<!--Mainnet (not yet available)-->
+<!--Mainnet-->
 ```bash
 # create a directory
 $ mkdir my_seed && cd my_seed
