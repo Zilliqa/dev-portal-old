@@ -2,7 +2,8 @@
 id: dev-txn-broadcasting
 title: Broadcasting
 ---
-After signing the transaction, we may broadcast the transaction to a seed node (e.g. https://dev-api.zilliqa.com) by creating a transaction object. The correct RPC API to use is `CreateTransaction`. Refer to https://apidocs.zilliqa.com/#createtransaction for more information.
+After signing the transaction, we may broadcast the transaction to a seed node (e.g. https://dev-api.zilliqa.com) by creating a transaction object. The correct RPC API to use is `CreateTransaction`. 
+Refer to https://apidocs.zilliqa.com/#createtransaction for more information.
 
 The seed node performs some basic validation of the JSON payload it receives, and will attempt to verify the signature. Please note that it does not verify the correctness of the `nonce`. It is at all times the developer's responsiblity to correctly increment the nonce used in the transaction.
 
@@ -10,6 +11,7 @@ If `nonce` is incorrect, the transaction can silently fail. This means that the 
 
 __Note:__ The above applies only if we use JSON RPC API to create the transaction object. If SDKs are used to create the transaction object, then `nonce` management is not an issue as SDKs would automatically handle the nonce management.
 
+## Non-Contract Transaction Object
 Example of creating a __non-contract__ transaction object (ZilliqaJS):
 ```
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
@@ -42,6 +44,7 @@ main();
 
 ```
 
+## Contract Transaction Object
 The following is an example of creating a __contract__ transaction object. The difference between __contract__ and __non-contract__ transaction objects is the additional contract transitions such as `setHello` and its relevant params such as the `vname`, `type` and `value` as describe in the deployed contract.
 The other significant difference is the `gasLimit` field. For __contract__ transaction objects, the recommended `gasLimit` is between `10000` to `30000`.
 
