@@ -145,7 +145,8 @@
   "contribute": {
     "Contribute":[
       "contribute-buildzil",
-      "contribute-guidelines"
+      "contribute-guidelines",
+      "contribute-bug-bounty"
     ]
   }
 }
