@@ -11,7 +11,7 @@ Example of providing a private key (ZilliqaJS):
 ```
 const { Zilliqa } = require('@zilliqa-js/zilliqa');
 const { getAddressFromPrivateKey } = require('@zilliqa-js/crypto');
-const zilliqa = new Zilliqa("https://dev-api.zilliqa.com")
+const zilliqa = new Zilliqa("https://dev-api.zilliqa.com");
 
 const PRIVATE_KEY = '9afc1a1dab96127e902daaaec1a56c30346f007523c787c3bb62371c0e5a1be7'
 
