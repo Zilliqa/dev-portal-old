@@ -7,3 +7,5 @@ Coding and contribution guidelines
 ## Development process
 
 ## Clang checks
+
+## Testing

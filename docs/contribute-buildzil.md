@@ -2,7 +2,7 @@
 id: contribute-buildzil
 title: Building Zilliqa
 ---
-The Zilliqa core is implemented in C++ and maintained in our open-source [Github repository](https://github.com/Zilliqa/Zilliqa/).
+The Zilliqa core is implemented in C++ and archived in our open-source [Github repository](https://github.com/Zilliqa/Zilliqa/).
 
 Zilliqa Research primarily maintains the code base and moderates contributions from external developers.
 
@@ -10,4 +10,6 @@ While we have made great strides to realize the core protocol that runs the Zill
 
 ## Supported platforms
 
-## Releases
+The Zilliqa client is officially supported only on Ubuntu 16.04.
+
+To support developers on other operating systems, we also maintain a Docker image.
