@@ -10,12 +10,8 @@ Example of a transaction response with the `receipt` structure:
   "id": "1",
   "jsonrpc": "2.0",
   "result": {
-    "ID": "52605cee6955b3d14f5478927a90977b305325aff4ae0a2f9dbde758e7b92ad4",
-    "amount": "50000000000000",
-    "data": "{\"_tag\":\"sendFunds\",\"params\":[{\"vname\":\"accountValues\",\"type\":\"List (AccountValue)\",\"value\":[{\"constructor\":\"AccountValue\",\"argtypes\":[],\"arguments\":[\"0xc0e28525e9d329156e16603b9c1b6e4a9c7ed813\",\"50000000000000\"]}]}]}",
-    "gasLimit": "25000",
-    "gasPrice": "1000000000",
-    "nonce": "3816",
+      // others
+
     "receipt": {
       "accepted": true,
       "cumulative_gas": "878",
@@ -57,7 +53,81 @@ This section lists all the _possible_  `receipt` returned values.
 | `success`        | Returns true if the transaction is successfully executed, false otherwise  |
 
 ## Events
+`event_logs` are events created as a result of invoking the contract calls.
+
+For instance, in the following sample contract code, calling `setHello` transition would trigger a "`setHello`" event name.
+```
+(* HelloWorld Sample *)
+
+transition setHello (msg : String)
+  is_owner = builtin eq owner _sender;
+  match is_owner with
+  | False =>
+    e = {_eventname : "setHello()"; code : not_owner_code};
+    event e
+  | True =>
+    welcome_msg := msg;
+    e = {_eventname : "setHello()"; code : set_hello_code};
+    event e
+  end
+end
+```
+
+If we execute this transition, the returned `receipt` is as follows:
+```
+{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "result": {
+        // others
+        "receipt": {
+            "accepted": false,
+            "cumulative_gas": "668",
+            "epoch_num": "1474081",
+            "event_logs": [
+                {
+                    "_eventname": "setHello()",
+                    "address": "0xde8d3637aec06d6c7da49aeb9c7409ac44a98138",
+                    "params": [
+                        {
+                            "type": "Int32",
+                            "value": "2",
+                            "vname": "code"
+                        }
+                    ]
+                }
+            ],
+            "success": true
+        },
+    }
+}
+```
+
+Observed that the `setHello` event is returned as the `setHello` transition is successfully executed by the blockchain.
 
 ## Transitions
-## Exception
 
+## Exception
+A `exceptions` object is returned if the contract specifically raise an error when it encounters issues invoking the transition, for example, invoking a transfer transition without sufficient balance .etc. A `exceptions` object contains the `line` number of the contract that raised the error and the corresponding exception `message`.
+
+Example of a `exceptions` object:
+```
+"receipt": {
+    ... // others
+    ...
+    "exceptions": [
+        {
+            "line": 87,
+            "message": "Exception thrown: (Message [(_exception : (String \"Error\")) ; (code : (Int32 -2))])"
+        },
+        {
+            "line": 100,
+            "message": "Raised from IsAdmin"
+        },
+        {
+            "line": 137,
+            "message": "Raised from ConfigureUsers"
+        }
+    ]
+}
+```
