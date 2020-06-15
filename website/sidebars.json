@@ -144,9 +144,32 @@
   },
   "contribute": {
     "Contribute":[
-      "contribute-buildzil",
-      "contribute-guidelines",
-      "contribute-bug-bounty"
+      {
+        "type": "subcategory",
+        "label": "Contribution guide",
+        "ids": [
+          "contribute-buildzil",
+          "contribute-guidelines",
+          "contribute-bug-bounty"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Core protocol design",
+        "ids": [
+          "core-overview",
+          "core-consensus",
+          "core-network",
+          "core-messaging",
+          "core-data",
+          "core-directory-service",
+          "core-shard",
+          "core-lookup",
+          "core-mining",
+          "core-mitigation-measures",
+          "core-tools"
+        ]
+      }
     ]
   }
 }
