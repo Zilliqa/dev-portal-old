@@ -142,6 +142,7 @@ Example of a `transition` object:
   }
 }
 ```
+In the above example, from the `data` object we can observe the `sendFunds` transition is inovked here, presumably to send `50000000000000` to `0xc0e28525e9d329156e16603b9c1b6e4a9c7ed813`. Notice that in the `transitions` object,  the `onFundsReceived` procedure is subsequently invoked internally, and we can observe the recipient and amount is indeed the transmitted amount.
 
 ## Exception
 A `exceptions` object is returned if the contract specifically raise an error when it encounters issues invoking the transition, for example, invoking a transfer transition without sufficient balance .etc. A `exceptions` object contains the `line` number of the contract that raised the error and the corresponding exception `message`.
