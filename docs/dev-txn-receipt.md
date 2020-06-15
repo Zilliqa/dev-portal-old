@@ -106,6 +106,42 @@ If we execute this transition, the returned `receipt` is as follows:
 Observed that the `setHello` event is returned as the `setHello` transition is successfully executed by the blockchain.
 
 ## Transitions
+A `transitions` object is returned if the contract is invoking other procedures or another contract transition. A `transition` object provides details of the "transition chain" such as the address of the initiator, the tag (transition name), the recipient, the params .etc.
+
+Example of a `transition` object:
+```
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "ID": "52605cee6955b3d14f5478927a90977b305325aff4ae0a2f9dbde758e7b92ad4",
+    "amount": "50000000000000",
+    "data": "{\"_tag\":\"sendFunds\",\"params\":[{\"vname\":\"accountValues\",\"type\":\"List (AccountValue)\",\"value\":[{\"constructor\":\"AccountValue\",\"argtypes\":[],\"arguments\":[\"0xc0e28525e9d329156e16603b9c1b6e4a9c7ed813\",\"50000000000000\"]}]}]}",
+    "gasLimit": "25000",
+    "gasPrice": "1000000000",
+    "nonce": "3816",
+    "receipt": {
+      "accepted": true,
+      "cumulative_gas": "878",
+      "epoch_num": "589742",
+      "success": true,
+      "transitions": [
+        {
+          "addr": "0x9a65df55b2668a0f9f5f749267cb351a37e1f3d9",
+          "depth": 0,
+          "msg": {
+            "_amount": "50000000000000",
+            "_recipient": "0xc0e28525e9d329156e16603b9c1b6e4a9c7ed813",
+            "_tag": "onFundsReceived",
+            "params": []
+          }
+        }
+      ]
+    },
+    ...
+  }
+}
+```
 
 ## Exception
 A `exceptions` object is returned if the contract specifically raise an error when it encounters issues invoking the transition, for example, invoking a transfer transition without sufficient balance .etc. A `exceptions` object contains the `line` number of the contract that raised the error and the corresponding exception `message`.
