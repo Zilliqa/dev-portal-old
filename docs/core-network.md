@@ -139,7 +139,7 @@ Thus, we should leverage multicast to broadcast the DS block to the nodes within
 3. Then the node will multicast the message to the node `(n/Y * Z + 1)*Y` ~ `((n/Y * Z + Z + 1)* Y - 1)`.
     Bound checks on node index are needed to be done before multicasting. If check fails don’t broadcast.
 
-![image01](core/features/tree-based-cluster-broadcasting/image01.jpg)
+![image01](../assets/core/features/tree-based-cluster-broadcasting/image01.jpg)
 
 ### Application
 

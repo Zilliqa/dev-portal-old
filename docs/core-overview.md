@@ -6,7 +6,9 @@ title: Overview
 
 The image below shows all the different components that comprise the mainnet. The subsections that follow provide a brief description of each component.
 
-### Zilliqa network
+![image01](../assets/core/features/network-layout/image01.png)
+
+### Zilliqa Network
 
 This is composed of the miner nodes (DS and shard), both Zilliqa-owned (i.e., guard nodes) and otherwise. The mainnet is currently configured to have 600 DS committee nodes and a maximum of three 600-node shards.
 

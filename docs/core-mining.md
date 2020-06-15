@@ -82,8 +82,8 @@ When difficulty increase by one, the required hash power to finish PoW will be d
 The rationale behind this is we changed the method to calculate target boundary from 'POW_BOUNDARY_N_DIVIDED_START'. When the difficulty under 'POW_BOUNDARY_N_DIVIDED_START', every time we increase difficulty, we put one more '0' at the MSB of target boundary, but if difficulty exceed 'POW_BOUNDARY_N_DIVIDED_START', we put '0's at the LSB of the target boundary.  
 The implementation can be found in function DifficultyLevelInIntDevided.  
 Here is the bench mark of the hash power required if POW_BOUNDARY_N_DIVIDED_START is 32 and POW_BOUNDARY_N_DIVIDED_START is 1, 2, 4, 6, 8  
-![image01](core/features/difficulty-adjustment/image01.png)
-![image02](core/features/difficulty-adjustment/image02.png)
+![image01](../assets/core/features/difficulty-adjustment/image01.png)
+![image02](../assets/core/features/difficulty-adjustment/image02.png)
 
 ### Reference
 

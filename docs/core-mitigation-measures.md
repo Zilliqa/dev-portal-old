@@ -204,7 +204,7 @@ As such, we have devised a simple protocol for the DS guard to rejoin and update
 
 #### Sequence Diagram
 
-![image01](core/features/guard-mode/image01.png)
+![image01](../assets/core/features/guard-mode/image01.png)
 
 ### Design of shard guard and non-shard guard nodes
 

@@ -24,7 +24,7 @@ Consensus is used in the following stages of the protocol:
 
 The consensus protocol is implemented across two classes: `ConsensusLeader` and `ConsensusBackup`. The diagram below shows the state transitions for both leader and backup.
 
-![image01](core/features/consensus-protocol/image01.jpg)
+![image01](../assets/core/features/consensus-protocol/image01.jpg)
 
 #### Initial State
 
@@ -180,11 +180,11 @@ H2(x) = SHA256(0x11||x)
 
 This diagram illustrates the original multisignature scheme during consensus:
 
-![image01](core/features/multisignatures/image01.png)
+![image01](../assets/core/features/multisignatures/image01.png)
 
 This diagram illustrates the modified scheme based on the auditor's proposal:
 
-![image02](core/features/multisignatures/image02.png)
+![image02](../assets/core/features/multisignatures/image02.png)
 
 After these changes, we now identify three domains during the consensus protocol. The "separation" per se refers to the integration of unique byte values into hash operations across different points of the consensus, to effectively carve out domains during the consensus.
 

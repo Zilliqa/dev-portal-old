@@ -17,7 +17,7 @@ title: Lookup
 7. If the microblock is then included in the final block, the nodes commits the txns and sends the txn receipts to the lookup.
 8. The lookup use this receipt to tell the user the status of the txn.
 
-![image01](core/features/transaction-dispatch/image01.png)
+![image01](../assets/core/features/transaction-dispatch/image01.png)
 
 ## # Incremental DB
 
