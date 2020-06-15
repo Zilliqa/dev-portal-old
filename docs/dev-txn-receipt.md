@@ -67,7 +67,7 @@ transition setHello (msg : String)
     event e
   | True =>
     welcome_msg := msg;
-    e = {_eventname : "setHello()"; code : set_hello_code};
+    e = {_eventname : "setHello()"; code : set_hello_code}; (* trigger event here *)
     event e
   end
 end
