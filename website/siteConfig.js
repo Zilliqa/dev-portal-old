@@ -11,15 +11,15 @@
 const siteConfig = {
   title: 'Zilliqa Developer Portal', // Title for your website.
   tagline: 'Technical and API documentation for participating in the Zilliqa network.',
-  url: 'https://dev.zilliqa.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://ansnunez.github.io', // Your website URL
+  baseUrl: '/dev-portal/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
   projectName: 'dev-portal',
-  organizationName: 'zilliqa',
+  organizationName: 'ansnunez',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -95,6 +95,6 @@ const siteConfig = {
 };
 
 module.exports = siteConfig;
-cname: 'dev.zilliqa.com'
+//cname: 'dev.zilliqa.com'
 stylesheets: 'css/custom.css'
 themeUrl: 'css/custom.css'
