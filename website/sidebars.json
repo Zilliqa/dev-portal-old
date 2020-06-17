@@ -35,7 +35,7 @@
       }
     ]
   },
-  "develop": {
+  "developers": {
     "Application Developers": [
       {
         "type": "subcategory",
@@ -101,7 +101,7 @@
       }
     ]
   },
-  "validate": {
+  "miners": {
     "Join As A Miner":[
       "mining-general-info",
       "mining-hardware-requirement",
@@ -117,7 +117,7 @@
       "mining-monitoring"
     ]
   },
-  "integrate": {
+  "exchanges": {
     "Integrate":[
       {
         "type": "subcategory",
@@ -142,7 +142,7 @@
       }
     ]
   },
-  "contribute": {
+  "contributors": {
     "Contribute":[
       {
         "type": "subcategory",
