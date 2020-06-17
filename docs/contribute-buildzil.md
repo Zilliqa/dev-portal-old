@@ -18,16 +18,16 @@ Follow these steps to perform the build:
 1. Clone the [Zilliqa repository](https://github.com/Zilliqa/Zilliqa/).
 1. Build the source code according to [this section](https://github.com/Zilliqa/Zilliqa/#build-from-source-code).
 
-When successful, the outputs (including the `zilliqa` binary), will be created in the `build` subfolder of the working directory.
+When successful, the outputs (including the `zilliqa` binary) will be created in the `build` subfolder of the working directory.
 
 ## Next steps
 
 Once you are able to build the code base, there are several ways you can contribute:
 
-1. Submit code changes as Pull Requests (please read the [guidelines](contribute-guidelines.md))
+1. Submit code changes as pull requests (please read the [guidelines](contribute-guidelines.md))
 1. Submit improvement proposals for the team to evaluate (see [Zilliqa Improvement Proposals](https://github.com/Zilliqa/ZIP/))
+1. Submit bug reports and feature requests in the [repository issues](https://github.com/Zilliqa/Zilliqa/issues)
 1. Submit security-related issues to our [bug bounty program](contribute-bug-bounty.md)
-1. Submit other issues directly in the [repository](https://github.com/Zilliqa/Zilliqa/issues)
 
 ## Contributing to Scilla
 
