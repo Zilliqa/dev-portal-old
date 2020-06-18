@@ -8,6 +8,6 @@ After sending the transaction object, there will be a `transaction id`. We can i
 
 Example of polling transaction (ZilliqaJS):
 ```
-const txn = await zilliqa.blockchain.getTransaction("cd8727674bc05e0ede405597a218164e1c13c7103b9d0ba43586785f3d8cede5");
-console.log(txn.result);
+const txn = await zilliqa.blockchain.getTransaction("1899b381d644a4892ca5ba5d8d60bbcc7bd121d511d55e438a8ddbdcc53272c4");
+console.log(JSON.stringify(txn));
 ```
