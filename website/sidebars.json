@@ -157,7 +157,7 @@
         "type": "subcategory",
         "label": "Core protocol design",
         "ids": [
-          "core-overview",
+          "core-node-operation",
           "core-consensus",
           "core-network",
           "core-messaging",

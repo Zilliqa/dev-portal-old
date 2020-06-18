@@ -2,14 +2,9 @@
 id: core-consensus
 title: Consensus
 ---
-## Consensus Protocol
+This section describes how the consensus protocol (as initially designed in the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)) is implemented and used in the core Zilliqa code.
 
-### Overview
-
-This document describes how the consensus protocol (as initially designed in the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)) is implemented and used in the core Zilliqa code.
-For a more theoretical description of the consensus protocol itself, refer to the whitepaper.
-
-### Usage in the Protocol
+## Usage in the Protocol
 
 Consensus is used in the following stages of the protocol:
 
@@ -28,7 +23,7 @@ The consensus protocol is implemented across two classes: `ConsensusLeader` and 
 
 #### Initial State
 
-The `INITIAL` state is usually when the object for each class is first created (e.g., see `DirectoryService::RunConsensusOnDSBlockWhenDSPrimary`).
+The `INITIAL` state is set when the object for each class is first created (e.g., see `DirectoryService::RunConsensusOnDSBlockWhenDSPrimary`).
 
 #### Announcement and Commitment Phase
 
@@ -52,11 +47,11 @@ There are a couple of differences between rounds. First, the announcement trigge
 
 ### Consensus Subsets
 
-The consensus protocol was initially designed as a single linear sequence from `INITIAL` to `DONE`.  However, due to unstable interaction between Zilliqa-hosted nodes and community nodes, we frequently observed stalled consensuses during the mainnet operation. This inevitably led to one or more view changes, in effect slowing down the progress of the mainnet.
+The consensus protocol was initially designed as a single linear sequence from `INITIAL` to `DONE`.  However, network instability inevitably would frequently lead to one or more view changes, slowing down the progress of the Mainnet.
 
 To address this situation, we changed the consensus implementation to support multiple concurrently running consensuses across different subsets of peers. This is how it works:
 
-  > **Note**: For the mainnet we have set the number of subsets to 2 at the DS level and just 1 at the shard level. The steps below assume this count. Other counts are theoretically supported by the code but may not have been fully tested at this point.
+  > **Note**: For the Mainnet we have set the number of subsets to 2 at the DS level and just 1 at the shard level. The steps below assume this count. Other counts are theoretically supported by the code but may not have been fully tested at this point.
 
 1. Instead of immediately progressing after receiving the required 2/3 commits, the leader now waits for a maximum duration of `COMMIT_WINDOW_IN_SECONDS` seconds to receive commits. It cuts the waiting time short only if the percentage of peers specified by `COMMIT_TOLERANCE_PERCENT` has already committed. This is done for both rounds of consensus.
 
@@ -88,55 +83,13 @@ These are the relevant constants that affect the way our consensus operates:
 
 - `SHARD_NUM_CONSENSUS_SUBSETS` - This indicates the number of consensus subsets to be used for consensus within the shard.
 
-## Schnorr Algorithm
-
-### Overview
-
-Zilliqa employs Elliptic Curve Based Schnorr Signature Algorithm (EC-Schnorr) as the base signing algorithm. Schnorr allows for [multisignatures](#multisignatures), is faster than ECDSA, and has a smaller signature size (64 bytes).
-
-Refer to the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf) for a more complete discussion of the algorithm.
-
-### Core Usage and Implementation
-
-The Schnorr algorithm is used during the consensus protocol, message signing, and generally anywhere where a signature is needed both for authenticity and for optionally storing alongside the signed data (e.g., DS or Tx block, Tx body, etc.).
-
-Peers are also identified by their Schnorr public keys, alongside their IP information.
-
-The Schnorr algorithm is implemented in `libCrypto` and is broken down into these cryptographic components: `PubKey`, `PrivKey`, and `Signature`. The `Schnorr` class provides the `Sign` and `Verify` functions, as well as `GenKeyPair` for key generation.
-
-The signing procedure is (as noted in `Schnorr::Sign`):
-
-```console
-1. Generate a random k from [1, ..., order-1]
-2. Compute the commitment Q = kG, where G is the base point
-3. Compute the challenge r = H(Q, kpub, m)
-4. If r = 0 mod(order), goto 1
-5. Compute s = k - r*kpriv mod(order)
-6. If s = 0 goto 1
-7. Signature on m is (r, s)
-```
-
-The verification procedure is (as noted in `Schnorr::Verify`):
-
-```console
-1. Check if r,s is in [1, ..., order-1]
-2. Compute Q = sG + r*kpub
-3. If Q = O (the neutral point), return false
-4. r' = H(Q, kpub, m)
-5. return r' == r
-```
-
-### Notes
-
-The Schnorr algorithm was initially based on section 4.2.3 page 24 of version 1.0 of [BSI TR-03111 Elliptic Curve Cryptography (ECC)](https://www.bsi.bund.de/EN/Publications/TechnicalGuidelines/TR03111/BSITR03111.html).
-
 ## Multisignatures
 
 ### Overview
 
 The end result of any consensus round is basically the generation of an EC-Schnorr signature that is the product of co-signing the consensus data by 2/3+1 of the participants.
 
-This document is a brief description of how multisignatures are implemented and used in the Zilliqa core. For more information on how multisignatures work, refer to the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf).
+This section briefly describes how multisignatures are implemented and used in the Zilliqa core. For more information on how multisignatures work, refer to the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf).
 
 ### Generating the Multisignature within Consensus
 
@@ -160,36 +113,8 @@ In fact, you will notice that `MultiSig::MultiSigVerify` is implemented almost t
 
 ### Domain-separated Hash Functions
 
-In December 2018, [PR 1097](https://github.com/Zilliqa/Zilliqa/pull/1097) was introduced to address an issue raised during a security audit. The main idea was to make these changes:
-
-```console
-1. Leader sends announcement -> no change
-2. Backup receives announcement -> no change
-3. Backup sends commit + H1(commit)
-4. Leader receives commit + checks H1(commit)
-5. Leader sends challenge using H2(challenge inputs)
-6. Backup receives challenge + checks H2(challenge inputs)
-7. Backup sends response -> no change
-8. Leader receives response -> no change
-9. Leader sends collective sig -> no change
-
-where:
-H1(x) = SHA256(0x01||x)
-H2(x) = SHA256(0x11||x)
-```
-
-This diagram illustrates the original multisignature scheme during consensus:
-
-![image01](../assets/core/features/multisignatures/image01.png)
-
-This diagram illustrates the modified scheme based on the auditor's proposal:
-
-![image02](../assets/core/features/multisignatures/image02.png)
-
-After these changes, we now identify three domains during the consensus protocol. The "separation" per se refers to the integration of unique byte values into hash operations across different points of the consensus, to effectively carve out domains during the consensus.
+Hashing operations within the consensus protocol are separated into three distinct domains. The "separation" refers to the integration of unique byte values into hash operations across different points of the consensus, to effectively carve out domains during the consensus.
 
 1. The first domain-separated hash function basically refers to the node submitting its PoW and its public key, or what we now refer to as the Proof-of-Possession (PoP) phase. While no behavioral change is done in the code for the PoW stage, we created a wrapper function `MultiSig::SignKey` to emphasize that by signing the public key, the node is effectively presenting proof of possessing the private key.
-
-1. The second domain-separated hash function refers to the backup having to send the hash of the commit point alongside the commit point itself. To achieve this, the new data structure `CommitPointHash` was added to `MultiSig.h`.
-
+1. The second domain-separated hash function refers to the backup having to send the hash of the commit point alongside the commit point itself. To achieve this, the data structure `CommitPointHash` was added to `MultiSig.h`. The commit point hash is generated over a single byte (`0x01`) plus the commit point.
 1. The third domain-separated hash function refers to the leader introducing another byte (`0x11`) into the hash operation during the generation of the challenge value.

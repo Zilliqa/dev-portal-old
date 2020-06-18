@@ -2,13 +2,13 @@
 id: basics-zil-nodes
 title: Types of nodes
 ---
-The Zilliqa network is composed of several types of nodes that perform different functions or provide specialized services.
+The Zilliqa Mainnet is composed of several types of nodes that perform different functions or provide specialized services.
 
-TODO: Insert image of our network architecture
+![image01](../assets/core/features/network-layout/image01.png)
 
 ## Shard nodes
 
-Shard nodes are the mining nodes in the Zilliqa network. They are named as such because of the fact that they are assigned to one of several clusters (i.e., shards) within the network. Nodes that belong to the same shard process the same set of transactions assigned to their shard. After processing, the nodes must achieve consensus over the transaction set in order to generate the shard's microblock. For their work, shard nodes are rewarded ZILs at the end of every DS epoch.
+Shard nodes are the mining nodes in the Zilliqa Network. They are named as such because of the fact that they are assigned to one of several clusters (i.e., shards) within the network. Nodes that belong to the same shard process the same set of transactions assigned to their shard. After processing, the nodes must achieve consensus over the transaction set in order to generate the shard's microblock. For their work, shard nodes are rewarded ZILs at the end of every DS epoch.
 
 Shard membership is determined by the DS nodes after shard nodes successfully submit solutions to a Proof-of-Work (PoW) problem, which occurs once every DS epoch.
 
