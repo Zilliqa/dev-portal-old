@@ -41,6 +41,7 @@
         "type": "subcategory",
         "label": "Getting Started",
         "ids": [
+          "dev-started-introduction",
           "dev-started-helloworld"
         ]
       },
@@ -60,7 +61,6 @@
           "dev-keys-pkey",
           "dev-keys-keystore",
           "dev-keys-zilpay",
-          "dev-keys-moonlet",
           "dev-keys-ledger"
           
         ]
