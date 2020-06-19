@@ -13,7 +13,8 @@
       "exchange-getting-started",
       "exchange-account-management",
       "exchange-sending-transactions",
-      "exchange-polling-deposits"
+      "exchange-polling-deposits",
+      "exchange-transaction-receipts"
     ],
     "Seed node staking": [
       "staking-introduction",
