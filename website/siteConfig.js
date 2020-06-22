@@ -27,7 +27,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'basics-intro-blockchain', label: 'Basics'},
-    {doc: 'dev-started-helloworld', label: "Developers"},
+    {doc: 'dev-started-introduction', label: "Developers"},
     {doc: 'mining-general-info', label: 'Miners'},
     {doc: 'staking-getting-started', label: 'Exchanges'},
     {doc: 'contribute-buildzil', label: 'Contributors'},
