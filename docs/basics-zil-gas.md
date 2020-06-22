@@ -1,6 +1,6 @@
 ---
 id: basics-zil-gas
-title: Gas accounting
+title: Gas Accounting
 ---
 ## Payment
 
