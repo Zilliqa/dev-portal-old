@@ -157,8 +157,19 @@
           "core-directory-service",
           "core-lookup",
           "core-mining",
-          "core-mitigation-measures",
-          "core-tools"
+          "core-tools",
+          {
+            "type": "subcategory",
+            "label": "Mitigation Measures",
+            "ids": [
+              "core-mitigation-measures",
+              "core-view-change",
+              "core-guard-mode",
+              "core-rejoin-mechanism",
+              "core-recovery-mechanism",
+              "core-other-measures"
+            ]
+          }
         ]
       }
     ]
