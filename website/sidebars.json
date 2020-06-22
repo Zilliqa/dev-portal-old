@@ -56,11 +56,11 @@
       },
       {
         "type": "subcategory",
-        "label": "Key Management on Web3",
+        "label": "User Key Management",
         "ids": [
-          "dev-keys-pkey",
-          "dev-keys-keystore",
+          "dev-keys-introduction",
           "dev-keys-zilpay",
+          "dev-keys-pkey",
           "dev-keys-ledger"
           
         ]

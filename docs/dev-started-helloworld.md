@@ -63,9 +63,7 @@ The above repository builds on the create-react-app starter kit and is very easy
 ## Change contract state using Zilpay
 
 After following the installation steps, you need to run the code locally by using the command
-```javascript
-npm start
-```
+``` npm start ```<br/>
 On succesfully running the site locally on your system, enter the address of your Hello World contract deployed on the testnet and connect your zilpay wallet with the front-end by clicking on the 'Connect' button.
 
 Calling the transitions from the front-end using zilpay:
@@ -74,19 +72,19 @@ Calling the transitions from the front-end using zilpay:
 ```javascript
 async setHello(){
     if(window.zilPay.wallet.isEnable){
-      this.update();
+      this.updateWelcomeMsg();
     }
     else{
       const isConnect = await window.zilPay.wallet.connect();
       if (isConnect) {
-        this.update();
+        this.updateWelcomeMsg();
       } else {
       throw new Error('user rejected');
       }
     } 
   }
 
-  async update(){
+  async updateWelcomeMsg(){
     const zilliqa = window.zilPay;
     let setHelloValue = this.state.setHelloValue;
     let contractAddress = localStorage.getItem("contract_address");
