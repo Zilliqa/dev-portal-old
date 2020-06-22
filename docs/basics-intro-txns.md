@@ -2,12 +2,21 @@
 id: basics-intro-txns
 title: Transactions
 ---
-The term “transaction” is used to refer to the signed data package that stores a message to be sent from an externally owned account to another account on the blockchain. Can be categorised into two main categories:
 
-## Value Transfer
+In order to interact with an account (externally-owned or contract), one has to
+issue transactions. Each transaction is a data package signed by an
+externally-owned account. 
 
-A value (in Ether) is transferred between two externally owned accounts
+## Usage of Transactions
 
-## Execution of Contracts
+1. The simplest usage of a transaction is to transfer native assets (such as
+   $ZIL) from one externally-owned account to another externally-owned account
+    or to a contract account.
 
-Here, a function/method call is made from an externally owned account to a contract account. These types of transactions can be further chained eg., the contract account can make several internal transactions before calling another contract account or returning back. Any type of transaction execution on Ethereum costs money - or gas.
+2. A transaction is issued when an externally-owned account deploys a contract
+   on the network. 
+
+3. A transaction may also be issued to call a function in the smart contract
+   associated to a contract account which may in turn trigger calls to other
+    contracts creating a call graph. Note that calls from one contract account to another
+    happens via inter-contract message calls and are not using transactions per se.

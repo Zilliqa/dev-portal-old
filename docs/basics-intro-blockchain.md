@@ -4,7 +4,13 @@ title: Blockchain
 ---
 ## What is Blockchain?
 
-Blockchain is a shared, immutable ledger for recording transactions, tracking assets and building trust. It is a distributed ledger technology, which securely records information across a peer-to-peer network. Although it was created for financial service, blockchain's potential lies far beyond cryptocurrency. These ledgers can record data from Health sector, Land Registry, eSports, Enterprise Records, logistics Manifests, identities - almost anything that holds value.
+Blockchain is a shared, immutable ledger for recording transactions, tracking
+assets and building trust. It is a distributed ledger technology, which
+securely records information across a peer-to-peer network. Although it was
+created for financial service, blockchain's potential lies far beyond
+cryptocurrency. These ledgers can record data from Health sector, Land
+Registry, eSports, Enterprise Records, logistics Manifests, identities - almost
+anything that holds value.
 
 Blockchain technology is actually a combination of 4 components:
 - Peer-to-peer networks
