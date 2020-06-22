@@ -49,7 +49,7 @@ You should get a message showing either:
 
 The first message means UPnP mode has been enabled successfully, while the latter means the enabling of UPnP mode has failed. If you receive the latter message, proceed with using [**Option 1a**](#option-1a) instead.
 
-## Steps
+## Mining Steps
 
 1. Create a single local or remote CPU node instance with Ubuntu 16.04 OS installed following instructions [**HERE**](http://releases.ubuntu.com/xenial/).
 
