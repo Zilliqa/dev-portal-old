@@ -1,20 +1,14 @@
 ---
 id: core-directory-service
-title: Directory service
+title: Directory Service
 ---
-## Operational Details (State Machine)
+## DS Committee Multiple In Multiple Out (DS MIMO) Setup
 
-## DS MIMO
-
-## DS Committee Multiple In Multiple Out (DS MIMO)
-
-### Notice
-
-DS committee ejection has been superseded by [DS Reputation](ds-reputation.md)
+> Note: DS committee ejection has now been superseded by [DS Reputation](#ds-reputation).
 
 ### Usage
 
-Allows `n` nodes to join and leave DS committee every DS epoch.
+This setup allows `n` nodes to join and leave the DS committee at every DS epoch.
 
 ### Setup
 
@@ -50,17 +44,6 @@ Allows `n` nodes to join and leave DS committee every DS epoch.
 1. DS committee sends the DS Block and sharding structure to all PoW submitters. This message now does not include winner peer as part of the changes highlighted in setup section
 1. Incoming DS members receive the DS Block, process it, and update their DS `consensusMyID` based on ordering found in the map in the DS Block. From here onwards, these nodes are part of the DS committee
 1. Shard members process the DS Block and update the DS committee composition based on number of incoming DS member(s)
-
-### Other fixes
-
-1. Fixed `operator<` for DS Block header
-
-### Known issues
-
-1. Explorer displays blank information for Miner Public Key and Nonce ([Issue 218](https://github.com/Zilliqa/Issues/issues/218))
-1. Explorer not displaying new DS Block information such as incoming DS members and DS difficulty ([Issue 218](https://github.com/Zilliqa/Issues/issues/218))
-1. JSON RPC APIs need to be updated ([Issue 218](https://github.com/Zilliqa/Issues/issues/218))
-1. Unit test failed when checking cosig of DS Block after retrieval from LevelDB under test case `testBlockStorage`
 
 ## DS Reputation
 

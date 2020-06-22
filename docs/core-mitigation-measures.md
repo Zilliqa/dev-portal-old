@@ -1,6 +1,6 @@
 ---
 id: core-mitigation-measures
-title: Mitigation measures
+title: Mitigation Measures
 ---
 ## Guard Mode
 

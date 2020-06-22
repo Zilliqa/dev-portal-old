@@ -1,6 +1,6 @@
 ---
 id: core-consensus
-title: Consensus
+title: Consensus Layer
 ---
 This section describes how the consensus protocol (as initially designed in the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)) is implemented and used in the core Zilliqa code.
 

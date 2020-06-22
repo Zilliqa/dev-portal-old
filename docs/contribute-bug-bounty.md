@@ -1,6 +1,6 @@
 ---
 id: contribute-bug-bounty
-title: Bug bounty program
+title: Bug Bounty Program
 ---
 Developers can also contribute to the advancement of Zilliqa by reporting security bugs and vulnerabilities in our bug bounty program.
 
