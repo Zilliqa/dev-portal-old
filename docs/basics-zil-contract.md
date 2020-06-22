@@ -1,6 +1,6 @@
 ---
 id: basics-zil-contract
-title: Smart contract layer
+title: Smart Contract Layer
 ---
 ## Scilla interpreter
 

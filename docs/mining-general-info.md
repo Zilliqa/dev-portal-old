@@ -1,9 +1,9 @@
 ---
 id: mining-general-info
-title: General information
+title: General Information
 ---
 
-## Mining setup architecture
+## Mining Setup Architecture
 
 The mining setup architecture differs from the regular setup you may be familiar with where both the node and miner are one single instance (i.e. mining Ethereum or Bitcoin). Below is an illustration of how the Zilliqa mining setup looks like. All communications between these two parties are via the JSON-RPC protocol.
 
@@ -31,7 +31,7 @@ The vacuous epoch is solely for:
 
 During a vacuous epoch, the network does not process any transactions.
 
-## Proof-of-Work algorithm
+## Proof-of-Work Algorithm
 
 Zilliqa is using [**Ethash**](https://github.com/ethereum/wiki/wiki/Ethash) for its PoW algorithm. Hence, Zilliqa uses a DAG in its proof-of-work algorithm, that is generated at an incremental rate for each **DS epoch**. The bootstrap DAG size will be roughly `1.02GB`.
 

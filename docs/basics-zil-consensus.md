@@ -1,6 +1,6 @@
 ---
 id: basics-zil-consensus
-title: Consensus mechanism
+title: Consensus Mechanism
 ---
 The Zilliqa network is composed of one DS Committee (a special type of shard), and `n` normal shards. Each shard has a number of nodes, with one node being a `leader` and `k` number of `backups`.
 

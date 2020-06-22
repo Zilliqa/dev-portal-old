@@ -3,7 +3,7 @@
     "Basics":[
       {
         "type": "subcategory",
-        "label": "Blockchain basics",
+        "label": "Blockchain Basics",
         "ids": [
           "basics-intro-blockchain",
           "basics-intro-types",
@@ -91,7 +91,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Testing and formal verification",
+        "label": "Testing and Formal Verification",
         "ids": [
           "dev-test-checker",
           "dev-test-cashflow",
@@ -102,26 +102,17 @@
     ]
   },
   "miners": {
-    "Join As A Miner":[
+    "Miners":[
       "mining-general-info",
-      "mining-hardware-requirement",
-      {
-        "type": "subcategory",
-        "label": "Getting Started",
-        "ids": [
-          "mining-initial",
-          "mining-zilclient",
-          "mining-zilminer"
-        ]
-      },
-      "mining-monitoring"
+      "mining-zilclient",
+      "mining-zilminer"
     ]
   },
   "exchanges": {
-    "Integrate":[
+    "Exchanges":[
       {
         "type": "subcategory",
-        "label": "Exchange integration",
+        "label": "Exchange Integration",
         "ids": [
           "exchange-getting-started",
           "exchange-account-management",
@@ -131,7 +122,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Staked seed nodes integration",
+        "label": "Staked Seed Nodes Integration",
         "ids": [
           "staking-introduction",
           "staking-getting-started",
@@ -143,10 +134,10 @@
     ]
   },
   "contributors": {
-    "Contribute":[
+    "Contributors":[
       {
         "type": "subcategory",
-        "label": "Contribution guide",
+        "label": "Contribution Guide",
         "ids": [
           "contribute-buildzil",
           "contribute-guidelines",
@@ -155,7 +146,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Core protocol design",
+        "label": "Core Protocol Design",
         "ids": [
           "core-node-operation",
           "core-consensus",

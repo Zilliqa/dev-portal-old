@@ -18,7 +18,7 @@ Blockchain technology is actually a combination of 4 components:
 - Cryptography
 - Blockchain data structure
 
-## Key benefits of Blockchain
+## Key Benefits of Blockchain
 
 ### 1. Robustness
 Blockchain Technology stores information in blocks which are chronologically synchronised. And these blocks cannot be controlled by an individual making blockchain highly secured.

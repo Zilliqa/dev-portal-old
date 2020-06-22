@@ -1,6 +1,6 @@
 ---
 id: contribute-guidelines
-title: Coding and contribution guidelines
+title: Contribution Guidelines
 ---
 ## Development Process
 

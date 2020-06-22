@@ -1,6 +1,6 @@
 ---
 id: basics-zil-nodes
-title: Types of nodes
+title: Types of Nodes
 ---
 The Zilliqa Mainnet is composed of several types of nodes that perform different functions or provide specialized services.
 

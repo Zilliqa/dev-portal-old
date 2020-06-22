@@ -1,6 +1,6 @@
 ---
 id: basics-zil-reward
-title: Reward mechanism
+title: Reward Mechanism
 ---
 In the Zilliqa network, rewards are split into:
 

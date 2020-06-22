@@ -1,10 +1,10 @@
 ---
 id: basics-zil-sharding
-title: Sharding mechanism
+title: Sharding Mechanism
 ---
 In this section, we present the core idea of sharding that makes Zilliqa scale. Sharding in Zilliqa takes many forms: *network sharding*, *transaction sharding*, and *computational sharding*. The most important among these is network sharding as the other sharding mechanisms are built atop the network sharding layer.
 
-## Network sharding
+## Network Sharding
 
 Network sharding (which will be referred to simply as *sharding* in this context) is a mechanism that allows the Zilliqa network to be divided into smaller groups of nodes each referred to as a *shard*. Simply put, imagine a network of 1,000 nodes, then, one may divide the network into 10 shards each composed of 100 nodes.
 
@@ -12,7 +12,7 @@ Network sharding is the secret sauce that makes Zilliqa truly scalable. Imagine 
 
 The idea of sharding is certainly not new, and in fact it can be traced back to the field of databases, where it is employed to improve performance, scalability and I/O bandwidth. The idea of sharding in the context of blockchains however was first put forth in an academic paper co-authored by Zilliqa team members in 2015.
 
-## Transaction sharding
+## Transaction Sharding
 
 As discussed above, network sharding opens up avenues for parallel transaction processing — each shard should now be able to independently process transactions and hence yield high throughput. In fact, whenever a transaction reaches the network, it gets assigned to a specific shard. The assignment is determined by the first few bits of the sending address of the transaction. This is called *transaction sharding*.
 
@@ -34,7 +34,7 @@ Type II (U -> C): A user calling a smart contract that does not call any other s
 
 Type III (U1 -> C1 -> … -> Cn [-> U2]): Any other transaction. This category includes transactions originating from a user that can invoke a chain of contracts and potentially terminate with a user account. An example transaction will be Alice calling a travel agent contract (C1) that calls an airline contract (C2) that in turn calls an insurance contract (C3).
 
-### Assignment strategy
+### Assignment Strategy
 
 At any given time, each shard will only handle transactions of Type I and II, while the DS committee will handle transactions of Type III only after transactions of Categories I and II have been validated by the rest of the shards. The DS committee may also handle certain transactions of Type I or II. Do note that the DS committee will not handle transactions in parallel (to the shards); otherwise, it will become possible to double spend.
 
