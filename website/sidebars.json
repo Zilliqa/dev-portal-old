@@ -163,7 +163,6 @@
           "core-messaging",
           "core-data",
           "core-directory-service",
-          "core-shard",
           "core-lookup",
           "core-mining",
           "core-mitigation-measures",

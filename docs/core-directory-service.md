@@ -1,6 +1,6 @@
 ---
 id: core-directory-service
-title: Directory service
+title: Directory Service
 ---
 ## Operational Details (State Machine)
 

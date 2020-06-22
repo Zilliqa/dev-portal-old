@@ -1,6 +1,6 @@
 ---
 id: core-data
-title: Data layer
+title: Data Layer
 ---
 ## Blockchain Data
 

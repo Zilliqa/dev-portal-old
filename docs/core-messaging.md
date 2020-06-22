@@ -1,6 +1,6 @@
 ---
 id: core-messaging
-title: Messaging
+title: Messaging Layer
 ---
 ## Message Format
 

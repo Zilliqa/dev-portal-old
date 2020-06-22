@@ -8,7 +8,7 @@ Zilliqa Research primarily maintains the code base and moderates contributions f
 
 While we have made great strides to realize the core protocol that runs the Zilliqa Mainnet, this continues to be a living, breathing endeavour. New features, improvements, and bug fixes are regularly pushed. Contributions from the developer community towards the advancement of this project are always welcome.
 
-## Quickstart guide
+## Quickstart Guide
 
 Building the Zilliqa code base is officially supported only on Ubuntu 16.04.
 
@@ -20,7 +20,7 @@ Follow these steps to perform the build:
 
 When successful, the outputs (including the `zilliqa` binary) will be created in the `build` subfolder of the working directory.
 
-## Next steps
+## Next Steps
 
 Once you are able to build the code base, there are several ways you can contribute:
 

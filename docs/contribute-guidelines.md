@@ -2,7 +2,7 @@
 id: contribute-guidelines
 title: Coding and contribution guidelines
 ---
-## Development process
+## Development Process
 
 We keep our development process fairly simple and enforce any hard rules through automation.
 
@@ -19,7 +19,7 @@ These are the basic things to consider when contributing to the project:
 1. Write or perform any tests for your code changes. The different supported tests are described in the [section](#testing) below.
 1. When submitting a pull request, fill in the details requested in the [template](https://github.com/Zilliqa/Zilliqa/blob/master/.github/PULL_REQUEST_TEMPLATE.md).
 
-## CI/CD pipeline and release management
+## CI/CD Pipeline and Release Management
 
 Pull requests must get approval from at least 2 reviewers before they can be merged into the `master` branch.
 

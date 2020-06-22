@@ -1,179 +1,145 @@
 ---
 id: core-network
-title: Network communication and topographies
+title: Network Layer
 ---
-## Gossip protocol
+## Gossip Protocol
 
-This document describes the rumor manager which enforces Gossip protocol for messaging in Zilliqa.
+A `RumorManager` library is available in the Zilliqa core to support message gossiping between nodes.
 
-### Description
+### Overview
 
-- The goal is to provide an efficient replacement to the existing broadcasting mechanism.
-- The current broadcasting mechanism in `P2PComm::SendBroadcastMessage` is resource hungry; it sends O(n^2) messages, requires a lot of threads and opens a lot of TCP connections.
-- The gossip algorithm, described in detail in this [link](https://zoo.cs.yale.edu/classes/cs426/2013/bib/karp00randomized.pdf) paper, provides a method to spread a message in O(logn) rounds and O(ln(ln(n))) messages,
-where n is the number of peers participating in the gossip.
-- RumorManager plays a role of managing all the gossips/rumors and their states.
+- The goal is to provide an alternative communication method to broadcasting, particularly in large-scale clusters.
+- The broadcasting implemented in `P2PComm::SendBroadcastMessage` is resource-hungry; it sends `O(n^2)` messages, requires a lot of threads, and opens too many TCP connections.
+- The gossip algorithm, described in detail in this [paper](https://zoo.cs.yale.edu/classes/cs426/2013/bib/karp00randomized.pdf), provides a method to spread a message in `O(logn)` rounds and `O(ln(ln(n)))` rumor messages (where `n` is the number of peers participating in the gossip).
+- `RumorManager` plays the role of managing all the gossips/rumors and their states.
 
 ### Interfaces
 
-Following interfaces are exposed for node to enable gossiping messages in network.
+The following interfaces are exposed for a node to enable gossiping messages in the network.
 
 #### InitializeRumorManager
 
-Every node in network intializes the RumorManager with the peers from their shard or DSCommittee at start of new DS epoch or after successful view change.
+Every node in the network intializes `RumorManager` with the list of peers from their own shard or committee at the start of a new DS epoch (or after a successful view change).
 
-Initialization involves following:
+Initialization involves the following:
 
-- Storing peerlist
-- Storing pubkeys of peers from peerlist, DSCommitte members and lookup nodes
-- Storing self peer-info and pub/priv key
-- Starting of Rounds - that runs loop every `ROUND_TIME_IN_MS` ms.
-  - Checks the state of every rumor in RumorHolder (More on RumorHolder later) and sends to `MAX_NEIGHBORS_PER_ROUND` random peers if not old enough.
-  - RumorHolder monitors/changes state of each rumor it holds using Median Counter algorithm as explained in paper ( section 3 ) for every round.
+- Storing peer list
+- Storing public keys of the peers in the peer list, the DS committee members, and lookup nodes
+- Storing the node's own peer information and key pair
+- Starting of rounds (that runs a loop every `ROUND_TIME_IN_MS` ms), which includes:
+  - Checking the state of every rumor in `RumorHolder` and sending to `MAX_NEIGHBORS_PER_ROUND` random peers (if the rumor is not old enough).
+  - `RumorHolder` monitors/changes the state of each rumor it holds using the Median Counter algorithm (as explained in Section 3 of the whitepaper) for every round.
 
 #### SpreadRumor
 
-Enables node to initiate the rumor to be gossipped with his peerlist. It will basically add the rumor to RumorHolder which in turn manages it states and further gossiping.
+This enables the node to initiate the rumor to be gossiped with its peer list. It will basically add the rumor to `RumorHolder`, which in turn manages its states and further gossiping.
 
 #### SpreadForeignRumor
 
-Enables node to initiate spreading out rumor received from node not part of his peerlist ( hence foreign ).
-It verifies the sender node against all the pubkeys stored during initialization of RumorManager
+This enables the node to initiate spreading of the rumor received from a node that is not part of its peer list (hence, "foreign"). It verifies the sender node against all the public keys stored during the initialization of `RumorManager`.
 
 #### StopRounds
 
-Stops the Round. Thereby stops gossiping rumors to peers.
+Stops the gossip round, thereby stopping the gossiping of rumors to peers.
   
 ### Rumor State Machine
 
-Every rumor will be in one of following state at any time
+The rumor state machine is managed by `RumorHolder`.
 
-- `NEW` : the peer `v` knows `r` and `counter(v,r) = m` (age/round)
-- `KNOWN` : cooling state, stay in this state for a `m_maxRounds` rounds, participating in rumor spreading
-- `OLD` : final state, member stops participating in rumor spreading
+Every rumor will be in one of following states at any time:
 
-Every rumor starts with NEW. It either stay in same state or move on to KNOWN /OLD state immediately or in successive rounds based on algo mentioned in whitepaper. Every rumor is tied up with round ( consider it as rumor age).
+- `NEW`: The peer `v` knows `r` and `counter(v,r) = m` (age/round)
+- `KNOWN`: Cooling state; stay in this state for `m_maxRounds` rounds, and participate in rumor spreading
+- `OLD`: Final state; member stops participating in rumor spreading
 
-Rumor is configured to stay in NEW and KNOWN state for max `<MAX_ROUNDS_IN_BSTATE>` and `<MAX_ROUNDS_IN_CSTATE>` respectively.
-And to brutefully mark rumor as OLD, total rounds is limited to not exceed `<MAX_TOTAL_ROUNDS>`.
+Every rumor starts in the `NEW` state. It either stays in this state, or moves on to `KNOWN` or `OLD` state immediately or in successive rounds based on the algorithm mentioned in the whitepaper. Every rumor is tied up with the round (consider it as the rumor age).
+
+A rumor is configured to stay in `NEW` and `KNOWN` state for a maximum of `<MAX_ROUNDS_IN_BSTATE>` and `<MAX_ROUNDS_IN_CSTATE>`, respectively.
+The total rounds is configured to not exceed `<MAX_TOTAL_ROUNDS>`, after which the rumor is marked as `OLD`. These settings are found in the node's constants file, like thus:
 
 ```xml
-    <gossip_custom_rounds>
-      <MAX_ROUNDS_IN_BSTATE>2</MAX_ROUNDS_IN_BSTATE>
-      <MAX_ROUNDS_IN_CSTATE>3</MAX_ROUNDS_IN_CSTATE>
-      <MAX_TOTAL_ROUNDS>6</MAX_TOTAL_ROUNDS>
-    </gossip_custom_rounds>
+<gossip_custom_rounds>
+  <MAX_ROUNDS_IN_BSTATE>2</MAX_ROUNDS_IN_BSTATE>
+  <MAX_ROUNDS_IN_CSTATE>3</MAX_ROUNDS_IN_CSTATE>
+  <MAX_TOTAL_ROUNDS>6</MAX_TOTAL_ROUNDS>
+</gossip_custom_rounds>
 ```
-
-Rumor State Machine is managed by `RumorHolder`
 
 ### Gossip Message Format
 
-| START_BYTE_GOSSIP (0X33) | HDR | GOSSIP_MSGTYPE | GOSSIP_ROUND | GOSSIP_SNDR_PORT | PUB_KEY_SIZE | SIGNATURE | Payload Message |
+| START_BYTE_GOSSIP (0x33) | HDR | GOSSIP_MSGTYPE | GOSSIP_ROUND | GOSSIP_SNDR_PORT | PUB_KEY_SIZE | SIGNATURE | Payload Message |
 |--------------------------|-----|----------------|--------------|------------------|--------------|-----------|-----------------|
 
-### Optimization with Pull-Push Mechanism
+### Optimized Pull-Push Mechanism
 
-Following are the GOSSIP_MSGTYPE :
+`GOSSIP_MSGTYPE` can refer to any of the following:
 
-- `PUSH` = 0x01
-   Indicates response to PULL request and payload contains real raw message and send out to requesting peer
+- `PUSH (0x01)`: The response to a `PULL` request. The payload contains the raw message. It is sent out to the requesting peer.
+- `PULL (0x02)`: The request for the raw message for a given hash. The payload contains the hash. It is sent out in response to the node who sent `LAZY_PUSH` or `LAZY_PULL`.
+- `EMPTY_PUSH (0x03)`: This is sent out at every round to random neighbors if the node does not have any active rumors in its store. It indicates asking for any rumors from the node's neighbors. The payload contains unused dummy data.
+- `EMPTY_PULL (0x04)`: This is sent out to the sender of `EMPTY_PULL` or `LAZY_PULL` to indicate that it doesn't have any active rumors either. The payload contains unused dummy data.
+- `FORWARD (0x05)`: A special type that indicates that the message being sent out is from a foreign peer. This means the sender does not belong to the current shard or committee. Normally it is sent from a lookup to a shard or DS committee node, or between a shard node and DS committee node (in either direction).
+- `LAZY_PUSH (0x06)`: This is sent out at every round to random neighbors for each active rumor in its store. The payload contains the hash of the raw message intended to be gossiped.
+- `LAZY_PULL (0x07)`: The response to the sender if it is the first time that sender has sent a `LAZY_PUSH`/`EMPTY_PUSH` message during this round. The payload contains the hash of the raw message.
 
-- `PULL` = 0x02
-   Indicates request for real raw message of given hash and payload contains hash. Its being send out to sender in response to LAZY_PUSH or LAZY_PULL
+> **NOTE:** Every gossip message is signed, and the signature is verified before being accepted.
 
-- `EMPTY_PUSH` = 0x03
-   Being send out every round to random neighbors if it has not active rumor in it store. Indicates asking for any rumors from neighbors. Payload contains unused dummy data.
+Through the messages above, the standard Push-Pull mechanism is optimized by gossiping the hashes using `EMPTY_*` and `LAZY_*` and fetching the actual raw messages using `PUSH` and `PULL`.
 
-- `EMPTY_PULL` = 0x04
-   Being send out to sender of EMPTY_PULL or LAZY_PULL that it don't have any active rumors either. Payload contains unused dummy data.
+So, `LAZY_PUSH` and `LAZY_PULL` are the backbone for gossiping of hashes, and are the only gossip messages that have a valid `GOSSIP_ROUND` for their underlying rumor (i.e., the hash). For the other message types, `GOSSIP_ROUND` is just set to -1 since it has no use in these types.
 
-- `FORWARD` = 0x05
-   Special type that indicates that message being send out is from foreign peer. This would mean sender is from another shard or is lookup node.
-   This would mean message is send out from :
-    -lookup node to shard node or DSCommitte node
-    -shard node to DSCommitte node and vice-versa
+### Message Subscription
 
-- `LAZY_PUSH` = 0x06
-   Being send out every round to random neighbors for each active rumor in it store. Its payload contains the hash of real raw message intented to be gossiped eventually.
+Due to the nature of quick gossip, it's possible that a node might have just the hash and not the raw message yet at a particular point in time. In such cases, if the node receives a `PULL` message for that hash, it adds that node to a subscription list. As soon as the node receives the raw message for that hash, it then sends it out to all the peers in the subscription list.
 
-- `LAZY_PULL` = 0x07
-   Indicates the response to the sender if it is the first time 'sender' have sent a LAZY_PUSH/EMPTY_PUSH message in this round. Its payload contains the hash of real raw message
+## Tree-Based Cluster Broadcasting
 
-  **(Note: Every gossip message is verified for signature before being accepted.)**
+Gossip is used widely in the Zilliqa network for messaging. However, the gossip protocol by design needs the information of all peers that must eventually receive the rumor.
 
-As mentioned above, Standard Push Pull mechanism is optimized further to gossip the hashes using EMPTY_* and LAZY_* and fetching the real messages using PUSH and PULL.
-So, LAZY_PUSH and LAZY_PULL are the backbone for gossiping of hashes and are only ones which has valid `GOSSIP_ROUND` for underlying rumor (hash in our case).
-For rest of message type, GOSSIP_ROUND is just set to -1 since it's not of any use.
+This basic requirement for peer information is usually available to a node, except at the point when a new DS block has been mined. The DS block contains the peer information for all shards, which is extracted by each node to initialize its peer list and restart the gossip engine.
 
-### Further optimization
-
-Due to nature of quick gossip, its possible that node might not have real message and only hash at some point of time. In such case, if node receives `PULL` message for that hash it adds that node to `subscription list`. As soon as nodes receives real message for that hash, it send it all peers in its subscription list.
-
-### Reference
-
-1. [Randomized Rumor Spreading](https://zoo.cs.yale.edu/classes/cs426/2013/bib/karp00randomized.pdf)
-
-## Tree Based Cluster Broadcasting
-
-This document describes the purpose, implementation details and application of Tree-Based-Cluster-Broadcasting.
-
-### Description
-
-- Gossip / Rumor spreading mechanism is used widely in zilliqa network for messaging. Refer [link](https://github.com/Zilliqa/dev-docs/blob/master/core/gossip-protocol.md) for more details of gossip protocol.
-- However gossip protocol at it very basic needs the information of peer to spread the rumor with. This basic requirement of peer's info is available almost every time except when new DS block is mined.
-- DS Block contains information of peers belonging to each shard which is leveraged by each node to initialize their peer list and restart gossip engine.
-- However, spreading the DS Block itself is problem to be solved. Solution is `Tree-Based-Cluster-Broadcasting`.
-
-### Purpose
-
-In the new DS epoch, before receiving the DS block, a shard node doesn’t know the information of the other nodes in the same shard.
-Thus, we should leverage multicast to broadcast the DS block to the nodes within a shard.
+However, distributing the DS block itself is a problem that has to be dealt with in a different manner. The solution employed is tree-based cluster broadcasting. At the start of a new DS epoch, before DS block distribution, shard nodes don't know the information of the other nodes in the same shard.
+Thus, we leverage clustered multicasting in order to broadcast the DS block to all the nodes within a shard.
 
 ### Design
 
-1. Assume that we have `X` nodes in a shard, each cluster has `Y` nodes, a cluster has `Z` children clusters, and every node has its sequence number `n` starting from `0`. `X / Y`  represents `[_X / Y_]`, e.g., `2/10 = 0, 11/10 = 1`.
-
-2. Therefore, we have `X / Y` clusters , say `0 .. X/Y-1`. For a node `n`, it belongs to cluster `n / Y` and it’s at level `log_z(n/Y)`.
-
-3. Then the node will multicast the message to the node `(n/Y * Z + 1)*Y` ~ `((n/Y * Z + Z + 1)* Y - 1)`.
-    Bound checks on node index are needed to be done before multicasting. If check fails don’t broadcast.
+1. Assume that we have `X` nodes in a shard. We form clusters - each of `Y` nodes - out of these shard nodes. Each cluster, in turn, has `Z` child clusters.
+1. Every node is assigned a sequence number `n` starting from `0`, such that `n/Y` represents the cluster it belongs to. For example, `2/10 = 0`, `11/10 = 1`.
+1. Therefore, we should have a total of `X/Y` clusters, indexed from `0` to `X/Y-1`. A node `n` belonging to cluster `n/Y` is at level `log_Z(n/Y)`.
+1. A node multicasts messages to nodes within the range `(n/Y * Z + 1)*Y` ~ `((n/Y * Z + Z + 1)* Y - 1)`. Bound checks on node index need to be done before multicasting. If the checks fail, we don’t broadcast.
 
 ![image01](../assets/core/features/tree-based-cluster-broadcasting/image01.jpg)
 
 ### Application
 
-Based on above algorithm, below are the parameters which control broadcasting of DSBLOCK by ds-node to all nodes in the shard.
+These are the parameters that control the broadcasting of DS blocks from DS committee nodes to shard nodes according to the design above.
 
 ```xml
 <data_sharing>
-        <BROADCAST_TREEBASED_CLUSTER_MODE>true</BROADCAST_TREEBASED_CLUSTER_MODE>
-        <NUM_FORWARDED_BLOCK_RECEIVERS_PER_SHARD>3</NUM_FORWARDED_BLOCK_RECEIVERS_PER_SHARD>
-        <MULTICAST_CLUSTER_SIZE>10</MULTICAST_CLUSTER_SIZE>
-        <NUM_OF_TREEBASED_CHILD_CLUSTERS>3</NUM_OF_TREEBASED_CHILD_CLUSTERS>
+  <BROADCAST_TREEBASED_CLUSTER_MODE>true</BROADCAST_TREEBASED_CLUSTER_MODE>
+  <NUM_FORWARDED_BLOCK_RECEIVERS_PER_SHARD>3</NUM_FORWARDED_BLOCK_RECEIVERS_PER_SHARD>
+  <MULTICAST_CLUSTER_SIZE>10</MULTICAST_CLUSTER_SIZE>
+  <NUM_OF_TREEBASED_CHILD_CLUSTERS>3</NUM_OF_TREEBASED_CHILD_CLUSTERS>
 </data_sharing>
 ```
 
-- `BROADCAST_TREEBASED_CLUSTER_MODE` : Enable/Disable Tree Based Cluster Broadcasting and fallback to pure multicasting.
-
-- `NUM_FORWARDED_BLOCK_RECEIVERS_PER_SHARD` : Number of shard-nodes receiving the DSBLOCK from ds-node initially.
-
-- `MULTICAST_CLUSTER_SIZE` : Number of nodes in each cluster.
-
-- `NUM_OF_TREEBASED_CHILD_CLUSTERS` : Number of child clusters for given cluster.
+- `BROADCAST_TREEBASED_CLUSTER_MODE`: Toggles between tree-based cluster broadcasting or pure multicasting.
+- `NUM_FORWARDED_BLOCK_RECEIVERS_PER_SHARD`: The number of shard nodes to initially receive the DS block from DS committee nodes.
+- `MULTICAST_CLUSTER_SIZE`: The number of nodes in each cluster.
+- `NUM_OF_TREEBASED_CHILD_CLUSTERS`: The number of child clusters for a given cluster.
 
 ## Blacklist
 
 Zilliqa has a blacklisting feature implemented in `libNetwork`. The idea is to keep track of IP addresses of peers that, for conditions listed below, can potentially disrupt the operation of the node. Once blacklisted, the peer is effectively excluded from further interactions with the node.
 
-### Blacklisting conditions
+### Blacklisting Conditions
 
 - Socket write failure (according to `P2PComm::IsHostHavingNetworkIssue`)
 - Socket connect failure (according to `P2PComm::IsHostHavingNetworkIssue`)
 - Gossip message from peer exceeds `MAX_GOSSIP_MSG_SIZE_IN_BYTES`
 - Bytes read from peer exceeds `MAX_READ_WATERMARK_IN_BYTES`
 
-### Blacklist checking
+### Blacklist Checking
 
 Outgoing
 
@@ -187,7 +153,7 @@ Incoming
 
 - `P2PComm::AcceptConnectionCallback`
 
-### Blacklist exemptions
+### Blacklist Exemptions
 
 Adding exclusion privilege
 
@@ -204,13 +170,13 @@ Removing exclusion privilege
    - When `NEWDSGUARDNETWORKINFO` is received (old IP)
 1. Manual removal of an IP using `miner_info.py whitelist_remove`
 
-## Blacklist removal and clearing
+## Blacklist Removal and Clearing
 
 - Non-lookup nodes remove `BLACKLIST_NUM_TO_POP` number of peers from the blacklist at the start of the DS epoch
 - Non-lookup nodes also remove all blacklisted seed nodes from the blacklist at the start of the DS epoch
 - Lookup nodes clear the entire blacklist upon receiving the DS Block
 
-### Blacklist enabling
+### Blacklist Enabling
 
 Blacklist is enabled by default, and is only temporarily disabled when doing node recovery (`RECOVERY_ALL_SYNC`). In that situation, the blacklist is re-enabled once the final block is processed.
 
