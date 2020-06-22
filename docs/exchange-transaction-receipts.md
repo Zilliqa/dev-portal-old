@@ -28,7 +28,7 @@ For example:
 
 ## Additional Fields
 
-For contract transactions, more information is contained in additional fields under the "**receipt**".
+For smart contract transactions, additional information relating to smart contract execution is contained in additional fields under the "**receipt**".
 
 ### Successful Transactions
 
