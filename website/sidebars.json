@@ -102,23 +102,14 @@
     ]
   },
   "miners": {
-    "Join As A Miner":[
+    "Miners":[
       "mining-general-info",
-      "mining-hardware-requirement",
-      {
-        "type": "subcategory",
-        "label": "Getting Started",
-        "ids": [
-          "mining-initial",
-          "mining-zilclient",
-          "mining-zilminer"
-        ]
-      },
-      "mining-monitoring"
+      "mining-zilclient",
+      "mining-zilminer"
     ]
   },
   "exchanges": {
-    "Integrate":[
+    "Exchanges":[
       {
         "type": "subcategory",
         "label": "Exchange integration",
@@ -143,7 +134,7 @@
     ]
   },
   "contributors": {
-    "Contribute":[
+    "Contributors":[
       {
         "type": "subcategory",
         "label": "Contribution guide",
