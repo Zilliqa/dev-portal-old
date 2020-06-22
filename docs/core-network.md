@@ -170,7 +170,7 @@ Removing exclusion privilege
    - When `NEWDSGUARDNETWORKINFO` is received (old IP)
 1. Manual removal of an IP using `miner_info.py whitelist_remove`
 
-## Blacklist Removal and Clearing
+### Blacklist Removal and Clearing
 
 - Non-lookup nodes remove `BLACKLIST_NUM_TO_POP` number of peers from the blacklist at the start of the DS epoch
 - Non-lookup nodes also remove all blacklisted seed nodes from the blacklist at the start of the DS epoch
@@ -192,9 +192,10 @@ The volume and size of peer-to-peer communication for a Zilliqa node is controll
 
 ### Message Count
 
-- `MAXMESSAGE`: The number of active threads for each job pool. For the incoming pool, this is the maximum number of concurrent messages to be dispatched for processing. For the outgoing pool, this is the maximum number of jobs for sending out each message to its own peer list.
-- `MSGQUEUE_SIZE`: The maximum size of the incoming message queue (before transfer to the incoming pool), beyond which any further messages are dropped.
+- `MAXSENDMESSAGE`: The number of active threads for the outgoing message pool.
+- `MAXRECVMESSAGE`: The number of active threads for the incoming message pool.
 - `SENDQUEUE_SIZE`: The maximum size of the outgoing message queue (before transfer to the outgoing pool), beyond which any further messages are dropped.
+- `MSGQUEUE_SIZE`: The maximum size of the incoming message queue (before transfer to the incoming pool), beyond which any further messages are dropped.
 
 ### Sending Frequency
 
