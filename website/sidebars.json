@@ -105,7 +105,8 @@
     "Miners":[
       "mining-general-info",
       "mining-zilclient",
-      "mining-zilminer"
+      "mining-zilminer",
+      "mining-pools"
     ]
   },
   "exchanges": {
