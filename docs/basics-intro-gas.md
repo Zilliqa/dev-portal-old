@@ -2,4 +2,17 @@
 id: basics-intro-gas
 title: Gas
 ---
-"Gas" is the name for a special unit used in smart contract enabled blockchain networks. It measures how much "work" an action or set of actions takes to perform: for example, to calculate one Keccak256 cryptographic hash it will take 30 gas each time a hash is calculated, plus a cost of 6 more gas for every 256 bits of data being hashed. Every operation that can be performed by a transaction or contract on the platform costs a certain number of gas, with operations that require more computational resources costing more gas than operations that require few computational resources.
+
+As transactions require the network to commit resources (compute, memory,
+storage and bandwidth), it is important to ensure that the resources are not
+abused. 
+
+To this end, the resources consumed to process each transaction is measured in
+a unit called "gas". Therefore, if a transaction handles a simple transfer of
+native tokens, it will lead to less gas consumed compared to a transaction that
+executes a complicated smart contract. 
+
+Users issuing transactions then have to pay to the network to process their
+transactions. The cost is proportional to the gas consumed to process the
+transaction. 
+
