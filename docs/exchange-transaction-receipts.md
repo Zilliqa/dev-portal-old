@@ -88,7 +88,7 @@ For example:
 
 ### Unsuccessful Transactions
 
-If a transaction is unsuccessful (i.e., the **success** field is `false`), these fields will be present:
+If a transaction is unsuccessful (i.e., the **success** field is `false`), no balance transfer will be executed. Additionally, these fields will be present:
 
 | Field              | Type        | Description                                                                                  |
 |:------------------ |:----------- |:-------------------------------------------------------------------------------------------- |
@@ -124,13 +124,13 @@ For example:
   }
 ```
 
-## Multiple Transitions with Balance Transfers
-
-For a transaction that involves multiple transitions that also result in balance transfers, these are the recommended steps to perform when reading the **receipt**:
+## Recommended Steps for Exchanges Polling for Incoming Deposit from Smart Contract Transactions
 
 1. Confirm that the **success** field is set to `true`
-1. Traverse the **transitions** JSON array. For each transition:
-   1. Note the **addr** and the **_tag** called under **msg**
-   1. Find the contract referred to by the **addr**
-   1. Check whether the **_tag** in the contract is a transition that performs a balance transfer
+1. Traverse the **transitions** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
+   1. **_recipient** corresponds to a known deposit address controlled by the exchange
+   1. **_tag** is either `AddFunds` or empty
+   1. **_amount** is non-zero
    1. Check the **_recipient** and **_amount** to complete the information on the balance transfer
+      <br/>In such a case, you can confirm that there is a deposit to address **_recipient** with value **_amount** (in `Qa`).
+   1. Continue traversing the remaining transitions and checking for more deposits
