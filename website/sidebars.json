@@ -157,13 +157,12 @@
           "core-directory-service",
           "core-lookup",
           "core-mining",
-          "core-tools",
-          "core-mitigation-measures",
+          "core-diagnostic-data",
+          "core-status-server",
           "core-view-change",
           "core-guard-mode",
           "core-rejoin-mechanism",
-          "core-recovery-mechanism",
-          "core-other-measures"
+          "core-recovery-mechanism"
         ]
       }
     ]
