@@ -2,67 +2,56 @@
 id: core-incremental-db
 title: Incremental DB
 ---
-This document describes the purpose behind incremental-db which levereges AWS S3 service and its implementation details.
+The incremental DB feature leverages on AWS Simple Storage Service (S3) to provide an efficient way for miners and seed nodes to get blockchain data in order to join the network.
 
-### Description
+## Background
 
-- The goal is to provide an efficient way to miners and seed nodes to get blockchain data in order to join the network.
+Prior to this feature, the basic design involved uploading or syncing entire persistence to an AWS S3 bucket at each and every Tx epoch. New nodes would then fetch the entire persistence from that bucket.
 
-### Purpose
+This would have been alright for all existing leveldb databases, with the exception of the `state` database. This is because running `aws-cli sync` on `state` results in uploading all files in the database, which is time-consuming and not bandwidth efficient.
 
-- Basic idea would have been to upload or sync entire persistence to S3 bucket every TxEpoch. And new nodes fetch the entire persistence from S3 bucket.
-- This would have been alright for all databases except for leveldb `state` because aws-cli sync for `state` database will result in uploading all file in the db which will be time consuming and not bandwidth efficient.
-- Uploading of `state` leveldb for every TxEpoch is bottle neck and solution is to use `incremental-db`.
+Uploading of `state` leveldb for every Tx epoch is thus a bottleneck, and so incremental DB was introduced as the solution.
 
-**Note:** _Its practically possible that all files in `stateDB` gets updated every TxEpoch if transactions in that epoch changes states of addresses which updates TrieDB across all files in levelDB._
+> Note: It is practically possible that all files in `stateDB` get updated at every Tx epoch, if transactions in that particular epoch changed the states of addresses that somehow update TrieDB across all the files in `state` leveldb.
 
-### Building Blocks
+## Implementation
 
-Following two scripts are main building blocks:
+Two scripts make up the building blocks for incremental DB.
 
-#### Upload Incremental DB script
+### Upload Incremental DB Script
 
-This script `uploadIncrDB.py` runs on one of the lookup node. It performs following steps:
+The script `uploadIncrDB.py` runs on a lookup node managed by Zilliqa Research. It performs the following steps:
 
-- Add Lock file to S3 bucket - `incremental`
+1. Add `Lock` file to S3 bucket **incremental**
+1. Perform sync between local `persistence` folder (i.e., within this lookup node) and `incremental\persistence` on AWS S3 every Tx epoch. More specifically, syncing is done according to different criteria based on the Tx epoch number. These are the possibilities:
+  - At script startup
+    1. Clear both buckets, i.e., **incremental** and **statedelta**
+    1. Sync entire `persistence` (i.e., everything that exists in the folder, including `state`, `stateroot`, `txBlocks`, `txnBodies`, `txnBodiesTmp`, `microblock`, etc) to bucket **incremental**
+    1. Clear all state deltas from bucket **statedelta**
+  - At every 10th DS epoch (i.e., the first Tx epoch following the 10th DS epoch)
+    1. Sync entire `persistence` to bucket **incremental**
+    1. Clear all state deltas from bucket **statedelta**
+  - At all other Tx epochs
+    1. Sync entire `persistence` (excluding `state`, `stateroot`, `contractCode`, `contractStateData`, `contractStateIndex`) to bucket **incremental**
+    1. For the first Tx block within the DS epoch (e.g., 100, 200, 300, ...), we don't need to upload state delta differences. Instead, the complete `stateDelta` leveldb (composed as a tarball, e.g.,  `stateDelta_100.tar.gz`) is uploaded to S3 bucket **statedelta**
+    1. For other Tx blocks, we upload the state delta differences (composed as tarballs, e.g., `stateDelta_101.tar.gz`, `stateDelta_102.tar.gz`, .... `stateDelta_199.tar.gz`) to S3 bucket **statedelta**
+1. Remove `Lock` file from S3 bucket **incremental**
 
-- Perform sync between local `persistence` on lookup node and `incremental\peristence` on S3 every TxEpoch. However, syncing criterias differs based on TxEpoch number.
-  Following are possibilities:
-  
-  - Script startup
-    - Clean both buckets i.e. `incremental` and `statedelta`
-    - Sync entire persistence to S3 bucket - `incremental` (including `state, stateroot, txBlocks, txnBodies, txnBodiesTmp, microblock, etc` ( every thing that exists in persistence folder ) at every 10th vacuous epoch.
-    - Clean all statedeltas from S3 bucket - `statedelta`
+### Download Incremental DB Script
 
-  - Every 10th DS Epoch (first txEpoch from 10th DS epoch)
-    - Sync entire persistence to S3 bucket - `incremental` (including `state, stateroot, txBlocks, txnBodies, txnBodiesTmp, microblock, etc` ( every thing that exists in persistence folder ).
-    - Clean all statedeltas from S3 bucket - `statedelta`
+The script `downloadIncrDB.py` is executed upon startup by every miner or seed node to get the latest block chain data. It performs the following steps:
 
-  - Any other txEpoch
-    - Sync entire persistence to S3 bucket - `incremental` (excluding `state, stateroot, contractCode, contractStateData, contractStateIndex`) every txEpoch.
-    - If `current txBlkNum == vacuous epoch + 1`
-     (i.e. first txBlock in current DS epoch e.g 100, 200, 300, ... ), we don't need to upload statedelta diff here. Instead complete stateDelta db is uploaded to S3 bucket - `statedelta` ( e.g. `stateDelta_100.tar.gz` ).
-    Else upload the statedelta diff to S3 bucket - `statedelta` (e.g. `stateDelta_101.tar.gz, stateDelta_101.tar.gz, .... stateDelta_199.tar.gz`).
+1. Check if `Lock` file exists. Wait until no `Lock` file is found
+1. Clear existing local `persistence` folder, then download entire persistence data (except `microblocks` and `txBodies` for miner nodes) from S3 bucket **incremental**
+1. Check if `Lock` file has appeared after executing the previous step. If yes, return to the first step
+1. Clear existing local `StateDeltasFromS3` folder, then download all state deltas from S3 bucket **statedelta** to `StateDeltasFromS3` folder
 
-- Remove Lock file from S3 - `incremental`.
+## Incremental DB Usage by a Joining Node
 
-#### Download Incremental DB script
+1. Node uses the `downloadIncrDB.py` script to populate its `persistence` folder from S3 bucket **incrementalDB**
+1. Node uses the same script to populate its `StateDeltasFromS3` folder with all the state deltas from S3 bucket **statedelta**
+1. Node loads the contents of `persistence` and initiates syncup. At this point, node has a base state of, say, `X`
+1. Node then recreates the latest state using the state deltas in `StateDeltasFromS3` (e.g. `stateDelta_101.tar.gz`, `stateDelta_101.tar.gz`, ...., `stateDelta_199.tar.gz`, `stateDelta_200.tar.gz`, `stateDelta_201.tar.gz`, ....)
+1. Using these files, the final state `Y` is computed as `Y = X + x1 + x2 + ... + x99 + x100 + x101 + x102 + ...`
 
-This script `downloadIncrDB.py` is first ran by every miner node or seed node to get latest block chain data. It perform following steps:
-
-- Check if Lock file existed. Wait until no Lock file is found. Otherwise go to Step 2.
-
-- Clean existing persistence, if any. And download Entire Persistence from S3 bucket - `incremental`.
-  If node is `miner`, `microblocks` and `txBodies` are not downloaded.
-
-- Check if Lock file existed. If yes, start again with step 1).
-
-- Clean any `StateDeltasFromS3` folder. Download all statedeltas from S3 bucket - `statedelta` to `StateDeltasFromS3`.
-
-#### Joining node
-
-- Node uses the `downloadIncrDB.py` to download the `peristence` from S3 bucket `incrementalDB` and all the state-deltas from S3 bucket `statedelta` to `StateDeltasFromS3`.
-- Node startsup with downloaded `peristence` and starts syncup. After this, node has **base state** `say X`.
-- Node then recreates latest state using state-deltas from `StateDeltasFromS3` (i.e.  `stateDelta_101.tar.gz, stateDelta_101.tar.gz, .... stateDelta_199.tar.gz, stateDelta_200.tar.gz, stateDelta_201.tar.gz, stateDelta_201.tar.gz, .... stateDelta_299.tar.gz` ).
-
-  Final State `Y = X + x1 + x2  +  ... +  x99 + x100 + x101 + x102 + ...`
+More information on new node joining can be found in the [Rejoin Mechanism](core-rejoin-mechanism.md) page.
