@@ -157,6 +157,7 @@
           "core-data",
           "core-directory-service",
           "core-lookup-servers",
+          "core-transaction-dispatch",
           "core-multipliers",
           "core-incremental-db",
           "core-mining",

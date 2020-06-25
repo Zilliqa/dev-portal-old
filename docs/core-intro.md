@@ -50,9 +50,9 @@ The documents in this section provide a detailed description on different aspect
 
 ## Lookup
 
-- Transaction Dispatch
+- [Transaction Dispatch](core-transaction-dispatch.md)
 - [Multiplier](core-multipliers.md)
-- [API Server](core-lookup-servers.md#api-server)
+- API Server
 - [Status Server](core-lookup-servers.md#status-server)
 - [Websocket Server](core-lookup-servers.md#websocket-server)
 
