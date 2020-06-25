@@ -149,7 +149,7 @@
         "type": "subcategory",
         "label": "Core Protocol Design",
         "ids": [
-          "core-overview",
+          "core-intro",
           "core-node-operation",
           "core-consensus",
           "core-network",

@@ -1,6 +1,6 @@
 ---
-id: core-lookup
-title: Lookup
+id: core-lookup-servers
+title: Lookup Servers
 ---
 ## API Server
 

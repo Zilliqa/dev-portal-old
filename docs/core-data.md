@@ -33,7 +33,3 @@ title: Data Layer
 1. These nodes store DS Blocks, Tx Blocks, and the current state.
 1. Shard nodes also store processed transactions for the current DS epoch in temporary storage. These are uploaded to S3 for backup.
 1. DS nodes also store all the microblocks as they receive them from the shard nodes.
-
-## Cloud Storage
-
-The Zilliqa network uses AWS S3 to achieve high-volume data transfer, distribution, and storage of blockchain-related data that includes persistence data, snapshots, state deltas, logs, and release packages.

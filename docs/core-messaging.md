@@ -18,7 +18,7 @@ All classes that inherit from `Executable` will first check the second byte in t
 
 From there, `Execute()` will further forward the message to a private function inside the class, and these functions are all named `ProcessXXX`.
 
-### Message Queues and Thread Pools
+## Message Queues and Thread Pools
 
 Incoming and outgoing message queues are maintained between `P2PComm` and the rest of the Zilliqa core. This helps provide some ordering in the processing of messages, and it also adds some control over the number of messages that can be buffered. Once ready for processing, messages enter a thread pool, which regulates the number of messages that can be processed concurrently.
 
