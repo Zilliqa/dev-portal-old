@@ -60,8 +60,8 @@ The documents in this section provide a detailed description on different aspect
 
 - [PoW Algorithm](core-mining.md#pow-algorithm)
 - [Difficulty Adjustment](core-mining.md#difficulty-adjustment)
-- [Coinbase / Rewards](core-mining.md#coinbase--rewards)
 - [Proof of Reputation](core-mining.md#proof-of-reputation)
+- [Coinbase / Rewards](core-mining.md#coinbase--rewards)
 
 ## Mitigation Measures
 
