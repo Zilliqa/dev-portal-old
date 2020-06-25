@@ -8,11 +8,11 @@ The incremental DB feature leverages on AWS Simple Storage Service (S3) to provi
 
 Prior to this feature, the basic design involved uploading or syncing entire persistence to an AWS S3 bucket at each and every Tx epoch. New nodes would then fetch the entire persistence from that bucket.
 
-This would have been alright for all existing leveldb databases, with the exception of the `state` database. This is because running `aws-cli sync` on `state` results in uploading all files in the database, which is time-consuming and not bandwidth efficient.
+This would have been alright for all existing LevelDB databases, with the exception of the `state` database. This is because running `aws-cli sync` on `state` results in uploading all files in the database, which is time-consuming and not bandwidth efficient.
 
-Uploading of `state` leveldb for every Tx epoch is thus a bottleneck, and so incremental DB was introduced as the solution.
+Uploading of `state` LevelDB for every Tx epoch is thus a bottleneck, and so incremental DB was introduced as the solution.
 
-> Note: It is practically possible that all files in `stateDB` get updated at every Tx epoch, if transactions in that particular epoch changed the states of addresses that somehow update TrieDB across all the files in `state` leveldb.
+> Note: It is practically possible that all files in `stateDB` get updated at every Tx epoch, if transactions in that particular epoch changed the states of addresses that somehow update TrieDB across all the files in `state` LevelDB.
 
 ## Implementation
 
@@ -33,7 +33,7 @@ The script `uploadIncrDB.py` runs on a lookup node managed by Zilliqa Research. 
     1. Clear all state deltas from bucket **statedelta**
   - At all other Tx epochs
     1. Sync entire `persistence` (excluding `state`, `stateroot`, `contractCode`, `contractStateData`, `contractStateIndex`) to bucket **incremental**
-    1. For the first Tx block within the DS epoch (e.g., 100, 200, 300, ...), we don't need to upload state delta differences. Instead, the complete `stateDelta` leveldb (composed as a tarball, e.g.,  `stateDelta_100.tar.gz`) is uploaded to S3 bucket **statedelta**
+    1. For the first Tx block within the DS epoch (e.g., 100, 200, 300, ...), we don't need to upload state delta differences. Instead, the complete `stateDelta` LevelDB (composed as a tarball, e.g.,  `stateDelta_100.tar.gz`) is uploaded to S3 bucket **statedelta**
     1. For other Tx blocks, we upload the state delta differences (composed as tarballs, e.g., `stateDelta_101.tar.gz`, `stateDelta_102.tar.gz`, .... `stateDelta_199.tar.gz`) to S3 bucket **statedelta**
 1. Remove `Lock` file from S3 bucket **incremental**
 

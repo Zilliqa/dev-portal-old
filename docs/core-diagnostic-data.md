@@ -17,7 +17,7 @@ This is the current data stored for diagnostic purposes:
 
 To use the diagnostic tools:
 
-1. Make sure there is a `persistence` subfolder in your current directory.
-1. Make sure `persistence/diagnosticNodes` `persistence/diagnosticCoinb` contains the data you want to extract.
-1. Run `getnetworkhistory <name of output CSV file>` or `getrewardhistory <name of output CSV file>`.
-1. Output CSV file will appear in the current directory. Use Excel or LibreOffice Calc to open it.
+1. Make sure there is a `persistence` subfolder in your current directory
+1. Make sure `persistence/diagnosticNodes` and `persistence/diagnosticCoinb` contain the data you want to extract
+1. Run `getnetworkhistory <name of output CSV file>` or `getrewardhistory <name of output CSV file>`
+1. Output CSV file will appear in the current directory. Use Excel or LibreOffice Calc to open it
