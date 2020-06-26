@@ -1,29 +1,14 @@
 ---
-id: core-lookup-servers
-title: Lookup Servers
+id: core-websocket-server
+title: Websocket Server
 ---
-## Status Server
-
-This API server runs on port 4301 by default on a node locally (i.e., cannot be accessed from outside).
-
-### Available Methods
-
-- **`AddToBlacklistExclusion`**: Can be used to add an API to the blacklist exclusion list (or whitelist).
-- **`RemoveFromBlacklistExclusion`**: Can be used to remove an API from the blacklist exclustion list.
-- **`GetNodeState`**: Used to get the state of the node, e.g., POW, COMMIT_DONE etc.
-- **`GetEpochFin`**: Tells the epoch number for the lookup for which the microblocks and txns have been received.
-- **`GetDSCommittee`**: Returns the list of IPs and PubKeys of the current DS Committee.
-- **`IsTxnInMemPool`**: Used to query local mempool of the nodes. Can tell, given a particular txnhash, if it is in mempool and why (e.g., nonce too high or gas price low).
-
-## Websocket Server
-
 This page describes the protocol, between the Zilliqa Websocket Server and the sdk client, for querying subscription and message pushing.
 
-### Feature workflow
+## Feature workflow
 
 Client can subscribe their interested topics or unsubscribe certain topic by sending query, if the query failed they will normally be informed immediately with related error message. For every Tx block(epoch), the subscribed content will be sent from server to each client in one message where an array contains all their subscribed topic if updated, which we name **notification**.
 
-### Supported query
+## Supported query
 
 The following types of data are the current main focus that we want to consider to be supported by ZWS:
 
@@ -31,7 +16,7 @@ The following types of data are the current main focus that we want to consider 
 - **Event log**. Which includes all the event log generated for interested contract address
 - **Unsubscribe**. Which tells the server to unsubscribe certain topic for the client
 
-### Exception handling
+## Exception handling
 
 Usually an **error message** will be responded to the client if the query failed, it may looks like
 
@@ -46,7 +31,7 @@ The following error messages will be applied to all kinds of query if being inva
 
 - **invalid query field**. Which tells the client if the query is invalid, it could be not found, empty, malformed, or not available
 
-### Message encoding
+## Message encoding
 
 For convention, we still use JSON as our encoding format.
 
@@ -70,9 +55,9 @@ The epoch message will be presented in this way:
 
 The followings are case by case for each subscription:
 
-#### Subscribe New Block
+### Subscribe New Block
 
-##### query message
+#### query message
 
 ```json
 {
@@ -80,7 +65,7 @@ The followings are case by case for each subscription:
 }
 ```
 
-##### response message
+#### response message
 
 Once succsfully subscribed, server will echo the query message to the client, otherwise will return error message.
 
@@ -104,9 +89,9 @@ Special error message:
 }
 ```
 
-#### Subscribe Event Log
+### Subscribe Event Log
 
-##### query message
+#### query message
 
 ```json
 {
@@ -118,7 +103,7 @@ Special error message:
 }
 ```
 
-##### response message
+#### response message
 
 Once succesfully subscribed, server will echo the query message to the client,
 otherwise will return error message.
@@ -128,7 +113,7 @@ Special error message:
 - **invalid addresses field**, which tells the client the addresses field is invalid, it could either be not found, malformed or empty
 - **no contract found in list**, which tells the client the addresses provided are all of non contract
 
-##### expected field in notification
+#### expected field in notification
 
 ```json
 {
@@ -161,9 +146,9 @@ Special error message:
 
 Notice that for address `0x1111111111111111111111111111111111111111` is not presented in the message since it doesn't have any event log released in this epoch.
 
-#### Unsubscribe
+### Unsubscribe
 
-##### query message
+#### query message
 
 ```json
 {
@@ -172,7 +157,7 @@ Notice that for address `0x1111111111111111111111111111111111111111` is not pres
 }
 ```
 
-##### response message
+#### response message
 
 Once succesfully ubsubscribed, server will echo the query message to the client,
 otherwise will return error message.
@@ -181,7 +166,7 @@ Special error message:
 
 - **invalid type field**, which tells the client the type field is invalid, if could either be not found, malformed or not available.
 
-##### expected field in notification
+#### expected field in notification
 
 ```json
 {
@@ -190,7 +175,7 @@ Special error message:
 }
 ```
 
-### Example
+## Example
 
 Client subscribe NewBlock:
 

@@ -49,11 +49,10 @@ The documents in this section provide a detailed description on different aspect
 
 ## Lookup
 
+- API Server
+- [Websocket Server](core-websocket-server.md)
 - [Transaction Dispatch](core-transaction-dispatch.md)
 - [Multiplier](core-multipliers.md)
-- API Server
-- [Status Server](core-lookup-servers.md#status-server)
-- [Websocket Server](core-lookup-servers.md#websocket-server)
 
 ## Mining
 
@@ -69,3 +68,4 @@ The documents in this section provide a detailed description on different aspect
 - [Recovery Mechanism](core-recovery-mechanism.md)
 - [View Change](core-view-change.md)
 - [Diagnostic Data](core-diagnostic-data.md)
+- [Status Server](core-status-server.md)

@@ -162,7 +162,8 @@
           "core-data",
           "core-ds-mimo",
           "core-ds-reputation",
-          "core-lookup-servers",
+          "core-api-server",
+          "core-websocket-server",
           "core-transaction-dispatch",
           "core-multipliers",
           "core-incremental-db",
@@ -171,7 +172,8 @@
           "core-view-change",
           "core-guard-mode",
           "core-rejoin-mechanism",
-          "core-recovery-mechanism"
+          "core-recovery-mechanism",
+          "core-status-server"
         ]
       }
     ]
