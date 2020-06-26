@@ -12,16 +12,16 @@ The documents in this section provide a detailed description on different aspect
 
 ## Consensus Layer
 
-- [Consensus Protocol](core-consensus.md#usage-in-the-protocol)
+- [Consensus Protocol](core-consensus.md)
 - Schnorr Algorithm
-- [Multisignatures](core-consensus.md#multisignatures)
+- [Multisignatures](core-multisignatures.md)
 
 ## Network Communication & Topographies
 
-- [Gossip Protocol](core-network.md#gossip-protocol)
-- [Tree-based Cluster Broadcasting](core-network.md#tree-based-cluster-broadcasting)
-- [Blacklist](core-network.md#blacklist)
-- [Messaging Limits](core-network.md#messaging-limits)
+- [Gossip Protocol](core-gossip.md)
+- [Tree-based Cluster Broadcasting](core-broadcasting.md)
+- [Blacklist](core-blacklist.md)
+- [Messaging Limits](core-messaging-limits.md)
 
 ## Messaging Layer
 

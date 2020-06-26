@@ -1,8 +1,8 @@
 ---
 id: core-consensus
-title: Consensus Layer
+title: Consensus
 ---
-This section describes how the consensus protocol (as initially designed in the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)) is implemented and used in the core Zilliqa code.
+This section describes how PBFT consensus (as initially designed in the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)) is implemented and used in the core Zilliqa code.
 
 ## Usage in the Protocol
 
