@@ -52,14 +52,14 @@ The documents in this section provide a detailed description on different aspect
 - API Server
 - [Websocket Server](core-websocket-server.md)
 - [Transaction Dispatch](core-transaction-dispatch.md)
-- [Multiplier](core-multipliers.md)
+- [Multipliers](core-multipliers.md)
 
 ## Mining
 
-- [PoW Algorithm](core-mining.md#pow-algorithm)
-- [Difficulty Adjustment](core-mining.md#difficulty-adjustment)
-- [Proof of Reputation](core-mining.md#proof-of-reputation)
-- [Coinbase / Rewards](core-mining.md#coinbase--rewards)
+- [PoW Algorithm](core-pow.md)
+- [Difficulty Adjustment](core-difficulty-adjustment.md)
+- [Proof of Reputation](core-por.md)
+- [Coinbase Rewards](core-coinbase.md)
 
 ## Mitigation Measures
 
