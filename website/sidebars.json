@@ -136,30 +136,93 @@
   },
   "contributors": {
     "Contributors":[
-      {
-        "type": "subcategory",
-        "label": "Contribution Guide",
-        "ids": [
-          "contribute-buildzil",
-          "contribute-guidelines",
-          "contribute-bug-bounty"
-        ]
-      },
+      "contribute-buildzil",
+      "contribute-guidelines",
+      "contribute-bug-bounty",
       {
         "type": "subcategory",
         "label": "Core Protocol Design",
         "ids": [
           "core-intro",
-          "core-design-overview",
-          "core-consensus-layer",
-          "core-network-layer",
-          "core-messaging-layer",
-          "core-data-layer",
-          "core-directory-service",
-          "core-shard-node",
-          "core-lookup",
-          "core-mining",
-          "core-mitigation-measures"
+          {
+            "type": "subcategory",
+            "label": "Design Overview",
+            "ids": [
+              "core-node-operation"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Consensus Layer",
+            "ids": [
+              "core-consensus",
+              "core-multisignatures"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Network Layer",
+            "ids": [
+              "core-gossip",
+              "core-broadcasting",
+              "core-blacklist",
+              "core-messaging-limits"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Messaging Layer",
+            "ids": [
+              "core-message-processing"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Data Layer",
+            "ids": [
+              "core-data",
+              "core-incremental-db"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Directory Service",
+            "ids": [
+              "core-ds-mimo",
+              "core-ds-reputation"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Lookup",
+            "ids": [
+              "core-websocket-server",
+              "core-transaction-dispatch",
+              "core-multipliers"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Mining",
+            "ids": [
+              "core-pow",
+              "core-difficulty-adjustment",
+              "core-por",
+              "core-coinbase"
+            ]
+          },
+          {
+            "type": "subcategory",
+            "label": "Mitigation Measures",
+            "ids": [
+              "core-guard-mode",
+              "core-rejoin-mechanism",
+              "core-recovery-mechanism",
+              "core-view-change",
+              "core-diagnostic-data",
+              "core-status-server"
+            ]
+          },
         ]
       }
     ]
