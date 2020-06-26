@@ -150,33 +150,16 @@
         "label": "Core Protocol Design",
         "ids": [
           "core-intro",
-          "core-intro#overview",
-          "core-consensus",
-          "core-schnorr",
-          "core-multisignatures",
-          "core-gossip",
-          "core-broadcasting",
-          "core-blacklist",
-          "core-messaging-limits",
-          "core-message-processing",
-          "core-data",
-          "core-ds-mimo",
-          "core-ds-reputation",
-          "core-api-server",
-          "core-websocket-server",
-          "core-transaction-dispatch",
-          "core-multipliers",
-          "core-incremental-db",
-          "core-pow",
-          "core-difficulty-adjustment",
-          "core-por",
-          "core-coinbase",
-          "core-diagnostic-data",
-          "core-view-change",
-          "core-guard-mode",
-          "core-rejoin-mechanism",
-          "core-recovery-mechanism",
-          "core-status-server"
+          "core-design-overview",
+          "core-consensus-layer",
+          "core-network-layer",
+          "core-messaging-layer",
+          "core-data-layer",
+          "core-directory-service",
+          "core-shard-node"
+          "core-lookup",
+          "core-mining",
+          "core-mitigation-measures"
         ]
       }
     ]

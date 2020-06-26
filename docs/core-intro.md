@@ -4,6 +4,11 @@ title: Introduction
 ---
 The documents in this section provide a detailed description on different aspects of the Zilliqa blockchain core protocol.
 
+Additional resources are listed [here](contribute-buildzil.md#resources).
+
+
+
+
 ## Overview
 
 - Network Layout
