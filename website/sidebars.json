@@ -156,7 +156,7 @@
           "core-messaging-layer",
           "core-data-layer",
           "core-directory-service",
-          "core-shard-node"
+          "core-shard-node",
           "core-lookup",
           "core-mining",
           "core-mitigation-measures"
