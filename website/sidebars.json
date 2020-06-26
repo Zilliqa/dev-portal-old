@@ -150,7 +150,7 @@
         "label": "Core Protocol Design",
         "ids": [
           "core-intro",
-          "core-node-operation",
+          "core-intro#overview",
           "core-consensus",
           "core-schnorr",
           "core-multisignatures",
