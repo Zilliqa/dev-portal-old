@@ -1,12 +1,10 @@
 ---
-id: core-directory-service
-title: Directory Service
+id: core-ds-mimo
+title: DS MIMO
 ---
-## DS Committee Multiple In Multiple Out (DS MIMO) Setup
+> Note: DS committee ejection has now been superseded by [DS Reputation](core-ds-reputation.md).
 
-> Note: DS committee ejection has now been superseded by [DS Reputation](#ds-reputation).
-
-This setup allows `n` nodes to join and leave the DS committee at every DS epoch. The steps are:
+DS committee membership is maintained using a multiple-in multiple-out (MIMO) setup. This setup allows `n` nodes to join and leave the DS committee at every DS epoch. The steps are:
 
 1. Nodes submit PoWs (for difficulty and DS difficulty)
 1. DS leader composes DS Block
@@ -30,19 +28,3 @@ This setup allows `n` nodes to join and leave the DS committee at every DS epoch
 1. DS committee sends the DS Block and sharding structure to all PoW submitters
 1. Incoming DS members receive the DS Block, process it, and update their DS `consensusMyID` based on the ordering found in the map in the DS Block. From here onwards, these nodes are part of the DS committee
 1. Shard members process the DS Block and update their view of the DS committee
-
-## DS Reputation
-
-The integration of the DS reputation within DS MIMO enables identification and removal of underperforming DS nodes instead of simply the oldest DS nodes. This encourages node owners to use better hardware for the DS nodes, improving the stability and efficiency of the network, particularly during consensus protocol.
-
-The steps are:
-
-1. During DS Block consensus, the performance of each DS node is evaluated based on the rewards they received in the last DS epoch
-1. DS leader calls `DetermineByzantineNodes()` to find out which DS nodes underperformed (according to the criteria set in constants.xml). The public keys of these underperforming nodes are included in DS Block consensus announcement
-1. DS backup nodes call `VerifyRemovedByzantineNodes` when processing the announcement to verify that the DS nodes proposed for removal from the committee are really underperforming. Verification must pass for consensus to succeed; a view change will be triggered otherwise
-1. After DS Block consensus, the underperforming DS nodes are removed from the DS committee and the blockchain network. They will need to do PoW again to rejoin the network
-
-### References
-
-1. [DS Reputation Proposal](https://github.com/nnamon/zilliqa-research/blob/master/ds_reputation/proposal.md)
-2. [PR 1587](https://github.com/Zilliqa/Zilliqa/pull/1587)

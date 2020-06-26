@@ -27,8 +27,7 @@ The documents in this section provide a detailed description on different aspect
 
 - Message Format
 - Protobuf and Serialization
-- [Message Dispatch and Processing](core-messaging.md#message-dispatch-and-processing)
-- [Message Queues and Thread Pools](core-messaging.md#message-queues-and-thread-pools)
+- [Message Processing](core-message-processing.md)
 - Commands
 
 ## Data Layer
@@ -41,8 +40,8 @@ The documents in this section provide a detailed description on different aspect
 ## Directory Service
 
 - Operational Details (State Machine)
-- [DS MIMO](core-directory-service.md#ds-committee-multiple-in-multiple-out-ds-mimo-setup)
-- [DS Reputation](core-directory-service.md#ds-reputation)
+- [DS MIMO](core-ds-mimo.md)
+- [DS Reputation](core-ds-reputation.md)
 
 ## Shard Node
 
