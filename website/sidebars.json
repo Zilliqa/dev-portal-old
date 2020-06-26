@@ -178,7 +178,8 @@
         "type": "subcategory",
         "label": "Data Layer",
         "ids": [
-          "core-data",
+          "core-transaction-checks",
+          "core-local-storage",
           "core-incremental-db"
         ]
       },
