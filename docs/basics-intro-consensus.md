@@ -2,15 +2,34 @@
 id: basics-intro-consensus
 title: Consensus mechanism
 ---
-A Consensus mechanism is a fault-tolerant mechanism that is used in computer and blockchain systems to achieve the necessary agreement on a single data value or a single state of the network among distributed processes or multi-agent systems, such as with cryptocurrencies.
+
+The blockchain network being decentralized has to have a mechanism to agree
+upon the next state of system. This is achieved via a _consensus protocol_.
+
 
 ## Types of Consensus Mechanism
 
-### PoW: Proof of Work
-Proof of work describes a system that requires a not-insignificant but feasible amount of effort in order to deter dos(denial-of-service) attacks and other malicious attacks. It requires to solve a computational challenging puzzle in order to create new blocks in Blockchain.
+Over the last two decades, several new consensus protocols have been developed
+and used in the blockchain space. The most common ones are:
+
+
+### BFT: Byzantine Fault Tolerance Protocol
+
+This is the most classical way to reach consensus which works on the assumption
+that the network has at most 1/3 of malicious nodes. The protocol requires each
+honest to agree on the state via voting. This involves several rounds of
+communication among the nodes.
+
+### PoW: Proof of Work 
+
+Proof-of-Work as a consensus mechanism was pioneered by Bitcoin, where nodes
+are required to solve a computational puzzle and the node fastest to find a
+solution decides the state of the system.
 
 ### PoS: Proof of Stake
-Proof-of-Stake mechanism achieve consensus by requiring users to stake an amount of their tokens so as to have a chance of being selected to validate blocks of transactions, and get rewarded for doing so. Priority is given to miners who have purchased the most stake in the blockchain system.
 
-### DPoS: Delegated Proof of Stake
-This form of consensus mirrors the election of members in governing bodies. Witnesses, those who validate transactions, are elected.
+In Proof-of-Stake, nodes are required to stake an amount of assets (e.g.,
+native currency of the blockchain). Those who stake are allowed to decide on
+the next state of the system. By putting a stake, the expectation is that they
+will not make detrimental decisions. And in fact, the probability that a
+certain node is chosen to propose the next state is proportional to its stake. 
