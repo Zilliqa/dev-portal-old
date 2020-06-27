@@ -4,30 +4,34 @@ title: Blockchain
 ---
 ## What is Blockchain?
 
-Blockchain is a shared, immutable ledger for recording transactions, tracking
-assets and building trust. It is a distributed ledger technology, which
-securely records information across a peer-to-peer network. Although it was
-created for financial service, blockchain's potential lies far beyond
-cryptocurrency. These ledgers can record data from Health sector, Land
-Registry, eSports, Enterprise Records, logistics Manifests, identities - almost
-anything that holds value.
+Blockchain is a **distributed ledger** that is **immutable**. It is a
+**ledger** in the sense that it is a global accounting system that keeps track
+of balance (and other data) of each account. It is **distributed** as it is not
+maintained by a single entity but rather by a distributed network of
+independent machines who are given the incentive to do so. It is **immutable**
+in the sense that it is not easy to change the chronological history of changes
+made to the ledger.
 
-Blockchain technology is actually a combination of 4 components:
-- Peer-to-peer networks
-- Consensus mechanism; Crypto economics and Game theory
-- Cryptography
-- Blockchain data structure
+## Other Keys Benefits
 
-## Key Benefits of Blockchain
+Blockchains have some key properties that make them a powerful technology:
 
-### 1. Robustness
-Blockchain Technology stores information in blocks which are chronologically synchronised. And these blocks cannot be controlled by an individual making blockchain highly secured.
+### 1. Decentralization
+Since the ledger is maintained by a decentralized network of machines that is
+open for anyone to join, it cannot be shutdown making blockchains resistant to
+any external control and censorship.
 
-### 2. Decentralised Ledger
-Decentralised Ledger operates on peer to peer basis. DLT allows to record the transaction of assets and their details in multiple places at the same time without any central authority. Unlike traditional databases, distributed ledgers have no central data store or administration functionality.
+### 3. Permissionless
+Due to the public nature of blockchains, anyone (with sufficient resources)
+can join the network to maintain the ledger and can make use of the network.
+There is no need to get a permission from any central entity making it open for
+anyone and everyone.  
 
-### 3. Immutable
-Once a block is sealed cryptographically or added to main chain, it is impossible to delete or edit, ensuring the immutability of the digital ledger.
+### 2. Public verifiability
+The entire chronological history is public for anyone to review. This provides
+transparency, trust and auditability allowing anyone to re-create the current
+state of the system from the historical data. 
 
-### 4. Transparency
-It is possible for a user to verify and track his transactions, with the entire the record of the transactions available in the blockchain.
+
+
+

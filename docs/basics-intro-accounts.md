@@ -15,7 +15,7 @@ string generated using a hash function.
 Similar to Ethereum, the Zilliqa network supports two types of accounts:
 
 1. Externally-Owned Account (aka User Account): An account controlled by an
-   end user who owns a public-private cryptographic key pair. The address of an
+   end user who owns a public-private signature key pair. The address of an
    externally-owned account is essentially a truncated hash of the public key.
 
 
