@@ -88,16 +88,6 @@
           "dev-txn-confirmation",
           "dev-txn-receipt"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Testing and Formal Verification",
-        "ids": [
-          "dev-test-checker",
-          "dev-test-cashflow",
-          "dev-test-condition",
-          "dev-test-formal"
-        ]
       }
     ]
   },
