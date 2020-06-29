@@ -9,7 +9,7 @@ title: Transaction Dispatch
 1. After the lookup receives a ds or tx block, it dispatches these txns to the corresponding shards.
 1. After it reaches a shard, the shard node again validates this txn and then adds it to the txn mempool.
 1. The shard leader then proposes the list of txns to be included in the microblock, the other shard nodes then verify the corresponding txns.
-1. If the microblock is then included in the final block, the nodes commits the txns and sends the txn receipts to the lookup.
+1. If the microblock is then included in the Tx block, the nodes commits the txns and sends the txn receipts to the lookup.
 1. The lookup use this receipt to tell the user the status of the txn.
 
 ![image01](../assets/core/features/transaction-dispatch/image01.png)

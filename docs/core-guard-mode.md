@@ -17,10 +17,10 @@ Guard mode is a special operating mode in Zilliqa that can be used to maintain s
 
 ## Configuration
 
-1. To enable guard mode, set `GUARD_MODE` to `true` in constants.xml
-1. Add `n` DS guard public keys to the `ds_guard.DSPUBKEY` section in constants.xml
-1. Add `n` shard guard public keys to the `shard_guard.SHARDPUBKEY` section in constants.xml
-1. Adjust `SHARD_GUARD_TOL` in constants.xml to control the minimum percentage of shard guards in each shard
+1. To enable guard mode, set `GUARD_MODE` to `true` in `constants.xml`
+1. Add `n` DS guard public keys to the `ds_guard.DSPUBKEY` section in `constants.xml`
+1. Add `n` shard guard public keys to the `shard_guard.SHARDPUBKEY` section in `constants.xml`
+1. Adjust `SHARD_GUARD_TOL` in `constants.xml` to control the minimum percentage of shard guards in each shard
 
 ## Normal Operation
 

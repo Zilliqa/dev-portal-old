@@ -9,6 +9,7 @@ title: Mainnet
 |:---------|:-------|
 | **API URL** | `https://api.zilliqa.com/` |
 | **Block Explorer** | [**Link**](https://viewblock.io/zilliqa) |
+| **WebSocket endpoint** | wss://api-ws.zilliqa.com |
 
 ## Build Dependencies
 

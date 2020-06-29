@@ -30,23 +30,23 @@ Zilliqa supports 5 modes of PoW. Some are suitable for local or small-scale test
 
 ### Light Dataset Mine
 
-This is the default mining mode if you don't change any parameters in constants.xml. It uses CPU to do PoW. It will generate the DAG data dynamically and doesn't store it in memory; hence, it is the slowest method, but it also doesn't require the 1GB RAM. It is suitable for local testing or small-scale cloud testing. It is not suitable for Mainnet mining.
+This is the default mining mode if you don't change any parameters in `constants.xml`. It uses CPU to do PoW. It will generate the DAG data dynamically and doesn't store it in memory; hence, it is the slowest method, but it also doesn't require the 1GB RAM. It is suitable for local testing or small-scale cloud testing. It is not suitable for Mainnet mining.
 
 ### Full Dataset Mine
 
-This mode will be enabled if `FULL_DATASET_MINE` is set to `true` in constants.xml. It uses CPU to do PoW. It is similar to the light dataset mine mode - the DAG is generated dynamically. However, after the DAG is generated, it is saved in memory. So, next time the same DAG needs to be used, it will be read out directly from memory. This method is faster than the light dataset mine mode, but it requires 1GB RAM on the hardware. It is suitable for local testing or small-scale cloud testing. It is not suitable for Mainnet mining.
+This mode will be enabled if `FULL_DATASET_MINE` is set to `true` in `constants.xml`. It uses CPU to do PoW. It is similar to the light dataset mine mode - the DAG is generated dynamically. However, after the DAG is generated, it is saved in memory. So, next time the same DAG needs to be used, it will be read out directly from memory. This method is faster than the light dataset mine mode, but it requires 1GB RAM on the hardware. It is suitable for local testing or small-scale cloud testing. It is not suitable for Mainnet mining.
 
 ### GPU Mine
 
-This mode will be enabled if either `CUDA_GPU_MINE` or `OPENCL_GPU_MINE` is set to `true` in constants.xml. It uses GPU to do PoW. There are more parameters available for this mode in the `GPU` section in constants.xml. This mode uses GPU to generate the DAG, and the DAG is saved in GPU RAM. It requires that the GPU have at least 1GB RAM. Because a GPU has thousands of cores, the mining speed can be much faster than CPU mining. It is suitable for Mainnet mining, but only during the bootstrap phase; now the Mainnet difficulty is too high for a single machine to finish PoW within the required time. Hence it is now suitable only for test purposes.
+This mode will be enabled if either `CUDA_GPU_MINE` or `OPENCL_GPU_MINE` is set to `true` in `constants.xml`. It uses GPU to do PoW. There are more parameters available for this mode in the `GPU` section in `constants.xml`. This mode uses GPU to generate the DAG, and the DAG is saved in GPU RAM. It requires that the GPU have at least 1GB RAM. Because a GPU has thousands of cores, the mining speed can be much faster than CPU mining. It is suitable for Mainnet mining, but only during the bootstrap phase; now the Mainnet difficulty is too high for a single machine to finish PoW within the required time. Hence it is now suitable only for test purposes.
 
 ### Getwork Server Mine
 
-This mode will be enabled if `GETWORK_SERVER_MINE` is set to `true` in constants.xml. The Zilliqa node will be used as a mining server, and other GPU machines can get work from this server and submit the result if the node's GPU machine can find a result. This mode can combine the hash power of multiple GPU machines together to finish a high-difficulty PoW job. But this setup is not easy to maintain if there are multiple Zilliqa nodes using this mode.
+This mode will be enabled if `GETWORK_SERVER_MINE` is set to `true` in `constants.xml`. The Zilliqa node will be used as a mining server, and other GPU machines can get work from this server and submit the result if the node's GPU machine can find a result. This mode can combine the hash power of multiple GPU machines together to finish a high-difficulty PoW job. But this setup is not easy to maintain if there are multiple Zilliqa nodes using this mode.
 
 ### Remote Mine
 
-This mode will be enabled if `REMOTE_MINE` is set to `true` in constants.xml. Also, `MINING_PROXY_URL` needs to be set to the address of the mining proxy. In this mode, multiple Zilliqa nodes can send PoW work requests to the mining proxy, and the mining proxy dispatches the work packages to multiple mining machines. If a mining machine finds a result, it sends it to the mining proxy, and the mining proxy in turn sends it to the Zilliqa node. This mode can support multiple Zilliqa nodes and mining machines, but it requires running a mining proxy server separately.
+This mode will be enabled if `REMOTE_MINE` is set to `true` in `constants.xml`. Also, `MINING_PROXY_URL` needs to be set to the address of the mining proxy. In this mode, multiple Zilliqa nodes can send PoW work requests to the mining proxy, and the mining proxy dispatches the work packages to multiple mining machines. If a mining machine finds a result, it sends it to the mining proxy, and the mining proxy in turn sends it to the Zilliqa node. This mode can support multiple Zilliqa nodes and mining machines, but it requires running a mining proxy server separately.
 
 ## References
 

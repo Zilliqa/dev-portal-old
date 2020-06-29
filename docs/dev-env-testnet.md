@@ -10,6 +10,8 @@ title: Testnet
 | **API URL** | `https://dev-api.zilliqa.com/` |
 | **Block Explorer** | [**Link**](https://dev-explorer.zilliqa.com) |
 | **Faucet** | [**Link**](https://dev-wallet.zilliqa.com) |
+| **WebSocket endpoint** | wss://dev-ws.zilliqa.com |
+
 
 The rest of the section contains operational scripts for running testnets on Kubernetes clusters running on AWS cloud.
 

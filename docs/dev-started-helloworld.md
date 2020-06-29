@@ -57,7 +57,7 @@ The two transitions in the Hello World are:
 ## Front-end contract interaction using zilliqa-js
 
 Let's move on to the part where we interact with the Hello World contract using a simple front-end.<br/>
-Clone the following repository and follow the installation steps: [Hello World Front-End](https://github.com/arnavvohra/hello-world-scilla).<br/>
+Clone the following repository and follow the installation steps: [Hello World Front-End](https://github.com/arnavvohra/dev-portal-examples/tree/master/hello-world).<br/>
 The above repository builds on the create-react-app starter kit and is very easy to follow. If you don't have experience working with React, this guide would still be useful for you as the zilliqa-js part of the code is pure javascript and you can use that as it is in the framework of your choice. 
 
 ## Change contract state using Zilpay

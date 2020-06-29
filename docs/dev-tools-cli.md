@@ -18,7 +18,4 @@ Source code can be found in github: https://github.com/micovi/zilcli/
 Documentation, installation instructions and examples can be found on https://zilcli.app
 
 
-## go-zli
-
-
 
