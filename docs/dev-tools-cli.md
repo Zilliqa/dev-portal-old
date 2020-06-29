@@ -3,37 +3,10 @@ id: dev-tools-cli
 title: CLI-Tools
 ---
 
-## js-zli
-js-zli is an Open Source project built in JavaScript that can be used to interact with Zilliqa Blockchain. You can install js-zli directly from the terminal using Node Package Manager: ```npm install -g zilcli```
-
-It supports multiple features like:
-* Local Wallet Generation
-* Integration with Ledger Nano S for balance check and Transfers
-* Integration with UnstoppableDomains
-* Local Address Book
-* Batch transfers
-
-Source code can be found in github: https://github.com/micovi/zilcli/
-
-Documentation, installation instructions and examples can be found on https://zilcli.app
-
+## go-zli
 `zli` is a command line tool based on the Zilliqa [Golang SDK](https://github.com/Zilliqa/gozilliqa-sdk).
 
-### Requirements
-
-Golang (minimum version: go.1.12):
-* [Download page](https://golang.org/dl/)
-* [Installation instructions](https://golang.org/doc/install)
-
 ### Installation
-
-#### Dependencies
-
-A `go` module is used to manage dependencies. Run the following command to download all dependencies according to the module file `go.mod`:
-
-```
-go get ./...
-```
 
 #### Build
 
@@ -63,11 +36,9 @@ Run `zli -h` to see the help message along with the list of available commands:
 
 ```bash
 A convenient command line tool to generate accounts, run integration testings or run http server .etc
-
 Usage:
   zli [flags]
   zli [command]
-
 Available Commands:
   account     Generate or load multiple accounts
   contract    Deploy or call zilliqa smart contract
@@ -76,10 +47,8 @@ Available Commands:
   transfer    Transfer zilliqa token to a specific account
   version     Print the version number of zli
   wallet      Init a new wallet or get exist wallet info
-
 Flags:
   -h, --help   help for zli
-
 Use "zli [command] --help" for more information about a command.
 ```
 
@@ -159,7 +128,6 @@ zli contract call -a 305d5b3acaa2f4a56b5e149400466c58194e695f -t SubmitTransacti
 > Note
 >
 > `zli` supports passing the private key as a parameter to the `zli contract deploy` or `zli contract call` command. Just use the `-k [private key]` option to switch to a different private key for sending transactions.
-
 #### Running zli inside a Docker container
 
 An alternative to running `zli` as a native binary is to build (or download) the `go-zli` Docker image, and to run `zli` from inside the container. This option requires prior installation of Docker (refer to the [Docker installation page](https://docs.docker.com/install/)).
