@@ -206,7 +206,6 @@
         "ids": [
           "core-guard-mode",
           "core-rejoin-mechanism",
-          "core-recovery-mechanism",
           "core-view-change",
           "core-diagnostic-data",
           "core-status-server"
