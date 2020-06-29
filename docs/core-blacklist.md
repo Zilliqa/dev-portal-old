@@ -50,7 +50,7 @@ Removing exclusion privilege
 
 ## Blacklist Enabling
 
-Blacklist is enabled by default, and is only temporarily disabled when doing node recovery (`RECOVERY_ALL_SYNC`). In that situation, the blacklist is re-enabled once the final block is processed.
+Blacklist is enabled by default, and is only temporarily disabled when doing node recovery (`RECOVERY_ALL_SYNC`). In that situation, the blacklist is re-enabled once the Tx block is processed.
 
 ## Relaxed Blacklist
 
