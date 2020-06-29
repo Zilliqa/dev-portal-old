@@ -51,3 +51,9 @@ Removing exclusion privilege
 ## Blacklist Enabling
 
 Blacklist is enabled by default, and is only temporarily disabled when doing node recovery (`RECOVERY_ALL_SYNC`). In that situation, the blacklist is re-enabled once the final block is processed.
+
+## Relaxed Blacklist
+
+A peer can become unreachable if it temporarily goes down. In this case, socket connections to that peer would usually return `EHOSTDOWN` or `ECONNREFUSED` as the error message. When this occurs, we avoid blacklisting the peer in the "strict" sense as in the previously listed [conditions](#blacklisting-conditions). Instead, we blacklist the peer in the "relaxed" category.
+
+While all incoming and outgoing messages from/to a peer that is strictly blacklisted are blocked, only outgoing messages to the peer are blocked for a peer that is in the relaxed blacklist. This allows the peer to have itself be removed from everyone's blacklist by sending the request for removal once it has come back online. Such a request will be accepted if the peer is found to be in the relaxed blacklist.

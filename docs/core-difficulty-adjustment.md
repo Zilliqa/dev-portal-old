@@ -8,7 +8,7 @@ When the network receives a low number of PoW submissions, the mechanism will re
 
 ## Adjustment Procedure
 
-1. When we bootstrap the system, every node reads the initial difficulty level from constants.xml. After that, the nodes will update the difficulty level at the first transaction epoch of each DS epoch
+1. When we bootstrap the system, every node reads the initial difficulty level from `constants.xml`. After that, the nodes will update the difficulty level at the first transaction epoch of each DS epoch
 1. At the beginning of each DS epoch, every DS node receives PoW submissions and records them. When the DS leader proposes the next DS block, it calls `CalculateNewDifficulty()` and `CalculateNewDSDifficulty()` to calculate the new difficulty levels. These difficulty levels are placed in the `m_dsDifficulty` and `m_difficulty` fields in the DS block. Finally, the DS leader announces the DS block to start the consensus
 1. The DS backup nodes receive the announcement, and calculate the new difficulty by similarly calling `CalculateNewDifficulty()` and `CalculateNewDSDifficulty()` then comparing the results with those proposed by the DS leader
 1. Once the DS committee completes consensus over the DS block containing the new difficulty level, the committee broadcasts the block to the shards. The shard nodes accept the new difficulty and use it to do PoW for the next DS epoch
@@ -16,7 +16,7 @@ When the network receives a low number of PoW submissions, the mechanism will re
 
 ## Adjustment Formula and Parameters
 
-There are 4 parameters in constants.xml that are used to calculate the difficulty:
+There are 4 parameters in `constants.xml` that are used to calculate the difficulty:
 
 - `POW_CHANGE_TO_ADJ_DIFF`
 - `POW_CHANGE_TO_ADJ_DS_DIFF`

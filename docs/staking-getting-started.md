@@ -54,7 +54,7 @@ $ tar -zxvf seed-configuration.tar.gz
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 
-The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in constants.xml, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:
+The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:
 - Change the value of `ENABLE_STAKING_RPC` to `true`
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
   > **Note:** If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
