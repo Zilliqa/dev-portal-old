@@ -7,5 +7,4 @@ The following section aims to be a walk you through few key management strategie
 
 The following key management strategies will be discussed:<br/>
 Zilpay<br/>
-Keystore file & Private Key<br/>
-Ledger
+Keystore file & Private Key
