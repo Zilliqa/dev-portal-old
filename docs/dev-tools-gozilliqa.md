@@ -7,12 +7,6 @@ title: gozilliqa
 
 ## Installation
 
-### Requirements
-golang environment: 
-
-* [download golang](https://golang.org/dl/)
-* [installation instructions](https://golang.org/doc/install)
-
 The sdk is using `go mod` to manager it's dependent libraries, so if you do want to work on the source code of this repository, make sure you have the minimal `golang` version that supports `go mod` and enable it.
 
 Install the dependent libraries:
@@ -24,7 +18,7 @@ go get ./...
 sdk itself cannot been built into a binary cause it does't have any `main` function, you can directly add it to your own project as a library. Also, we recommend that you can run the `golang uint test` or go through 
 the section `quick start` first to get a basic understanding before you start to use this sdk.
 
-## Supported Methods & APIs
+## Methods & APIs
 
 ##### Account API
 
