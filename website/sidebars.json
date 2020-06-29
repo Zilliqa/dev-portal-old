@@ -42,16 +42,8 @@
         "label": "Getting Started",
         "ids": [
           "dev-started-introduction",
-          "dev-started-helloworld"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Development Environments",
-        "ids": [
-          "dev-env-isolated",
-          "dev-env-testnet",
-          "dev-env-mainnet"
+          "dev-started-helloworld",
+          "dev-started-env"
         ]
       },
       {
@@ -60,8 +52,7 @@
         "ids": [
           "dev-keys-introduction",
           "dev-keys-zilpay",
-          "dev-keys-pkey",
-          "dev-keys-ledger"
+          "dev-keys-pkey"
           
         ]
       },
@@ -69,9 +60,10 @@
         "type": "subcategory",
         "label": "Toolings for Web3",
         "ids": [
+          "dev-tools-sdks",
           "dev-tools-zilliqajs",
           "dev-tools-gozilliqa",
-          "dev-tools-java",
+          "dev-tools-websockets",
           "dev-tools-cli",
           "dev-tools-ide",
           "dev-tools-explorer",
