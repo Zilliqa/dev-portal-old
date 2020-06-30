@@ -153,7 +153,8 @@
         "type": "subcategory",
         "label": "Messaging Layer",
         "ids": [
-          "core-message-processing"
+          "core-message-dispatch",
+          "core-message-queues"
         ]
       },
       {
