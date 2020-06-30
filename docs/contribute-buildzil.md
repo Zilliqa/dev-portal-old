@@ -38,7 +38,7 @@ A fully functional Zilliqa node also includes the Scilla smart contract interpre
 These are the available resources that help explain the core protocol:
 
 1. The Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)
-1. The [Zilliqa architecture](basics-zil-nodes.md) and [Core protocol design](core-introduction.md) sections
+1. The [Zilliqa architecture](basics-zil-nodes.md) and [Core protocol design](core-intro.md) sections
 1. The [Zilliqa Improvement Proposals](https://github.com/Zilliqa/ZIP/) repository
 1. Monthly updates and tech writeups in the [official blog](https://blog.zilliqa.com/)
 1. The developer community channels on our [official Discord server](https://discord.com/invite/XMRE9tt)
