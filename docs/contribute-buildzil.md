@@ -25,7 +25,7 @@ When successful, the outputs (including the `zilliqa` binary) will be created in
 Once you are able to build the code base, there are several ways you can contribute:
 
 1. Submit code changes as pull requests (please read the [guidelines](contribute-guidelines.md))
-1. Submit improvement proposals for the team to evaluate (see [Zilliqa Improvement Proposals](https://github.com/Zilliqa/ZIP/))
+1. Submit [proposals](contribute-standards.md) to improve the core protocol design
 1. Submit bug reports and feature requests in the [repository issues](https://github.com/Zilliqa/Zilliqa/issues)
 1. Submit security-related issues to our [bug bounty program](contribute-bug-bounty.md)
 

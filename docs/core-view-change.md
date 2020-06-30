@@ -27,11 +27,6 @@ These are the conditions that can cause a view change to occur:
 1. Node entered `RunConsensusOnFinalBlock()` but Tx block consensus did not complete within the time stipulated
 1. Node entered `RunConsensusOnViewChange()` but VC block consensus did not complete within the time stipulated
 
-### Setup
-
-1. `[VC block header]` Removal of candidate leader index as the index will be adjusted after view change and will be stale
-1. `[VC block header]` Addition of list of nodes for tracking all the faulty leaders
-
 ### Procedure
 
 1. Any trigger condition is satisfied and view change begins
