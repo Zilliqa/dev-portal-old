@@ -28,7 +28,7 @@ Addresses are an identifier to an entity on the blockchain. An entity on the blo
 Zilliqa currently supports two address formats.
 
 * `ByStr20`: 20 byte hexadecimal string (e.g. `0x573EC96638C8bB1c386394602E1460634F02aDdA`)
-* `bech32`: A [bech32](https://en.bitcoin.it/wiki/Bech32) with a human-readable prefix of `zil` (e.g. `zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p`)
+* `bech32`: A [bech32](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-1.md) with a human-readable prefix of `zil` (e.g. `zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p`)
 
 The reason behind this design is to prevent confusion with Ethereum addresses. For more detailed explanation on the address, refer to [this post](https://blog.zilliqa.com/zilliqa-migrates-to-new-address-format-bf1fa6d7e41d)
 
