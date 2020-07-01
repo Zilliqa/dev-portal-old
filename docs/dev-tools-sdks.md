@@ -13,7 +13,7 @@ Listed below are active SDKs maintained by the Zilliqa core team
 
 **JavaScript/TypeScript**
 
-- [zilliqa-js (official)](https://github.com/Zilliqa/Zilliqa-Javascript-Library)
+- [zilliqa-js](https://github.com/Zilliqa/Zilliqa-Javascript-Library)
 
 **Go**
 - [GoZilliqa SDK (formerly LaksaGo)](https://github.com/Zilliqa/gozilliqa-sdk)
@@ -26,6 +26,7 @@ Listed below are active SDKs maintained by the Zilliqa core team
 Listed below are SDKs maintained by the Zilliqa community
 
 **JavaScript/TypeScript**
+- [zilliqa-js/viewblock](https://github.com/Ashlar/zilliqa-js-viewblock)
 - [Laksa](https://github.com/FireStack-Lab/Laksa)
 - [moonlet-core](https://github.com/cryptolandtech/moonlet-core)
 
