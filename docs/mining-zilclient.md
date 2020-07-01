@@ -1,6 +1,6 @@
 ---
 id: mining-zilclient
-title: Using Zilliqa Client for CPU Nodes
+title: Running the Zilliqa Client
 ---
 ## Hardware Requirements
 

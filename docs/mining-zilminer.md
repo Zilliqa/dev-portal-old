@@ -1,6 +1,6 @@
 ---
 id: mining-zilminer
-title: Using ZILMiner for Mining Rigs
+title: Running ZILMiner for Mining Rigs
 ---
 ## Hardware Requirements
 
