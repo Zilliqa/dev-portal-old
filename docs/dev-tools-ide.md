@@ -3,28 +3,38 @@ id: dev-tools-ide
 title: Scilla IDEs
 ---
 
-## Neo-Savant
+## Neo-Savant @ [https://ide.zilliqa.com](https://ide.zilliqa.com/)
 <a href="https://ide.zilliqa.com/"><img src="../assets/application/tools/neosavant.png" width="50%" height="50%" /></a>
 
 A fully fledged IDE used for writing, testing and deploying Scilla smart contracts painlessly. It can be tried out at https://ide.zilliqa.com/.
 
 Neo-Savant helps Scilla developers to create and deploy Smart Contracts using an automated development environment, in-browser, with quick and intuitive controls.
 
-**Features list:** 
+### Features
 * Intuitive UI for easy deployment/contract invocation.
-* Multiple networks supported: Testnet, Mainnet and a Simulated Environment where you can test out contracts without spending ZIL
+* Multiple networks supported: Testnet, Mainnet and a Simulated Environment where you can test out contracts without spending $ZIL
 * Account management using Keystore, Ledger or ZilPay.
 * Simple, persistent file manager for managing your contracts that allows for renaming/deletion.
 * Possibility to import already deployed contracts and call their transitions.
 * Support for event in contracts, with automatic notifications in the UI.
 * Support for arbitrary gas price/gas limit in deployment/calls.
 
-## VSCode extension
-**Installation**
-- [Option 1] Install it from [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=as1ndu.scilla)
-- [Option 2]  Get the `.visx` file from the [releases tab](https://github.com/as1ndu/scilla/releases)
+## VSCode extension by [as1ndu](https://marketplace.visualstudio.com/publishers/as1ndu)
 
-**Features**
+### Installation
+
+**Method 1:** Install directly from [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=as1ndu.scilla)
+- Launch VS Code Quick Open (Ctrl+P),
+- Use following command
+```
+ext install as1ndu.scilla
+```
+
+**Method 2:** Manual install using VS Code extension package
+- Download the `.visx` file from the [releases tab](https://github.com/as1ndu/scilla/releases)
+- Using the Install from VSIX command in the Extensions view command drop-down,: Install from VSIX command in the Command Palette, point to the `.vsix` file.
+
+### Features
 - Syntax highlighting
 - Code Snippets
 - Debugging (Error & Warnings)
@@ -32,6 +42,7 @@ Neo-Savant helps Scilla developers to create and deploy Smart Contracts using an
 - Gas Usage Reports (Enable it in extension settings)
 - Type info for variables (Hover over dotted lines to see they type information of a variable)
 - Configuration via Vscode's UI
+
 ## Vim
 A vim plugin for editing Scilla contracts is provided.
 
