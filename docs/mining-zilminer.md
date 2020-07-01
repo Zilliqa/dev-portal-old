@@ -1,21 +1,21 @@
 ---
 id: mining-zilminer
-title: Using ZILMiner for Mining Rigs
+title: Running ZILMiner for Mining Rigs
 ---
 ## Hardware Requirements
 
-The [**Zilminer**](https://github.com/DurianStallSingapore/ZILMiner) software is officially supported on both Ubuntu and Windows OS.
+The [**ZilMiner**](https://github.com/DurianStallSingapore/ZILMiner) software is officially supported on both Ubuntu and Windows OS.
 
 Both **AMD** (with OpenCL) and **Nvidia** (with OpenCL or CUDA) GPUs are supported for the Zilliqa PoW process.
 
-The **minimum** requirements for running **Zilminers** are:
+The **minimum** requirements for running **ZilMiners** are:
 
 - x64 Operating system (Ubuntu or Windows)
 - Dual core processor or later
 - 4GB DDR3 RAM or higher
 - Any GPUs with at least 2 GB vRAM
 
-## GPU Driver Setup for Zilminer
+## GPU Driver Setup for ZilMiner
 
 ### OpenCL Driver Setup (for AMD/Nvidia GPUs)
 
@@ -38,12 +38,12 @@ If you wish to use CUDA supported GPU for PoW, please download and install CUDA 
 
 ## Mining Steps
 
-1. Install **Zilminer** on your GPU rigs:
+1. Install **ZilMiner** on your GPU rigs:
 
     - **For Windows OS:** [**DOWNLOAD THE LASTEST RELEASE HERE**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
     - **For Ubuntu OS:** [**DOWNLOAD THE LASTEST RELEASE HERE**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
 
-2. Setup your **Zilminer** on your GPU rigs with the following command:
+2. Setup your **ZilMiner** on your GPU rigs with the following command:
 
     ```shell
     zilminer -P zil://wallet_address.worker_name@zil_node_ip:get_work_port
@@ -53,9 +53,9 @@ If you wish to use CUDA supported GPU for PoW, please download and install CUDA 
 
     - For `wallet_address` : You can input any arbitrary Zilliqa address. This is only used by the pool master for accounting purposes. If you are mining solo, you can ignore this parameter.
     - For `worker_name` : You can input any arbitrary worker name you desire.
-    - For `zil_node_ip` : Please input the IP address of the CPU node running the Zilliqa client.
+    - For `zil_node_ip` : Please input the IP address of the CPU node running the Zilliqa Client.
     - For `get_work_port` : Please input the port used in `GETWORK_SERVER_PORT`. Default is `4202`.
 
 ## Stopping the Mining Process
 
-To stop mining, you will need to kill your **Zilminer** process on your GPU rigs.
+To stop mining, you will need to kill your **ZilMiner** process on your GPU rigs.

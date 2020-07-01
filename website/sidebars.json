@@ -85,10 +85,11 @@
   },
   "miners": {
     "Miners":[
-      "mining-general-info",
+      "mining-getting-started",
       "mining-zilclient",
       "mining-zilminer",
-      "mining-pools"
+      "mining-proxy",
+      "mining-additional-info"
     ]
   },
   "exchanges": {

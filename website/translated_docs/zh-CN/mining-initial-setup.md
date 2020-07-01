@@ -35,7 +35,7 @@ title: 初始安装
 
 第一个消息表示UPnP模式已成功启用，而后者表示启用UPnP模式失败。如果您收到后一条消息，请继续使用**选项1a**。
 
-## Zilminer的GPU驱动安装
+## ZilMiner的GPU驱动安装
 
 ### OpenCL驱动安装 (AMD/Nvidia GPUs)
 

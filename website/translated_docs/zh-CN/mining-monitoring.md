@@ -37,4 +37,4 @@ less myaddr.txt
 sudo docker stop zilliqa
 ```
 
-您还需要在GPU平台上终止**Zilminer**进程。
+您还需要在GPU平台上终止**ZilMiner**进程。
