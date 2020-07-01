@@ -28,7 +28,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'basics-intro-blockchain', label: 'Basics'},
     {doc: 'dev-started-introduction', label: "Developers"},
-    {doc: 'mining-general-info', label: 'Miners'},
+    {doc: 'mining-getting-started', label: 'Miners'},
     {doc: 'staking-getting-started', label: 'Exchanges'},
     {doc: 'contribute-buildzil', label: 'Contributors'},
     // {page: 'help', label: 'Help'},
