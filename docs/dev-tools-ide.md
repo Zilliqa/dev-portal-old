@@ -4,6 +4,8 @@ title: Scilla IDEs
 ---
 
 ## Neo-Savant
+<a href="https://ide.zilliqa.com/"><img src="../assets/application/tools/neosavant.png" width="50%" height="50%" /></a>
+
 A fully fledged IDE used for writing, testing and deploying Scilla smart contracts painlessly. It can be tried out at https://ide.zilliqa.com/.
 
 Neo-Savant helps Scilla developers to create and deploy Smart Contracts using an automated development environment, in-browser, with quick and intuitive controls.
