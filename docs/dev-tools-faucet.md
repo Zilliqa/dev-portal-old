@@ -2,13 +2,14 @@
 id: dev-tools-faucet
 title: Faucet
 ---
-## Nucleus Wallet
+## Testnet faucet via Nucleus Wallet
 
 ![Nucleus Wallet Faucet](../assets/application/getting-started/nucleus-faucet.png)
 
 
-In order to deploy a contract to zilliqa's testnet and send transactions, we need testnet zil in our account.<br/>
-Copy your wallet address and enter the same on nucleus wallet's faucet website, you'll receive 300 testnet zil as a result.
+In order to deploy a contract to zilliqa's testnet and send transactions, you will need testnet $ZIL in your account.
+
+Enter the your wallet address on nucleus wallet's faucet website, you will receive 300 testnet $ZIL once the transaction is confirmed.
 
 The facuet is accessible at [https://dev-wallet.zilliqa.com/faucet](https://dev-wallet.zilliqa.com/faucet)
 
