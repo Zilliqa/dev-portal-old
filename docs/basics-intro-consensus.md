@@ -20,11 +20,15 @@ that the network has at most 1/3 of malicious nodes. The protocol requires each
 honest to agree on the state via voting. This involves several rounds of
 communication among the nodes.
 
-### PoW: Proof of Work 
+### Nakamoto consensus
 
-Proof-of-Work as a consensus mechanism was pioneered by Bitcoin, where nodes
-are required to solve a computational puzzle and the node fastest to find a
-solution decides the state of the system.
+Nakamoto consensus was pioneered by Bitcoin. It uses proof-of-work and
+longest-chain-win rule to reach consensus among all honest nodes. Using
+proof-of-work, node is required to solve a computational puzzle and the node
+fastest to find a solution decides the next state of the system. In the
+longest-chain-win rule, node will adopt the longest chain and extend it
+with new valid block. A block in the blockchain is deemed to be committed once
+there is sufficiently number of block mined after the block.
 
 ### PoS: Proof of Stake
 
