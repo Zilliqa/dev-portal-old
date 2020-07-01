@@ -3,7 +3,24 @@ id: dev-tools-gozilliqa
 title: gozilliqa
 ---
 ## Introduction
-[gozilliqa](https://github.com/Zilliqa/gozilliqa-sdk) is a Golang library to interact with the Zilliqa network nodes - create wallets, deploy contracts, and invoke transitions to interact with smart contracts.
+[gozilliqa](https://github.com/Zilliqa/gozilliqa-sdk) is a Golang library for interactiing with the Zilliqa network. It has the ability to create wallets, deploy contracts, and invoke transitions to interact with smart contracts on the Zilliqa network.
+
+## Source code
+
+The github respository can be found at [https://github.com/Zilliqa/gozilliqa-sdk](https://github.com/Zilliqa/gozilliqa-sdk)
+
+## Releases
+
+All releases of gozilliqa can be found at [https://github.com/Zilliqa/gozilliqa-sdk/releases](https://github.com/Zilliqa/gozilliqa-sdk/releases)
+
+## Getting gozilliqa
+
+Run the following to clone the respository to your local machine
+```
+git clone https://github.com/Zilliqa/gozilliqa-sdk.git
+```
+
+> If you wish to use the release version, please switch your branch to the particular release version. You can find out more information about the releases at [https://github.com/Zilliqa/gozilliqa-sdk/releases](https://github.com/Zilliqa/gozilliqa-sdk/releases)
 
 ## Installation
 

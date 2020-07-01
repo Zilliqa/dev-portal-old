@@ -4,9 +4,12 @@ title: CLI-Tools
 ---
 
 ## go-zli
+
 [zli](https://github.com/Zilliqa/zli) is a command line tool based on the Zilliqa [Golang SDK](https://github.com/Zilliqa/gozilliqa-sdk).
 
-The project repository is at [https://github.com/Zilliqa/zli](https://github.com/Zilliqa/zli)
+## Source code
+
+The github respository can be found at [https://github.com/Zilliqa/zli](https://github.com/Zilliqa/zli)
 
 ## Getting zli
 Run the following to clone the respository to your local machine
