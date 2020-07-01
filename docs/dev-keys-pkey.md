@@ -3,7 +3,8 @@ id: dev-keys-pkey
 title: Keystore File & Private Key
 ---
 
-Dapp developers can allow their users to interact with their dapp by entering their keystore file or private key as well. Although, the recommended strategy for user key management is using a browser add-on like ZilPay.
+Other than ZilPay, DApp 
+DApp developers can allow their users to interact with their dApp by entering their keystore file or private key as well. Although, the recommended strategy for user key management is using a browser add-on like ZilPay.
 
 The following code snippet illustrates how to get the user private key from the encrypted keystore file.
 
