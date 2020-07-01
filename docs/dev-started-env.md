@@ -9,7 +9,7 @@ title: Development Environments
 |:---------|:-------|
 | **API URL** | `https://api.zilliqa.com/` |
 | **Block Explorer** | [**Link**](https://viewblock.io/zilliqa) |
-| **WebSocket endpoint** | wss://api-ws.zilliqa.com |
+| **WebSocket endpoint** | `wss://api-ws.zilliqa.com` |
 | **Chain ID** | 1 |
 
 
@@ -20,7 +20,7 @@ title: Development Environments
 | **API URL** | `https://dev-api.zilliqa.com/` |
 | **Faucet** | [**Link**](https://dev-wallet.zilliqa.com) |
 | **Block Explorer** | [**Link**](https://viewblock.io/zilliqa?network=testnet) |
-| **WebSocket endpoint** | wss://dev-ws.zilliqa.com |
+| **WebSocket endpoint** | `wss://dev-ws.zilliqa.com` |
 | **Chain ID** | 333 |
 
 ## Isolated Server
