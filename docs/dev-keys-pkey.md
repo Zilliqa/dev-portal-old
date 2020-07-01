@@ -3,7 +3,7 @@ id: dev-keys-pkey
 title: Keystore File & Private Key
 ---
 
-Dapp developers can allow their users to interact with their dapp by entering their keystore file or private key as well. Although, the recommended strategy for user key management is using a browser add-on like Zilpay.
+Dapp developers can allow their users to interact with their dapp by entering their keystore file or private key as well. Although, the recommended strategy for user key management is using a browser add-on like ZilPay.
 
 The following code snippet illustrates how to get the user private key from the encrypted keystore file.
 
@@ -21,7 +21,7 @@ In the code snippet below, we call the setHello() transition of the Hello World 
 
 ```javascript
   async updateWelcomeMsg(){
-    //Only the below two lines are different when compared with zilpay login.
+    //Only the below two lines are different when compared with ZilPay login.
     let zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
     zilliqa.wallet.addByPrivateKey(privkey); //Private key was stored in the privKey variable
 

@@ -7,24 +7,24 @@ In this section, we'll deploy a "Hello World" contract to the zilliqa blockchain
 
 ## Create testnet wallet using zilPay
 
-Zilpay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on the Chrome, Firefox and Opera browsers.
+ZilPay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on the Chrome, Firefox and Opera browsers.
 It does not store any user private keys on the server, instead they are password protected and stored on browser storage.
 It is a non-custodial wallet, meaning, the user has full access and responsibility for their private key. 
 
-Steps to create a testnet zilpay wallet:
-1) Visit Zilpay's [website](https://zilpay.xyz/) and download the extension for your respective browser.
+Steps to create a testnet ZilPay wallet:
+1) Visit ZilPay's [website](https://zilpay.xyz/) and download the extension for your respective browser.
 2) Open the extension, create a new wallet by verifying your 12 word recovery phrase and selecting a password for your wallet.
 3) Click on the network change button (shown below) and select network as testnet. 
 
 ![Change Network Button](../assets/application/getting-started/zilpay-change-network-btn.png)
 
-Voila! You have successfully setup a testnet zilpay wallet.
+Voila! You have successfully setup a testnet ZilPay wallet.
 
 
 ## Request testnet zil from faucet
 
-In order to deploy a contract to zilliqa's testnet, we need testnet zil in our zilpay account.<br/>
-Copy your zilpay address and enter the same on nucleus wallet's [faucet website](https://dev-wallet.zilliqa.com/faucet), you'll receive 300 testnet zil as a result.
+In order to deploy a contract to zilliqa's testnet, we need testnet zil in our ZilPay account.<br/>
+Copy your ZilPay address and enter the same on nucleus wallet's [faucet website](https://dev-wallet.zilliqa.com/faucet), you'll receive 300 testnet zil as a result.
 ![Nucleus Wallet Faucet](../assets/application/getting-started/nucleus-faucet.png)
 
 
@@ -60,14 +60,14 @@ Let's move on to the part where we interact with the Hello World contract using 
 Clone the following repository and follow the installation steps: [Hello World Front-End](https://github.com/arnavvohra/dev-portal-examples/tree/master/hello-world).<br/>
 The above repository builds on the create-react-app starter kit and is very easy to follow. If you don't have experience working with React, this guide would still be useful for you as the zilliqa-js part of the code is pure javascript and you can use that as it is in the framework of your choice. 
 
-## Change contract state using Zilpay
+## Change contract state using ZilPay
 
 After following the installation steps, you need to run the code locally by using the command
 ``` npm start ```<br/>
-On succesfully running the site locally on your system, enter the address of your Hello World contract deployed on the testnet and connect your zilpay wallet with the front-end by clicking on the 'Connect' button.
+On succesfully running the site locally on your system, enter the address of your Hello World contract deployed on the testnet and connect your ZilPay wallet with the front-end by clicking on the 'Connect' button.
 
-Calling the transitions from the front-end using zilpay:
-1) setHello() - On clicking the 'Set Hello' button and after approving the transaction on Zilpay, the setHello() transition is called and the value of the welcomeMsg mutable variable is updated. Following is the code snippet that achieves this functionality:
+Calling the transitions from the front-end using ZilPay:
+1) setHello() - On clicking the 'Set Hello' button and after approving the transaction on ZilPay, the setHello() transition is called and the value of the welcomeMsg mutable variable is updated. Following is the code snippet that achieves this functionality:
 
 ```javascript
 async setHello(){
@@ -119,7 +119,7 @@ async setHello(){
     }
   }
 ```
-2) getHello() - On clicking the 'Get Hello' button and after approving the transaction on Zilpay, the getHello() transition is called and the value of the welcomeMsg mutable variable is emitted as part of an event.<br/> 
+2) getHello() - On clicking the 'Get Hello' button and after approving the transaction on ZilPay, the getHello() transition is called and the value of the welcomeMsg mutable variable is emitted as part of an event.<br/>
 We use the Zilliqa WebSocket Server (ZWS) with the query for event log that initiates a subscription for all the event logs generated for our Hello World contract. This allows us to update the Welcome Msg on screen as soon as the getHello() transaction gets confirmed and an event is emitted.
 
 
