@@ -1,14 +1,14 @@
 ---
 id: mining-zilminer-setup
-title: 用Zilminer设置挖矿工具
+title: 用ZilMiner设置挖矿工具
 ---
 
-1. 在单独的GPU平台上安装 **Zilminer**：
+1. 在单独的GPU平台上安装 **ZilMiner**：
 
     - **对于Windows操作系统:** [**下载最新版本**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
     - **对于Ubuntu操作系统:** [**下载最新版本**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
 
-2. 使用以下命令在GPU平台上设置Zilminer：
+2. 使用以下命令在GPU平台上设置ZilMiner：
 
     ```shell
     zilminer -P zil://wallet_address.worker_name@zil_node_ip:get_work_port

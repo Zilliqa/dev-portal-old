@@ -4,9 +4,9 @@ title: Running the Zilliqa Client
 ---
 ## Hardware Requirements
 
-The [**Zilliqa client**](https://github.com/Zilliqa/zilliqa) is only officially supported on Ubuntu 16.04 OS.
+The [**Zilliqa Client**](https://github.com/Zilliqa/zilliqa) is only officially supported on Ubuntu 16.04 OS.
 
-The **minimum** requirements for running the **Zilliqa client** are:
+The **minimum** requirements for running the **Zilliqa Client** are:
 
 - x64 Linux operating system (e.g Ubuntu 16.04.05)
 - Recent dual core processor @ 2.2 GHZ. Examples:
@@ -143,7 +143,7 @@ less myaddr.txt
 
 ## Stopping the Mining Process
 
-To stop the mining client, stop the docker container running the **Zilliqa client** on the CPU node:
+To stop the mining client, stop the docker container running the **Zilliqa Client** on the CPU node:
 
 ```shell
 sudo docker stop zilliqa

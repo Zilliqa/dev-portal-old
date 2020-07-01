@@ -10,7 +10,7 @@ title: 一般信息
 ![1-to-many](https://i.imgur.com/qReRpRx.jpg)
 
 - CPU节点实例将运行 **Zilliqa客户端**并执行pBFT共识流程以获得奖励。
-- GPU集群中的GPU装备将在单独的GPU集群上运行 **Zilminer**，以进行PoW挖矿并直接向CPU节点提供PoW解决方案。
+- GPU集群中的GPU装备将在单独的GPU集群上运行 **ZilMiner**，以进行PoW挖矿并直接向CPU节点提供PoW解决方案。
 
 ## Epoch架构
 
