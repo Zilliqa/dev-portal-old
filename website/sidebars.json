@@ -85,7 +85,7 @@
   },
   "miners": {
     "Miners":[
-      "mining-general-info",
+      "mining-getting-started",
       "mining-zilclient",
       "mining-zilminer",
       "mining-proxy",
