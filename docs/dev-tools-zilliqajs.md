@@ -4,6 +4,17 @@ title: zilliqa-js
 ---
 ## Introduction
 [zilliqa-js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library) is a Javascript library that allows you to interact with the Zilliqa network nodes - create wallets, deploy contracts, and invoke transitions to interact with smart contracts.
+
+## Source code
+
+The github respository can be found at [https://github.com/Zilliqa/Zilliqa-JavaScript-Library](https://github.com/Zilliqa/Zilliqa-JavaScript-Library)
+
+## Releases
+
+All releases of zilliqa-js can be found at [https://www.npmjs.com/package/@zilliqa-js/zilliqa](https://www.npmjs.com/package/@zilliqa-js/zilliqa)
+
+Release note can be found at [https://github.com/Zilliqa/Zilliqa-JavaScript-Library/releases](https://github.com/Zilliqa/Zilliqa-JavaScript-Library/releases)
+
 ## Installation
 
 It is recommended that developers install the JavaScript client by making use
