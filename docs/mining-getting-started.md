@@ -18,8 +18,8 @@ However, at the present level of mining difficulty in the Mainnet, the first two
 To proceed with proxy mining:
 
 1. An introduction to proxy mining is provided [here](mining-proxy.md)
-1. The Zilliqa Client instructions can be found [here](mining-zilcient)
-1. The ZilMiner instructions can be found [here](mining-zilcient)
+1. The Zilliqa Client instructions can be found [here](mining-zilclient.md)
+1. The ZilMiner instructions can be found [here](mining-zilminer.md)
 
 ### Mining Pools
 
