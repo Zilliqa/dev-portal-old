@@ -4,7 +4,7 @@ title: Consensus Mechanism
 ---
 The Zilliqa network is composed of one DS Committee (a special type of shard), and `n` normal shards. Each shard has a number of nodes, with one node being a `leader` and `k` number of `backups`.
 
-Broadly, each shard runs an algorithm called practical Byzantine fault tolerance (pBFT) to achieve consensus on the state of the blockchain at any point. A rough outline is as follows:
+Broadly, each shard runs an algorithm called [practical Byzantine fault tolerance (pBFT)](http://pmg.csail.mit.edu/papers/osdi99.pdf) to achieve consensus on the state of the blockchain at any point. A rough outline is as follows:
 
 1. Pre-prepare: the `leader` announces the state of the blockchain it has to all `backup` nodes in the shard as a **pre-prepare** message.
 2. Prepare: each node receives and validates the state received from the `leader` in the pre-prepare phase, and multicasts its decision as a **prepare** message to the rest of the nodes in the shard.
