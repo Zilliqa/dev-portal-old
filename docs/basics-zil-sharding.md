@@ -10,7 +10,7 @@ Network sharding (which will be referred to simply as *sharding* in this context
 
 Network sharding is the secret sauce that makes Zilliqa truly scalable. Imagine our example network of 1,000 nodes. Zilliqa would automatically divide the network into 10 shards each with 100 nodes. Now, these shards can process transactions in parallel. If each shard is capable of processing 10 transactions per second, then all shards together can process 100 transactions per second. The ability to process transactions in parallel due to the sharded architecture ensures that the throughput in Zilliqa linearly increases with the size of the network.
 
-The idea of sharding is certainly not new, and in fact it can be traced back to the field of databases, where it is employed to improve performance, scalability and I/O bandwidth. The idea of sharding in the context of blockchains however was first put forth in an academic paper co-authored by Zilliqa team members in 2015.
+The idea of sharding is certainly not new, and in fact it can be traced back to the field of databases, where it is employed to improve performance, scalability and I/O bandwidth. The idea of sharding in the context of blockchains however was first put forth in an [academic paper](https://dl.acm.org/doi/10.1145/2976749.2978389) co-authored by Zilliqa team members in 2015.
 
 ## Transaction Sharding
 
