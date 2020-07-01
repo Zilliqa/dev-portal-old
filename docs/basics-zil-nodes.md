@@ -8,13 +8,13 @@ The Zilliqa Mainnet is composed of several types of nodes that perform different
 
 ## Shard nodes
 
-Shard nodes are the mining nodes in the Zilliqa Network. They are named as such because of the fact that they are assigned to one of several clusters (i.e., shards) within the network. Nodes that belong to the same shard process the same set of transactions assigned to their shard. After processing, the nodes must achieve consensus over the transaction set in order to generate the shard's microblock. For their work, shard nodes are rewarded ZILs at the end of every DS epoch.
+Shard nodes are the mining nodes in the Zilliqa Network. They are named as such because of the fact that they are assigned to one of several clusters (i.e., shards) within the network. Nodes that belong to the same shard process the same set of transactions assigned to their shard. After processing, the nodes must achieve consensus over the transaction set in order to generate the shard's microblock. For their work, shard nodes are rewarded $ZIL at the end of every DS epoch.
 
-Shard membership is determined by the DS nodes after shard nodes successfully submit solutions to a Proof-of-Work (PoW) problem, which occurs once every DS epoch.
+Shard membership is determined by the DS committee after shard nodes successfully submit solutions to a Proof-of-Work (PoW) problem, which occurs once every DS epoch.
 
 ## DS nodes
 
-DS (Directory Service) nodes are also mining nodes, with the additional responsibilities of (1) aggregating shard microblocks to form the Transaction Block and (2) creating the DS Block at the start of every DS epoch. As with the shard nodes, DS nodes are rewarded ZILs at the end of every DS epoch.
+DS (Directory Service) nodes are also mining nodes, with the additional responsibilities of (1) aggregating shard microblocks to form the Transaction Block and (2) creating the DS Block at the start of every DS epoch. As with the shard nodes, DS nodes are rewarded $ZIL at the end of every DS epoch.
 
 The collection of DS nodes in the network is referred to as the DS committee. Unlike the shards, which are completely revised every DS epoch, the DS committee stays relatively stable across several DS epochs, as only a small fraction of the committee is replaced every DS epoch. DS committee membership is determined by Proof-of-Work of a higher difficulty. The length of a DS node's tenure within the committee is also affected by its performance within the duration of the DS epoch.
 
@@ -25,3 +25,7 @@ Lookup nodes are full nodes, i.e., they store all of the blockchain data generat
 ## Seed nodes
 
 Seed nodes (also referred to as archival nodes) are essentially lookup nodes, except they do not directly dispatch transactions to the shards and DS committee. They are used mainly for serving JSON-RPC requests, including creating new transactions. Transactions are regularly bundled by seed nodes and forwarded to lookups for eventual dispatch to the shards and DS committee.
+
+## Staked Seed nodes
+
+Staked seed nodes are a variant of seed nodes, Staked seed node are run by staking partners and are expected to serve JSON-RPC request to community. In return of the service, staked seed node are regularly rewarded with $ZIL as part of staking rewards. Rewards are determined based on the performance of the staked seed node. For more information about staked seed node, please refer to [Zilliqa improvement proposal #3](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-3.md).
