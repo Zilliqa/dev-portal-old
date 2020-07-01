@@ -12,21 +12,24 @@ It is a non-custodial wallet, meaning, the user has full access and responsibili
 ZilPay injects a global API into websites visited by its users at 
     ```window.zilPay```. This API allows websites to request user login, load data from the blockchain and prompt the user to sign messages and transactions.
 
-So, to check if the user has ZilPay installed, the following would work : <br/> ```(typeof window.zilPay !== 'undefined') { /* do something */ }```
-
+To check if the user has ZilPay installed, here is a sample code
+ ```typescript
+ (typeof window.zilPay !== 'undefined') { /* do something */ }
+ ```
 
 ## Connecting Your Dapp With ZilPay
-You need to ask once for user's permission to connect your dapp to their ZilPay wallet. Following code achieves the same :
-```
+
+You need to ask once for user's permission to connect your dapp to their ZilPay wallet. The following is a sample code for requesting the permission
+```typescript
 window.zilPay.wallet.connect()
 ```
-This is a promise-returning method that resolves with a Boolean value, true if user accepts your connect request and false in case of rejection. 
+This is a promise-returning method that resolves with a `Boolean` value. `true` value indicate that the user accepts your connect request and `false` value indicate rejection.
 
 ## Accessing User Accounts
-Once you’ve connected to a user's ZilPay wallet, you can check the current account through ```window.zilPay.wallet.defaultAccount```.
+Once you have connected to a user's ZilPay wallet, you can check the current account information through ```window.zilPay.wallet.defaultAccount```.
 
-If you'd like to be notified when the user changes the account or network, you can subscribe to relevant events :
-```
+If you will like to be notified when the user changes the account or network, you can subscribe to relevant events
+```typescript
 window.zilPay.wallet.observableAccount().subscribe(function (account) {
     // ... When the user changes account
 });
@@ -36,9 +39,9 @@ window.zilPay.wallet.observableNetwork().subscribe(function (net) {
 ```
 
 ## API Reference
-
-ZilPay API reference can be found [here](https://zilpay.xyz/Documentation/zilliqa-provider/). <br/>
-[Blockchain related APIs](https://zilpay.xyz/Documentation/zilliqa-api-blockchain/)<br/>
-[Crypto related APIs](https://zilpay.xyz/Documentation/zilliqa-api-crypto/)<br/>
-[Utils related APIs](https://zilpay.xyz/Documentation/zilliqa-api-utils/)<br/>
-[Contract related APIs](https://zilpay.xyz/Documentation/zilliqa-contracts/)
+ZilPay provides a set of documentation for your references
+- [Provider API](https://zilpay.xyz/Documentation/zilliqa-provider/)
+- [Blockchain related APIs](https://zilpay.xyz/Documentation/zilliqa-api-blockchain/)
+- [Crypto related APIs](https://zilpay.xyz/Documentation/zilliqa-api-crypto/)
+- [Utils related APIs](https://zilpay.xyz/Documentation/zilliqa-api-utils/)
+- [Contract related APIs](https://zilpay.xyz/Documentation/zilliqa-contracts/)
