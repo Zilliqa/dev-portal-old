@@ -17,16 +17,16 @@ and used in the blockchain space. The most common ones are:
 
 This is the most classical way to reach consensus which works on the assumption
 that the network has at most 1/3 of malicious nodes. The protocol requires each
-honest to agree on the state via voting. This involves several rounds of
+honest node to agree on the state via voting. This involves several rounds of
 communication among the nodes.
 
 ### Nakamoto consensus
 
 Nakamoto consensus was pioneered by Bitcoin. It uses proof-of-work and
 longest-chain-win rule to reach consensus among all honest nodes. Using
-proof-of-work, node is required to solve a computational puzzle and the node
+proof-of-work, each node is required to solve a computational puzzle and the node
 fastest to find a solution decides the next state of the system. In the
-longest-chain-win rule, node will adopt the longest chain and extend it
+longest-chain-win rule, the node will adopt the longest chain and extend it
 with new valid block. A block in the blockchain is deemed to be committed once
 there is sufficiently number of block mined after the block.
 

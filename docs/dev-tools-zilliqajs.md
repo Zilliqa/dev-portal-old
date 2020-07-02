@@ -62,8 +62,8 @@ const {Zilliqa} = require('@zilliqa-js/zilliqa');
 const zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
 let balanceState = await zilliqa.blockchain.getBalance(userAddress);
 if(balanceState){
-let balance = balanceState.result.balance;
-balance = units.fromQa(new BN(balance), units.Units.Zil);// user's zil balance
+    let balance = balanceState.result.balance;
+    balance = units.fromQa(new BN(balance), units.Units.Zil);// user's zil balance
 }
 ```
 
@@ -75,9 +75,9 @@ const zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
 
 let smartContractState = await zilliqa.blockchain.getSmartContractState(tokenContractAddress);
 if(smartContractState){
-let balances_map = smartContractState.result.balances_map;
-userAddress = userAddress.toLowerCase();
-let userTokenBalance = balances_map[userAddress];//user's token balance  
+    let balances_map = smartContractState.result.balances_map;
+    userAddress = userAddress.toLowerCase();
+    let userTokenBalance = balances_map[userAddress];//user's token balance  
 }
 ```
 
