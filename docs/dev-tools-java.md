@@ -145,7 +145,7 @@ or maven:
 - [x] fromBech32Address toBech32Address
 
 
-## Demo (HelloWorld and ZRC2 contract packages)
+## Demo
 
 ### Generate large amount of addresses
 
