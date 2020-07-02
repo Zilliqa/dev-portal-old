@@ -11,8 +11,8 @@ The following code snippet illustrates how to get the user private key from the 
 ```javascript
 import { decryptPrivateKey } from '@zilliqa-js/crypto';
 async function privKeyFromKeystore() {
-let keystore = JSON.parse(encryptedWallet); //encryptedWallet is the encrypted keystore file
-let privKey = await decryptPrivateKey(passphrase, keystore); //passphrase variable has the passphrase of the encrypted wallet
+    let keystore = JSON.parse(encryptedWallet); //encryptedWallet is the encrypted keystore file
+    let privKey = await decryptPrivateKey(passphrase, keystore); //passphrase variable has the passphrase of the encrypted wallet
 }
 ```
 
