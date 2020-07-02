@@ -152,8 +152,7 @@ public class TransactionOperation {
 }
 ```
 
-
-<!--DOCUSAURUS_CODE_TABS-->
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Contract Transaction Object
 The following is an example of creating a __contract__ transaction object. The difference between __contract__ and __non-contract__ transaction objects is the additional contract transitions such as `setHello` and its relevant params such as the `vname`, `type` and `value` as describe in the deployed contract.
