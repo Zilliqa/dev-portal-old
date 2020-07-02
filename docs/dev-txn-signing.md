@@ -20,30 +20,21 @@ const zilliqa = new Zilliqa("https://dev-api.zilliqa.com");
 const PRIVATE_KEY = '9afc1a1dab96127e902daaaec1a56c30346f007523c787c3bb62371c0e5a1be7'
 
 zilliqa.wallet.addByPrivateKey(PRIVATE_KEY);
-
-// others
-
 ```
 
 <!--Go-->
 
 
 ```go
-
 import (
 	"github.com/Zilliqa/gozilliqa-sdk/account"
 )
 
 wallet := account.NewWallet()
 wallet.AddByPrivateKey("e19d05c5452598e24caad4a0d85a49146f7be089515c905ae6a19e8a578a6930")
-
-// others
-
 ```
 
 <!--Java-->
-
-
 ```java
 package com.firestack.example;
 
@@ -54,8 +45,6 @@ public class TransactionOperation {
         Wallet wallet = new Wallet();
         String ptivateKey = "e19d05c5452598e24caad4a0d85a49146f7be089515c905ae6a19e8a578a6930";
         String address = wallet.addByPrivateKey(ptivateKey);
-       
-       // others
     }
 }
 ```
