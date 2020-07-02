@@ -1,17 +1,27 @@
 ---
 id: dev-tools-java
-title: java-sdk
+title: Java-SDK - LaksaJ
 ---
+
+
+## Source code
+
+The github respository can be found at [https://github.com/FireStack-Lab/LaksaJ](https://github.com/FireStack-Lab/LaksaJ)
 
 ## Getting Started (Installation and packages explained)
 
-you can build jar using following command :
+You can get start with the installation by using maven, grandle or manually building the `jar` file.
 
-```
-gradle build -x test
+## Maven
+```xml
+<dependency>
+  <groupId>org.firestack</groupId>
+  <artifactId>laksaj</artifactId>
+  <version>1.0.5-RELEASE</version>
+</dependency>
 ```
 
-and you can also try our release version by gradle:
+## Gradle
 
 ```groovy
 
@@ -21,14 +31,17 @@ dependencies {
 
 ```
 
-or maven: 
+## Manual build the jar file
 
-```xml
-<dependency>
-  <groupId>org.firestack</groupId>
-  <artifactId>laksaj</artifactId>
-  <version>1.0.5-RELEASE</version>
-</dependency>
+First clone the `LaksaJ` repository
+```bash
+git clone https://github.com/FireStack-Lab/LaksaJ.git
+```
+
+Next, build `jar` using following commandd
+
+```
+gradle build -x test
 ```
 
 ## Methods and APIs
