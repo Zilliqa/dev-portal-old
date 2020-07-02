@@ -30,7 +30,6 @@ You may need to reboot your PC for the installation to take effect. After reboot
    ```shell
    clinfo
    ```
-If you are facing issues such as missing OpenCL drivers, please follow this forum guide found [**HERE**](https://forum.zilliqa.com/t/guide-to-setting-up-6-amd-gpus-on-ubuntu-16-04/180). (Credits to @Speccles96)
 
 ### CUDA Driver Setup (for Nvidia GPUs only)
 
