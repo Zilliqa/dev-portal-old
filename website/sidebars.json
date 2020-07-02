@@ -6,7 +6,6 @@
         "label": "Blockchain Basics",
         "ids": [
           "basics-intro-blockchain",
-          "basics-intro-types",
           "basics-intro-consensus",
           "basics-intro-accounts",
           "basics-intro-txns",
