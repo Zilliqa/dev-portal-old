@@ -8,11 +8,38 @@ After the DS Committee reaches consensus on the Transaction Block, it multicases
 
 __Note:__ The example below uses the ZilliqaJS SDK to retrieve the transaction response. The structure may be _slightly different_ from the __JSON RPC__ `GetTransaction` results.
 
-Example of getting transaction (ZilliqaJS):
-```
+Example of getting transaction:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+
+
+```javascript
 const txn = await zilliqa.blockchain.getTransaction("1899b381d644a4892ca5ba5d8d60bbcc7bd121d511d55e438a8ddbdcc53272c4");
 console.log(JSON.stringify(txn));
 ```
+
+<!--Go-->
+
+
+```go
+provider := NewProvider("https://dev-api.zilliqa.com/")
+result, _ := provider.GetTransaction("c7d6550a6558edcddbf4b3c7cf14db9f1025200b89bcbcd6a570c84db58d554f")
+resStr,_ := json.Marshal(result)
+fmt.Println(string(resStr))
+```
+
+
+<!--Java-->
+
+```java
+HttpProvider client = new HttpProvider("https://api.zilliqa.com/");
+Transaction transaction = client.getTransaction("055294ba67b3073d66ef078fb149dfb0490b2d46156479a9f2c9327fb762f4e9").getResult();
+System.out.println(new Gson().toJson(transaction))
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 Example of a contract call transaction response:
 ```
