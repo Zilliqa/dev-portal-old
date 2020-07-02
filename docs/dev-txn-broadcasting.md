@@ -1,12 +1,6 @@
 ---
 id: dev-txn-broadcasting
 title: Broadcasting
-language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript: node.js
-  - go: go
-  - java: java
-
-
 ---
 After signing the transaction, we may broadcast the transaction to a seed node (e.g. https://dev-api.zilliqa.com) by creating a transaction object. The correct RPC API to use is `CreateTransaction`. 
 Refer to https://apidocs.zilliqa.com/#createtransaction for more information.
@@ -19,6 +13,11 @@ __Note:__ The above applies only if we use JSON RPC API to create the transactio
 
 ## Non-Contract Transaction Object
 Example of creating a __non-contract__ transaction object:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--JavaScript-->
+
 ```javascript
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
 const { Zilliqa } = require('@zilliqa-js/zilliqa');
@@ -49,6 +48,8 @@ async function main() {
 main();
 
 ```
+
+<!--Go-->
 
 ```go
 package main
@@ -92,6 +93,8 @@ func main() {
 	tx.Confirm(hash, 1000, 3, provider)
 }
 ```
+
+<!--Java-->
 
 ```java
 package com.firestack.example;
@@ -149,11 +152,20 @@ public class TransactionOperation {
 }
 ```
 
+
+<!--DOCUSAURUS_CODE_TABS-->
+
 ## Contract Transaction Object
 The following is an example of creating a __contract__ transaction object. The difference between __contract__ and __non-contract__ transaction objects is the additional contract transitions such as `setHello` and its relevant params such as the `vname`, `type` and `value` as describe in the deployed contract.
 The other significant difference is the `gasLimit` field. For __contract__ transaction objects, the recommended `gasLimit` is between `10000` to `30000`.
 
 Example of creating a __contract__ transaction object:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--JavaScript-->
+
+
 ```javascript
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
 const { Zilliqa } = require('@zilliqa-js/zilliqa');
@@ -199,6 +211,9 @@ async function main() {
 
 main();
 ```
+
+<!--Go-->
+
 
 ```go
 package main
@@ -260,7 +275,9 @@ func main() {
 }
 ```
 
-```java
+<!--Java-->
+
+
 ```java
 package com.firestack.example;
 
@@ -295,3 +312,5 @@ public class TransactionOperation {
     }
 }
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->

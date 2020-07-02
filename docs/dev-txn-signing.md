@@ -1,10 +1,6 @@
 ---
 id: dev-txn-signing
 title: Signing
-language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript: node.js
-  - go: go
-  - java: java
 ---
 Before sending a transaction, one must first sign it with a __valid private key__. This can be done with one of the numerous SDKs provided by the Zilliqa team and community.
 
@@ -12,6 +8,10 @@ Signing is done against the Protobuf-serialised version of the transaction's con
 
 
 Example of providing a private key:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+
 ```javascript
 const { Zilliqa } = require('@zilliqa-js/zilliqa');
 const { getAddressFromPrivateKey } = require('@zilliqa-js/crypto');
@@ -25,6 +25,9 @@ zilliqa.wallet.addByPrivateKey(PRIVATE_KEY);
 
 ```
 
+<!--Go-->
+
+
 ```go
 
 import (
@@ -37,6 +40,9 @@ wallet.AddByPrivateKey("e19d05c5452598e24caad4a0d85a49146f7be089515c905ae6a19e8a
 // others
 
 ```
+
+<!--Java-->
+
 
 ```java
 package com.firestack.example;
@@ -53,3 +59,6 @@ public class TransactionOperation {
     }
 }
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
