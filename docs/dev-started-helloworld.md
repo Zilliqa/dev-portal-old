@@ -22,13 +22,13 @@ To create a ZilPay wallet:
 
 Voila! You have now successfully setup a testnet ZilPay wallet.
 
-## Request Zilliqa testnet $ZIL from faucet
+## Request testnet $ZIL from faucet
 
-Dploy a contract to zilliqa's testnet will consume gas. As such you will need testnet $ZIL in your ZilPay account to pay for the gas.
+Deploying a contract to zilliqa's testnet will consume gas. As such you will need testnet $ZIL in your ZilPay account to pay for the gas.
 
 To request for testnet $ZIL from the facuet,
 1. Visit [Nucleus wallet testnet facuet](https://dev-wallet.zilliqa.com/faucet)
-2. Enter and submit your ZilPay address to the facuet, you will receive 300 testnet $ZIL shortly. This will take about 30s to 1 min, as the transactions will need to be confirm on the blockchain.
+2. Enter and submit your ZilPay address to the facuet, you will receive 300 testnet $ZIL shortly. This will take about 30s to 1 min, as the transactions will need to be confirmed on the blockchain.
 
 ![Nucleus Wallet Faucet](../assets/application/getting-started/nucleus-faucet.png)
 
@@ -37,15 +37,15 @@ To request for testnet $ZIL from the facuet,
 
 To deploy the `Hello World` contract on zilliqa testnet, we will use the Scilla online IDE, [Neo-Savant IDE](https://ide.zilliqa.com/).<br/>
 
-1) Change the network to testnet and import your wallet by loading the keystore file and enter the corresponding passphrase.
+1. Change the network to testnet and import your wallet by loading the keystore file and enter the corresponding passphrase.
 
 ![IDE Step1](../assets/application/getting-started/neo-savant-step1.png)
 
-2) Select the `Hello World` contract under the files tab and click on "Check" button to check to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
+2. Select the `Hello World` contract under the files tab and click on "Check" button to check to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
 
 ![IDE Step2](../assets/application/getting-started/neo-savant-step2.png)
 
-3) Once typechecker result is passed, click on "Deploy" button to deploy the contract to testnet. Use your own wallet address (Base61 format) for the "owner" initialisation parameter.
+3. Once typechecker result is passed, click on "Deploy" button to deploy the contract to testnet. Use your own wallet address (Base16 format) for the "owner" initialisation parameter.
 
 > To convert from `Bech32` address format into base16 address format, you can use the address converter in the IDE. Click on `Tools > Address coonverter`.
 
@@ -58,7 +58,7 @@ Yay! Your contract is now deployed on the testnet and can be accessed under the 
 
 The Hello World contract written in the scilla smart contract programming language essentially consists of two transitions. The transitions of a scilla contract define the public interface for the contract and are a way to define how the state of the contract may change.<br/>
 The two transitions in the Hello World are:
-1) `setHello()` - `setHello` transition updates the value of the mutable variable - 'welcomeMsg' to the value of the transition parameter.
+1. `setHello()` - `setHello` transition updates the value of the mutable variable - 'welcomeMsg' to the value of the transition parameter.
 ```ocaml
 transition setHello (msg : String)
   is_owner = builtin eq owner _sender;
@@ -75,7 +75,7 @@ end
 
 ```
 
-2) `getHello()` - `getHello` transition fetches the value of the mutable variable - 'welcomeMsg' and emits it as an entry of an emitted event.
+2. `getHello()` - `getHello` transition fetches the value of the mutable variable - 'welcomeMsg' and emits it as an entry of an emitted event.
 ```ocaml
 transition getHello ()
     r <- welcome_msg;
@@ -95,7 +95,7 @@ Clone the following repository and follow the installation steps: [Hello World F
 git clone XXXXX
 ```
 
-The above repository builds on the create-react-app starter kit. If you don't have experience working with React, this guide would still be useful for you as the zilliqa-js part of the code is pure javascript and you can use that as it is in the framework of your choice.
+The above repository builds on the create-react-app starter kit. If you don't have experience working with React, this guide would still be useful for you as the zilliqa-js part of the code is VanillaJS and you can use that as it is in the framework of your choice.
 
 ## Change contract state using ZilPay
 
@@ -106,24 +106,11 @@ On succesfully running the web application locally on your system, enter the add
 
 To call the transitions from the front-end using ZilPay:
 
-1) `setHello()` - Upon clicking the **Set Hello** button and approving the transaction via ZilPay, the `setHello()` transition will be called and the value of the `welcomeMsg` mutable variable in the contract code will be updated with the new message.
+1. `setHello()` - Upon clicking the **Set Hello** button and approving the transaction via ZilPay, the `setHello()` transition will be called and the value of the `welcomeMsg` mutable variable in the contract code will be updated with the new message.
 
 The following code snippet achieves this functionality:
 
 ```javascript
-async setHello(){
-    if(window.zilPay.wallet.isEnable){
-      this.updateWelcomeMsg();
-    }
-    else{
-      const isConnect = await window.zilPay.wallet.connect();
-      if (isConnect) {
-        this.updateWelcomeMsg();
-      } else {
-      throw new Error('user rejected');
-      }
-    } 
-  }
 
   async updateWelcomeMsg(){
     const zilliqa = window.zilPay;
@@ -160,26 +147,13 @@ async setHello(){
     }
   }
 ```
-2) `getHello()` - Upon clicking the 'Get Hello' button and approving the transaction via ZilPay, the `getHello()` transition will called and the value of the `welcomeMsg` mutable variable is emitted as part of an event.
+2. `getHello()` - Upon clicking the 'Get Hello' button and approving the transaction via ZilPay, the `getHello()` transition will be called and the value of the `welcomeMsg` mutable variable is emitted as part of a contract event.
 
-We will use the Zilliqa WebSocket Server (ZWS) that initiates a subscription for all new event logs generated for our Hello World contract. This allows us to update the Welcome Msg on the web application as soon as the `getHello()` transaction gets confirmed and an event is emitted.
+We will use the Zilliqa WebSocket Server (ZWS) to subscribe to all new event logs generated for our Hello World contract. This allows us to update the Welcome Msg on the web application as soon as the `getHello()` transaction gets confirmed and an event is emitted.
 
 The following code snippet achieves this functionality:
 
 ```javascript
-  async getHello(){
-    if(window.zilPay.wallet.isEnable){
-      this.getWelcomeMsg();
-    }
-    else{
-      const isConnect = await window.zilPay.wallet.connect();
-      if (isConnect) {
-        this.getWelcomeMsg();
-      } else {
-      throw new Error('user rejected');
-      }
-    } 
-  }
 
   async getWelcomeMsg(){
     
@@ -206,25 +180,20 @@ The following code snippet achieves this functionality:
             }
         );
         console.log(JSON.stringify(callTx.TranID));
-        this.eventLogSubscription();
-
-  
+        this.eventLogSubscription();  
     } catch (err) {
         console.log(err);
     }
 
   }
-
-
+  // Code that listens to websocket and updates welcome message when getHello() gets called.
   async eventLogSubscription() {
     const zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
     const subscriber = zilliqa.subscriptionBuilder.buildEventLogSubscriptions(
       'wss://dev-ws.zilliqa.com',
       {
         // smart contract address you want to listen on  
-        addresses: [
-          this.state.contractAddress
-        ],
+        addresses: [localStorage.getItem("contract_address")],
       },
     );
     
@@ -234,9 +203,10 @@ The following code snippet achieves this functionality:
     });
     
     subscriber.emitter.on(MessageType.EVENT_LOG, (event) => {
+      console.log('get new event log: ', JSON.stringify(event));
       // updating the welcome msg when a new event log is received related to getHello() transition
       if(event.hasOwnProperty("value")){
-        if(event.value[0].event_logs[0]._eventname =="getHello()"){
+        if(event.value[0].event_logs[0]._eventname =="getHello"){
           let welcomeMsg = event.value[0].event_logs[0].params[0].value;
           this.setState({welcomeMsg: welcomeMsg});
           console.log("welcomeMsg", welcomeMsg);
