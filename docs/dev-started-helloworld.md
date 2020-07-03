@@ -89,10 +89,10 @@ end
 
 Let's interact with the `Hello World` contract using a simple front-end.
 
-Clone the following repository and follow the installation steps: [Hello World Front-End](https://github.com/Zilliqa/dev-portal-examples/tree/master/hello-world).
+Clone the following repository and follow the installation steps: [Hello World Front-End](https://github.com/arnavvohra/dev-portal-examples/tree/master/hello-world).
 
 ```bash
-git clone https://github.com/Zilliqa/dev-portal-examples.git
+git clone XXXXX
 ```
 
 The above repository builds on the create-react-app starter kit. If you don't have experience working with React, this guide would still be useful for you as the zilliqa-js part of the code is VanillaJS and you can use that as it is in the framework of your choice.
