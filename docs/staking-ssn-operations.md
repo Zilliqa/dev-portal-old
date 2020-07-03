@@ -55,11 +55,11 @@ As such, any user who wishes to interact with the contract, should interact with
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!-- Testnet -->
-<br>
+<br/>
 | Type    | Address |
 | ------- | ------- |
-| proxy   | Bech32: [zil135gsjk2wqxwecn00axm2s40ey6g6ne8668046h](https://viewblock.io/zilliqa/address/zil135gsjk2wqxwecn00axm2s40ey6g6ne8668046h?network=testnet) <br> Base16: [0x8d1109594e019d9c4defe9b6a855f92691a9e4fa](https://viewblock.io/zilliqa/address/0x8d1109594e019d9c4defe9b6a855f92691a9e4fa?network=testnet) |
-| ssnlist | Bech32: [zil106pzq6thrzhxq2xuepa6807pmkrsepqdf0yrd6](https://viewblock.io/zilliqa/address/zil106pzq6thrzhxq2xuepa6807pmkrsepqdf0yrd6?network=testnet) <br> Base16: [0x7e8220697718ae6028dcc87ba3bfc1dd870c840d](https://viewblock.io/zilliqa/address/0x7e8220697718ae6028dcc87ba3bfc1dd870c840d?network=testnet) |
+| proxy   | Bech32: [zil135gsjk2wqxwecn00axm2s40ey6g6ne8668046h](https://viewblock.io/zilliqa/address/zil135gsjk2wqxwecn00axm2s40ey6g6ne8668046h?network=testnet) <br/> Base16: [0x8d1109594e019d9c4defe9b6a855f92691a9e4fa](https://viewblock.io/zilliqa/address/0x8d1109594e019d9c4defe9b6a855f92691a9e4fa?network=testnet) |
+| ssnlist | Bech32: [zil106pzq6thrzhxq2xuepa6807pmkrsepqdf0yrd6](https://viewblock.io/zilliqa/address/zil106pzq6thrzhxq2xuepa6807pmkrsepqdf0yrd6?network=testnet) <br/> Base16: [0x7e8220697718ae6028dcc87ba3bfc1dd870c840d](https://viewblock.io/zilliqa/address/0x7e8220697718ae6028dcc87ba3bfc1dd870c840d?network=testnet) |
 
 | Parameters                 | Value       |
 | -------------------------- | ----------- |
@@ -70,11 +70,11 @@ As such, any user who wishes to interact with the contract, should interact with
 
 
 <!-- Mainnet -->
-<br>
+<br/>
 | Type    | Address |
 | ------- | ------- |
-| proxy   | Bech32: [zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma](https://viewblock.io/zilliqa/address/zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma) <br> Base16: [0x38Cef22914277a24993235Eef92C4A0b3e7E42ed](https://viewblock.io/zilliqa/address/zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma) |
-| ssnlist | Bech32: [zil16c4aejmulkx4vnnyt7m55rgsws088f8j5dl2rq](https://viewblock.io/zilliqa/address/zil16c4aejmulkx4vnnyt7m55rgsws088f8j5dl2rq) <br> Base16: [0xD62bDccb7CfD8D564e645FB74a0D10741e73a4f2](https://viewblock.io/zilliqa/address/zil16c4aejmulkx4vnnyt7m55rgsws088f8j5dl2rq) |
+| proxy   | Bech32: [zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma](https://viewblock.io/zilliqa/address/zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma) <br/> Base16: [0x38Cef22914277a24993235Eef92C4A0b3e7E42ed](https://viewblock.io/zilliqa/address/zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma) |
+| ssnlist | Bech32: [zil16c4aejmulkx4vnnyt7m55rgsws088f8j5dl2rq](https://viewblock.io/zilliqa/address/zil16c4aejmulkx4vnnyt7m55rgsws088f8j5dl2rq) <br/> Base16: [0xD62bDccb7CfD8D564e645FB74a0D10741e73a4f2](https://viewblock.io/zilliqa/address/zil16c4aejmulkx4vnnyt7m55rgsws088f8j5dl2rq) |
 
 | Parameters                 | Value        |
 | -------------------------- | ------------ |

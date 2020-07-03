@@ -30,7 +30,7 @@ If you have a public IP address, you can skip this network setup section entirel
 
 ### Option 1a
 
-Port forward to port `33133` for both external port (port range) and internal port (local port). You will also have to select the option for **BOTH** TCP and UDP protocol in your router menu when port forwarding. <br><br> An example of this process can be found [**HERE**](https://www.linksys.com/us/support-article?articleNum=136711). After port forwarding, you may check if you have successfully port forwarded with this [**Open Port Check Tool**](https://www.yougetsignal.com/tools/open-ports/).
+Port forward to port `33133` for both external port (port range) and internal port (local port). You will also have to select the option for **BOTH** TCP and UDP protocol in your router menu when port forwarding. <br/>An example of this process can be found [**HERE**](https://www.linksys.com/us/support-article?articleNum=136711). After port forwarding, you may check if you have successfully port forwarded with this [**Open Port Check Tool**](https://www.yougetsignal.com/tools/open-ports/).
 
 ### Option 1b
 
@@ -107,11 +107,11 @@ The first message means UPnP mode has been enabled successfully, while the latte
 
     > **NOTE:** **DO NOT** duplicate your IP address and use different ports to create different CPU nodes. You will be blacklisted by the network and hence not be able to receive any rewards.
 
-    - `Assign a name to your container (default: zilliqa):` <br> [Press **Enter** to skip if using default]
+    - `Assign a name to your container (default: zilliqa):` <br/> [Press **Enter** to skip if using default]
 
-    - `Enter your IP address ('NAT' or *.*.*.*):` <br> [Key in your IP address as found in step 5 **OR** `NAT` if you chose [Option 1b](mining-initial-setup#option-1b) for network setup]
+    - `Enter your IP address ('NAT' or *.*.*.*):` <br/> [Key in your IP address as found in step 5 **OR** `NAT` if you chose [Option 1b](mining-initial-setup#option-1b) for network setup]
 
-    - `Enter your listening port (default: 33133):` <br> [Press **Enter** to skip if using default]
+    - `Enter your listening port (default: 33133):` <br/> [Press **Enter** to skip if using default]
 
 ## Monitoring Progress
 
