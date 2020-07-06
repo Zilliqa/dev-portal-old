@@ -22,6 +22,8 @@ This assignment strategy, however, only works with payment transactions. To prop
 
 Transactions received by the network can be classified into the following categories depending on the type of accounts involved. Below, we call an account a *user account* (or a non-contract account) if it is controlled by a user and does not hold contract code. As an extension, an account that holds contract code will be referred to as a *contract account*.
 
+![Txn sharding](../assets/txnsharding.png)
+
 ### Type I
 
 Type I (U1 -> U2): A user account sending some money to another user account, i.e., regular payment transactions that do not involve smart contracts. An example transaction would be a user Alice sending some ZILs to another user Bob.
