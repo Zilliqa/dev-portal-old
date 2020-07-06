@@ -39,7 +39,7 @@ Yes, you may do so at any time, but take note of these items:
 
 Yes, you may do so at any time, but take note of these items:
 - A withdrawal that zeroes out the rewards (with stake deposit also fully withdrawn) also automatically removes the staked seed node from the smart contract
- 
 
-> More FAQs for staking are available on the Zilliqa website at https://www.zilliqa.com/faq
-
+:::info
+More FAQs for staking are available on the Zilliqa website at https://www.zilliqa.com/faq
+::: 

@@ -57,21 +57,28 @@ $ tar -zxvf seed-configuration.tar.gz
 The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:
 - Change the value of `ENABLE_STAKING_RPC` to `true`
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
-  > **Note:** If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
+:::caution Important notice 
+If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
+:::
 - **Optional:** Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 Finally, launch the seed node:
 ```
 $ ./launch_docker.sh
 ```
-> **Note:** A seed node needs a key pair to communicate with other nodes in the network. launch_docker.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder.
+:::info
+A seed node needs a key pair to communicate with other nodes in the network. launch_docker.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder.
+:::
 
->  **⚠️** We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
-
+:::caution
+We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
+:::
 
 ### Launching the node using native build
 
-> **Note:** This approach has only been tested on `Ubuntu 16.04.6 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
+:::caution
+This approach has only been tested on `Ubuntu 16.04.6 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
+:::
 
 If you cannot or do not wish to use Docker, you may also build the Zilliqa binary from the source and run it as such.
 
@@ -120,17 +127,22 @@ $ tar -zxvf seed-configuration.tar.gz
 The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory we extracted `configuration.tar.gz` to. Minimally, the following changes are required:
 - Change the value of `ENABLE_STAKING_RPC` to `true`
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
-  > **Note:** If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
+:::caution Important notice 
+If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
+:::
 - **Note:** Change the value of `ENABLE_WEBSOCKET` to `true`. This enables your seed node to support websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 Finally, launch the seed node:
 ```bash
 $ ./launch.sh
 ```
+:::info
+A seed node needs a key pair to communicate with other nodes in the network. launch.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder
+:::
 
-> **Note:** A seed node needs a key pair to communicate with other nodes in the network. launch.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder
-
->  **⚠️** We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
+:::caution
+We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
+:::
 
 ### Optional: Configuring domain name
 

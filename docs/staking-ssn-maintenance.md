@@ -12,7 +12,9 @@ The node might go out of sync if it fails to receive new blocks from the network
 
 However, if the node is unable to resync on its own, it will need to be launched again in a fresh mode (i.e. clean start). Please refer to the section  [Preparing the node](staking-getting-started#preparing-the-node) at Getting started page
 
-> **⚠️** Make sure to back up your keys.
+:::caution
+Make sure to back up your keys.
+:::
 
 ### Upgrading the seed node
 

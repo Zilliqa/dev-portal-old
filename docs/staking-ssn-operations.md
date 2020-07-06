@@ -7,7 +7,6 @@ title: Smart contract operations
 
 The smart contracts have been audited by [Quantstamp](https://quantstamp.com/). A copy of the security audit report can be found in our [Github repository](https://github.com/Zilliqa/staking-contract/blob/master/Staked_Seed_Node_SSN_Operations-Report.pdf) or on [Quantstamp certification website](https://certificate.quantstamp.com/).
 
-
 ## Enrollment into the smart contract
 
 We will require you to provide us the following information via the communication channel we have established with you
@@ -15,7 +14,9 @@ We will require you to provide us the following information via the communicatio
 - Your IP address
 - Your port(s) if you have changed any of default ports
 
->  **⚠️** We highly recommend to use a secured keypair for depositing stake, withdrawing stake and withdrawing reward. Please do not reuse the keypair you use for running your staked seed node.
+:::caution
+We highly recommend to use a secured keypair for depositing stake, withdrawing stake and withdrawing reward. Please do not reuse the keypair you use for running your staked seed node.
+:::
 
 Upon providing the information, the Zilliqa team will proceed to add your staked seed node information into the smart contract and informed you once it is done.
 
@@ -34,7 +35,9 @@ Also, if you need a small amount of testnet $ZIL from time to time, you can go t
 
 The following guide will use Zilliqa ZLI and SDK as an example for interacting with the smart contract. 
 
-> For ZLI installation and initialisation of the wallet in ZLI, please refer to the README documentation at https://github.com/Zilliqa/zli
+:::tip
+For ZLI installation and initialisation of the wallet in ZLI, please refer to the README documentation at https://github.com/Zilliqa/zli
+:::
 
 The staked seed node smart contract will be used in the following ways:
 - Allows addition/removal of staked seed node
@@ -84,16 +87,20 @@ As such, any user who wishes to interact with the contract, should interact with
 | Overall contract max stake | 700M         |
 | Reward cycle               | 17 DS blocks |
 
-These numbers may subjected to changes.
+These numbers may subjected to change.
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> **Notice:** Please use proxy contract address if you need to call the smart contract.
+:::caution Notice
+Please use proxy contract address if you need to call the smart contract.
+:::
 
 ## SSN address and key pair management
 Each staked seed node registered in the contract is associated with a Zilliqa mainnet address. This address is used to both deposit and withdraw funds as well as withdraw the rewards using the smart contract transitions listed above. Operators should take care to exercise whatever policies are in place in their organizations for managing the key pair associated with this address.
 
-> **Note:** The key pair used for staking the seed node has no relation to the operational key pair used by the seed node for communicating with other nodes in the network (i.e., the key pair contained in the mykey.txt file generated when launching the seed node). It is highly recommended not to use a single key pair for both purposes.
+:::tip Key management
+The key pair used for staking the seed node has no relation to the operational key pair used by the seed node for communicating with other nodes in the network (i.e., the key pair contained in the mykey.txt file generated when launching the seed node). It is highly recommended not to use a single key pair for both purposes.
+:::
 
 ## Stake deposit
 

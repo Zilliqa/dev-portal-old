@@ -9,13 +9,16 @@ In this initial phase of the Zilliqa staking program, staking is done through a 
 
 Staked seed nodes are expected to provide API service to anyone to be eligible for these rewards. There will also be no hard slashing in this phase of the program.
 
-> More details on the rationale and design of the program can be found in the Zilliqa Improvement Proposal (ZIP) [documentation](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-3.md).
+:::info
+More details on the rationale and design of the program can be found in the Zilliqa Improvement Proposal (ZIP) [documentation](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-3.md).
+:::
 
-> If you wish to learn more about our seed node staking contract, you may want to check out the contract over at [staking-contract Github Repository](https://github.com/Zilliqa/staking-contract).
-
+:::tip
+If you wish to learn more about our seed node staking contract, you may want to check out the contract over at [staking-contract Github Repository](https://github.com/Zilliqa/staking-contract).
+:::
 
 ## Disclaimer
-
+:::danger Disclaimer
 By participating in the staking of ZILs (“Staking Program”), each participating individual and organization ("Participant") accepts and agrees that, to the extent permitted by law, [Zilliqa] disclaims all liability, damages, cost, loss or expense (including, without limitation, legal fees, costs and expenses) to it in respect of its involvement in the Staking Program. Each Participant should carefully consider all factors involved in participating in the Staking Program, including, but not limited to, those listed below and, to the extent necessary, consult an appropriate professional or other expert (including an expert in cryptographic tokens or blockchain-based software systems). If any of the following considerations are unacceptable to a Participant, that Participant should not be involved in the Staking Program. These considerations are not intended to be exhaustive and should be used as guidance only.
 
 - The Staking Program is an open source protocol made available to the public, and Zilliqa expressly disclaims any liability in respect of any actions, programs, applications, developments, and operations of the Staking Program.
@@ -24,6 +27,7 @@ By participating in the staking of ZILs (“Staking Program”), each participat
 - The ZILs are not intended to represent any formal or legally binding investment. Cryptographic tokens that possess value in public markets, such as Ether and Bitcoin, have demonstrated extreme fluctuations in price over short periods of time on a regular basis. Participants should be prepared to expect similar fluctuations in the price of the ZILs and Participants may experience a complete and permanent loss of their initial purchase.
 
 The ZILs are not intended to be securities (or any other regulated instrument) under the laws of any jurisdiction where they are intended to be, or will be, purchased or sold and no action has been or will be taken in any jurisdiction by Zilliqa Research or any of its affiliates that would permit a public offering, or any other offering under circumstances not permitted by applicable law of the ZILs, in any country or jurisdiction where action for that purpose is required. Accordingly, the ZILs may not be offered or sold, directly or indirectly, by any holder, in or from any country or jurisdiction, except in circumstances which will result in compliance with all applicable rules and regulations of any such country or jurisdiction.
+:::
 
 ## Who can run a Zilliqa SSN
 
@@ -48,7 +52,9 @@ At the moment, the minimum hardware requirements are as follows:
 
 ## Signing up as a staked seed node operator
 
-> This step is optional for those who are already in touch with us
+:::info
+This step is optional for those who are already in touch with us
+:::
 
 For interested party who wishes to run a staked seed node and is able to provides the following service: 
 - run a staked seed node 
