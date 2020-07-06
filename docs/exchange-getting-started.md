@@ -4,14 +4,20 @@ title: Getting Started
 ---
 
 ---
-# NOTICE TO EXCHANGES
-> Interim Zillings (“Interim ZILs”) for Zillings (“ZILs”) are not available for offer, sale or transfer to U.S persons (as defined in Regulation S of the U.S. Securities Act of 1933). Please ensure that, at the time of exchange of Interim ZILs for ZILs, each holder of ZILs confirms that it is not a U.S person (as defined in Regulation S of the U.S. Securities Act of 1933).
----
 
-While it's possible to use the public endpoint provided by Zilliqa to interact
-with the blockchain, we recommend that all exchanges who wish to support
-trading on the main net set up seed nodes. This document walks you through the
-basic steps needed to get up and running.
+# $ZIL Disclaimer
+Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceeding. 
+
+# Introduction
+
+To interact with Zilliqa network, you can either
+- interact with endpoints provided by Zilliqa
+- host an endpoint within your infrastructure
+
+These endpoints are known as Seed Node in Zilliqa network. They store the full histocial 
+infornmation about Zilliqa broadcast and forward transactions into the network.
+
+This section will walks you through the basic steps needed to get up and running.
 
 ## IP whitelisting
 
@@ -21,9 +27,12 @@ broadcasts about the blockchain and its state. This requires a static, public
 IP address with minimally two open ports (inbound and outbound) at which it
 can be reached.
 
+> Whitelisting of seed node is currently granted based on a need-by basis. 
+The Zilliqa core team will assess each request before whitelisting.
+
 ## Minimum Hardware Requirements
 - x64 Linux operating system (e.g Ubuntu 16.04.05)
-- Recent dual core processor @ 2.2 GHZ. Examples:
+- Recent dual-core processor @ 2.2 GHZ. Examples:
    - Intel Core i5 or i7 (Skylake)
    - Intel Xeon (Skylake)
 - 8GB DRR3 RAM or higher
