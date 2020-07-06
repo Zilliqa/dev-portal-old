@@ -4,7 +4,7 @@ title: Proxy Mining
 ---
 ## What is Proxy Mining?
 
-In contrast to Ethereum or Bitcoin, Zilliqa doesn’t employ PoW for its consensus protocol (such as is done in nakamoto consensus). Instead, it leverages a pBFT-like variant as its consensus protocol and PoW as the identity creation to prevent Sybil attacks.
+In contrast to Ethereum or Bitcoin, Zilliqa doesn’t employ PoW for its consensus protocol (such as is done in Nakamoto consensus). Instead, it leverages a pBFT-like variant as its consensus protocol and PoW as the identity creation to prevent Sybil attacks.
 
 As a consequence, Zilliqa requires GPUs for its PoW phase and CPUs for consensus and transaction verification. To participate in Zilliqa’s network, a node is required to submit a PoW submission that meets the difficulty level. After that, the node is assigned to a shard and contributes to transaction processing and consensus within the duration of its shard membership.
 
@@ -18,7 +18,7 @@ As the bridge, the mining proxy relays JSON-RPC messages from both sides, i.e., 
 
 ## Proxy Mining Setup
 
-The following components are available for node operators who are interested in managing their own proxy mining setup:
+The following components are available for node operators who are interested in managing their proxy mining setup:
 
 1. CPU cluster - [Zilliqa Client](https://github.com/Zilliqa/Zilliqa)
 1. GPU cluster - [ZilMiner](https://github.com/DurianStallSingapore/ZILMiner)

@@ -11,9 +11,9 @@ Both **AMD** (with OpenCL) and **Nvidia** (with OpenCL or CUDA) GPUs are support
 The **minimum** requirements for running **ZilMiners** are:
 
 - x64 Operating system (Ubuntu or Windows)
-- Dual core processor or later
+- Dual-core processor or later
 - 4GB DDR3 RAM or higher
-- Any GPUs with at least 2 GB vRAM
+- Any GPUs with at least 2 GB RAM
 
 ## GPU Driver Setup for ZilMiner
 

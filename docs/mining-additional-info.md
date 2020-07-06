@@ -6,7 +6,7 @@ title: Additional Information
 
 ![Zilliqa Epoch Architecture](https://i.imgur.com/Da4t6FW.png)
 
-At the start of each DS Epoch, all mining candidates will run the Proof-of-Work (Ethash algorithm) cycle for a `60` seconds window in order to compete to join the Zilliqa network.
+At the start of each DS Epoch, all mining candidates will run the Proof-of-Work (Ethash algorithm) cycle for a `60` seconds window to compete to join the Zilliqa network.
 
 - Nodes that fulfilled the `DS_POW_DIFFICULTY` parameter will qualify to join as DS nodes.
 - Nodes that fulfilled the `POW_DIFFICULTY` parameter will qualify to join as shard nodes.
