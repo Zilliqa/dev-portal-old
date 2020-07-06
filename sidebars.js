@@ -17,7 +17,7 @@ module.exports = {
   },
   someSidebar4: {
     "Exchange Integration":["exchange-getting-started","exchange-account-management","exchange-sending-transactions",
-    "exchange-tracking-deposits"],
+    "exchange-tracking-deposits","exchange-transaction-receipts"],
     "Staked Seed Nodes Integration":["staking-introduction","staking-getting-started","staking-ssn-operations","staking-ssn-monitoring",
     "staking-faq"]
   },
