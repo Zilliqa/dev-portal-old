@@ -1,10 +1,10 @@
 ---
 id: staking-ssn-operations
-title: Operations
+title: Smart contract operations
 ---
 # Security audit of smart contract
 
-The smart contracts has been audited by [Quantstamp](https://quantstamp.com/). A copy of the security audit report can be found in our [Github repository](https://github.com/Zilliqa/staking-contract/blob/master/Staked_Seed_Node_SSN_Operations-Report.pdf) or on [Quantstamp certification website](https://certificate.quantstamp.com/).
+The smart contracts have been audited by [Quantstamp](https://quantstamp.com/). A copy of the security audit report can be found in our [Github repository](https://github.com/Zilliqa/staking-contract/blob/master/Staked_Seed_Node_SSN_Operations-Report.pdf) or on [Quantstamp certification website](https://certificate.quantstamp.com/).
 
 
 # Enrollment into the smart contract
@@ -12,7 +12,7 @@ The smart contracts has been audited by [Quantstamp](https://quantstamp.com/). A
 We will require you to provide us the following information via the communication channel we have established with you
 - Zilliqa address where you will deposit/withdraw stake and receive rewards*
 - Your IP address
-- Your port(s) if you have change any of default ports
+- Your port(s) if you have changed any of default ports
 
 >  **⚠️** We highly recommend to use a secured keypair for depositing stake, withdrawing stake and withdrawing reward. Please do not reuse the keypair you use for running your staked seed node.
 
@@ -27,7 +27,7 @@ To get you started, let us know the amount of testnet $ZIL you wish to get and w
 | 50,000 testnet $ZIL | For depositing stake |
 | 5,000 testnet $ZIL  | For gas fees |
 
-Also, if you need a amount of testnet $ZIL from time to time, you can go to our [Testnet Faceut](https://dev-wallet.zilliqa.com/faucet) to request for it.
+Also, if you need a small amount of testnet $ZIL from time to time, you can go to our [Testnet Faceut](https://dev-wallet.zilliqa.com/faucet) to request for it.
 
 # Introduction to staked seed node smart contract
 
@@ -49,7 +49,7 @@ For staked seed node operators, a number of smart contract transition is availab
 
 # Smart contract information
 
-We have two smart contract, namely `proxy` and `ssnlist`. Proxy contract stores the implementation address of `ssnlist` and forwards all call to the logic contract, `ssnlist`.
+We have two smart contracts, namely `proxy` and `ssnlist`. Proxy contract stores the implementation address of `ssnlist` and forwards all calls to the logic contract, `ssnlist`.
 
 As such, any user who wishes to interact with the contract, should interact with `proxy` contract only.
 
@@ -98,11 +98,11 @@ Each staked seed node registered in the contract is associated with a Zilliqa ma
 
 ## Why a stake deposit is required
 
-Having each operator deposit an amount in the contract ensures that rewarding is done on the basis of the staked seed node providing its API service uninterrupted. This is achieved by staking (the proportion of “skin in the game”). By depositing $ZILs, a seed node operator shows its commitment towards providing the seed node service. Without this "skin in the game", a seed node operator could decide to stop the service at will and may impact the ecosystem and the end users.
+Having each operator deposit an amount in the contract ensures that rewarding is done on the basis of the staked seed node providing its API service uninterrupted. This is achieved by staking (the proportion of “skin in the game”). By depositing $ZILs, a seed node operator shows its commitment towards providing the seed node service. Without this "skin in the game", a seed node operator could decide to stop the service at will and may impact the ecosystem and the end-users.
 
 ## Stake deposit process
 
-Currently, our rewarding cycle is paid out once **every 15 DS epochs**. In order to deter abuse of the reward cycle, **stake deposit will first be entered as a buffered deposit**. At the next multiple of 15 DS epoch, the buffered deposit will be transferred to the stake deposit. From then on, the stake deposit will be eligible for rewards.
+Currently, our rewarding cycle is paid out once **every 15 DS epochs**. To deter abuse or gaming of the reward cycle, **the stake deposit will first be entered as a buffered deposit**. At the next multiple of 15 DS epoch, the buffered deposit will be transferred to the stake deposit. From then on, the stake deposit will be eligible for rewards.
 
 **CLI way to deposit stake amount**
 ```bash
@@ -175,7 +175,7 @@ Example of stake deposit for a particular ssn address:
 
 ### What happens when the stake deposit is withdrawn?
 
-For partial withdrawal, you will need to ensure that your stake deposit is larger than the minimum stake amount (**10,000,000 ZIL**) in order for withdrawal to be successful.
+For partial withdrawal, you will need to ensure that your stake deposit is larger than the minimum stake amount (**10,000,000 ZIL**) for the withdrawal to be successful.
 
 For full withdrawal, with the rewards not yet fully withdrawn, your staked seed node will become inactive. It can be reactivated by doing another stake deposit into the contract.
 
@@ -251,7 +251,7 @@ zli staking rewards -s 0x53e954391539f276c36a09167b795ab7e654fdb7 -c 343407558c9
 
 ## Withdraw reward process
 
-The withdrawal of reward process is straightforward. The staked seed node operator will need to only invoke `withdraw_stake_rewards()` using the operator key, and the reward will be sent to the staked seed node operator address.
+The withdrawal of the reward process is straightforward. The staked seed node operator will need to only invoke `withdraw_stake_rewards()` using the operator key, and the reward will be sent to the staked seed node operator address.
 
 For reward withdrawal, with full stake amount already withdrawn, your staked seed node will be removed from the list of staked seed nodes.
 

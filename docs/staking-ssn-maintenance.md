@@ -1,9 +1,10 @@
 ---
-id: staking-ssn-monitoring
-title: Monitoring
+id: staking-ssn-maintenance
+title: SSN Maintenance
 ---
+
 # Seed node status page
-We provide a webapp, Zilliqa Staking Viewer, to track all available seed node operators. You can access it at
+We provide a web application, Zilliqa Staking Viewer, to track all available seed node operators. You can access it at
 https://stg-staking-viewer.zilliqa.com/
 
 # How to resync node

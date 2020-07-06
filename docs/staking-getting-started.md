@@ -1,6 +1,6 @@
 ---
 id: staking-getting-started
-title: Getting started	
+title: Setting up the SSN
 ---
 
 # IP whitelisting and API servicing
@@ -20,11 +20,11 @@ It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0
 
 Launching a seed node for staking is similar to launching a normal seed node, with some additional configuration steps.
 
-In this guide, we will demostrate on how to setup the seed node via
+In this guide, we will demonstrate on how to set up the seed node via
 1. [Docker](#launching-the-node-using-docker)
 2. [Native build](#launching-the-node-using-native-build)
 
-You can go for either one of the option above.
+You can go for either one of the options above.
 
 ## Launching the node using Docker
 We highly recommend using [Docker](https://docker.com/) to set up a seed node, as we provide a tested, production-ready image for your use. If you have not yet set up docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
@@ -71,9 +71,9 @@ $ ./launch_docker.sh
 
 ## Launching the node using native build
 
-> **Note:** This approach has only been tested on `Ubuntu 16.04.6 LTS` and involves compiling and building the `C++` code base from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
+> **Note:** This approach has only been tested on `Ubuntu 16.04.6 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
 
-If you cannot or do not wish to use Docker, you may also build the Zilliqa binary from source and run it as such.
+If you cannot or do not wish to use Docker, you may also build the Zilliqa binary from the source and run it as such.
 
 First, clone the Zilliqa repository:
 ```bash
@@ -128,7 +128,7 @@ Finally, launch the seed node:
 $ ./launch.sh
 ```
 
-> **Note:** A seed node needs a key pair to communicate with other nodes in the network. launch.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folde
+> **Note:** A seed node needs a key pair to communicate with other nodes in the network. launch.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder
 
 >  **⚠️** We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
 
