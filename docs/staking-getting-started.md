@@ -3,7 +3,7 @@ id: staking-getting-started
 title: Setting up the SSN
 ---
 
-# IP whitelisting and API servicing
+## IP whitelisting and API servicing
 
 It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0 in order to receive data broadcasts about the blockchain and its state. This requires a static public IP address with minimal the following inbound and outbound port open.
 
@@ -16,7 +16,7 @@ It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0
 | Inbound  | 4501     | Staking API service                            |
 | Outbound | 443      | For getting intiial node data for syncing      |
 
-# Preparing the node
+## Preparing the node
 
 Launching a seed node for staking is similar to launching a normal seed node, with some additional configuration steps.
 
@@ -26,7 +26,7 @@ In this guide, we will demonstrate on how to set up the seed node via
 
 You can go for either one of the options above.
 
-## Launching the node using Docker
+### Launching the node using Docker
 We highly recommend using [Docker](https://docker.com/) to set up a seed node, as we provide a tested, production-ready image for your use. If you have not yet set up docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
 
 Once you have set up Docker, you may proceed to download and uncompress the configuration tarball for the mainnet:
@@ -69,7 +69,7 @@ $ ./launch_docker.sh
 >  **⚠️** We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
 
 
-## Launching the node using native build
+### Launching the node using native build
 
 > **Note:** This approach has only been tested on `Ubuntu 16.04.6 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
 
@@ -132,7 +132,7 @@ $ ./launch.sh
 
 >  **⚠️** We highly recommend to use another keypair for depositing stake, withdrawing stake and withdrawing reward.
 
-## Optional: Configuring domain name
+### Optional: Configuring domain name
 
 Once your seed node is fully set up, it is time to configure your domain name to point to the address of your seed node. 
 
@@ -140,7 +140,7 @@ If your seed node is not behind a load balancer, you can set an `A record` in yo
 
 If your seed node is behind a load balancer, you can set a `CNAME record` in your domain registrar to point your domain/subdomain to the hostname of your load balancer.
 
-## Testing your staked seed node JSON-RPC port
+### Testing your staked seed node JSON-RPC port
 
 To check whether your JSON-RPC is publicly available, you can use the following curl command.
 ```bash
@@ -157,7 +157,7 @@ If you received the latest blockchain information (similar to the one below) fro
 {"id":"1","jsonrpc":"2.0","result":{"CurrentDSEpoch":"4789","CurrentMiniEpoch":"478809","DSBlockRate":0.00013455546527607284,"NumDSBlocks":"4790","NumPeers":2400,"NumTransactions":"3091806","NumTxBlocks":"478809","NumTxnsDSEpoch":"185","NumTxnsTxEpoch":"0","ShardingStructure":{"NumPeers":[600,600,600]},"TransactionRate":0,"TxBlockRate":0.013450003515398927}}
 ```
 
-## Testing your staked seed node WebSocket port
+### Testing your staked seed node WebSocket port
 You can use an online websocket test utility to test whether your websocket is publicly accessible.
 
 1. Visit https://www.websocket.org/echo.html
