@@ -2,9 +2,9 @@
 id: dev-txn-confirmation
 title: Confirmation
 ---
-Now the transaction object is in one of the shard. Each shard will produce a __Micro Block__. Micro Blocks are aggregated by the DS Committee into a Transaction Block, after the DS Committee agrees on the Transaction Block through the pBFT consensus mechanism.
+Now the transaction object is in one of the shards. Each shard will produce a __Micro Block__. Micro Blocks are aggregated by the DS Committee into a Transaction Block, after the DS Committee agrees on the Transaction Block through the pBFT consensus mechanism.
 
-After the DS Committee reaches consensus on the Transaction Block, it multicases the result to all shard nodes and lookup nodes. At this stage, the seed node will have a result for our transaction object. The result can be retrieved using the same `GetTransaction` JSON RPC API.
+After the DS Committee reaches consensus on the Transaction Block, it multicasts the result to all shard nodes and lookup nodes. At this stage, the seed node will have a result for our transaction object. The result can be retrieved using the same `GetTransaction` JSON RPC API.
 
 __Note:__ The example below uses the ZilliqaJS SDK to retrieve the transaction response. The structure may be _slightly different_ from the __JSON RPC__ `GetTransaction` results.
 
@@ -215,4 +215,4 @@ Example of a contract call transaction response:
    }
 }
 ```
-A transaction is confirmed if under the `receipt` section, `"success": true` is shown.
+A transaction is confirmed if, under the `receipt` section, `"success": true` is shown.
