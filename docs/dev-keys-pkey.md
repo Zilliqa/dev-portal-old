@@ -3,7 +3,7 @@ id: dev-keys-pkey
 title: Private Key & Keystore File
 ---
 
-Other than ZilPay, DApp developers can allow their users to interact with their dApp using other wallet choices such as private key or keystore file.
+Other than ZilPay, DApp developers can allow their users to interact with their dApp using other wallet choices such as a private key or keystore file.
 However, we do recommend to use browser add-on such as ZilPay for key management.
 ## Import via private key
 The following code snippet illustrates on how To import your account from a private key
@@ -13,7 +13,7 @@ zilliqa.wallet.addByPrivateKey(privkey); //Private key was stored in the privKey
 ```
 
 ## Import via keystore file
-The following code snippet illustrates on how To import your account from an encrypted JSON keystore file and retrieve the private from the encrypted
+The following code snippet illustrates how to import your account from an encrypted JSON keystore file and retrieve the private from the encrypted
 
 ```javascript
 import { decryptPrivateKey } from '@zilliqa-js/crypto';
@@ -25,10 +25,10 @@ async function privKeyFromKeystore() {
 
 ## Interacting with DApp
 
-After import the account using ```zilliqa-js/crypto``` module, the subsequent steps for doing anything are similar to the previous example.
+After importing the account using ```zilliqa-js/crypto``` module, the subsequent steps for doing anything are similar to the previous example.
 In the code snippet below, we call the `setHello()` transition of the `Hello World` Contract using a private key.
 
-> If you wish to use keystore instead of private key, you can replace the `zilliqa.wallet.addByPrivateKey(privkey)` with the code snippet above.
+> If you wish to use keystore instead of a private key, you can replace the `zilliqa.wallet.addByPrivateKey(privkey)` with the code snippet above.
 
 ```javascript
   async updateWelcomeMsg(){

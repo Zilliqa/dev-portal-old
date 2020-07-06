@@ -3,8 +3,8 @@ id: dev-keys-zilpay
 title: ZilPay
 ---
 
-ZilPay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on the Chrome, Firefox and Opera browsers.
-It does not store any user private keys on the server, instead they are password protected and stored on browser storage.
+ZilPay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on Chrome, Firefox and Opera browsers.
+It does not store any user's private keys on a remote server. Instead they are password protected and stored on browser storage.
 It is a non-custodial wallet, meaning, the user has full access and responsibility for their private key. 
 
 ## Detecting ZilPay
@@ -19,11 +19,11 @@ To check if the user has ZilPay installed, here is a sample code
 
 ## Connecting Your Dapp With ZilPay
 
-You need to ask once for user's permission to connect your dapp to their ZilPay wallet. The following is a sample code for requesting the permission
+You need to ask once for the user's permission to connect your dApp to their ZilPay wallet. The following is a sample code for requesting the permission
 ```typescript
 window.zilPay.wallet.connect()
 ```
-This is a promise-returning method that resolves with a `Boolean` value. `true` value indicate that the user accepts your connect request and `false` value indicate rejection.
+This is a promise-returning method that resolves with a `Boolean` value. `true` value indicates that the user accepts your connect request and `false` value indicates rejection.
 
 ## Accessing User Accounts
 Once you have connected to a user's ZilPay wallet, you can check the current account information through ```window.zilPay.wallet.defaultAccount```.
