@@ -18,7 +18,6 @@ Similar to Ethereum, the Zilliqa network supports two types of accounts:
    end user who owns a public-private signature key pair. The address of an
    externally-owned account is essentially a truncated hash of the public key.
 
-
 2. Contract Account: An account that has a smart contract code associated with
    it. A contract account gets created by a user when she deploys a smart
     contract on the network. The address of a contract account is the hash of the
