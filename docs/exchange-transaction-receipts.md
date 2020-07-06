@@ -19,7 +19,7 @@ The following are the fields a **receipt** may have. These fields generally appl
 
 For example:
 
-```
+```json
 "receipt": {
   "cumulative_gas": "10481",
   "epoch_num": "586524",
@@ -43,7 +43,7 @@ If a transaction is successful (i.e., the **success** field is `true`), these fi
 
 For example:
 
-```
+```json
 "receipt": {
   "accepted": true,
   "cumulative_gas": "878",
@@ -98,7 +98,7 @@ If a transaction is unsuccessful (i.e., the **success** field is `false`), no ba
 
 For example:
 
-```
+```json
 "receipt": {
   "cumulative_gas": "1220",
   "epoch_num": "588004",
@@ -127,11 +127,10 @@ For example:
 
 ## Recommended Steps for Exchanges Polling for Incoming Deposit from Smart Contract Transactions
 
-1. Confirm that the **success** field is set to `true`
-1. Traverse the **transitions** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
-   1. **_recipient** corresponds to a known deposit address controlled by the exchange
-   1. **_tag** is either `AddFunds` or empty
-   1. **_amount** is non-zero
-   1. Check the **_recipient** and **_amount** to complete the information on the balance transfer
-      <br/>In such a case, you can confirm that there is a deposit to address **_recipient** with value **_amount** (in `Qa`).
+1. Confirm that the **`success`** field is set to **`true`**
+1. Traverse the **`transitions`** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
+   1. **`_recipient`** corresponds to a known deposit address controlled by the exchange
+   1. **`_tag`** is either `AddFunds` or empty
+   1. **`_amount`** is non-zero
+   1. Check the **`_recipient`** and **`_amount`** to complete the information on the balance transfer.In such a case, you can confirm that there is a deposit to address **`_recipient`** with value **`_amount`** (in `Qa`).
    1. Continue traversing the remaining transitions and checking for more deposits
