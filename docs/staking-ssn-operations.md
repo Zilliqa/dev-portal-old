@@ -123,6 +123,7 @@ zli contract call -a 0123456789012345678901234567890123456789 -t stake_deposit -
 ```
 
 **SDK sample code**
+
 | Language | Link to sample code |
 | -------- | ------------------- |
 | NodeJS   | [stake_deposit.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/stake_deposit.js) |
@@ -167,6 +168,7 @@ Example of stake deposit for a particular ssn address:
 ```
 
 **SDK sample code for getting stake buffered amount**
+
 | Language | Link to sample code |
 | -------- | ------------------- |
 | NodeJS   | [get_stake_buffered_amount.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/get_stake_buffered_amount.js) |
@@ -174,6 +176,7 @@ Example of stake deposit for a particular ssn address:
 
 
 **SDK sample code for getting stake amount (non-buffered)**
+
 | Language | Link to sample code |
 | -------- | ------------------- |
 | NodeJS   | [get_stake_amount.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/get_stake_amount.js) |
@@ -201,9 +204,12 @@ Example:
 zli contract call -a 0123456789012345678901234567890123456789 -t withdraw_stake_amount -r "[{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"500000000000\"}]" -f true
 ```
 
-> **Note:** param “amount” here is expressed in Qa units (1 Zil = 1,000,000,000,000 Qa).
+:::info
+Param `amount` here is expressed in `Qa` units (1 `$ZIL` = 1,000,000,000,000 `Qa`).
+:::
 
 **SDK sample code**
+
 | Language | Link to sample code |
 | -------- | ------------------- |
 | NodeJS   | [withdraw_stake_amount.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/withdraw_stake_amount.js) |
@@ -223,6 +229,7 @@ Rewards are given once **every 15 DS epochs**. Over a period of a year, it is es
 Rewards are not added to the stake deposit; they are stored separately from the stake deposit. When calculating the reward, the Verifier only takes the stake deposit into account. As such, there is **no “compounding” effect** for the rewards.
 
 ### Reward estimator utility
+
 <!--
   <script src="/js/zilliqa-staking-calculator.js"></script>
   <div id="staking-calculator"></div>
@@ -249,6 +256,7 @@ zli staking rewards -s 0x53e954391539f276c36a09167b795ab7e654fdb7 -c 343407558c9
 ```
 
 **SDK sample code**
+
 | Language | Link to sample code |
 | -------- | ------------------- |
 | NodeJS   | [get_stake_rewards.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/get_stake_rewards.js) |
@@ -276,6 +284,7 @@ zli contract call -a 0123456789012345678901234567890123456789 -t withdraw_stake_
 ```
 
 **SDK sample code**
+
 | Language | Link to sample code |
 | -------- | ------------------- |
 | NodeJS   | [withdraw_stake_rewards.js](https://github.com/Zilliqa/staking-contract/blob/master/scripts/NodeJS/SSN-Operators/withdraw_stake_rewards.js) |
