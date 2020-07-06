@@ -6,7 +6,7 @@ title: Explorer
 ## Viewblock
 ![Viewblock](../assets/application/tools/viewblock.png)
 
-Viewblock explorer allows you to look at the status of your transaction, current status of the zilliqa network, contract source code etc. 
+Viewblock explorer allows you to look at the status of your transaction, current status of the Zilliqa network, contract source code etc. 
 
 | Network | Link |
 | ------- | ---- |

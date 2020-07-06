@@ -7,7 +7,7 @@ This page describes the protocol - between the Zilliqa WebSocket Server and the 
 
 ## Introduction
 
-Zilliqa WebSocket Server provides WebSocket service, enabling dApp developers or other builders on Zilliqa blockchain to subscribe to specific topics (e.g., new block has been produced, payment transaction has been confirmed, events issued by smart contracts). With the WebSocket service, developers no longer need to poll the blockchain routinely in order to get specific information.
+Zilliqa WebSocket Server provides WebSocket service, enabling dApp developers or other builders on Zilliqa blockchain to subscribe to specific topics (e.g., a new block has been produced, the payment transaction has been confirmed, events issued by smart contracts). With the WebSocket service, developers no longer need to poll the blockchain routinely to get specific information.
 
 | Network | Endpoint |
 | ------- | ---- |

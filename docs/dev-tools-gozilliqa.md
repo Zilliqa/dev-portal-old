@@ -3,11 +3,11 @@ id: dev-tools-gozilliqa
 title: gozilliqa
 ---
 ## Introduction
-[gozilliqa](https://github.com/Zilliqa/gozilliqa-sdk) is a Golang library for interactiing with the Zilliqa network. It has the ability to create wallets, deploy contracts, and invoke transitions to interact with smart contracts on the Zilliqa network.
+[gozilliqa](https://github.com/Zilliqa/gozilliqa-sdk) is a Golang library for interacting with the Zilliqa network. It caN create wallets, deploy contracts, and invoke transitions to interact with smart contracts on the Zilliqa network.
 
 ## Source code
 
-The github respository can be found at [https://github.com/Zilliqa/gozilliqa-sdk](https://github.com/Zilliqa/gozilliqa-sdk)
+The github repository can be found at [https://github.com/Zilliqa/gozilliqa-sdk](https://github.com/Zilliqa/gozilliqa-sdk)
 
 ## Releases
 
@@ -15,7 +15,7 @@ All releases of gozilliqa can be found at [https://github.com/Zilliqa/gozilliqa-
 
 ## Getting gozilliqa
 
-Run the following to clone the respository to your local machine
+Run the following to clone the repository to your local machine
 ```
 git clone https://github.com/Zilliqa/gozilliqa-sdk.git
 ```
@@ -24,7 +24,7 @@ git clone https://github.com/Zilliqa/gozilliqa-sdk.git
 
 ## Installation
 
-The sdk is using `go mod` to manager it's dependent libraries, so if you do want to work on the source code of this repository, make sure you have the minimal `golang` version that supports `go mod` and enable it.
+This SDK is using `go mod` to manager it's dependent libraries, so if you do want to work on the source code of this repository, make sure you have the minimal `golang` version that supports `go mod` and enable it.
 
 Install the dependent libraries:
 
@@ -32,8 +32,8 @@ Install the dependent libraries:
 go get ./...
 ```
 
-sdk itself cannot been built into a binary cause it does't have any `main` function, you can directly add it to your own project as a library. Also, we recommend that you can run the `golang uint test` or go through 
-the section `quick start` first to get a basic understanding before you start to use this sdk.
+The SDK itself cannot be built into a binary as it does not contains any `main` function, you can directly add it to your own project as a library. Also, we recommend that you can run the `golang uint test` or go through 
+the section `quick start` first to get a basic understanding before you start to use this SDK.
 
 ## Methods & APIs
 

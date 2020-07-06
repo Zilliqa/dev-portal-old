@@ -6,7 +6,7 @@ title: Java-SDK - LaksaJ
 
 ## Source code
 
-The github respository can be found at [https://github.com/FireStack-Lab/LaksaJ](https://github.com/FireStack-Lab/LaksaJ)
+The Github repository can be found at [https://github.com/FireStack-Lab/LaksaJ](https://github.com/FireStack-Lab/LaksaJ)
 
 ## Getting Started (Installation and packages explained)
 
@@ -38,7 +38,7 @@ First clone the `LaksaJ` repository
 git clone https://github.com/FireStack-Lab/LaksaJ.git
 ```
 
-Next, build `jar` using following commandd
+Next, build `jar` using following command
 
 ```
 gradle build -x test

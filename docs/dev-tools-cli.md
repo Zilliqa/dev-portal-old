@@ -5,14 +5,14 @@ title: CLI-Tools
 
 ## go-zli
 
-[zli](https://github.com/Zilliqa/zli) is a command line tool based on the Zilliqa [Golang SDK](https://github.com/Zilliqa/gozilliqa-sdk).
+[zli](https://github.com/Zilliqa/zli) is a command-line tool based on the Zilliqa [Golang SDK](https://github.com/Zilliqa/gozilliqa-sdk).
 
 ## Source code
 
-The github respository can be found at [https://github.com/Zilliqa/zli](https://github.com/Zilliqa/zli)
+The Github repository can be found at [https://github.com/Zilliqa/zli](https://github.com/Zilliqa/zli)
 
 ## Getting zli
-Run the following to clone the respository to your local machine
+Run the following to clone the repository to your local machine
 ```bash
 git clone https://github.com/Zilliqa/zli.git
 ```
@@ -46,7 +46,7 @@ sh install.sh
 Run `zli -h` to see the help message along with the list of available commands:
 
 ```bash
-A convenient command line tool to generate accounts, run integration testings or run http server .etc
+A convenient command-line tool to generate accounts, run integration testings or run http server .etc
 Usage:
   zli [flags]
   zli [command]

@@ -7,7 +7,7 @@ title: zilliqa-js
 
 ## Source code
 
-The github respository can be found at [https://github.com/Zilliqa/Zilliqa-JavaScript-Library](https://github.com/Zilliqa/Zilliqa-JavaScript-Library)
+The Github repository can be found at [https://github.com/Zilliqa/Zilliqa-JavaScript-Library](https://github.com/Zilliqa/Zilliqa-JavaScript-Library)
 
 ## Releases
 
