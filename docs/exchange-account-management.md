@@ -3,11 +3,6 @@ id: exchange-account-management
 title: Account Management
 ---
 ---
-# NOTICE TO EXCHANGES
-> Interim Zillings (“Interim ZILs”) for Zillings (“ZILs”) are not available for offer, sale or transfer to U.S persons (as defined in Regulation S of the U.S. Securities Act of 1933). Please ensure that, at the time of exchange of Interim ZILs for ZILs, each holder of ZILs confirms that it is not a U.S person (as defined in Regulation S of the U.S. Securities Act of 1933).
----
-
-The code in this tutorial is derived from the [example application](https://github.com/Zilliqa/dev-portal/blob/master/examples/exchange/src/services/zilliqa.ts).
 
 ## Generating Numerous Accounts
 
@@ -39,7 +34,7 @@ export class ZilliqaService {
 
 ## Exporting an Account
 
-You may also wish to export a keypair to a portable format in order to use it somewhere else.
+You may also wish to export a keypair to a portable format to use it somewhere else.
 We support a modified implementation of the [Web3 Secret Storage Definition](https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition).
 
 ```typescript
