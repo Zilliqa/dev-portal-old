@@ -80,8 +80,9 @@ especially your passphrase, secret!
 
 ## Importing an Account 
 
-> NOTE: Ethereum's implementation differs from Zilliqa's. You will **not** be
-> able to decrypt a Zilliqa keystore file using web3 and vice-versa.
+:::caution
+Ethereum's implementation differs from Zilliqa's. You will **not** be able to decrypt a Zilliqa keystore file using web3 and vice-versa.
+:::
 
 At some stage, you may also need to import a keystore file you had previously
 exported. There is a convenient facility for that.

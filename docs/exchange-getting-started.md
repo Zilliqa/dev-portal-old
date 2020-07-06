@@ -5,8 +5,9 @@ title: Getting Started
 
 ---
 
-# $ZIL Disclaimer
+:::danger $ZIL Disclaimer
 Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceeding. 
+:::
 
 # Introduction
 
@@ -26,8 +27,10 @@ whitelisted by Zilliqa to receive data broadcasts about the blockchain and its s
 This requires a static, public IP address with minimally two open ports (inbound and 
 outbound) at which it can be reached.
 
-> Whitelisting of seed node is currently granted based on a need-by basis. 
+:::tip Note on whitelisting process
+Whitelisting of seed node is currently granted based on a need-by basis. 
 The Zilliqa core team will assess each request before whitelisting.
+:::
 
 ## Minimum Hardware Requirements
 - x64 Linux operating system (e.g Ubuntu 16.04.05)

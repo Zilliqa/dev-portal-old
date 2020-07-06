@@ -9,7 +9,9 @@ The seed node performs some basic validation of the JSON payload it receives, an
 
 If `nonce` is incorrect, the transaction can silently fail. This means that the seed/lookup node will blindly forward the transaction to the correct shard, which may then reject the transaction with no error receipt.
 
-__Note:__ The above applies only if we use JSON RPC API to create the transaction object. If SDKs are used to create the transaction object, then `nonce` management is not an issue as SDKs would automatically handle the nonce management.
+:::info
+The above applies only if we use JSON RPC API to create the transaction object. If SDKs are used to create the transaction object, then `nonce` management is not an issue as SDKs would automatically handle the nonce management.
+:::
 
 ## Non-Contract Transaction Object
 Example of creating a __non-contract__ transaction object:

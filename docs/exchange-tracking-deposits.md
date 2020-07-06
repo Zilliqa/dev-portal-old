@@ -10,7 +10,9 @@ transactions sent to their addresses (deposits). We won't cover how this can
 be done for ERC20-like smart contracts on Zilliqa in this tutorial, but the
 same strategy can be applied.
 
+:::info
 The code in this tutorial is derived from the [example application](https://github.com/Zilliqa/dev-portal/blob/master/examples/exchange/src/cron/deposit.ts).
+:::
 
 ## Setting Up
 

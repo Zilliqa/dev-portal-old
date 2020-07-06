@@ -6,7 +6,9 @@ Now the transaction object is in one of the shards. Each shard will produce a __
 
 After the DS Committee reaches consensus on the Transaction Block, it multicasts the result to all shard nodes and lookup nodes. At this stage, the seed node will have a result for our transaction object. The result can be retrieved using the same `GetTransaction` JSON RPC API.
 
-__Note:__ The example below uses the ZilliqaJS SDK to retrieve the transaction response. The structure may be _slightly different_ from the __JSON RPC__ `GetTransaction` results.
+:::info
+The example below uses the ZilliqaJS SDK to retrieve the transaction response. The structure may be _slightly different_ from the __JSON RPC__ `GetTransaction` results.
+:::
 
 Example of getting transaction:
 

@@ -28,7 +28,9 @@ async function privKeyFromKeystore() {
 After importing the account using ```zilliqa-js/crypto``` module, the subsequent steps for doing anything are similar to the previous example.
 In the code snippet below, we call the `setHello()` transition of the `Hello World` Contract using a private key.
 
-> If you wish to use keystore instead of a private key, you can replace the `zilliqa.wallet.addByPrivateKey(privkey)` with the code snippet above.
+:::info
+If you wish to use keystore instead of a private key, you can replace the `zilliqa.wallet.addByPrivateKey(privkey)` with the code snippet above.
+:::
 
 ```javascript
   async updateWelcomeMsg(){
