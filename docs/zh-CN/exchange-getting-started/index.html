@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting Started · Zilliqa Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# 入门"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="Getting Started · Zilliqa Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dev.zilliqa.com/"/><meta property="og:description" content="# 入门"/><meta property="og:image" content="https://dev.zilliqa.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://dev.zilliqa.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/zilliqa-logo_1zilliqa-logo.png" alt="Zilliqa Developer Portal"/><h2 class="headerTitleWithLogo">Zilliqa Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/zh-CN/arch-overview" target="_self">Overview</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/zh-CN/exchange-getting-started" target="_self">Exchanges</a></li><li class="siteNavGroupActive"><a href="/docs/zh-CN/mining-general-info" target="_self">Miners</a></li><li class="siteNavGroupActive"><a href="/docs/zh-CN/dapp-getting-started" target="_self">Developer</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/exchange-getting-started">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Exchange Integration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Architecture</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch-tx-lifecycle">Transaction Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/arch-faq">FAQ</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DApp Development</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/dapp-getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/dapp-interacting-smart-contract">Interacting with your Smart Contract</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Exchange Integration</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/zh-CN/exchange-getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/exchange-account-management">Account Management</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/exchange-sending-transactions">Sending Transactions</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/exchange-polling-deposits">Polling for Deposits</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/exchange-transaction-receipts">Understanding Transaction Receipts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Seed node staking</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/staking-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/staking-getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/staking-ssn-operations">Staked Seed Node operations</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/staking-ssn-monitoring">Staked Seed Node monitoring</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/staking-faq">Frequently asked question (FAQ)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Mining</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/mining-general-info">General Information</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/mining-hardware-requirement">Hardware requirements</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/mining-initial-setup">Initial Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/mining-zilclient-setup">Zilliqa Client Setup for CPU node</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/mining-zilminer-setup">Zilminer Setup for mining rigs</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/mining-monitoring">Monitoring progress</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/zh-CN/api-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/api-pending-txn">Pending transaction API</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/api-websocket">Zilliqa WebSocket Server (ZWS)</a></li><li class="navListItem"><a class="navItem" href="/docs/zh-CN/api-sdk">Zilliqa SDKs</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Getting Started</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="入门"></a><a href="#入门" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>入门</h1>
+<h4><a class="anchor" aria-hidden="true" id="注意"></a><a href="#注意" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>注意</h4>
+<blockquote>
+<p>Zillings（“ZILs”）的临时Zillings（“临时ZILs”）不能提供、出售或转让给美国人（如1933年美国证券法第S条所定义）。 请确保在交换临时ZIL时，确认ZIL的每个持有人不是美国人（如1933年美国证券法第S条所定义）。</p>
+</blockquote>
+<p>虽然可以使用Zilliqa提供的公共节点与区块链进行交互，但我们建议所有想支持主网交易的交易所设置种子节点。本文档将指导您完成启动和运行所需的基本步骤。</p>
+<h2><a class="anchor" aria-hidden="true" id="kyc和ip白名单"></a><a href="#kyc和ip白名单" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>KYC和IP白名单</h2>
+<p>由于种子节点不直接从查找或分片节点中提取数据，因此Zilliqa必须将交易所列入白名单，以便接收有关区块链及其状态的数据广播。这需要一个静态的公共IP地址，最少有两个可以接收的开放端口（输入和输出）。</p>
+<p>此外，由于种子节点提供商将获得奖励，我们要求所有想设置种子节点的交易所和个人通过KYC流程。 您可以通过填写我们的<a href="https://docs.google.com/forms/d/e/1FAIpQLScopeiLXU_10i6OzsZApIDyRYHpw4JqePDDe0Aoa5JIZo1muw/viewform">&gt;&gt;<strong>表单</strong>&lt;&lt;</a>来开始此流程。请注意，在KYC完成之前，您将无法设置种子节点。</p>
+<h2><a class="anchor" aria-hidden="true" id="最低硬件要求"></a><a href="#最低硬件要求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>最低硬件要求</h2>
+<ul>
+<li>x64 Linux OS（首选Ubuntu 16.04）</li>
+<li>双核CPU或更高CPU（例如Intel i5处理器）</li>
+<li>8GB DDR3 RAM或更好</li>
+<li>500GB固态硬盘</li>
+<li>100MB/s的上传和下载带宽</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="硬件准备"></a><a href="#硬件准备" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>硬件准备</h2>
+<p>在开始之前，请选定并记下您的种子节点的通信端口。此步骤非常重要，因为未能提供正确的参数将会导致失败。</p>
+<h3><a class="anchor" aria-hidden="true" id="docker设置"></a><a href="#docker设置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker设置</h3>
+<blockquote>
+<p>注意：如果您使用AWS，则可以使用<strong>ami-0812864268c7448b6</strong>创建一个实例并跳过此步骤。</p>
+</blockquote>
+<p>我们强烈建议使用<a href="https://docker.com/">Docker</a>来设置种子节点，因为我们提供了经过测试的正式环境镜像供您使用。如果您尚未设置docker，请按照<a href="https://docs.docker.com/install/">官方文档</a>中的说明进行操作。</p>
+<p>设置Docker后，您可以继续下载mainnet的配置tarball：</p>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># create a directory</span>
+$ mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed
+$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ tar -zxvf configuration.tar.gz
+
+<span class="hljs-comment"># Contents:</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># launch.sh</span>
+<span class="hljs-comment"># constants.xml</span>
+<span class="hljs-comment"># launch_docker.sh</span>
+<span class="hljs-comment"># dsnodes.xml</span>
+<span class="hljs-comment"># download_and_verify.sh</span>
+<span class="hljs-comment"># fetchHistorical.py</span>
+<span class="hljs-comment"># fetchHistorical.sh</span>
+<span class="hljs-comment"># config.xml</span>
+</code></pre>
+<p>一旦成功解压缩了tarball，就要生成一个新的密钥对，如下所示：</p>
+<pre><code class="hljs css language-sh">$ ./launch_docker.sh --genkeypair
+$ mv mykey.txt verifier.txt
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="本地设置"></a><a href="#本地设置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>本地设置</h3>
+<blockquote>
+<p>注意：这种方法仅在<strong>Ubuntu 16.04</strong>上进行了测试，并涉及编译C ++。我们强烈建议您考虑使用上面提供的Docker镜像。</p>
+</blockquote>
+<p>如果你不能或不想使用Docker，你也可以从源代码构建Zilliqa二进制文件然后运行。</p>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># clone Zilliqa source files</span>
+$ git <span class="hljs-built_in">clone</span> https://github.com/Zilliqa/Zilliqa.git &amp;&amp; <span class="hljs-built_in">cd</span> Zilliqa &amp;&amp; git checkout
+&lt;&lt;commit_sha&gt;&gt; &amp;&amp; <span class="hljs-built_in">cd</span> Zilliqa
+
+<span class="hljs-comment"># install system dependencies</span>
+$ sudo apt-get update &amp;&amp; sudo apt-get install \
+    git \
+    libboost-system-dev \
+    libboost-filesystem-dev \
+    libboost-test-dev \
+    libssl-dev \
+    libleveldb-dev \
+    libjsoncpp-dev \
+    libsnapp-dev \
+    cmake \
+    libmicrohttpd-dev \
+    libjsonrpccpp-dev \
+    build-essential \
+    pkg-config \
+    libevent-dev \
+    libminiupnpc-dev \
+    libprotobuf-dev \
+    protobuf-compiler \
+    libcurl4-openssl-dev \
+    libboost-program-options-dev \
+    libssl-dev
+
+<span class="hljs-comment"># build the binary. this may take awhile.</span>
+$ ./build.sh
+</code></pre>
+<p>构建应能正常退出。完成后，下载tarball配置，并生成密钥对：</p>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># make a separate folder for keys and configuration</span>
+$ <span class="hljs-built_in">cd</span> ../ &amp;&amp; mkdir my_seed &amp;&amp; <span class="hljs-built_in">cd</span> my_seed
+$ curl -O https://mainnet-bugis-seedjoin.aws.zilliqa.com/configuration.tar.gz
+$ tar -zxvf configuration.tar.gz
+
+<span class="hljs-comment"># generate a keypair</span>
+$ ../Zilliqa/build/bin/genkeypair &gt; verifier.txt
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="配置节点"></a><a href="#配置节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置节点</h2>
+<p>在加入主网之前，节点需要进行配置。大多数配置都包含在<strong>constants.xml</strong>中，这个文件在我们解压缩的目录中的<strong>configuration.tar.gz</strong>，需要进行以下更改：</p>
+<ul>
+<li>将<code>VERIFIER_PUBKEY</code>的值更改为<code>cat verifier.txt | cut -d ' ' -f1</code></li>
+<li>将<code>SEED_PORT</code>的值更改为<code>33133</code>（默认值），或您的自定义端口（如果有）。如果不选择<code>33133</code>，请务必记下后续步骤。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="加入主网"></a><a href="#加入主网" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>加入主网</h2>
+<blockquote>
+<p>注意：在继续此步骤之前，请确保您已完成KYC。</p>
+</blockquote>
+<p>当完成了初始步骤，加入主网会相对简单些。</p>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> run only ONE of the following.</span>
+<span class="hljs-comment"># for Docker setup</span>
+$ ./launch_docker.sh
+<span class="hljs-comment"># for native setup</span>
+$ ./launch.sh
+</code></pre>
+<p>您将被询问一系列问题。当要求输入您的IP地址和监听端口时，请输入您在提交KYC表单时所填写的值。这非常重要，因为您的节点<strong>不能</strong>与其他任何东西一起使用。</p>
+<h2><a class="anchor" aria-hidden="true" id="下一步"></a><a href="#下一步" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>下一步</h2>
+<p>如果您已完成上述步骤，则应该会产生了一个正常运行的种子节点，该节点在<code>localhost:4201</code>上公开了RPC API。您可以在<code>zilliqa-00001-log.txt</code>查看详细日志。</p>
+<p>以下说明将用一组简单的函数来作示例，交易所的开发人员可利用这些函数开始在Zilliqa区块链上实现自定义业务逻辑。您可以在与示例应用程序的<a href="https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange">同一目录</a>中找到完整源代码。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/dapp-interacting-smart-contract"><span class="arrow-prev">← </span><span>Interacting with your Smart Contract</span></a><a class="docs-next button" href="/docs/zh-CN/exchange-account-management"><span>Account Management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#kyc和ip白名单">KYC和IP白名单</a></li><li><a href="#最低硬件要求">最低硬件要求</a></li><li><a href="#硬件准备">硬件准备</a><ul class="toc-headings"><li><a href="#docker设置">Docker设置</a></li><li><a href="#本地设置">本地设置</a></li></ul></li><li><a href="#配置节点">配置节点</a></li><li><a href="#加入主网">加入主网</a></li><li><a href="#下一步">下一步</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/zilliqa-logo_1zilliqa-logo.png" alt="Zilliqa Developer Portal" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-CN/dapp-getting-started">Developers</a><a href="/docs/zh-CN/mining-general-info">Miners</a><a href="/docs/zh-CN/exchange-getting-started">Exchange Integration</a></div><div><h5>Community</h5><a href="https://twitter.com/zilliqa" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://www.reddit.com/r/zilliqa">Reddit</a><a href="https://blog.zilliqa.com/">Medium</a><a href="https://discord.gg/XMRE9tt">Discord</a><a href="https://www.youtube.com/channel/UCvinnFbf0u71cajoxKcfZIQ">YouTube</a><a href="https://t.me/zilliqachat">Telegram</a></div><div><h5>More</h5><a href="https://www.github.com/Zilliqa">GitHub</a></div></section><section class="copyright">Copyright © 2020 Zilliqa Research Pte. Ltd.</section></footer></div></body></html>

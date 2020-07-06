@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Sending Transactions · Zilliqa Developer Portal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="---"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Sending Transactions · Zilliqa Developer Portal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dev.zilliqa.com/"/><meta property="og:description" content="---"/><meta property="og:image" content="https://dev.zilliqa.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://dev.zilliqa.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/zilliqa-logo_1zilliqa-logo.png" alt="Zilliqa Developer Portal"/><h2 class="headerTitleWithLogo">Zilliqa Developer Portal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/arch-overview" target="_self">Overview</a></li><li class="siteNavGroupActive"><a href="/docs/en/exchange-getting-started" target="_self">Exchanges</a></li><li class="siteNavGroupActive"><a href="/docs/en/mining-general-info" target="_self">Miners</a></li><li class="siteNavGroupActive"><a href="/docs/en/dapp-getting-started" target="_self">Developer</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/zh-CN/exchange-sending-transactions">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Exchange Integration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Architecture</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/arch-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/en/arch-tx-lifecycle">Transaction Lifecycle</a></li><li class="navListItem"><a class="navItem" href="/docs/en/arch-faq">FAQ</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DApp Development</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/dapp-getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/en/dapp-interacting-smart-contract">Interacting with your Smart Contract</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Exchange Integration</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/exchange-getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/en/exchange-account-management">Account Management</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/exchange-sending-transactions">Sending Transactions</a></li><li class="navListItem"><a class="navItem" href="/docs/en/exchange-polling-deposits">Polling for Deposits</a></li><li class="navListItem"><a class="navItem" href="/docs/en/exchange-transaction-receipts">Understanding Transaction Receipts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Seed node staking</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/staking-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/en/staking-getting-started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/en/staking-ssn-operations">Staked Seed Node operations</a></li><li class="navListItem"><a class="navItem" href="/docs/en/staking-ssn-monitoring">Staked Seed Node monitoring</a></li><li class="navListItem"><a class="navItem" href="/docs/en/staking-faq">Frequently asked question (FAQ)</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Mining</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/mining-general-info">General Information</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mining-hardware-requirement">Hardware requirements</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mining-initial-setup">Initial Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mining-zilclient-setup">Zilliqa Client Setup for CPU node</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mining-zilminer-setup">Zilminer Setup for mining rigs</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mining-monitoring">Monitoring progress</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/api-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/en/api-pending-txn">Pending transaction API</a></li><li class="navListItem"><a class="navItem" href="/docs/en/api-websocket">Zilliqa WebSocket Server (ZWS)</a></li><li class="navListItem"><a class="navItem" href="/docs/en/api-sdk">Zilliqa SDKs</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Sending Transactions</h1></header><article><div><span><hr>
+<h1><a class="anchor" aria-hidden="true" id="notice-to-exchanges"></a><a href="#notice-to-exchanges" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NOTICE TO EXCHANGES</h1>
+<blockquote>
+<p>Interim Zillings (“Interim ZILs”) for Zillings (“ZILs”) are not available for offer, sale or transfer to U.S persons (as defined in Regulation S of the U.S. Securities Act of 1933). Please ensure that, at the time of exchange of Interim ZILs for ZILs, each holder of ZILs confirms that it is not a U.S person (as defined in Regulation S of the U.S. Securities Act of 1933).</p>
+</blockquote>
+<hr>
+<p>A critical feature of any exchange is the ability to withdraw the funds held
+in custody to an arbitrary address of the user's choosing. Because Zilliqa
+nodes do not provide an API for signing transactions on your behalf, you will
+have to do so locally using an SDK of your choosing. We provide examples using
+zilliqa-js, the official JavaScript SDK.</p>
+<p>The code in this tutorial is derived from the <a href="https://github.com/Zilliqa/dev-portal/blob/master/examples/exchange/src/services/zilliqa.ts">example application</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="constructing-the-transaction-object"></a><a href="#constructing-the-transaction-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructing the Transaction Object</h2>
+<p>There are several ways to construct a <code>Transaction</code> instance. We recommend
+using the transaction factory that is on the umbrella Zilliqa object, like
+so:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { Zilliqa } <span class="hljs-keyword">from</span> <span class="hljs-string">'@zilliqa-js/zilliqa'</span>;
+<span class="hljs-keyword">const</span> api = <span class="hljs-string">'https://community-api.aws.z7a.xyz'</span>;
+<span class="hljs-keyword">const</span> zilliqa = <span class="hljs-keyword">new</span> Zilliqa(api);
+<span class="hljs-keyword">const</span> pubKey = <span class="hljs-string">'02bc475d1b5dd9d6ed6347e93da3d4c1ad35f4d987d52ea91de997ecba56845cd2'</span>;
+
+<span class="hljs-keyword">const</span> rawTx = zilliqa.transactions.new({
+  version: bytes.pack(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>),
+  amount,
+  nonce: <span class="hljs-number">1</span>
+  gasLimit: Long.fromNumber(<span class="hljs-number">1</span>), <span class="hljs-comment">// normal (non-contract) transactions cost 1 gas</span>
+  gasPrice: <span class="hljs-keyword">new</span> BN(units.toQa(<span class="hljs-number">1000</span>, units.Units.Li)), <span class="hljs-comment">// the minimum gas price is 1,000 li</span>
+  toAddr: to, <span class="hljs-comment">// toAddr is self-explanatory</span>
+  pubKey, <span class="hljs-comment">// this determines which account is used to send the tx</span>
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="signing-the-transaction"></a><a href="#signing-the-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Signing the Transaction</h2>
+<p>Again, there are a few ways you can sign your transaction. Under the hood,
+signing is done with the elliptic curve <code>secp256k1</code>. The easiest way to do
+this is by using a wallet. Extending our example above:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">/* truncated */</span>
+<span class="hljs-keyword">const</span> privateKey = <span class="hljs-string">'1CC85C5F4791232D7D9A6FC35F2FF15EFAAC4A6E0E9F4A565FD2CCCCB73FCA3B'</span>
+<span class="hljs-keyword">const</span> address = <span class="hljs-string">'e3ea87d7838397fc4417f5ec449f2d2d7cdb6dd1'</span>;
+zilliqa.wallet.addByPrivateKey(privateKey);
+<span class="hljs-comment">// signWith uses the specified address to perform the signing of the transaction.</span>
+<span class="hljs-comment">// note that we provided the nonce to use when constructing the transaction.</span>
+<span class="hljs-comment">// if the nonce is not provided, zilliqa-js will automatically try to determine the correct nonce to use.</span>
+<span class="hljs-comment">// however, if there is no network connection, zilliqa-js will not be able to</span>
+<span class="hljs-comment">// do that, and signing will fail.</span>
+<span class="hljs-keyword">const</span> signedTx = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.zil.wallet.signWith(rawTx, address);
+</code></pre>
+<p>Note that we provided the nonce to use when constructing the transaction. If the nonce is not provided, zilliqa-js will automatically try to determine the correct nonce to use.
+However, if there is no network connection, zilliqa-js will not be able to do that, and signing will fail.</p>
+<p>If the <code>Transaction</code> is successfully signed, you will be able to access the
+<code>signature</code> property on <code>txParams</code>.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-built_in">console</span>.log(signedTx.txParams.signature) <span class="hljs-comment">// 128-bit signature</span>
+</code></pre>
+<p>At this stage, you'll be able to broadcast your newly-signed transaction to
+the network through a seed node.</p>
+<h2><a class="anchor" aria-hidden="true" id="sending-the-transaction"></a><a href="#sending-the-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending the Transaction</h2>
+<p>Broadcasting a signed transaction is trivial, but involves some subtleties
+that can trip you up if you do not have a deep understanding of Zilliqa's
+architecture.</p>
+<p>We demonstrate a lower level way to broadcast a transaction using the built-in
+<code>HTTPProvider</code>, as follows:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">/* truncated */</span>
+<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.zil.provider.send(<span class="hljs-string">'CreateTransaction'</span>, tx.txParams);
+</code></pre>
+<p>This returns a <code>Promise</code> that, if successful, will contain your transaction
+hash:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-built_in">console</span>.log(res.result &amp;&amp; res.result.TranID) <span class="hljs-comment">// 32-byte transaction hash</span>
+</code></pre>
+<p>However, note that <code>result</code> will not exist on the response if there is an
+error in processing the transaction. Instead, the response will contain an
+<code>error</code> key, which is an object that complies with JSON-RPC 2.0.</p>
+<p>If you receive a <code>TranID</code>, that means your transaction was accepted by the
+seed node, and is now pending. <code>zilliqa-js</code> provides a way to automatically
+poll the lookup for confirmation:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">// returns a Promise&lt;Transaction&gt;</span>
+<span class="hljs-comment">// in this case, we try polling the node 33 times, increasing the interval</span>
+<span class="hljs-comment">// between attempts by 1000ms each time. this works out roughly to the block</span>
+<span class="hljs-comment">// time on the Zilliqa main net.</span>
+<span class="hljs-keyword">const</span> tx = <span class="hljs-keyword">await</span> signedTx.confirm(res.result.TranID, <span class="hljs-number">33</span>, <span class="hljs-number">1000</span>)
+</code></pre>
+<p>The <code>confirm</code> method returns a Promise the status of which signifies the
+confirmation status of the transaction. If the transaction was confirmed:</p>
+<pre><code class="hljs css language-ts">assert(signedTx.isConfirmed() === <span class="hljs-literal">true</span>);
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/exchange-account-management"><span class="arrow-prev">← </span><span>Account Management</span></a><a class="docs-next button" href="/docs/en/exchange-polling-deposits"><span>Polling for Deposits</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#constructing-the-transaction-object">Constructing the Transaction Object</a></li><li><a href="#signing-the-transaction">Signing the Transaction</a></li><li><a href="#sending-the-transaction">Sending the Transaction</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/zilliqa-logo_1zilliqa-logo.png" alt="Zilliqa Developer Portal" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/dapp-getting-started">Developers</a><a href="/docs/en/mining-general-info">Miners</a><a href="/docs/en/exchange-getting-started">Exchange Integration</a></div><div><h5>Community</h5><a href="https://twitter.com/zilliqa" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://www.reddit.com/r/zilliqa">Reddit</a><a href="https://blog.zilliqa.com/">Medium</a><a href="https://discord.gg/XMRE9tt">Discord</a><a href="https://www.youtube.com/channel/UCvinnFbf0u71cajoxKcfZIQ">YouTube</a><a href="https://t.me/zilliqachat">Telegram</a></div><div><h5>More</h5><a href="https://www.github.com/Zilliqa">GitHub</a></div></section><section class="copyright">Copyright © 2020 Zilliqa Research Pte. Ltd.</section></footer></div></body></html>
