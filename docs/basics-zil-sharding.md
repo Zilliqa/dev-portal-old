@@ -6,6 +6,8 @@ In this section, we present the core idea of sharding that makes Zilliqa scale. 
 
 ## Network Sharding
 
+![Network sharding](../assets/networksharding.png)
+
 Network sharding (which will be referred to simply as *sharding* in this context) is a mechanism that allows the Zilliqa network to be divided into smaller groups of nodes each referred to as a *shard*. Simply put, imagine a network of 1,000 nodes, then, one may divide the network into 10 shards each composed of 100 nodes.
 
 Network sharding is the secret sauce that makes Zilliqa truly scalable. Imagine our example network of 1,000 nodes. Zilliqa would automatically divide the network into 10 shards each with 100 nodes. Now, these shards can process transactions in parallel. If each shard is capable of processing 10 transactions per second, then all shards together can process 100 transactions per second. The ability to process transactions in parallel due to the sharded architecture ensures that the throughput in Zilliqa linearly increases with the size of the network.
