@@ -3,7 +3,7 @@ id: basics-intro-txns
 title: Transactions
 ---
 
-In order to interact with an account (externally-owned or contract), one has to
+To interact with an account (externally-owned or contract), one has to
 issue transactions. Each transaction is a data package signed by an
 externally-owned account. 
 
@@ -11,7 +11,7 @@ externally-owned account.
 
 1. The simplest usage of a transaction is to transfer native assets (such as
    $ZIL) from one externally-owned account to another externally-owned account
-    or to a contract account.
+    or a contract account.
 
 2. A transaction is issued when an externally-owned account deploys a contract
    on the network. 

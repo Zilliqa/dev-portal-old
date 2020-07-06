@@ -24,7 +24,7 @@ any external control and censorship.
 ### 3. Permissionless
 Due to the public nature of blockchains, anyone (with sufficient resources)
 can join the network to maintain the ledger and can make use of the network.
-There is no need to get a permission from any central entity making it open for
+There is no need to get permission from any central entity making it open for
 anyone and everyone.  
 
 ### 2. Public verifiability

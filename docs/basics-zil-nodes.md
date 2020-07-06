@@ -8,7 +8,7 @@ The Zilliqa Mainnet is composed of several types of nodes that perform different
 
 ## Shard Nodes
 
-Shard nodes are the mining nodes in the Zilliqa Network. They are named as such because of the fact that they are assigned to one of several clusters (i.e., shards) within the network. Nodes that belong to the same shard process the same set of transactions assigned to their shard. After processing, the nodes must achieve consensus over the transaction set in order to generate the shard's microblock. For their work, shard nodes are rewarded $ZIL at the end of every DS epoch.
+Shard nodes are the mining nodes in the Zilliqa Network. They are named as such because they are assigned to one of several clusters (i.e., shards) within the network. Nodes that belong to the same shard process the same set of transactions assigned to their shard. After processing, the nodes must achieve consensus over the transaction set in order to generate the shard's microblock. For their work, shard nodes are rewarded $ZIL at the end of every DS epoch.
 
 Shard membership is determined by the DS committee after shard nodes successfully submit solutions to a Proof-of-Work (PoW) problem, which occurs once every DS epoch.
 

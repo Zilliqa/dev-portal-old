@@ -10,15 +10,15 @@ Network sharding (which will be referred to simply as *sharding* in this context
 
 Network sharding is the secret sauce that makes Zilliqa truly scalable. Imagine our example network of 1,000 nodes. Zilliqa would automatically divide the network into 10 shards each with 100 nodes. Now, these shards can process transactions in parallel. If each shard is capable of processing 10 transactions per second, then all shards together can process 100 transactions per second. The ability to process transactions in parallel due to the sharded architecture ensures that the throughput in Zilliqa linearly increases with the size of the network.
 
-The idea of sharding is certainly not new, and in fact it can be traced back to the field of databases, where it is employed to improve performance, scalability and I/O bandwidth. The idea of sharding in the context of blockchains however was first put forth in an [academic paper](https://dl.acm.org/doi/10.1145/2976749.2978389) co-authored by Zilliqa team members in 2015.
+The idea of sharding is certainly not new, and it can be traced back to the field of databases, where it is employed to improve performance, scalability and I/O bandwidth. The idea of sharding in the context of blockchains however was first put forth in an [academic paper](https://dl.acm.org/doi/10.1145/2976749.2978389) co-authored by Zilliqa team members in 2015.
 
 ## Transaction Sharding
 
-As discussed above, network sharding opens up avenues for parallel transaction processing — each shard should now be able to independently process transactions and hence yield high throughput. In fact, whenever a transaction reaches the network, it gets assigned to a specific shard. The assignment is determined by the first few bits of the sending address of the transaction. This is called *transaction sharding*.
+As discussed above, network sharding opens up avenues for parallel transaction processing — each shard should now be able to independently process transactions and hence yield high throughput. Whenever a transaction reaches the network, it gets assigned to a specific shard. The assignment is determined by the first few bits of the sending address of the transaction. This is called *transaction sharding*.
 
-For example, in order to assign transactions in a network with two shards S1 and S2, we first check the sender’s address. If the sender’s address ends with 0, then the transaction should be assigned to S1, else it should be assigned to S2.
+For example, to assign transactions in a network with two shards S1 and S2, we first check the sender’s address. If the sender’s address ends with 0, then the transaction should be assigned to S1, else it should be assigned to S2.
 
-This assignment strategy, however, only works with payment transactions. In order to properly handle both payment and smart contract transactions, a different solution is employed by categorizing transactions so that we can have a separate assignment strategy for each category.
+This assignment strategy, however, only works with payment transactions. To properly handle both payment and smart contract transactions, a different solution is employed by categorizing transactions so that we can have a separate assignment strategy for each category.
 
 Transactions received by the network can be classified into the following categories depending on the type of accounts involved. Below, we call an account a *user account* (or a non-contract account) if it is controlled by a user and does not hold contract code. As an extension, an account that holds contract code will be referred to as a *contract account*.
 

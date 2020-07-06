@@ -28,7 +28,7 @@ proof-of-work, each node is required to solve a computational puzzle and the nod
 fastest to find a solution decides the next state of the system. In the
 longest-chain-win rule, the node will adopt the longest chain and extend it
 with new valid block. A block in the blockchain is deemed to be committed once
-there is sufficiently number of block mined after the block.
+there is a sufficient number of block mined after the block.
 
 ### PoS: Proof of Stake
 
