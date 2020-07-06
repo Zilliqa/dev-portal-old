@@ -11,9 +11,9 @@ We try to make this guide concise, but yet easy enough for a developer with no e
 
 ### What are dApps?
 
-Decentralised Apps ("dApps") are applications that interact with smart contracts on the blockchain. As zilliqa blockchain is a decentralised network that is not hosted by a single entity, application that sits on the blockchain is _decentralised_.
+Decentralised Apps ("dApps") are applications that interact with smart contracts on the blockchain. As Zilliqa blockchain is a decentralised network that is not hosted by a single entity, application that sits on the blockchain is _decentralised_.
 
-An application can have a user-facing components ("client"), which could be a web application or mobile app. These applications can interact with smart contracts on Zilliqa blockchain.
+An application can have a user-facing components ("client"), which could be a web application or mobile app. These applications can interact with smart contracts on the Zilliqa blockchain.
 
 ![Overview](../assets/dapps-overview.png)
 
@@ -48,7 +48,7 @@ const bech32_address = toBech32Address(address);
 
 We __strongly recommend__ that developers use `bech32` formatted addresses for token transfers. This prevents users from mistaking Zilliqa addresses from Ethereum addresses. All wallets and exchanges that deal with token transfers currently use the `bech32` standard for security purposes.
 
-`ByStr20` checksummed addresses is supported by [RPC](https://api-docs.zilliqa.com), SDKs and `scilla` contracts.
+`ByStr20` checksummed addresses are supported by [RPC](https://api-docs.zilliqa.com), SDKs and `scilla` contracts.
 
 How do you know if an address is a smart contract or an account? One way to go about it is to send a [`GetSmartContractInit`](https://apidocs.zilliqa.com/#getsmartcontractcode) POST request to check.
 

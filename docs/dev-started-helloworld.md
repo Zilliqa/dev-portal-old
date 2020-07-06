@@ -3,51 +3,51 @@ id: dev-started-helloworld
 title: Hello World
 ---
 
-In this section, we will deploy and interact with a `Hello World` smart contract onto the zilliqa testnet using [Neo-Savant web IDE](https://ide.zilliqa.com/#/) and [ZilPay wallet](https://zilpay.xyz/).
+In this section, we will deploy and interact with a `Hello World` smart contract onto the Zilliqa testnet using [Neo-Savant web IDE](https://ide.zilliqa.com/#/) and [ZilPay wallet](https://zilpay.xyz/).
 
 ## Create testnet wallet using ZilPay
 
-ZilPay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on the Chrome, Firefox and Opera browsers.
-It does not store any user private keys on the server, instead they are password protected and stored on browser storage.
+ZilPay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on Chrome, Firefox and Opera browsers.
+It does not store any user's private keys on the server. Instead, they are password protected and stored on browser storage.
 It is a non-custodial wallet, meaning, only the user has full access and responsibility for their private key.
 
 To create a ZilPay wallet:
 1) Visit ZilPay's [website](https://zilpay.xyz/) and download the extension for your respective browser.
-2) Open the extension, create a new wallet by verifying your 12 word recovery phrase and selecting a password for your wallet.
-3) Click on the network change button (shown below) and select network as testnet.
+2) Open the extension, create a new wallet by verifying your 12 words recovery phrase and selecting a password for your wallet.
+3) Click on the `network change` button (shown below) and select the `network` as testnet.
 
 > Please store your 12 words recovery phrase securely
 
 ![Change Network Button](../assets/application/getting-started/zilpay-change-network-btn.png)
 
-Voila! You have now successfully setup a testnet ZilPay wallet.
+Voila! You have now successfully set up a testnet ZilPay wallet.
 
 ## Request testnet $ZIL from faucet
 
 Deploying a contract to zilliqa's testnet will consume gas. As such you will need testnet $ZIL in your ZilPay account to pay for the gas.
 
-To request for testnet $ZIL from the facuet,
-1. Visit [Nucleus wallet testnet facuet](https://dev-wallet.zilliqa.com/faucet)
-2. Enter and submit your ZilPay address to the facuet, you will receive 300 testnet $ZIL shortly. This will take about 30s to 1 min, as the transactions will need to be confirmed on the blockchain.
+To request for testnet $ZIL from the faucet,
+1. Visit [Nucleus wallet testnet faucet](https://dev-wallet.zilliqa.com/faucet)
+2. Enter and submit your ZilPay address to the faucet, you will receive 300 testnet $ZIL shortly. This will take about 30s to 1 min, as the transactions will need to be confirmed on the blockchain.
 
 ![Nucleus Wallet Faucet](../assets/application/getting-started/nucleus-faucet.png)
 
 
 ## Deploying contract on testnet
 
-To deploy the `Hello World` contract on zilliqa testnet, we will use the Scilla online IDE, [Neo-Savant IDE](https://ide.zilliqa.com/).<br/>
+To deploy the `Hello World` contract on the Zilliqa testnet, we will use the Scilla web IDE, [Neo-Savant IDE](https://ide.zilliqa.com/).<br/>
 
-1. Change the network to testnet and import your wallet by loading the keystore file and enter the corresponding passphrase.
+1. Change the `network` to testnet and import your wallet by loading the keystore file and enter the corresponding passphrase.
 
 ![IDE Step1](../assets/application/getting-started/neo-savant-step1.png)
 
-2. Select the `Hello World` contract under the files tab and click on "Check" button to check to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
+2. Select the `Hello World` contract under the files tab and click on `Check` button to check to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
 
 ![IDE Step2](../assets/application/getting-started/neo-savant-step2.png)
 
-3. Once typechecker result is passed, click on "Deploy" button to deploy the contract to testnet. Use your own wallet address (Base16 format) for the "owner" initialisation parameter.
+3. Once the typechecker result is passed, click on `Deploy` button to deploy the contract to testnet. Use your wallet address (Base16 format) for the "owner" initialisation parameter.
 
-> To convert from `Bech32` address format into base16 address format, you can use the address converter in the IDE. Click on `Tools > Address coonverter`.
+> To convert from `Bech32` address format into base16 address format, you can use the address converter in the IDE. Click on `Tools > Address converter`.
 
 ![IDE Step3](../assets/application/getting-started/neo-savant-step3.png)
 
@@ -102,7 +102,7 @@ The above repository builds on the create-react-app starter kit. If you don't ha
 After following the installation steps, you need to run the code locally by using the command
 ``` npm start ```
 
-On succesfully running the web application locally on your system, enter the address of your Hello World contract deployed on the testnet and connect your ZilPay wallet with the front-end by clicking on the **Connect** button.
+On successfully running the web application locally on your system, enter the address of your Hello World contract deployed on the testnet and connect your ZilPay wallet with the front-end by clicking on the **Connect** button.
 
 To call the transitions from the front-end using ZilPay:
 
@@ -218,6 +218,6 @@ The following code snippet achieves this functionality:
 ```
 
 ## View receipt on Viewblock explorer
-[Viewblock explorer](https://viewblock.io/zilliqa?network=testnet) is a block explorer that support both Zilliqa mainnet and testnet. It allows you to look at the status of your transaction, current status of the zilliqa network, contract source code etc.
+[Viewblock explorer](https://viewblock.io/zilliqa?network=testnet) is a block explorer that supports both Zilliqa mainnet and testnet. It allows you to look at the status of your transaction, current status of the Zilliqa network, contract source code etc.
 
-For example, this is the viewblock [transaction link](https://viewblock.io/zilliqa/tx/c4030c73d6dae558ff0c9d98237101e342888115f13219a00bb14a8ee46fa3be?network=testnet) for a getHello() transition transaction.
+For example, this is the viewblock's [transaction link](https://viewblock.io/zilliqa/tx/c4030c73d6dae558ff0c9d98237101e342888115f13219a00bb14a8ee46fa3be?network=testnet) for a getHello() transition transaction.
