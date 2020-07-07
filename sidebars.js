@@ -8,7 +8,7 @@ module.exports = {
   someSidebar2: {
     "Getting Started": ["dev-started-introduction","dev-started-helloworld","dev-started-env"],
     "User Key Management": ["dev-keys-introduction","dev-keys-zilpay","dev-keys-pkey"],
-    "Toolings for Web3": [{"SDKs":["dev-tools-sdks","dev-tools-zilliqajs","dev-tools-gozilliqa","dev-tools-java"]},"dev-tools-websockets",
+    "Toolings for Web3": [{"SDKs":["dev-tools-zilliqajs","dev-tools-gozilliqa","dev-tools-java", "dev-tools-sdks"]},"dev-tools-websockets",
     "dev-tools-cli","dev-tools-ide","dev-tools-explorer","dev-tools-faucet"],
     "Transaction Lifecycle": ["dev-txn-signing","dev-txn-broadcasting","dev-txn-polling","dev-txn-confirmation","dev-txn-receipt"],
   },

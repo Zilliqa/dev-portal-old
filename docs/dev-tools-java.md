@@ -1,6 +1,6 @@
 ---
 id: dev-tools-java
-title: Java-SDK - LaksaJ
+title: LaksaJ - Java SDK
 ---
 
 

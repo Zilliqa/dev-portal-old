@@ -1,29 +1,15 @@
 ---
 id: dev-tools-sdks
-title: Zilliqa SDKs
+title: Other SDKs
 ---
 
 Zilliqa has a number of SDKs implemented in various programming languages. If yours is not
 listed here, please [create a PR](https://github.com/Zilliqa/dev-portal/pulls)
 on this repository.
 
-## SDKs maintained by Zilliqa team
-
-Listed below are active SDKs maintained by the Zilliqa core team
-
-**JavaScript/TypeScript**
-
-- [zilliqa-js](https://github.com/Zilliqa/Zilliqa-Javascript-Library)
-
-**Go**
-- [GoZilliqa SDK (formerly LaksaGo)](https://github.com/Zilliqa/gozilliqa-sdk)
-
-**Java**
-- [LaksaJ](https://github.com/FireStack-Lab/LaksaJ)
+[Zilliqa-js](https://github.com/Zilliqa/Zilliqa-Javascript-Library), [GoZilliqa (formerly LaksaGo)](https://github.com/Zilliqa/gozilliqa-sdk) and [LaksaJ](https://github.com/FireStack-Lab/LaksaJ) are active SDKs maintained by the Zilliqa core team but the zilliqa community members also actively maintain multiple SDKs.
 
 ## SDKs maintained by the community
-
-Listed below are SDKs maintained by the Zilliqa community
 
 **JavaScript/TypeScript**
 - [zilliqa-js/viewblock](https://github.com/Ashlar/zilliqa-js-viewblock)
