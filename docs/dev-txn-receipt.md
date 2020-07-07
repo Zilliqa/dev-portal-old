@@ -147,7 +147,7 @@ In the above example, from the `data` object we can observe the `sendFunds` tran
 ## Exception
 A `exceptions` object is returned if the contract specifically raise an error when it encounters issues invoking the transition, for example, invoking a transfer transition without sufficient balance .etc. A `exceptions` object contains the `line` number of the contract that raised the error and the corresponding exception `message`.
 
-Example of a `exceptions` object:
+Example of an `exceptions` object:
 ```
 "receipt": {
     ... // others

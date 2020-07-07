@@ -16,11 +16,21 @@ The above applies only if we use JSON RPC API to create the transaction object. 
 ## Non-Contract Transaction Object
 Example of creating a __non-contract__ transaction object:
 
-<!--DOCUSAURUS_CODE_TABS-->
 
-<!--JavaScript-->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-```javascript
+<Tabs
+  defaultValue="js"
+  values={[
+    { label: 'JavaScript', value: 'js', },
+    { label: 'Go', value: 'go', },
+    { label: 'Java', value: 'java', },
+  ]
+}>
+<TabItem value="js">
+
+```js
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
 const { Zilliqa } = require('@zilliqa-js/zilliqa');
 const { getAddressFromPrivateKey } = require('@zilliqa-js/crypto');
@@ -48,10 +58,10 @@ async function main() {
 }
 
 main();
-
 ```
 
-<!--Go-->
+</TabItem>
+<TabItem value="go">
 
 ```go
 package main
@@ -96,7 +106,8 @@ func main() {
 }
 ```
 
-<!--Java-->
+</TabItem>
+<TabItem value="java">
 
 ```java
 package com.firestack.example;
@@ -154,7 +165,8 @@ public class TransactionOperation {
 }
 ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+</TabItem>
+</Tabs>
 
 ## Contract Transaction Object
 The following is an example of creating a __contract__ transaction object. The difference between __contract__ and __non-contract__ transaction objects is the additional contract transitions such as `setHello` and its relevant params such as the `vname`, `type` and `value` as describe in the deployed contract.
@@ -162,12 +174,17 @@ The other significant difference is the `gasLimit` field. For __contract__ trans
 
 Example of creating a __contract__ transaction object:
 
-<!--DOCUSAURUS_CODE_TABS-->
+<Tabs
+  defaultValue="js"
+  values={[
+    { label: 'JavaScript', value: 'js', },
+    { label: 'Go', value: 'go', },
+    { label: 'Java', value: 'java', },
+  ]
+}>
+<TabItem value="js">
 
-<!--JavaScript-->
-
-
-```javascript
+```js
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
 const { Zilliqa } = require('@zilliqa-js/zilliqa');
 const { toBech32Address, getAddressFromPrivateKey } = require('@zilliqa-js/crypto');
@@ -213,8 +230,8 @@ async function main() {
 main();
 ```
 
-<!--Go-->
-
+</TabItem>
+<TabItem value="go">
 
 ```go
 package main
@@ -276,8 +293,8 @@ func main() {
 }
 ```
 
-<!--Java-->
-
+</TabItem>
+<TabItem value="java">
 
 ```java
 package com.firestack.example;
@@ -314,4 +331,5 @@ public class TransactionOperation {
 }
 ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+</TabItem>
+</Tabs>

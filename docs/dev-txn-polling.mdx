@@ -6,16 +6,28 @@ If your transaction is successfully verified by the seed node, the transaction w
 
 After sending the transaction object, there will be a `transaction id`. We can invoke the `GetTransaction` JSON RPC API with the `transaction id` periodically to check the transaction status. It is recommended to poll the seed node with `GetTransaction` for __3 Tx Epochs__ (around 3-5 minutes). If the transaction is not confirmed after that, we can assume that it has not been included in any block and should be re-broadcasted.
 
-Example of polling transaction:
-<!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
+Example of transaction polling:
 
-```javascript
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="js"
+  values={[
+    { label: 'JavaScript', value: 'js', },
+    { label: 'Go', value: 'go', },
+    { label: 'Java', value: 'java', },
+  ]
+}>
+<TabItem value="js">
+
+```js
 const txn = await zilliqa.blockchain.getTransaction("1899b381d644a4892ca5ba5d8d60bbcc7bd121d511d55e438a8ddbdcc53272c4");
 console.log(JSON.stringify(txn));
 ```
 
-<!--Go-->
+</TabItem>
+<TabItem value="go">
 
 ```go
 provider := NewProvider("https://dev-api.zilliqa.com/")
@@ -24,7 +36,8 @@ resStr,_ := json.Marshal(result)
 fmt.Println(string(resStr))
 ```
 
-<!--Java-->
+</TabItem>
+<TabItem value="java">
 
 ```java
 HttpProvider client = new HttpProvider("https://api.zilliqa.com/");
@@ -32,4 +45,5 @@ Transaction transaction = client.getTransaction("055294ba67b3073d66ef078fb149dfb
 System.out.println(new Gson().toJson(transaction))
 ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+</TabItem>
+</Tabs>
