@@ -82,7 +82,7 @@ This procedure mirrors that of new node joining, with some differences:
    1. Recreate the coinbase for all Tx blocks and microblocks from the start of the latest DS epoch
    1. Fetch missing cosignatures (needed for coinbase recreation) from a random upper seed
    1. Send request to all upper seeds for removal from relaxed blacklist
-   1. Trigger `DirectoryService::RejoinAsDS()`
+   1. Trigger `DirectoryService::StartSynchronization()`
 1. If the node is not part of the current DS committee, trigger `Node::RejoinAsNormal()`
 
 ### `DirectoryService::RejoinAsDS()`
@@ -105,7 +105,9 @@ This procedure mirrors `Node::StartSynchronization()`, with some differences:
 
 ### Other Conditions That Trigger DS Node Rejoining
 
-When a view change occurs, DS nodes initially perform a pre-check. One of the reasons pre-check can fail is if a new DS block or Tx block was mined during the pre-check and this particular node failed to participate in the consensus for that block. This will cause the node to invoke `DirectoryService::RejoinAsDS()`.
+1. When a view change occurs, DS nodes initially perform a pre-check. One of the reasons pre-check can fail is if a new DS block or Tx block was mined during the pre-check and this particular node failed to participate in the consensus for that block. This will cause the node to invoke `DirectoryService::RejoinAsDS()`
+1. If `Node::Install()` fails for whatever reason, the DS node checks if it is still part of the DS committee. If it is, it triggers `RejoinAsDS()`. If not, it triggers `RejoinAsNormal()`
+1. If the node is started with `SyncType` of `DS_GUARD_SYNC`, it triggers `RejoinAsDS()`
 
 ## Seed Node Joining
 
