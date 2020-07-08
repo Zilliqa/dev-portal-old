@@ -14,7 +14,7 @@ With the help from existing GPU miners, Zilliqa node operators can obtain thousa
 
 As the bridge, the mining proxy relays JSON-RPC messages from both sides, i.e., CPU cluster requests for mining responses provided by the GPU cluster. This request-response process is defined by the [Stratum mining protocol](https://en.bitcoin.it/wiki/Stratum_mining_protocol).
 
-![image01](../assets/proxy-mining.png)
+![image01](../../assets/proxy-mining.png)
 
 ## Proxy Mining Setup
 

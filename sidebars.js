@@ -1,38 +1,51 @@
 module.exports = {
-  someSidebar: {
-    "Blockchain Basics": ["basics-intro-blockchain","basics-intro-consensus","basics-intro-accounts","basics-intro-txns",
-    "basics-intro-gas"],
-    "Zilliqa Architecture": ["basics-zil-nodes","basics-zil-sharding","basics-zil-consensus","basics-zil-schnorr-signatures",
-    "basics-zil-reward","basics-zil-contract","basics-zil-gas"]
+  BasicsSideBar: {
+    "Blockchain Basics": ["basics/basics-intro-blockchain","basics/basics-intro-consensus","basics/basics-intro-accounts","basics/basics-intro-txns",
+    "basics/basics-intro-gas"],
+
+    "Zilliqa Architecture": ["basics/basics-zil-nodes","basics/basics-zil-sharding","basics/basics-zil-consensus","basics/basics-zil-schnorr-signatures",
+    "basics/basics-zil-reward","basics/basics-zil-contract","basics/basics-zil-gas"],
+
+    "Zilliqa Ecosystem": ["basics/overview"]
   },
-  someSidebar2: {
-    "Getting Started": ["dev-started-introduction","dev-started-helloworld","dev-started-env"],
-    "User Key Management": ["dev-keys-introduction","dev-keys-zilpay","dev-keys-pkey"],
-    "Toolings for Web3": [{"SDKs":["dev-tools-zilliqajs","dev-tools-gozilliqa","dev-tools-java", "dev-tools-sdks"]},"dev-tools-websockets",
-    "dev-tools-cli","dev-tools-ide","dev-tools-explorer","dev-tools-faucet"],
-    "Transaction Lifecycle": ["dev-txn-signing","dev-txn-broadcasting","dev-txn-polling","dev-txn-confirmation","dev-txn-receipt"],
+  DevelopersSidebar: {
+    "Getting Started": ["dev/dev-started-introduction","dev/dev-started-helloworld","dev/dev-started-env"],
+
+    "User Key Management": ["dev/dev-keys-introduction","dev/dev-keys-zilpay","dev/dev-keys-pkey"],
+
+    "Toolings for Web3": [{"SDKs":["dev/dev-tools-zilliqajs","dev/dev-tools-gozilliqa","dev/dev-tools-java", "dev/dev-tools-sdks"]},
+    "dev/dev-tools-websockets", "dev/dev-tools-cli","dev/dev-tools-ide","dev/dev-tools-explorer","dev/dev-tools-faucet"],
+
+    "Transaction Lifecycle": ["dev/dev-txn-signing","dev/dev-txn-broadcasting","dev/dev-txn-polling","dev/dev-txn-confirmation",
+    "dev/dev-txn-receipt"],
   },
-  someSidebar3: {
-    "Miners":["mining-getting-started","mining-zilclient","mining-zilminer","mining-proxy","mining-additional-info"]
+  MinersSidebar: {
+    "Miners":["miners/mining-getting-started","miners/mining-zilclient","miners/mining-zilminer","miners/mining-proxy",
+    "miners/mining-additional-info"]
   },
-  someSidebar4: {
-    "Exchange Integration":["exchange-getting-started","exchange-account-management","exchange-sending-transactions",
-    "exchange-tracking-deposits","exchange-transaction-receipts"],
-    "Staked Seed Nodes Integration":["staking-introduction","staking-getting-started","staking-ssn-operations","staking-ssn-maintenance",
-    "staking-faq"]
+  ExchangesSidebar: {
+    "Exchange Integration":["exchanges/exchange-getting-started","exchanges/exchange-account-management",
+    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts"],
+
+    "Staked Seed Nodes Integration":["exchanges/staking-introduction","exchanges/staking-getting-started","exchanges/staking-ssn-operations",
+    "exchanges/staking-ssn-maintenance", "exchanges/staking-faq"]
   },
-  someSidebar5: {
-    "Contributors":["contribute-buildzil","contribute-guidelines","contribute-standards","contribute-bug-bounty"],
-    "Core Protocol Design":["core-intro", 
-    {"Design Overview":["core-node-operation"]}, 
-    {"Consensus Layer":["core-consensus","core-multisignatures"]},
-    {"Network Layer":["core-gossip","core-broadcasting","core-blacklist","core-messaging-limits"]},
-    {"Messaging Layer":["core-message-dispatch","core-message-queues"]},
-    {"Data Layer": ["core-incremental-db"]},
-    {"Directory Service": ["core-ds-mimo","core-ds-reputation"]},
-    {"Lookup": ["core-websocket-server","core-transaction-dispatch","core-multipliers"]},
-    {"Mining": ["core-pow","core-difficulty-adjustment","core-por","core-coinbase"]},
-    {"Mitigation Measures": ["core-guard-mode","core-rejoin-mechanism","core-view-change","core-diagnostic-data","core-status-server"]}
+  ContributorsSidebar: {
+    "Contributors":["contributors/contribute-buildzil","contributors/contribute-guidelines","contributors/contribute-standards",
+    "contributors/contribute-bug-bounty"],
+
+    "Core Protocol Design":[
+    "contributors/core-intro", 
+    {"Design Overview":["contributors/core-node-operation"]}, 
+    {"Consensus Layer":["contributors/core-consensus","contributors/core-multisignatures"]},
+    {"Network Layer":["contributors/core-gossip","contributors/core-broadcasting","contributors/core-blacklist","contributors/core-messaging-limits"]},
+    {"Messaging Layer":["contributors/core-message-dispatch","contributors/core-message-queues"]},
+    {"Data Layer": ["contributors/core-incremental-db"]},
+    {"Directory Service": ["contributors/core-ds-mimo","contributors/core-ds-reputation"]},
+    {"Lookup": ["contributors/core-websocket-server","contributors/core-transaction-dispatch","contributors/core-multipliers"]},
+    {"Mining": ["contributors/core-pow","contributors/core-difficulty-adjustment","contributors/core-por","contributors/core-coinbase"]},
+    {"Mitigation Measures": ["contributors/core-guard-mode","contributors/core-rejoin-mechanism","contributors/core-view-change",
+    "contributors/core-diagnostic-data","contributors/core-status-server"]}
   ]
   },
 };

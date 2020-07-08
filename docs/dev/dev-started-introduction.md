@@ -15,7 +15,7 @@ Decentralised Apps ("dApps") are applications that interact with smart contracts
 
 An application can have a user-facing components ("client"), which could be a web application or mobile app. These applications can interact with smart contracts on the Zilliqa blockchain.
 
-![Overview](../assets/dapps-overview.png)
+![Overview](../../assets/dapps-overview.png)
 
 The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but they do make your life easier.
 

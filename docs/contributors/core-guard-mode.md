@@ -181,4 +181,4 @@ The steps are:
 1. Otherwise, lookup sends the information to the requesting shard nodes
 1. The requesting shard nodes verify the message and update their view of the DS committee
 
-![image01](../assets/core/features/guard-mode/image01.png)
+![image01](../../assets/core/features/guard-mode/image01.png)

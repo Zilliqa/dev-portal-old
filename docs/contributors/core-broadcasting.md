@@ -16,7 +16,7 @@ Thus, we leverage clustered multicasting in order to broadcast the DS block to a
 1. Therefore, we should have a total of `X/Y` clusters, indexed from `0` to `X/Y-1`. A node `n` belonging to cluster `n/Y` is at level `log_Z(n/Y)`.
 1. A node multicasts messages to nodes within the range `(n/Y * Z + 1)*Y` ~ `((n/Y * Z + Z + 1)* Y - 1)`. Bound checks on node index need to be done before multicasting. If the checks fail, we don’t broadcast.
 
-![image01](../assets/core/features/tree-based-cluster-broadcasting/image01.jpg)
+![image01](../../assets/core/features/tree-based-cluster-broadcasting/image01.jpg)
 
 ## Application
 

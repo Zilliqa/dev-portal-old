@@ -6,7 +6,7 @@ In this section, we present the core idea of sharding that makes Zilliqa scale. 
 
 ## Network Sharding
 
-![Network sharding](../assets/networksharding.png)
+![Network sharding](../../assets/networksharding.png)
 
 Network sharding (which will be referred to simply as *sharding* in this context) is a mechanism that allows the Zilliqa network to be divided into smaller groups of nodes each referred to as a *shard*. Simply put, imagine a network of 1,000 nodes, then, one may divide the network into 10 shards each composed of 100 nodes.
 
@@ -24,7 +24,7 @@ This assignment strategy, however, only works with payment transactions. To prop
 
 Transactions received by the network can be classified into the following categories depending on the type of accounts involved. Below, we call an account a *user account* (or a non-contract account) if it is controlled by a user and does not hold contract code. As an extension, an account that holds contract code will be referred to as a *contract account*.
 
-![Txn sharding](../assets/txnsharding.png)
+![Txn sharding](../../assets/txnsharding.png)
 
 ### Type I
 

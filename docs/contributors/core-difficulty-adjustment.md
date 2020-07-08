@@ -49,8 +49,8 @@ This process is implemented in the function `DifficultyLevelInIntDevided()`.
 
 The graphs below illustrate the benchmarks of the hash power required if `POW_BOUNDARY_N_DIVIDED_START` is 32 and `POW_BOUNDARY_N_DIVIDED_START` is 1, 2, 4, 6, and 8.
 
-![image01](../assets/core/features/difficulty-adjustment/image01.png)
-![image02](../assets/core/features/difficulty-adjustment/image02.png)
+![image01](../../assets/core/features/difficulty-adjustment/image01.png)
+![image02](../../assets/core/features/difficulty-adjustment/image02.png)
 
 ## References
 
