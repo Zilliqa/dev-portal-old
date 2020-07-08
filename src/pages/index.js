@@ -38,7 +38,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl('docs/basics/basics-intro-blockchain')}>
               Basics
             </Link>
             <Link
@@ -46,7 +46,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/dev-started-helloworld')}>
+              to={useBaseUrl('docs/dev/dev-started-introduction')}>
              Developers
             </Link>
             <Link
@@ -54,7 +54,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/mining-getting-started')}>
+              to={useBaseUrl('docs/miners/mining-getting-started')}>
              Miners
             </Link>
             <Link
@@ -62,7 +62,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/exchange-getting-started')}>
+              to={useBaseUrl('docs/exchanges/exchange-getting-started')}>
              Exchanges
             </Link>
             <Link
@@ -70,7 +70,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/contribute-buildzil')}>
+              to={useBaseUrl('docs/contributors/contribute-buildzil')}>
              Contributors
             </Link>
           </div>
