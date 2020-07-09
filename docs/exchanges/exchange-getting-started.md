@@ -85,8 +85,10 @@ $ ./launch_docker.sh --genkeypair
 
 ### Native setup
 
-> Note: this approach has only been tested on **Ubuntu 16.04** and involves compiling
+:::note
+This approach has only been tested on **Ubuntu 16.04** and involves compiling
 C++. We strongly recommend you consider using the Docker image provided above.
+:::
 
 If you cannot or do not wish to use Docker, you may also build the Zilliqa
 binary from source and run it as such.

@@ -12,7 +12,9 @@ The lookup reward is distributed to all the lookup nodes equally.
 
 The cosignature-based reward is distributed to the same base reward recipients in a proportional manner with respect to the number of microblocks (in the case of a shard node) or transaction blocks (in the case of DS nodes) the nodes signed.
 
-> Note: Guard nodes do not get rewarded. Their share of the reward is instead stored in the null address.
+:::note
+Guard nodes do not get rewarded. Their share of the reward is instead stored in the null address.
+:::
 
 ## Distribution Process
 

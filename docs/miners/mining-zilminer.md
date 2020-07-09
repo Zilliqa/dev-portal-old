@@ -49,8 +49,9 @@ If you wish to use CUDA supported GPU for PoW, please download and install CUDA 
     ```shell
     zilminer -P zil://wallet_address.worker_name@zil_node_ip:get_work_port
     ```
-
-    > **NOTE:** You have to change the *wallet_address*, *worker_name*, *zil_node_ip*, and *get_work_port* accordingly.
+:::note
+You have to change the *wallet_address*, *worker_name*, *zil_node_ip*, and *get_work_port* accordingly.
+:::
 
     - For `wallet_address` : You can input any arbitrary Zilliqa address. This is only used by the pool master for accounting purposes. If you are mining solo, you can ignore this parameter.
     - For `worker_name` : You can input any arbitrary worker name you desire.

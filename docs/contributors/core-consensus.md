@@ -53,7 +53,10 @@ The consensus protocol was initially designed as a single linear sequence from `
 
 To address this situation, we changed the consensus implementation to support multiple concurrently running consensuses across different subsets of peers. This is how it works:
 
-  > **Note**: For the Mainnet we have set the number of subsets to 2 at the DS level and just 1 at the shard level. The steps below assume this count. Other counts are theoretically supported by the code but may not have been fully tested at this point.
+:::note
+For the Mainnet we have set the number of subsets to 2 at the DS level and just 1 at the shard level. The steps below assume this count. Other counts are theoretically supported by the code but may not have been fully tested at this point.
+:::
+
 
 1. Instead of immediately progressing after receiving the required 2/3 commits, the leader now waits for a maximum duration of `COMMIT_WINDOW_IN_SECONDS` seconds to receive commits. It cuts the waiting time short only if the percentage of peers specified by `COMMIT_TOLERANCE_PERCENT` has already committed. This is done for both rounds of consensus.
 

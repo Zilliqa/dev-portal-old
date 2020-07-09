@@ -14,7 +14,9 @@ This would have been alright for all existing LevelDB databases, with the except
 
 Uploading of `state` LevelDB for every Tx epoch is thus a bottleneck, and so incremental DB was introduced as the solution.
 
-> Note: It is practically possible that all files in `stateDB` get updated at every Tx epoch, if transactions in that particular epoch changed the states of addresses that somehow update TrieDB across all the files in `state` LevelDB.
+:::note
+It is practically possible that all files in `stateDB` get updated at every Tx epoch, if transactions in that particular epoch changed the states of addresses that somehow update TrieDB across all the files in `state` LevelDB.
+:::
 
 ## Implementation
 

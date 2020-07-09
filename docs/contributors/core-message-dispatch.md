@@ -8,7 +8,9 @@ In `src/cmd/main.cpp`, we assign `Zilliqa::Dispatch` as the dispatcher inside `P
 
 When Zilliqa starts to process a message, it will call `Zilliqa::ProcessMessage`. The first byte of any message defines the **message type**.
 
-> **Note:** The “first byte” here refers to the payload part of a socket message. At the `P2PComm` level, each socket message consists of a predefined header plus the payload.
+:::note
+The “first byte” here refers to the payload part of a socket message. At the `P2PComm` level, each socket message consists of a predefined header plus the payload.
+:::
 
 Depending on the type, `Zilliqa::ProcessMessage` will forward the message to the appropriate handler for it. The list of message types can be found in `enum MessageType` inside `src/common/Messages.h`.
 

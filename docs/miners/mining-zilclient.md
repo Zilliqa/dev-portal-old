@@ -21,7 +21,9 @@ The **minimum** requirements for running the **Zilliqa Client** are:
 
 ## Network Setup for Zilliqa Client
 
-> **NOTE:** If you are using a home router, you are most probably in a NAT environment.
+:::note
+If you are using a home router, you are most probably in a NAT environment.
+:::
 
 If you are in a NAT environment, you can either:
 
@@ -76,7 +78,9 @@ The first message means UPnP mode has been enabled successfully, while the latte
     curl https://ipinfo.io/ip
     ```
 
-> ** Note:** Please consult the previous section if you are in a NAT environment.
+:::note
+Please consult the previous section if you are in a NAT environment.
+:::
 
 6. Edit your _constant.xml_ file in your configuration folder:
 
@@ -107,7 +111,9 @@ The first message means UPnP mode has been enabled successfully, while the latte
 
 9. You will be prompted to enter some information as shown below:
 
-    > **NOTE:** **DO NOT** duplicate your IP address and use different ports to create different CPU nodes. You will be blacklisted by the network and hence not be able to receive any rewards.
+    :::note
+    **DO NOT** duplicate your IP address and use different ports to create different CPU nodes. You will be blacklisted by the network and hence not be able to receive any rewards.
+    :::
 
     - `Assign a name to your container (default: zilliqa):` <br/> [Press **Enter** to skip if using default]
 
@@ -133,7 +139,9 @@ less mykey.txt
 
 The first hex string is your **public key**, and the second hex string is your **private key**.
 
-> **NOTE:** This key pair is generated locally on your disk. Do remember to keep your private key somewhere safe!
+:::note
+This key pair is generated locally on your disk. Do remember to keep your private key somewhere safe!
+:::
 
 ## Checking Your ZIL Balance
 

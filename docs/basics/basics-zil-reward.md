@@ -25,7 +25,8 @@ Say for example, if there are a total of `2400` nodes in the Zilliqa network and
     197244.577626 * 0.70 / (2,400 * 2/3 [Successful signers] * 99 [TX blocks])
     = ~0.8716616435492 ZILs per valid and accepted signature
     ```
-
-> **NOTE:** For the stability of this nascent network, Guard nodes by Zilliqa are deployed in the network, both in DS committee and across all shards. These Guard nodes always stays within the network without doing PoW, but they are not rewarded. However, the division of rewards before distribution does include the guard nodes in the count. Hence, there are no "bonus" rewards for non-guard nodes that manage to fufil the PoW requirements.
+:::note
+For the stability of this nascent network, Guard nodes by Zilliqa are deployed in the network, both in DS committee and across all shards. These Guard nodes always stays within the network without doing PoW, but they are not rewarded. However, the division of rewards before distribution does include the guard nodes in the count. Hence, there are no "bonus" rewards for non-guard nodes that manage to fufil the PoW requirements.
+:::
 
 Find our your daily mining profitability by making a copy of the [**Reward Calculator**](https://docs.google.com/spreadsheets/d/1iA3DvXMiAql6bf1mGHHxfGLICm0wZ2Gav5HzRkP81j4/edit?usp=sharing) and editing the yellow-highlighted cells.

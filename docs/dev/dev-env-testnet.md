@@ -240,7 +240,9 @@ You can use most of the default options there for small-scale testnet, but you s
   ./bootstrap.py -c f2d4a8a -i 648273915458.dkr.ecr.us-west-2.amazonaws.com/zilliqa:f2d4a8a
   ```
 
-> Note: You have to run [`scripts/make_image.sh`](https://github.com/Zilliqa/Zilliqa/blob/master/scripts/make_image.sh) from core repository before you can use the image.
+:::note
+You have to run [`scripts/make_image.sh`](https://github.com/Zilliqa/Zilliqa/blob/master/scripts/make_image.sh) from core repository before you can use the image.
+:::
 
 <details>
 <summary> All options of bootstrap.py are here</summary>

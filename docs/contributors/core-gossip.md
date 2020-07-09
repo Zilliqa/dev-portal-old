@@ -82,7 +82,9 @@ The total rounds is configured to not exceed `<MAX_TOTAL_ROUNDS>`, after which t
 - `LAZY_PUSH (0x06)`: This is sent out at every round to random neighbors for each active rumor in its store. The payload contains the hash of the raw message intended to be gossiped.
 - `LAZY_PULL (0x07)`: The response to the sender if it is the first time that sender has sent a `LAZY_PUSH`/`EMPTY_PUSH` message during this round. The payload contains the hash of the raw message.
 
-> **NOTE:** Every gossip message is signed, and the signature is verified before being accepted.
+:::note
+Every gossip message is signed, and the signature is verified before being accepted.
+:::
 
 Through the messages above, the standard Push-Pull mechanism is optimized by gossiping the hashes using `EMPTY_*` and `LAZY_*` and fetching the actual raw messages using `PUSH` and `PULL`.
 
