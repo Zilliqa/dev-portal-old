@@ -7,6 +7,12 @@ module.exports = {
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: 'api-key',
+      indexName: 'index-name',
+      appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
+      algoliaOptions: {}, // Optional, if provided by Algolia
+    },
     navbar: {
       title: 'Zilliqa Developer Portal',
       logo: {
