@@ -57,9 +57,18 @@ We have two smart contracts, namely `proxy` and `ssnlist`. Proxy contract stores
 
 As such, any user who wishes to interact with the contract, should interact with `proxy` contract only.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- Testnet -->
-<br/>
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="testnet"
+  values={[
+    { label: 'Testnet', value: 'testnet', },
+    { label: 'Mainnet', value: 'mainnet', }
+  ]
+}>
+<TabItem value="testnet">
+
 | Type    | Address |
 | ------- | ------- |
 | proxy   | Bech32: [zil135gsjk2wqxwecn00axm2s40ey6g6ne8668046h](https://viewblock.io/zilliqa/address/zil135gsjk2wqxwecn00axm2s40ey6g6ne8668046h?network=testnet) <br/> Base16: [0x8d1109594e019d9c4defe9b6a855f92691a9e4fa](https://viewblock.io/zilliqa/address/0x8d1109594e019d9c4defe9b6a855f92691a9e4fa?network=testnet) |
@@ -72,9 +81,9 @@ As such, any user who wishes to interact with the contract, should interact with
 | Overall contract max stake | 1M          |
 | Reward cycle               | 3 DS blocks |
 
+</TabItem>
+<TabItem value="mainnet">
 
-<!-- Mainnet -->
-<br/>
 | Type    | Address |
 | ------- | ------- |
 | proxy   | Bech32: [zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma](https://viewblock.io/zilliqa/address/zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma) <br/> Base16: [0x38Cef22914277a24993235Eef92C4A0b3e7E42ed](https://viewblock.io/zilliqa/address/zil18r80y2g5yaazfxfjxhh0jtz2pvl8ushd7224ma) |
@@ -87,9 +96,8 @@ As such, any user who wishes to interact with the contract, should interact with
 | Overall contract max stake | 700M         |
 | Reward cycle               | 17 DS blocks |
 
-These numbers may subjected to change.
-
-<!--END_DOCUSAURUS_CODE_TABS-->
+</TabItem>
+</Tabs>
 
 :::caution Notice
 Please use proxy contract address if you need to call the smart contract.

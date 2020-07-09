@@ -7,7 +7,7 @@ title: Introduction
 
 This section aims to give developers an idea on how to get started with development on Zilliqa.
 
-We try to make this guide concise, but yet easy enough for a developer with no experience in blockchain development. As many applications developers are `javascript` developers, we will use `javascript` in code snippet examples. Zilliqa Research currently actively maintains one official SDK in Javascript [`zilliqa-js`](https://github.com/Zilliqa/Zilliqa-JavaScript-Library). However, there are SDKs provided in [other languages](https://zilliqa.github.io/dev-portal/docs/en/api-sdk) that are maintained by the community.
+We try to make this guide concise, but yet easy enough for a developer with no experience in blockchain development. As many applications developers are `javascript` developers, we will use `javascript` in code snippet examples. Zilliqa Research currently actively maintains an official SDK in Javascript [`zilliqa-js`](https://github.com/Zilliqa/Zilliqa-JavaScript-Library) which we'll be using in our examples.
 
 ### What are dApps?
 
