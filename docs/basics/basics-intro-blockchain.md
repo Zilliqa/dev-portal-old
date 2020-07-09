@@ -23,13 +23,13 @@ Since the ledger is maintained by a decentralized network of machines that is
 open for anyone to join, it cannot be shutdown making blockchains resistant to
 any external control and censorship.
 
-### 3. Permissionless
+### 2. Permissionless
 Due to the public nature of blockchains, anyone (with sufficient resources)
 can join the network to maintain the ledger and can make use of the network.
 There is no need to get permission from any central entity making it open for
 anyone and everyone.  
 
-### 2. Public verifiability
+### 3. Public verifiability
 The entire chronological history is public for anyone to review. This provides
 transparency, trust and auditability allowing anyone to re-create the current
 state of the system from the historical data. 
