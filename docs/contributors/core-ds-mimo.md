@@ -2,6 +2,8 @@
 id: core-ds-mimo
 title: DS MIMO
 ---
+
+---
 > Note: DS committee ejection has now been superseded by [DS Reputation](core-ds-reputation.md).
 
 DS committee membership is maintained using a multiple-in multiple-out (MIMO) setup. This setup allows `n` nodes to join and leave the DS committee at every DS epoch. The steps are:

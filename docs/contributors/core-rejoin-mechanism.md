@@ -2,6 +2,8 @@
 id: core-rejoin-mechanism
 title: Rejoin Mechanism
 ---
+
+---
 The sections below explain the joining and rejoining process for the different types of nodes.
 
 Some terms used are:

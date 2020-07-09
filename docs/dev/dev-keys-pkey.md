@@ -3,6 +3,8 @@ id: dev-keys-pkey
 title: Private Key & Keystore File
 ---
 
+---
+
 Other than ZilPay, DApp developers can allow their users to interact with their dApp using other wallet choices such as a private key or keystore file.
 However, we do recommend to use browser add-on such as ZilPay for key management.
 ## Import via private key

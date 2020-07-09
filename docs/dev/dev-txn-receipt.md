@@ -2,6 +2,8 @@
 id: dev-txn-receipt
 title: Receipt
 ---
+
+---
 After a transaction is confirmed in the blockchain, a transaction response would be returned along with a `receipt`.
 
 Example of a transaction response with the `receipt` structure:

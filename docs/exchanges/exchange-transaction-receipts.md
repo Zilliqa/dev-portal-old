@@ -3,6 +3,8 @@ id: exchange-transaction-receipts
 title: Understanding Transaction Receipts
 ---
 
+---
+
 ## Transaction Receipts
 
 Confirmed transactions come with a **receipt** under the **result** field when [fetching the transaction](https://apidocs.zilliqa.com/#gettransaction) in JSON format.

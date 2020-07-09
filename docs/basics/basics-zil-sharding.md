@@ -2,6 +2,8 @@
 id: basics-zil-sharding
 title: Sharding Mechanism
 ---
+
+---
 In this section, we present the core idea of sharding that makes Zilliqa scale. Sharding in Zilliqa takes many forms: *network sharding*, *transaction sharding*, and *computational sharding*. The most important among these is network sharding as the other sharding mechanisms are built atop the network sharding layer.
 
 ## Network Sharding

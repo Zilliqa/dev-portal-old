@@ -2,6 +2,8 @@
 id: contribute-standards
 title: Protocol Standards
 ---
+
+---
 Since the release of the initial [whitepaper](https://docs.zilliqa.com/whitepaper.pdf) in 2017, the Zilliqa core has evolved to address the functional, security, performance, deployment, and usability challenges encountered in our Zilliqa Mainnet. While it has gained a significant degree of maturity since its inception, the Zilliqa platform continues to be a work in progress as new developments in the blockchain space present opportunities for improvement.
 
 The Zilliqa core protocol encompasses the implementation in our [C++ code base](https://github.com/Zilliqa/Zilliqa/) as well as all related processes or conventions around it (e.g., data formats, API specifications, etc.). Many of these have been captured in our [design documents](core-intro.md) and other available resources, and collectively form our core protocol standards.

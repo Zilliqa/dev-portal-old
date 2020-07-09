@@ -2,6 +2,8 @@
 id: dev-tools-faucet
 title: Faucet
 ---
+
+---
 ## Testnet faucet via Nucleus Wallet
 
 ![Nucleus Wallet Faucet](../../assets/application/getting-started/nucleus-faucet.png)

@@ -2,6 +2,8 @@
 id: core-node-operation
 title: General Node Operation
 ---
+
+---
 A Zilliqa node requires the following information during launch:
 
 - Schnorr key pair

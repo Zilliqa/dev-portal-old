@@ -2,6 +2,8 @@
 id: core-view-change
 title: View Change
 ---
+
+---
 In the event of a network stall, the core protocol falls back to a view change. This process occurs within the DS committee, and involves the selection of a new DS committee leader to pick the blockchain's progress back up at the point just before the stall.
 
 The general steps are as follows:

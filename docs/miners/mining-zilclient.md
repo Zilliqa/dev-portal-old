@@ -2,6 +2,8 @@
 id: mining-zilclient
 title: Running the Zilliqa Client
 ---
+
+---
 ## Hardware Requirements
 
 The [**Zilliqa Client**](https://github.com/Zilliqa/zilliqa) is only officially supported on Ubuntu 16.04 OS.

@@ -2,6 +2,8 @@
 id: core-broadcasting
 title: Broadcasting
 ---
+
+---
 Gossip is used widely in the Zilliqa network for messaging. However, the gossip protocol by design needs the information of all peers that must eventually receive the rumor.
 
 This basic requirement for peer information is usually available to a node, except at the point when a new DS block has been mined. The DS block contains the peer information for all shards, which is extracted by each node to initialize its peer list and restart the gossip engine.

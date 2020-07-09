@@ -2,6 +2,8 @@
 id: basics-zil-reward
 title: Reward Mechanism
 ---
+
+---
 In the Zilliqa network, rewards are split into:
 
 * **[25% of total] Base rewards** for all validating nodes (DS/shard) in the network.

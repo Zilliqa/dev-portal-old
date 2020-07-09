@@ -3,6 +3,8 @@ id: dev-env-isolated
 title: Isolated Server
 ---
 
+---
+
 Zilliqa Isolated Server is a test server for dApp developers to quickly test their applications. Transactions are validated immediately, hence improving the productivity for dApp developers.
 
 ## Zilliqa Isolated Server Instructions

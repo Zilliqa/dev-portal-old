@@ -2,6 +2,8 @@
 id: contribute-guidelines
 title: Contribution Guidelines
 ---
+
+---
 ## Development Process
 
 We keep our development process fairly simple and enforce any hard rules through automation.

@@ -2,6 +2,8 @@
 id: core-websocket-server
 title: WebSocket Server
 ---
+
+---
 A lookup or seed node has the option (using `ENABLE_WEBSOCKET`) to enable a WebSocket server on port `WEBSOCKET_PORT` (4401 by default). The WebSocket server provides users (e.g., SDK clients) with a subscription-based data querying model as an alternative to polling.
 
 Interacting with the WebSocket server is detailed in our [Application Developers](dev-tools-websockets.md) section.

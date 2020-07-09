@@ -2,6 +2,8 @@
 id: core-gossip
 title: Gossip
 ---
+
+---
 A `RumorManager` library is available in the Zilliqa core to support message gossiping between nodes.
 
 ## Overview

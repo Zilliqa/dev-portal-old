@@ -3,6 +3,8 @@ id: staking-faq
 title: Frequently asked question (FAQ)
 ---
 
+---
+
 ## How do I track my users’ rewards? 
 
 This is out of the scope at the staking implementation layer. Staked seed node operators will need to provide facilities for:

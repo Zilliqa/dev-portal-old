@@ -3,6 +3,8 @@ id: dev-keys-zilpay
 title: ZilPay
 ---
 
+---
+
 ZilPay is an [open source](https://github.com/zilpay/zil-pay) browser add-on that manages a user’s Zilliqa wallet and can be used on Chrome, Firefox and Opera browsers.
 It does not store any user's private keys on a remote server. Instead they are password protected and stored on browser storage.
 It is a non-custodial wallet, meaning, the user has full access and responsibility for their private key. 

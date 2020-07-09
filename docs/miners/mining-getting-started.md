@@ -2,6 +2,8 @@
 id: mining-getting-started
 title: Getting Started
 ---
+
+---
 ## Participating as a Miner
 
 There are theoretically multiple ways to participate in the Zilliqa Mainnet as a miner.

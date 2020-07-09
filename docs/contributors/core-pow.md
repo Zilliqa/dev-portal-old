@@ -2,6 +2,8 @@
 id: core-pow
 title: PoW Algorithm
 ---
+
+---
 ## Proof-of-Work
 
 Proof-of-Work, or PoW, is the original consensus algorithm in a blockchain network. In other blockchains (e.g., Bitcoin and Ethereum), this algorithm is used to confirm transactions and produce new blocks in the chain. With PoW, miners compete against each other to complete transactions on the network and get rewarded.

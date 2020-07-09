@@ -2,6 +2,8 @@
 id: mining-additional-info
 title: Additional Information
 ---
+
+---
 ## Network Epoch Architecture
 
 ![Zilliqa Epoch Architecture](https://i.imgur.com/Da4t6FW.png)

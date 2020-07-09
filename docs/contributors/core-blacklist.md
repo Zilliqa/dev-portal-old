@@ -2,6 +2,8 @@
 id: core-blacklist
 title: Blacklist
 ---
+
+---
 Zilliqa has a blacklisting feature implemented in `libNetwork`. The idea is to keep track of IP addresses of peers that, for conditions listed below, can potentially disrupt the operation of the node. Once blacklisted, the peer is effectively excluded from further interactions with the node.
 
 ## Blacklisting Conditions

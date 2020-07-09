@@ -3,6 +3,8 @@ id: basics-intro-gas
 title: Gas
 ---
 
+---
+
 As transactions require the network to commit resources (compute, memory,
 storage and bandwidth), it is important to ensure that the resources are not
 abused. 

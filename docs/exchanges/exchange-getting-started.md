@@ -9,7 +9,7 @@ title: Getting Started
 Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceeding. 
 :::
 
-# Introduction
+## Introduction
 
 To interact with Zilliqa network, you can either
 - interact with endpoints provided by Zilliqa

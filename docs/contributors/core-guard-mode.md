@@ -2,6 +2,8 @@
 id: core-guard-mode
 title: Guard Mode
 ---
+
+---
 Guard mode is a special operating mode in Zilliqa that can be used to maintain stability of the Mainnet until the protocol has been made perfectly robust. Guard mode ensures the following:
 
 - A maximum of `n` nodes (e.g., 2/3) in the DS committee are nodes operated by Zilliqa Research

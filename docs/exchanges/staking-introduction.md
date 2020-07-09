@@ -3,6 +3,8 @@ id: staking-introduction
 title: General information	
 ---
 
+---
+
 ## About Zilliqa staking program
 
 In this initial phase of the Zilliqa staking program, staking is done through a seed node and a smart contract on the Zilliqa blockchain. The seed node operator who wishes to host an SSN will need to register with the Zilliqa team and deposit a certain minimum number of $ZIL into the staking smart contract. The seed node operator will then receive blockchain rewards at regular intervals according to the performance of its SSN, and in proportion to the amount of $ZIL deposited in the contract during those intervals.

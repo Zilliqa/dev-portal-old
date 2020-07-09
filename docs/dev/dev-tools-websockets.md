@@ -3,6 +3,8 @@ id: dev-tools-websockets
 title: WebSocket Server
 ---
 
+---
+
 This page describes the protocol - between the Zilliqa WebSocket Server and the SDK client - for querying subscription and message pushing.
 
 ## Introduction

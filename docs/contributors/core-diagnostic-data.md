@@ -2,6 +2,8 @@
 id: core-diagnostic-data
 title: Diagnostic Data
 ---
+
+---
 ## Diagnostic Data
 
 We store in LevelDB a limited amount of some operational data about the network that is intended for use when diagnosing any issues with the mainnet.

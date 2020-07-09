@@ -3,6 +3,8 @@ id: staking-getting-started
 title: Setting up the SSN
 ---
 
+---
+
 ## IP whitelisting and API servicing
 
 It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0 in order to receive data broadcasts about the blockchain and its state. This requires a static public IP address with minimal the following inbound and outbound port open.

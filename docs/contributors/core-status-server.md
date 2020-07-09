@@ -2,6 +2,8 @@
 id: core-status-server
 title: Status Server
 ---
+
+---
 Every Zilliqa node has an API server listening on port `STATUS_RPC_PORT` (4301 by default). This server can only be accessed on localhost.
 
 This status server provides useful information about the operational parameters of the node. It also enables the user to control the behavior of the node along different aspects of its operation (e.g., stopping PoW mining at the end of the epoch).

@@ -2,6 +2,8 @@
 id: mining-zilminer
 title: Running ZILMiner for Mining Rigs
 ---
+
+---
 ## Hardware Requirements
 
 The [**ZilMiner**](https://github.com/DurianStallSingapore/ZILMiner) software is officially supported on both Ubuntu and Windows OS.

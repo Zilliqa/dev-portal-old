@@ -3,6 +3,8 @@ id: basics-intro-consensus
 title: Consensus mechanism
 ---
 
+---
+
 The blockchain network being decentralized has to have a mechanism to agree
 upon the next state of system. This is achieved via a _consensus protocol_.
 

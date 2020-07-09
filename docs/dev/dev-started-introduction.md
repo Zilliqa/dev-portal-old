@@ -3,6 +3,8 @@ id: dev-started-introduction
 title: Introduction
 ---
 
+---
+
 ## Getting started with dApp development
 
 This section aims to give developers an idea on how to get started with development on Zilliqa.

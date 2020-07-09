@@ -2,6 +2,7 @@
 id: dev-txn-confirmation
 title: Confirmation
 ---
+---
 Now the transaction object is in one of the shards. Each shard will produce a __Micro Block__. Micro Blocks are aggregated by the DS Committee into a Transaction Block, after the DS Committee agrees on the Transaction Block through the pBFT consensus mechanism.
 
 After the DS Committee reaches consensus on the Transaction Block, it multicasts the result to all shard nodes and lookup nodes. At this stage, the seed node will have a result for our transaction object. The result can be retrieved using the same `GetTransaction` JSON RPC API.

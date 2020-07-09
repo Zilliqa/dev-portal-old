@@ -2,6 +2,8 @@
 id: core-incremental-db
 title: Incremental DB
 ---
+
+---
 The incremental DB feature leverages on AWS Simple Storage Service (S3) to provide an efficient way for miners and seed nodes to get blockchain data in order to join the network.
 
 ## Background

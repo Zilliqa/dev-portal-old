@@ -2,6 +2,8 @@
 id: basics-intro-blockchain
 title: Blockchain
 ---
+
+---
 ## What is Blockchain?
 
 Blockchain is a **distributed ledger** that is **immutable**. It is a

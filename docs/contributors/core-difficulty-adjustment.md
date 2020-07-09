@@ -2,6 +2,8 @@
 id: core-difficulty-adjustment
 title: Difficulty Adjustment
 ---
+
+---
 Zilliqa has a dynamic difficulty level adjustment mechanism. The goal of this mechanism is to adjust the difficulty level according to the number of PoW submissions received.
 
 When the network receives a low number of PoW submissions, the mechanism will reduce the difficulty so that more nodes can join and maintain the network. On the other hand, when the network receives a high number of PoW submissions, the mechanism will increase the difficulty level, making it harder for Sybil attacks to be executed.

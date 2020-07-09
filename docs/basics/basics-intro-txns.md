@@ -3,6 +3,8 @@ id: basics-intro-txns
 title: Transactions
 ---
 
+---
+
 To interact with an account (externally-owned or contract), one has to
 issue transactions. Each transaction is a data package signed by an
 externally-owned account. 

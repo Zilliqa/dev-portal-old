@@ -2,6 +2,8 @@
 id: mining-proxy
 title: Proxy Mining
 ---
+
+---
 ## What is Proxy Mining?
 
 In contrast to Ethereum or Bitcoin, Zilliqa doesn’t employ PoW for its consensus protocol (such as is done in Nakamoto consensus). Instead, it leverages a pBFT-like variant as its consensus protocol and PoW as the identity creation to prevent Sybil attacks.
