@@ -15,7 +15,10 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  --ifm-font-family-base: AvenirNextLTPro-Regular;
+  --ifm-font-family: AvenirNextLTPro-Regular;
+  --md-bg-color: #f5f7f9;
+  --md-font-color: #333333;
+  --md-info: #1e88e5;
 }
 
 .docusaurus-highlight-code-line {
@@ -23,4 +26,64 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.alert--danger {
+  background-color: var(--md-bg-color);
+  border-color: var(--md-bg-color);
+  border-left: 4px solid var(--ifm-color-danger);
+  color: var(--md-font-color);
+}
+
+.alert--danger a {
+  color: var(--md-font-color);
+}
+
+.alert--danger {
+  --ra-admonition-icon-color: var(--ifm-color-danger);
+}
+
+.alert--info {
+  background-color: var(--md-bg-color);
+  border-color: var(--md-bg-color);
+  border-left: 4px solid var(--md-info);
+  color: var(--md-font-color);
+}
+
+.alert--info a {
+  color: var(--md-font-color);
+}
+
+.alert--info {
+  --ra-admonition-icon-color: var(--md-info);
+}
+
+.alert--success {
+  background-color: var(--md-bg-color);
+  border-color: var(--md-bg-color);
+  border-left: 4px solid var(--ifm-color-success);
+  color: var(--md-font-color);
+}
+
+.alert--success a {
+  color: var(--md-font-color);
+}
+
+.alert--success {
+  --ra-admonition-icon-color: var(--ifm-color-success);
+}
+
+.alert--warning {
+  background-color: var(--md-bg-color);
+  border-color: var(--md-bg-color);
+  border-left: 4px solid var(--ifm-color-warning);
+  color: var(--md-font-color);
+}
+
+.alert--warning a {
+  color: var(--md-font-color);
+}
+
+.alert--warning {
+  --ra-admonition-icon-color: var(--ifm-color-warning);
 }
