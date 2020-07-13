@@ -25,58 +25,49 @@ function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <body className={clsx('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/basics/basics-intro-blockchain')}>
-              Basics
-            </Link>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/dev/dev-started-introduction')}>
-             Developers
-            </Link>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/miners/mining-getting-started')}>
-             Miners
-            </Link>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/exchanges/exchange-getting-started')}>
-             Exchanges
-            </Link>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/contributors/contribute-buildzil')}>
-             Contributors
-            </Link>
+      <Layout>
+        <div className="cover-container">
+          <div className="cover-title">
+            <h1 className="hero__title">{siteConfig.title}</h1>
+            <p className="hero__subtitle">{siteConfig.tagline}</p>
+          </div>
+          <div className="cover-image">
+            <img  src="../../static/assets/bg.png"/>
           </div>
         </div>
-      </body>
-    </Layout>
+        <div id="cover-cards">
+          <div className="column">
+            <img className="cards-image" src="../../static/assets/basics.svg"/>
+            <h2>Basics</h2>
+            <p>Understand the world of blockchain, cryptocurrencies and how Zilliqa blockchain works.</p>
+            <a href={useBaseUrl('docs/basics/basics-intro-blockchain')}>Learn More</a>
+          </div>
+          <div className="column">
+            <img className="cards-image" src="../../static/assets/developers.svg"/>
+            <h2>Developers</h2>
+            <p>Beign your dApp developing journey with Zilliqa blockchain today.</p>
+            <a href={useBaseUrl('docs/dev/dev-started-introduction')}>Learn More</a>
+          </div>
+          <div className="column">
+            <img className="cards-image" src="../../static/assets/miners.svg"/>
+            <h2>Miners</h2>
+            <p>Participate as a miner and start earning $ZIL.</p>
+            <a href={useBaseUrl('docs/miners/mining-getting-started')}>Learn More</a>
+          </div>
+          <div className="column">
+            <img className="cards-image" src="../../static/assets/exchanges.svg"/>
+            <h2>Exchanges</h2>
+            <p>This is a long description for this section.</p>
+            <a href={useBaseUrl('docs/exchanges/exchange-getting-started')}>Learn More</a>
+          </div>
+          <div className="column">
+            <img className="cards-image" src="../../static/assets/contributors.svg"/>
+            <h2>Contributors</h2>
+            <p>This is a long description for this section.</p>
+            <a href={useBaseUrl('docs/contributors/contribute-buildzil')}>Learn More</a>
+          </div>
+        </div>
+      </Layout>
   );
 }
 

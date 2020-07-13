@@ -21,6 +21,45 @@
   --md-info: #1e88e5;
 }
 
+.cover-container {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-image {
+  margin-left: auto;
+  width: 50vw;
+}
+
+.cover-title {
+  margin-left: 1rem;
+}
+
+#cover-cards {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  width:90%;
+  height: auto;
+}
+
+#cover-cards .column {
+  flex-basis: 100%;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+.cards-image {
+  width: 140px;
+  margin-left: 2.5rem;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
