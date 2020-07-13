@@ -21,6 +21,8 @@ broadcasts about the blockchain and its state. This requires a static, public
 IP address with minimally two open ports (inbound and outbound) at which it
 can be reached.
 
+> Note: Starting Zilliqa version 6.3.0, exchanges may also choose to operate seed nodes through public key whitelisting. Please contact us for more information on setting up a seed node with this scheme.
+
 <!--
 Additionally, as seed node providers will receive rewards, we require all
 exchanges and individuals who wish to set up seed nodes to go through a KYC
@@ -159,7 +161,7 @@ following changes are required:
 > Note: before proceeding with this step, make sure you have completed the
 > necessary KYC (for individual).
 
-Once the preliminary steps have been completed, join the network is relatively
+Once the preliminary steps have been completed, joining the network is relatively
 straightforward.
 
 ```sh
