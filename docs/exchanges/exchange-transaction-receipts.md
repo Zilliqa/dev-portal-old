@@ -133,6 +133,9 @@ For example:
 1. Traverse the **`transitions`** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
    1. **`_recipient`** corresponds to a known deposit address controlled by the exchange
    1. **`_tag`** is either `AddFunds` or empty
+      :::info
+        `_tag` can be found under `msg` field. If either `_tag` or `msg` is not present, there is no incoming deposit from this particular transition.
+      :::
    1. **`_amount`** is non-zero
    1. Check the **`_recipient`** and **`_amount`** to complete the information on the balance transfer.In such a case, you can confirm that there is a deposit to address **`_recipient`** with value **`_amount`** (in `Qa`).
    1. Continue traversing the remaining transitions and checking for more deposits
