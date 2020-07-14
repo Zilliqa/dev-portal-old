@@ -1,4 +1,3 @@
----
 id: api-websocket
 title: Zilliqa WebSocket Server (ZWS)
 ---
@@ -243,6 +242,53 @@ Once successfully subscribed, the server will echo the query message to the clie
 
 Notice that for address `0x1111111111111111111111111111111111111111` is not presented in the message since it doesn't have any event log released in this epoch.
 
+### Subscribe Transaction Log
+
+#### Query message
+
+```json
+{"query" : "TxnLog" , "addresses" : ["0x42fb82623b9ea0b9dbf41e74304a39908a378cfd"]}
+```
+
+#### Response message
+
+Once successfully subscribed, the server will echo the query message to the client. Otherwise, the server will return an error message.
+
+#### Error messages specific to this topic
+
+- **invalid hex address** . This tells if the address field is a proper 32 byte address.
+
+- **invalid addresses field**. This tells the client that the addresses field is invalid, meaning it could not be found or is either malformed or empty.
+
+- **no valid address found in list**. This tells the client that the addresses provided are all invalid.
+
+#### Sample notification
+
+```json
+{
+  "type": "Notification",
+  "values": [
+    {
+      "query": "TxnLog",
+      "value": [
+        {
+          "address": "eb955ff1715a1eb71f63c655504866117591b7fa",
+          "log": [
+            {
+              "ID": "b676bd19fecaf6296e799f9edc2887c85e6d5e6417860f454ddd73ed0dc6fd61",
+              "amount": "1000000000000",
+              "fromAddr": "eb955ff1715a1eb71f63c655504866117591b7fa",
+              "success": true,
+              "toAddr": "046105286e2ec9ca467b5bdfa0975b0e9342eb0a"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
 ### Unsubscribe
 
 #### Query message
@@ -267,7 +313,7 @@ Once successfully unsubscribed, the server will echo the query message to the cl
 ```json
 {
   "query":"Unsubscribe",
-  "value":["NewBlock", "EventLog"]
+  "value":["NewBlock", "EventLog","TxnLog"]
 }
 ```
 
