@@ -35,7 +35,6 @@ module.exports = {
     "contributors/contribute-bug-bounty"],
 
     "Core Protocol Design":[
-    "contributors/core-intro", 
     {"Design Overview":["contributors/core-node-operation"]}, 
     {"Consensus Layer":["contributors/core-consensus","contributors/core-multisignatures"]},
     {"Network Layer":["contributors/core-gossip","contributors/core-broadcasting","contributors/core-blacklist","contributors/core-messaging-limits"]},
