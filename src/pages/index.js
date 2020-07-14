@@ -5,6 +5,24 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import useThemeContext from '@theme/hooks/useThemeContext';
+
+const CoverImgDiv = () => {
+  const {isDarkTheme} = useThemeContext();
+  if (isDarkTheme) {
+    return (
+      <div className="cover-image">
+        <img src="../../static/assets/bg2.png"/>
+      </div>
+    );
+  } else {
+    return (
+      <div className="cover-image">
+        <img src="../../static/assets/bg_light.png"/>
+      </div>
+    );
+  }
+};
 
 function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
@@ -31,9 +49,7 @@ function Home() {
             <h1 className="hero__title">{siteConfig.title}</h1>
             <p className="hero__subtitle">{siteConfig.tagline}</p>
           </div>
-          <div className="cover-image">
-            <img  src="../../static/assets/bg2.png"/>
-          </div>
+          <CoverImgDiv/>
         </div>
         <div id="cover-cards">
           <div className="column">
