@@ -1,6 +1,8 @@
 ---
 id: contribute-guidelines
 title: Contribution Guidelines
+keywords: development, guidelines
+description: Development guidelines for contributing to Zilliqa core.
 ---
 
 ---

@@ -1,6 +1,8 @@
 ---
 id: core-difficulty-adjustment
 title: Difficulty Adjustment
+keywords: core, difficulty, adjustment
+description: Core protocol design - difficulty adjustment.
 ---
 
 ---

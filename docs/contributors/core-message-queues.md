@@ -1,6 +1,8 @@
 ---
 id: core-message-queues
 title: Message Queues and Jobs
+keywords: core, message, queues, jobs
+description: Core protocol design - message queues and jobs.
 ---
 
 ---

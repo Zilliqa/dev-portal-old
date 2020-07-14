@@ -1,6 +1,8 @@
 ---
 id: core-node-operation
 title: General Node Operation
+keywords: core, node, operation
+description: Core protocol design - general node operation.
 ---
 
 ---

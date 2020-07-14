@@ -1,6 +1,8 @@
 ---
 id: core-message-dispatch
 title: Message Dispatch and Processing
+keywords: core, message, dispatch, processing
+description: Core protocol design - message dispatch and processing.
 ---
 
 ---

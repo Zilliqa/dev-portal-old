@@ -1,6 +1,8 @@
 ---
 id: core-guard-mode
 title: Guard Mode
+keywords: core, guard, mode
+description: Core protocol design - guard mode.
 ---
 
 ---

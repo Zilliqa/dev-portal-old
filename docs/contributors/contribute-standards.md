@@ -1,6 +1,8 @@
 ---
 id: contribute-standards
 title: Protocol Standards
+keywords: protocol, standards, ZIP, improvement, proposals
+description: Contribution guide to Zilliqa core protocol standards.
 ---
 
 ---

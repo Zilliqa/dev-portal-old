@@ -1,6 +1,8 @@
 ---
 id: core-ds-reputation
 title: DS Reputation
+keywords: core, directory, service, committee, reputation
+description: Core protocol design - DS reputation.
 ---
 
 ---

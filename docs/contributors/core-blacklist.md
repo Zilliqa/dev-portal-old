@@ -1,6 +1,8 @@
 ---
 id: core-blacklist
 title: Blacklist
+keywords: core, blacklist
+description: Core protocol design - blacklisting.
 ---
 
 ---

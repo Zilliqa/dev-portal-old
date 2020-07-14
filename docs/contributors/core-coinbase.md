@@ -1,6 +1,8 @@
 ---
 id: core-coinbase
 title: Coinbase Rewards
+keywords: core, coinbase, rewards
+description: Core protocol design - coinbase rewards.
 ---
 
 ---

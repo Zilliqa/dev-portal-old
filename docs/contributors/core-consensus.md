@@ -1,6 +1,8 @@
 ---
 id: core-consensus
 title: Consensus
+keywords: core, consensus, PBFT
+description: Core protocol design - consensus.
 ---
 
 ---

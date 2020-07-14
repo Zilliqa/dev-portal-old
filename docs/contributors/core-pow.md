@@ -1,6 +1,8 @@
 ---
 id: core-pow
 title: PoW Algorithm
+keywords: core, por, proof, work, algorithm
+description: Core protocol design - PoW algorithm.
 ---
 
 ---

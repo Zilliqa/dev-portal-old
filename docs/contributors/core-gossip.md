@@ -1,6 +1,8 @@
 ---
 id: core-gossip
 title: Gossip
+keywords: core, gossip
+description: Core protocol design - gossip.
 ---
 
 ---

@@ -1,6 +1,8 @@
 ---
 id: core-websocket-server
 title: WebSocket Server
+keywords: core, websocket, server
+description: Core protocol design - websocket server.
 ---
 
 ---
