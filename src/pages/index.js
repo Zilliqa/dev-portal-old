@@ -32,7 +32,7 @@ function Home() {
             <p className="hero__subtitle">{siteConfig.tagline}</p>
           </div>
           <div className="cover-image">
-            <img  src="../../static/assets/bg.png"/>
+            <img  src="../../static/assets/bg2.png"/>
           </div>
         </div>
         <div id="cover-cards">
@@ -42,7 +42,7 @@ function Home() {
                   <img className="cards-image" src="../../static/assets/main01.svg"/>
                   <div className="cards-text">
                     <h2>Basics</h2>
-                    <p>Understand the world of blockchain, cryptocurrencies and how Zilliqa blockchain works.</p>
+                    <p>Learn about Blockchain and Zilliqa.</p>
                   </div>
               </div>
             </a>
@@ -53,7 +53,7 @@ function Home() {
                 <img className="cards-image" src="../../static/assets/main02.svg"/>
                 <div className="cards-text">
                   <h2>Developers</h2>
-                  <p>Beign your dApp developing journey with Zilliqa blockchain today.</p>
+                  <p>Tutorials and guides on building full stack Blockchain apps on Zilliqa.</p>
                 </div>
               </div>
             </a>
@@ -75,7 +75,7 @@ function Home() {
                 <img className="cards-image" src="../../static/assets/main04.svg"/>
                 <div className="cards-text">
                   <h2>Exchanges</h2>
-                  <p>This is a long description for this section.</p>
+                  <p>Information for exchanges and seed node operators.</p>
                 </div>
               </div>
             </a>
@@ -86,7 +86,7 @@ function Home() {
                 <img className="cards-image" src="../../static/assets/main05.svg"/>
                 <div className="cards-text">
                   <h2>Contributors</h2>
-                  <p>This is a long description for this section.</p>
+                  <p>Learn how you can contribute to Zilliqa's ecosystem</p>
                 </div>
               </div>
             </a>
