@@ -11,30 +11,27 @@ Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceed
 
 ## Introduction
 
-To interact with Zilliqa network, you can either
-- interact with endpoints provided by Zilliqa
-- host an endpoint within your infrastructure
-
-These endpoints are known as Seed Node in Zilliqa network. They store the full historical 
-information about Zilliqa broadcast and forward transactions into the network.
-
-This section will walk you through the basic steps needed to get up and running.
+While it's possible to use the public endpoint provided by Zilliqa to interact
+with the blockchain, we recommend that all exchanges who wish to support
+trading on the main net set up seed nodes. This document walks you through the
+basic steps needed to get up and running.
 
 ## IP whitelisting
 
-As seed nodes do not draw data directly from lookup or shard nodes,exchanges must be 
-whitelisted by Zilliqa to receive data broadcasts about the blockchain and its state. 
-This requires a static, public IP address with minimally two open ports (inbound and 
-outbound) at which it can be reached.
+As seed nodes do not draw data directly from lookup or shard nodes, it is
+necessary for exchanges to be whitelisted by Zilliqa in order to receive data
+broadcasts about the blockchain and its state. This requires a static, public
+IP address with minimally two open ports (inbound and outbound) at which it
+can be reached.
 
 :::tip Note on whitelisting process
-Whitelisting of seed node is currently granted based on a need-by basis. 
-The Zilliqa core team will assess each request before whitelisting.
+Starting Zilliqa version 6.3.0, exchanges may also choose to operate seed nodes through public key whitelisting. 
+Please contact us for more information on setting up a seed node with this scheme.
 :::
 
 ## Minimum Hardware Requirements
 - x64 Linux operating system (e.g Ubuntu 16.04.05)
-- Recent dual-core processor @ 2.2 GHz. Examples:
+- Recent dual core processor @ 2.2 GHZ. Examples:
    - Intel Core i5 or i7 (Skylake)
    - Intel Xeon (Skylake)
 - 8GB DRR3 RAM or higher
@@ -161,7 +158,11 @@ following changes are required:
 
 ## Joining the Network
 
-Once the preliminary steps have been completed, join the network is relatively
+:::note
+Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
+:::
+
+Once the preliminary steps have been completed, joining the network is relatively
 straightforward.
 
 ```sh
@@ -179,11 +180,11 @@ else.
 
 ## Next Steps
 
-If you have completed the above steps, you should have
+If you have successfully completed the above steps, you should have
 a functioning seed node that exposes an RPC API on `localhost:4201`. You may
 further check the logs at `zilliqa-00001-log.txt`.
 
 The following articles in this series will demonstrate a simple set of
-functions that can be used as a starting point for exchange developers to implement
-their custom business logic around the Zilliqa blockchain. You may find
+functions that can be used as a starting point for exhcange developers to implement
+their own custom business logic around the Zilliqa blockchain. You may find
 the full source code of the example app in the [same repository](https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange).

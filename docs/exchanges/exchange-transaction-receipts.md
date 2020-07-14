@@ -21,7 +21,7 @@ The following are the fields a **receipt** may have. These fields generally appl
 
 For example:
 
-```json
+```
 "receipt": {
   "cumulative_gas": "10481",
   "epoch_num": "586524",
@@ -41,11 +41,11 @@ If a transaction is successful (i.e., the **success** field is `true`), these fi
 |:------------------ |:---------- |:-------------------------------------------------------------------------------------------- |
 | **accepted**       | boolean    | Indicates whether the last transition in this transaction incurred a **balance transfer**        |
 | **event_logs**     | json-array | A list of event logs emitted by the contract during processing. Each log contains:<ol><li>**_eventname**: [string] The name of the event</li><li>**address**: [string] The address of the contract that emitted this event</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ol>                                                                |
-| **transitions**    | json-array | A list of internal transitions invoked during the processing of the transaction by the Scilla interpreter. Each transition contains:<ol><li>**addr**: [string] The address of the contract account that emitted this transition</li><li>**depth**: [int] The depth of the current transition. The transitions directly emitted by the recipient in the transaction will be in depth 0. If those transitions in depth 0 invoked transitions from other contracts, those will be in depth 1, and so on.</li><li>**msg**: [json-object] The message field emitted by the Scilla interpreter, which includes:<ul><li>**_amount**: [string] The balance transferred from this transition</li><li>**_recipient**: [string] The recipient of this transition, which can either be a wallet account or contract account</li><li>**_tag**: [string] The contract-defined transition name</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ul></li></ol>             |
+| **transitions**    | json-array | A list of internal transitions invoked during the processing of the transaction by the Scilla interpreter. Each transition contains:<ol><li>**addr**: [string] The address of the contract account that emitted this transition</li><li>**depth**: [int] The depth of the current transition. The transitions directly emitted by the recipient in the transaction will be in depth 0. If those transitions in depth 0 invoked transitions from other contracts, those will be in depth 1. And so on and so forth.</li><li>**msg**: [json-object] The message field emitted by the Scilla interpreter, which includes:<ul><li>**_amount**: [string] The balance transferred from this transition</li><li>**_recipient**: [string] The recipient of this transition, which can either be a wallet account or contract account</li><li>**_tag**: [string] The contract-defined transition name</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ul></li></ol>             |
 
 For example:
 
-```json
+```
 "receipt": {
   "accepted": true,
   "cumulative_gas": "878",
@@ -100,7 +100,7 @@ If a transaction is unsuccessful (i.e., the **success** field is `false`), no ba
 
 For example:
 
-```json
+```
 "receipt": {
   "cumulative_gas": "1220",
   "epoch_num": "588004",
@@ -129,13 +129,14 @@ For example:
 
 ## Recommended Steps for Exchanges Polling for Incoming Deposit from Smart Contract Transactions
 
-1. Confirm that the **`success`** field is set to **`true`**
-1. Traverse the **`transitions`** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
-   1. **`_recipient`** corresponds to a known deposit address controlled by the exchange
-   1. **`_tag`** is either `AddFunds` or empty
-      :::info
-        `_tag` can be found under `msg` field. If either `_tag` or `msg` is not present, there is no incoming deposit from this particular transition.
-      :::
-   1. **`_amount`** is non-zero
-   1. Check the **`_recipient`** and **`_amount`** to complete the information on the balance transfer.In such a case, you can confirm that there is a deposit to address **`_recipient`** with value **`_amount`** (in `Qa`).
-   1. Continue traversing the remaining transitions and checking for more deposits
+1. Confirm that the **success** field is set to `true`.
+1. Traverse the **transitions** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
+   1. **_recipient** corresponds to a known deposit address controlled by the exchange.
+   2. **_tag** is either `AddFunds` or empty.
+   :::note
+    `_tag` can be found under `msg` field. If either `_tag` or `msg` is not present, there is no incoming deposit from this particular transition.
+   :::
+   3. **_amount** is non-zero.
+   4. Check the **_recipient** and **_amount** to complete the information on the balance transfer.
+      <br/>In such a case, you can confirm that there is a deposit to address **_recipient** with value **_amount** (in `Qa`).
+   5. Continue traversing the remaining transitions and checking for more deposits.
