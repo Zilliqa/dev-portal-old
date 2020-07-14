@@ -37,34 +37,59 @@ function Home() {
         </div>
         <div id="cover-cards">
           <div className="column">
-            <img className="cards-image" src="../../static/assets/basics.svg"/>
-            <h2>Basics</h2>
-            <p>Understand the world of blockchain, cryptocurrencies and how Zilliqa blockchain works.</p>
-            <a href={useBaseUrl('docs/basics/basics-intro-blockchain')}>Learn More</a>
+            <a href={useBaseUrl('docs/basics/basics-intro-blockchain')}>
+              <div>
+                  <img className="cards-image" src="../../static/assets/main01.svg"/>
+                  <div className="cards-text">
+                    <h2>Basics</h2>
+                    <p>Understand the world of blockchain, cryptocurrencies and how Zilliqa blockchain works.</p>
+                  </div>
+              </div>
+            </a>
           </div>
           <div className="column">
-            <img className="cards-image" src="../../static/assets/developers.svg"/>
-            <h2>Developers</h2>
-            <p>Beign your dApp developing journey with Zilliqa blockchain today.</p>
-            <a href={useBaseUrl('docs/dev/dev-started-introduction')}>Learn More</a>
+            <a href={useBaseUrl('docs/dev/dev-started-introduction')}>
+              <div>
+                <img className="cards-image" src="../../static/assets/main02.svg"/>
+                <div className="cards-text">
+                  <h2>Developers</h2>
+                  <p>Beign your dApp developing journey with Zilliqa blockchain today.</p>
+                </div>
+              </div>
+            </a>
           </div>
           <div className="column">
-            <img className="cards-image" src="../../static/assets/miners.svg"/>
-            <h2>Miners</h2>
-            <p>Participate as a miner and start earning $ZIL.</p>
-            <a href={useBaseUrl('docs/miners/mining-getting-started')}>Learn More</a>
+            <a href={useBaseUrl('docs/miners/mining-getting-started')}>
+              <div>
+                <img className="cards-image" src="../../static/assets/main03.svg"/>
+                <div className="cards-text">
+                  <h2>Miners</h2>
+                  <p>Participate as a miner and start earning $ZIL.</p>
+                </div>
+              </div>
+            </a>
           </div>
           <div className="column">
-            <img className="cards-image" src="../../static/assets/exchanges.svg"/>
-            <h2>Exchanges</h2>
-            <p>This is a long description for this section.</p>
-            <a href={useBaseUrl('docs/exchanges/exchange-getting-started')}>Learn More</a>
+            <a href={useBaseUrl('docs/exchanges/exchange-getting-started')}>
+              <div>
+                <img className="cards-image" src="../../static/assets/main04.svg"/>
+                <div className="cards-text">
+                  <h2>Exchanges</h2>
+                  <p>This is a long description for this section.</p>
+                </div>
+              </div>
+            </a>
           </div>
           <div className="column">
-            <img className="cards-image" src="../../static/assets/contributors.svg"/>
-            <h2>Contributors</h2>
-            <p>This is a long description for this section.</p>
-            <a href={useBaseUrl('docs/contributors/contribute-buildzil')}>Learn More</a>
+            <a href={useBaseUrl('docs/contributors/contribute-buildzil')}>
+              <div>
+                <img className="cards-image" src="../../static/assets/main05.svg"/>
+                <div className="cards-text">
+                  <h2>Contributors</h2>
+                  <p>This is a long description for this section.</p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </Layout>

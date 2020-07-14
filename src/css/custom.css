@@ -53,11 +53,24 @@
   border: none;
   background-color: #ffffff;
   color: #1e1e1e;
+  text-align: center;
+}
+
+#cover-cards .column a {
+  text-decoration: none;
+  color: #1e1e1e;
 }
 
 .cards-image {
-  width: 140px;
-  margin-left: 2.5rem;
+  width: 5vw;
+}
+
+.cards-text {
+  text-align: left;
+}
+
+.cards-text p {
+  color: #444444;
 }
 
 .docusaurus-highlight-code-line {
