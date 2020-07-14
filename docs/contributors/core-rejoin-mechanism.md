@@ -1,7 +1,10 @@
 ---
 id: core-rejoin-mechanism
 title: Rejoin Mechanism
-keywords: core, rejoin, mechanism
+keywords: 
+- core 
+- rejoin 
+- mechanism
 description: Core protocol design - rejoin mechanism.
 ---
 

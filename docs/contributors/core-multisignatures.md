@@ -1,7 +1,9 @@
 ---
 id: core-multisignatures
 title: Multisignatures
-keywords: core, multisignatures
+keywords: 
+- core 
+- multisignatures
 description: Core protocol design - multisignatures.
 ---
 

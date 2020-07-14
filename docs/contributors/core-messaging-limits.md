@@ -1,7 +1,10 @@
 ---
 id: core-messaging-limits
 title: Messaging Limits
-keywords: core, messaging, limits
+keywords: 
+- core 
+- messaging 
+- limits
 description: Core protocol design - messaging limits.
 ---
 

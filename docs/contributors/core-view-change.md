@@ -1,7 +1,10 @@
 ---
 id: core-view-change
 title: View Change
-keywords: core, view, change
+keywords: 
+- core 
+- view 
+- change
 description: Core protocol design - view change.
 ---
 

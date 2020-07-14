@@ -1,7 +1,10 @@
 ---
 id: core-incremental-db
 title: Incremental DB
-keywords: core, incremental, database
+keywords: 
+- core 
+- incremental 
+- database
 description: Core protocol design - incremental DB.
 ---
 

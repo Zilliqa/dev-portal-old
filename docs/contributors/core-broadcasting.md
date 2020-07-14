@@ -1,7 +1,9 @@
 ---
 id: core-broadcasting
 title: Broadcasting
-keywords: core, broadcasting
+keywords: 
+- core
+- broadcasting
 description: Core protocol design - broadcasting.
 ---
 

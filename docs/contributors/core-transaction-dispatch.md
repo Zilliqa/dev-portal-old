@@ -1,7 +1,10 @@
 ---
 id: core-transaction-dispatch
 title: Transaction Dispatch
-keywords: core, transaction, dispatch
+keywords: 
+- core 
+- transaction 
+- dispatch
 description: Core protocol design - transaction dispatch.
 ---
 

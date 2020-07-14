@@ -1,7 +1,9 @@
 ---
 id: core-multipliers
 title: Multipliers
-keywords: core, multipliers
+keywords: 
+- core 
+- multipliers
 description: Core protocol design - multipliers.
 ---
 

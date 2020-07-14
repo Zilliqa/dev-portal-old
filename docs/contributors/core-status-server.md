@@ -1,7 +1,10 @@
 ---
 id: core-status-server
 title: Status Server
-keywords: core, status, server
+keywords: 
+- core 
+- status 
+- server
 description: Core protocol design - status server.
 ---
 

@@ -1,7 +1,9 @@
 ---
 id: core-diagnostic-data
 title: Diagnostic Data
-keywords: core, diagnostic
+keywords: 
+- core
+- diagnostic
 description: Core protocol design - diagnostic data.
 ---
 

@@ -1,7 +1,9 @@
 ---
 id: contribute-buildzil
 title: Building Zilliqa
-keywords: contribution, core
+keywords: 
+- contribution 
+- core
 description: Contribution guide for Zilliqa core.
 ---
 

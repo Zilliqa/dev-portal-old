@@ -1,7 +1,11 @@
 ---
 id: core-por
 title: Proof of Reputation
-keywords: core, por, proof, reputation
+keywords: 
+- core 
+- por 
+- proof 
+- reputation
 description: Core protocol design - proof of reputation.
 ---
 

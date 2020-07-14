@@ -1,7 +1,12 @@
 ---
 id: core-ds-mimo
 title: DS MIMO
-keywords: core, directory, service, committee, membership
+keywords: 
+- core 
+- directory
+- service 
+- committee 
+- membership
 description: Core protocol design - DS MIMO.
 ---
 

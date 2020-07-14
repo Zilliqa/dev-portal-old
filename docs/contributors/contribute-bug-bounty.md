@@ -1,7 +1,10 @@
 ---
 id: contribute-bug-bounty
 title: Bug Bounty Program
-keywords: contribution, bug bounty, security
+keywords: 
+- contribution
+- bug bounty
+- security
 description: Contribution guide for bug bounty program.
 ---
 
