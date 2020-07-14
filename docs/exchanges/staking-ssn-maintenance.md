@@ -6,8 +6,12 @@ title: SSN Maintenance
 ---
 
 ## Seed node status page
-We provide a web application, Zilliqa Staking Viewer, to track all available seed node operators. You can access it at
-https://stg-staking-viewer.zilliqa.com/
+We provide a web application, Zilliqa Staking Viewer, to track all available seed node operators. You can access it at:
+
+| Network | Link |
+| ------- | ---- |
+| Testnet | [https://stg-staking-viewer.zilliqa.com/](https://stg-staking-viewer.zilliqa.com/) |
+| Mainnet | [https://staking-viewer.zilliqa.com/](https://staking-viewer.zilliqa.com/) |
 
 ## How to resync node
 The node might go out of sync if it fails to receive new blocks from the network. In this case, the node would ideally automatically sync without any manual intervention.
