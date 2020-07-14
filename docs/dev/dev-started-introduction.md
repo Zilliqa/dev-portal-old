@@ -50,7 +50,7 @@ const bech32_address = toBech32Address(address);
 
 We __strongly recommend__ that developers use `bech32` formatted addresses for token transfers. This prevents users from mistaking Zilliqa addresses from Ethereum addresses. All wallets and exchanges that deal with token transfers currently use the `bech32` standard for security purposes.
 
-`ByStr20` checksummed addresses are supported by [RPC](https://api-docs.zilliqa.com), SDKs and `scilla` contracts.
+`ByStr20` checksummed addresses are supported by [RPC](https://apidocs.zilliqa.com), SDKs and `scilla` contracts.
 
 How do you know if an address is a smart contract or an account? One way to go about it is to send a [`GetSmartContractInit`](https://apidocs.zilliqa.com/#getsmartcontractcode) POST request to check.
 
