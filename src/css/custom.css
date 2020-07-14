@@ -30,18 +30,17 @@
 
 .cover-image {
   margin-left: auto;
-  width: 50vw;
 }
 
 .cover-title {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 #cover-cards {
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   display: flex;
   justify-content: center;
-  width:90%;
+  /* width:90%; */
   height: auto;
 }
 
@@ -50,7 +49,7 @@
   margin: 0 1rem;
   padding: 0.7rem;
   border-radius: 6px;
-  border: none;
+  border: 2px solid #eeeeee;
   background-color: #ffffff;
   color: #1e1e1e;
   text-align: center;
@@ -62,11 +61,11 @@
 }
 
 .cards-image {
-  width: 5vw;
+  width: 4vw;
 }
 
 .cards-text {
-  text-align: left;
+  text-align: center;
 }
 
 .cards-text p {
