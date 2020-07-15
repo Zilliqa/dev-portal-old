@@ -7,12 +7,6 @@ module.exports = {
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
   themeConfig: {
-    algolia: {
-      apiKey: 'api-key',
-      indexName: 'index-name',
-      appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
-      algoliaOptions: {}, // Optional, if provided by Algolia
-    },
     navbar: {
       title: 'Zilliqa Developer Portal',
       logo: {
@@ -55,19 +49,6 @@ module.exports = {
     footer: {
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Blog',
-              href: 'https://blog.zilliqa.com/',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/zilliqa',
-            },
-          ],
-        },
-        {
           title: 'Community',
           items: [
             {
@@ -82,7 +63,7 @@ module.exports = {
           ],
         },
         {
-          title: 'More',
+          title: 'Social',
           items: [
             {
               label: 'Twitter',
@@ -91,6 +72,19 @@ module.exports = {
             {
               label: 'Youtube',
               href: 'https://www.youtube.com/channel/UCvinnFbf0u71cajoxKcfZIQ',
+            },
+          ],
+        },
+        {
+          title: 'Other Links',
+          items: [
+            {
+              label: 'Blog',
+              href: 'https://blog.zilliqa.com/',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/zilliqa',
             },
           ],
         },
@@ -108,7 +102,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/Zilliqa/dev-portal/tree/v1-portal',
+            'https://github.com/Zilliqa/dev-portal',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
