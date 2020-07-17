@@ -54,6 +54,14 @@ svg:not(:root) {
   margin-left: 2rem;
 }
 
+.cover-title .hero__title {
+  font-size: 2.6em;
+}
+
+.cover-title .hero__subtitle {
+  font-size: 1.3em;
+}
+
 #cover-cards {
   margin: 2rem 1rem;
   display: flex;
