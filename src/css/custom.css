@@ -6,6 +6,10 @@
  */
 
 /* You can override the default Infima variables here. */
+svg:not(:root) {
+  overflow: visible;
+}
+
 :root {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: rgb(33, 175, 144);
@@ -19,6 +23,20 @@
   --md-bg-color: #f5f7f9;
   --md-font-color: #333333;
   --md-info: #1e88e5;
+  --cards-bg-color: #ffffff;
+  --cards-border-hover-color: #7000ff;
+  --cards-header-color: #1e1e1e;
+  --cards-icon-color: #18191a;
+  --cards-text-font-color: #444444;
+}
+
+/* for main page cards section */
+[data-theme="dark"] {
+  --cards-bg-color: #18191a;
+  --cards-border-hover-color: #25c2a0;
+  --cards-header-color: #ffffff;
+  --cards-icon-color: #b6b6b6;
+  --cards-text-font-color: #ffffff;
 }
 
 .cover-container {
@@ -50,9 +68,18 @@
   padding: 0.7rem;
   border-radius: 6px;
   border: 2px solid #eeeeee;
-  background-color: #ffffff;
+  background-color: var(--cards-bg-color);
   color: #1e1e1e;
   text-align: center;
+  transition: 0.3s;
+}
+
+#cover-cards .column:hover {
+  border: 2px solid var(--cards-border-hover-color);
+}
+
+#cover-cards .column:hover .cards-image {
+  fill: var(--cards-border-hover-color);
 }
 
 #cover-cards .column a {
@@ -61,15 +88,23 @@
 }
 
 .cards-image {
-  width: 4vw;
+  margin: 1rem 0;
+  width: 50px;
+  fill: var(--cards-icon-color);
+  overflow: visible; /* svg clipping */
 }
 
 .cards-text {
   text-align: center;
 }
 
+.cards-text > h2 {
+  font-size: 1.2em;
+  color: var(--cards-header-color);
+}
+
 .cards-text p {
-  color: #444444;
+  color: var(--cards-text-font-color);
 }
 
 .docusaurus-highlight-code-line {
