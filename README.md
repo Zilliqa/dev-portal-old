@@ -1,35 +1,33 @@
-# Zilliqa Developer Portal
+# Website
 
-[![Discord chat](https://img.shields.io/discord/370992535725932544.svg)](https://discord.gg/XMRE9tt)
+This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
-<p align="center">
-    <img src="https://github.com/Zilliqa/Zilliqa/blob/master/img/zilliqa-logo-color.png" width="200" height="200">
-</p>
+### Installation
 
-This repository holds the source files for Zilliqa's developer portal website.
-All static files are generated using [Docusaurus](https://docusaurus.io).
-
-## Setting Up
-
-1. Install [Docusaurus](https://docusaurus.io/docs/en/installation#installing-docusaurus)
-
-```bash
-yarn global add docusaurus-init
+```
+$ yarn
 ```
 
-2. Change directory to the `/website`
-3. Install dependencies: `yarn install`
-4. Start live reloading. The page should be hosted on `localhost:3000`. Ensure that your page works before creating a PR.
+### Local Development
 
-## Publishing
-1. change directory to the `/website`
-2. Follow this guide [Getting started on publishing](https://github.com/facebook/docusaurus/blob/master/docs/getting-started-publishing.md)
+```
+$ yarn start
+```
 
-## Contributing
+This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
-PRs and feedback are welcome.
+### Build
 
-## Examples
+```
+$ yarn build
+```
 
-You can find sample applications under `/examples`. We will add more over
-time.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+```
+$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

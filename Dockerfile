@@ -1,10 +1,13 @@
-FROM node:8.11.4
+FROM node:12 as build-stage
 
-WORKDIR /app/website
-
-EXPOSE 3000 35729
-COPY ./docs /app/docs
-COPY ./website /app/website
+WORKDIR /app
+COPY ./package.json ./
 RUN yarn install
+COPY . ./
+RUN yarn build
 
-CMD ["yarn", "start"]
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/build /usr/share/nginx/html
+COPY --from=build-stage /app/static /usr/share/nginx/html/static
+EXPOSE 80
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
