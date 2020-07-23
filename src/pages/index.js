@@ -17,13 +17,13 @@ const CoverImgDiv = () => {
   if (isDarkTheme) {
     return (
       <div className="cover-image">
-        <img src="../../static/img/bg.png"/>
+        <img src={useBaseUrl('img/bg.png')}/>
       </div>
     );
   } else {
     return (
       <div className="cover-image">
-        <img src="../../static/img/bg_light.png"/>
+        <img src={useBaseUrl('img/bg_light.png')}/>
       </div>
     );
   }
