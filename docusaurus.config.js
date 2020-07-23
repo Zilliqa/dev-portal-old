@@ -53,7 +53,7 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.com/invite/BnVzu5W',
+              href: 'https://discord.com/invite/XMRE9tt',
             },
             {
               label: 'Telegram',
