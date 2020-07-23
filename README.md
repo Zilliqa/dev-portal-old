@@ -1,6 +1,8 @@
-# Website
+# Zilliqa Developer Portal
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+[![Discord chat](https://img.shields.io/discord/370992535725932544.svg)](https://discord.gg/XMRE9tt)
+
+This repository holds the source files for Zilliqa's developer portal website.
 
 ### Installation
 
