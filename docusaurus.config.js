@@ -7,6 +7,10 @@ module.exports = {
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: 'Zilliqa Developer Portal',
       logo: {

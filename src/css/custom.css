@@ -71,7 +71,7 @@ svg:not(:root) {
 }
 
 #cover-cards .column {
-  flex-basis: 100%;
+  flex: 0 1 33.3333%;
   margin: 0 1rem;
   padding: 0.7rem;
   border-radius: 6px;
@@ -80,6 +80,24 @@ svg:not(:root) {
   color: #1e1e1e;
   text-align: center;
   transition: 0.3s;
+}
+
+/* adjust to 2-column cards */
+@media screen and (max-width: 740px) {
+  #cover-cards {
+    flex-wrap: wrap;
+  }
+
+  #cover-cards .column {
+    margin-bottom: 10px;
+  }
+}
+
+/* adjust to 1-column cards size */
+@media screen and (max-width: 472px) {
+  #cover-cards .column {
+    flex: 0 1 100%;
+  }
 }
 
 #cover-cards .column:hover {
