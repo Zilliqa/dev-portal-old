@@ -47,20 +47,15 @@ To request for testnet $ZIL from the faucet,
 
 To deploy the `Hello World` contract on the Zilliqa testnet, we will use the Scilla web IDE, [Neo-Savant IDE](https://ide.zilliqa.com/).
 
-1. Generate keystore file from your ZilPay wallet, go to Settings->Security->Download Key Store and enter the ZilPay password 
-which will also be the passphrase of your keystore file.
-
-![Download ZilPay Keystore](../../img/dev/getting-started/zilpay-download-keystore.png)
-
-2. Change the `network` to testnet and import your wallet by loading the keystore file and entering the corresponding passphrase.
+1. Change the `network` to testnet and import your wallet by connecting with Zilpay.
 
 ![IDE Step1](../../img/dev/getting-started/neo-savant-step1.png)
 
-3. Select the `Hello World` contract under the files tab and click on `Check` button to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
+2. Select the `Hello World` contract under the files tab and click on `Check` button to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
 
 ![IDE Step2](../../img/dev/getting-started/neo-savant-step2.png)
 
-4. Once the typechecker result is passed, click on `Deploy` button to deploy the contract to testnet. Use your wallet address (Base16 format) for the "owner" initialisation parameter.
+3. Once the typechecker result is passed, click on `Deploy` button to deploy the contract to testnet. Use your wallet address (Base16 format) for the "owner" initialisation parameter.
 
 ![IDE Step3](../../img/dev/getting-started/neo-savant-step3.png)
 
