@@ -95,6 +95,10 @@ module.exports = {
       ],
       copyright: `Copyright © 2019 Zilliqa Research Pte. Ltd.`,
     },
+    algolia: {
+      apiKey: 'f1777493b2d9d1824a5daf3be87092db',
+      indexName: 'zilliqa_developer',
+    },
   },
   presets: [
     [
