@@ -35,6 +35,4 @@ deploy:
   skip_cleanup: true
   script:
     - ./scripts/ci_build.sh
-  on:
-    branch: master
 
