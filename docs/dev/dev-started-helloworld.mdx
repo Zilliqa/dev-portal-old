@@ -11,6 +11,7 @@ keywords:
 description: Zilliqa Hello World Example
 ---
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we will deploy and interact with a `Hello World` smart contract onto the Zilliqa testnet using [Neo-Savant web IDE](https://ide.zilliqa.com/#/) and [ZilPay wallet](https://zilpay.xyz/).
 
@@ -28,7 +29,7 @@ Please store your 12 words recovery phrase securely
 :::
 3. Click on the `network change` button (shown below) and select the `network` as testnet.
 
-![Change Network Button](../../img/dev/getting-started/zilpay-change-network-btn.png)
+<img alt="Change Network Button" src={useBaseUrl('img/dev/getting-started/zilpay-change-network-btn.png')} />
 
 Voila! You have now successfully set up a testnet ZilPay wallet.
 
@@ -40,7 +41,7 @@ To request for testnet $ZIL from the faucet,
 1. Visit [Nucleus wallet testnet faucet](https://dev-wallet.zilliqa.com/faucet)
 2. Enter and submit your ZilPay address to the faucet, you will receive 300 testnet $ZIL shortly. This will take about 30s to 1 min, as the transactions will need to be confirmed on the blockchain.
 
-![Nucleus Wallet Faucet](../../img/dev/getting-started/nucleus-faucet.png)
+<img alt="Nucleus Wallet Faucet" src={useBaseUrl('img/dev/getting-started/nucleus-faucet.png')} />
 
 
 ## Deploying Contract on Testnet
@@ -49,15 +50,15 @@ To deploy the `Hello World` contract on the Zilliqa testnet, we will use the Sci
 
 1. Change the `network` to testnet and import your wallet by connecting with Zilpay.
 
-![IDE Step1](../../img/dev/getting-started/neo-savant-step1.png)
+<img alt="IDE Step1" src={useBaseUrl('img/dev/getting-started/neo-savant-step1.png')} />
 
 2. Select the `Hello World` contract under the files tab and click on `Check` button to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
 
-![IDE Step2](../../img/dev/getting-started/neo-savant-step2.png)
+<img alt="IDE Step2" src={useBaseUrl('img/dev/getting-started/neo-savant-step2.png')} />
 
 3. Once the typechecker result is passed, click on `Deploy` button to deploy the contract to testnet. Use your wallet address (Base16 format) for the "owner" initialisation parameter.
 
-![IDE Step3](../../img/dev/getting-started/neo-savant-step3.png)
+<img alt="IDE Step3" src={useBaseUrl('img/dev/getting-started/neo-savant-step3.png')} />
 
 Yay! Your contract is now deployed on the testnet and can be accessed under the "Contracts" tab on the left side of the IDE.
 
