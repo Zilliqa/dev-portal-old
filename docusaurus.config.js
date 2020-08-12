@@ -12,10 +12,10 @@ module.exports = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: '',
+      title: 'Zilliqa Developer Portal',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/test.png',
+        src: 'img/logo.png',
       },
       links: [
         {
