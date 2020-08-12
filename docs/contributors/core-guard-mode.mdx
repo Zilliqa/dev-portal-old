@@ -7,8 +7,9 @@ keywords:
 - mode
 description: Core protocol design - guard mode.
 ---
-
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Guard mode is a special operating mode in Zilliqa that can be used to maintain stability of the Mainnet until the protocol has been made perfectly robust. Guard mode ensures the following:
 
 - A maximum of `n` nodes (e.g., 2/3) in the DS committee are nodes operated by Zilliqa Research
@@ -192,4 +193,4 @@ The steps are:
 1. Otherwise, lookup sends the information to the requesting shard nodes
 1. The requesting shard nodes verify the message and update their view of the DS committee
 
-![image01](../../img/contributors/core/guard-mode/image01.png)
+<img alt="Guard Mode Image 1" src={useBaseUrl('img/contributors/core/guard-mode/image01.png')} />

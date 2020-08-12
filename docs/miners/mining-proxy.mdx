@@ -7,8 +7,9 @@ keywords:
 - zilliqa	
 description: Proxy Mining
 ---
-
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## What is Proxy Mining?
 
 In contrast to Ethereum or Bitcoin, Zilliqa doesn’t employ PoW for its consensus protocol (such as is done in Nakamoto consensus). Instead, it leverages a pBFT-like variant as its consensus protocol and PoW as the identity creation to prevent Sybil attacks.
@@ -21,7 +22,7 @@ With the help from existing GPU miners, Zilliqa node operators can obtain thousa
 
 As the bridge, the mining proxy relays JSON-RPC messages from both sides, i.e., CPU cluster requests for mining responses provided by the GPU cluster. This request-response process is defined by the [Stratum mining protocol](https://en.bitcoin.it/wiki/Stratum_mining_protocol).
 
-![image01](../../img/miners/proxy-mining.png)
+<img alt="Proxy Mining" src={useBaseUrl('img/miners/proxy-mining.png')} />
 
 ## Proxy Mining Setup
 

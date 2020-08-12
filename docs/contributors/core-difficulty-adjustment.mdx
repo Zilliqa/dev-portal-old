@@ -9,6 +9,8 @@ description: Core protocol design - difficulty adjustment.
 ---
 
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Zilliqa has a dynamic difficulty level adjustment mechanism. The goal of this mechanism is to adjust the difficulty level according to the number of PoW submissions received.
 
 When the network receives a low number of PoW submissions, the mechanism will reduce the difficulty so that more nodes can join and maintain the network. On the other hand, when the network receives a high number of PoW submissions, the mechanism will increase the difficulty level, making it harder for Sybil attacks to be executed.
@@ -56,8 +58,10 @@ This process is implemented in the function `DifficultyLevelInIntDevided()`.
 
 The graphs below illustrate the benchmarks of the hash power required if `POW_BOUNDARY_N_DIVIDED_START` is 32 and `POW_BOUNDARY_N_DIVIDED_START` is 1, 2, 4, 6, and 8.
 
-![image01](../../img/contributors/core/difficulty-adjustment/image01.png)
-![image02](../../img/contributors/core/difficulty-adjustment/image02.png)
+<img alt="Difficulty Adjustment Image 1" src={useBaseUrl('img/contributors/core/difficulty-adjustment/image01.png')} />
+
+<img alt="Difficulty Adjustment Image 2" src={useBaseUrl('img/contributors/core/difficulty-adjustment/image02.png')} />
+
 
 ## References
 
