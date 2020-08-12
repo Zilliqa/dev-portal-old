@@ -46,7 +46,7 @@ svg:not(:root) {
   --cards-text-font-color: #ffffff;
   --cover-bg-color: #000414;
   --ifm-navbar-background-color: #000414;
-  --ifm-background-color: #000414;
+  --ifm-background-color: #00051a !important;
 }
 
 .cover-container {
