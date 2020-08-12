@@ -20,7 +20,8 @@ svg:not(:root) {
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  --ifm-navbar-background-color: rgba(255,255,255,0.1);
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
   --ifm-font-family: AvenirNextLTPro-Regular;
   --md-bg-color: #f5f7f9;
   --md-font-color: #333333;
@@ -38,12 +39,14 @@ svg:not(:root) {
 /* for main page cards section */
 [data-theme="dark"] {
   --cards-bg-color: #18191a;
-  --cards-border-color: #002171;
+  --cards-border-color: #cccccc;
   --cards-border-hover-color: #25c2a0;
   --cards-header-color: #ffffff;
-  --cards-icon-color: #0d47a1;
+  --cards-icon-color: #cccccc;
   --cards-text-font-color: #ffffff;
   --cover-bg-color: #000414;
+  --ifm-navbar-background-color: #000414;
+  --ifm-background-color: #000414;
 }
 
 .cover-container {
