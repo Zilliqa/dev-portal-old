@@ -15,7 +15,7 @@ module.exports = {
       title: 'Zilliqa Developer Portal',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/zilliqa-logo_1zilliqa-logo.png',
+        src: 'img/logo.png',
       },
       links: [
         {
