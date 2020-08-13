@@ -57,7 +57,7 @@ svg:not(:root) {
   min-height: 550px;
   height: 100vh;
   background-color: var(--cover-bg-color);
-  background-image: url("/static/img/chain_bg.png");
+  background-image: url("/img/chain_bg.png");
   background-repeat: no-repeat;
   background-size: 60%;
   background-position:90% 50%;
@@ -69,14 +69,14 @@ svg:not(:root) {
 
 .cover-image-hand {
   margin-top: -100px;
-  width: 1100px;
+  width: 1000px;
 }
 
 .cover-image-bg {
   z-index: 9999;
   position: absolute;
   display: inline-flex;
-  width: 900px;
+  width: 800px;
 }
 
 .cover-title {
