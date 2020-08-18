@@ -1,8 +1,10 @@
-FROM node:12 as build-stage
+FROM node:10.16 as build-stage
 
 WORKDIR /app
 COPY ./package.json ./
+COPY ./yarn.lock ./
 RUN yarn install
+COPY ./docusaurus.config.js ./
 COPY . ./
 RUN yarn build
 
