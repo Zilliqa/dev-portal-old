@@ -1,0 +1,185 @@
+---
+id: api-transaction-get-pending-tx
+title: GetPendingTxn
+---
+
+---
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'node.js', value: 'node.js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetPendingTxn",
+    "params": ["b9e545ab3ed0b61a4d326425569605255e0990da7dda18b4658fdb17b390844e"]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="node.js">
+
+```js
+const pendingTransaction = await zilliqa.blockchain.getPendingTxn(txId);
+console.log(pendingTransaction.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com");
+        Rep<PendingStatus> pengdingStatus = client.getPendingTxn("b9e545ab3ed0b61a4d326425569605255e0990da7dda18b4658fdb17b390844e");
+        System.out.println(new Gson().toJson(pengdingStatus));
+    }
+}
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetPendingTxn() {
+  provider := NewProvider("https://api.zilliqa.com/")
+  response := provider.GetPendingTxn("2cf109b25f2132c08a4248e2be8add6b95b92aef5b2c77e737faefbc9353ee7c")
+  result, _ := json.Marshal(response)
+  fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+### Example Response
+
+
+#### Since Zilliqa V6.3.0
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "code": 24,
+    "confirmed": false,
+    "pending": false
+  }
+}
+```
+
+#### Zilliqa V6.2.0 and before
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "code": 0,
+    "confirmed": false,
+    "info": "Txn not pending"
+  }
+}
+```
+
+Returns the status (code) of a specified unconfirmed Transaction.
+
+### API Availability
+
+Please note that the status of newly created transactions (using `CreateTransaction`) may not immediately be available for checking using this API.
+
+A created transaction will be included in this API if:
+
+1. It has already been dispatched to the network (this may require one transaction epoch)
+2. The network has acknowledged receiving this transaction (this occurs at the end of every transaction epoch)
+
+Hence, we recommend calling `GetPendingTxn` around 1-2 transaction epochs after transaction creation to get accurate results.
+
+### Status Codes
+
+From Zilliqa `V6.3.0` onwards
+
+#### Confirmed Transactions
+
+| `code` | Transaction Status          |
+| ------ | --------------------------- |
+| 0      | Transaction is not pending  |
+
+#### Pending Transactions
+
+| `code` | Transaction Status             |
+| ------ | ------------------------------ |
+| 1      | Nonce is higher than expected  |
+| 2      | Microblock gas limit exceeded  |
+| 3      | Consensus failure in network   |
+
+#### Unknown Transactions
+
+| `code` | Transaction Status     |
+| ------ | ---------------------- |
+| 4      | Transaction not found  |
+
+#### Dropped / Rejected Transactions
+
+| `code` | Transaction Status                          |
+| ------ | ------------------------------------------- |
+| 10     | Transaction caused math error               |
+| 11     | Scilla invocation error                     |
+| 12     | Contract account initialization error       |
+| 13     | Invalid source account                      |
+| 14     | Gas limit higher than shard gas limit       |
+| 15     | Unknown transaction type                    |
+| 16     | Transaction sent to wrong shard             |
+| 17     | Contract & source account cross-shard issue |
+| 18     | Code size exceeded limit                    |
+| 19     | Transaction verification failed             |
+| 20     | Gas limit too low                           |
+| 21     | Insufficient balance                        |
+| 22     | Insufficient gas to invoke Scilla checker   |
+| 23     | Duplicate transaction exists                |
+| 24     | Transaction with higher gas price exists    |
+| 25     | Invalid destination address                 |
+| 26     | Failed to add contract account to state     |
+
+_Note: Dropped transactions are available for querying for up to 5 transaction epochs only._
+
+Zilliqa `V6.2.0`
+
+| `confirmed` | `code` | `info`                                           |
+| ----------- | ------ | ------------------------------------------------ |
+| false       | 0      | Txn not pending                                  |
+| false       | 1      | Nonce too high                                   |
+| false       | 2      | Could not fit in as microblock gas limit reached |
+| false       | 3      | Transaction valid but consensus not reached      |
+
+### HTTP Request
+
+| Chain(s)              | URL(s)                       |
+| --------------------- | ---------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
+| **Developer testnet** | https://dev-api.zilliqa.com/ |
+| **Local testnet**     | http://localhost:4201/       |
+| **Isolated server**   | http://localhost:5555/       |
+
+### Arguments
+
+| Parameter | Type   | Required | Description                                              |
+| --------- | ------ | -------- | -------------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                                    |
+| `jsonrpc` | string | Required | `"2.0"`                                                  |
+| `method`  | string | Required | `"GetPendingTxn"`                                        |
+| `params`  | string | Required | Transaction hash of 32 bytes of a specified transaction. |

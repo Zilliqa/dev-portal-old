@@ -31,6 +31,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/apis/api-introduction',
+          activeBasePath: 'docs/apis',
+          label: 'APIs',
+          position: 'right',
+        },
+        {
           to: 'docs/miners/mining-getting-started',
           activeBasePath: 'docs/miners',
           label: 'Miners',

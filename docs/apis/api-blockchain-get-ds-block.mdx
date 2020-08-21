@@ -1,0 +1,118 @@
+---
+id: api-blockchain-get-ds-block
+title: GetDsBlock
+---
+
+---
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'node.js', value: 'node.js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetDsBlock",
+    "params": ["1"]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="node.js">
+
+```js
+const dsBlock = await zilliqa.blockchain.getDSBlock("1");
+console.log(dsBlock.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com/");
+        Rep<DsBlock> dsBlock = client.getDsBlock("1");
+        System.out.println(new Gson().toJson(dsBlock));
+    }
+}
+```
+</TabItem>
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetDsBlock("1"))
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetDsBlock() {
+  provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetDsBlock("40")
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+
+### Example Response
+
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "header": {
+      "BlockNum": "1",
+      "Difficulty": 3,
+      "DifficultyDS": 5,
+      "GasPrice": "100",
+      "LeaderPubKey": "0x020035B739426374C5327A1224B986005297102E01C29656B8B086BF4B352C6CA9",
+      "PoWWinners": [],
+      "PrevHash": "0800bfda2b715fe7e401f7cf73182f072f8459318cb4bb90d195f681c5bbebdd",
+      "Timestamp": "1548928944839738"
+    },
+    "signature": "1515B838C310485ADE001822470E9CF9D0068E8528516AB71D8A964B642AF59A874A5345CC8239254B951EE53CB509A9A3D5F5FF63380D5F70D9A32A060DB0CD"
+  }
+}
+```
+
+Returns the details of a specified Directory Service block.
+
+### HTTP Request
+
+| Chain(s)              | URL(s)                       |
+| --------------------- | ---------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
+| **Developer testnet** | https://dev-api.zilliqa.com/ |
+| **Local testnet**     | http://localhost:4201/       |
+| **Isolated server**   | http://localhost:5555/       |
+
+### Arguments
+
+| Parameter | Type   | Required | Description                                         |
+| --------- | ------ | -------- | --------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                               |
+| `jsonrpc` | string | Required | `"2.0"`                                             |
+| `method`  | string | Required | `"GetDsBlock"`                                      |
+| `params`  | string | Required | Specifed DS block number to return. Example: `"40"` |

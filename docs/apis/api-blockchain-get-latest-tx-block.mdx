@@ -1,0 +1,149 @@
+---
+id: api-blockchain-get-latest-tx-block
+title: GetLatestTxBlock
+---
+
+---
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'node.js', value: 'node.js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetLatestTxBlock",
+    "params": [""]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="node.js">
+
+```js
+const txBlock = await zilliqa.blockchain.getLatestTxBlock();
+console.log(txBlock.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com/");
+        Rep<TxBlock> txBlock = client.getLatestTxBlock();
+        System.out.println(new Gson().toJson(txBlock));
+    }
+}
+```
+</TabItem>
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetLatestTxBlock())
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetLatestTxBlock() {
+	provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetLatestTxBlock()
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+
+### Example Response
+
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "body": {
+      "BlockHash": "01a61cc22ab5ae1d77cd6da65385771dca408fbea90688c845bdd2ffe1797bb7",
+      "HeaderSign": "DEACD285A5D2AED23052B08BE9CEEE1C9C4C8CB69F3DF4106D87BA9B0AC067E16AA2C5D129F2318824723A2A75CA5F32632DCD4E5D8A634234E1037B6025779D",
+      "MicroBlockInfos": [
+        {
+          "MicroBlockHash": "8cf6285c259613a79c7b5dfcfbada4f9631fa15d626037f048d1d9a9649d562c",
+          "MicroBlockShardId": 0,
+          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "MicroBlockHash": "01d7da6e80b81711aaf7cdbc74bc50994f4ed99be085d451c93abe31882e8b44",
+          "MicroBlockShardId": 1,
+          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "MicroBlockHash": "1eaf0a468eff13a2d7ecd33b5177fb850bdfce23bca3a330ecef951bde44eb62",
+          "MicroBlockShardId": 2,
+          "MicroBlockTxnRootHash": "fa80cb720f7612229909295640266eb618cc2a73dd78da17b4d68d7ffc7cce82"
+        },
+        {
+          "MicroBlockHash": "bf86108de525ba4954e40631949ad71f7f7b0a620f350da2c736f92aa157d2ba",
+          "MicroBlockShardId": 3,
+          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "header": {
+      "BlockNum": "589789",
+      "DSBlockNum": "5898",
+      "GasLimit": "325000",
+      "GasUsed": "1",
+      "MbInfoHash": "ba2a326bcc595fae5ddcbdc5d53cca06ce7c8d1d046ffb635341e3aa9d5cbb7c",
+      "MinerPubKey": "0x0207FF35CFA9F3D8336430BBD09BBF9B36C283358E8CA91FAB551ACB5FE1E38B68",
+      "NumMicroBlocks": 4,
+      "NumTxns": 1,
+      "PrevBlockHash": "be825dd949caf36d6a20372fdc88b1912dc1515d1ecf8624e6cd928b33c9a705",
+      "Rewards": "1000000000",
+      "StateDeltaHash": "c2c43d6a277a92df12d7d5ab5c657d6a7d823000061da5802c6354b47e56ebd5",
+      "StateRootHash": "d00196c0a8f28d81e49253a1a561da79a526a47e12b4e208da20b96a6e3a1ac7",
+      "Timestamp": "1590645487342412",
+      "Version": 1
+    }
+  }
+}
+```
+
+Returns the details of the most recent Transaction block.
+
+### HTTP Request
+
+| Chain(s)              | URL(s)                       |
+| --------------------- | ---------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
+| **Developer testnet** | https://dev-api.zilliqa.com/ |
+| **Local testnet**     | http://localhost:4201/       |
+| **Isolated server**   | http://localhost:5555/       |
+
+### Arguments
+
+| Parameter | Type   | Required | Description          |
+| --------- | ------ | -------- | -------------------- |
+| `id`      | string | Required | `"1"`                |
+| `jsonrpc` | string | Required | `"2.0"`              |
+| `method`  | string | Required | `"GetLatestTxBlock"` |
+| `params`  | string | Required | Empty string `""`    |

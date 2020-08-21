@@ -1,0 +1,105 @@
+---
+id: api-blockchain-get-ds-block-rate
+title: GetDSBlockRate
+---
+
+---
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'node.js', value: 'node.js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetDSBlockRate",
+    "params": [""]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="node.js">
+
+```js
+const dsBlockRate = await zilliqa.blockchain.getDSBlockRate();
+console.log(dsBlockRate.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com/");
+        Rep<Double> dsBlockRate = client.getDSBlockRate();
+        System.out.println(new Gson().toJson(dsBlockRate));
+    }
+}
+```
+</TabItem>
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetDSBlockRate())
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetDSBlockRate() {
+	provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetDSBlockRate()
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+
+### Example Response
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": 0.00014142137245459714
+}
+```
+
+Returns the current Directory Service blockrate per second.
+
+### HTTP Request
+
+| Chain(s)              | URL(s)                       |
+| --------------------- | ---------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
+| **Developer testnet** | https://dev-api.zilliqa.com/ |
+| **Local testnet**     | http://localhost:4201/       |
+| **Isolated server**   | http://localhost:5555/       |
+
+### Arguments
+
+| Parameter | Type   | Required | Description        |
+| --------- | ------ | -------- | ------------------ |
+| `id`      | string | Required | `"1"`              |
+| `jsonrpc` | string | Required | `"2.0"`            |
+| `method`  | string | Required | `"GetDSBlockRate"` |
+| `params`  | string | Required | Empty string `""`  |
