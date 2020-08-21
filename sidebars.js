@@ -42,7 +42,7 @@ module.exports = {
     {"Data Layer": ["contributors/core-incremental-db"]},
     {"Directory Service": ["contributors/core-ds-mimo","contributors/core-ds-reputation"]},
     {"Lookup": ["contributors/core-websocket-server","contributors/core-transaction-dispatch","contributors/core-multipliers"]},
-    {"Mining": ["contributors/core-pow","contributors/core-difficulty-adjustment","contributors/core-por","contributors/core-coinbase"]},
+    {"Mining": ["contributors/core-pow","contributors/core-difficulty-adjustment","contributors/core-por","contributors/core-coinbase","contributors/core-global-gas-price"]},
     {"Mitigation Measures": ["contributors/core-guard-mode","contributors/core-rejoin-mechanism","contributors/core-view-change",
     "contributors/core-diagnostic-data","contributors/core-status-server"]}
   ]
