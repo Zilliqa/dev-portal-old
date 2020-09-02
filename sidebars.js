@@ -68,10 +68,25 @@ module.exports = {
   },
   ExchangesSidebar: {
     "Exchange Integration":["exchanges/exchange-getting-started","exchanges/exchange-account-management",
-    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts"],
+    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts"]
+  },
+  StakingSidebar: {
+    "Overview":["staking/staking-overview"],
 
-    "Staked Seed Nodes Integration":["exchanges/staking-introduction","exchanges/staking-getting-started","exchanges/staking-ssn-operations",
-    "exchanges/staking-ssn-maintenance", "exchanges/staking-faq"]
+    "Staked Seed Nodes Phase 0":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
+    "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
+
+    "Staked Seed Nodes Phase 1 (Coming soon)":[
+    {"Delegator":
+    ["staking/phase1/delegator/staking-delegator-overview", 
+    "staking/phase1/delegator/staking-delegator-operations"]},
+    {"SSN operator":[
+        "staking/phase1/ssn-operator/staking-ssn-setup",
+        "staking/phase1/ssn-operator/staking-ssn-enrollment",
+        "staking/phase1/ssn-operator/staking-ssn-maintenance",
+        "staking/phase1/ssn-operator/staking-ssn-upgrading",
+        "staking/phase1/ssn-operator/staking-commission-management"]},
+    ]
   },
   ContributorsSidebar: {
     "Contributors":["contributors/contribute-buildzil","contributors/contribute-guidelines","contributors/contribute-standards",

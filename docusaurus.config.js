@@ -14,7 +14,7 @@ module.exports = {
     navbar: {
       title: 'Zilliqa Developer Portal',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Zilliqa Logo',
         src: 'img/logo.png',
       },
       links: [
@@ -46,6 +46,12 @@ module.exports = {
           to: 'docs/exchanges/exchange-getting-started',
           activeBasePath: 'docs/exchanges',
           label: 'Exchanges',
+          position: 'right',
+        },
+        {
+          to: 'docs/staking/staking-overview',
+          activeBasePath: 'docs/staking',
+          label: 'Staking',
           position: 'right',
         },
         {
