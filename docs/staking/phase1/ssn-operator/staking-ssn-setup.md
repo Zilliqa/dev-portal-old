@@ -5,18 +5,13 @@ keywords:
 - staking
 - getting started
 - seed node
-- ip whitelisting
 - launching node
 - zilliqa
-description: Staking Getting Started
+description: Setting up the SSN
+---
 ---
 
----
-
-## IP Whitelisting and API Servicing
-
-It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0 in order to receive data broadcasts about the blockchain and its state. This requires a static public IP address with minimal the following inbound and outbound port open.
-
+## Default ports requirement of SSN
 
 | Type     | Default  | Purpose                                        |
 |----------|--------- | ---------------------------------------------- |
@@ -52,7 +47,7 @@ $ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 ```
 
-<!--Mainnet-->
+<!--Mainnet (Please wait for Zilliqa V6.4.0 release) -->
 ```bash
 # create a directory
 $ mkdir my_seed && cd my_seed
@@ -122,7 +117,7 @@ $ wget https://testnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 ```
 
-<!--Mainnet-->
+<!--Mainnet (Please wait for Zilliqa V6.4.0 release) -->
 ```bash
 # create a directory
 $ mkdir my_seed && cd my_seed
@@ -162,6 +157,15 @@ If your seed node is not behind a load balancer, you can set an `A record` in yo
 
 If your seed node is behind a load balancer, you can set a `CNAME record` in your domain registrar to point your domain/subdomain to the hostname of your load balancer.
 
+## Whitelisting and API Servicing
+
+It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 1 in order to receive data broadcasts about the blockchain and its state. 
+Currently, there is 2 form of whitelisting mechanism
+1. Whitelisting via a static IP
+2. whitelisting via pubic key of the SSN
+
+We will recommend SSN operator to use whitelisting by public key approach.
+
 ### Testing Your Staked Seed Node JSON-RPC Port
 
 To check whether your JSON-RPC is publicly available, you can use the following curl command.
@@ -186,3 +190,21 @@ You can use an online websocket test utility to test whether your websocket is p
 2. Under location, put your websocket url link (e.g., `wss://<yourdomain here or ip:port>`)
 3. Click on connect
 4. If **“CONNECTED”** is shown in the log, your websocket port is publicly accessible
+
+## Advanced setup
+
+Different node operators may wish to have different setup to secure their SSN. It is possible as long as 
+1. JSON RPC port (by default is 4201) and websocket port is accessible by anyone without any restriction 
+2. Staking API port (by default is 4501) is accessible by the verifier to check the SSN
+
+SSN operators are allowed to
+- Serve the api service over TLS
+- Change the default port numbers (Please inform us)
+- Point their domain or subdomain to the SSN
+- Add load balancer infront of their node
+- Add additional service such as Cloudflare proxy infront of their node
+- Run more than 1 SSN node behind a load balancer (will only be treated as 1 SSN)
+
+SSN operators are not allowed to
+- outsource api service to other node operators or Zilliqa seed nodes
+- restricting or censoring any api service to the public or any region
