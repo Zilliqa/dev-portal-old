@@ -80,14 +80,15 @@ module.exports = {
     "staking/phase1/staking-phase1-overview",
     {"Delegator":
     ["staking/phase1/delegator/staking-delegator-overview", 
-    "staking/phase1/delegator/staking-delegator-operations"]},
+    "staking/phase1/delegator/staking-delegator-operations",
+    "staking/phase1/delegator/staking-delegator-gzil"]},
     {"SSN operator":[
-        "staking/phase1/ssn-operator/staking-before-you-start",
+        "staking/phase1/ssn-operator/staking-ssn-before-you-start",
         "staking/phase1/ssn-operator/staking-ssn-setup",
         "staking/phase1/ssn-operator/staking-ssn-enrollment",
+        "staking/phase1/ssn-operator/staking-commission-management",
         "staking/phase1/ssn-operator/staking-ssn-maintenance",
-        "staking/phase1/ssn-operator/staking-ssn-upgrading",
-        "staking/phase1/ssn-operator/staking-commission-management"]},
+        "staking/phase1/ssn-operator/staking-ssn-upgrading",]},
     ]
   },
   ContributorsSidebar: {
