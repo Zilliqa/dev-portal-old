@@ -29,7 +29,7 @@ The SSN in phase 1 is only admissible via a whitelisting of public key of the SS
 
 The rationale behind whitelisting is to 
 - ensure no degradation of seed node network due to overloading of SSN
-- allows high quality SSN operators to avoid API disruption to dAPP within the 
+- select and onboard high quality SSN operators
 
 As such, we will be prioritising SSN operators based on the following factors. Do note these are not hard requirements and we will assess each operators hollistically. 
 - Ability to run and maintain high availability of seed node
