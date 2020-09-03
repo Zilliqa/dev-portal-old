@@ -3,25 +3,13 @@ id: staking-ssn-enrollment
 title: Enrollment of SSN into staking smart contract
 keywords: 
 - staking
-- getting started
 - staked seed node
-- whitelisting
-- launching node
+- enrollment
+- smart contract
 - zilliqa
 description: Enrollment of SSN into staking smart contract
 ---
 ---
-
-## Whitelisting and API Servicing
-
-It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 1 in order to receive data broadcasts about the blockchain and its state. 
-Currently, there is 2 form of whitelisting mechanism
-1. Whitelisting via a static IP
-2. whitelisting via pubic key of the SSN 
-
-We will recommend SSN operator to use whitelisting by public key approach. 
-
-## Smart contract enrollment
 
 We will need to following information to order to enroll your SSN into the smart contract. 
 
