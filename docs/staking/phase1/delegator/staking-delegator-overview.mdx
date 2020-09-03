@@ -1,0 +1,40 @@
+---
+id: staking-delegator-overview
+title: Overview
+keywords: 
+- staking
+- ssn
+- smart contract
+- zilliqa	
+- delegator
+- overview
+description: Overview
+---
+---
+
+# Overview of delegator 
+`Delegator` is a new role introduced in phase 1 of the Zilliqa seed node staking program. With the `Delegator` role, there is a better seperation of roles and privileges. 
+
+Below we summarized the changes to `SSN operator` and the role of `Delegator`.
+
+__`SSN operator` in phase 0__
+- Operates the SSN
+- Receives stake deposits from staker via out of band platform
+- Receives stake rewards from contracts on behalf of all stakers
+- Distributes stake rewards via out of band platform
+- Commission or fees charged may not be transparent
+
+__`SSN operator` in phase 1__
+- Operates the SSN
+- Set commission fees on-chain
+- Updates commission fees on-chain with restriction on the max commission rate change per reward cycle
+- Receives commission on-chian
+- No longer able to stake deposit
+
+__`Delegator` in phase 1__
+- Deposits stake directly into the staking smart contract
+- Able to delegate to a SSN operator
+- Can delegate to more than 1 SSN operator
+- Able to redelegate to another SSN operator
+- Withdraws rewards ($ZIL and gZIL) on-chain
+- Withdraws stake deposit on-chain
