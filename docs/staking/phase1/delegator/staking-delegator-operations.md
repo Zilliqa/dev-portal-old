@@ -13,11 +13,11 @@ description: Delegator operations
 ---
 
 The operations available to delegator on the smart contract are as follows
-1.  Delegate stake 
-2.  Withdraw Stake rewards
-3.  Withdraw stake amount
-4.  Complete withdrawal
-5.  Stake amount redelegation
+1. Delegate stake
+2. Withdraw stake rewards
+3. Withdraw stake amount
+4. Complete withdrawal
+5. Stake amount redelegation
 
 ## Delegate Stake
 __Description__  
