@@ -1,5 +1,5 @@
 ---
-id: staking-before-you-start
+id: staking-ssn-before-you-start
 title: Before you start
 keywords: 
 - staking
