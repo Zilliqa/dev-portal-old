@@ -71,7 +71,7 @@ module.exports = {
     "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts"]
   },
   StakingSidebar: {
-    "Overview":["staking/staking-overview", "staking/disclaimer"],
+    "Overview":["staking/staking-overview", "staking/staking-disclaimer"],
 
     "Staked Seed Nodes Phase 0":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
     "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
