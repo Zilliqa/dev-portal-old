@@ -1,12 +1,11 @@
 ---
 id: staking-ssn-maintenance
-title: SSN Maintenance
+title: SSN Maintenance (WIP)
 keywords: 
 - staking
 - ssn
 - maintenance
 - resync node
-- upgrading node
 - zilliqa	
 description: SSN Maintenance
 ---
@@ -30,12 +29,3 @@ However, if the node is unable to resync on its own, it will need to be launched
 Make sure to back up your keys.
 :::
 
-### Upgrading the Seed Node
-
-#### Docker
-
-Please refer to the section  [Preparing the node for docker build](staking-getting-started#launching-the-node-using-docker).
-
-#### Native Build
-
-Please refer to the section  [Preparing the node for native build](staking-getting-started#launching-the-node-using-docker).
