@@ -1,16 +1,14 @@
 ---
 id: staking-ssn-upgrading
-title: SSN Maintenance
+title: SSN Upgrading
 keywords: 
 - staking
 - ssn
-- maintenance
 - resync node
 - upgrading node
 - zilliqa	
-description: Staking SSN Maintenance
+description: SSN Upgrading
 ---
-
 ---
 
 ## Seed Node Status Page

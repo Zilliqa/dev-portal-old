@@ -8,7 +8,7 @@ keywords:
 - resync node
 - upgrading node
 - zilliqa	
-description: Staking SSN Maintenance
+description: SSN Maintenance
 ---
 
 ---

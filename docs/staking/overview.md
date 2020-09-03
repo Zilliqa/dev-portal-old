@@ -1,12 +1,13 @@
 ---
 id: staking-overview
-title: Staking Overview
+title: Zilliqa Seed Nodse Staking Overview
 keywords: 
 - staking
 - overview
 - ssn
 - seed node
-- signing up
 - zilliqa	
-description: Staking Overview
+description: Zilliqa Seed Nodse Staking Overview
 ---
+
+

@@ -20,16 +20,16 @@ In phase 0, we introduce Zilliqa seed node staking program. The staking mechanis
 
 The SSN operator take on the role of a staker and a node operator. As such, if the operator wishes to collect stake deposit from any staker, the operator need to provide an out of band platform, such as an staking pool platform to collect deposit and distribute rewards. This form of staking may not be ideal for some, as they will need to trust an intermediary for holding the stake deposit and fair distribution of rewards.  
 
-Phbase 1 address this issue by introducing a new role called `delegator`. `Delegator` are allowed to deposit stake deposit directly into staking contract and receive rewards directly. This removed the trust for a trusted intermediary. `SSN operator` role has also been re-adjusted. `SSN operator` no longer need to handle stake deposit and rewards. Instead, the `SSN operator` can now focus on running the SSN, managing and receiving the commission fees from the `delegator`. 
+Phbase 1 addressed this issues by introducing a new role called `delegator`. `Delegator` are allowed to deposit stake deposit directly into staking contract and receive rewards directly. This removed the need to trust an intermediary. `SSN operator` role has also been re-adjusted. `SSN operator` no longer need to handle stake deposit and rewards. Instead, the `SSN operator` can focus on operating the SSN, managing and receiving the commission fees. 
 
 The following phase 1 staking documentation is split into two category, `delegator` and `SSN operator`. 
 
-The `delegator` section targets the following audiences
+The [`delegator` section](delegator/staking-delegator-overview) targets the following audiences
 - Staking wallet builders
 - Staking dashboard builders
 - `delegator` who want to build their own scripts
 
-The `SSN operator` section targets the operator whom wish to run a SSN. They can be either custodial or non-custodial.
+The [`SSN operator` section]() targets the operator whom wish to run a SSN. They can be either custodial or non-custodial.
 - Explorer and wallet providers who wish to run a SSN
 - Staking as a service provider
 - API as a service provider

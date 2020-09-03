@@ -77,10 +77,12 @@ module.exports = {
     "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
 
     "Staked Seed Nodes Phase 1 (Coming soon)":[
+    "staking/phase1/staking-phase1-overview",
     {"Delegator":
     ["staking/phase1/delegator/staking-delegator-overview", 
     "staking/phase1/delegator/staking-delegator-operations"]},
     {"SSN operator":[
+        "staking/phase1/ssn-operator/staking-before-you-start",
         "staking/phase1/ssn-operator/staking-ssn-setup",
         "staking/phase1/ssn-operator/staking-ssn-enrollment",
         "staking/phase1/ssn-operator/staking-ssn-maintenance",

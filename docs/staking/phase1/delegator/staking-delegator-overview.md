@@ -1,6 +1,6 @@
 ---
 id: staking-delegator-overview
-title: Delegator overview
+title: Overview
 keywords: 
 - staking
 - ssn
@@ -8,7 +8,7 @@ keywords:
 - zilliqa	
 - delegator
 - overview
-description: Delegator overview
+description: Overview
 ---
 ---
 

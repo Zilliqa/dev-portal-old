@@ -21,4 +21,6 @@ We will need to following information to order to enroll your SSN into the smart
 | API URL               | String    | Contract admin        |
 | Commission rate       | Uint128   | SSN operator          |
 
+For both `URL (RAW)` and `API URL`, please provide the port number. 
+
 For the initial commission rate, to ensure a fair competition among all existing SSN operators, the initial rate we allowed the SSN to set will be the current commission rate range of all active SSN. For example, if we have 2 active SSN in the network with 5% and 10% respectively. Then, the new SSN operator will only be allowed to set it betwen 5-10%. The SSN operator, however, can subsequencetly re-adjust the commission rate via [`UpdateComm` transition](staking-commission-management#update-commission-rate).
