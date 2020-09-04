@@ -1,0 +1,105 @@
+---
+id: api-transaction-get-num-txns-txepoch
+title: GetNumTxnsTxEpoch
+---
+
+---
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'node.js', value: 'node.js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetNumTxnsTxEpoch",
+    "params": [""]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="node.js">
+
+```js
+const numTxnsTxEpoch = await zilliqa.blockchain.getNumTxnsTxEpoch();
+console.log(numTxnsTxEpoch.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com");
+        Rep<String> numTxnsTxEpoch = client.getNumTxnsTxEpoch();
+        System.out.println(new Gson().toJson(numTxnsTxEpoch));
+    }
+}
+```
+</TabItem>
+
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetNumTxnsTxEpoch())
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetNumTxnsTxEpoch() {
+	provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetNumTxnsTxEpoch()
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+### Example Response
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": "38"
+}
+```
+
+Returns the number of validated transactions included in this Transaction epoch. <br/> This is represented as `String`.
+
+### HTTP Request
+
+| Chain(s)              | URL(s)                       |
+| --------------------- | ---------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
+| **Developer testnet** | https://dev-api.zilliqa.com/ |
+| **Local testnet**     | http://localhost:4201/       |
+| **Isolated server**   | http://localhost:5555/       |
+
+### Arguments
+
+| Parameter | Type   | Required | Description           |
+| --------- | ------ | -------- | --------------------- |
+| `id`      | string | Required | `"1"`                 |
+| `jsonrpc` | string | Required | `"2.0"`               |
+| `method`  | string | Required | `"GetNumTxnsTxEpoch"` |
+| `params`  | string | Required | Empty string `""`     |

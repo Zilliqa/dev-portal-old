@@ -1,0 +1,144 @@
+---
+id: api-blockchain-get-tx-block
+title: GetTxBlock
+---
+
+---
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'node.js', value: 'node.js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetTxBlock",
+    "params": ["40"]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="node.js">
+
+```js
+const txBlock = await zilliqa.blockchain.getTxBlock("40");
+console.log(txBlock.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com/");
+        Rep<TxBlock> txBlock = client.getTxBlock("40");
+        System.out.println(new Gson().toJson(txBlock));
+    }
+}
+```
+</TabItem>
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetTxBlock("40"))
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetTxBlock(t *testing.T) {
+	provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetTxBlock("40")
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+
+### Example Response
+
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "body": {
+      "BlockHash": "79fdf67632c9f793650955297c860d021c3241f2b448120747ee8fe502c03e54",
+      "HeaderSign": "CB8290232ECE38030EAD865859A77616BD10738D79D6335F003427C6118C1CBFEC94D33183A73D5E8877361582748D2EEC895722066D390E79119B8E2DC3411D",
+      "MicroBlockInfos": [
+        {
+          "MicroBlockHash": "97ab843bfd7a520f65c16667a8700ba11a886cc130254258e155d48be3ee3fb5",
+          "MicroBlockShardId": 0,
+          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "MicroBlockHash": "120d3f2c76e1c55b6adb3e78aa3aa1c34e618fd3023069420dd1dcd79689cd50",
+          "MicroBlockShardId": 1,
+          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "MicroBlockHash": "3fbae433e0e5c30ab89ec75cd32276dd49581941c7d0fc318503ca55693a9aed",
+          "MicroBlockShardId": 2,
+          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "header": {
+      "BlockNum": "40",
+      "DSBlockNum": "1",
+      "GasLimit": "1500000",
+      "GasUsed": "0",
+      "MbInfoHash": "dcb2c79d8fd7021634039e49578c1e7415f4a6aa9586043db3f488a34e6846ff",
+      "MinerPubKey": "0x020035B739426374C5327A1224B986005297102E01C29656B8B086BF4B352C6CA9",
+      "NumMicroBlocks": 3,
+      "NumTxns": 0,
+      "PrevBlockHash": "b87e9f526ffbaa653fcb9b2db731f53c65420f12ace6d88bd2753f816650bdb5",
+      "Rewards": "0",
+      "StateDeltaHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "StateRootHash": "77ebb9cce52b0e1bc8ce1c0e5669e88f5018bd986d01339960ba07882b63ed79",
+      "Timestamp": "1548930491181914",
+      "Version": 1
+    }
+  }
+}
+```
+
+Returns the details of a specified Transaction block.
+
+### HTTP Request
+
+| Chain(s)              | URL(s)                       |
+| --------------------- | ---------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
+| **Developer testnet** | https://dev-api.zilliqa.com/ |
+| **Local testnet**     | http://localhost:4201/       |
+| **Isolated server**   | http://localhost:5555/       |
+
+### Arguments
+
+| Parameter | Type   | Required | Description                                         |
+| --------- | ------ | -------- | --------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                               |
+| `jsonrpc` | string | Required | `"2.0"`                                             |
+| `method`  | string | Required | `"GetTxBlock"`                                      |
+| `params`  | string | Required | Specifed TX block number to return. Example: `"40"` |
