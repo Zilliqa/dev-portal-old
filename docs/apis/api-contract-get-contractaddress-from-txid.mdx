@@ -4,6 +4,10 @@ title: GetContractAddressFromTransactionID
 ---
 
 ---
+Returns a smart contract address of 20 bytes. This is represented as a `String`.
+
+**NOTE:** This only works for contract deployment transactions.
+
 ### Example Request
 
 import Tabs from '@theme/Tabs';
@@ -88,10 +92,6 @@ func GetContractAddressFromTransactionID() {
   "result": "c458f39c106582c1a49bac6bc76ec603e2ae0497"
 }
 ```
-
-Returns a smart contract address of 20 bytes. This is represented as a `String`.
-
-**NOTE:** This only works for contract deployment transactions.
 
 ### HTTP Request
 
