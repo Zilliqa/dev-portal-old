@@ -4,6 +4,8 @@ title: GetTransactionsForTxBlock
 ---
 
 ---
+Returns the validated transactions included within a specified final transaction block as an array of length _i_, where _i_ is the number of shards plus the DS committee. The transactions are grouped based on the group that processed the transaction. The first element of the array refers to the first shard. The last element of the array at index, _i_, refers to the transactions processed by the DS Committee.
+
 ### Example Request
 
 import Tabs from '@theme/Tabs';
@@ -112,8 +114,6 @@ func GetTransactionsForTxBlock() {
   ]
 }
 ```
-
-Returns the validated transactions included within a specified final transaction block as an array of length _i_, where _i_ is the number of shards plus the DS committee. The transactions are grouped based on the group that processed the transaction. The first element of the array refers to the first shard. The last element of the array at index, _i_, refers to the transactions processed by the DS Committee.
 
 ### HTTP Request
 

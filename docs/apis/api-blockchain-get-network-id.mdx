@@ -4,6 +4,16 @@ title: GetNetworkId
 ---
 
 ---
+Returns the `CHAIN_ID` of the specified network. This is represented as a `String`. 
+
+See table below for the `CHAIN_ID` for different chains:
+
+| Chain(s)              | `CHAIN_ID` |
+| --------------------- | ---------- |
+| **Zilliqa mainnet**   | `1`        |
+| **Developer testnet** | `333`      |
+
+**NOTE:** `CHAIN_ID` from `2` to `9` are reserved for Zilliqa Core use.
 
 ### Example Request
 
@@ -94,17 +104,6 @@ func GetNetworkId() {
   "result": "1"
 }
 ```
-
-Returns the `CHAIN_ID` of the specified network. This is represented as a `String`. 
-
-See table below for the `CHAIN_ID` for different chains:
-
-| Chain(s)              | `CHAIN_ID` |
-| --------------------- | ---------- |
-| **Zilliqa mainnet**   | `1`        |
-| **Developer testnet** | `333`      |
-
-**NOTE:** `CHAIN_ID` from `2` to `9` are reserved for Zilliqa Core use.
 
 ### HTTP Request
 
