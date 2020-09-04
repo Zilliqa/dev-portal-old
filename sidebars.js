@@ -78,6 +78,7 @@ module.exports = {
 
     "Staked Seed Nodes Phase 1 (Coming soon)":[
     "staking/phase1/staking-phase1-overview",
+    "staking/phase1/staking-general-information",
     {"Delegator":
     ["staking/phase1/delegator/staking-delegator-overview", 
     "staking/phase1/delegator/staking-delegator-operations",
