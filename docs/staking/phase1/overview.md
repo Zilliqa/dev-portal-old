@@ -27,7 +27,7 @@ The following phase 1 staking documentation is split into two categories, `deleg
 The [`delegator` section](delegator/staking-delegator-overview) targets the following audiences
 - Staking wallet builders
 - Staking dashboard builders
-- `delegator` who want to build their own scripts
+- `delegator` who want to build their own toolchains
 
 The [`SSN operator` section]() targets the operator who wishes to run a SSN. They can be either custodial or non-custodial.
 - Explorer and wallet providers who wish to run a SSN
