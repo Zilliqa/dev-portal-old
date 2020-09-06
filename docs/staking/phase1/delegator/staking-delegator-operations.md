@@ -48,10 +48,6 @@ __Sample Code__
 | Java     | coming soon |
 | Golang   | coming soon |
 
-<!---
-TODO: Add how to get list of SSN and corresponding SSN addr
--->
-
 ## Withdraw stake rewards and gZIL
 __Description__  
 `WithdrawStakeRewards` withdraws the delegator's stake rewards ($ZIL and `gZIL`) from a SSN. If gZIL issuance is still ongoing, For every 1 $ZIL stake reward given, the delegator will receive 0.001 `gZIL`.
