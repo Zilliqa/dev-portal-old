@@ -18,17 +18,16 @@ The operations available to delegator on the smart contract are as follows
 3.  Update address for receiving commission
 
 :::info
-Commision amd commission change rate in the staking smart contract are represented by `uint128`. The last 7 digits represents the decimal points. 
-As such, if the percentage is 5.2%, then, the value of the commision will be 5.2 x 10^7 represented as an integer *)
+Commission and commission change rate in the staking smart contract are represented by `uint128`. The last 7 digits represent the decimal points. As such, if the percentage is 5.2%, then, the value of the commission will be 5.2 x 10^7 represented as an integer *)
 :::
 
 ## Update commission rate
 __Description__  
-`UpdateComm` allows the SSN operator to update the commission to a new rate. However, the delta of rate changes must not exceed [max commisison change rate](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#staking-parameters), `maxcommchangerate`, per cycle. This is to prevent flash changing and allow of gradual changing of commission rate.
+`UpdateComm` allows the SSN operator to update the commission to a new rate. However, the delta of rate changes must not exceed [max commission change rate](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#staking-parameters), `maxcommchangerate`, per cycle. This is to prevent flash changing and allow of a gradual update for commission rate.
 
 __Parameters__
 
-`new_rate`: the new commission rate //TODO what is the decimal denomiation
+`new_rate`: the new commission rate //TODO what is the decimal denomination
 
 __Transition__
 ```
@@ -44,7 +43,11 @@ __Sample Code__
 
 ## Withdraw commission 
 __Description__  
-`WithdrawComm` allows the SSN operator to withdraw all the commission earned to the commission receiving address, `rec_addr`. If the SSN operator has updated the commission receiving address, the SSN operator need to call this operator from the updated receiving address.
+`WithdrawComm` allows the SSN operator to withdraw all the commission earned to the commission receiving address, `rec_addr`.
+
+:::info
+Regardless of whether the receiving address has been updated or not, this operation can only be called from the SSN operator address.
+:::
 
 __Parameters__
 
@@ -64,7 +67,7 @@ __Sample Code__
 
 ## Update address for receiving commission
 __Description__  
-`UpdateReceivedAddr` change the receiving commission address to a new address. It also change the withdrawing of commission to this new address.
+`UpdateReceivedAddr` change the receiving commission address to a new address.
 
 __Parameters__
 
