@@ -12,7 +12,7 @@ description: Smart contract operations
 ---
 ---
 
-The operations available to delegator on the smart contract are as follows
+The operations available to the delegator on the smart contract are as follows
 1. Delegate stake
 2. Withdraw stake rewards and gZIL
 3. Withdraw stake amount
@@ -27,7 +27,7 @@ __Description__
 `DelegateStake` accepts $ZIL deposit and delegate stake to the SSN identified by `ssnaddr`. 
 
 :::info
-Due to the non-custodial nature of phase 1 staking program, only the owner of the wallet will be able to withdraw stake amount and stake reward. The SSN operator will not have access to user's fund. 
+Due to the non-custodial nature of the phase 1 staking program, only the owner of the wallet will be able to withdraw the stake amount and stake reward. The SSN operator will not have access to the fund.
 :::
 
 __Parameters__
@@ -48,18 +48,20 @@ __Sample Code__
 | Java     | coming soon |
 | Golang   | coming soon |
 
-TODO: Add how to get list of SSN and corresponidng SSN addr
+<!---
+TODO: Add how to get list of SSN and corresponding SSN addr
+-->
 
 ## Withdraw stake rewards and gZIL
 __Description__  
-`WithdrawStakeRewards` withdraws delegator's stake rewards ($ZIL and `gZIL`) from a SSN. While gZIL issurance is still ongoing, For every 1 $ZIL stake reward given, the delegator will receive 0.001 `gZIL`. 
+`WithdrawStakeRewards` withdraws the delegator's stake rewards ($ZIL and `gZIL`) from a SSN. If gZIL issuance is still ongoing, For every 1 $ZIL stake reward given, the delegator will receive 0.001 `gZIL`.
 
 :::info
-If the delegator delegates to multiple SSN and wish to withdraw all rewwards from SSN, the user will need to call this transition multiple times, specifying different SSN address each time.
+If the delegator delegates to multiple SSN and wish to withdraw all rewards from SSN, the user will need to call this transition multiple times, specifying different SSN address each time.
 :::
 
 __Parameters__
-`ssn_operator`: The address of the SSN from which the delegator wish to withdraw reward form
+`ssn_operator`: The address of the SSN from which the delegator wish to withdraw the reward form
 
 __Transition__
 ```
@@ -76,7 +78,7 @@ __Sample Code__
 
 ## Withdraw Stake Amount
 __Description__  
-`WithdrawStakeAmt` is the first of two operations to withdraws delegator's stake amount from a SSN. Upon successful calling of this transition, the withdrawn stake amount will enter an `unbounding` state. The delegator will need to wait for 24,000 blocks (~2 weeks) before the delegator can successfully invoke `CompleteWithdrawal` transition to complete the withdrawl back to the delegator's wallet. When the stake amount is in unbonding state, it will not be eligible for any new rewards ($ZIL and/or gZIL).
+`WithdrawStakeAmt` is the first of two operations to withdraw the delegator's stake amount from a SSN. Upon successful calling of this transition, the withdrawn stake amount will enter an `unbonding` state. The delegator will need to wait for 24,000 blocks (~2 weeks) before the delegator can successfully invoke `CompleteWithdrawal` transition to complete the withdrawal back to the delegator's wallet. When the stake amount is in unbonding state, it will not be eligible for any new rewards ($ZIL and/or gZIL).
 
 :::info
 If the delegator delegates to multiple SSN and wish to withdraw all rewwards from SSN, the user will need to call this transition multiple times, specifying different SSN address each time.
@@ -102,9 +104,9 @@ __Sample Code__
 
 ## Complete Withdrawal
 __Description__
-`CompleteWithdrawal` is the second of two operations required for withdrawal of delegator's stake amount from a SSN, The delegator's will first need to invoke `WithdrawStakeAmt` transition successfully, wait for 24,000 blocks (~2 weeks) for unbonding of stake amount to be over, and finally call `CompleteWithdrawal` in a seperate transaction to complete the withdrawal and receive the stake amount back into the delegator's wallet.
+`CompleteWithdrawal` is the second of two operations required for the withdrawal of delegator's stake amount from a SSN, The delegator will first need to invoke `WithdrawStakeAmt` transition successfully, wait for 24,000 blocks (~2 weeks) for unbonding of stake amount to be over, and finally call `CompleteWithdrawal` in a separate transaction to complete the withdrawal and receive the stake amount back into the delegator's wallet.
 
-`CompleteWithdrawal` will iterate through all stake amount that has transitted to `unbonding` state, identify amount that have completed the unbonding process and withdraw it back to delegator's wallet. This operation is agnostic to SSN. 
+`CompleteWithdrawal` will iterate through all stake amount that has transitted to `unbonding` state, identify the amount that have completed the unbonding process and withdraw it back to delegator's wallet. This operation is agnostic to SSN.
 
 __Parameters__  
 None
@@ -125,10 +127,10 @@ __Sample code__
 
 ## Stake Amount Redelegation
 __Description__
-`ReDelegateStake` allows delegator to transfer stake amount from one SSN to another SSN. The stake amount will not enter unbonding state, however, buffering of stake amount may still applies.
+`ReDelegateStake` allows the delegator to transfer the stake amount from one SSN to another SSN. The stake amount will not enter unbonding state, however, buffering of stake amount may still apply.
 
 __Parameters__  
-`ssnaddr`: the existing SSN where the stake amount will be withdraw and transfer to the new SSN
+`ssnaddr`: the existing SSN where the stake amount will be withdrawn and transfer to the new SSN
 `to_ssn`: the new SSN to accept the stake amount delegation
 `amt`: the amount of the stake amount to transfer to the new SNN
 
