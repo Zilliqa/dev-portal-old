@@ -80,7 +80,8 @@ module.exports = {
     "staking/phase1/staking-phase1-overview",
     "staking/phase1/staking-general-information",
     {"Delegator":
-    ["staking/phase1/delegator/staking-delegator-overview", 
+    ["staking/phase1/delegator/staking-delegator-overview",
+    "staking/phase1/delegator/staking-delegator-reading-contract-states", 
     "staking/phase1/delegator/staking-delegator-operations",
     "staking/phase1/delegator/staking-delegator-gzil"]},
     {"SSN operator":[
