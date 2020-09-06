@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 |----------|--------- | ---------------------------------------------- |
 | Inbound  | 33133    | Protocol level port for receiving network data |
 | Inbound  | 4201/443 | [API service](https://apidocs.zilliqa.com/#introduction) |
-| Inbound  | 4401     | [Websocket servuce](api-websocket)             |
+| Inbound  | 4401     | [Websocket service](api-websocket)             |
 | Inbound  | 4501     | Staking API service                            |
 | Outbound | 443      | For getting initial node data for syncing      |
 
@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 
 Launching a seed node for staking is similar to launching a normal seed node, with some additional configuration steps.
 
-In this guide, we will demonstrate on how to set up the seed node via
+In this guide, we will guide you through on how to set up the seed node via
 1. Docker
 2. Native build
 
@@ -170,7 +170,7 @@ The staked seed node requires some configuring before it can successfully join t
 :::caution Important notice 
 If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
 :::
-- **Note:** Change the value of `ENABLE_WEBSOCKET` to `true`. This enables your seed node to support websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
+- Change the value of `ENABLE_WEBSOCKET` to `true`. This enables your seed node to support WebSockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 Finally, launch the seed node:
 ```bash
@@ -202,7 +202,7 @@ Currently, there is 2 form of whitelisting mechanism
 1. Whitelisting via a static IP
 2. whitelisting via pubic key of the SSN
 
-We will recommend SSN operator to use whitelisting by public key approach.
+We will recommend SSN operators to use whitelisting by public key approach.
 
 ### Testing Your Staked Seed Node JSON-RPC Port
 
@@ -222,27 +222,27 @@ If you received the latest blockchain information (similar to the one below) fro
 ```
 
 ### Testing Your Staked Seed Node WebSocket Port
-You can use an online websocket test utility to test whether your websocket is publicly accessible.
+You can use an online WebSocket test utility to test whether your WebSocket is publicly accessible.
 
 1. Visit https://www.websocket.org/echo.html
-2. Under location, put your websocket url link (e.g., `wss://<yourdomain here or ip:port>`)
+2. Under location, put your WebSocket URL link (e.g., `wss://<yourdomain here or ip:port>`)
 3. Click on connect
-4. If **“CONNECTED”** is shown in the log, your websocket port is publicly accessible
+4. If **“CONNECTED”** is shown in the log, your WebSocket port is publicly accessible
 
 ## Advanced setup
 
-Different node operators may wish to have different setup to secure their SSN. It is possible as long as 
-1. JSON RPC port (by default is 4201) and websocket port is accessible by anyone without any restriction 
+Different node operators may wish to have a different setup to secure their SSN. It is possible as long as 
+1. JSON RPC port (by default is 4201) and WebSocket port is accessible by anyone without any restriction 
 2. Staking API port (by default is 4501) is accessible by the verifier to check the SSN
 
 SSN operators are allowed to
-- Serve the api service over TLS
+- Serve the API service over TLS
 - Change the default port numbers (Please inform us)
 - Point their domain or subdomain to the SSN
-- Add load balancer infront of their node
+- Add load balancer in front of their node
 - Add additional service such as Cloudflare proxy infront of their node
 - Run more than 1 SSN node behind a load balancer (will only be treated as 1 SSN)
 
 SSN operators are not allowed to
-- outsource api service to other node operators or Zilliqa seed nodes
-- restricting or censoring any api service to the public or any region
+- outsource API service to other node operators or Zilliqa seed nodes
+- restricting or censoring any API service to the public or any region
