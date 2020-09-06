@@ -17,8 +17,8 @@ We provide a web application, Zilliqa Staking Viewer, to track all available see
 
 | Network | Link |
 | ------- | ---- |
-| Testnet | [https://stg-staking-viewer.zilliqa.com/](https://stg-staking-viewer.zilliqa.com/) |
-| Mainnet | [https://staking-viewer.zilliqa.com/](https://staking-viewer.zilliqa.com/) |
+| Testnet | Coming soon |
+| Mainnet | Coming soon |
 
 ## How to Resync Node
 The node might go out of sync if it fails to receive new blocks from the network. In this case, the node would ideally automatically sync without any manual intervention.
