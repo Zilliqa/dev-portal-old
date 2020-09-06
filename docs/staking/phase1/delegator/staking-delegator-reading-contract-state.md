@@ -7,6 +7,7 @@ keywords:
 - smart contract
 - zilliqa	
 - delegator
+- contract states
 description: Reading contract states
 ---
 
