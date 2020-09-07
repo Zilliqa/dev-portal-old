@@ -1,6 +1,6 @@
 ---
 id: staking-delegator-reading-contract-states
-title: Reading contract states
+title: Reading Contract States
 keywords: 
 - staking
 - ssn
@@ -11,22 +11,24 @@ keywords:
 description: Reading contract states
 ---
 
-In this section, we will cover through a few read operation that will be useful from a delegator's perspective.  They are
+In this section, we will cover a few read operations that are useful from a delegator's perspective. These are:
 
-- [Current list of SSNs](#get-the-current-list-of-ssn)
-- [Delegator's buffered deposit](#get-delegators-buffered-deposit)
-- [Delegator's stake amount](#get-delegators-stake-amount)
-- Delegator's stake reward
-- Delegator's reward history
-- [Delegator's pending stake withdrawal request](#get-delegators-pending-stake-withdrawa-request)
-- Delegation history
+- [Current list of SSNs](#getting-the-current-list-of-ssns)
+- [Delegator's buffered deposit](#getting-the-delegators-buffered-deposit)
+- [Delegator's stake amount](#getting-the-delegators-stake-amount)
+- [Delegator's stake reward](#getting-the-delegators-stake-reward)
+- [Delegator's reward history](#getting-the-delegators-reward-history)
+- [Delegator's pending stake withdrawal request](#getting-the-delegators-pending-stake-withdrawal-request)
+- [Delegation history](#getting-delegation-history)
 
-In order to read the above information from the smart contract, you should use [`GetSmartContractSubState` API](https://apidocs.zilliqa.com/#getsmartcontractsubstate) and query it from the `ssnlist` smart contract
+In order to read the above information from the smart contract, you should use the [`GetSmartContractSubState`](https://apidocs.zilliqa.com/#getsmartcontractsubstate) API by querying it from the `ssnlist` smart contract.
 
-## Get the current list of SSN
+## Getting the Current List of SSNs
+
 ### Inputs
+
 - Address of `ssnlist` smart contract
-- ssnlist
+- `ssnlist`
 
 ```json 
 curl -d '{
@@ -38,9 +40,10 @@ curl -d '{
 ```
 
 ### Output
-Return of map of ssn with the corresponding ssn datatype
 
-Map SSN address -> [SSN Data type](https://github.com/Zilliqa/staking-contract/tree/spec/contracts#data-types)
+Map of SSN with the corresponding SSN data type
+
+Map SSN address -> [SSN data type](https://github.com/Zilliqa/staking-contract/tree/spec/contracts#data-types)
 
 ```json
 {
@@ -78,11 +81,13 @@ Map SSN address -> [SSN Data type](https://github.com/Zilliqa/staking-contract/t
 }
 ```
 
-## Get delegator's buffered deposit
+## Getting the Delegator's Buffered Deposit
+
 ### Inputs
+
 - Address of `ssnlist` smart contract
 - `buff_deposit_deleg`
-- Addreess of delegator
+- Address of delegator
 
 __Example__  
 ```bash
@@ -95,11 +100,13 @@ curl -d '{
 ```
 
 ### Output
-Return a map of `ssn address` with the value being a map of `cycle number` and the `buffered deposit` at that particular `cycle number` 
+
+Map of `ssn address` with the value being a map of `cycle number` and the `buffered deposit` at that particular `cycle number` 
 
 Map `SSN addreess` -> Map `Cycle number` `buffered deposit amount in Qa` 
+
 :::info
-Cycle number refers the cycler number of the smart contract when the deposit was submitted to buffered deposit. 
+Cycle number refers to the cycle number of the smart contract when the deposit was submitted to buffered deposit.
 :::
 
 __Example__  
@@ -107,11 +114,13 @@ __Example__
 {"<ssn address>":{"<cycle number>":"<deposit amount>"}}
 ```
 
-## Get delegator's stake amount
+## Getting the Delegator's Stake Amount
+
 ### Inputs
+
 - Address of `ssnlist` smart contract
 - `withdrawal_pending`
-- Addreess of `delegator`
+- Address of `delegator`
 
 __Example__  
 ```bash
@@ -123,27 +132,31 @@ curl -d '{
 > }' -H "Content-Type: application/json" -X POST "api endpoing"
 ```
 
-
 ### Output
-Return a map consisting of ssn address and the correspodning delegated amount for a particular delegator  
 
-Map `ssn address` -> `delegatoed amount`
+Map consisting of SSN address and the corresponding delegated amount for a particular delegator
+
+Map `ssn address` -> `delegated amount`
 ```json
 {"<ssn addr>":"<delegated amount>",
 "<ssn addr>":"<delegated amount>"}
 ```
 
-## Get delegator's stake reward
+## Getting the Delegator's Stake Reward
+
 Coming soon
 
-## Get delegator's reward history
+## Getting the Delegator's Reward History
+
 Coming soon
 
-## Get delegator's pending stake withdrawa request 
+## Getting the Delegator's Pending Stake Withdrawal Request
+
 ### Inputs
+
 - Address of `ssnlist` smart contract
 - `deposit_amt_deleg`
-- Addreess of `delegator`
+- Address of `delegator`
 
 __Example__  
 ```bash
@@ -157,7 +170,8 @@ curl -d '{
 ```
 
 ### Output
-Return a map of consisting the `epoch number` when the withdraw was initiaited and the corresponding `amounnt` to withdraw
+
+Map consisting of the `epoch number` when the withdrawal was initiated and the corresponding `amount` to withdraw
 
 Map `epoch number` -> `Pending withdrawal amount`
 ```json
@@ -165,5 +179,6 @@ Map `epoch number` -> `Pending withdrawal amount`
 "<epoch number>":"<amount (Qa) to be withdrawn>"}
 ```
 
-## Get delegation history
+## Getting Delegation History
+
 Coming soon 

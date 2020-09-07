@@ -71,20 +71,20 @@ module.exports = {
     "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts"]
   },
   StakingSidebar: {
-    "Overview":["staking/staking-overview", "staking/staking-disclaimer"],
+    "Zilliqa Seed Node Staking":["staking/staking-overview", "staking/staking-disclaimer"],
 
-    "Staked Seed Nodes Phase 0":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
+    "Staking Phase 0":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
     "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
 
-    "Staked Seed Nodes Phase 1 (Coming soon)":[
+    "Staking Phase 1 (Coming Soon)":[
     "staking/phase1/staking-phase1-overview",
     "staking/phase1/staking-general-information",
-    {"Delegator":
+    {"Delegators":
     ["staking/phase1/delegator/staking-delegator-overview",
     "staking/phase1/delegator/staking-delegator-reading-contract-states", 
     "staking/phase1/delegator/staking-delegator-operations",
     "staking/phase1/delegator/staking-delegator-gzil"]},
-    {"SSN operator":[
+    {"SSN Operators":[
         "staking/phase1/ssn-operator/staking-ssn-before-you-start",
         "staking/phase1/ssn-operator/staking-ssn-setup",
         "staking/phase1/ssn-operator/staking-ssn-enrollment",

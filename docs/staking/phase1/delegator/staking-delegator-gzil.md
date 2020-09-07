@@ -1,6 +1,6 @@
 ---
 id: staking-delegator-gzil
-title: gZIL
+title: gZIL Tokens
 keywords: 
 - staking
 - ssn
@@ -8,7 +8,7 @@ keywords:
 - zilliqa	
 - delegator
 - gzil
-description: gZIL
+description: gZIL tokens
 ---
 ---
-
+Coming soon

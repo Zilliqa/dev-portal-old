@@ -14,7 +14,7 @@ description: Setting up the SSN
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Default ports requirement of SSN
+## Default Port Requirements for SSNs
 
 | Type     | Default  | Purpose                                        |
 |----------|--------- | ---------------------------------------------- |
@@ -28,25 +28,27 @@ import TabItem from '@theme/TabItem';
 
 Launching a seed node for staking is similar to launching a normal seed node, with some additional configuration steps.
 
-In this guide, we will guide you through on how to set up the seed node via
-1. Docker
-2. Native build
+In this guide, we will walk you through the steps on how to set up the seed node via
 
-You can go for either one of the options below.
+1. Docker
+1. Native build
+
+You can go for either one of the options below (click to expand).
 
 <Tabs
   defaultValue="testnet"
   values={[
     { label: 'Docker', value: 'docker', },
-    { label: 'Native build', value: 'manual', },
+    { label: 'Native Build', value: 'manual', },
   ]
 }>
 <TabItem value="docker">
 
 ### Launching the Node Using Docker
-We highly recommend using [Docker](https://docker.com/) to set up a seed node, as we provide a tested, production-ready image for your use. If you have not yet set up docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
 
-Once you have set up Docker, you may proceed to download and uncompress the configuration tarball for the mainnet:
+We highly recommend using [Docker](https://docker.com/) to set up a seed node, as we provide a tested, production-ready image for your use. If you have not yet set up Docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
+
+Once you have set up Docker, you may proceed to download and uncompress the configuration tarball for the Mainnet:
 
 <Tabs
   defaultValue="testnet"
@@ -81,13 +83,14 @@ $ tar -zxvf seed-configuration.tar.gz
 </TabItem>
 </Tabs>
 
-The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory we extracted seed-configuration.tar.gz to. Minimally, the following changes are required:
+The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory you extracted seed-configuration.tar.gz to. Minimally, the following changes are required:
+
 - Change the value of `ENABLE_STAKING_RPC` to `true`
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
-:::caution Important notice 
-If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
-:::
-- **Optional:** Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
+  :::caution Important notice 
+  If you have used a port other than 33133, and have opted for IP-based whitelisting, please notify us immediately so that we can adjust our whitelisted port for you.
+  :::
+- **Optional:** Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support WebSockets (refer to the [Zilliqa Websocket Server](../../../dev/dev-tools-websockets) documentation).
 
 Finally, launch the seed node:
 ```
@@ -106,11 +109,11 @@ We highly recommend to use another keypair for depositing stake, withdrawing sta
 
 ### Launching the Node Using Native Build
 
-:::caution
-This approach has only been tested on `Ubuntu 18.04.5 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
-:::
-
 If you cannot or do not wish to use Docker, you may also build the Zilliqa binary from the source and run it as such.
+
+:::caution
+This approach has only been tested on `Ubuntu 18.04.5 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the other tab.
+:::
 
 First, clone the Zilliqa repository:
 ```bash
@@ -129,7 +132,7 @@ Build the staked seed node:
 $ ./build.sh
 ```
 
-The build should exit with no errors. Once it is complete, download and uncompress the configuration tarball:
+The build should complete with no errors. Once it is done, download and uncompress the configuration tarball:
 
 <Tabs
   defaultValue="testnet"
@@ -164,13 +167,14 @@ $ tar -zxvf seed-configuration.tar.gz
 </TabItem>
 </Tabs>
 
-The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory we extracted `configuration.tar.gz` to. Minimally, the following changes are required:
+The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory you extracted `configuration.tar.gz` to. Minimally, the following changes are required:
+
 - Change the value of `ENABLE_STAKING_RPC` to `true`
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
-:::caution Important notice 
-If you have used a port other than 33133, please notify us immediately so that we can adjust our whitelisted port for you.
-:::
-- Change the value of `ENABLE_WEBSOCKET` to `true`. This enables your seed node to support WebSockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
+  :::caution Important notice 
+  If you have used a port other than 33133, and have opted for IP-based whitelisting, please notify us immediately so that we can adjust our whitelisted port for you.
+  :::
+- Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support WebSockets (refer to the [Zilliqa Websocket Server](../../../dev/dev-tools-websockets) documentation).
 
 Finally, launch the seed node:
 ```bash
@@ -187,7 +191,7 @@ We highly recommend to use another keypair for depositing stake, withdrawing sta
 </TabItem>
 </Tabs>
 
-### Optional: Configuring Domain Name
+### (Optional) Configuring Domain Name
 
 Once your seed node is fully set up, it is time to configure your domain name to point to the address of your seed node. 
 
@@ -198,15 +202,17 @@ If your seed node is behind a load balancer, you can set a `CNAME record` in you
 ## Whitelisting and API Servicing
 
 It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 1 in order to receive data broadcasts about the blockchain and its state. 
-Currently, there is 2 form of whitelisting mechanism
+Currently, there are 2 forms of whitelisting supported:
+
 1. Whitelisting via a static IP
-2. whitelisting via pubic key of the SSN
+1. Whitelisting via public key of the SSN
 
-We will recommend SSN operators to use whitelisting by public key approach.
+We recommend SSN operators to use the whitelisting by public key approach.
 
-### Testing Your Staked Seed Node JSON-RPC Port
+### Testing Your SSN's JSON-RPC Port
 
-To check whether your JSON-RPC is publicly available, you can use the following curl command.
+To check whether your node's JSON-RPC server is publicly available, you can use the following curl command.
+
 ```bash
 curl -d '{
     "id": "1",
@@ -217,32 +223,37 @@ curl -d '{
 ```
 
 If you received the latest blockchain information (similar to the one below) from the staked seed node, your JSON-RPC service is running well.
+
 ```bash
 {"id":"1","jsonrpc":"2.0","result":{"CurrentDSEpoch":"4789","CurrentMiniEpoch":"478809","DSBlockRate":0.00013455546527607284,"NumDSBlocks":"4790","NumPeers":2400,"NumTransactions":"3091806","NumTxBlocks":"478809","NumTxnsDSEpoch":"185","NumTxnsTxEpoch":"0","ShardingStructure":{"NumPeers":[600,600,600]},"TransactionRate":0,"TxBlockRate":0.013450003515398927}}
 ```
 
-### Testing Your Staked Seed Node WebSocket Port
+### Testing Your SSN's WebSocket Port
+
 You can use an online WebSocket test utility to test whether your WebSocket is publicly accessible.
 
 1. Visit https://www.websocket.org/echo.html
-2. Under location, put your WebSocket URL link (e.g., `wss://<yourdomain here or ip:port>`)
-3. Click on connect
-4. If **“CONNECTED”** is shown in the log, your WebSocket port is publicly accessible
+1. Under location, put your WebSocket URL link (e.g., `wss://<yourdomain here or ip:port>`)
+1. Click on connect
+1. If **“CONNECTED”** is shown in the log, your WebSocket port is publicly accessible
 
-## Advanced setup
+## Advanced Setup
 
-Different node operators may wish to have a different setup to secure their SSN. It is possible as long as 
-1. JSON RPC port (by default is 4201) and WebSocket port is accessible by anyone without any restriction 
-2. Staking API port (by default is 4501) is accessible by the verifier to check the SSN
+Different node operators may wish to have a different setup to secure their SSN. It is possible as long as:
 
-SSN operators are allowed to
+1. JSON-RPC port (by default 4201) and WebSocket port are accessible by anyone without any restriction
+1. Staking API port (by default 4501) is accessible by the verifier to check the SSN
+
+SSN operators are allowed to:
+
 - Serve the API service over TLS
-- Change the default port numbers (Please inform us)
+- Change the default port numbers (please inform us)
 - Point their domain or subdomain to the SSN
-- Add load balancer in front of their node
-- Add additional service such as Cloudflare proxy infront of their node
-- Run more than 1 SSN node behind a load balancer (will only be treated as 1 SSN)
+- Add a load balancer in front of their node
+- Add additional services such as Cloudflare proxy in front of the node
+- Run more than 1 SSN node behind a load balancer (these will collectively be treated as a single SSN)
 
-SSN operators are not allowed to
-- outsource API service to other node operators or Zilliqa seed nodes
-- restricting or censoring any API service to the public or any region
+SSN operators are not allowed to:
+
+- Outsource API service to other node operators or Zilliqa seed nodes
+- Restrict or censor any API service to the public or any region
