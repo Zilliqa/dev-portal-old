@@ -30,6 +30,8 @@ The operations available to the delegator on the smart contract are as follows:
 
 `DelegateStake` accepts $ZIL deposit and delegates stake to the SSN identified by `ssnaddr`.
 
+In case of failure to accept the stake, an `exception` will be thrown and the transaction will be reverted. This stake will be buffered if the SSN is already active else it will be added to the stake pool of the SSN. The transition should throw an error in case the amount being delegated is less than `mindelegstake`.
+
 :::info
 Due to the non-custodial nature of the phase 1 staking program, only the owner of the wallet will be able to withdraw the stake amount and stake reward. The SSN operator will not have access to the fund.
 :::
