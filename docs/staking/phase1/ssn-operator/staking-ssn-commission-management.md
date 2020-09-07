@@ -30,7 +30,7 @@ Commission and commission change rate in the staking smart contract are represen
 
 ### Parameters
 
-`new_rate`: the new commission rate (**TBD**: the decimal denomination)
+`new_rate`: the new commission rate
 
 ### Transition
 
