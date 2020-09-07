@@ -26,7 +26,7 @@ Commission and commission change rate in the staking smart contract are represen
 
 ### Description
 
-`UpdateComm` allows the SSN operator to update the commission to a new rate. However, the delta of rate changes must not exceed [max commission change rate](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#staking-parameters) (`maxcommchangerate`) per cycle. This is to prevent flash changing and allow for a more gradual adjustment of the commission rate.
+`UpdateComm` allows the SSN operator to update the commission to a new rate. An operator cannot update twice in the same cycle. The delta of rate changes must not exceed [max commission change rate](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#staking-parameters) (`maxcommchangerate`) per cycle. This is to prevent flash changing and allow for a more gradual adjustment of the commission rate. Finally, the new rate must be less than or equal to `maxcommchangerate`.
 
 ### Parameters
 
@@ -58,12 +58,12 @@ Regardless of whether the receiving address has been updated or not, this operat
 
 ### Parameters
 
-`ssnaddr`: the address of the SSN where the node operator wishes to withdraw commission from
+None
 
 ### Transition
 
 ```
-transition WithdrawComm(ssnaddr: ByStr20)
+transition WithdrawComm()
 ```
 
 ### Sample Code
@@ -78,7 +78,7 @@ transition WithdrawComm(ssnaddr: ByStr20)
 
 ### Description
 
-`UpdateReceivedAddr` changes the receiving commission address to a new address
+`UpdateReceivedAddr` changes the receiving commission address to a new address.
 
 ### Parameters
 

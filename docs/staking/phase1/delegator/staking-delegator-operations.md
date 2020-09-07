@@ -65,12 +65,12 @@ If the delegator delegates to multiple SSNs and wishes to withdraw all rewards f
 
 ### Parameters
 
-`ssn_operator`: the address of the SSN from which the delegator wishes to withdraw the reward from
+`ssnaddr`: the address of the SSN from which the delegator wishes to withdraw the reward from
 
 ### Transition
 
 ```
-transition WithdrawStakeRewards(ssn_operator: ByStr20)
+transition WithdrawStakeRewards(ssnaddr: ByStr20)
 ```
 
 ### Sample Code
@@ -93,13 +93,13 @@ If the delegator delegates to multiple SSNs and wishes to withdraw all rewards f
 
 ### Parameters
 
-`ssn`: the address of the SSN from which the delegator wishes to withdraw reward form
+`ssnaddr`: the address of the SSN from which the delegator wishes to withdraw reward form
 `amt`: the amount of stake amount to withdraw from the delegation to a particular SSN
 
 ### Transition
 
 ```
- WithdrawStakeAmt(ssn: ByStr20, amt: Uint128)
+ WithdrawStakeAmt(ssnaddr: ByStr20, amt: Uint128)
  ```
 
 ### Sample Code
@@ -146,12 +146,12 @@ None
 
 `ssnaddr`: the existing SSN where the stake amount will be withdrawn from and transferred to a new SSN
 `to_ssn`: the new SSN to accept the stake amount delegation
-`amt`: the amount of the stake amount to transfer to the new SSN
+`amount`: the amount of the stake amount to transfer to the new SSN
 
 ### Transition
 
 ```
-transition ReDelegateStake(ssnaddr: ByStr20, to_ssn: ByStr20, amt: Uint128)
+transition ReDelegateStake(ssnaddr: ByStr20, to_ssn: ByStr20, amount: Uint128)
 ```
 
 ### Sample Code
