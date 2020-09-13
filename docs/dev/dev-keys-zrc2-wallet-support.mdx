@@ -25,7 +25,7 @@ It is assumed that you already have installed language specific zilliqa SDKs, eg
 
 ## ZRC-2 xpecification
 
-ZRC-2 contract consists of the following components in smart contracts as per the [specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md#iv-specification).
+ZRC-2 fungible tokens contract consists of the following components in smart contracts as per the [specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md#iv-specification).
 
 ### Error codes
 | Name                        | Type    | Code | manadatory?                           |
@@ -211,10 +211,14 @@ func GetSmartContractInit() {
     ]
 }
 ```
+The response received consists of the immutable variable `type`, `name`, and `value`.
 
-If the response json received above is stored in the variable `smartContractInit`, the following code checks if token address is a ZRC2 address.
+To check whether a contract to be compliant with ZRC-2 standard immutable variables requirement, you can check whether has the contract implements the [manadatory immutable variables](#immutable-variables).
 
-**Note : ** This code snippet is in javascript but the same logic can be applied in other languages.
+:::note
+This code snippet is in javascript but the same logic can be applied in other languages.
+:::
+
 ```js 
 let vNameArray = []; //Array to store immutable variable names
 for(let i=0; i< smartContractInit.result.length; i++){
@@ -226,7 +230,7 @@ let isZRC2 = vNameArray.includes("name") && vNameArray.includes("symbol") && vNa
 console.log(isZRC2);
 ```
 
-## Integration with ZRC-2 Fungle Tokens contract
+## Integration with ZRC-2 Fungible Tokens contract
 
 ### Fetch Token Balance
 In a ZRC-2 fungible tokens contract, the mutable field `balances` with data type as a `Map`, stores the mapping between addresses and their 
