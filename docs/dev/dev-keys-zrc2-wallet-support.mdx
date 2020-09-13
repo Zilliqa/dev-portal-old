@@ -1,6 +1,6 @@
 ---
 id: dev-keys-zrc2-wallet-support
-title: ZRC2 Wallet Support
+title: ZRC-2 Wallet Support
 keywords: 
 - key management
 - zrc2
@@ -9,12 +9,12 @@ keywords:
 - token
 - fungible
 - zilliqa
-description: Add ZRC2 Tokens Support In Your Wallet
+description: Integratiing ZRC-2 Fungible Tokens Support into Wallets and dApps
 ---
 
 ---
 
-This guide is meant for wallet developers looking to add support for [ZRC2 tokens](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) in their wallet.
+This guide is meant for wallet developers looking to add support for [ZRC-2 tokens](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) in their wallet.
 Since most of the wallet front-ends are built using a javascript framework, most developers would find the code found in the `js` tab to be relevant to them. We have included code snippets for some other languages as well in case you want to handle these functionalities
 at the backend.
 
@@ -23,13 +23,63 @@ It is assumed that you already have installed language specific zilliqa SDKs, eg
 :::
 
 
-### Check if address is a ZRC2 Contract Address
+## ZRC-2 xpecification
 
-In order to check if the address entered by the user is a ZRC2 contract, we need to look at the contract code and check if it 
-has the required properties. We'll use `GetSmartContractInit` method of Zilliqa API to get the immutable variables of the contract.
+ZRC-2 contract consists of the following components in smart contracts as per the [specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md#iv-specification).
 
+### Error codes
+| Name                        | Type    | Code | manadatory?                           |
+| --------------------------- | ------- | ---- | ------------------------------------- |
+| `CodeIsSender`              | `Int32` | `-1` | <center> :heavy_check_mark: </center> |
+| `CodeInsufficientFunds`     | `Int32` | `-2` | <center> :heavy_check_mark: </center> |
+| `CodeInsufficientAllowance` | `Int32` | `-3` | <center> :heavy_check_mark: </center> |
+| `CodeNotOwner`              | `Int32` | `-4` | <center> :x: </center>                |
+| `CodeNotApprovedOperator`   | `Int32` | `-5` | <center> :x: </center>                |
 
-#### Example Request
+### Immutable Variables
+| Name                | Type           | manadatory?                           |
+| ------------------- | -------------- | ------------------------------------- |
+| `contract_owner`    | `ByStr20`      | <center> :heavy_check_mark: </center> |
+| `name`              | `String`       | <center> :heavy_check_mark: </center> |
+| `symbol`            | `String`       | <center> :heavy_check_mark: </center> |
+| `decimals`          | `Uint32`       | <center> :heavy_check_mark: </center> |
+| `init_supply`       | `Uint128`      | <center> :heavy_check_mark: </center> |
+| `default_operators` | `List ByStr20` | <center> :x: </center>                |
+
+### Mutable Fields
+
+| Name                        | Type                                | manadatory?                           |
+| --------------------------- | ----------------------------------- | ------------------------------------- |
+| `total_supply`              | `Uint128`                           | <center> :heavy_check_mark: </center> |
+| `balances`                  | `Map ByStr20 Uint128`               | <center> :heavy_check_mark: </center> |
+| `allowances`                | `Map ByStr20 (Map ByStr20 Uint128)` | <center> :heavy_check_mark: </center> |
+| `operators`                 | `Map ByStr20 (Map ByStr20 Unit)`    | <center> :x: </center>                |
+| `revoked_default_operators` | `Map ByStr20 (Map ByStr20 Unit)`    | <center> :x: </center>                |
+
+### Transitions and events
+
+| Name                  | Events                                | manadatory?                           |
+| --------------------- | ------------------------------------- | ------------------------------------- |
+| `IsOperatorFor()`     |                                       | <center> :x: </center>                |
+| `Mint()`              | `Minted`, `Error`                     | <center> :x: </center>                |
+| `Burn()`              | `Burnt`, `Error`                      | <center> :x: </center>                |
+| `AuthorizeOperator()` | `AuthorizeOperatorSuccess`, `Error`   | <center> :x: </center>                |
+| `RevokeOperator()`    | `RevokeOperatorSuccess`, `Error`      | <center> :x: </center>                |
+| `IncreaseAllowance()` | `IncreasedAllowance`, `Error`         | <center> :heavy_check_mark: </center> |
+| `DecreaseAllowance()` | `DecreasedAllowance`, `Error`         | <center> :heavy_check_mark: </center> |
+| `Transfer()`          | `TransferSuccess`, `Error`            | <center> :heavy_check_mark: </center> |
+| `TransferFrom()`      | `TransferFromSuccess`, `Error`        | <center> :heavy_check_mark: </center> |
+| `OperatorSend()`      | `OperatorSendSuccess`, `Error`        | <center> :x: </center>                |
+
+## Check if the contract is compliant to ZRC-2 fungible Tokens standard
+
+In order to check if the address entered by the user is a ZRC-2 compliant contract, we need to look at the contract code and check if it has the
+ required properties. 
+ 
+ 
+For immutable variables, We'll use `GetSmartContractInit` method of Zilliqa API to get the immutable variables of the contract.
+
+### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -101,7 +151,7 @@ func GetSmartContractInit() {
 </TabItem>
 </Tabs>
 
-#### Example Response
+### Example Response
 
 ```json
 {
@@ -176,8 +226,10 @@ let isZRC2 = vNameArray.includes("name") && vNameArray.includes("symbol") && vNa
 console.log(isZRC2);
 ```
 
+## Integration with ZRC-2 Fungle Tokens contract
+
 ### Fetch Token Balance
-In a ZRC2 scilla contract, the mutable field `balances` with data type as a Map, stores the mapping between addresses and their 
+In a ZRC-2 fungible tokens contract, the mutable field `balances` with data type as a `Map`, stores the mapping between addresses and their 
 corresponding token balances. We'll use `GetSmartContractState` method of Zilliqa API to get the mutable variables of the contract.  
 
 #### Example Request
@@ -280,8 +332,7 @@ If the value of users address is stored in the variable `userAddress` and the re
 smartContractState.result.balances[userAddress]
 ```
 
-
-### Send Token
+### Transfer Token
 ZRC2 contracts have the `transfer` transition that allows users to transfer tokens to another address by specifying the receiving address and amount.
 
 The code snippet below illustrates how one can transfer ZRC2 tokens to another address.
