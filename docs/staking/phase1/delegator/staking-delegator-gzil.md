@@ -15,7 +15,7 @@ description: gZIL tokens
 [`gZIL`](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#governance-tokens-aka-gzil), short for governance ZIL, is a ZRC-2 compliant fungible token contract. The rationale behind issuing gZILs is to capture long-term token holders and give them access to governance tokens that they can later use to make ecosystem-wide decisions. The contract code respository can be found over [here](https://github.com/Zilliqa/staking-contract).
 
 :::note
-gZILs will not be rewarded to SSN operators unless they themselves delegate their stake. Earning commission does not entitle operators to gZILs.
+gZILs will not be rewarded to SSN operators unless they themselves delegate their stake as a delegator. Earning commission does not entitle operators to gZILs.
 :::
 
 | Parameters        | Values                            |
