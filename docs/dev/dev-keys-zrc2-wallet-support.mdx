@@ -23,12 +23,12 @@ It is assumed that you already have installed language specific zilliqa SDKs, eg
 :::
 
 
-## ZRC-2 xpecification
+## ZRC-2 Specification
 
 ZRC-2 fungible tokens contract consists of the following components in smart contracts as per the [specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md#iv-specification).
 
-### Error codes
-| Name                        | Type    | Code | manadatory?                           |
+### Error Codes
+| Name                        | Type    | Code | Mandatory?                           |
 | --------------------------- | ------- | ---- | ------------------------------------- |
 | `CodeIsSender`              | `Int32` | `-1` | <center> :heavy_check_mark: </center> |
 | `CodeInsufficientFunds`     | `Int32` | `-2` | <center> :heavy_check_mark: </center> |
@@ -37,7 +37,7 @@ ZRC-2 fungible tokens contract consists of the following components in smart con
 | `CodeNotApprovedOperator`   | `Int32` | `-5` | <center> :x: </center>                |
 
 ### Immutable Variables
-| Name                | Type           | manadatory?                           |
+| Name                | Type           | Mandatory?                           |
 | ------------------- | -------------- | ------------------------------------- |
 | `contract_owner`    | `ByStr20`      | <center> :heavy_check_mark: </center> |
 | `name`              | `String`       | <center> :heavy_check_mark: </center> |
@@ -46,9 +46,9 @@ ZRC-2 fungible tokens contract consists of the following components in smart con
 | `init_supply`       | `Uint128`      | <center> :heavy_check_mark: </center> |
 | `default_operators` | `List ByStr20` | <center> :x: </center>                |
 
-### Mutable Fields
+### Mutable Variables
 
-| Name                        | Type                                | manadatory?                           |
+| Name                        | Type                                | Mandatory?                           |
 | --------------------------- | ----------------------------------- | ------------------------------------- |
 | `total_supply`              | `Uint128`                           | <center> :heavy_check_mark: </center> |
 | `balances`                  | `Map ByStr20 Uint128`               | <center> :heavy_check_mark: </center> |
@@ -56,9 +56,9 @@ ZRC-2 fungible tokens contract consists of the following components in smart con
 | `operators`                 | `Map ByStr20 (Map ByStr20 Unit)`    | <center> :x: </center>                |
 | `revoked_default_operators` | `Map ByStr20 (Map ByStr20 Unit)`    | <center> :x: </center>                |
 
-### Transitions and events
+### Transitions and Events
 
-| Name                  | Events                                | manadatory?                           |
+| Name                  | Events                                | Mandatory?                           |
 | --------------------- | ------------------------------------- | ------------------------------------- |
 | `IsOperatorFor()`     |                                       | <center> :x: </center>                |
 | `Mint()`              | `Minted`, `Error`                     | <center> :x: </center>                |
@@ -71,15 +71,15 @@ ZRC-2 fungible tokens contract consists of the following components in smart con
 | `TransferFrom()`      | `TransferFromSuccess`, `Error`        | <center> :heavy_check_mark: </center> |
 | `OperatorSend()`      | `OperatorSendSuccess`, `Error`        | <center> :x: </center>                |
 
-## Check if the contract is compliant to ZRC-2 fungible Tokens standard
+## Check if Contract is Compliant with ZRC-2 Standard
 
 In order to check if the address entered by the user is a ZRC-2 compliant contract, we need to look at the contract code and check if it has the
  required properties. 
  
- 
-For immutable variables, We'll use `GetSmartContractInit` method of Zilliqa API to get the immutable variables of the contract.
+### Checking Immutable Variables  
+For immutable variables, we'll use `GetSmartContractInit` method of Zilliqa API to get the immutable variables of the contract.
 
-### Example Request
+#### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -151,7 +151,7 @@ func GetSmartContractInit() {
 </TabItem>
 </Tabs>
 
-### Example Response
+#### Example Response
 
 ```json
 {
@@ -213,7 +213,7 @@ func GetSmartContractInit() {
 ```
 The response received consists of the immutable variable `type`, `name`, and `value`.
 
-To check whether a contract to be compliant with ZRC-2 standard immutable variables requirement, you can check whether has the contract implements the [manadatory immutable variables](#immutable-variables).
+To check whether a contract to be compliant with ZRC-2 standard immutable variables requirement, you can check whether has the contract implements the [mandatory immutable variables](#immutable-variables).
 
 :::note
 This code snippet is in javascript but the same logic can be applied in other languages.
@@ -224,12 +224,131 @@ let vNameArray = []; //Array to store immutable variable names
 for(let i=0; i< smartContractInit.result.length; i++){
    vNameArray[i] = smartContractInit.result[i].vname;
 }
-//check if the immutable fields: name, symbol, decimals & init_supply exist in the vName array.
-let isZRC2 = vNameArray.includes("name") && vNameArray.includes("symbol") && vNameArray.includes("decimals") && vNameArray.includes("init_supply")
+//check if the immutable variables: name, symbol, decimals & init_supply exist in the vName array.
+let isZRC2 = vNameArray.includes("name") && vNameArray.includes("symbol") && vNameArray.includes("decimals") && vNameArray.includes("init_supply");
 
 console.log(isZRC2);
 ```
 
+### Checking Mutable Variables  
+For immutable variables, We'll use `GetSmartContractState` method of Zilliqa API to get the mutable variables of the contract.
+
+#### Example Request
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'js', value: 'js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetSmartContractState",
+    "params": ["173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5"]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="js">
+
+```js
+const smartContractState = await zilliqa.blockchain.getSmartContractState(
+  "173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5"
+);
+console.log(smartContractState.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com");
+        String smartContractState = client.getSmartContractState("173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5");
+        System.out.println(smartContractState);
+    }
+}
+```
+</TabItem>
+
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetSmartContractState("173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5"))
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetSmartContractState() {
+	provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetSmartContractState("173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5")
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+#### Example Response
+
+```json
+{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "result": {
+        "_balance": "0",
+        "admin": "0x2f604cbd408e2c8b7442b1b629a1288c44945130",
+        "allowances": {},
+        "balances": {
+            "0x05d087623bc636108d450e0550ddbfc03da99fa9": "10000000",
+            "0x0f8167a0cbffb8ab1d1919e31f83dc26c863d0f9": "24250000",
+            "0x18c241a5f0d6cf380f721618880f2c2b7aa5ea97": "9975750000",
+            "0x5abf71d798ca594b7317b04f52ad5a31fae62170": "10000000",
+            "0x8c3de413a9d8d602a1757210ab539853103e08d8": "250000000000",
+            "0x93eb1d0cb7ba3962fcc86cd28aa45b241c888277": "20000",
+            "0xab61c57a9a4b2742a4a325ecd9e77b5da67f663a": "980000",
+            "0xabe1e844c776e97beb619f3ca64faa2b3edc2840": "400000",
+            "0xc48565c853fe4ffa5d7eac33e255141134640ceb": "600000",
+            "0xf5f9e1ad8ea6439f625e12b8ef57e1e99ac2d383": "7000000"
+        },
+        "implementation": "0x3bd9ad6fee7bfdf5b5875828b555e4f702e427cd",
+        "total_supply": "260029000000"
+    }
+}
+```
+The response received above consists of the mutable variable `total_supply`, `balances`, and `allowances`.
+
+To check whether a contract is compliant with ZRC-2 standard mutable variables requirement, you can check whether the contract implements the [mandatory mutable variables](#mutable-variables).
+
+:::note
+This code snippet is in javascript but the same logic can be applied in other languages.
+:::
+
+```js 
+let vNameArray = []; //Array to store mutable variable names
+for(let i=0; i< smartContractState.result.length; i++){
+   vNameArray[i] = smartContractState.result[i].vname;
+}
+//check if the mutable variables: total_supply, balances & allowances exist in the vName array.
+let isZRC2 = vNameArray.includes("total_supply") && vNameArray.includes("balances") && vNameArray.includes("allowances");
+
+console.log(isZRC2);
+```
+
+### Checking Transitions, Events and Error Codes
+Currently, you need to look at the smart contract code manually and check for transitions, events and error codes in a contract. 
+To check whether a contract is compliant with ZRC-2 standard error code as well transitions and events requirement, you can check whether the contract implements the [mandatory error codes](#error-codes) and [mandatory transitions and events](#transitions-and-events).
 ## Integration with ZRC-2 Fungible Tokens contract
 
 ### Fetch Token Balance
@@ -337,9 +456,9 @@ smartContractState.result.balances[userAddress]
 ```
 
 ### Transfer Token
-ZRC2 contracts have the `transfer` transition that allows users to transfer tokens to another address by specifying the receiving address and amount.
+ZRC-2 contracts have the `transfer` transition that allows users to transfer tokens to another address by specifying the receiving address and amount.
 
-The code snippet below illustrates how one can transfer ZRC2 tokens to another address.
+The code snippet below illustrates how one can transfer ZRC-2 tokens to another address.
 
 <Tabs
   defaultValue="js"
