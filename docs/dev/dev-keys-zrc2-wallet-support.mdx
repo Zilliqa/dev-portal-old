@@ -465,7 +465,6 @@ The code snippet below illustrates how one can transfer ZRC-2 tokens to another 
   values={[
     { label: 'js', value: 'js', },
     { label: 'java', value: 'java', },
-    { label: 'python', value: 'python', },
     { label: 'go', value: 'go', },
   ]
 }>
@@ -514,18 +513,53 @@ try {
 <TabItem value="java">
 
 ```java
+List<Value> init = Arrays.asList();
+Wallet wallet = new Wallet();
+wallet.addByPrivateKey(privateKey);
+ContractFactory factory = ContractFactory.builder().provider(new HttpProvider("https://api.zilliqa.com/")).signer(wallet).build();
+Contract contract = factory.atContract(contractAddress, "", (Value[]) init.toArray(), "");
+Integer nonce = Integer.valueOf(factory.getProvider().getBalance(address).getResult().getNonce());
+CallParams params = CallParams.builder().nonce(String.valueOf(nonce + 1)).version(String.valueOf(pack(333, 1))).gasPrice("1000000000").gasLimit("1000").senderPubKey(publicKey).amount("0").build();
+List<Value> values = Arrays.asList(Value.builder().vname("to").type("ByStr20").value(recipientAddress).build(), Value.builder().vname("tokens").type("Uint128").value("10").build());
+contract.call("Transfer", (Value[]) values.toArray(), params, 3000, 3);
+
 ```
 </TabItem>
 
-<TabItem value="python">
-
-```python
-```
-</TabItem>
 
 <TabItem value="go">
 
 ```go
+wallet := account.NewWallet()
+	wallet.AddByPrivateKey(privateKey)
+	publickKey := keytools.GetPublicKeyFromPrivateKey(util.DecodeHex(privateKey), true)
+	address := keytools.GetAddressFromPublic(publickKey)
+	fmt.Println(address)
+
+	contract := Contract{
+		Address: "contractAddress",
+		Signer:  wallet,
+	}
+
+	args := []core.ContractValue{
+		{
+			"to",
+			"ByStr20",
+			"0x" + address,
+		},
+		{
+			"tokens",
+			"Uint128",
+			"10",
+		},
+	}
+
+	tx, err2 := contract.CallFor("Transfer", args, true, "0", TestNet)
+	assert.Nil(t, err2, err2)
+	tx.Confirm(tx.ID, 1000, 3, contract.Provider)
+	assert.True(t, tx.Status == core.Confirmed)
+
+
 ```
 </TabItem>
 </Tabs>
