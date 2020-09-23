@@ -1,13 +1,13 @@
 ---
-id: staking-error-code
-title: Smart Contract Error Code
+id: staking-error-codes
+title: Smart Contract Error Codes
 keywords: 
 - staking
 - ssn
 - smart contract
 - zilliqa	
 - error codes
-description: Smart Contract Error Code
+description: Smart Contract Error Codes
 ---
 ---
 

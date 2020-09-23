@@ -92,7 +92,7 @@ module.exports = {
         "staking/phase1/ssn-operator/staking-ssn-maintenance",
         "staking/phase1/ssn-operator/staking-ssn-upgrading",]},
 
-        "staking/phase1/staking-error-code",
+        "staking/phase1/staking-error-codes",
     ]
   },
   ContributorsSidebar: {
