@@ -13,19 +13,17 @@ description: Smart Contract Error Codes
 
 ## Overview
 
-The `ssnlist` smart contract will emit out exception with an error code when an error condition is encountered. An example is shown below
+The `ssnlist` smart contract will emit out exception with an error code when an error condition is encountered. An example is shown below.
 ```
 Exception thrown: (Message [(_exception : (String "Error")) ; (code : (Int32 -13))]) :188
   Raised from IsProxy :269
   Raised from IsPaused :279
   Raised from DelegateStake :797
 ```
-Here, we will demystify the error codes. 
+Here, we will demystify the error codes.
 
 ## Error codes
 
-
-### General
 | Error Name | Error Code | Description |
 | ---------- | ---------- | ----------- | 
 | ContractFrozenFailure | -1 | `ssnlist` contract is currently paused state | 
