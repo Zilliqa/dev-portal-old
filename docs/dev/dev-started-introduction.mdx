@@ -63,11 +63,15 @@ How do you know if an address is a smart contract or an account? One way to go a
 In Javascript, you can do the following:
 
 ```javascript
-const isContract = async (address) =>{
-  const init = await zilliqa.blockchain.getSmartContractInit(address);
-  const result = init.result ? true : false;
-  return result;
-}
+const { Zilliqa } = require("@zilliqa-js/zilliqa");
+
+(async () => {
+  const zilliqa = new Zilliqa("https://dev-api.zilliqa.com");
+  const address = "573EC96638C8BB1C386394602E1460634F02ADDA";
+
+  const res = await zilliqa.blockchain.getSmartContractInit(address);
+  const isContract = !!res.result;
+  // returns false
+})();
 ```
 
-Example code: [validate-contract.js](https://github.com/Zilliqa/dev-portal/tree/master/examples/dapp/validate-address.js)
