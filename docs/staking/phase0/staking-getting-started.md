@@ -18,13 +18,13 @@ description: Staking Getting Started
 It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 0 in order to receive data broadcasts about the blockchain and its state. This requires a static public IP address with minimal the following inbound and outbound port open.
 
 
-| Type     | Default  | Purpose                                        |
-|----------|--------- | ---------------------------------------------- |
-| Inbound  | 33133    | Protocol level port for receiving network data |
+| Type     | Default  | Purpose                                                  |
+|----------|--------- | -------------------------------------------------------- |
+| Inbound  | 33133    | Protocol level port for receiving network data           |
 | Inbound  | 4201/443 | [API service](https://apidocs.zilliqa.com/#introduction) |
-| Inbound  | 4401     | [Websocket servuce](api-websocket)             |
-| Inbound  | 4501     | Staking API service                            |
-| Outbound | 443      | For getting initial node data for syncing      |
+| Inbound  | 4401     | [WebSocket service](../../dev/dev-tools-websockets)      |
+| Inbound  | 4501     | Staking API service                                      |
+| Outbound | 443      | For getting initial node data for syncing                |
 
 ## Preparing the Node
 
