@@ -76,7 +76,7 @@ module.exports = {
     "Staking Phase 0":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
     "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
 
-    "Staking Phase 1 (Coming Soon)":[
+    "Staking Phase 1 (Testnet)":[
     "staking/phase1/staking-phase1-overview",
     "staking/phase1/staking-general-information",
     {"Delegators":
@@ -91,6 +91,8 @@ module.exports = {
         "staking/phase1/ssn-operator/staking-commission-management",
         "staking/phase1/ssn-operator/staking-ssn-maintenance",
         "staking/phase1/ssn-operator/staking-ssn-upgrading",]},
+
+        "staking/phase1/staking-error-codes",
     ]
   },
   ContributorsSidebar: {
