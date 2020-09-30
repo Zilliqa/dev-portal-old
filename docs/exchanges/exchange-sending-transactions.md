@@ -17,31 +17,38 @@ nodes do not provide an API for signing transactions on your behalf, you will
 have to do so locally using an SDK of your choosing. We provide examples using
 zilliqa-js, the official JavaScript SDK.
 
-:::info
-The code in this tutorial is derived from the [example application](https://github.com/Zilliqa/dev-portal/blob/master/examples/exchange/src/services/zilliqa.ts).
-:::
-
-
 ## Constructing the Transaction Object
 
 There are several ways to construct a `Transaction` instance. We recommend
 using the transaction factory that is on the umbrella Zilliqa object, like
 so:
 
-```ts
-import { Zilliqa } from '@zilliqa-js/zilliqa';
-const api = 'https://community-api.aws.z7a.xyz';
+```js
+const { Zilliqa } = require("@zilliqa-js/zilliqa");
+const { getPubKeyFromPrivateKey } = require("@zilliqa-js/crypto");
+const { BN, Long, bytes, units } = require("@zilliqa-js/util");
+
+const api = "https://dev-api.zilliqa.com";
+const chainId = 333; // Testnet
+const msgVersion = 1;
 const zilliqa = new Zilliqa(api);
-const pubKey = '02bc475d1b5dd9d6ed6347e93da3d4c1ad35f4d987d52ea91de997ecba56845cd2';
+
+const toAddress = "BENCH32_ADDRESS";
+const fromPrivateKey = "SENDER_PRIVATE_KEY";
+const fromPublicKey = getPubKeyFromPrivateKey(fromPrivateKey)
+const fromAddress = getAddressFromPrivateKey(fromPrivateKey)
+const amountToSendInZil = 0.17;
+const gasPriceInZil = 0.001;
+const nextNonce = (await zilliqa.blockchain.getBalance(fromAddress)).result.nonce + 1;
 
 const rawTx = zilliqa.transactions.new({
-  version: bytes.pack(2, 1),
-  amount,
-  nonce: 1
+  version: bytes.pack(chainId, msgVersion),
+  amount: new BN(units.toQa(amountToSendInZil * 1000000, units.Units.Li)),
+  nonce: nextNonce,
   gasLimit: Long.fromNumber(1), // normal (non-contract) transactions cost 1 gas
-  gasPrice: new BN(units.toQa(1000, units.Units.Li)), // the minimum gas price is 1,000 li
-  toAddr: to, // toAddr is self-explanatory
-  pubKey, // this determines which account is used to send the tx
+  gasPrice: new BN(units.toQa(gasPriceInZil * 1000000, units.Units.Li)), // the minimum gas price is 1,000 li
+  toAddr: toAddress,
+  pubKey: fromPublicKey, // this determines which account is used to send the tx
 });
 ```
 
@@ -51,18 +58,16 @@ Again, there are a few ways you can sign your transaction. Under the hood,
 signing is done with the elliptic curve `secp256k1`. The easiest way to do
 this is by using a wallet. Extending our example above:
 
-```ts
-/* truncated */
-const privateKey = '1CC85C5F4791232D7D9A6FC35F2FF15EFAAC4A6E0E9F4A565FD2CCCCB73FCA3B'
-const address = 'e3ea87d7838397fc4417f5ec449f2d2d7cdb6dd1';
-zilliqa.wallet.addByPrivateKey(privateKey);
+```js
+zilliqa.wallet.addByPrivateKey(fromPrivateKey);
 // signWith uses the specified address to perform the signing of the transaction.
 // note that we provided the nonce to use when constructing the transaction.
 // if the nonce is not provided, zilliqa-js will automatically try to determine the correct nonce to use.
 // however, if there is no network connection, zilliqa-js will not be able to
 // do that, and signing will fail.
-const signedTx = await this.zil.wallet.signWith(rawTx, address);
+const signedTx = await zilliqa.wallet.signWith(rawTx, fromAddress);
 ```
+
 Note that we provided the nonce to use when constructing the transaction. If the nonce is not provided, zilliqa-js will automatically try to determine the correct nonce to use.
 However, if there is no network connection, zilliqa-js will not be able to do that, and signing will fail.
 
@@ -85,15 +90,14 @@ architecture.
 We demonstrate a lower-level way to broadcast a transaction using the built-in
 `HTTPProvider`, as follows:
 
-```ts
-/* truncated */
-const res = await this.zil.provider.send('CreateTransaction', tx.txParams);
+```js
+const res = await zilliqa.provider.send("CreateTransaction", signedTx.txParams)
 ```
 
 This returns a `Promise` that, if successful, will contain your transaction
 hash:
 
-```ts
+```js
 console.log(res.result && res.result.TranID) // 32-byte transaction hash
 ```
 
