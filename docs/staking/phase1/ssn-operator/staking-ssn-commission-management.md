@@ -26,9 +26,13 @@ Commission and commission change rate in the staking smart contract are represen
 
 ### Description
 
-`UpdateComm` allows the SSN operator to update the commission to a new rate. An operator cannot update twice in the same cycle. The delta of rate changes must not exceed [max commission change rate](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#staking-parameters) (`maxcommchangerate`) per cycle. This is to prevent flash changing and allow for a more gradual adjustment of the commission rate. Finally, the new rate must be less than or equal to `maxcommchangerate`.
+`UpdateComm` allows the SSN operator to update the commission to a new rate. The delta of rate changes must not exceed [max commission change rate](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#staking-parameters) (`maxcommchangerate`) per cycle. This is to prevent flash changing and allow for a more gradual adjustment of the commission rate. Finally, the new rate must be less than or equal to `maxcommchangerate`.
 
-### Parameters
+### Pre-condition
+
+The node operator must not have change commission rate in the current cycle.
+
+### Parameter
 
 `new_rate`: the new commission rate
 
