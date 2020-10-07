@@ -13,6 +13,10 @@ description: Staking Phase 0 Overview
 
 ---
 
+:::danger Staking Phase 0 notice
+Phase 0 of Zilliqa Seed node Staking program will conclude on 8 Oct 2020. After the mainnet upgrade to `v6.4.0`, the verifier of the staking will no longer be active. All node operator are adviced to withdraw thweir stake deposit upon the conclusion of phase 0 staking.
+:::
+
 ## About Zilliqa Staking Program
 
 In this initial phase of the Zilliqa staking program, staking is done through a seed node and a smart contract on the Zilliqa blockchain. The seed node operator who wishes to host an SSN will need to register with the Zilliqa team and deposit a certain minimum number of $ZIL into the staking smart contract. The seed node operator will then receive blockchain rewards at regular intervals according to the performance of its SSN, and in proportion to the amount of $ZIL deposited in the contract during those intervals.

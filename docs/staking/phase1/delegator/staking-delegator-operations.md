@@ -93,6 +93,9 @@ transition WithdrawStakeRewards(ssnaddr: ByStr20)
 If the delegator delegates to multiple SSNs and wishes to withdraw all rewards from SSNs, the user will need to call this transition multiple times, specifying a different SSN address each time.
 :::
 
+### Pre-condition
+Thee delegator should not have any unclaimed stake reward or buffered depsoit.
+
 ### Parameters
 
 `ssnaddr`: the address of the SSN from which the delegator wishes to withdraw reward form
@@ -119,6 +122,9 @@ If the delegator delegates to multiple SSNs and wishes to withdraw all rewards f
 `CompleteWithdrawal` is the second of two operations required for the withdrawal of delegator's stake amount from a SSN, The delegator will first need to invoke `WithdrawStakeAmt` transition successfully, wait for 24,000 blocks (~2 weeks) for unbonding of stake amount to be over, and finally call `CompleteWithdrawal` in a separate transaction to complete the withdrawal and receive the stake amount back into the delegator's wallet.
 
 `CompleteWithdrawal` will iterate through all stake amount that has transitted to `unbonding` state, identify the amount that have completed the unbonding process and withdraw it back to delegator's wallet. This operation is agnostic to SSN.
+
+### Pre-condition
+Thee delegator should not have any unclaimed stake reward or buffered depsoit.
 
 ### Parameters
 

@@ -23,4 +23,4 @@ We will need the following information in order to enrol your SSN into the smart
 
 For both `URL (RAW)` and `API URL`, please provide the port number.
 
-To ensure fair competition among all existing SSN operators, the initial commission rate we allow an SSN to set will be one within the current commission rate range of all active SSNs. For example, if we have 2 active SSNs in the network with rates of 5% and 10%, respectively, then, the new SSN operator will only be allowed to set its commission between 5-10%. The SSN operator, however, can subsequently re-adjust the commission rate via [`UpdateComm`](staking-commission-management#update-commission-rate) transition.
+To ensure fair competition among all existing SSN operators, the initial commission rate we allow an SSN to set will be bwtween 1 - 20%. The SSN operator, however, can subsequently re-adjust the commission rate via [`UpdateComm`](staking-commission-management#update-commission-rate) transition.
