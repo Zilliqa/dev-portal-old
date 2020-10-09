@@ -69,9 +69,6 @@ func GetPendingTxn() {
 
 ### Example Response
 
-
-#### Since Zilliqa V6.3.0
-
 ```json
 {
   "id": "1",
@@ -80,20 +77,6 @@ func GetPendingTxn() {
     "code": 24,
     "confirmed": false,
     "pending": false
-  }
-}
-```
-
-#### Zilliqa V6.2.0 and before
-
-```json
-{
-  "id": "1",
-  "jsonrpc": "2.0",
-  "result": {
-    "code": 0,
-    "confirmed": false,
-    "info": "Txn not pending"
   }
 }
 ```
@@ -111,13 +94,11 @@ Hence, we recommend calling `GetPendingTxn` around 1-2 transaction epochs after 
 
 ### Status Codes
 
-From Zilliqa `V6.3.0` onwards
+#### Non-pending Transactions
 
-#### Confirmed Transactions
-
-| `code` | Transaction Status          |
-| ------ | --------------------------- |
-| 0      | Transaction is not pending  |
+| `code` | Transaction Status                                  |
+| ------ | --------------------------------------------------- |
+| 0      | Transaction was already processed or does not exist |
 
 #### Pending Transactions
 
@@ -157,14 +138,12 @@ From Zilliqa `V6.3.0` onwards
 
 _Note: Dropped transactions are available for querying for up to 5 transaction epochs only._
 
-Zilliqa `V6.2.0`
+#### Additional Codes (from Zilliqa `V6.4.0` onwards)
 
-| `confirmed` | `code` | `info`                                           |
-| ----------- | ------ | ------------------------------------------------ |
-| false       | 0      | Txn not pending                                  |
-| false       | 1      | Nonce too high                                   |
-| false       | 2      | Could not fit in as microblock gas limit reached |
-| false       | 3      | Transaction valid but consensus not reached      |
+| `code` | Transaction Status                          |
+| ------ | ------------------------------------------- |
+| 27     | Transaction has lower nonce than expected   |
+| 255    | Internal error                              |
 
 ### HTTP Request
 
