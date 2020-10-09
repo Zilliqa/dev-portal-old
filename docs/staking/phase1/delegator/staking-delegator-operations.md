@@ -89,12 +89,15 @@ transition WithdrawStakeRewards(ssnaddr: ByStr20)
 
 `WithdrawStakeAmt` is the first of two operations to withdraw the delegator's stake amount from an SSN. Upon successful calling of this transition, the withdrawn stake amount will enter an **unbonding** state. The delegator will need to wait for 24,000 blocks (~2 weeks) before the delegator can successfully invoke `CompleteWithdrawal` transition to complete the withdrawal back to the delegator's wallet. When the stake amount is in unbonding state, it will not be eligible for any new rewards ($ZIL and/or gZIL).
 
+For testnet, the unbonding period is 50 blocks instead of 24,00 blocks.
+
 :::info
 If the delegator delegates to multiple SSNs and wishes to withdraw all rewards from SSNs, the user will need to call this transition multiple times, specifying a different SSN address each time.
 :::
 
 ### Pre-condition
 Thee delegator should not have any unclaimed stake reward or buffered depsoit.
+After withdrawal, the delegator remaining stake amount must be bigger than the min delegator stake amount specify in the contract i.e 10 ZIL
 
 ### Parameters
 
