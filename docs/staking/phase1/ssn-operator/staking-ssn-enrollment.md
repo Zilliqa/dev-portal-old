@@ -11,7 +11,7 @@ description: Enrollment of SSN into staking smart contract
 ---
 ---
 
-We will need the following information in order to enrol your SSN into the smart contract.
+We will need the following information in order to enrol your SSN into the smart contract. Enrollment of SSN operation can only be done by Zilliqa team.
 
 | Information           | Type      | Future Adjustment?    |
 |---------------------- | --------- | --------------------- |
