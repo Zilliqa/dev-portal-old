@@ -26,6 +26,11 @@ import TabItem from '@theme/TabItem';
 
 ## Preparing the Node
 
+:::info
+Mainnet has been upgraded to support staking phase 1. You can now start to run a staked seed node on mainnet.
+Smart contract enrollment will happen 1-2 days before staking phase 1 launch.
+:::
+
 Launching a seed node for staking is similar to launching a normal seed node, with some additional configuration steps.
 
 In this guide, we will walk you through the steps on how to set up the seed node via
@@ -54,7 +59,7 @@ Once you have set up Docker, you may proceed to download and uncompress the conf
   defaultValue="testnet"
   values={[
     { label: 'Testnet', value: 'testnet', },
-    { label: 'Mainnet (only available after Zilliqa V7.0.0)', value: 'mainnet', }
+    { label: 'Mainnet', value: 'mainnet', }
   ]
 }>
 <TabItem value="testnet">
