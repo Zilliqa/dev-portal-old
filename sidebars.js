@@ -72,10 +72,6 @@ module.exports = {
   },
   StakingSidebar: {
     "Zilliqa Seed Node Staking":["staking/staking-overview", "staking/staking-disclaimer"],
-
-    "Staking Phase 0":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
-    "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
-
     "Staking Phase 1":[
     "staking/phase1/staking-phase1-overview",
     "staking/phase1/staking-general-information",
@@ -93,7 +89,9 @@ module.exports = {
         "staking/phase1/ssn-operator/staking-ssn-upgrading",]},
 
         "staking/phase1/staking-error-codes",
-    ]
+    ],
+    "Staking Phase 0 (EOL)":["staking/phase0/staking-introduction","staking/phase0/staking-getting-started","staking/phase0/staking-ssn-operations",
+    "staking/phase0/staking-ssn-maintenance", "staking/phase0/staking-faq"],
   },
   ContributorsSidebar: {
     "Contributors":["contributors/contribute-buildzil","contributors/contribute-guidelines","contributors/contribute-standards",
