@@ -528,7 +528,7 @@ ContractFactory factory = ContractFactory.builder().provider(new HttpProvider("h
 Contract contract = factory.atContract(contractAddress, "", (Value[]) init.toArray(), "");
 Integer nonce = Integer.valueOf(factory.getProvider().getBalance(address).getResult().getNonce());
 CallParams params = CallParams.builder().nonce(String.valueOf(nonce + 1)).version(String.valueOf(pack(333, 1))).gasPrice("1000000000").gasLimit("1000").senderPubKey(publicKey).amount("0").build();
-List<Value> values = Arrays.asList(Value.builder().vname("to").type("ByStr20").value(recipientAddress).build(), Value.builder().vname("tokens").type("Uint128").value("10").build());
+List<Value> values = Arrays.asList(Value.builder().vname("to").type("ByStr20").value(recipientAddress).build(), Value.builder().vname("amount").type("Uint128").value("10").build());
 contract.call("Transfer", (Value[]) values.toArray(), params, 3000, 3);
 
 ```
@@ -556,7 +556,7 @@ wallet := account.NewWallet()
 			"0x" + address,
 		},
 		{
-			"tokens",
+			"amount",
 			"Uint128",
 			"10",
 		},
