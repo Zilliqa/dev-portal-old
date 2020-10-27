@@ -14,6 +14,7 @@ description: Reading contract states
 In this section, we will cover a few read operations that are useful from a delegator's perspective. These are:
 
 - [Current list of SSNs](#getting-the-current-list-of-ssns)
+- [List of delegators for a particular SSN](#getting-the-list-of-delegators-for-a-particular-ssn)
 - [Delegator's buffered deposit](#getting-the-delegators-buffered-deposit)
 - [Delegator's stake amount](#getting-the-delegators-stake-amount)
 - [Delegator's stake reward](#getting-the-delegators-stake-reward)
@@ -36,7 +37,7 @@ curl -d '{
     "jsonrpc": "2.0",
     "method": "GetSmartContractSubState",
     "params": ["<ssnlist contract address>","ssnlist",[]]
-}' -H "Content-Type: application/json" -X POST "https://dev-api.zilliqa.com/"
+}' -H "Content-Type: application/json" -X POST "<api endpoint>"
 ```
 
 ### Output
@@ -81,6 +82,31 @@ Map SSN address -> [SSN data type](https://github.com/Zilliqa/staking-contract/t
 }
 ```
 
+## Getting the list of delegators for a particular SSN
+
+### Inputs
+- Address of `ssnlist` smart contract
+- `ssn_deleg_amt`
+- Address of SSN
+
+__Example__  
+```bash
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetSmartContractSubState",
+    "params": ["<ssnlist contract addresss>","ssn_deleg_amt",["0x<address of SSN>"]]
+}' -H "Content-Type: application/json" -X POST "<api endpoint>"
+```
+
+### Output
+Map `SSN addreess` -> Map `delegator address` `stake deposit amount`
+
+__Example__  
+```json
+{"<ssn address>":{"<delegator address>":"<stake deposit amount>"}}
+```
+
 ## Getting the Delegator's Buffered Deposit
 
 ### Inputs
@@ -103,7 +129,7 @@ curl -d '{
 
 Map of `ssn address` with the value being a map of `cycle number` and the `buffered deposit` at that particular `cycle number` 
 
-Map `SSN addreess` -> Map `Cycle number` `buffered deposit amount in Qa` 
+Map `SSN address` -> Map `Cycle number` `buffered deposit amount in Qa` 
 
 :::info
 Cycle number refers to the cycle number of the smart contract when the deposit was submitted to buffered deposit.
@@ -119,7 +145,7 @@ __Example__
 ### Inputs
 
 - Address of `ssnlist` smart contract
-- `withdrawal_pending`
+- `deposit_amt_deleg`
 - Address of `delegator`
 
 __Example__  
@@ -155,7 +181,7 @@ Coming soon
 ### Inputs
 
 - Address of `ssnlist` smart contract
-- `deposit_amt_deleg`
+- `withdrawal_pending`
 - Address of `delegator`
 
 __Example__  
