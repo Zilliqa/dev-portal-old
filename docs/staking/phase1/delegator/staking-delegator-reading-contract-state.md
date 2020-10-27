@@ -14,7 +14,7 @@ description: Reading contract states
 In this section, we will cover a few read operations that are useful from a delegator's perspective. These are:
 
 - [Current list of SSNs](#getting-the-current-list-of-ssns)
-- [Getting the list of delegators for a particular SSN](#getting-the-list-of-delegators-for-a-particular-ssn)
+- [List of delegators for a particular SSN](#getting-the-list-of-delegators-for-a-particular-ssn)
 - [Delegator's buffered deposit](#getting-the-delegators-buffered-deposit)
 - [Delegator's stake amount](#getting-the-delegators-stake-amount)
 - [Delegator's stake reward](#getting-the-delegators-stake-reward)
@@ -145,7 +145,7 @@ __Example__
 ### Inputs
 
 - Address of `ssnlist` smart contract
-- `withdrawal_pending`
+- `deposit_amt_deleg`
 - Address of `delegator`
 
 __Example__  
@@ -181,7 +181,7 @@ Coming soon
 ### Inputs
 
 - Address of `ssnlist` smart contract
-- `deposit_amt_deleg`
+- `withdrawal_pending`
 - Address of `delegator`
 
 __Example__  
