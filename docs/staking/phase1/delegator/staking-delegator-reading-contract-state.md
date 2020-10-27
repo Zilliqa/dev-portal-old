@@ -129,7 +129,7 @@ curl -d '{
 
 Map of `ssn address` with the value being a map of `cycle number` and the `buffered deposit` at that particular `cycle number` 
 
-Map `SSN addreess` -> Map `Cycle number` `buffered deposit amount in Qa` 
+Map `SSN address` -> Map `Cycle number` `buffered deposit amount in Qa` 
 
 :::info
 Cycle number refers to the cycle number of the smart contract when the deposit was submitted to buffered deposit.
