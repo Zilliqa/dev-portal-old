@@ -196,13 +196,18 @@ We highly recommend to use another keypair for depositing stake, withdrawing sta
 </TabItem>
 </Tabs>
 
-### (Optional) Configuring Domain Name
+### Configuring Domain Name
 
 Once your seed node is fully set up, it is time to configure your domain name to point to the address of your seed node. 
 
 If your seed node is not behind a load balancer, you can set an `A record` in your domain registrar to point your domain/subdomain to your seed node’s IP address.
 
 If your seed node is behind a load balancer, you can set a `CNAME record` in your domain registrar to point your domain/subdomain to the hostname of your load balancer.
+
+### SSL/TLS configuration
+
+As the staked seed nodes are for public consumption, we expect high availability, secure and reliable node. Hence, as such all operators is required to support
+ serving of api and raw request over SSL/TLS.
 
 ## Whitelisting and API Servicing
 
@@ -251,9 +256,7 @@ Different node operators may wish to have a different setup to secure their SSN.
 
 SSN operators are allowed to:
 
-- Serve the API service over TLS
 - Change the default port numbers (please inform us)
-- Point their domain or subdomain to the SSN
 - Add a load balancer in front of their node
 - Add additional services such as Cloudflare proxy in front of the node
 - Run more than 1 SSN node behind a load balancer (these will collectively be treated as a single SSN)
