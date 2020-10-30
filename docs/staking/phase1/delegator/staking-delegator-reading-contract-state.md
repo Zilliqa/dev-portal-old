@@ -14,7 +14,7 @@ description: Reading contract states
 In this section, we will cover a few read operations that are useful from a delegator's perspective. These are:
 
 - [Current list of SSNs](#getting-the-current-list-of-ssns)
-- [List of delegators for a particular SSN](#getting-the-list-of-delegators-for-a-particular-ssn)
+- [List of delegators for a SSN](#getting-the-list-of-delegators-for-a-ssn)
 - [Delegator's buffered deposit](#getting-the-delegators-buffered-deposit)
 - [Delegator's stake amount](#getting-the-delegators-stake-amount)
 - [Delegator's stake reward](#getting-the-delegators-stake-reward)
@@ -82,7 +82,7 @@ Map SSN address -> [SSN data type](https://github.com/Zilliqa/staking-contract/t
 }
 ```
 
-## Getting the list of delegators for a particular SSN
+## Getting the List of Delegators for a SSN
 
 ### Inputs
 - Address of `ssnlist` smart contract
