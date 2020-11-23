@@ -144,6 +144,6 @@ For example:
     `_tag` can be found under `msg` field. If either `_tag` or `msg` is not present, there is no incoming deposit from this particular transition.
    :::
    3. **_amount** is non-zero.
-   4. Check the **_recipient** and **_amount** to complete the information on the balance transfer.
-      <br/>In such a case, you can confirm that there is a deposit to address **_recipient** with value **_amount** (in `Qa`).
+   4. Check the **_recipient** and **_amount** to complete the information on the balance transfer. In such a case, you can confirm that there is a deposit
+   to address **_recipient** with value **_amount** (in `Qa`).
    5. Continue traversing the remaining transitions and checking for more deposits.
