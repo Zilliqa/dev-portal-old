@@ -134,7 +134,7 @@ For example:
   }
 ```
 
-## Recommended Steps for Exchanges Polling for Incoming Deposit from Smart Contract Transactions
+## Recommended Steps for Exchanges Polling for Incoming $ZIL Deposit from Smart Contract Transactions
 
 1. Confirm that the **success** field is set to `true`.
 1. Traverse the **transitions** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
