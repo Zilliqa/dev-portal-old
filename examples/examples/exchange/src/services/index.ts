@@ -1,1 +1,0 @@
-export { ZilliqaService } from './zilliqa';
