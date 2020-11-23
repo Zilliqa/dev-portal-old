@@ -68,7 +68,7 @@ module.exports = {
   },
   ExchangesSidebar: {
     "Exchange Integration":["exchanges/exchange-getting-started","exchanges/exchange-account-management",
-    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts"]
+    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts", "exchanges/exchange-managing-zrc2-tokens"]
   },
   StakingSidebar: {
     "Zilliqa Seed Node Staking":["staking/staking-overview", "staking/staking-disclaimer"],
