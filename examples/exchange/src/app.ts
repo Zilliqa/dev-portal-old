@@ -34,7 +34,7 @@ async function main() {
 
   // initialise services
   const zilliqaSvc = new services.ZilliqaService(
-    'https://stress-test-api.aws.z7a.xyz',
+    'https://dev-api.zilliqa.com/',
     {
       [config.get('mnemonic')]: 8,
     },
