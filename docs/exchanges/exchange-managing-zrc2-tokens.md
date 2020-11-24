@@ -48,7 +48,7 @@ To track whether is there any new **incoming deposit** of a specific ZRC-2 token
 - Check whether `toAddr` matches the corresponding ZRC-2 token contract address.  
 eg. contract address [a845c1034cd077bd8d32be0447239c7e4be6cb21](https://viewblock.io/zilliqa/address/0xa845c1034cd077bd8d32be0447239c7e4be6cb21) for gZIL ZRC-2 token
 - Check that the **success** field is set to `true`. If it is `failse`, it means that this transaction was not accepted by the network.
-- Under `data`, look for `Transfer` tag. Check the `value` to see whether it matches the base16 address format of your deposit address.
+- Under `data`, look for `Transfer` or `TransferFrom` tag. Check the `value` to see whether it matches the base16 address format of your deposit address.
 - If it matches, `value` represents the amount of tokens that are being transferred to from the sender to your deposit address.
 
 :::note
