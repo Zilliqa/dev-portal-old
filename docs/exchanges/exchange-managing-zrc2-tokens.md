@@ -1,67 +1,61 @@
 ---
 id: exchange-managing-zrc2-tokens
-title: Managing Fungible Tokens (ZRC-2) tokens
+title: Managing Fungible Tokens (ZRC-2)
 keywords: 
 - zrc2
 - polling
 - exchanges
 - zilliqa
-description: Managing Fungible Tokens (ZRC-2) tokens
+description: Managing Fungible Tokens (ZRC-2)
 ---
 
 ---
 
-
-## Introduction of ZRC-2
+## Introduction to ZRC-2
 
 [ZRC-2](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) is the formal standard for Fungible Token in Zilliqa. It is an open standard for creating currencies on the Zilliqa blockchain.
 
-With ZRC-2 standard, it allows for functionaility like 
-- mint/burn tokens 
-- transfer of tokens from one account to another
-- Query account token balance
-- Query total token balances
-- approving third party to spent a certain amount of token 
-- etc. 
+The ZRC-2 standard allows for functionalities like 
+- Minting/burning tokens
+- Transferring tokens from one account to another
+- Querying account token balance
+- Querying total token balances
+- Approving third party to spend a certain amount of tokens
+- Etc.
 
-## Example of ZRC-2 
+## Examples of ZRC-2 
 
 - [XSGD](https://www.zilliqa.com/xsgd) - the first Singapore dollar-pegged stablecoin built by Xfers
 - [gZIL](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#governance-tokens-aka-gzil) - Governance ZIL token earned through Zilliqa Seed Node Staking Program
 
-## Checking whether a contract is ZRC-2 compliant 
+## Checking Whether a Contract is ZRC-2 Compliant
 
-Before you start any integration with ZRC-2, it is important to check the smart contract to ensure it conform to the ZRC-2 stndard. Non-conformance to the standards may lead to 
-composability issue with other contracts or DApp/exchange integration.
+Before you start any integration with ZRC-2, it is important to check the smart contract to ensure it conforms to the ZRC-2 standard. Non-conformance to the standard may lead to composability issues with other contracts or dApp/exchange integration.
 
-You can check the [ZRC-2 specification](../dev/dev-keys-zrc2-wallet-support#zrc-2-specification) section over the Developers section of our developer portal.
+Please check the [ZRC-2 specification](../dev/dev-keys-zrc2-wallet-support#zrc-2-specification) subsection in the Developers section of this developer portal.
 
 ## Contract Operations
 
-You can check [Integrating with ZRC-2 Fungible Tokens Contract](../dev/dev-keys-zrc2-wallet-support#integrating-with-zrc-2-fungible-tokens-contract) on how to get token balance and transferring of tokens. 
+Please check the [Integrating with ZRC-2 Fungible Tokens Contract](../dev/dev-keys-zrc2-wallet-support#integrating-with-zrc-2-fungible-tokens-contract) subsection on how to get token balance and transfer tokens.
 
-## Tracking incoming ZRC-2 deposit
+## Tracking Incoming ZRC-2 Deposit
 
-To track whether is there any new **incoming deposit** of a specific ZRC-2 token,
-1. Poll the blockchain block by block using API [`GetTxnBodiesForTxBlock`](../apis/api-transaction-get-txbodies-for-txblock) API and process each transactions,
+To track any new **incoming deposit** of a specific ZRC-2 token:
+1. Poll the blockchain block by block using API [`GetTxnBodiesForTxBlock`](../apis/api-transaction-get-txbodies-for-txblock) API and process each transactions
 2. For each transaction in the TxBlock, perform the following:
-- Check whether `toAddr` matches the corresponding ZRC-2 token contract address.  
-eg. contract address [a845c1034cd077bd8d32be0447239c7e4be6cb21](https://viewblock.io/zilliqa/address/0xa845c1034cd077bd8d32be0447239c7e4be6cb21) for gZIL ZRC-2 token
-- Check that the **success** field is set to `true`. If it is `failse`, it means that this transaction was not accepted by the network.
-- Under `data`, look for `Transfer` or `TransferFrom` tag. Check the `value` to see whether it matches the base16 address format of your deposit address.
-- If it matches, `value` represents the amount of tokens that are being transferred to from the sender to your deposit address.
-
+   - Check whether `toAddr` matches the corresponding ZRC-2 token contract address. For example, contract address [a845c1034cd077bd8d32be0447239c7e4be6cb21](https://viewblock.io/zilliqa/address/0xa845c1034cd077bd8d32be0447239c7e4be6cb21) for gZIL ZRC-2 token.
+   - Check that the **success** field is set to `true`. If it is `false`, it means that this transaction was not accepted by the network.
+   - Under `data`, look for `Transfer` or `TransferFrom` tag. Check the `value` to see whether it matches the base16 address format of your deposit address.
+   - If it matches, `value` represents the amount of tokens that are being transferred from the sender to your deposit address.
 :::note
-When handling `value`, please note the number of decimal placing used by the smart contract.
+When handling `value`, please note the number of decimal places used by the smart contract.
 :::
-
-
-3. **[Optional checks]** You can also check `event_logs` and ensure the following
-- `_eventname` matches `TransferSuccess` and `address` matches your deposit address
-- under `params` map,
-  - vname `sender` refers to the sender of the transactions
-  - vname `recipient` refers your deposit address
-  - vname `amount` is the amount of token transferred
+3. **[Optional checks]** You can also check `event_logs` and ensure the following:
+   - `_eventname` matches `TransferSuccess` and `address` matches your deposit address
+   - under `params` map,
+      - vname `sender` refers to the sender of the transactions
+      - vname `recipient` refers your deposit address
+      - vname `amount` is the amount of token transferred
 
 Sample transaction receipt of a ZRC-2 token
 ```bash
@@ -165,6 +159,5 @@ Sample transaction receipt of a ZRC-2 token
   }
 }
 ```
-
 ## Other References
 - [Sample codes for various ZRC-2 operations](https://github.com/Zilliqa/ZRC/tree/master/example/zrc2)
