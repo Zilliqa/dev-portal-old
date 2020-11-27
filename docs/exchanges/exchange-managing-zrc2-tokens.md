@@ -47,12 +47,14 @@ To track any new **incoming deposit** of a specific ZRC-2 token:
    - Check that the **success** field is set to `true`. If it is `false`, it means that this transaction was not accepted by the network.
    - Under `data`, look for `Transfer` or `TransferFrom` tag. Check the `value` to see whether it matches the base16 address format of your deposit address.
    - If it matches, `value` represents the amount of tokens that are being transferred from the sender to your deposit address.
+
 :::note
 When handling `value`, please note the number of decimal places used by the smart contract.
 :::
+
 3. **[Optional checks]** You can also check `event_logs` and ensure the following:
    - `_eventname` matches `TransferSuccess` and `address` matches your deposit address
-   - under `params` map,
+   - Under `params` map:
       - vname `sender` refers to the sender of the transactions
       - vname `recipient` refers your deposit address
       - vname `amount` is the amount of token transferred
