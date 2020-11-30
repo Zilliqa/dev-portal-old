@@ -61,6 +61,9 @@ module.exports = {
 
     "Transaction Lifecycle": ["dev/dev-txn-signing","dev/dev-txn-broadcasting","dev/dev-txn-polling","dev/dev-txn-confirmation",
     "dev/dev-txn-receipt"],
+    "Educational Resources": [
+      "dev/dev-education-videos"
+    ]
   },
   MinersSidebar: {
     "Miners":["miners/mining-getting-started","miners/mining-zilclient","miners/mining-zilminer","miners/mining-proxy",
