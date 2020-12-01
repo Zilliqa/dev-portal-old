@@ -45,4 +45,4 @@ The next sections in this phase 1 documentation are organized as follows:
    - Interested Zilliqa community members
    - Exchanges who provide staking on their platform
 
-Zilliqa token holders who wish to stake can simply refer to [TBD]() on how to stake and delegate their tokens.
+Zilliqa token holders who wish to stake can simply refer to [https://www.zilliqa.com/staking](https://www.zilliqa.com/staking) on how to stake and delegate their tokens.
