@@ -22,6 +22,24 @@ at the backend.
 It is assumed that you have already installed language-specific Zilliqa SDKs, e.g., zilliqa-js, laksaj, pyzil, gozilliqa.
 :::
 
+## Introduction to ZRC-2
+
+[ZRC-2](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) is the formal standard for Fungible Token in Zilliqa. It is an open standard for creating currencies on the Zilliqa blockchain.
+
+The ZRC-2 standard allows for functionalities like 
+- Minting/burning tokens
+- Transferring tokens from one account to another
+- Querying account token balance
+- Querying total token balances
+- Approving third party to spend a certain amount of tokens
+- Etc.
+
+## Examples of ZRC-2 
+
+- [XSGD](https://www.zilliqa.com/xsgd) - the first Singapore dollar-pegged stablecoin built by Xfers
+- [gZIL](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#governance-tokens-aka-gzil) - Governance ZIL token earned through Zilliqa Seed Node Staking Program
+
+
 
 ## ZRC-2 Specification
 
@@ -354,6 +372,114 @@ console.log(isZRC2);
 Currently, you need to look at the smart contract code manually and check for transitions, events, and error codes in a contract. To check whether a contract is compliant with the ZRC-2 standard's error codes - as well transitions and events - requirement, see if the contract implements the [mandatory error codes](#error-codes) and [mandatory transitions and events](#transitions-and-events).
 
 ## Integrating with ZRC-2 Fungible Tokens Contract
+
+### Fetch Token Supply
+
+In a ZRC-2 fungible tokens contract, the mutable field `total_supply` stores the value of the current total supply. 
+We'll use the `GetSmartContractState` method of the Zilliqa API to get the mutable variables of the contract.
+
+#### Example Request
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'js', value: 'js', },
+    { label: 'java', value: 'java', },
+    { label: 'python', value: 'python', },
+    { label: 'go', value: 'go', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetSmartContractState",
+    "params": ["173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5"]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+</TabItem>
+<TabItem value="js">
+
+```js
+const smartContractState = await zilliqa.blockchain.getSmartContractState(
+  "173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5"
+);
+console.log(smartContractState.result);
+```
+</TabItem>
+<TabItem value="java">
+
+```java
+public class App {
+    public static void main(String[] args) throws IOException {
+        HttpProvider client = new HttpProvider("https://api.zilliqa.com");
+        String smartContractState = client.getSmartContractState("173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5");
+        System.out.println(smartContractState);
+    }
+}
+```
+</TabItem>
+
+<TabItem value="python">
+
+```python
+from pyzil.zilliqa import chain
+chain.set_active_chain(chain.MainNet)
+print(chain.active_chain.api.GetSmartContractState("173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5"))
+```
+</TabItem>
+
+<TabItem value="go">
+
+```go
+func GetSmartContractState() {
+	provider := NewProvider("https://api.zilliqa.com/")
+	response := provider.GetSmartContractState("173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5")
+	result, _ := json.Marshal(response)
+	fmt.Println(string(result))
+}
+```
+</TabItem>
+</Tabs>
+
+#### Example Response
+
+```json
+{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "result": {
+        "_balance": "0",
+        "admin": "0x2f604cbd408e2c8b7442b1b629a1288c44945130",
+        "allowances": {},
+        "balances": {
+            "0x05d087623bc636108d450e0550ddbfc03da99fa9": "10000000",
+            "0x0f8167a0cbffb8ab1d1919e31f83dc26c863d0f9": "24250000",
+            "0x18c241a5f0d6cf380f721618880f2c2b7aa5ea97": "9975750000",
+            "0x5abf71d798ca594b7317b04f52ad5a31fae62170": "10000000",
+            "0x8c3de413a9d8d602a1757210ab539853103e08d8": "250000000000",
+            "0x93eb1d0cb7ba3962fcc86cd28aa45b241c888277": "20000",
+            "0xab61c57a9a4b2742a4a325ecd9e77b5da67f663a": "980000",
+            "0xabe1e844c776e97beb619f3ca64faa2b3edc2840": "400000",
+            "0xc48565c853fe4ffa5d7eac33e255141134640ceb": "600000",
+            "0xf5f9e1ad8ea6439f625e12b8ef57e1e99ac2d383": "7000000"
+        },
+        "implementation": "0x3bd9ad6fee7bfdf5b5875828b555e4f702e427cd",
+        "total_supply": "260029000000"
+    }
+}
+```
+
+If the response json received above is stored in the variable `smartContractState`, total supply would then be:
+
+```js 
+let smartContractState = await zilliqa.blockchain.getSmartContractState(contractAddress);
+let totalSupply = smartContractState.result.total_supply;  // Total Supply  
+```
 
 ### Fetch Token Balance
 
