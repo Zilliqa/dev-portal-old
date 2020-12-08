@@ -700,12 +700,11 @@ wallet := account.NewWallet()
 
 ### Adding Token Allowance
 
-   Token allowance allows the dApp contract to transfer ZRC-2 token, if the current approved allowance is less than `amount`. 
-   If the allowance is sufficient, this method is a no-op. The approval is done by calling `IncreaseAllowance` transition. 
-   In the example below the allowance amount is the same as the entire token supply, this is done so that the approval needs to only be 
-   done once per token contract, reducing the number of approval transactions required for users conducting multiple swaps. 
-   However, you can make this value to be specific as well. Non-custodial control of the token should be ensured by the dApp contract itself, which does not allow for the transfer of tokens 
-   unless explicitly invoked by the sender.
+Token allowance allows the dApp contract to transfer ZRC-2 token, if the current approved allowance is less than `amount`.  If the allowance is sufficient, this method is a no-op. The approval is done by calling `IncreaseAllowance` transition.
+
+In the example below the allowance amount is the same as the entire token supply. This is done so that the approval needs to only be done once per token contract, reducing the number of approval transactions required for users conducting multiple swaps. 
+
+However, you can make this value to be specific as well. Non-custodial control of the token should be ensured by the dApp contract itself, which does not allow for the transfer of tokens unless explicitly invoked by the sender.
 
 <Tabs
   defaultValue="js"
