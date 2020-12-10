@@ -39,6 +39,7 @@ module.exports = {
     "apis/api-transaction-get-pending-txs",
     "apis/api-transaction-get-recent-txs",
     "apis/api-transaction-get-tx",
+    "apis/api-transaction-get-transaction-status",
     "apis/api-transaction-get-txs-for-txblock",
     "apis/api-transaction-get-txbodies-for-txblock"],
 
