@@ -21,13 +21,13 @@ gZIL will not be rewarded to SSN operators unless they themselves delegate their
 | Parameter         | Value                             |
 | ----------------- | --------------------------------- | 
 | Reward rate       | 0.001 gZIL per ZIL reward earned  |
-| Reward duration   | 1 year                            | 
-| Max supply        | 682,550 gZIL                      |
+| Reward duration   | ~1 year                           | 
+| Max supply        | 722,700 gZIL                      |
 
-After the 1-year duration, no gZIL will be minted. Hence, we encourage all users to withdraw their stake reward before the 1-year duration is up.
+After the 1-year duration, no gZIL will be minted. Hence, we encourage all users to withdraw their stake reward before the ~1-year duration is up.
 
 :::note
-It is very possible that all the 682,550 gZIL may not get minted as the number of gZIL that get minted depends on the frequency of stake reward withdrawals.
+It is very possible that all the 722,700 gZIL may not get minted as the number of gZIL that get minted depends on the frequency of stake reward withdrawals.
 :::
 
 For integration with gZIL, please refer to [ZRC-2 integration guide](../../../dev/dev-keys-zrc2-wallet-support).
