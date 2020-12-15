@@ -2,18 +2,20 @@
 id: dev-tools-ceres
 title: Ceres
 keywords: 
+- ceres
+- local network
+- isolated server
+- testing
 - faucet
-- nucleus wallet
-- tester
 - zilliqa
-description: Zilliqa Testnet Faucet
+description: Guide on Building on Ceres
 ---
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Ceres is a one-stop development application for developers looking to build on top of zilliqa. 
-It is a simple to use graphical interface that has multiple zilliqa development tools. 
-Development tools that come with Ceres currently are isolated server, Devex developer block explorer and scilla server. 
+Ceres is a one-stop local development application for developers looking to build on top of Zilliqa. 
+It is a simple to use graphical interface that has multiple Zilliqa development tools. 
+Development tools that come with Ceres currently are isolated server, Devex developer block explorer and Scilla server. 
 Ceres allows developers to run these tools locally on their machine which allows them to: run a local zilliqa blockchain network,
 deploy contracts locally, test their contracts using a testing library and view these transactions on a network explorer.
 
@@ -41,6 +43,7 @@ Free ports on your system: 5555, 5556 for Isolated Server, 5557 for Network Expl
 
 You can download Ceres at https://github.com/Zilliqa/ceres/releases. 
 Go to the latest release and choose the relevant file depending on your operating system.
+
 ## Available Services
 
 ### Isolated Server
@@ -49,7 +52,7 @@ Zilliqa Isolated Server is a test server for dApp developers to quickly test the
 It allows developers to spin up a simulated blockchain locally where transactions are validated immediately, hence improving the productivity for dApp developers. 
 
 Isolated server runs 2 containers that are tied together:
-1. Server Container (http://localhost:5555) is the local zilliqa blockchain network and it comes with 10 accounts.
+1. Server Container (http://localhost:5555) is the local Zilliqa blockchain network and it comes with 10 pre-loaded accounts.
 2. Faucet Container (http://localhost:5556) is a faucet for the above server, you can query the faucet to get $ZILs to an account.
 
 To start the isolated server, you need to click on “Isolated server” from the Ceres’ home screen and then click on 
@@ -59,20 +62,20 @@ the isolated server and faucet.
 <img alt="Isolated Server" src={useBaseUrl('img/dev/tools/isolatedStartService.png')} />
 
 #### Using Isolated server during dApp development
-To interact with the local blockchain network with your dapp, you would need to set the value of the RPC server URL when
+To interact with the local blockchain network with your dApp, you would need to set the value of the RPC server URL when
 initialising a new Zilliqa object to point to the isolated server.
 
 `const zilliqa = new Zilliqa('http://localhost:5555'); //Example code in js`
 
-Also, you would need to change the Chain Id to reflect the value relevant for the isolated server i.e. 222. 
+Also, you would need to change the Chain ID to reflect the value relevant for the isolated server i.e. 222. 
 
-Switching from testing on isolated server to pushing your dapp to production on zilliqa testnet or mainnet is simple, 
+Switching from testing on isolated server to pushing your dApp to production on zilliqa testnet or mainnet is simple, 
 you just need to change the value of the RPC server URL and Chain ID to the one specific to your network as mentioned here : https://dev.zilliqa.com/docs/apis/api-introduction.
 
 ### Devex
 
 Devex is a developer-focused lightweight blockchain explorer that shows data on the local blockchain network running on the 
-isolated server. Network Explorer runs on the port 5557. You can access it from any browser on http://localhost:5557.
+isolated server. Devex runs on the port 5557. You can access it from any browser on http://localhost:5557.
 
 To start the explorer, you need to click on “Network explorer” from the Ceres’ home screen and then click on 
 “Download and install”. After downloading is finished, you need to click on to Start Service - 
@@ -87,7 +90,6 @@ The scilla-server provides the functionality of scilla-runner and scilla-checker
 The scilla-server process accepts contract execution requests and executes the contract, providing a JSON output within the
 server process itself. 
 
-More details about Scilla Server can be found [here](https://github.com/zilliqa/scilla-server). 
 Scilla Server runs on port 4000. You can call it's API on http://localhost:4000.
 
 To start the scilla server, you need to click on “Scilla” from the Ceres’ home screen and then click on “Download and install”.
@@ -97,7 +99,7 @@ After downloading is finished, you need to click on to Start Service - you have 
 
 ## Using Ceres with a dApp
 
-After you are done with installation of Ceres and all the available services, you can start using ceres for your dapp development.
+After you are done with installation of Ceres and all the available services, you can start using Ceres for your dApp development.
 
 In this section, we will deploy a fungible token smart contract using the Zilliqa IDE which would be connected to your 
 local zilliqa blockchain network. We will also use the local faucet & network explorer in the process. 
@@ -105,18 +107,20 @@ Note : Make sure that you have Isolated server and network explorer services of 
 
 ### Deploying contract on local network
 
-Step 1 : Visit ide.zilliqa.com and start a new file. In this file, paste the code for the fungible token contract (zrc2 contract)
-available at https://github.com/Zilliqa/ZRC/blob/master/reference/FungibleToken.scilla and save the file.
+Step 1 : Visit the [Scilla IDE](https://ide.zilliqa.com/), start a new file and write your contract code in it. 
+Alternatively, you can choose one of the already available contracts from the left tab, in this example we will be selecting the Fungible Token contract from the left tab.
 
 Step 2 : Go to the networks tab and click on “Add Network” to add your local blockchain network to the IDE by filling in
 details of your network.
 
 <img alt="Add Custom Network" src={useBaseUrl('img/dev/tools/customNetworkDetails.png')} />
 
-Note: Network ID for the isolated server is 222, refer https://dev.zilliqa.com/docs/apis/api-blockchain-get-network-id/ to 
-know about the id of your zilliqa network.
+:::note
+Network ID for the isolated server is 222, refer https://dev.zilliqa.com/docs/apis/api-blockchain-get-network-id/ to 
+know about the id of your Zilliqa network.
+:::
 
-Step 3: Select an account that you will eventually use to deploy the contract. In this example, we are using a keystore file but you can use ledger or zilpay, which is zilliqa wallet available as a chrome extension similar to metamask.
+Step 3: Select an account that you will eventually use to deploy the contract. In this example, we are using a keystore file but you can use ledger or Zilpay, which is Zilliqa wallet available as a chrome extension similar to metamask.
 
 Step 4 : Paste your account address and request funds from the faucet available on Ceres.
 
@@ -128,7 +132,7 @@ Step 5: Click on “Deploy”, enter the initialization params and finally deplo
 
 <img alt="Deploy Success" src={useBaseUrl('img/dev/tools/deploySuccess.png')} />
 
-Step 6: You can click on the transaction id link and you will be redirected to Devex page, alternatively you can also visit http://localhost:5557 (local network explorer) and you will find your contract creation transaction there as well.
+Step 6: You can click on the transaction ID link and you will be redirected to Devex page, alternatively you can also visit http://localhost:5557 (local network explorer) and you will find your contract creation transaction there as well.
 
 <img alt="Devex" src={useBaseUrl('img/dev/tools/deployDevex.png')} />
 
