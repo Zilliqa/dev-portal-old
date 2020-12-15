@@ -58,7 +58,7 @@ module.exports = {
     "User Key Management": ["dev/dev-keys-introduction","dev/dev-keys-zilpay","dev/dev-keys-pkey", "dev/dev-keys-zrc2-wallet-support"],
 
     "Toolings for Web3": [{"SDKs":["dev/dev-tools-zilliqajs","dev/dev-tools-gozilliqa","dev/dev-tools-java", "dev/dev-tools-sdks"]},
-    "dev/dev-tools-websockets", "dev/dev-tools-cli","dev/dev-tools-ide","dev/dev-tools-explorer","dev/dev-tools-faucet"],
+    "dev/dev-tools-websockets", "dev/dev-tools-cli","dev/dev-tools-ide","dev/dev-tools-explorer","dev/dev-tools-faucet","dev/dev-tools-ceres"],
 
     "Transaction Lifecycle": ["dev/dev-txn-signing","dev/dev-txn-broadcasting","dev/dev-txn-polling","dev/dev-txn-confirmation",
     "dev/dev-txn-receipt"],
