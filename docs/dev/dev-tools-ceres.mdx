@@ -23,21 +23,19 @@ deploy contracts locally, test their contracts using a testing library and view 
 
 ### System Requirements
 
-#### MacOS / Linux
-[NodeJS](https://nodejs.org/en/) v12 or newer
+| MacOS / Linux              | Windows                                      |
+| --------------------- | --------------------------------------------- |
+| **[NodeJS](https://nodejs.org/en/) v12 or newer**   | **[NodeJS](https://nodejs.org/en/) v12 or newer**                  |
+| **[Docker](https://www.docker.com/get-started)**|**[Docker](https://www.docker.com/get-started)**                |
+|   | **WSL 2.0**                      |
 
-[Docker](https://www.docker.com/get-started)
+You would also need the following ports to be free on your system: 
 
-Free ports on your system: 5555, 5556 for Isolated Server, 5557 for Network Explorer, 4000 for Scilla Server
+Ports 5555, 5556 for Isolated Server
 
-#### Windows
-[NodeJS](https://nodejs.org/en/) v12 or newer
+Ports 5557 for Network Explorer
 
-WSL 2.0
-
-[Docker](https://www.docker.com/get-started)
-
-Free ports on your system: 5555, 5556 for Isolated Server, 5557 for Network Explorer, 4000 for Scilla Server
+Ports 4000 for Scilla Server
 
 ### Download Ceres
 
@@ -70,7 +68,7 @@ initialising a new Zilliqa object to point to the isolated server.
 Also, you would need to change the Chain ID to reflect the value relevant for the isolated server i.e. 222. 
 
 Switching from testing on isolated server to pushing your dApp to production on zilliqa testnet or mainnet is simple, 
-you just need to change the value of the RPC server URL and Chain ID to the one specific to your network as mentioned here : https://dev.zilliqa.com/docs/apis/api-introduction.
+you just need to change the value of the RPC server URL and Chain ID to the one specific to your network as mentioned [here](https://dev.zilliqa.com/docs/apis/api-introduction).
 
 ### Devex
 
