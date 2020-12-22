@@ -16,7 +16,7 @@ While we have made great strides to realize the core protocol that runs the Zill
 
 ## Quickstart Guide
 
-Building the Zilliqa code base is officially supported only on Ubuntu 16.04.
+Building the Zilliqa code base is officially supported on Ubuntu 18.04.
 
 Follow these steps to perform the build:
 

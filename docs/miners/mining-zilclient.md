@@ -12,11 +12,11 @@ description: Running the Zilliqa Client Mining
 ---
 ## Hardware Requirements
 
-The [**Zilliqa Client**](https://github.com/Zilliqa/zilliqa) is only officially supported on Ubuntu 16.04 OS.
+The [**Zilliqa Client**](https://github.com/Zilliqa/zilliqa) is officially supported on Ubuntu 18.04 OS.
 
 The **minimum** requirements for running the **Zilliqa Client** are:
 
-- x64 Linux operating system (e.g Ubuntu 16.04.05)
+- x64 Linux operating system (e.g Ubuntu 18.04.5)
 - Recent dual-core processor @ 2.2 GHZ. Examples:
    - Intel Core i5 or i7 (Skylake)
    - Intel Xeon (Skylake)
@@ -61,7 +61,7 @@ The first message means UPnP mode has been enabled successfully, while the latte
 
 ## Mining Steps
 
-1. Create a single local or remote CPU node instance with Ubuntu 16.04 OS installed following instructions [**HERE**](http://releases.ubuntu.com/xenial/).
+1. Create a single local or remote CPU node instance with Ubuntu 18.04 OS installed following instructions [**HERE**](http://releases.ubuntu.com/xenial/).
 
 2. Install Docker CE for Ubuntu on your CPU node instance by following instructions [**HERE**](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 

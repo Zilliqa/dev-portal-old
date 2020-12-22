@@ -87,7 +87,7 @@ We highly recommend to use another keypair for depositing stake, withdrawing sta
 ### Launching the Node Using Native Build
 
 :::caution
-This approach has only been tested on `Ubuntu 16.04.6 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
+This approach has been tested on `Ubuntu 18.04.5 LTS` and involves compiling and building the `C++` codebase from scratch. We strongly recommend you consider launching the node using the Docker steps detailed in the previous section.
 :::
 
 If you cannot or do not wish to use Docker, you may also build the Zilliqa binary from the source and run it as such.

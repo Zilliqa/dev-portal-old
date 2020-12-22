@@ -37,7 +37,7 @@ Please contact us for more information on setting up a seed node with this schem
 :::
 
 ## Minimum Hardware Requirements
-- x64 Linux operating system (e.g Ubuntu 16.04.05)
+- x64 Linux operating system (e.g Ubuntu 18.04.5)
 - Recent dual core processor @ 2.2 GHZ. Examples:
    - Intel Core i5 or i7 (Skylake)
    - Intel Xeon (Skylake)
@@ -90,7 +90,7 @@ $ ./launch_docker.sh --genkeypair
 ### Native Setup
 
 :::note
-This approach has only been tested on **Ubuntu 16.04** and involves compiling
+This approach has been tested on **Ubuntu 18.04** and involves compiling
 C++. We strongly recommend you consider using the Docker image provided above.
 :::
 
