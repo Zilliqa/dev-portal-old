@@ -1,12 +1,13 @@
 ---
 id: dev-tools-explorer
 title: Explorer
-keywords: 
+keywords:
 - explorer
 - viewblock
 - api
 - zilliqa
-description: Zilliqa Explorer ViewBlock
+- token
+description: ViewBlock Explorer
 ---
 
 ---
@@ -15,16 +16,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## ViewBlock
 <img alt="Viewblock" src={useBaseUrl('img/dev/tools/viewblock.png')} />
 
-ViewBlock explorer allows you to look at the status of your transaction, current status of the Zilliqa network, contract source code etc. 
+ViewBlock allows you to look at blocks, address, transactions, status of the Zilliqa network, contract code and variables...
 
 | Network | Link |
 | ------- | ---- |
 | Mainnet | https://viewblock.io/zilliqa |
 | Testnet | https://viewblock.io/zilliqa?network=testnet |
 
-For example, this is the ViewBlock [transaction link](https://viewblock.io/zilliqa/tx/c4030c73d6dae558ff0c9d98237101e342888115f13219a00bb14a8ee46fa3be?network=testnet) for a getHello() transition transaction.
-ViewBlock supports both Zilliqa testnet and mainnet.
+For example, [this](https://viewblock.io/zilliqa/tx/c4030c73d6dae558ff0c9d98237101e342888115f13219a00bb14a8ee46fa3be?network=testnet)
+is the link to a `getHello()` transition transaction.
 
-[ViewBlock API](https://viewblock.io/api) - ViewBlock's API is a valuable resource for some additional methods that a developer might require for his application, for example : retrieving all transactions sent by an address.
+If you create a legit token and have a logo, head over to the [cryptometa](https://github.com/Ashlar/cryptometa) repository and follow the Readme instructions.
+
+### Other products
+
+[ViewBlock API](https://viewblock.io/api) - ViewBlock's API is a valuable resource for some additional methods that a developer might require for his application (e.g retrieving transactions sent by a particular address).
 
 [ViewBlock Zilliqa Stats](https://viewblock.io/zilliqa/stats) - ViewBlock's statistics provide statistical information about Zilliqa network such as difficulty over time, number of blocks over time and address growth over time.
+
+[ViewBlock Dashboard](https://dash.viewblock.io/d/zilliqa) - Is an advanced dashboard showing more statistics which allows you to select any time range you desire with a custom granularity
