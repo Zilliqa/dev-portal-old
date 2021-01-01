@@ -96,7 +96,7 @@ In order to check if the address entered by the user is a ZRC-2 compliant contra
 ### Check Immutable Variables
 
 For immutable variables, we'll use the `GetSmartContractInit` method of the Zilliqa API to get the immutable variables of the contract.
-
+The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 #### Example Request
 
 import Tabs from '@theme/Tabs';
@@ -252,6 +252,7 @@ console.log(isZRC2);
 ### Check Mutable Variables
 
 For mutable variables, we'll use the `GetSmartContractState` method of the Zilliqa API to get the mutable variables of the contract.
+The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 
 #### Example Request
 
@@ -377,6 +378,7 @@ Currently, you need to look at the smart contract code manually and check for tr
 
 In a ZRC-2 fungible tokens contract, the mutable field `total_supply` stores the value of the current total supply. 
 We'll use the `GetSmartContractState` method of the Zilliqa API to get the mutable variables of the contract.
+The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 
 #### Example Request
 
@@ -485,6 +487,7 @@ let totalSupply = smartContractState.result.total_supply;  // Total Supply
 
 In a ZRC-2 fungible tokens contract, the mutable field `balances` (with data type `Map`) stores the mapping between addresses and their 
 corresponding token balances. We'll use the `GetSmartContractState` method of the Zilliqa API to get the mutable variables of the contract.
+The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 
 #### Example Request
 
@@ -700,18 +703,17 @@ wallet := account.NewWallet()
 
 ### Adding Token Allowance
 
-Token allowance allows the dApp contract to transfer ZRC-2 token, if the current approved allowance is less than `amount`.  If the allowance is sufficient, this method is a no-op. The approval is done by calling `IncreaseAllowance` transition.
+The zilliqa blockchain allows transactions with smart contracts and those smart contracts can be facilitated by third parties like a DEX or a protocol relayer – permissions have to be granted to the third party by token owners before those smart contracts can execute.
+Token allowance permission gives the dApp contract the right to transfer the user's ZRC-2 token if the current approved allowance is equal to or more than `amount` requested to being transferred. The approval is done by calling `IncreaseAllowance` transition.
 
-In the example below. the allowance amount is the same as the entire token supply. This is done so that the approval needs to only be done once per token contract, reducing the number of approval transactions required for users conducting multiple swaps. 
+In the example below, the allowance amount is the same as the entire token supply. This is done so that the approval needs to only be done once per token contract, reducing the number of approval transactions required for users conducting multiple swaps. 
 
 However, you can make this value to be specific as well. Non-custodial control of the token should be ensured by the dApp contract itself, which does not allow for the transfer of tokens unless explicitly invoked by the sender.
 
 <Tabs
   defaultValue="js"
   values={[
-    { label: 'js', value: 'js', },
-    { label: 'java', value: 'java', },
-    { label: 'go', value: 'go', },
+    { label: 'js', value: 'js', }
   ]
 }>
 
@@ -763,20 +765,7 @@ let increaseAllowance = async function (contractAddress, spenderAddress){
 
 ```
 </TabItem>
-<TabItem value="java">
 
-```java
-
-```
-</TabItem>
-
-
-<TabItem value="go">
-
-```go
-
-```
-</TabItem>
 </Tabs>
 
 
@@ -792,9 +781,7 @@ Balance of recipient will increase and the balance of `token_owner` will decreas
 <Tabs
   defaultValue="js"
   values={[
-    { label: 'js', value: 'js', },
-    { label: 'java', value: 'java', },
-    { label: 'go', value: 'go', },
+    { label: 'js', value: 'js', }
   ]
 }>
 
@@ -844,151 +831,17 @@ let transferFrom = async function (contractAddress, userAddress, receiverAddress
 }
 
 }
-
-
-
-```
-</TabItem>
-<TabItem value="java">
-
-```java
-
 ```
 </TabItem>
 
-
-<TabItem value="go">
-
-```go
-
-```
-</TabItem>
 </Tabs>
 
 
 
 ## Tracking Incoming ZRC-2 Deposit
 
-To track any new **incoming deposit** of a specific ZRC-2 token:
-1. Poll the blockchain block by block using API [`GetTxnBodiesForTxBlock`](../apis/api-transaction-get-txbodies-for-txblock) API and process each transactions
-2. For each transaction in the TxBlock, perform the following:
-   - Check whether `toAddr` matches the corresponding ZRC-2 token contract address. For example, contract address [a845c1034cd077bd8d32be0447239c7e4be6cb21](https://viewblock.io/zilliqa/address/0xa845c1034cd077bd8d32be0447239c7e4be6cb21) for gZIL ZRC-2 token.
-   - Check that the **success** field is set to `true`. If it is `false`, it means that this transaction was not accepted by the network.
-   - Under `data`, look for `Transfer` or `TransferFrom` tag. Check the `value` to see whether it matches the base16 address format of your deposit address.
-   - If it matches, `value` represents the amount of tokens that are being transferred from the sender to your deposit address.
+Please check the [Tracking Incoming ZRC-2 Deposit](../exchanges/exchange-managing-zrc2-tokens#tracking-incoming-zrc-2-deposit) subsection
+under exchanges section to track any new incoming deposit of a specific ZRC-2 token.
 
-:::note
-When handling `value`, please note the number of decimal places used by the smart contract.
-:::
-
-3. **[Optional checks]** You can also check `event_logs` and ensure the following:
-   - `_eventname` matches `TransferSuccess` and `address` matches your deposit address
-   - Under `params` map:
-      - vname `sender` refers to the sender of the transactions
-      - vname `recipient` refers your deposit address
-      - vname `amount` is the amount of token transferred
-
-Sample transaction receipt of a ZRC-2 token
-```bash
-{
-  "id": "1",
-  "jsonrpc": "2.0",
-  "result": {
-    "ID": "765efeb58c4e4fd314a861155173de85baed90df4fcd9b2a24c8693e611d1970", <-- Transaction hash
-    "amount": "0", <-- This is in term of $ZIL and not ZRC-2 token
-    "data": "{\"_tag\":\"Transfer\",\"params\":[{\"vname\":\"to\",\"type\":\"ByStr20\",\"value\":\"0xa795895a4cebe56068439858b6b1f4fe09af4c8c\"},{\"vname\":\"amount\",\"type\":\"Uint128\",\"value\":\"475772968079442\"}]}",
-    "gasLimit": "3125",
-    "gasPrice": "2000000000",
-    "nonce": "71",
-    "receipt": {
-      "accepted": false,
-      "cumulative_gas": "492",
-      "epoch_num": "895498",
-      "event_logs": [
-        {
-          "_eventname": "TransferSuccess",
-          "address": "0xa845c1034cd077bd8d32be0447239c7e4be6cb21", <-- Contract address of ZRC-2 token
-          "params": [
-            {
-              "type": "ByStr20",
-              "value": "0x49355e4ec63634266e0b6c8fa3cbc02a76a6dd75",
-              "vname": "sender"
-            },
-            {
-              "type": "ByStr20",
-              "value": "0xa795895a4cebe56068439858b6b1f4fe09af4c8c",
-              "vname": "recipient"
-            },
-            {
-              "type": "Uint128",
-              "value": "475772968079442",
-              "vname": "amount"
-            }
-          ]
-        }
-      ],
-      "success": true, <-- Transaction is successful and confirmed on the blockchain
-      "transitions": [
-        {
-          "addr": "0xa845c1034cd077bd8d32be0447239c7e4be6cb21",
-          "depth": 0,
-          "msg": {
-            "_amount": "0",
-            "_recipient": "0xa795895a4cebe56068439858b6b1f4fe09af4c8c",
-            "_tag": "RecipientAcceptTransfer",
-            "params": [
-              {
-                "type": "ByStr20",
-                "value": "0x49355e4ec63634266e0b6c8fa3cbc02a76a6dd75",
-                "vname": "sender"
-              },
-              {
-                "type": "ByStr20",
-                "value": "0xa795895a4cebe56068439858b6b1f4fe09af4c8c",
-                "vname": "recipient"
-              },
-              {
-                "type": "Uint128",
-                "value": "475772968079442",
-                "vname": "amount"
-              }
-            ]
-          }
-        },
-        {
-          "addr": "0xa845c1034cd077bd8d32be0447239c7e4be6cb21",
-          "depth": 0,
-          "msg": {
-            "_amount": "0",
-            "_recipient": "0x49355e4ec63634266e0b6c8fa3cbc02a76a6dd75",
-            "_tag": "TransferSuccessCallBack",
-            "params": [
-              {
-                "type": "ByStr20",
-                "value": "0x49355e4ec63634266e0b6c8fa3cbc02a76a6dd75",
-                "vname": "sender"
-              },
-              {
-                "type": "ByStr20",
-                "value": "0xa795895a4cebe56068439858b6b1f4fe09af4c8c",
-                "vname": "recipient"
-              },
-              {
-                "type": "Uint128",
-                "value": "475772968079442",
-                "vname": "amount"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "senderPubKey": "0x03A4738532329F5867A448B32B16DF65AEC51C09CCAE8C972D78E49E9EFC84EF89",
-    "signature": "0x73E84B5FB5AE7D46F941E5BC393253EA19EAE8CD2C5FD07A64D553970EFF8FBDB79384730C10310055E79CA560DC9B79A77ED64E5ADC69260EE32185D3AAF20B",
-    "toAddr": "a845c1034cd077bd8d32be0447239c7e4be6cb21",  <-- Contract address of ZRC-2 token
-    "version": "65537"
-  }
-}
-```
 ## Other References
 - [Sample codes for various ZRC-2 operations](https://github.com/Zilliqa/ZRC/tree/master/example/zrc2)
