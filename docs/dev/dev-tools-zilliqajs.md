@@ -57,9 +57,9 @@ The following table provides a description of each module of zilliqa-js and what
 | [`@zilliqa-js/util`](https://github.com/Zilliqa/Zilliqa-JavaScript-Library/tree/dev/packages/zilliqa-js-util)       | Miscellaneous functions that take care of serialisation/deserialisation and validation.                                                                                   | none                                                                                    |
 | [`@zilliqa-js/viewblock`](https://github.com/Ashlar/zilliqa-js-viewblock)       | Library interfacing with ViewBlock's APIs                                                                                   | `@zilliqa-js/crypto`                                                                                    |
 
-## Demo - ZRC2 Wallet
-For this demo, we'll be looking at the zilliqa-js related code of a simple ZRC2 wallet, [ZRC2](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) is a standard for fungible tokens on Zilliqa. 
-The full code can be found at [ZRC2 Wallet Repository](https://github.com/arnavvohra/dev-portal-examples/tree/master/zrc-2-wallet). This repository is written in React but the zilliqa-js methods & APIs can be used with any javascript framework.
+## Demo - ZRC-2 Wallet
+For this demo, we'll be looking at the zilliqa-js related code of a simple ZRC-2 wallet, [ZRC-2](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) is a standard for fungible tokens on Zilliqa. 
+The full code can be found at [ZRC-2 Wallet Repository](https://github.com/arnavvohra/dev-portal-examples/tree/master/zrc-2-wallet). This repository is written in React but the zilliqa-js methods & APIs can be used with any javascript framework.
 
 #### Generating Private Key and Address from Encrypted Wallet and a Passphrase
 ```javascript
@@ -94,7 +94,7 @@ if(smartContractState){
 }
 ```
 
-#### Sending Tokens to Another Address by Calling 'Transfer' Transition of the ZRC2 Contract
+#### Sending Tokens to Another Address by Calling 'Transfer' Transition of the ZRC-2 Contract
 
 ```javascript
 sendTransaction = async() => {
