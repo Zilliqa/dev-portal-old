@@ -38,11 +38,9 @@ Please contact us for more information on setting up a seed node with this schem
 
 ## Minimum Hardware Requirements
 - x64 Linux operating system (e.g Ubuntu 18.04.5)
-- Recent dual core processor @ 2.2 GHZ. Examples:
-   - Intel Core i5 or i7 (Skylake)
-   - Intel Xeon (Skylake)
+- Recent dual core processor @ 2.2 GHZ. Examples: Intel Xeon (Skylake)
 - 8GB DRR3 RAM or higher
-- Public IP address
+- Public static IP address
 - 500GB Solid State Drive
 - 100MB/s upload and download bandwidth
 
