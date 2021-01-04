@@ -162,7 +162,7 @@ Account-related methods
 
 
 ## Demo
-Golang code for zilliqa-js methods found in [ZRC2 Wallet Repository](https://github.com/arnavvohra/dev-portal-examples/tree/master/zrc-2-wallet)
+Golang code for zilliqa-js methods found in [ZRC-2 Wallet Repository](https://github.com/arnavvohra/dev-portal-examples/tree/master/zrc-2-wallet)
 
 
 ##### Decrypt Private Key from a Keystore File

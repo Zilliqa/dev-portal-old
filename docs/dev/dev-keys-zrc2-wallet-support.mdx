@@ -96,7 +96,7 @@ In order to check if the address entered by the user is a ZRC-2 compliant contra
 ### Check Immutable Variables
 
 For immutable variables, we'll use the `GetSmartContractInit` method of the Zilliqa API to get the immutable variables of the contract.
-The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
+The address of the ZRC-2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 #### Example Request
 
 import Tabs from '@theme/Tabs';
@@ -378,7 +378,7 @@ Currently, you need to look at the smart contract code manually and check for tr
 
 In a ZRC-2 fungible tokens contract, the mutable field `total_supply` stores the value of the current total supply. 
 We'll use the `GetSmartContractState` method of the Zilliqa API to get the mutable variables of the contract.
-The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
+The address of the ZRC-2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 
 #### Example Request
 
@@ -487,7 +487,7 @@ let totalSupply = smartContractState.result.total_supply;  // Total Supply
 
 In a ZRC-2 fungible tokens contract, the mutable field `balances` (with data type `Map`) stores the mapping between addresses and their 
 corresponding token balances. We'll use the `GetSmartContractState` method of the Zilliqa API to get the mutable variables of the contract.
-The address of the ZRC2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
+The address of the ZRC-2 contract referred below is `0x173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5`.
 
 #### Example Request
 
