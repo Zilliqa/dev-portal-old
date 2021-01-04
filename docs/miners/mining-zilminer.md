@@ -18,7 +18,6 @@ The [**ZilMiner**](https://github.com/DurianStallSingapore/ZILMiner) software is
 Both **AMD** (with OpenCL) and **Nvidia** (with OpenCL or CUDA) GPUs are supported for the Zilliqa PoW process.
 
 The **minimum** requirements for running **ZilMiners** are:
-
 - x64 Operating system (Ubuntu or Windows)
 - Dual-core processor or later
 - 4GB DDR3 RAM or higher
