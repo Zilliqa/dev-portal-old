@@ -94,56 +94,10 @@ Hence, we recommend calling `GetPendingTxn` around 1-2 transaction epochs after 
 
 ### Status Codes
 
-#### Non-pending Transactions
-
-| `code` | Transaction Status                                  |
-| ------ | --------------------------------------------------- |
-| 0      | Transaction was already processed or does not exist |
-
-#### Pending Transactions
-
-| `code` | Transaction Status             |
-| ------ | ------------------------------ |
-| 1      | Nonce is higher than expected  |
-| 2      | Microblock gas limit exceeded  |
-| 3      | Consensus failure in network   |
-
-#### Unknown Transactions
-
-| `code` | Transaction Status     |
-| ------ | ---------------------- |
-| 4      | Transaction not found  |
-
-#### Dropped / Rejected Transactions
-
-| `code` | Transaction Status                          |
-| ------ | ------------------------------------------- |
-| 10     | Transaction caused math error               |
-| 11     | Scilla invocation error                     |
-| 12     | Contract account initialization error       |
-| 13     | Invalid source account                      |
-| 14     | Gas limit higher than shard gas limit       |
-| 15     | Unknown transaction type                    |
-| 16     | Transaction sent to wrong shard             |
-| 17     | Contract & source account cross-shard issue |
-| 18     | Code size exceeded limit                    |
-| 19     | Transaction verification failed             |
-| 20     | Gas limit too low                           |
-| 21     | Insufficient balance                        |
-| 22     | Insufficient gas to invoke Scilla checker   |
-| 23     | Duplicate transaction exists                |
-| 24     | Transaction with higher gas price exists    |
-| 25     | Invalid destination address                 |
-| 26     | Failed to add contract account to state     |
+Refer to [GetTransactionStatus](https://dev.zilliqa.com/docs/apis/api-transaction-get-transaction-status#status-codes) for the status codes.
 
 _Note: Dropped transactions are available for querying for up to 5 transaction epochs only._
 
-#### Additional Codes (from Zilliqa `V6.4.0` onwards)
-
-| `code` | Transaction Status                          |
-| ------ | ------------------------------------------- |
-| 27     | Transaction has lower nonce than expected   |
-| 255    | Internal error                              |
 
 ### HTTP Request
 
