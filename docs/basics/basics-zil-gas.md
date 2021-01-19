@@ -36,12 +36,12 @@ price, while if the network is not congested, then the gas price should not
 depend too much on the proposed gas prices. 
 
 
-The current global minimum gas price is 0.001 ZIL.
+The current global minimum gas price is 0.002 ZIL.
 
 ## Payment Transactions
 
 Each payment transaction consumes 1 gas unit and therefore, the gas to be paid
-for a payment transaction is 0.001 ZIL. 
+for a payment transaction is 0.002 ZIL. 
 
 
 ## Smart Contract Transactions
