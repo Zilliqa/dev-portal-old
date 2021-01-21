@@ -49,4 +49,4 @@ We will have a gradual rollout of SSN operators for this phase. So, don't worry 
 
 ## What's Next?
 
-Before you proceed to set up the SSN, please contact the Zilliqa tech team at maintainer[at]zilliqa.com to set up a communication channel. This channel will be used by the Zilliqa team to understand more about potential SSN operators, as well as to provide timely information about Zilliqa network activities such as network upgrades.
+Before you proceed to set up the SSN, please contact the Zilliqa tech team at maintainers[at]zilliqa.com to set up a communication channel. This channel will be used by the Zilliqa team to understand more about potential SSN operators, as well as to provide timely information about Zilliqa network activities such as network upgrades.
