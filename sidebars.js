@@ -53,11 +53,14 @@ module.exports = {
     "Account-related Methods":["apis/api-account-get-balance"]
   },
   DevelopersSidebar: {
+
+    "Section Navigation": ["dev/dev-section-navigation"],
+
     "Getting Started": ["dev/dev-started-introduction","dev/dev-started-helloworld","dev/dev-started-env"],
 
     "User Key Management": ["dev/dev-keys-introduction","dev/dev-keys-zilpay","dev/dev-keys-pkey", "dev/dev-keys-zrc2-wallet-support", "dev/dev-keys-magic"],
 
-    "Toolings for Web3": ["dev/dev-tools-ceres", {"SDKs":["dev/dev-tools-zilliqajs","dev/dev-tools-gozilliqa","dev/dev-tools-java", "dev/dev-tools-sdks"]},
+    "Developer Toolings": ["dev/dev-tools-ceres", {"SDKs":["dev/dev-tools-zilliqajs","dev/dev-tools-gozilliqa","dev/dev-tools-java", "dev/dev-tools-sdks"]},
     "dev/dev-tools-websockets", "dev/dev-tools-cli","dev/dev-tools-ide","dev/dev-tools-explorer","dev/dev-tools-faucet"],
 
     "Transaction Lifecycle": ["dev/dev-txn-signing","dev/dev-txn-broadcasting","dev/dev-txn-polling","dev/dev-txn-confirmation",
