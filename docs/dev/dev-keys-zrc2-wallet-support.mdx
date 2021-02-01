@@ -705,7 +705,7 @@ wallet := account.NewWallet()
 
 ### Adding Token Allowance
 
-The zilliqa blockchain allows transactions with smart contracts and those smart contracts can be facilitated by third parties like a DEX or a protocol relayer – permissions have to be granted to the third party by token owners before those smart contracts can execute.
+The Zilliqa blockchain allows transactions with smart contracts and those smart contracts can be facilitated by third parties like a DEX or a protocol relayer – permissions have to be granted to the third party by token owners before those smart contracts can execute.
 Token allowance permission gives the dApp contract the right to transfer the user's ZRC-2 token if the current approved allowance is equal to or more than `amount` requested to being transferred. The approval is done by calling `IncreaseAllowance` transition.
 
 In the example below, the allowance amount is the same as the entire token supply. This is done so that the approval needs to only be done once per token contract, reducing the number of approval transactions required for users conducting multiple swaps. 
@@ -844,6 +844,20 @@ let transferFrom = async function (contractAddress, userAddress, receiverAddress
 
 Please check the [Tracking Incoming ZRC-2 Deposit](../exchanges/exchange-managing-zrc2-tokens#tracking-incoming-zrc-2-deposit) subsection
 under exchanges section to track any new incoming deposit of a specific ZRC-2 token.
+
+
+## Getting your Token Listed
+
+You can get your token listed on various Zilliqa ecosystem products to allow for easier recognition by your community.
+
+### Listing on Zilswap
+
+To add your token to the token list on Zilswap, please refer the README.md file on this [repository](https://github.com/Switcheo/zilswap-token-list).
+
+### Listing on Viewblock
+
+To add your token's logo on Viewblock, please refer the README.md file on this [repository](https://github.com/Ashlar/cryptometa.git). Viewblock will also automatically assign a score to your token based on their judging criteria.
+
 
 ## Other References
 - [Sample codes for various ZRC-2 operations](https://github.com/Zilliqa/ZRC/tree/master/example/zrc2)
