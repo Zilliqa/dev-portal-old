@@ -62,7 +62,7 @@ The first message means UPnP mode has been enabled successfully, while the latte
 
 ## Mining Steps
 
-1. Create a single local or remote CPU node instance with Ubuntu 18.04 OS installed following instructions [**HERE**](http://releases.ubuntu.com/xenial/).
+1. Create a single local or remote CPU node instance with Ubuntu 18.04 OS installed following instructions [**HERE**](http://releases.ubuntu.com/bionic/).
 
 2. Install Docker CE for Ubuntu on your CPU node instance by following instructions [**HERE**](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
