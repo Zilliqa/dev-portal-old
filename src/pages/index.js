@@ -56,41 +56,44 @@ function Home() {
 
   return (
       <Layout>
-        <div className="cover-container">
-          <div className="cover-title">
-            <h1 className="hero__title">{siteConfig.customFields.title_one}<br/>{siteConfig.customFields.title_two}</h1>
-            <p className="hero__subtitle">{siteConfig.customFields.tagline_one}<br/>{siteConfig.customFields.tagline_two}</p>
+        <div className="test">
+          <div className="cover-container">
+            <div className="cover-title">
+              <h1 className="hero__title">{siteConfig.customFields.title_one}<br/>{siteConfig.customFields.title_two}</h1>
+              <p className="hero__subtitle">{siteConfig.customFields.tagline_one}<br/>{siteConfig.customFields.tagline_two}</p>
+            </div>
+            <CoverImgDiv/>
           </div>
-          <CoverImgDiv/>
-        </div>
 
-        <div id="card-container">
-          <div className="card-item">
-            <StarSvg/>
-            <h2>Basics</h2>
-            <p>Learn about blockchain and Zilliqa.</p>
-          </div>
-          <div className="card-item">
-            <CodeSvg/>
-            <h2>Developers</h2>
-            <p>Build full-stack blockchain apps on Zilliqa.</p>
-          </div>
-          <div className="card-item">
-            <MineSvg />
-            <h2>Miners</h2>
-            <p>Participate as a miner and start earning $ZIL.</p>
-          </div>
-          <div className="card-item">
-            <ExchangeSvg/>
-            <h2>Exchanges</h2>
-            <p>Information for exchanges and seed node operators.</p>
-          </div>
-          <div className="card-item">
-            <ContributeSvg/>
-            <h2>Contributors</h2>
-            <p>Learn how you can contribute to Zilliqa's ecosystem.</p>
+          <div id="card-container">
+            <div className="card-item">
+              <StarSvg/>
+              <h2>Basics</h2>
+              <p>Learn about blockchain and Zilliqa.</p>
+            </div>
+            <div className="card-item">
+              <CodeSvg/>
+              <h2>Developers</h2>
+              <p>Build full-stack blockchain apps on Zilliqa.</p>
+            </div>
+            <div className="card-item">
+              <MineSvg />
+              <h2>Miners</h2>
+              <p>Participate as a miner and start earning $ZIL.</p>
+            </div>
+            <div className="card-item">
+              <ExchangeSvg/>
+              <h2>Exchanges</h2>
+              <p>Information for exchanges and seed node operators.</p>
+            </div>
+            <div className="card-item">
+              <ContributeSvg/>
+              <h2>Contributors</h2>
+              <p>Learn how you can contribute to Zilliqa's ecosystem.</p>
+            </div>
           </div>
         </div>
+      
         
       </Layout>
   );

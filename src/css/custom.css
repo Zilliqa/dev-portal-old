@@ -33,7 +33,7 @@ svg:not(:root) {
   --cards-icon-color: #18191a;
   --cards-text-font-color: #444444;
   --cover-bg-color: #ffffff;
-  --cover-title-color: #ffffff;
+  --cover-title-color: #25c2a0;
 }
 
 /* for main page cards section */
@@ -45,6 +45,7 @@ svg:not(:root) {
   --cards-icon-color: #cccccc;
   --cards-text-font-color: #ffffff;
   --cover-bg-color: #000414;
+  --cover-title-color: #ffffff;
   --cover-tagline-color: #a6a6a6;
 
   --ifm-navbar-background-color: #000414;
@@ -59,6 +60,14 @@ svg:not(:root) {
   justify-content: center;
   min-height: 550px;
   background-color: var(--cover-bg-color);
+  background-image: url("/img/gear.svg"), url("/img/gear.svg");
+  background-repeat: no-repeat;
+  background-size: 
+    350px, 
+    200px;
+  background-position: 
+    -50px -100px, 
+    63% 115%;
 }
 
 .cover-image {
@@ -78,11 +87,13 @@ svg:not(:root) {
   font-size: 3.2em;
   color: var(--cover-title-color);
   margin-bottom: 2rem;
+  transition: ease 0.8s;
 }
 
 .cover-title .hero__subtitle {
   font-size: 1.6em;
   color: var(--cover-tagline-color);
+  transition: ease 0.8s;
 }
 
 /* #cover-cards .column:hover {
