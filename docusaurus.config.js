@@ -1,11 +1,18 @@
 module.exports = {
-  title: 'Zilliqa Developer Portal',
-  tagline: 'Technical documentation for participating in the Zilliqa network.',
+  title: 'Zilliqa Developer Portal', // not used, see customFields
+  tagline: 'Technical documentation for participating in the Zilliqa network.', // not used, see customFields
   url: 'https://dev.zilliqa.com',
   baseUrl: '/',
   favicon: 'img/favicon.png',
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
+  customFields : {
+    // split the alignment for the cover page title and tagline
+    title_one: 'Zilliqa',
+    title_two: 'Developer Portal',
+    tagline_one: 'Technical documentation for',
+    tagline_two: 'participating in the Zilliqa network.'
+  },
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
@@ -125,7 +132,7 @@ module.exports = {
             'https://github.com/Zilliqa/dev-portal/tree/master/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve('./src/css/custom.css')],
         },
       },
     ],

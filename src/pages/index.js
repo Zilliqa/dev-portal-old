@@ -18,14 +18,14 @@ const CoverImgDiv = () => {
     return (
       <>
         <div className="cover-image">
-          <img className="cover-image-hand" src={useBaseUrl('img/hand.png')}/>
+          <img className="cover-image-illustration" src={useBaseUrl('img/illustration1.png')}/>
         </div>
       </>
     );
   } else {
     return (
       <div className="cover-image">
-        <img className="cover-image-hand" src={useBaseUrl('img/hand_light.png')}/>
+        <img className="cover-image-illustration" src={useBaseUrl('img/illustration1.png')}/>
       </div>
     );
   }
@@ -58,68 +58,40 @@ function Home() {
       <Layout>
         <div className="cover-container">
           <div className="cover-title">
-            <h1 className="hero__title">{siteConfig.title}</h1>
-            <p className="hero__subtitle">{siteConfig.tagline}</p>
+            <h1 className="hero__title">{siteConfig.customFields.title_one}<br/>{siteConfig.customFields.title_two}</h1>
+            <p className="hero__subtitle">{siteConfig.customFields.tagline_one}<br/>{siteConfig.customFields.tagline_two}</p>
           </div>
           <CoverImgDiv/>
         </div>
-        <div id="cover-cards">
-          <div className="column">
-            <a href={useBaseUrl('docs/basics/basics-intro-blockchain')}>
-              <div>
-                  <StarSvg/>
-                  <div className="cards-text">
-                    <h2>Basics</h2>
-                    <p>Learn about blockchain and Zilliqa.</p>
-                  </div>
-              </div>
-            </a>
+
+        <div id="card-container">
+          <div className="card-item">
+            <StarSvg/>
+            <h2>Basics</h2>
+            <p>Learn about blockchain and Zilliqa.</p>
           </div>
-          <div className="column">
-            <a href={useBaseUrl('docs/dev/dev-started-introduction')}>
-              <div>
-                <CodeSvg/>
-                <div className="cards-text">
-                  <h2>Developers</h2>
-                  <p>Build full-stack blockchain apps on Zilliqa.</p>
-                </div>
-              </div>
-            </a>
+          <div className="card-item">
+            <CodeSvg/>
+            <h2>Developers</h2>
+            <p>Build full-stack blockchain apps on Zilliqa.</p>
           </div>
-          <div className="column">
-            <a href={useBaseUrl('docs/miners/mining-getting-started')}>
-              <div>
-                <MineSvg />
-                <div className="cards-text">
-                  <h2>Miners</h2>
-                  <p>Participate as a miner and start earning $ZIL.</p>
-                </div>
-              </div>
-            </a>
+          <div className="card-item">
+            <MineSvg />
+            <h2>Miners</h2>
+            <p>Participate as a miner and start earning $ZIL.</p>
           </div>
-          <div className="column">
-            <a href={useBaseUrl('docs/exchanges/exchange-getting-started')}>
-              <div>
-                <ExchangeSvg/>
-                <div className="cards-text">
-                  <h2>Exchanges</h2>
-                  <p>Information for exchanges and seed node operators.</p>
-                </div>
-              </div>
-            </a>
+          <div className="card-item">
+            <ExchangeSvg/>
+            <h2>Exchanges</h2>
+            <p>Information for exchanges and seed node operators.</p>
           </div>
-          <div className="column">
-            <a href={useBaseUrl('docs/contributors/contribute-buildzil')}>
-              <div>
-                <ContributeSvg/>
-                <div className="cards-text">
-                  <h2>Contributors</h2>
-                  <p>Learn how you can contribute to Zilliqa's ecosystem.</p>
-                </div>
-              </div>
-            </a>
+          <div className="card-item">
+            <ContributeSvg/>
+            <h2>Contributors</h2>
+            <p>Learn how you can contribute to Zilliqa's ecosystem.</p>
           </div>
         </div>
+        
       </Layout>
   );
 }
