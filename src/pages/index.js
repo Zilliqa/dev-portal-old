@@ -66,31 +66,57 @@ function Home() {
           </div>
 
           <div id="card-container">
+
             <div className="card-item">
-              <StarSvg/>
-              <h2>Basics</h2>
-              <p>Learn about blockchain and Zilliqa.</p>
+              <a href={useBaseUrl('docs/basics/basics-intro-blockchain')}>
+                <div>
+                  <StarSvg/>
+                  <h2>Basics</h2>
+                  <p>Learn about blockchain and Zilliqa.</p>
+                </div>
+              </a>
             </div>
+
             <div className="card-item">
-              <CodeSvg/>
-              <h2>Developers</h2>
-              <p>Build full-stack blockchain apps on Zilliqa.</p>
+              <a href={useBaseUrl('docs/dev/dev-started-introduction')}>
+                <div>
+                  <CodeSvg/>
+                  <h2>Developers</h2>
+                  <p>Build full-stack blockchain apps on Zilliqa.</p>
+                </div>
+              </a>
             </div>
+
             <div className="card-item">
-              <MineSvg />
-              <h2>Miners</h2>
-              <p>Participate as a miner and start earning $ZIL.</p>
+              <a href={useBaseUrl('docs/miners/mining-getting-started')}>
+                <div>
+                  <MineSvg />
+                  <h2>Miners</h2>
+                  <p>Participate as a miner and start earning $ZIL.</p>
+                </div>
+              </a>
             </div>
+
             <div className="card-item">
-              <ExchangeSvg/>
-              <h2>Exchanges</h2>
-              <p>Information for exchanges and seed node operators.</p>
+              <a href={useBaseUrl('docs/exchanges/exchange-getting-started')}>
+                <div>
+                  <ExchangeSvg/>
+                  <h2>Exchanges</h2>
+                  <p>Information for exchanges and seed node operators.</p>
+                </div>
+              </a>
             </div>
+
             <div className="card-item">
-              <ContributeSvg/>
-              <h2>Contributors</h2>
-              <p>Learn how you can contribute to Zilliqa's ecosystem.</p>
+              <a href={useBaseUrl('docs/contributors/contribute-buildzil')}>
+                <div>
+                  <ContributeSvg/>
+                  <h2>Contributors</h2>
+                  <p>Learn how you can contribute to Zilliqa's ecosystem.</p>
+                </div>
+              </a>
             </div>
+
           </div>
         </div>
       
