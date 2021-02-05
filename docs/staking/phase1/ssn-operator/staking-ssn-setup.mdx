@@ -127,9 +127,37 @@ $ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout
 
 Install system dependencies:
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install git libboost-system-dev libboost-filesystem-dev libboost-test-dev libssl-dev libleveldb-dev libjsoncpp-dev libsnappy-dev cmake libmicrohttpd-dev libjsonrpccpp-dev build-essential pkg-config libevent-dev libminiupnpc-dev libcurl4-openssl-dev libboost-program-options-dev libboost-python-dev python3-dev python3-setuptools python3-pip gawk
+# install system dependencies
+$ sudo apt-get update && sudo apt-get install \
+    git \
+    libboost-system-dev \
+    libboost-filesystem-dev \
+    libboost-test-dev \
+    libssl-dev \
+    libleveldb-dev \
+    libjsoncpp-dev \
+    libsnappy-dev \
+    cmake \
+    libmicrohttpd-dev \
+    libjsonrpccpp-dev \
+    build-essential \
+    pkg-config \
+    libevent-dev \
+    libminiupnpc-dev \
+    libcurl4-openssl-dev \
+    libboost-program-options-dev \
+    libboost-python-dev \
+    python3-dev         \
+    python3-setuptools  \
+    python3-pip         \
+    gawk
+
+$ sudo apt install python-pip
+$ export LC_ALL=C
+$ pip install request requests clint futures
+$ pip3 install requests clint futures
 ```
+
 Build the staked seed node:
 ```bash
 # Build the binary. This may take a while.
@@ -137,6 +165,8 @@ $ ./build.sh
 ```
 
 The build should complete with no errors. Once it is done, download and uncompress the configuration tarball:
+
+You will also need to build Scilla. Build instruction can be found [here](https://github.com/Zilliqa/scilla#building-scilla).
 
 <Tabs
   defaultValue="testnet"
