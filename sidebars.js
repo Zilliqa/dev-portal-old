@@ -54,8 +54,6 @@ module.exports = {
   },
   DevelopersSidebar: {
 
-    "Section Navigation": ["dev/dev-section-navigation"],
-
     "Getting Started": ["dev/dev-started-introduction","dev/dev-started-helloworld","dev/dev-started-env"],
 
     "User Key Management": ["dev/dev-keys-introduction","dev/dev-keys-zilpay","dev/dev-keys-pkey", "dev/dev-keys-zrc2-wallet-support", "dev/dev-keys-magic"],
