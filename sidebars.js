@@ -72,7 +72,32 @@ module.exports = {
   },
   ExchangesSidebar: {
     "Exchange Integration":["exchanges/exchange-getting-started","exchanges/exchange-account-management",
-    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts", "exchanges/exchange-managing-zrc2-tokens"]
+    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts", "exchanges/exchange-managing-zrc2-tokens"],
+    "Rosetta": [
+      {"Introduction": ["exchanges/rosetta-introduction", "exchanges/rosetta-unsupported-api", "exchanges/rosetta-setting-up-seed-node", "exchanges/rosetta-setting-up-no-seed-node"]},
+      {"Data API" : [{
+        "Network" : [
+          "exchanges/rosetta-data-network-list",
+          "exchanges/rosetta-data-network-options",
+          "exchanges/rosetta-data-network-status"],
+        "Account" : ["exchanges/rosetta-data-account-balance"], 
+        "Block" : [
+          "exchanges/rosetta-data-block",
+          "exchanges/rosetta-data-block-transaction"],
+        "Mempool": ["exchanges/rosetta-data-mempool"] 
+        }]},
+      {"Construction API" : [
+        "exchanges/rosetta-construction",
+        "exchanges/rosetta-construction-derive",
+        "exchanges/rosetta-construction-preprocess", 
+        "exchanges/rosetta-construction-metadata",
+        "exchanges/rosetta-construction-payloads",
+        "exchanges/rosetta-construction-parse", 
+        "exchanges/rosetta-construction-combine",
+        "exchanges/rosetta-construction-hash",
+        "exchanges/rosetta-construction-submit",
+      ]} 
+    ]
   },
   StakingSidebar: {
     "Zilliqa Seed Node Staking":["staking/staking-overview", "staking/staking-disclaimer"],
