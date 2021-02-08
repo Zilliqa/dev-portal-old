@@ -105,6 +105,10 @@ curl -d '{
 | 2                   | 27       | Rejected - Nonce is lower than expected                                   |
 | 2                   | 255      | Rejected - Internal error                                                 |
 
+:::warning
+The transaction pool is cleared by design **at the start of a new DS epoch**. Any transaction left in "Pending" state (e.g., "Pending - Dispatched", "Pending - Nonce is higher than expected", ...) after a new DS epoch has started will have most likely been dropped and will no longer be processed further at that point.
+:::
+
 ### HTTP Request
 
 | Chain(s)              | URL(s)                       |
