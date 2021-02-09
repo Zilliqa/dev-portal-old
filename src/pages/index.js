@@ -11,6 +11,7 @@ import CodeSvg from './components/cards_img02.js';
 import MineSvg from './components/cards_img03.js';
 import ExchangeSvg from './components/cards_img04.js';
 import ContributeSvg from './components/cards_img05.js';
+import MouseIcon from './components/mouse.js';
 
 const CoverImgDiv = () => {
   const {isDarkTheme} = useThemeContext();
@@ -56,8 +57,8 @@ function Home() {
   }
 
   const scrollToCards = () => {
-    // cardsSection.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    window.scrollTo({ behavior: 'smooth', top: cardsSection.current.offsetTop-200 })
+    // scroll to the bottom navigation panels
+    window.scrollTo({ behavior: 'smooth', top: cardsSection.current.offsetTop-180 })
   };
 
   return (
@@ -67,7 +68,9 @@ function Home() {
             <div className="cover-title">
               <h1 className="hero__title">{siteConfig.customFields.title_one}<br/>{siteConfig.customFields.title_two}</h1>
               <p className="hero__subtitle">{siteConfig.customFields.tagline_one}<br/>{siteConfig.customFields.tagline_two}</p>
-              <button onClick={scrollToCards}>Scroll Down</button>
+              <button className="scroll-btn" onClick={scrollToCards}>
+                <MouseIcon/><span>Scroll Down</span>
+              </button>
             </div>
             <CoverImgDiv/>
           </div>
@@ -90,6 +93,16 @@ function Home() {
                   <CodeSvg/>
                   <h2>Developers</h2>
                   <p>Build full-stack blockchain apps on Zilliqa.</p>
+                </div>
+              </a>
+            </div>
+
+            <div className="card-item">
+              <a href={useBaseUrl('docs/apis/api-introduction')}>
+                <div>
+                  <CodeSvg/>
+                  <h2>APIs</h2>
+                  <p>Information about the functions supported on Zilliqa.</p>
                 </div>
               </a>
             </div>
