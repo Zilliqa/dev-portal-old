@@ -47,12 +47,18 @@ function Feature({imageUrl, title, description}) {
 }
 
 function Home() {
+  const cardsSection = React.useRef(null);
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const {isDarkTheme} = useThemeContext();
   if (isDarkTheme) {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
+
+  const scrollToCards = () => {
+    // cardsSection.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    window.scrollTo({ behavior: 'smooth', top: cardsSection.current.offsetTop-200 })
+  };
 
   return (
       <Layout>
@@ -61,11 +67,12 @@ function Home() {
             <div className="cover-title">
               <h1 className="hero__title">{siteConfig.customFields.title_one}<br/>{siteConfig.customFields.title_two}</h1>
               <p className="hero__subtitle">{siteConfig.customFields.tagline_one}<br/>{siteConfig.customFields.tagline_two}</p>
+              <button onClick={scrollToCards}>Scroll Down</button>
             </div>
             <CoverImgDiv/>
           </div>
 
-          <div id="card-container">
+          <div id="card-container" ref={cardsSection}>
 
             <div className="card-item">
               <a href={useBaseUrl('docs/basics/basics-intro-blockchain')}>
