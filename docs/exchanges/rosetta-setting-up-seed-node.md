@@ -15,7 +15,7 @@ description: Setting up Zilliqa Rosetta with Seed node
 
 ---
 
-
+## Setup
 :::info
 Please note that whitelisting will be required for operating a Zilliqa seed node. Currently, whitelisting is granted on a case by case basis and usually for reason such as supporting exchange infrastracture. 
 :::
@@ -70,7 +70,8 @@ docker run -d \
 | `NAME_OF_THE_TESTNET` | Refer to [`network meta`](https://github.com/Zilliqa/zilliqa-rosetta/blob/master/network_meta.md) |
 | `NAME_OF_THE_PERSISTENCE_BUCKET` | Refer to [`network meta`](https://github.com/Zilliqa/zilliqa-rosetta/blob/master/network_meta.md) |
 
-# Restarting Zilliqa Rosetta
+## Maintanance
+### Restarting Zilliqa Rosetta
 ```bash
 docker stop <container name>
 docker start <container name>
