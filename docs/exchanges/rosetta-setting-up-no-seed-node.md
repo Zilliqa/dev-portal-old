@@ -22,7 +22,7 @@ Zilliqa rosetta standalone provide the option of connecting to public seed node 
 ## Setup
 ### Step 1: Download `Zilliqa-rosetta` latest release from https://github.com/Zilliqa/zilliqa-rosetta/releases. 
 
-### Step 2: Build `Zilliqa-rosetta` Docker image from Zilliqa and Scilla source code
+### Step 2: Build `Zilliqa-rosetta standalone` Docker image 
 
 #### Running with the latest release of Zilliqa rosetta
 ```bash
