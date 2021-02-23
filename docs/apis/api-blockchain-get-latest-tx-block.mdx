@@ -78,6 +78,10 @@ func GetLatestTxBlock() {
 
 ### Example Response
 
+:::note
+  From Zilliqa `V7.2.0` onwards, an additional `NumPages` field is included in the `header` response section.
+  This field is used by [GetTransactionsForTxBlockEx](api-transaction-get-txs-for-txblock-ex.mdx) and [GetTxnBodiesForTxBlockEx](api-transaction-get-txbodies-for-txblock-ex.mdx).
+:::
 
 ```json
 {
@@ -85,45 +89,47 @@ func GetLatestTxBlock() {
   "jsonrpc": "2.0",
   "result": {
     "body": {
-      "BlockHash": "01a61cc22ab5ae1d77cd6da65385771dca408fbea90688c845bdd2ffe1797bb7",
-      "HeaderSign": "DEACD285A5D2AED23052B08BE9CEEE1C9C4C8CB69F3DF4106D87BA9B0AC067E16AA2C5D129F2318824723A2A75CA5F32632DCD4E5D8A634234E1037B6025779D",
+      "BlockHash": "53a24881823dd5f2a3dfda5902d1b79710e2bec5477ed3aa7325d74e30436b58",
+      "HeaderSign": "8E0C73945CC2282173CF8CF44D7EB55E5DAD9B2D6D3437C6AC09DE8CF0D6B698575E535168AA898B6B3A3107603BDFC4BC671A4621E77C9004369FC3513F53A0",
       "MicroBlockInfos": [
         {
-          "MicroBlockHash": "8cf6285c259613a79c7b5dfcfbada4f9631fa15d626037f048d1d9a9649d562c",
+          "MicroBlockHash": "ebadc2d6e80b749e6e322ae54467d516618ea79d1ae495f26f3592c70b4de71a",
           "MicroBlockShardId": 0,
-          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+          "MicroBlockTxnRootHash": "165049b84c5f4499ce781aab63cba06aa31ed4e1b556f0aac643f01eb5814da4"
         },
         {
-          "MicroBlockHash": "01d7da6e80b81711aaf7cdbc74bc50994f4ed99be085d451c93abe31882e8b44",
+          "MicroBlockHash": "7111f32a526a381ecb3492e21a382f2dc5ad10c346340aaae3addd1a349cc559",
           "MicroBlockShardId": 1,
-          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+          "MicroBlockTxnRootHash": "640a7019993fcdaec2bfd10b50f5f9faea92920a1a4c0cb931ae56e061f983d9"
         },
         {
-          "MicroBlockHash": "1eaf0a468eff13a2d7ecd33b5177fb850bdfce23bca3a330ecef951bde44eb62",
+          "MicroBlockHash": "1a914f52aaef51fa3d585c666e56ae55c2dc5e3b8c759c66d1b79b211b783d0e",
           "MicroBlockShardId": 2,
-          "MicroBlockTxnRootHash": "fa80cb720f7612229909295640266eb618cc2a73dd78da17b4d68d7ffc7cce82"
+          "MicroBlockTxnRootHash": "aea9eafc983f75947ef63d0aedd14c0c138025cbbaa5934f3ef327b2116bfd68"
         },
         {
-          "MicroBlockHash": "bf86108de525ba4954e40631949ad71f7f7b0a620f350da2c736f92aa157d2ba",
+          "MicroBlockHash": "cf095207f2f3cece2bc21f172022e2e3473c8a9279ba67a4d9bd1e352890f496",
           "MicroBlockShardId": 3,
-          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+          "MicroBlockTxnRootHash": "d97261b9c32ca9d1cfc8431a64523c9e3d26beff7e5265c5d431d5a41b416e49"
         }
       ]
     },
     "header": {
-      "BlockNum": "589789",
-      "DSBlockNum": "5898",
-      "GasLimit": "325000",
-      "GasUsed": "1",
-      "MbInfoHash": "ba2a326bcc595fae5ddcbdc5d53cca06ce7c8d1d046ffb635341e3aa9d5cbb7c",
-      "MinerPubKey": "0x0207FF35CFA9F3D8336430BBD09BBF9B36C283358E8CA91FAB551ACB5FE1E38B68",
+      "BlockNum": "1002353",
+      "DSBlockNum": "10024",
+      "GasLimit": "650000",
+      "GasUsed": "25517",
+      "MbInfoHash": "b2a862649507a9d86b21246b1538aa237c75f65cf7ef9a512e03ba39d0e62933",
+      "MinerPubKey": "0x02134CC19B594B1571916AABBA4475026D1B2021C19045CB2065E0D3B12706768E",
       "NumMicroBlocks": 4,
-      "NumTxns": 1,
-      "PrevBlockHash": "be825dd949caf36d6a20372fdc88b1912dc1515d1ecf8624e6cd928b33c9a705",
-      "Rewards": "1000000000",
-      "StateDeltaHash": "c2c43d6a277a92df12d7d5ab5c657d6a7d823000061da5802c6354b47e56ebd5",
-      "StateRootHash": "d00196c0a8f28d81e49253a1a561da79a526a47e12b4e208da20b96a6e3a1ac7",
-      "Timestamp": "1590645487342412",
+      "NumPages": 5,
+      "NumTxns": 10022,
+      "PrevBlockHash": "18426f28438c500dd8b424f7923844290f4f082d43e84262ce629eebce68b82c",
+      "Rewards": "0",
+      "StateDeltaHash": "9e2c6b2b542219e421792892e8d42923f30fd3e4d4c55369feb89e3979b5a3a7",
+      "StateRootHash": "57710511d91f7ec765c264babd53d6b607b320167029cc88c477fafd78c14632",
+      "Timestamp": "1612477810820092",
+      "TxnFees": "51138500000000",
       "Version": 1
     }
   }

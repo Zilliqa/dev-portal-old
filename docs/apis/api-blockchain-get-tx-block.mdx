@@ -30,7 +30,7 @@ curl -d '{
     "id": "1",
     "jsonrpc": "2.0",
     "method": "GetTxBlock",
-    "params": ["40"]
+    "params": ["1002353"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
 </TabItem>
@@ -78,6 +78,10 @@ func GetTxBlock(t *testing.T) {
 
 ### Example Response
 
+:::note
+  From Zilliqa `V7.2.0` onwards, an additional `NumPages` field is included in the `header` response section.
+  This field is used by [GetTransactionsForTxBlockEx](api-transaction-get-txs-for-txblock-ex.mdx) and [GetTxnBodiesForTxBlockEx](api-transaction-get-txbodies-for-txblock-ex.mdx).
+:::
 
 ```json
 {
@@ -85,40 +89,47 @@ func GetTxBlock(t *testing.T) {
   "jsonrpc": "2.0",
   "result": {
     "body": {
-      "BlockHash": "79fdf67632c9f793650955297c860d021c3241f2b448120747ee8fe502c03e54",
-      "HeaderSign": "CB8290232ECE38030EAD865859A77616BD10738D79D6335F003427C6118C1CBFEC94D33183A73D5E8877361582748D2EEC895722066D390E79119B8E2DC3411D",
+      "BlockHash": "53a24881823dd5f2a3dfda5902d1b79710e2bec5477ed3aa7325d74e30436b58",
+      "HeaderSign": "8E0C73945CC2282173CF8CF44D7EB55E5DAD9B2D6D3437C6AC09DE8CF0D6B698575E535168AA898B6B3A3107603BDFC4BC671A4621E77C9004369FC3513F53A0",
       "MicroBlockInfos": [
         {
-          "MicroBlockHash": "97ab843bfd7a520f65c16667a8700ba11a886cc130254258e155d48be3ee3fb5",
+          "MicroBlockHash": "ebadc2d6e80b749e6e322ae54467d516618ea79d1ae495f26f3592c70b4de71a",
           "MicroBlockShardId": 0,
-          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+          "MicroBlockTxnRootHash": "165049b84c5f4499ce781aab63cba06aa31ed4e1b556f0aac643f01eb5814da4"
         },
         {
-          "MicroBlockHash": "120d3f2c76e1c55b6adb3e78aa3aa1c34e618fd3023069420dd1dcd79689cd50",
+          "MicroBlockHash": "7111f32a526a381ecb3492e21a382f2dc5ad10c346340aaae3addd1a349cc559",
           "MicroBlockShardId": 1,
-          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+          "MicroBlockTxnRootHash": "640a7019993fcdaec2bfd10b50f5f9faea92920a1a4c0cb931ae56e061f983d9"
         },
         {
-          "MicroBlockHash": "3fbae433e0e5c30ab89ec75cd32276dd49581941c7d0fc318503ca55693a9aed",
+          "MicroBlockHash": "1a914f52aaef51fa3d585c666e56ae55c2dc5e3b8c759c66d1b79b211b783d0e",
           "MicroBlockShardId": 2,
-          "MicroBlockTxnRootHash": "0000000000000000000000000000000000000000000000000000000000000000"
+          "MicroBlockTxnRootHash": "aea9eafc983f75947ef63d0aedd14c0c138025cbbaa5934f3ef327b2116bfd68"
+        },
+        {
+          "MicroBlockHash": "cf095207f2f3cece2bc21f172022e2e3473c8a9279ba67a4d9bd1e352890f496",
+          "MicroBlockShardId": 3,
+          "MicroBlockTxnRootHash": "d97261b9c32ca9d1cfc8431a64523c9e3d26beff7e5265c5d431d5a41b416e49"
         }
       ]
     },
     "header": {
-      "BlockNum": "40",
-      "DSBlockNum": "1",
-      "GasLimit": "1500000",
-      "GasUsed": "0",
-      "MbInfoHash": "dcb2c79d8fd7021634039e49578c1e7415f4a6aa9586043db3f488a34e6846ff",
-      "MinerPubKey": "0x020035B739426374C5327A1224B986005297102E01C29656B8B086BF4B352C6CA9",
-      "NumMicroBlocks": 3,
-      "NumTxns": 0,
-      "PrevBlockHash": "b87e9f526ffbaa653fcb9b2db731f53c65420f12ace6d88bd2753f816650bdb5",
+      "BlockNum": "1002353",
+      "DSBlockNum": "10024",
+      "GasLimit": "650000",
+      "GasUsed": "25517",
+      "MbInfoHash": "b2a862649507a9d86b21246b1538aa237c75f65cf7ef9a512e03ba39d0e62933",
+      "MinerPubKey": "0x02134CC19B594B1571916AABBA4475026D1B2021C19045CB2065E0D3B12706768E",
+      "NumMicroBlocks": 4,
+      "NumPages": 5,
+      "NumTxns": 10022,
+      "PrevBlockHash": "18426f28438c500dd8b424f7923844290f4f082d43e84262ce629eebce68b82c",
       "Rewards": "0",
-      "StateDeltaHash": "0000000000000000000000000000000000000000000000000000000000000000",
-      "StateRootHash": "77ebb9cce52b0e1bc8ce1c0e5669e88f5018bd986d01339960ba07882b63ed79",
-      "Timestamp": "1548930491181914",
+      "StateDeltaHash": "9e2c6b2b542219e421792892e8d42923f30fd3e4d4c55369feb89e3979b5a3a7",
+      "StateRootHash": "57710511d91f7ec765c264babd53d6b607b320167029cc88c477fafd78c14632",
+      "Timestamp": "1612477810820092",
+      "TxnFees": "51138500000000",
       "Version": 1
     }
   }
@@ -136,9 +147,9 @@ func GetTxBlock(t *testing.T) {
 
 ### Arguments
 
-| Parameter | Type   | Required | Description                                         |
-| --------- | ------ | -------- | --------------------------------------------------- |
-| `id`      | string | Required | `"1"`                                               |
-| `jsonrpc` | string | Required | `"2.0"`                                             |
-| `method`  | string | Required | `"GetTxBlock"`                                      |
-| `params`  | string | Required | Specifed TX block number to return. Example: `"40"` |
+| Parameter | Type   | Required | Description                                              |
+| --------- | ------ | -------- | -------------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                                    |
+| `jsonrpc` | string | Required | `"2.0"`                                                  |
+| `method`  | string | Required | `"GetTxBlock"`                                           |
+| `params`  | string | Required | Specifed TX block number to return. Example: `"1002353"` |
