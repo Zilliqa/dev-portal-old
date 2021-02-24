@@ -41,7 +41,9 @@ module.exports = {
     "apis/api-transaction-get-tx",
     "apis/api-transaction-get-transaction-status",
     "apis/api-transaction-get-txs-for-txblock",
-    "apis/api-transaction-get-txbodies-for-txblock"],
+    "apis/api-transaction-get-txs-for-txblock-ex",
+    "apis/api-transaction-get-txbodies-for-txblock",
+    "apis/api-transaction-get-txbodies-for-txblock-ex"],
 
     "Contract-related Methods":["apis/api-contract-get-contractaddress-from-txid",
     "apis/api-contract-get-smartcontract-code",
