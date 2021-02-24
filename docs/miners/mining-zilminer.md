@@ -47,8 +47,8 @@ If you wish to use CUDA supported GPU for PoW, please download and install CUDA 
 
 1. Install **ZilMiner** on your GPU rigs:
 
-    - **For Windows OS:** [**DOWNLOAD THE LASTEST RELEASE HERE**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
-    - **For Ubuntu OS:** [**DOWNLOAD THE LASTEST RELEASE HERE**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
+    - **For Windows OS:** [**DOWNLOAD THE LATEST RELEASE HERE**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
+    - **For Ubuntu OS:** [**DOWNLOAD THE LATEST RELEASE HERE**](https://github.com/DurianStallSingapore/ZILMiner/releases/)
 
 2. Setup your **ZilMiner** on your GPU rigs with the following command:
 
