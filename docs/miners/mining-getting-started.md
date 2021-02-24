@@ -21,6 +21,13 @@ There are theoretically multiple ways to participate in the Zilliqa Mainnet as a
 
 However, at the present level of mining difficulty in the Mainnet, the first two ways are no longer possible.
 
+:::note
+Mining difficulty at mainnet is high. Hence, it will not be feasible to mine using CPU or a single GPU. i.e Option 1 and 2
+
+
+To enter the shard network, it will requires >300 modern GPUs. As such, it will be advisable to participate in mining pool if you do not have sufficient GPUs.
+:::
+
 ### Proxy Mining
 
 To proceed with proxy mining:
