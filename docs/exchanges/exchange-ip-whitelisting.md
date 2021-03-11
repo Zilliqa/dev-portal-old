@@ -1,54 +1,17 @@
 ---
-id: exchange-getting-started
-title: Getting Started
+id: exchange-ip-whitelisting
+title: IP Whitelisting 
 keywords: 
-- exchanges
-- ip whitelisting 
-- hardware requirements
-- docker setup
-- zilliqa
-description: Getting Started For Exchanges
+description: Run seed node in IP Whitelisting mode. 
 ---
 
----
-
-:::danger $ZIL Disclaimer
-Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceeding. 
-:::
-
-## Introduction
-
-While it's possible to use the public endpoint provided by Zilliqa to interact
-with the blockchain, we recommend that all exchanges who wish to support
-trading on the main net set up seed nodes. This document walks you through the
-basic steps needed to get up and running.
-
-## IP Whitelisting
-
-As seed nodes do not draw data directly from lookup or shard nodes, it is
-necessary for exchanges to be whitelisted by Zilliqa in order to receive data
-broadcasts about the blockchain and its state. This requires a static, public
-IP address with minimally two open ports (inbound and outbound) at which it
-can be reached.
-
-:::tip Note on whitelisting process
-Starting Zilliqa version 6.3.0, exchanges may also choose to operate seed nodes through public key whitelisting. 
-Please contact us for more information on setting up a seed node with this scheme.
-:::
-
-## Minimum Hardware Requirements
-- x64 Linux operating system (e.g Ubuntu 18.04.5)
-- Recent dual core processor @ 2.2 GHZ. Examples: Intel Xeon (Skylake)
-- 8GB DRR3 RAM or higher
-- Public static IP address
-- 500GB Solid State Drive
-- 100MB/s upload and download bandwidth
 
 ## Preparing the Machine
 
-Before you start, please choose and note down a port you wish to reserve for
-your seed node to communicate on. This step is critical, as failing to provide
-the correct port will result in failure.
+Before you start, please ensure below is done.
+- Share the static ip address of the node with zilliqa support team in order to whitelist the IP address in zilliqa lookups and seedpubs nodes.
+- Choose and note down a port you wish to reserve for your seed node to communicate on.This step is critical, as failing to provide the correct port will result in failure.
+- The static ip address and port of choice have to be shared with zilliqa team in KYC form.
 
 ### Docker Setup
 
@@ -72,9 +35,6 @@ $ tar -zxvf seed-configuration.tar.gz
 # constants.xml
 # launch_docker.sh
 # dsnodes.xml
-# download_and_verify.sh
-# fetchHistorical.py
-# fetchHistorical.sh
 # config.xml
 ```
 
@@ -98,7 +58,7 @@ binary from source and run it as such.
 ```sh
 # clone Zilliqa source files
 $ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout
-<<commit_sha>> && cd Zilliqa
+tags/<<tag_id>> && cd Zilliqa
 
 # install system dependencies
 $ sudo apt-get update && sudo apt-get install \
@@ -125,12 +85,20 @@ $ sudo apt-get update && sudo apt-get install \
     python3-pip         \
     gawk
 
-$ sudo apt install python-pip
+# Run the following to install latest version of cmake.
+# We suggest to install cmake 3.19 or any version >=3.16:
+wget https://github.com/Kitware/CMake/releases/download/v3.19.3/cmake-3.19.3-Linux-x86_64.sh
+mkdir -p "${HOME}"/.local
+bash ./cmake-3.19.3-Linux-x86_64.sh --skip-license --prefix="${HOME}"/.local/
+export PATH=$HOME/.local/bin:$PATH
+cmake --version
+rm cmake-3.19.3-Linux-x86_64.sh
+
+
 $ export LC_ALL=C
-$ pip install request requests clint futures
 $ pip3 install requests clint futures
 
-# build the binary. this may take awhile.
+# build the binary. this may take a while.
 $ ./build.sh
 ```
 
@@ -152,7 +120,7 @@ $ ../Zilliqa/build/bin/genkeypair > mykey.txt
 
 The node requires some configuration before it can successfully join the
 network. Most configuration is contained in `constants.xml`, which should be
-in the directory we extracted `configuration.tar.gz` to. Minimally, the
+in the directory we extracted `seed-configuration.tar.gz` to. Minimally, the
 following changes are required:
 
 - Change the value of `SEED_PORT` to `33133` (default), or a port of your choice (if

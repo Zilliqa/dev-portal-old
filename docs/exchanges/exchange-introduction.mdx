@@ -1,0 +1,46 @@
+---
+id: exchange-getting-started
+title: Getting Started
+keywords: 
+- exchanges
+- ip whitelisting 
+- hardware requirements
+- docker setup
+- zilliqa
+description: Getting Started For Exchanges
+---
+
+---
+
+:::danger $ZIL Disclaimer
+Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceeding. 
+:::
+
+## Introduction
+
+While it's possible to use the public endpoint provided by Zilliqa to interact
+with the blockchain, we recommend that all exchanges who wish to support
+trading on the mainnet, set up seed nodes. This document walks you through the
+basic steps needed to get seed node up and running.Below are the two modes to launch a seed nodes.Exchanges can prefer any mode as per their feasiblity.
+- IP Whitelisting mode
+- Key Whitelisting mode
+
+### IP Whitelisting mode
+
+As seed nodes do not draw data directly from lookup or shard nodes, it is
+necessary for exchanges to be whitelisted by Zilliqa in order to receive data
+broadcasts about the blockchain and its state. This requires a static, public
+IP address with minimally two open ports (inbound and outbound) at which it
+can be reached.The [IP Whitelisting](exchange-ip-whitelisting) section contains information about running a node in IP whitelisting mode.
+
+### Key Whitelisting mode
+
+In key whitelisting mode, exchanges can generate a public-private key pair and can share their public key in order to whitelist their seed node in zilliqa public seed nodes. Minimal two ports have to be opened for inbound and outbound traffic.However, we have another feature called P2PSeed where there is no need to open any listener port.The [Key Whitelisting](exchange-key-whitelisting) section contains information about running a node in key whitelisting mode.
+
+## Minimum Hardware Requirements
+- x64 Linux operating system (e.g Ubuntu 18.04.5)
+- Recent dual core processor @ 2.2 GHZ. Examples: Intel Xeon (Skylake)
+- 8GB DRR3 RAM or higher
+- Public static IP address
+- 500GB Solid State Drive
+- 100MB/s upload and download bandwidth
