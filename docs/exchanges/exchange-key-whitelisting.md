@@ -215,11 +215,11 @@ $ ./launch_docker.sh
 $ ./launch.sh
 ```
 
-You will be asked a series of questions. When asked to enter your IP address ,
-please enter the values you provided us when you submitted
+You will be asked a series of questions. When asked to enter your IP address
+and listening port, please enter the values you provided us when you submitted
+the KYC form. This is crucial, as your node **will not work** with anything
 else.
 
-the KYC form. This is crucial, as your node **will not work** with anything
 Sample instructions to be followed for launch are provided below.
 
 - launch_docker.sh
