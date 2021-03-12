@@ -1,7 +1,10 @@
 ---
 id: exchange-key-whitelisting
 title: Key Whitelisting 
-keywords: 
+keywords:
+- exchanges
+- docker setup
+- zilliqa
 description: Run seed node in IP Whitelisting mode. 
 ---
 
@@ -53,6 +56,24 @@ $ sudo docker run --rm zilliqa/zilliqa:<<version>> -c genkeypair
 ```
 The first value from the ouput is public key and second value is private key.Public key has to be shared in advance while submitting KYC form.Private key is required to start seed node.
 
+If you wish you launch seed node in P2PSeed mode,then please refer to below
+steps for downloading the configuration tarball, and generate a keypair:
+
+```sh
+# make a separate folder for keys and configuration
+$ cd ../ && mkdir my_seed && cd my_seed
+# download the seed node configuration files
+$ curl -O https://mainnet-join.zilliqa.com/p2pseed-configuration.tar.gz
+$ tar -zxvf p2pseed-configuration.tar.gz
+
+# generate a keypair
+$ ../Zilliqa/build/bin/genkeypair > mykey.txt
+
+# generate additional key pair for key whitelisting.
+$ ../Zilliqa/build/bin/genkeypair
+# for eg: ../Zilliqa/build/bin/genkeypair
+03690A37D75D4E0795CCDA3AC1F773DE12F66A312D003A930B7CBFD4DF53E7C8A6 B45E729E98342D015B359A92E029FC73C1DA607EA5A8C16F69AB84142FEC0553
+```
 ### Native Setup
 
 :::note
@@ -172,7 +193,6 @@ Enter your IP address ('NAT' or *.*.*.*): <<static ip address of machine>>
 Enter your listening port (default: 33133): <<33133 or already selected port>>
 Use IP whitelisting registration approach (default: Y): N
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: << Private key generated for key whitelisting>>
-
 ```
 
 - launch.sh
@@ -187,32 +207,11 @@ Use IP whitelisting registration approach (default: Y): N
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: << Private key generated for key whitelisting>>
 ```
 
-If you wish you launch seed node in P2PSeed mode,then please refer to below
-steps for downloading the configuration tarball, and generate a keypair:
-
-```sh
-# make a separate folder for keys and configuration
-$ cd ../ && mkdir my_seed && cd my_seed
-# download the seed node configuration files
-$ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
-$ tar -zxvf p2pseed-configuration.tar.gz
-
-# generate a keypair
-$ ../Zilliqa/build/bin/genkeypair > mykey.txt
-
-# generate additional key pair for key whitelisting.
-$ ../Zilliqa/build/bin/genkeypair
-# for eg: ../Zilliqa/build/bin/genkeypair
-03690A37D75D4E0795CCDA3AC1F773DE12F66A312D003A930B7CBFD4DF53E7C8A6 B45E729E98342D015B359A92E029FC73C1DA607EA5A8C16F69AB84142FEC0553
-```
 ## Joining the Network in P2PSeed mode
 
 :::note
 Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
 :::
-
-Once the preliminary steps have been completed, joining the network is relatively
-straightforward.
 
 ```sh
 # NOTE: run only ONE of the following.
@@ -222,8 +221,8 @@ $ ./launch_docker.sh
 $ ./launch.sh
 ```
 
-You will be asked a series of questions. When asked to enter your IP address
-and listening port, please enter the values you provided us when you submitted
+You will be asked a series of questions. When asked to enter your IP address ,
+please enter the values you provided us when you submitted
 else.
 
 the KYC form. This is crucial, as your node **will not work** with anything

@@ -1,7 +1,10 @@
 ---
 id: exchange-ip-whitelisting
 title: IP Whitelisting 
-keywords: 
+keywords:
+- exchanges
+- docker setup
+- zilliqa
 description: Run seed node in IP Whitelisting mode. 
 ---
 
