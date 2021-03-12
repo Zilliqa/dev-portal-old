@@ -30,7 +30,7 @@ Guard mode is designed to be toggleable and does not interfere with the standard
 1. To enable guard mode, set `GUARD_MODE` to `true` in `constants.xml`
 1. Add `n` DS guard public keys to the `ds_guard.DSPUBKEY` section in `constants.xml`
 1. Add `n` shard guard public keys to the `shard_guard.SHARDPUBKEY` section in `constants.xml`
-1. Adjust `SHARD_GUARD_TOL` in `constants.xml` to control the minimum percentage of shard guards in each shard
+1. Adjust `SHARD_GUARD_TOL` in `constants.xml` to control the maximum percentage of shard guards in each shard
 
 ## Normal Operation
 
@@ -76,7 +76,7 @@ After the PoW window is over, the DS committee will begin to compose the shardin
 
 When determining the shard composition - particularly in the event that the number of shards in the new DS epoch is lower than in the previous one - we must ensure that the newly composed shards will not be entirely made up of guards.
 
-To do this, we trim the overall number of shard guards to 2/3 of the expected population (e.g., 1200 out of 1800), and then complete the count with non-shard guards. In the case where there are insufficient non-guard nodes, shard guard nodes will fill up the remaining slots.
+To do this, we trim the overall number of shard guards to 2/3 of the expected population (e.g., 1200 out of 1800), and then complete the count with non-shard guards.
 
 Keywords to look for in the logs:
 
