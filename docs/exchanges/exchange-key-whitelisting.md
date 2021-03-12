@@ -40,14 +40,7 @@ $ tar -zxvf seed-configuration.tar.gz
 # config.xml
 ```
 
-Once you have successfully uncompressed the tarball, you should generate a new
-keypair, like so:
-
-```sh
-$ ./launch_docker.sh --genkeypair
-```
-
-Also one additional key pair needs to generated to support key whitelisting:
+One public-private key pair needs to generated to support key whitelisting:
 ```sh
 $ sudo docker run --rm zilliqa/zilliqa:<<version>> -c genkeypair
 # for eg: sudo docker run --rm zilliqa/zilliqa:v7.2.0 -c genkeypair
@@ -66,9 +59,6 @@ $ cd ../ && mkdir my_seed && cd my_seed
 # download the seed node configuration files
 $ curl -O https://mainnet-join.zilliqa.com/p2pseed-configuration.tar.gz
 $ tar -zxvf p2pseed-configuration.tar.gz
-
-# generate a keypair
-$ ../Zilliqa/build/bin/genkeypair > mykey.txt
 
 # generate additional key pair for key whitelisting.
 $ ../Zilliqa/build/bin/genkeypair
@@ -141,9 +131,6 @@ $ cd ../ && mkdir my_seed && cd my_seed
 # download the seed node configuration files
 $ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
-
-# generate a keypair
-$ ../Zilliqa/build/bin/genkeypair > mykey.txt
 
 # generate additional key pair for key whitelisting.
 $ ../Zilliqa/build/bin/genkeypair
@@ -261,6 +248,6 @@ a functioning seed node that exposes an RPC API on `localhost:4201`. You may
 further check the logs at `zilliqa-00001-log.txt`.
 
 The following articles in this series will demonstrate a simple set of
-functions that can be used as a starting point for exhcange developers to implement
+functions that can be used as a starting point for exchange developers to implement
 their own custom business logic around the Zilliqa blockchain. You may find
 the full source code of the example app in the [same repository](https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange).

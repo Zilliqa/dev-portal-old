@@ -42,13 +42,6 @@ $ tar -zxvf seed-configuration.tar.gz
 # config.xml
 ```
 
-Once you have successfully uncompressed the tarball, you should generate a new
-keypair, like so:
-
-```sh
-$ ./launch_docker.sh --genkeypair
-```
-
 ### Native Setup
 
 :::note
@@ -116,10 +109,6 @@ $ cd ../ && mkdir my_seed && cd my_seed
 $ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 
-# generate a keypair
-$ ../Zilliqa/build/bin/genkeypair > mykey.txt
-```
-
 ## Configuring the Node
 
 The node requires some configuration before it can successfully join the
@@ -181,6 +170,6 @@ a functioning seed node that exposes an RPC API on `localhost:4201`. You may
 further check the logs at `zilliqa-00001-log.txt`.
 
 The following articles in this series will demonstrate a simple set of
-functions that can be used as a starting point for exhcange developers to implement
+functions that can be used as a starting point for exchange developers to implement
 their own custom business logic around the Zilliqa blockchain. You may find
 the full source code of the example app in the [same repository](https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange).
