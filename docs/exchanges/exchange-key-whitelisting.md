@@ -187,6 +187,67 @@ Use IP whitelisting registration approach (default: Y): N
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: << Private key generated for key whitelisting>>
 ```
 
+If you wish you launch seed node in P2PSeed mode,then please refer to below
+steps for downloading the configuration tarball, and generate a keypair:
+
+```sh
+# make a separate folder for keys and configuration
+$ cd ../ && mkdir my_seed && cd my_seed
+# download the seed node configuration files
+$ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
+$ tar -zxvf p2pseed-configuration.tar.gz
+
+# generate a keypair
+$ ../Zilliqa/build/bin/genkeypair > mykey.txt
+
+# generate additional key pair for key whitelisting.
+$ ../Zilliqa/build/bin/genkeypair
+# for eg: ../Zilliqa/build/bin/genkeypair
+03690A37D75D4E0795CCDA3AC1F773DE12F66A312D003A930B7CBFD4DF53E7C8A6 B45E729E98342D015B359A92E029FC73C1DA607EA5A8C16F69AB84142FEC0553
+```
+## Joining the Network in P2PSeed mode
+
+:::note
+Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
+:::
+
+Once the preliminary steps have been completed, joining the network is relatively
+straightforward.
+
+```sh
+# NOTE: run only ONE of the following.
+# for Docker setup
+$ ./launch_docker.sh
+# for native setup
+$ ./launch.sh
+```
+
+You will be asked a series of questions. When asked to enter your IP address
+and listening port, please enter the values you provided us when you submitted
+else.
+
+the KYC form. This is crucial, as your node **will not work** with anything
+Sample instructions to be followed for launch are provided below.
+
+- launch_docker.sh
+
+```sh
+$ ./launch_docker.sh
+Assign a name to your container (default: zilliqa):<<container_name>>
+Enter your IP address ('NAT' or *.*.*.*): <<static ip address>>
+Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: << Private key generated for key whitelisting>>
+
+```
+
+- launch.sh
+
+```sh
+$ ./launch.sh
+Enter the full path of your zilliqa source code directory:<<zilliqa code directory path>>
+Enter the full path for persistence storage (default: current working directory): << default or custom path>>
+Enter your IP address ('NAT' or *.*.*.*): <<static ip address>>
+Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: << Private key generated for key whitelisting>>
+```
 ## Next Steps
 
 If you have successfully completed the above steps, you should have

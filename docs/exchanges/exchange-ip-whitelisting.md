@@ -156,7 +156,7 @@ Sample instructions to be followed for launch are provided below.
 ```sh
 $ ./launch_docker.sh
 Assign a name to your container (default: zilliqa):<<container_name>>
-Enter your IP address ('NAT' or *.*.*.*): <<static ip address of machine>>
+Enter your IP address ('NAT' or *.*.*.*): <<static ip address>>
 Enter your listening port (default: 33133): <<33133 or already selected port>>
 Use IP whitelisting registration approach (default: Y): Y
 ```
