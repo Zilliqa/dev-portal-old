@@ -8,16 +8,17 @@ description: Run seed node in IP Whitelisting mode.
 
 ## Preparing the Machine
 
-Before you start, please ensure below is done.
-- Share the static ip address of the node with zilliqa support team in order to whitelist the IP address in zilliqa lookups and seedpubs nodes.
-- Choose and note down a port you wish to reserve for your seed node to communicate on.This step is critical, as failing to provide the correct port will result in failure.
-- The static ip address and port of choice have to be shared with zilliqa team in KYC form.
-
+Before you start, please ensure the below is done.
+- Share the static IP address of the node with the Zilliqa support team to
+whitelist the IP address in Zilliqa lookups and seedpubs nodes. 
+- Choose and note down a port you wish to reserve for your seed node to
+communicate on. This step is critical, as failing to provide the correct port
+will result in failure. The static ip address and port of choice have to be shared with the Zilliqa team in the KYC form.
 ### Docker Setup
 
 We highly recommend using [Docker](https://docker.com) to set up a seed node,
 as we provide a tested, production-ready image for your use. If you have not
-yet setup docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
+yet set up docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
 
 Once you have set up Docker, you may proceed to download the configuration
 tarball for the mainnet:
@@ -123,16 +124,13 @@ network. Most configuration is contained in `constants.xml`, which should be
 in the directory we extracted `seed-configuration.tar.gz` to. Minimally, the
 following changes are required:
 
-- Change the value of `SEED_PORT` to `33133` (default), or a port of your choice (if
-  any). Be sure to note this down for a subsequent step, if you do not select
-  `33133`.
 - Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support
   websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 ## Joining the Network
 
 :::note
-Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
+Before proceeding with this step, make sure you have completed the necessary KYC (for an individual).
 :::
 
 Once the preliminary steps have been completed, joining the network is relatively
@@ -151,6 +149,28 @@ and listening port, please enter the values you provided us when you submitted
 the KYC form. This is crucial, as your node **will not work** with anything
 else.
 
+Sample instructions to be followed for launch are provided below.
+
+- launch_docker.sh
+
+```sh
+$ ./launch_docker.sh
+Assign a name to your container (default: zilliqa):<<container_name>>
+Enter your IP address ('NAT' or *.*.*.*): <<static ip address of machine>>
+Enter your listening port (default: 33133): <<33133 or already selected port>>
+Use IP whitelisting registration approach (default: Y): Y
+```
+
+- launch.sh
+
+```sh
+$ ./launch.sh
+Enter the full path of your zilliqa source code directory:<<zilliqa code directory path>>
+Enter the full path for persistence storage (default: current working directory): << default or custom path>>
+Enter your IP address ('NAT' or *.*.*.*): <<static ip address>>
+Enter your listening port (default: 33133): <<33133 or already selected port>>
+Use IP whitelisting registration approach (default: Y): Y
+```
 ## Next Steps
 
 If you have successfully completed the above steps, you should have

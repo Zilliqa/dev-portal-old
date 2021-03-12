@@ -7,16 +7,17 @@ description: Run seed node in IP Whitelisting mode.
 
 ## Preparing the Machine
 
-Before you start, please ensure below is done.
-- Share the static ip address of the node with zilliqa support team in order to whitelist the IP address in zilliqa lookups and seedpubs nodes.
-- Choose and note down a port you wish to reserve for your seed node to communicate on.This step is critical, as failing to provide the correct port will result in failure.
-- The static ip address and port of choice have to be shared with zilliqa team in KYC form.
-
+Sample instructions to be followed for launch are provided below for both modes.
+- Generate and Share the public key of the node with the Zilliqa support team to whitelist the node in the Zilliqa lookups and seedpubs nodes.
+- Choose and note down a port you wish to reserve for your seed node to
+communicate on. This step is critical, as failing to provide the correct port
+will result in failure. If you wish not to open the listener port because of security reasons then we have P2PSeed key-based whitelisting feature. A Node operating in P2PSeed key-based whitelisting can operate in client-server mode.
+- The static ip address and port of choice have to be shared with the Zilliqa team in the KYC form.
 ### Docker Setup
 
 We highly recommend using [Docker](https://docker.com) to set up a seed node,
 as we provide a tested, production-ready image for your use. If you have not
-yet setup docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
+yet set up docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
 
 Once you have set up Docker, you may proceed to download the configuration
 tarball for the mainnet:
@@ -160,7 +161,7 @@ and listening port, please enter the values you provided us when you submitted
 the KYC form. This is crucial, as your node **will not work** with anything
 else.
 
-A sample instructions to be followed for launch is provided below.
+Sample instructions to be followed for launch are provided below.
 
 - launch_docker.sh
 
