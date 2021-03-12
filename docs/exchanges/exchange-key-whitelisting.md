@@ -10,7 +10,6 @@ description: Run seed node in IP Whitelisting mode.
 
 ## Preparing the Machine
 
-Sample instructions to be followed for launch are provided below for both modes.
 - Generate and Share the public key of the node with the Zilliqa support team to whitelist the node in the Zilliqa lookups and seedpubs nodes.
 - Choose and note down a port you wish to reserve for your seed node to
 communicate on. This step is critical, as failing to provide the correct port
@@ -54,10 +53,12 @@ $ sudo docker run --rm zilliqa/zilliqa:<<version>> -c genkeypair
 # for eg: sudo docker run --rm zilliqa/zilliqa:v7.2.0 -c genkeypair
 03690A37D75D4E0795CCDA3AC1F773DE12F66A312D003A930B7CBFD4DF53E7C8A6 B45E729E98342D015B359A92E029FC73C1DA607EA5A8C16F69AB84142FEC0553
 ```
-The first value from the ouput is public key and second value is private key.Public key has to be shared in advance while submitting KYC form.Private key is required to start seed node.
+The first value from the ouput is public key and second value is private key.
+Public key has to be shared in advance while submitting KYC form.Private key is required to start the seed node.
 
-If you wish you launch seed node in P2PSeed mode,then please refer to below
-steps for downloading the configuration tarball, and generate a keypair:
+### Docker Setup in P2PSeed mode
+
+If you wish you launch the seed node in P2PSeed docker mode,then please refer to below steps for downloading the configuration tarball, and generate a keypair:
 
 ```sh
 # make a separate folder for keys and configuration
@@ -150,6 +151,12 @@ $ ../Zilliqa/build/bin/genkeypair
 03690A37D75D4E0795CCDA3AC1F773DE12F66A312D003A930B7CBFD4DF53E7C8A6 B45E729E98342D015B359A92E029FC73C1DA607EA5A8C16F69AB84142FEC0553
 ```
 
+:::note
+The Native build setup for P2PSeed mode is the same as above except that
+instead of downloading **seed-configuration.tar.gz**, you will have to download
+**p2pseed-configuration.tar.gz**.
+
+:::
 ## Configuring the Node
 
 The node requires some configuration before it can successfully join the
