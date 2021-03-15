@@ -61,7 +61,7 @@ binary from source and run it as such.
 ```sh
 # clone Zilliqa source files
 $ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout
-tags/<tag_id> && cd Zilliqa
+tags/<tag_id>
 
 # install system dependencies
 $ sudo apt-get update && sudo apt-get install \
