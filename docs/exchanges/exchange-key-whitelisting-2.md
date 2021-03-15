@@ -136,7 +136,6 @@ $ ../Zilliqa/build/bin/genkeypair
 # output will be <public key> <private key>
 ```
 
-:::
 ## Configuring the Node
 
 The node requires some configuration before it can successfully join the
