@@ -74,8 +74,13 @@ module.exports = {
     "miners/mining-additional-info"]
   },
   ExchangesSidebar: {
-    "Exchange Integration":["exchanges/exchange-getting-started","exchanges/exchange-account-management",
-    "exchanges/exchange-sending-transactions","exchanges/exchange-tracking-deposits","exchanges/exchange-transaction-receipts", "exchanges/exchange-managing-zrc2-tokens"],
+    "Exchange Integration":[
+      {"Getting Started" : ["exchanges/exchange-getting-started", "exchanges/exchange-ip-whitelisting", "exchanges/exchange-key-whitelisting-1", "exchanges/exchange-key-whitelisting-2"]},
+      "exchanges/exchange-account-management",
+      "exchanges/exchange-sending-transactions",
+      "exchanges/exchange-tracking-deposits",
+      "exchanges/exchange-transaction-receipts",
+      "exchanges/exchange-managing-zrc2-tokens"],
     "Rosetta": [
       {"Introduction": ["exchanges/rosetta-introduction", "exchanges/rosetta-unsupported-api", "exchanges/rosetta-setting-up-seed-node", "exchanges/rosetta-setting-up-no-seed-node"]},
       {"Data API" : [{

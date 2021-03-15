@@ -1,6 +1,6 @@
 ---
 id: exchange-getting-started
-title: Getting Started
+title: Hosting Seed Nodes
 keywords: 
 - exchanges
 - ip whitelisting 
@@ -20,28 +20,34 @@ Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceed
 
 While it's possible to use the public endpoint provided by Zilliqa to interact
 with the blockchain, we recommend that all exchanges that wish to support
-trading on the mainnet, set up seed nodes. This document walks you through the
-basic steps needed to get the seed node up and running. Below are the two modes to
-launch the seed nodes. Exchanges can prefer any mode as per their feasibility.
-- IP Whitelisting mode
-- Key Whitelisting mode
+trading on the mainnet set up seed nodes. This section walks you through the
+basic steps needed to get the seed node up and running.
 
-### IP Whitelisting mode
+## Modes
 
-As seed nodes do not draw data directly from lookup or shard nodes, exchanges
-must be whitelisted by Zilliqa to receive data broadcasts about the blockchain
-and its state. This requires a static, public IP address with minimally two
-open ports (inbound and outbound) at which it can be reached.
- The [IP Whitelisting](exchange-ip-whitelisting) section contains
-information about running a node in IP whitelisting mode.
+Running a seed node is possible through 3 different modes. Exchanges can use
+whichever mode is feasible for their case.
+- IP whitelisting
+- Key whitelisting (with and without open inbound port)
 
-### Key Whitelisting mode
+### IP Whitelisting Mode
 
-In key whitelisting mode, exchanges can generate a public-private key pair and
-can share their public key to whitelist the seed node in zilliqa
-public seed nodes. Minimal two ports have to be opened for inbound and outbound
-traffic. However, we have another feature called P2PSeed where there is no need
-to open any listener port. The [Key Whitelisting](exchange-key-whitelisting)
+In IP whitelisting mode, blockchain data is pushed directly to exchanges in
+periodic intervals. As seed nodes using this mode receive data directly and do
+not otherwise pull data from peers, exchanges must be whitelisted by Zilliqa to
+receive these data broadcasts. This requires a static, public IP address with
+minimally two open ports (inbound and outbound) at which it can be reached.
+The [IP Whitelisting](exchange-ip-whitelisting) section contains information
+about running a node in IP whitelisting mode.
+
+### Key Whitelisting Mode
+
+In key whitelisting mode, blockchain data is pulled by the seed from Zilliqa
+Research-hosted public seed nodes in periodic intervals. Exchanges using
+this mode generate a public-private key pair and share their public key with
+Zilliqa Research for whitelisting. At minimum, a port has to be opened for
+outbound traffic. Exchanges using this mode have the further option of
+configuring a second port for inbound traffic. The [Key Whitelisting](exchange-key-whitelisting)
 section contains information about running a node in key whitelisting mode.
 
 ## Minimum Hardware Requirements
