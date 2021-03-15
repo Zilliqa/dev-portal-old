@@ -1,63 +1,36 @@
 ---
-id: exchange-getting-started
-title: Getting Started
-keywords: 
+id: exchange-ip-whitelisting
+title: IP Whitelisting 
+keywords:
 - exchanges
-- ip whitelisting 
-- hardware requirements
 - docker setup
 - zilliqa
-description: Getting Started For Exchanges
+description: Run seed node in IP Whitelisting mode. 
 ---
 
----
-
-:::danger $ZIL Disclaimer
-Please read [$ZIL disclaimer](https://www.zilliqa.com/disclaimer) before proceeding. 
-:::
-
-## Introduction
-
-While it's possible to use the public endpoint provided by Zilliqa to interact
-with the blockchain, we recommend that all exchanges who wish to support
-trading on the main net set up seed nodes. This document walks you through the
-basic steps needed to get up and running.
-
-## IP Whitelisting
-
-As seed nodes do not draw data directly from lookup or shard nodes, it is
-necessary for exchanges to be whitelisted by Zilliqa in order to receive data
-broadcasts about the blockchain and its state. This requires a static, public
-IP address with minimally two open ports (inbound and outbound) at which it
-can be reached.
-
-:::tip Note on whitelisting process
-Starting Zilliqa version 6.3.0, exchanges may also choose to operate seed nodes through public key whitelisting. 
-Please contact us for more information on setting up a seed node with this scheme.
-:::
-
-## Minimum Hardware Requirements
-- x64 Linux operating system (e.g Ubuntu 18.04.5)
-- Recent dual core processor @ 2.2 GHZ. Examples: Intel Xeon (Skylake)
-- 8GB DRR3 RAM or higher
-- Public static IP address
-- 500GB Solid State Drive
-- 100MB/s upload and download bandwidth
+In IP whitelisting mode, blockchain data is pushed directly to exchanges in periodic intervals.
+Exchange IP addresses must be whitelisted by Zilliqa Research to receive these data broadcasts.
 
 ## Preparing the Machine
 
-Before you start, please choose and note down a port you wish to reserve for
-your seed node to communicate on. This step is critical, as failing to provide
-the correct port will result in failure.
+Before you start, please ensure the steps below are done.
+1. Choose and note down a port you wish to reserve for your seed node to receive incoming blockchain data.
+1. Share the static IP address and port of the node with the Zilliqa support team for whitelisting.
+This step is critical, as failing to provide the correct IP and port will result in failure to receive blockchain data.
+The static IP address and port of choice have to be shared with the Zilliqa team in the KYC form.
+
+:::important
+The port of choice must be opened to inbound connections. Otherwise, the seed node will be unreachable.
+:::
 
 ### Docker Setup
 
 We highly recommend using [Docker](https://docker.com) to set up a seed node,
 as we provide a tested, production-ready image for your use. If you have not
-yet setup docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
+yet set up docker, please follow the instructions on the [official documentation](https://docs.docker.com/install/).
 
 Once you have set up Docker, you may proceed to download the configuration
-tarball for the mainnet:
+tarball for the Mainnet:
 
 ```sh
 # create a directory
@@ -72,17 +45,7 @@ $ tar -zxvf seed-configuration.tar.gz
 # constants.xml
 # launch_docker.sh
 # dsnodes.xml
-# download_and_verify.sh
-# fetchHistorical.py
-# fetchHistorical.sh
 # config.xml
-```
-
-Once you have successfully uncompressed the tarball, you should generate a new
-keypair, like so:
-
-```sh
-$ ./launch_docker.sh --genkeypair
 ```
 
 ### Native Setup
@@ -98,7 +61,7 @@ binary from source and run it as such.
 ```sh
 # clone Zilliqa source files
 $ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout
-<<commit_sha>> && cd Zilliqa
+tags/<tag_id> && cd Zilliqa
 
 # install system dependencies
 $ sudo apt-get update && sudo apt-get install \
@@ -125,17 +88,24 @@ $ sudo apt-get update && sudo apt-get install \
     python3-pip         \
     gawk
 
-$ sudo apt install python-pip
+# Run the following to install latest version of cmake.
+# We suggest to install cmake 3.19 or any version >=3.16:
+wget https://github.com/Kitware/CMake/releases/download/v3.19.3/cmake-3.19.3-Linux-x86_64.sh
+mkdir -p "${HOME}"/.local
+bash ./cmake-3.19.3-Linux-x86_64.sh --skip-license --prefix="${HOME}"/.local/
+export PATH=$HOME/.local/bin:$PATH
+cmake --version
+rm cmake-3.19.3-Linux-x86_64.sh
+
 $ export LC_ALL=C
-$ pip install request requests clint futures
 $ pip3 install requests clint futures
 
-# build the binary. this may take awhile.
+# build the binary. this may take a while.
 $ ./build.sh
 ```
 
 The build should exit with no errors. Once it is complete, download the
-configuration tarball, and generate a keypair:
+configuration tarball:
 
 ```sh
 # make a separate folder for keys and configuration
@@ -144,27 +114,29 @@ $ cd ../ && mkdir my_seed && cd my_seed
 $ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 
-# generate a keypair
-$ ../Zilliqa/build/bin/genkeypair > mykey.txt
+# Contents:
+#
+# launch.sh
+# constants.xml
+# launch_docker.sh
+# dsnodes.xml
+# config.xml
 ```
 
 ## Configuring the Node
 
 The node requires some configuration before it can successfully join the
 network. Most configuration is contained in `constants.xml`, which should be
-in the directory we extracted `configuration.tar.gz` to. Minimally, the
+in the directory we extracted `seed-configuration.tar.gz` to. Minimally, the
 following changes are required:
 
-- Change the value of `SEED_PORT` to `33133` (default), or a port of your choice (if
-  any). Be sure to note this down for a subsequent step, if you do not select
-  `33133`.
 - Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support
   websockets (refer to the [Zilliqa Websocket Server](https://github.com/Zilliqa/dev-portal/tree/master/docs/api-websocket.md) documentation).
 
 ## Joining the Network
 
 :::note
-Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
+Before proceeding with this step, make sure you have completed the necessary KYC (for an individual).
 :::
 
 Once the preliminary steps have been completed, joining the network is relatively
@@ -183,6 +155,29 @@ and listening port, please enter the values you provided us when you submitted
 the KYC form. This is crucial, as your node **will not work** with anything
 else.
 
+Sample instructions to be followed for launch are provided below.
+
+- launch_docker.sh
+
+```sh
+$ ./launch_docker.sh
+Assign a name to your container (default: zilliqa): <container_name>
+Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your listening port (default: 33133): <33133 or other selected port>
+Use IP whitelisting registration approach (default: Y): Y
+```
+
+- launch.sh
+
+```sh
+$ ./launch.sh
+Enter the full path of your zilliqa source code directory: <zilliqa code directory path>
+Enter the full path for persistence storage (default: current working directory): <default or custom path>
+Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your listening port (default: 33133): <33133 or other selected port>
+Use IP whitelisting registration approach (default: Y): Y
+```
+
 ## Next Steps
 
 If you have successfully completed the above steps, you should have
@@ -190,6 +185,6 @@ a functioning seed node that exposes an RPC API on `localhost:4201`. You may
 further check the logs at `zilliqa-00001-log.txt`.
 
 The following articles in this series will demonstrate a simple set of
-functions that can be used as a starting point for exhcange developers to implement
+functions that can be used as a starting point for exchange developers to implement
 their own custom business logic around the Zilliqa blockchain. You may find
 the full source code of the example app in the [same repository](https://github.com/Zilliqa/dev-portal/tree/master/examples/exchange).
