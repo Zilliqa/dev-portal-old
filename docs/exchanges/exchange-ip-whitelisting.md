@@ -61,7 +61,7 @@ binary from source and run it as such.
 ```sh
 # clone Zilliqa source files
 $ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout
-tags/<<tag_id>> && cd Zilliqa
+tags/<tag_id> && cd Zilliqa
 
 # install system dependencies
 $ sudo apt-get update && sudo apt-get install \
@@ -114,7 +114,6 @@ $ cd ../ && mkdir my_seed && cd my_seed
 $ curl -O https://mainnet-join.zilliqa.com/seed-configuration.tar.gz
 $ tar -zxvf seed-configuration.tar.gz
 
-<<<<<<< HEAD
 # Contents:
 #
 # launch.sh
@@ -124,8 +123,6 @@ $ tar -zxvf seed-configuration.tar.gz
 # config.xml
 ```
 
-=======
->>>>>>> deb6dc7a86ab52f35b638474c16e07942629fb3f
 ## Configuring the Node
 
 The node requires some configuration before it can successfully join the
