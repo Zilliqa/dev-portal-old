@@ -76,7 +76,7 @@ After the PoW window is over, the DS committee will begin to compose the shardin
 
 When determining the shard composition - particularly in the event that the number of shards in the new DS epoch is lower than in the previous one - we must ensure that the newly composed shards will not be entirely made up of guards.
 
-To do this, we trim the overall number of shard guards to 2/3 of the expected population (e.g., 1200 out of 1800), and then complete the count with non-shard guards.
+To do this, we trim the overall number of shard guards to 1/3 of the expected population (e.g., 600 out of 1800), and then complete the count with non-shard guards. However, in the event when there is not enough nodes to make up the EXPECTED_SHARD_NODE_NUM, the additional shard guards will fill up the gaps.
 
 Keywords to look for in the logs:
 
@@ -85,7 +85,7 @@ DS leader:
 trimmedGuardCount: [some value] trimmedNonGuardCount: [some value] Total number of accepted soln: [some value]
 
 Example:
-trimmedGuardCount: 80 trimmedNonGuardCount: 40 Total number of accepted soln: 120
+trimmedGuardCount: 40 trimmedNonGuardCount: 80 Total number of accepted soln: 120
 ```
 
 ## Shard Leader Selection
