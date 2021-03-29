@@ -213,7 +213,7 @@ func TestSendTransaction(t *testing.T) {
 		ToAddr:       "4BAF5faDA8e5Db92C3d3242618c5B47133AE003C",
 		Amount:       "10000000",
 		GasPrice:     gasPrice,
-		GasLimit:     "1",
+		GasLimit:     "50",
 		Code:         "",
 		Data:         "",
 		Priority:     false,
