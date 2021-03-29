@@ -38,14 +38,14 @@ const fromPrivateKey = "SENDER_PRIVATE_KEY";
 const fromPublicKey = getPubKeyFromPrivateKey(fromPrivateKey)
 const fromAddress = getAddressFromPrivateKey(fromPrivateKey)
 const amountToSendInZil = 0.17;
-const gasPriceInZil = 0.001;
+const gasPriceInZil = 0.002;
 const nextNonce = (await zilliqa.blockchain.getBalance(fromAddress)).result.nonce + 1;
 
 const rawTx = zilliqa.transactions.new({
   version: bytes.pack(chainId, msgVersion),
   amount: new BN(units.toQa(amountToSendInZil * 1000000, units.Units.Li)),
   nonce: nextNonce,
-  gasLimit: Long.fromNumber(1), // normal (non-contract) transactions cost 1 gas
+  gasLimit: Long.fromNumber(50), // normal (non-contract) transactions cost 50 gas after network upgrade in mid april 2021
   gasPrice: new BN(units.toQa(gasPriceInZil * 1000000, units.Units.Li)), // the minimum gas price is 1,000 li
   toAddr: toAddress,
   pubKey: fromPublicKey, // this determines which account is used to send the tx

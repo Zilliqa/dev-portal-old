@@ -116,7 +116,7 @@ const CHAIN_ID = 333;
 const MSG_VERSION = 1;
 const VERSION = bytes.pack(CHAIN_ID, MSG_VERSION);
 
-const myGasPrice = units.toQa('1000', units.Units.Li); // Gas Price that will be used by all transactions
+const myGasPrice = units.toQa('2000', units.Units.Li); // Gas Price that will be used by all transactions
 contractAddress = contractAddress.substring(2);
 recipientAddress = fromBech32Address(recipientAddress);//converting to ByStr20 format
 const ftAddr = toBech32Address(contractAddress);

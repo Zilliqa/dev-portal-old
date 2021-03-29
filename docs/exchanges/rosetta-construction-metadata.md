@@ -29,7 +29,7 @@ Request:
     }, 
     "options": {
         "amount": "2000000000000",
-        "gasLimit": "1",
+        "gasLimit": "50",
         "gasPrice": "2000000000",
         "senderAddr": "zil1n8uafq4thhzlq5nj50p55al9jvamr3s45hm49r",
         "toAddr": "zil1f9uqwhwkq7fnzgh5x4djyzg4a7j3apx8dsnnc0"
@@ -51,7 +51,7 @@ Sample
 {
     "metadata": {
         "amount": "2000000000000",
-        "gasLimit": "1",
+        "gasLimit": "50",
         "gasPrice": "2000000000",
         "nonce": 187,
         "pubKey": "02e44ef2c5c2031386faa6cafdf5f67318cc661871b0112a27458e65f37a35655e",

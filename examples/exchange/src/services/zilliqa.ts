@@ -96,8 +96,8 @@ export class ZilliqaService {
         this.zil.transactions.new({
           version: bytes.pack(2, 1),
           amount,
-          gasLimit: Long.fromNumber(1), // normal (non-contract) transactions cost 1 gas
-          gasPrice: new BN(units.toQa(1000, units.Units.Li)), // the minimum gas price is 1,000 li
+          gasLimit: Long.fromNumber(50), // normal (non-contract) transactions cost 50 gas
+          gasPrice: new BN(units.toQa(2000, units.Units.Li)), // the minimum gas price is 2,000 li
           toAddr: to, // toAddr is self-explanatory
           pubKey: fromPubKey, // this determines which account is used to send the tx
         }),

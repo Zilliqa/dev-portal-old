@@ -53,7 +53,7 @@ async function main() {
             version: 65537,
             toAddr: "0x1234567890123456789012345678901234567890",
             amount: units.toQa("1000", units.Units.Li),
-            gasLimit: Long.fromNumber(1),
+            gasLimit: Long.fromNumber(50),
         });
         tx = await zilliqa.blockchain.createTransaction(tx);
         console.log(tx.id);
@@ -96,7 +96,7 @@ func main() {
 		ToAddr:       "4BAF5faDA8e5Db92C3d3242618c5B47133AE003C",
 		Amount:       "10000000",
 		GasPrice:     gasPrice,
-		GasLimit:     "1",
+		GasLimit:     "50",
 		Code:         "",
 		Data:         "",
 		Priority:     false,
@@ -155,8 +155,8 @@ public class TransactionOperation {
                 .toAddr("zil16jrfrs8vfdtc74yzhyy83je4s4c5sqrcasjlc4")
                 .senderPubKey("0246e7178dc8253201101e18fd6f6eb9972451d121fc57aa2a06dd5c111e58dc6a")
                 .amount("10000000")
-                .gasPrice("1000000000")
-                .gasLimit("1")
+                .gasPrice("2000000000")
+                .gasLimit("50")
                 .code("")
                 .data("")
                 .provider(new HttpProvider("https://api.zilliqa.com/"))
@@ -220,7 +220,7 @@ async function main() {
             {
                 version: VERSION,
                 amount: new BN(0),
-                gasPrice: units.toQa("1000", units.Units.Li)
+                gasPrice: units.toQa("2000", units.Units.Li)
                 gasLimit: Long.fromNumber(10000)
             }
         );

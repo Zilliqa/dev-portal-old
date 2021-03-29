@@ -36,8 +36,8 @@ curl -d '{
       "toAddr": "0x4BAF5faDA8e5Db92C3d3242618c5B47133AE003C",
       "amount": "1000000000000",
       "pubKey": "0205273e54f262f8717a687250591dcfb5755b8ce4e3bd340c7abefd0de1276574",
-      "gasPrice": "1000000000",
-      "gasLimit": "1",
+      "gasPrice": "2000000000",
+      "gasLimit": "50",
       "code": "",
       "data": "",
       "signature": "29ad673848dcd7f5168f205f7a9fcd1e8109408e6c4d7d03e4e869317b9067e636b216a32314dd37176c35d51f9d4c24e0e519ba80e66206457c83c9029a490d",
@@ -53,8 +53,8 @@ let tx = zilliqa.transactions.new({
   version: 65537,
   toAddr: "0x4BAF5faDA8e5Db92C3d3242618c5B47133AE003C",
   amount: units.toQa("1", units.Units.Zil),
-  gasPrice: units.toQa("1000", units.Units.Li),
-  gasLimit: Long.fromNumber(1),
+  gasPrice: units.toQa("2000", units.Units.Li),
+  gasLimit: Long.fromNumber(50),
 });
 
 // Send a transaction to the network
@@ -75,8 +75,8 @@ public class App {
                 .toAddr("4baf5fada8e5db92c3d3242618c5b47133ae003c".toLowerCase())
                 .senderPubKey("0246e7178dc8253201101e18fd6f6eb9972451d121fc57aa2a06dd5c111e58dc6a")
                 .amount("1000000000000")
-                .gasPrice("1000000000")
-                .gasLimit("1")
+                .gasPrice("2000000000")
+                .gasLimit("50")
                 .code("")
                 .data("")
                 .provider(new HttpProvider("https://api.zilliqa.com"))
@@ -103,8 +103,8 @@ payload = {
     "to_addr": "0x4BAF5faDA8e5Db92C3d3242618c5B47133AE003C",
     "amount": "1000000000000",
     "nonce": account.get_nonce() + 1,
-    "gas_price": "1000000000",
-    "gas_limit": 1,
+    "gas_price": "2000000000",
+    "gas_limit": 50,
     "code": "",
     "data": "",
     "priority": False,
@@ -129,8 +129,8 @@ func SendTransaction() {
 		SenderPubKey: "0246E7178DC8253201101E18FD6F6EB9972451D121FC57AA2A06DD5C111E58DC6A",
 		ToAddr:       "4BAF5faDA8e5Db92C3d3242618c5B47133AE003C",
 		Amount:       "10000000",
-		GasPrice:     "1000000000",
-		GasLimit:     "1",
+		GasPrice:     "2000000000",
+		GasLimit:     "50",
 		Code:         "",
 		Data:         "",
 		Priority:     false,
