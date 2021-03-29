@@ -53,7 +53,7 @@ async function main() {
             version: 65537,
             toAddr: "0x1234567890123456789012345678901234567890",
             amount: units.toQa("1000", units.Units.Li),
-            gasLimit: Long.fromNumber(1),
+            gasLimit: Long.fromNumber(50),
         });
         tx = await zilliqa.blockchain.createTransaction(tx);
         console.log(tx.id);

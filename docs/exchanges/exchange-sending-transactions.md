@@ -38,7 +38,7 @@ const fromPrivateKey = "SENDER_PRIVATE_KEY";
 const fromPublicKey = getPubKeyFromPrivateKey(fromPrivateKey)
 const fromAddress = getAddressFromPrivateKey(fromPrivateKey)
 const amountToSendInZil = 0.17;
-const gasPriceInZil = 0.001;
+const gasPriceInZil = 0.002;
 const nextNonce = (await zilliqa.blockchain.getBalance(fromAddress)).result.nonce + 1;
 
 const rawTx = zilliqa.transactions.new({
