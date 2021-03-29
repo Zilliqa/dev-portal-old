@@ -45,7 +45,7 @@ const rawTx = zilliqa.transactions.new({
   version: bytes.pack(chainId, msgVersion),
   amount: new BN(units.toQa(amountToSendInZil * 1000000, units.Units.Li)),
   nonce: nextNonce,
-  gasLimit: Long.fromNumber(1), // normal (non-contract) transactions cost 1 gas
+  gasLimit: Long.fromNumber(50), // normal (non-contract) transactions cost 50 gas after network upgrade in mid april 2021
   gasPrice: new BN(units.toQa(gasPriceInZil * 1000000, units.Units.Li)), // the minimum gas price is 1,000 li
   toAddr: toAddress,
   pubKey: fromPublicKey, // this determines which account is used to send the tx
