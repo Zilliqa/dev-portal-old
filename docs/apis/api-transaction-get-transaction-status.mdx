@@ -10,6 +10,10 @@ Returns the status of a specified transaction. This API is available from Zilliq
 The `GetTransactionStatus` API relies on an off-chain transaction tracking solution, which may be periodically cleaned. We recommend to still primarily use `GetTransaction` for older (e.g., several days old) transactions, and only use `GetTransactionStatus` mainly for tracking the progress of ongoing transactions.
 :::
 
+:::note
+The `GetTransactionStatus` API is available only on https://api.zilliqa.com/. It is disabled for community-hosted seed nodes.
+:::
+
 ### Example Request
 
 import Tabs from '@theme/Tabs';
