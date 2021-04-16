@@ -23,7 +23,6 @@ The gas unit of a payment transaction will be adjusted from `1` to `50`. Develop
 As a result of the gas unit changes, payment transaction gas fee will increase from 0.002 ZIL to 0.1 ZIL if using the default gas price (0.002 ZIL).
 
 This change is in accordance with [ZIP-18](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-18.md), which passed governance vote earlier this month.
-Please refer to this link for more details: https://governance.zilliqa.com/#/gzil/proposal/QmcxZJ5x7o9tWRmjD73uopRno35iwJhydgTTCbHsS1AFUt
 
 :::note
 Note: that smart contract transaction gas unit remains unchanged.
