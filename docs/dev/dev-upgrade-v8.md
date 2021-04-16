@@ -97,6 +97,6 @@ be adjusted to `xxx $ZIL`.
 `$gZIL` minting period has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, the ending wall clock 
 may varies as a result.
 
-## 12) bug fixes around mining
+## 12) Bug fixes around mining node joining
 
 We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a reporting a few issues to us.
