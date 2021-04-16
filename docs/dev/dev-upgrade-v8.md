@@ -92,9 +92,10 @@ Please refer to [Staking phase 1.1-tba]() and [ZIP-19-tba]() for more informatio
 Staking cycle will be adjust `xx` blocks per cycle due to increase in block productiont time. This is to bring it back to parity. Siumilarly, rewards per cycle will 
 be adjusted to `xxx $ZIL`.
 
-## 11) gZIL ending period
+## 11) $gZIL ending period
 
-`gZIL` has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, the ending wall clock may varies as a result.
+`$gZIL` minting period has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, the ending wall clock 
+may varies as a result.
 
 ## 12) bug fixes around mining
 
