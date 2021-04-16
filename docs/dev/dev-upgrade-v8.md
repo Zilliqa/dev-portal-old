@@ -21,11 +21,11 @@ The gas unit of a payment transaction will be adjusted from `1` to `50`. Develop
 
 As a result of the gas unit changes, payment transaction gas fee will increase from 0.002 ZIL to 0.1 ZIL if using the default gas price (0.002 ZIL).
 
-This change is in accordance with Zilliqa Improvement Proposal (ZIP) #18, which passed governance vote earlier this month.
+This change is in accordance with [ZIP-18](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-18.md), which passed governance vote earlier this month.
 Please refer to this link for more details: https://governance.zilliqa.com/#/gzil/proposal/QmcxZJ5x7o9tWRmjD73uopRno35iwJhydgTTCbHsS1AFUt
 
 :::note
-Note: that smart contract transaction gas fee remained unchanged.
+Note: that smart contract transaction gas unit remained unchanged.
 :::
 
 ## 2) Deprecation and remove of `GetPendingTxn` API
@@ -43,16 +43,28 @@ For instance, let assume there is a user ADT `SSNCycleInfo` which is defined in 
 it will need to be prefixed with contract address i.e `0xb55cc7894536ac015350790550b0c03f49eb8ebd.SSNCycleInfo`. If your contract transition uses user defined 
 ADT before `v8.0.0`, you will need to modify the way you call the transition by appending contract address prefix. 
 
-## 4) Faster block time
+## 4) Introuction of new Scilla feature - remote state read
+
+With effect from `v8.0.0`, 
+
+## 5) Increase number of contracts edges
+
+The max number of contracts call edges will be increase from `10` to `20`.
+
+## 6) Increase max of contract code size
+
+The max contract size code will increase from 50kb to 75kb. 
+
+## 7) Faster block time
 
 As a result of some changes to our pBFT consensus in [`Revised pBFT consensus with txn processing`](https://github.com/Zilliqa/Zilliqa/pull/2216) , we are able to 
 optimize and have early transaction packet dispatch to the shard. As such, we will be able to bring down the block time from 45 seconds to TBA seconds.
 
-## 5) Block reward adjustment 
+## 8) Block reward adjustment 
 
 With the increase in block production rate, block reward need to be adjust to XXX per DS block to bring it back to parity.
 
-## 6) Staking contract migration
+## 9) Staking contract migration
 
 As a result of Scilla disambiguation fix, we will be freezing the existing staking contract slightly before the `V8.0.0` network upgrade. The contract will be 
 freeze forever and the contract state and funds will be migrated to a new set of contracts. For wallets and explorer supporting Zilliqa staking, please note that 
@@ -70,12 +82,12 @@ You can try out the migrated contract at our testnet at the following contract a
 
 Please refer to [Staking phase 1.1-tba]() and [ZIP-19-tba]() for more information. 
 
-## 7) Staking reward and cycle adjustment 
+## 10) Staking reward and cycle adjustment 
 
 With the reduction in block time, staking cycle will be adjust `xx` blocks per cycle. This is to bring it back to parity. 
 Siumilarly, rewards per cycle will be adjusted to `xxx`.
 
-## 8) gZIL ending period
+## 11) gZIL ending period
 
 `gZIL` has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, 
 the ending wall clock may varies as a result
