@@ -10,9 +10,10 @@ description: Zilliqa v8.0.0 upgrade notice
 
 ---
 
-Zilliqa Version 8.0.0 consists of numerous significant changes. The change log can be found at [here-tba]().
+Zilliqa Version 8.0.0 consists of numerous significant changes. This page summarizes some of the major changes that developers and exchanges 
+will need to take note of.
 
-This page summarizes some of the major changes that developers and exchanges will need to take note of. 
+The full release note of v8.0.0 can be found at [here-tba]().
 
 ## 1) Payment transaction gas unit increase from 1 to 50 
 
@@ -45,7 +46,7 @@ ADT before `v8.0.0`, you will need to modify the way you call the transition by 
 
 ## 4) Introuction of new Scilla feature - remote state read
 
-With effect from `v8.0.0`, 
+With effect from `v8.0.0`, Scilla contract will be able to read the state of another contract by using `remote state read`. More details can be found at [tba]().
 
 ## 5) Increase number of contracts edges
 
