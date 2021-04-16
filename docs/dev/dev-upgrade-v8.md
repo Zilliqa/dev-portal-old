@@ -28,7 +28,7 @@ Please refer to this link for more details: https://governance.zilliqa.com/#/gzi
 Note: that smart contract transaction gas unit remained unchanged.
 :::
 
-## 2) Deprecation and remove of `GetPendingTxn` API
+## 2) Deprecation and removal of `GetPendingTxn` API
 
 Since `v7.0.0`, we have released a new API [`GetTransactionStatus`](https://dev.zilliqa.com/docs/apis/api-transaction-get-transaction-status) API which 
 track transactions status during the transactional lifetime. `GetPendingTxn` API has since become redundant and will be removed with effect from `v8.0.0`
