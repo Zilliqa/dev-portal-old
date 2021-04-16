@@ -97,6 +97,21 @@ be adjusted to `xxx $ZIL`.
 `$gZIL` minting period has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, the ending wall clock 
 may varies as a result.
 
-## 12) Bug fixes around mining node joining
+## 12) Non-interactive mode support for seed node
+
+launch.sh can now be invoked within the docker container as non interactive mode but requires the following environment variables set within the container.
+```
+NONINTERACTIVE="true"
+IP_ADDRESS="x.y.z.a"
+IP_WHITELISTING="N" #optional
+```
+
+:::note
+if IP_WHITELISTING is set to N, the script assumes the existence of the whitelist keypair file called "whitelistkey.txt" and will assume "mykey.txt" as the whitelist key 
+if "whitelistkey.txt" does not exist.
+:::
+## 13) Bug fixes around mining node joining
 
 We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a reporting a few issues to us.
+
+
