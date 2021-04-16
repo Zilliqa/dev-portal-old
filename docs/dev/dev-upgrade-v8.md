@@ -94,4 +94,4 @@ the ending wall clock may varies as a result.
 
 ## 12) bug fixes around mining
 
-We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a few issues to us.
+We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a reporting a few issues to us.
