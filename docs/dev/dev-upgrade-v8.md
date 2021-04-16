@@ -14,7 +14,7 @@ Zilliqa Version 8.0.0 consists of numerous significant changes. The change log c
 
 This page summarizes some of the major changes that developers and exchanges will need to take note of. 
 
-## 1) Payument transaction gas consumption increase from 1 to 50 
+## 1) Payment transaction gas unit increase from 1 to 50 
 
 The gas unit of a payment transaction will be adjusted from `1` to `50`. Developers and exchanges will need to call 
 `CreateTransaction` with "gasLimit" set to at least "50" instead of "1" from `v8.0.0` onwards.
