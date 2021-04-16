@@ -90,4 +90,8 @@ Siumilarly, rewards per cycle will be adjusted to `xxx`.
 ## 11) gZIL ending period
 
 `gZIL` has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, 
-the ending wall clock may varies as a result
+the ending wall clock may varies as a result.
+
+## 12) bug fixes around mining
+
+We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a few issues to us.
