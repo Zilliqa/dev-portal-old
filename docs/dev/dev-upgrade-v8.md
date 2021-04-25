@@ -1,6 +1,6 @@
 ---
 id: dev-upgrade-v8
-title: V8.0.0 upgrade notice
+title: v8.0.0 Upgrade Notice
 keywords: 
 - upgrade
 - v8.0.0
@@ -15,91 +15,82 @@ will need to take note of.
 
 The full release note of `v8.0.0` can be found at [here-tba]().
 
-## 1) Payment transaction gas unit increase from 1 to 50 
+### 1) Payment transaction gas unit increase from 1 to 50 
 
-The gas unit of a payment transaction will be adjusted from `1` to `50`. Developers and exchanges will need to call 
-`CreateTransaction` with `gasLimit` set to at least `50` instead of `1` from `v8.0.0` onwards.
+The gas unit of a payment transaction will be adjusted from `1` to `50`. Developers and exchanges will need to call `CreateTransaction` with `gasLimit` set to at least `50` instead of `1` from `v8.0.0` onwards.
 
-As a result of the gas unit changes, payment transaction gas fee will increase from 0.002 $ZIL to 0.1 $ZIL if using the default gas price (0.002 $ZIL).
+As a result of the gas unit changes, payment transaction fee will increase from 0.002 $ZIL to 0.1 $ZIL if using the default gas price (0.002 $ZIL).
 
 This change is in accordance with [ZIP-18](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-18.md), which passed governance vote earlier this month.
 
 :::note
-Note: that smart contract transaction gas unit remains unchanged.
+Smart contract transaction gas unit remains unchanged.
 :::
 
-## 2) Deprecation and removal of `GetPendingTxn` API
+:::note
+Developers and exchanges may proceed to make the `gasLimit` change above even before `v8.0.0` is deployed. Until the deployment, the payment transaction fee will continue to be 0.002 $ZIL, with or without the `gasLimit` change.
+:::
 
-Since `v7.0.0`, we have released a new API [`GetTransactionStatus`](https://dev.zilliqa.com/docs/apis/api-transaction-get-transaction-status) API which 
-track transaction status during the transactional lifetime. `GetPendingTxn` API has since become redundant and will be removed with effect from `v8.0.0`
+### 2) Deprecation and removal of `GetPendingTxn` API
 
-## 3) Scilla disambiguation fix
+Since `v7.0.0`, we have released a new API [`GetTransactionStatus`](https://dev.zilliqa.com/docs/apis/api-transaction-get-transaction-status) which 
+tracks transaction status during the transactional lifetime. `GetPendingTxn` API has since become redundant and will be removed with effect from `v8.0.0`.
 
-To support Scilla features such as remote state read and external library, user defined ADT will need to be ambiguous starting from `v8.0.0`. This means 
-that when a calling contract transition that contains user defined ADT, the user defioned ADT will need to be preixed with the contract address that defines 
+### 3) Scilla disambiguation fix
+
+To support Scilla features such as remote state read and external library, user-defined ADTs will need to be non-ambiguous starting from `v8.0.0`. This means 
+that when calling a contract transition that contains user-defined ADT, the user-defined ADT will need to be prefixed with the contract address that defines 
 the type. 
 
-For instance, let assume there is a user ADT `SSNCycleInfo` which is defined in `0xb55cc7894536ac015350790550b0c03f49eb8ebd`. When using the user defined ADT, 
-it will need to be prefixed with contract address i.e `0xb55cc7894536ac015350790550b0c03f49eb8ebd.SSNCycleInfo`. If your contract transition uses user defined 
-ADT before `v8.0.0`, you will need to modify the way you call the transition by appending contract address prefix. 
+For instance, let's assume a user-defined ADT named `SSNCycleInfo` is defined in a contract deployed at address `0xb55cc7894536ac015350790550b0c03f49eb8ebd`. When using the user-defined ADT, it will need to be prefixed with the contract address (i.e., `0xb55cc7894536ac015350790550b0c03f49eb8ebd.SSNCycleInfo`). If your contract transition uses user-defined ADTs before `v8.0.0`, you will need to modify the way you call the transition by appending the contract address prefix.
 
-## 4) Introuction of new Scilla feature - remote state read
+### 4) Introduction of new Scilla feature - remote state read
 
-With effect from `v8.0.0`, Scilla contract will be able to read the state of another contract by using `remote state read`. More details can be found at [tba]().
+With effect from `v8.0.0`, a Scilla contract will be able to read the state of another contract by using the remote state read feature. More details can be found at [tba]().
 
-## 5) Increase number of contracts edges
+### 5) Increased number of contract edges
 
-The max number of contract call edges will be increase from `10` to `20`.
+The maximum number of contract call edges will be increased from `10` to `20`.
 
-## 6) Increase max of contract code size
+### 6) Increased smart contract code size limit
 
-The max contract size code will increase from `50KB` to `75KB`. 
+The maximum smart contract code size will be increased from `50KB` to `75KB`.
 
-## 7) Faster block time
+### 7) Faster block time
 
-We have made some change to our pBFT consensus in [`Revised pBFT consensus with txn processing`](https://github.com/Zilliqa/Zilliqa/pull/2216). As such, we are able to 
-optimize and have early transaction packet dispatch to the shard. 
+We have made some changes to our pBFT (Practical Byzantine Fault Tolerance) consensus implementation in [`Revised pBFT consensus with txn processing`](https://github.com/Zilliqa/Zilliqa/pull/2216). The main change involves optimization around transaction dispatching and processing. This should allow us to significantly reduce the block time from its current peak of 45 seconds.
 
-This will allows us to bring down the block time from 45 seconds to TBA seconds.
+### 8) Block reward adjustment 
 
-## 8) Block reward adjustment 
+With the increase in block production rate, the block reward will be adjusted to `XXX $ZIL` per DS block to bring it back to parity.
 
-With the increase in block production rate, block reward be adjusted to `XXX $ZIL` per DS block to bring it back to parity.
+### 9) Staking contract migration
 
-## 9) Staking contract migration
+Due to the Scilla disambiguation fix, we will be freezing the existing staking contract shortly before the `v8.0.0` network upgrade commences. The contract will be frozen permanently, and the contract states and funds will be migrated to a new set of contracts.
 
-Due to the Scilla disambiguation fix, we will be freezing the existing staking contract shortly before the `V8.0.0` network upgrade commence. The contract will be 
-freeze permanently and the contract state and funds will be migrated to a new set of contracts. For wallets and explorer supporting Zilliqa staking, please note that 
-both the `proxy` and `ssnlist` will be migrated to Staking phase `1.1`. 
+For wallets and explorer supporting Zilliqa staking, please note that both the `proxy` and `ssnlist` will be migrated to staking phase `1.1`.
 
-When interacting with the staking after the transition to staking phase `1.1`, you will need to adjust your contract address accordingly. This change will mostly impact
-wallets providers. 
+When interacting with the staking contract after the transition to staking phase `1.1`, you will need to adjust your contract address accordingly. This change will mostly impact wallet providers.
 
-The new staking contract will also have a new feature `swap delegate` which allow a delegator to swap his wallet address to another without incurring
-any unbonding period or penalty. 
+The new staking contract will also have a new `swap delegate` feature which allows a delegator to swap his wallet address with another without incurring
+any unbonding period or penalty.
 
-You can try out the migrated contract at our testnet at the following contract addresses
+The migrated staking contract will be made available on our community testnet shortly.
 
-| Type    | Address |
-| ------- | ------- |
-| proxy   | [zil1xxx]() |
-| ssnlist | [zil1xxx]() |
+Please refer to [Staking phase 1.1-tba]() and [ZIP-19-tba]() for more information.
 
-Please refer to [Staking phase 1.1-tba]() and [ZIP-19-tba]() for more information. 
+### 10) Staking reward and cycle adjustment 
 
-## 10) Staking reward and cycle adjustment 
+Staking reward cycle will be adjusted by `xx` blocks per cycle due to the increase in block production time. This is to bring it back to parity. Similarly, the reward amount per cycle will be adjusted to `xxx $ZIL`.
 
-Staking cycle will be adjust `xx` blocks per cycle due to increase in block productiont time. This is to bring it back to parity. Siumilarly, rewards per cycle will 
-be adjusted to `xxx $ZIL`.
+### 11) $gZIL ending period
 
-## 11) $gZIL ending period
+`$gZIL` minting period has been set to end on block `1483713`. This value cannot and will not be changed. With the changes to block time in `v8.0.0`, the ending wall clock may vary as a result.
 
-`$gZIL` minting period has been set to end on block `1483713`. This value cannot and will not be changed. With changes to block time in `v8.0.0`, the ending wall clock 
-may varies as a result.
+### 12) Non-interactive mode support for seed nodes
 
-## 12) Non-interactive mode support for seed node
+Seed node hosts will now have the option of invoking `launch.sh` in non-interactive mode, provided the following environment variables are set within the container:
 
-launch.sh can now be invoked within the docker container as non interactive mode but requires the following environment variables set within the container.
 ```
 NONINTERACTIVE="true"
 IP_ADDRESS="x.y.z.a"
@@ -107,14 +98,13 @@ IP_WHITELISTING="N" #optional
 ```
 
 :::note
-if IP_WHITELISTING is set to N, the script assumes the existence of the whitelist keypair file called "whitelistkey.txt" and will assume "mykey.txt" as the whitelist key 
-if "whitelistkey.txt" does not exist.
+If `IP_WHITELISTING` is set to `N`, the script assumes the existence of the whitelisted keypair file called "whitelistkey.txt", and further assumes "mykey.txt" as the whitelisted key if "whitelistkey.txt" does not exist.
 :::
-## 13) Bug fixes around mining node joining
 
-We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a reporting a few issues to us.
+### 13) Bug fixes around mining node joining
 
-:::note
+We have fixed some mining node joining issues. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for reporting a few issues to us.
+
+### 14) Note on parameter changes
 Please note that changes in point 8 and 10 are considered interim changes. We will need to observe mainnet runtime meterics after `v8.0.0`. If the core team notice the 
 estimate is off, we will propose another ZIP to bring to back to parity
-:::
