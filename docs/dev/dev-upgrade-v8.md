@@ -114,4 +114,7 @@ if "whitelistkey.txt" does not exist.
 
 We have fix some mining node joining issue. Special thanks to [K1-pool](https://k1pool.com/pool/zil) for a reporting a few issues to us.
 
-
+:::note
+Please note that changes in point 8 and 10 are considered interim changes. We will need to observe mainnet runtime meterics after `v8.0.0`. If the core team notice the 
+estimate is off, we will propose another ZIP to bring to back to parity
+:::
