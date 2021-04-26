@@ -58,7 +58,7 @@ The maximum smart contract code size will be increased from `50KB` to `75KB`.
 
 ### 7) Faster block time
 
-We have made some changes to our pBFT (Practical Byzantine Fault Tolerance) consensus implementation in [`Revised pBFT consensus with txn processing`](https://github.com/Zilliqa/Zilliqa/pull/2216). The main change involves optimization around transaction dispatching and processing. This should allow us to significantly reduce the block time from its current peak of 45 seconds.
+We have made some changes to our pBFT (Practical Byzantine Fault Tolerance) consensus implementation in [`Revised pBFT consensus with txn processing`](https://github.com/Zilliqa/Zilliqa/pull/2216). The main change involves optimization around transaction dispatching and processing. This should allow us to significantly reduce the block time from its current peak of 40 seconds to 29 seconds.
 
 ### 8) Block reward adjustment 
 
