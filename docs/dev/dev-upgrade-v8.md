@@ -81,7 +81,7 @@ Please refer to [Staking phase 1.1-tba]() and [ZIP-19-tba]() for more informatio
 
 ### 10) Staking reward and cycle adjustment 
 
-Staking reward cycle will be adjusted by `xx` blocks per cycle due to the increase in block production time. This is to bring it back to parity. Similarly, the reward amount per cycle will be adjusted to `xxx $ZIL`.
+Staking reward cycle will be adjusted from `1800` block per cycle to `2400` blocks per cycle due to the increase in block production time. This is to bring it back to parity. Similarly, the reward amount per cycle will be adjusted to `xxx $ZIL` as block reward has been reduced to `xx`.
 
 ### 11) $gZIL ending period
 
