@@ -35,8 +35,6 @@ module.exports = {
     "apis/api-transaction-get-minimum-gas-price",
     "apis/api-transaction-get-num-txns-dsepoch",
     "apis/api-transaction-get-num-txns-txepoch",
-    "apis/api-transaction-get-pending-tx",
-    "apis/api-transaction-get-pending-txs",
     "apis/api-transaction-get-recent-txs",
     "apis/api-transaction-get-tx",
     "apis/api-transaction-get-transaction-status",
