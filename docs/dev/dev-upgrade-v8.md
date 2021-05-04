@@ -11,7 +11,7 @@ description: Zilliqa v8.0.0 upgrade notice
 ---
 
 Zilliqa Version 8.0.0 consists of numerous significant changes. This page summarizes some of the major changes that developers and exchanges 
-will need to take note of. The full release note of `v8.0.0` will be release shortly.
+will need to take note of. The full release note of `v8.0.0` will be release at a later time.
 
 ## Core protocol
 
@@ -30,13 +30,13 @@ References:
 
 ### 2) Block reward adjustment 
 
-Faster block preoduction rate will result in increase in inflation rate. Zilliqa `V8.0.0` has no intention to adjust the current inflation rate. The reward allocated per DS epoch will be adjusted from 275,000 $ZIL per DS block to 176,000 $ZIL per DS block to bring the inflation rate back to parity. We will update the `COINBASE_REWARD_PER_DS`as follows:
+Faster block production rate will result in an increase in inflation rate. Zilliqa `V8.0.0` has no intention to adjust the current inflation rate. The reward allocated per DS epoch will be adjusted from 275,000 $ZIL per DS block to 176,000 $ZIL per DS block to bring the inflation rate back to parity. We will update the `COINBASE_REWARD_PER_DS`as follows:
 
 || Before V.8.0.0 | V.8.0.0 |
 | --------------- | -------------- | ------- |
 | `COINBASE_REWARD_PER_DS` | 275000000000000000 | 176000000000000000 |
 
-Please note that this change is considered an interim change. If the block production rate deviate from the expected value significantly, a new goverance proposal can be introduce to adjust
+Please note that this change is considered an interim change. If the block production rate deviate from the expected value significantly, a new governance proposal can be introduce to adjust
 the value in subsequent mainnet upgrade.
 ### 3) Payment transaction gas unit increase from 1 to 50 
 
@@ -47,15 +47,13 @@ As per [ZIP-18](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-18.md), whic
 | `NORMAL_TRAN_GAS` | 1 | 50 |
 
 
-When handling payment transaction, Developers and exchanges will need to call `CreateTransaction` with `gasLimit` set to at least `50` instead of `1` from `v8.0.0` onwards. As a result of this changes, the minimal cost of a payment transaction fee will increase from 0.002 $ZIL to 0.1 $ZIL assuming the lowest gas price. 
-This change is in accordance with .
+When handling payment transactions, developers and exchanges will need to call `CreateTransaction` with `gasLimit` set to at least `50` instead of `1` from `v8.0.0` onwards. As a result of this change, the minimal cost of a payment transaction fee will increase from 0.002 $ZIL to 0.1 $ZIL assuming the lowest gas price. 
 
-:::note
-Smart contract transaction gas unit remains unchanged.
-
-
-Developers and exchanges may proceed to make the `gasLimit` change above even before `v8.0.0` is deployed. Until the deployment, the payment transaction fee will continue to be 0.002 $ZIL, with or without the `gasLimit` change.
-:::
+***
+Important note:
+1. Smart contract transaction gas unit remains unchanged.
+2. Developers and exchanges may proceed to make the `gasLimit` change above even before `v8.0.0` is deployed. Until the deployment, the payment transaction fee will continue to be 0.002 $ZIL, with or without the `gasLimit` change.
+***
 
 ### 4) Deprecation and removal of `GetPendingTxn` and `GetPendingTxns` API
 
@@ -64,7 +62,7 @@ tracks transaction status during the transactional lifetime. `GetPendingTxn` and
 
 ### 5) Non-interactive mode support for seed nodes
 
-Seed node operator will now have the option of invoking `launch.sh` in non-interactive mode. Seed node operator will need to provide the following environment variables when using
+Seed node operators will now have the option of invoking `launch.sh` in non-interactive mode. Seed node operator will need to provide the following environment variables when using
 non-interactive mode.
 
 ```
@@ -132,7 +130,7 @@ Due to faster block production rate, we adjust the following parameters to bring
 | Reward cycle               | 2500 final blocks (~1 day)       |
 | Unbonding period           | 35,000 Final blocks (~2 weeks)   |
 
-Please note that this change is considered an interim change. If the block production rate deviate from the expected value significantly, a new goverance proposal can be introduce to adjust
+Please note that this change is considered an interim change. If the block production rate deviate from the expected value significantly, a new goverance proposal can be introduced to adjust
 the staking parameter accordingly. 
 
 ### 3) $gZIL ending period
