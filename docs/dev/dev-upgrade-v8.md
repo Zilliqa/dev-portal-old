@@ -56,9 +56,20 @@ The maximum number of contract call edges will be increased from `10` to `20`.
 
 The maximum smart contract code size will be increased from `50KB` to `75KB`.
 
-### 7) Faster block time
+### 7) Faster block production rate
 
-We have made some changes to our pBFT (Practical Byzantine Fault Tolerance) consensus implementation in [`Revised pBFT consensus with txn processing`](https://github.com/Zilliqa/Zilliqa/pull/2216). The main change involves optimization around transaction dispatching and processing. This should allow us to significantly reduce the block time from its current peak of 40 seconds to 29 seconds.
+We have made some changes to our pBFT (Practical Byzantine Fault Tolerance) consensus and transaction dispatching and processing implementation. This allows for faster block production rate.
+
+
+|| Before V.8.0.0 | V.8.0.0 |
+| --------------- | -------------- | ------- |
+| Peak block time | 40 seconds     | 29 seconds |
+| Expected number of DS epoch per 24 hours | ~1600 final blocks | ~2500 final blocks |
+
+
+Reference:
+- [`ZIP-14 - Revised pBFT Consensus	`](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-14.md). 
+- [`Revised pBFT consensus with txn processing implementation`](https://github.com/Zilliqa/Zilliqa/pull/2216). 
 
 ### 8) Block reward adjustment 
 
