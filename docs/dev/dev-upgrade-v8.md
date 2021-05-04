@@ -11,7 +11,7 @@ description: Zilliqa v8.0.0 upgrade notice
 ---
 
 Zilliqa Version 8.0.0 consists of numerous significant changes. This page summarizes some of the major changes that developers and exchanges 
-will need to take note of. The full release note of `v8.0.0` can be found at [here-tba]().
+will need to take note of. The full release note of `v8.0.0` will be release shortly.
 
 ## Core protocol
 
@@ -91,7 +91,7 @@ For instance, let's assume a user-defined ADT named `SSNCycleInfo` is defined in
 
 ### 2) Introduction of new Scilla feature - remote state read
 
-With effect from `v8.0.0`, a Scilla contract will be able to read the state of another contract by using the remote state read feature. More details can be found at [tba]().
+With effect from `v8.0.0`, a Scilla contract will be able to read the state of another contract by using the remote state read feature.
 
 ### 3) Smart contract parameters change
 
