@@ -23,7 +23,7 @@ The migration may take up to 7 days to complete. We will aim to open staking as 
 
 As proposed in [ZIP-19](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-19.md), Staking phase 1.1 consists of the following changes
 - Transfer of stake from one account to another account
-- Proper deletion of empty maps to prevent contract bloating
+- Proper deletion of empty maps to prevent contract states bloating
 - Removal of user-defined ADT in `AssignStakeRewards` transition
 - Staking parameters change
 
