@@ -48,4 +48,6 @@ Here, we will demystify the error codes.
 | VerifierRecvAddrNotSet | -20 | `verifer` receiving address is not set | 
 | ReDelegInvalidSSNAddr | -21 | The initiator is trying to redelegate to a non-existence `SSN` | 
 | AvailableRewardsError | -22 | Reward validation failure |
-
+| InvalidSwapAddr | -23 | No such address for the swap request or delegator is swapping to the same address |
+| SwapAddrValidationFailed | -24 | requestor swap address does not match requestor address | 
+| SwapAddrAlreadyExistsAsRequest | -25 | A cyclic swap request detected |
