@@ -33,21 +33,21 @@ The migration to phase 1.1 will involve the following:
 3. Migration of states and funds from phase 1 to phase 1.1
 
 ## Important note
-- The Contracts address will be change after the migration. Wallets and explorer will need to point to new contract addresses.
+- The contract addresses will be changed after the migration. Wallets and explorers will need to point to the new contract addresses.
 - No staking activities can be performed during the migration 
 - No action is needed for **delegators**
-- For **wallets, explore and node operator**, you will need to switch to the new contract addresses after the migration. All transition name and parameter in the contracts remain the same.
-- Stake rewards will be retroactively be rewarded in full to all delegators and node operators for the period of migration
+- For **wallets, explorers and node operators**, you will need to switch to the new contract addresses after the migration. All transition names and parameters in the contracts remain the same.
+- Stake rewards will be retroactively rewarded in full to all delegators and node operators for the period of migration
 - We will also update Zillion staking portal to point to Phase 1.1 contracts
 
-## Contracts information
+## Information on contracts
 
-For wallets and explorers, we will aim to let you know the phase 1.1 mainnet staking contract addresses as soon as we can. In the meanwhile, we have migrated the testnet staking contract
+For wallets and explorers, we will aim to let you know the phase 1.1 mainnet staking contract addresses as soon as we can. In the meantime, we have migrated the testnet staking contract
 from phase 1 to phase 1.1. Please refer to [this page](staking-general-information) for Phase 1.1 testnet contracts.
 
 ## Changes to staking parameters (Mainnet)
 
-With mainnet `v8.0.0` upgrade, block time will be reduced. As such we will be making the following staking parameters changes
+With mainnet `v8.0.0` upgrade, block time will be reduced. As such, we will be making the following staking parameter changes
 
 | Parameter | Phase 1.0 | Phase 1.1 |
 |-------------- | ------------- | --------- |
@@ -64,7 +64,7 @@ For wallets and explorers, you may need to adjust your UI to reflect the changes
 |-------------- | ------------- | 
 | Starting Date | Tuesday 11th May 2021 04:45 t * |
 | Ending Date | Tuesday 18th May 2021 05:00* |
-*In the event of migration ending early than scheduled, we will resume the staking activities at the early possible time
+*In the event of migration ending earlier than scheduled, we will resume the staking activities at the earliest possible time
 
 ## New feature - Swapping of wallet for delegator
 
