@@ -11,7 +11,14 @@ description: Zilliqa v8.0.0 upgrade notice
 ---
 
 Zilliqa version `8.0.0` consists of numerous significant changes. This page summarizes some of the major changes that developers and exchanges 
-will need to take note of. The full release note of `v8.0.0` will be released at a later time.
+will need to take note of. The full release note of `v8.0.0` is available [here](https://github.com/Zilliqa/Zilliqa/releases/tag/v8.0.0).
+
+## Upgrade Duration
+
+|               | Date/Time                       |
+|-------------- | ------------------------------- |
+| Upgrade start | Tuesday 11th May 2021 05:00 UTC |
+| Upgrade end   | Tuesday 11th May 2021 11:00 UTC |
 
 ## Core Protocol Updates
 
