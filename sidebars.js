@@ -109,6 +109,7 @@ module.exports = {
   StakingSidebar: {
     "Zilliqa Seed Node Staking":["staking/staking-overview", "staking/staking-disclaimer"],
     "Staking Phase 1":[
+    "staking/phase1/staking-phase11-notice",
     "staking/phase1/staking-phase1-overview",
     "staking/phase1/staking-general-information",
     {"Delegators":

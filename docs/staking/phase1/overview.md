@@ -33,7 +33,7 @@ Please read our [Disclaimer](../staking-disclaimer) page carefully before partic
 
 The next sections in this phase 1 documentation are organized as follows:
 
-1. The [General Information](general-information) section contains useful details for anyone interested in the staking program
+1. The [General Information](staking-general-information) section contains useful details for anyone interested in the staking program
 1. The [Delegators](delegator/staking-delegator-overview) section targets the following audiences:
    - Staking wallet builders
    - Staking dashboard builders
