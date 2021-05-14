@@ -52,9 +52,9 @@ With the Mainnet upgrade to Zilliqa `v8.0.0`, the block time will be reduced. As
 | Parameter | Phase 1.0 | Phase 1.1 |
 |-------------- | ------------- | --------- |
 | 1 cycle duration | ~27 hours | ~24 hours | 
-| Blocks per cycle | 1800 | 2500 | 
-| Rewards per cycle | 1,980,000 $ZIL | 1,760,000 $ZIL |
-| Unbonding period | 24,000 final blocks | 35,000 final blocks (~2 weeks) |
+| Blocks per cycle | 1,800 | 2,200 |
+| Rewards per cycle | 1,980,000 $ZIL | 1,548,800 $ZIL |
+| Unbonding period | 24,000 final blocks | 30,800 final blocks (~2 weeks) |
 
 For wallets and explorers, you may need to adjust your UI to reflect the changes in the parameters. 
 
