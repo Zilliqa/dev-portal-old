@@ -10,8 +10,7 @@ description: Zilliqa v8.0.0 upgrade notice
 
 ---
 
-Zilliqa version `8.0.0` consists of numerous significant changes. This page summarizes some of the major changes that developers and exchanges 
-will need to take note of. The full release note of `v8.0.0` is available [here](https://github.com/Zilliqa/Zilliqa/releases/tag/v8.0.0).
+Zilliqa version `8.0.0` consists of numerous significant changes. This page summarizes some of the major changes that developers and exchanges will need to take note of. The full release note of `v8.0.0` is available [here](https://github.com/Zilliqa/Zilliqa/releases/tag/v8.0.0).
 
 ## Upgrade Duration
 
@@ -29,7 +28,7 @@ We have made some changes to our pBFT (Practical Byzantine Fault Tolerance) cons
 || Before `v8.0.0` | `v8.0.0` |
 | --------------- | -------------- | ------- |
 | Peak final block production time | 40 seconds     | 29 seconds |
-| Expected Tx block count per 24 hours | ~1600 Tx blocks | ~2500 Tx blocks |
+| Expected Tx block count per 24 hours | ~1600 Tx blocks | ~2200 Tx blocks |
 
 References:
 - [`ZIP-14 - Revised pBFT Consensus`](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-14.md)
@@ -136,9 +135,9 @@ Due to faster block production rate after `v8.0.0`, we will be adjusting the fol
 
 | Parameters                 | New value                        |
 | -------------------------- | -------------------------------- |
-| Rewards per cycle          | 1,760,000 $ZIL                   |
-| Reward cycle               | 2500 final blocks (~1 day)       |
-| Unbonding period           | 35,000 Final blocks (~2 weeks)   |
+| Rewards per cycle          | 1,548,800  $ZIL                  |
+| Reward cycle               | 2,200 final blocks (~1 day)      |
+| Unbonding period           | 30,800 Final blocks (~2 weeks)   |
 
 Please note that this change is considered an interim change. If the block production rate deviates from the expected value significantly, a new governance proposal can be introduced to adjust the staking parameter accordingly.
 
