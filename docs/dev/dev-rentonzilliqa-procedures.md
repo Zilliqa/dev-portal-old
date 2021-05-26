@@ -52,21 +52,21 @@ This group of procedures is used in the transitions that a host account user may
 
 This procedure creates or updates the [Listing Details](dev-rentonzilliqa-mutable-variables#listing-details-fields) for the given ID. It is used by the `create_listing` and `update_listing` transitions.
 
-| Arguments     | Description                                        | Type      |
-| ------------- | -------------------------------------------------- | --------- |
-| `id`          | The ID of the listing                              | `Uint128` |
-| `name`        | The name of the listing                            | `String`  |
-| `description` | The description of the listing                     | `String`  |
-| `price`       | The price of the listing                           | `Uint128` |
-| `rooms`       | The number of rooms in the listing                 | `Uint32`  |
-| `bathrooms`   | The number of bathrooms in the listing             | `Uint32`  |
-| `image`       | A URL to an image of the listing                   | `String`  |
-| `location`    | A Google Plus code for the location of the listing | `String`  |
-| `wifi`        | The availability of WiFi at the listing            | `String`  |
-| `laundry`     | The availability of a Landry at the listing        | `String`  |
-| `hvac`        | The availability of an HVAC at the listing         | `String`  |
-| `tv`          | The availability of a TV at the listing            | `String`  |
-| `kitchen`     | The availability of a Kitchen at the listing       | `String`  |
+| Arguments     | Description                                                                                   | Type      |
+| ------------- | --------------------------------------------------------------------------------------------- | --------- |
+| `id`          | The ID of the listing                                                                         | `Uint128` |
+| `name`        | The name of the listing                                                                       | `String`  |
+| `description` | The description of the listing                                                                | `String`  |
+| `price`       | The price of the listing                                                                      | `Uint128` |
+| `rooms`       | The number of rooms in the listing                                                            | `Uint32`  |
+| `bathrooms`   | The number of bathrooms in the listing                                                        | `Uint32`  |
+| `image`       | A URL to an image of the listing                                                              | `String`  |
+| `location`    | A [Google Maps Plus Code](https://maps.google.com/pluscodes/) for the location of the listing | `String`  |
+| `wifi`        | The availability of WiFi at the listing                                                       | `String`  |
+| `laundry`     | The availability of a Landry at the listing                                                   | `String`  |
+| `hvac`        | The availability of an HVAC at the listing                                                    | `String`  |
+| `tv`          | The availability of a TV at the listing                                                       | `String`  |
+| `kitchen`     | The availability of a Kitchen at the listing                                                  | `String`  |
 
 ```ocaml
 procedure set_listing_details (

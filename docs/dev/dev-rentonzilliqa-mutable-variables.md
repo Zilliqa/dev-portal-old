@@ -40,21 +40,21 @@ These `Map` fields are dictionaries that are used to store details about the use
 
 These `Map` fields are dictionaries that are used to store details about each listing. The `key` for each of them is the ID as explained with the `listing_id_generator` in the [Owner Fields](#owner-fields). The `value` is the listing information corresponding to the field.
 
-| Field                      | Value description                                               | Type                  | Initial value         |
-| -------------------------- | --------------------------------------------------------------- | --------------------- | --------------------- |
-| `listing_host`             | The wallet address of the host account that created the listing | `Map Uint128 ByStr20` | `Emp Uint128 ByStr20` |
-| `listing_renter`           | The wallet address of the current renter of the listing         | `Map Uint128 ByStr20` | `Emp Uint128 ByStr20` |
-| `listing_rented_till`      | The `BLOCKNUMBER` until which the listing is rented             | `Map Uint128 BNum`    | `Emp Uint128 BNum`    |
-| `listing_name`             | The name of the listing                                         | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_description`      | The description of the listing                                  | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_price`            | The price of the listing                                        | `Map Uint128 Uint128` | `Emp Uint128 Uint128` |
-| `listing_rooms`            | The number of rooms in the listing                              | `Map Uint128 Uint32`  | `Emp Uint128 Uint32`  |
-| `listing_bathrooms`        | The number of bathrooms in the listing                          | `Map Uint128 Uint32`  | `Emp Uint128 Uint32`  |
-| `listing_image`            | A URL to an image of the listing                                | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_location`         | A Google Plus code for the location of the listing              | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_wifi`             | The availability of WiFi at the listing                         | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_laundry`          | The availability of a Landry at the listing                     | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_hvac`             | The availability of an HVAC at the listing                      | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_tv`               | The availability of a TV at the listing                         | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_kitchen`          | The availability of a Kitchen at the listing                    | `Map Uint128 String`  | `Emp Uint128 String`  |
-| `listing_accumulated_rent` | The rent accumulated for the listing                            | `Map Uint128 Uint128` | `Emp Uint128 Uint128` |
+| Field                      | Value description                                                                             | Type                  | Initial value         |
+| -------------------------- | --------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
+| `listing_host`             | The wallet address of the host account that created the listing                               | `Map Uint128 ByStr20` | `Emp Uint128 ByStr20` |
+| `listing_renter`           | The wallet address of the current renter of the listing                                       | `Map Uint128 ByStr20` | `Emp Uint128 ByStr20` |
+| `listing_rented_till`      | The `BLOCKNUMBER` until which the listing is rented                                           | `Map Uint128 BNum`    | `Emp Uint128 BNum`    |
+| `listing_name`             | The name of the listing                                                                       | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_description`      | The description of the listing                                                                | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_price`            | The price of the listing                                                                      | `Map Uint128 Uint128` | `Emp Uint128 Uint128` |
+| `listing_rooms`            | The number of rooms in the listing                                                            | `Map Uint128 Uint32`  | `Emp Uint128 Uint32`  |
+| `listing_bathrooms`        | The number of bathrooms in the listing                                                        | `Map Uint128 Uint32`  | `Emp Uint128 Uint32`  |
+| `listing_image`            | A URL to an image of the listing                                                              | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_location`         | A [Google Maps Plus Code](https://maps.google.com/pluscodes/) for the location of the listing | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_wifi`             | The availability of WiFi at the listing                                                       | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_laundry`          | The availability of a Landry at the listing                                                   | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_hvac`             | The availability of an HVAC at the listing                                                    | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_tv`               | The availability of a TV at the listing                                                       | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_kitchen`          | The availability of a Kitchen at the listing                                                  | `Map Uint128 String`  | `Emp Uint128 String`  |
+| `listing_accumulated_rent` | The rent accumulated for the listing                                                          | `Map Uint128 Uint128` | `Emp Uint128 Uint128` |
