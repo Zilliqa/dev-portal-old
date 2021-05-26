@@ -10,7 +10,7 @@ description: The Scilla Contract for the RentOnZilliqa Application
 
 ---
 
-In this section, we will go through the process of writing the Scilla Contract for RentOnZilliqa. We will deploy the contract using the [Scilla IDE](https://ide.zilliqa.com).
+In this section, we will go through the process of writing the Scilla Contract for RentOnZilliqa. The contract will be deployed using the [Scilla IDE](https://ide.zilliqa.com).
 
 ## Contract Planning
 
