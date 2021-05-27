@@ -49,11 +49,11 @@ For wallets and explorers, we will aim to let you know of the phase 1.1 Mainnet 
 
 With the Mainnet upgrade to Zilliqa `v8.0.0`, the block time will be reduced. As such, we will be making the following staking parameter changes:
 
-| Parameter | Phase 1.0 | Phase 1.1 |
-|-------------- | ------------- | --------- |
-| 1 cycle duration | ~27 hours | ~24 hours | 
-| Blocks per cycle | 1,800 | 2,200 |
-| Rewards per cycle | 1,980,000 $ZIL | 1,548,800 $ZIL |
+| Parameter | Phase 1.0 | Phase 1.1 (mainnet v8.0.0 - v8.0.4) |
+|-------------- | ------------- | --------- | --------- |
+| 1 cycle duration | ~27 hours | ~24 hours |  ~24 hours |
+| Blocks per cycle | 1,800 | 2,200 | 2,200 |
+| Rewards per cycle | 1,980,000 $ZIL | 1,548,800 $ZIL | 1,795,200 $ZIL |
 | Unbonding period | 24,000 final blocks | 30,800 final blocks (~2 weeks) |
 
 For wallets and explorers, you may need to adjust your UI to reflect the changes in the parameters. 
