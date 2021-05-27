@@ -49,7 +49,7 @@ For wallets and explorers, we will aim to let you know of the phase 1.1 Mainnet 
 
 With the Mainnet upgrade to Zilliqa `v8.0.0`, the block time will be reduced. As such, we will be making the following staking parameter changes:
 
-| Parameter | Phase 1.0 | Phase 1.1 (mainnet v8.0.0 - v8.0.4) | Phase 1.1 (mainnet v8.0.4) |
+| Parameter | Phase 1.0 | Phase 1.1 (mainnet v8.0.0 - v8.0.3) | Phase 1.1 (mainnet v8.0.4) |
 |-------------- | ------------- | --------- | --------- |
 | 1 cycle duration | ~27 hours | ~23.83 hours |  ~23.91 hours |
 | Blocks per cycle | 1,800 | 2,200 | 2,200 |
