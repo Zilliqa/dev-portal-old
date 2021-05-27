@@ -75,7 +75,7 @@ export default ContextContainer;
 
 This function returns an object with the parameters reuquired for calling transitions.
 An optional `amountValue` argument can be used when sending messages with a non-zero amount..
-The values are converted to the appropriate units using [ZilPay Utils](https://zilpay.github.io/zilpay-docs/zilliqa-api-utils/#window-zilpay-utils).
+The values are converted to the appropriate units using [`zilPay.utils`](https://zilpay.github.io/zilpay-docs/zilliqa-api-utils/#window-zilpay-utils).
 
 ```ts
 const getCallParameters = (zilPay: any, amountValue: string = "0") => {
@@ -213,7 +213,7 @@ export default formatListings;
 ### `transitionMessageAlert`
 
 This function creates a toast using [`react-hot-toast`](https://react-hot-toast.com),
-It uses [ZilPay Wallet](https://zilpay.github.io/zilpay-docs/getting-started/#basic-considerations) to subscribe to transactions.
+It uses [`zilPay.wallet`](https://zilpay.github.io/zilpay-docs/getting-started/#basic-considerations) to subscribe to transactions.
 It updates toast with status of transaction, and shows message as per the [Messages Codes](dev-rentonzilliqa-library#message-codes) we defined earlier.
 
 Note that in this function, we use another helper function, `decodeMessage`, to get a human-readable message from the message code. This function is quite basic and hence not included here. You can take a look at [`/src/functions/decodeMessage.ts`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/functions/decodeMessage.ts). It also includes a `decodeZilPayError` function that we will use in the coming sections.
@@ -259,9 +259,9 @@ export default transitionMessageAlert;
 
 ## Transition Functions
 
-We finally come to the Transition Functions that simply call the contract transitions using [ZilPay Contract](https://zilpay.github.io/zilpay-docs/zilliqa-contracts/#window-zilpay-contracts). The [`transitionMessageAlert`](#transitionmessagealert) is also setup after the transitions are triggered.
+We finally come to the Transition Functions that simply call the contract transitions using [`zilPay.contract`](https://zilpay.github.io/zilpay-docs/zilliqa-contracts/#window-zilpay-contracts). The [`transitionMessageAlert`](#transitionmessagealert) is also setup after the transitions are triggered.
 
-The following functions are created at [`/src/functions/`] for calling their respective transitions.
+The following functions are created at [`/src/functions/`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/functions/) for calling their respective transitions.
 
 | Funtion                                                                                                                           | Transition                                                       |
 | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
