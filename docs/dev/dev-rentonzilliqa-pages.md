@@ -13,7 +13,21 @@ description: Building the Pages for the RentOnZilliqa frontend application
 
 In this section, we will build the pages for the frontend application.
 
-## App
+## App Component
+
+We start with the `App` component.
+
+We create the routes for our pages using [`react-router-dom`](https://www.npmjs.com/package/react-router-dom).
+
+We setup the `Toaster` from [`react-hot-toast`](https://react-hot-toast.com).
+
+With the `useEffect` hook, we setup the following:
+
+-   We check if ZilPay is available on the browser and store it in context using `setZilPay`. If ZilPay is not available, an error is conveyed.
+-   We fetch the state of the contract and store it in context using `setContract`
+-   Subscriptions are setup which allow us to
+    -   Update the contract state and block number when there is a block update using [`zilPay.wallet.observableBlock`](https://zilpay.github.io/zilpay-docs/zilliqa-provider/#methods)
+    -   Update the ZilPay account when it is changed using [`zilPay.wallet.observableAccount`](https://zilpay.github.io/zilpay-docs/zilliqa-provider/#methods)
 
 ```tsx
 import React, { useEffect, useState } from "react";
@@ -134,9 +148,49 @@ const App: React.FC = () => {
 export default App;
 ```
 
+[/src/App.tsx](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/App.tsx)
+
 <br/>
 
-## Listings
+## `index.tsx`
+
+Next, we wrap the [`App`](#app) component with the [`ContextContainer`](dev-rentonzilliqa-scripting#contextcontainer) that we created earlier.
+
+```tsx
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "./tailwind.output.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ContextContainer from "./functions/contextContainer";
+
+ReactDOM.render(
+    <React.StrictMode>
+        <ContextContainer.Provider>
+            <App />
+        </ContextContainer.Provider>
+    </React.StrictMode>,
+    document.getElementById("root")
+);
+
+reportWebVitals();
+```
+
+[/src/index.tsx](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/index.tsx)
+
+## Listings Page
+
+Now we get to the [Listings Page](dev-rentonzilliqa-frontend#listings-page).
+
+When there is a change in the `contractState` or `blockNumber`, using the `useEffect` hook, we update the `listings` displayed on the page. We create a `hostedListings` object that filters out the listings that are hosted by the current user.
+
+The listings are presented using the [`ListingCard`](dev-rentonzilliqa-components#listingcard) component.
+
+Using the `useState` hook, we create `boolean` state variables for showing and hiding the modals as required. The modals are conditionally mounted based on these variables. To trigger the modals, we set up `onClick` listeners as follows:
+
+-   On a "New Listing" [`Button`](dev-rentonzilliqa-components#button), which triggers the [`CreateListing`](dev-rentonzilliqa-modals#create-listing-modal) Modal
+-   On each Listing Card, which triggers the [`ManageListing`](dev-rentonzilliqa-modals/#manage-listing-modal) Modal
 
 ```tsx
 import React, { useEffect, useState } from "react";
@@ -277,13 +331,15 @@ const Listings: React.FC = () => {
 export default Listings;
 ```
 
+[/src/components/componentListings.tsx](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentListings.tsx)
+
 <br/>
 
-## Individual Listing
+## Individual Listing Page
 
-This component presents a detailed view of the individual listings.
+This component presents a detailed view of the individual listing on the [Listing Page](dev-rentonzilliqa-frontend#listing-page).
 
-The description, rooms, amenities, map, etc are presented in a detailed manner.
+The description, rooms, amenities, map, and description are presented in a detailed manner. The [`AmenitiesIcons`] are used to give a clean view to the Rooms and Amenities sections.
 
 Users can book the listing withing this component, which uses the [`bookListingTransition`](dev-rentonzilliqa-scripting#booklistingtransition) function.
 
@@ -492,3 +548,5 @@ const Listing: React.FC = () => {
 
 export default Listing;
 ```
+
+[/src/components/componentListing.tsx](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentListing.tsx)

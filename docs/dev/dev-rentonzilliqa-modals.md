@@ -295,7 +295,7 @@ export default CreateListingModal;
 
 <br/>
 
-#Managege Listing Modal
+## Manage Listing Modal
 
 We now get to the [Create Listing Modal](dev-rentonzilliqa-frontend#creating-and-managing-listings) that will be used by host users to post new listings.
 

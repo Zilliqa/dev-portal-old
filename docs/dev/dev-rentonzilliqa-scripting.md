@@ -212,7 +212,7 @@ export default formatListings;
 
 ### `transitionMessageAlert`
 
-This function creates a toast using [`react-hot-toast`](),
+This function creates a toast using [`react-hot-toast`](https://react-hot-toast.com),
 It uses [ZilPay Wallet](https://zilpay.github.io/zilpay-docs/getting-started/#basic-considerations) to subscribe to transactions.
 It updates toast with status of transaction, and shows message as per the [Messages Codes](dev-rentonzilliqa-library#message-codes) we defined earlier.
 
