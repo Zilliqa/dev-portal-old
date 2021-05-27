@@ -339,7 +339,7 @@ export default Listings;
 
 This component presents a detailed view of the individual listing on the [Listing Page](dev-rentonzilliqa-frontend#listing-page).
 
-The description, rooms, amenities, map, and description are presented in a detailed manner. The [`AmenitiesIcons`] are used to give a clean view to the Rooms and Amenities sections.
+The description, rooms, amenities, map, and description are presented in a detailed manner. The [`ListingIcons`](dev-rentonzilliqa-components#listing-icons) are used to provide a clear view to the Rooms and Amenities sections.
 
 Users can book the listing withing this component, which uses the [`bookListingTransition`](dev-rentonzilliqa-scripting#booklistingtransition) function.
 
