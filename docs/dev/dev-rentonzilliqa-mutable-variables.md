@@ -11,7 +11,7 @@ description: The Fields of the Scilla Contract for the RentOnZilliqa Application
 
 ---
 
-In this section, we look at the mutable fields declared in the contract.
+In this section, we look at the mutable fields declared in the contract. [The source code](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/main/src/scilla/RentOnZilliqa.scilla).
 
 ## Declaring the Mutable Fields
 
