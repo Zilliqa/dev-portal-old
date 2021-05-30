@@ -10,7 +10,7 @@ description: The Library of the Scilla Contract for the RentOnZilliqa Applicatio
 
 ---
 
-We start with the library for RentOnZilliqa. We declare the `one_msg` helper function.
+We start with the library for RentOnZilliqa. We declare the `one_msg` helper function. The [source code can be found here](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L6).
 
 ## Message Codes
 
@@ -24,7 +24,7 @@ The codes are grouped into three categories:
 
 ### Account Codes
 
-These codes are general codes that apply to all users that communicate with the contract.
+These codes are general codes that apply to all users that communicate with the contract [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L12).
 
 | Name                     | Code | Description                                         | Type    |
 | ------------------------ | :--: | --------------------------------------------------- | ------- |
@@ -53,7 +53,7 @@ These codes are codes specifically used to communicate after actions relating to
 
 ### Renter Account Codes
 
-These codes are codes specifically used to communicate after actions relating to renter accounts.
+These codes are codes specifically used to communicate after actions relating to renter accounts [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L21).
 
 | Name                      | Code | Description                                       | Type    |
 | ------------------------- | :--: | ------------------------------------------------- | ------- |
@@ -66,7 +66,7 @@ These codes are codes specifically used to communicate after actions relating to
 
 ## Additional Constants
 
-We define a few more additional constants for use within the contract. We create constants for storing the account roles. As well as some constants for ease of use.
+We define a few more additional constants for use within the contract. We create constants for storing the account roles. As well as some constants for ease of use. [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L31).
 
 | Name               |  Code   | Type      |
 | ------------------ | :-----: | --------- |
