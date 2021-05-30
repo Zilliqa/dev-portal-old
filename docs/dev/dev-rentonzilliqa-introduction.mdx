@@ -12,22 +12,7 @@ description: Introduction to RentOnZilliqa
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-The Zilliqa Fullstack app is a full-fledged application on the Zilliqa Blockchain for listing and renting houses. In this guide, we will go through the process of building the full-stack application, from writing the contract to building the frontend application.
-
-## Learn more about RentOnZilliqa
-
--   [Watch the demo](https://www.loom.com/share/7f9530f80de34ba6be8b9a954f331e47).
--   [Try the app](https://rentonzilliqa-frontend.vercel.app).
--   [View the source](https://github.com/Quinence/zilliqa-fullstack-app).
-
-## The Technology
-
--   Scilla Smart Contract
--   [ZilPay](https://ziplay.io)
--   [Create React App](https://github.com/facebook/create-react-app) for the frontend.
--   [Tailwind CSS](https://tailwindcss.com) for styling.
-
-## Built by Quinence
+RentOnZilliqa, the Zilliqa Fullstack app, is a full-fledged application on the Zilliqa Blockchain for listing and renting houses. In this guide, we will go through the process of building the full-stack application, from writing the contract to building the frontend application.
 
 <img
     alt="Quinence Logo"
@@ -35,34 +20,71 @@ The Zilliqa Fullstack app is a full-fledged application on the Zilliqa Blockchai
     width="60"
 />
 
-[Quinence - Digital product specialists from Singapore](https://quinence.com).
+Built by [Quinence - Digital product specialists from Singapore](https://quinence.com).
+
+
+## Learn more about RentOnZilliqa
+
+-   [Watch the demo](https://www.loom.com/share/7f9530f80de34ba6be8b9a954f331e47).
+-   [Try the app](https://rentonzilliqa-frontend.vercel.app).
+-   [View the source at GitHub](https://github.com/Quinence/zilliqa-fullstack-app).
+
+## The Technology
+
+-   The Scilla Smart Contract.
+-   [ZilPay](https://zilpay.io) for accessing the user wallet and interacting with the Zilliqa Blockchain.
+-   [Create React App](https://github.com/facebook/create-react-app) for deploying the frontend of the application.
+-   [Tailwind CSS](https://tailwindcss.com) for styling the application.
+
+
+## Brief details of the application
+
+A user can create an account as a renter or a host.
+
+If the user is a host, they can create a listing of a home with details of the home (e.g. title, address, amenities) and rental price per night. They can also see the list of all homes as well as the homes they hosted. They can edit the details of a home and delete it from the listing as well.
+
+If the user is a renter, they can rent a home from the list given that it is not unavailable. A home is unavailable if it is rented and the rent duration has not passed yet. Once the user rents the home by paying the amount in ZIL, we mark the home as unavailble. The amount is stored in the contract.
+
+A host can also see the rent accumulated in their account. They can claim the rent anytime they want.
 
 ## Screenshots
 
 ### Listings Page
+
+The listings page lists all houses listed with the RentOnZilliqa application. It shows the image of the listing, some basic details, and the price per night.
 
 | <img alt="Listings Page" width="1600" src={useBaseUrl("img/dev/rentonzilliqa/listings.png")} /> |
 | ----------------------------------------------------------------------------------------------- |
 
 ### Individual Listing Page
 
+The page showcasing an individual listing. Shows the title, image, and description of the home as well as the rental price per night.
+
 | <img alt="Individual Listing Page" width="1600" src={useBaseUrl("img/dev/rentonzilliqa/listing-1.png")} /> |
 | ---------------------------------------------------------------------------------------------------------- |
+
+It also lists the number of bedrooms and bathrooms in the home, the amenities available, and the location of the listing in an embedded map.
 
 | <img alt="Individual Listing Page" width="1600" src={useBaseUrl("img/dev/rentonzilliqa/listing-2.png")} /> |
 | ---------------------------------------------------------------------------------------------------------- |
 
 ### Account Modal
 
+Anyone can create an account by first connecting with Zilpay. They provide their name and register as a host or a renter.
+
 | <img alt="Account Modal" width="1600" src={useBaseUrl("img/dev/rentonzilliqa/account.png")} /> |
 | ---------------------------------------------------------------------------------------------- |
 
 ### Create Listing Modal
 
+A host can create a listing they have created by providing the details of the home and the rental price per night.
+
 | <img alt="Create Listing Modal" width="1600" src={useBaseUrl("img/dev/rentonzilliqa/create-listing.png")} /> |
 | ------------------------------------------------------------------------------------------------------------ |
 
 ### Update Listing Modal
+
+A host can also update the details of a home and delete it from the listing.
 
 | <img alt="Update Listing Modal" width="1600" src={useBaseUrl("img/dev/rentonzilliqa/update-listing.png")} /> |
 | ------------------------------------------------------------------------------------------------------------ |
