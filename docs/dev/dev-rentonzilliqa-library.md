@@ -38,7 +38,7 @@ These codes are general codes that apply to all users that communicate with the 
 
 ### Host Account Codes
 
-These codes are codes specifically used to communicate after actions relating to host accounts.
+These codes are codes specifically used to communicate after actions relating to host accounts [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L21).
 
 | Name               | Code | Description                                      | Type    |
 | ------------------ | :--: | ------------------------------------------------ | ------- |
@@ -53,7 +53,7 @@ These codes are codes specifically used to communicate after actions relating to
 
 ### Renter Account Codes
 
-These codes are codes specifically used to communicate after actions relating to renter accounts [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L21).
+These codes are codes specifically used to communicate after actions relating to renter accounts [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L31).
 
 | Name                      | Code | Description                                       | Type    |
 | ------------------------- | :--: | ------------------------------------------------- | ------- |
@@ -66,7 +66,7 @@ These codes are codes specifically used to communicate after actions relating to
 
 ## Additional Constants
 
-We define a few more additional constants for use within the contract. We create constants for storing the account roles. As well as some constants for ease of use. [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L31).
+We define a few more additional constants for use within the contract. We create constants for storing the account roles. As well as some constants for ease of use. [(the source code)](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/93273d0af6776e28f998ba4a63df3053545a1eeb/src/scilla/RentOnZilliqa.scilla#L39).
 
 | Name               |  Code   | Type      |
 | ------------------ | :-----: | --------- |
