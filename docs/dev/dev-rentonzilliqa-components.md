@@ -113,7 +113,7 @@ export default Header;
 
 We create a Modal component at [`/src/components/componentModal.tsx`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentModal.tsx). Most transitions take place via a modal. This component takes care of the basic Modal functionality and styling.
 
-The `title`, main button set to `buttonText`, dismiss button, and overlay are part of this component.
+The `title`; main button set to `buttonText`; dismiss button; and overlay are part of this component.
 
 The `children` passed to this component are the content in the modal.
 
@@ -290,7 +290,7 @@ export default ListingCard;
 
 ### Input
 
-We create a Input component at [`/src/components/componentInput.tsx`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentInput.tsx). This works with state variables which will be created with the `useState` hook in it's Parent Component. We accept the `name` for the input field. The input `type` and `unit` are also accepted as optional props.
+We create an Input component at [`/src/components/componentInput.tsx`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentInput.tsx). This works with state variables which will be created with the `useState` hook in its Parent Component. We accept the `name` for the input field. The input `type` and `unit` are also accepted as optional props.
 
 ```tsx
 import React from "react";
@@ -386,7 +386,7 @@ export default CheckBox;
 
 ### AmenitiesInput
 
-We create a AmenitiesInput component at [`/src/components/componentAmenitiesInput.tsx`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentAmenitiesInput.tsx). It groups multiple checkboxes for collecting the amenities' availability in the CreateListing and ManageListing modals. We create this component to clean up the code.
+We create an AmenitiesInput component at [`/src/components/componentAmenitiesInput.tsx`](https://github.com/Quinence/zilliqa-fullstack-app/blob/main/src/components/componentAmenitiesInput.tsx). It groups multiple checkboxes for collecting the amenities' availability in the CreateListing and ManageListing modals. We create this component to clean up the code.
 
 ```tsx
 import React, { useEffect, useState } from "react";

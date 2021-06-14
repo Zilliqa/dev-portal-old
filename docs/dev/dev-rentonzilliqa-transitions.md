@@ -298,9 +298,9 @@ This group of transitions is used by the owner to manage the platform.
 
 This transition is used to claim the commission collected on the platform.
 
-The `_sender` wallet address is checked to ensure it is owner of the contract.
+The `_sender` wallet address is checked to ensure it is the owner of the contract.
 
-The `_balance` from the contract is send to the owner via a message.
+The `_balance` from the contract is sent to the owner via a message.
 
 ```ocaml
 transition claim_commission ()
@@ -321,7 +321,7 @@ end
 
 This transition is used to update the commission collected from each rental.
 
-The `_sender` wallet address is checked to ensure it is owner of the contract.
+The `_sender` wallet address is checked to ensure it is the owner of the contract.
 
 The [`owners-commission`](dev-rentonzilliqa-mutable-variables#owner-fields) field is updated to `new_commission`.
 
@@ -348,7 +348,7 @@ end
 
 This transition is used to update the night duration value that is added to the `BLOCKNUMBER` to create the notion of time.
 
-The `_sender` wallet address is checked to ensure it is owner of the contract.
+The `_sender` wallet address is checked to ensure it is the owner of the contract.
 
 The [`night_duration`](dev-rentonzilliqa-mutable-variables#owner-fields) field is updated to `new_night_duration`.
 

@@ -19,7 +19,7 @@ The fields can be grouped into the following types based on their purpose.
 
 ### Owner Fields
 
-These fields can be modified by the owner of the contract. They dictate the behaviour of the platform.
+These fields can be modified by the owner of the contract. They dictate the behavior of the platform.
 
 | Field                  | Description                                                                | Type      | Initial value |
 | ---------------------- | -------------------------------------------------------------------------- | --------- | ------------- |

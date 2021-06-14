@@ -21,11 +21,11 @@ We create the routes for our pages using [`react-router-dom`](https://www.npmjs.
 
 We setup the `Toaster` from [`react-hot-toast`](https://react-hot-toast.com).
 
-With the `useEffect` hook, we setup the following:
+With the `useEffect` hook, we set up the following:
 
 -   We check if ZilPay is available on the browser and store it in context using `setZilPay`. If ZilPay is not available, an error is conveyed.
 -   We fetch the state of the contract and store it in context using `setContract`
--   Subscriptions are setup which allow us to
+-   Subscriptions are set up which allow us to
     -   Update the contract state and block number when there is a block update using [`zilPay.wallet.observableBlock`](https://zilpay.github.io/zilpay-docs/zilliqa-provider/#methods)
     -   Update the ZilPay account when it is changed using [`zilPay.wallet.observableAccount`](https://zilpay.github.io/zilpay-docs/zilliqa-provider/#methods)
 
@@ -339,9 +339,9 @@ export default Listings;
 
 This component presents a detailed view of the individual listing on the [Listing Page](dev-rentonzilliqa-frontend#listing-page).
 
-The description, rooms, amenities, map, and description are presented in a detailed manner. The [`ListingIcons`](dev-rentonzilliqa-components#listing-icons) are used to provide a clear view to the Rooms and Amenities sections.
+The description, rooms, amenities, map, and description are presented in a detailed manner. The [`ListingIcons`](dev-rentonzilliqa-components#listing-icons) are used to provide a clear view of the Rooms and Amenities sections.
 
-Users can book the listing withing this component, which uses the [`bookListingTransition`](dev-rentonzilliqa-scripting#booklistingtransition) function.
+Users can book the listing within this component, which uses the [`bookListingTransition`](dev-rentonzilliqa-scripting#booklistingtransition) function.
 
 The embed url for the Map is built using the [Google Maps Plus Code](https://maps.google.com/pluscodes/) and the [Google Maps API Key](https://developers.google.com/maps/documentation/embed/get-api-keys).
 
