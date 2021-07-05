@@ -65,7 +65,8 @@ module.exports = {
     "Transaction Lifecycle": ["dev/dev-txn-signing","dev/dev-txn-broadcasting","dev/dev-txn-polling","dev/dev-txn-confirmation",
     "dev/dev-txn-receipt"],
     "Educational Resources": [
-      "dev/dev-education-videos"
+      "dev/dev-education-videos",
+      {"Sample app – RentOnZilliqa":["dev/dev-rentonzilliqa-introduction",{"Scilla Contract":["dev/dev-rentonzilliqa-contract","dev/dev-rentonzilliqa-library","dev/dev-rentonzilliqa-mutable-variables","dev/dev-rentonzilliqa-procedures","dev/dev-rentonzilliqa-transitions"]},{"Frontend Application":["dev/dev-rentonzilliqa-frontend","dev/dev-rentonzilliqa-components", "dev/dev-rentonzilliqa-scripting", "dev/dev-rentonzilliqa-modals", "dev/dev-rentonzilliqa-pages"]}]},
     ]
   },
   MinersSidebar: {
