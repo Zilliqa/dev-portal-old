@@ -155,7 +155,7 @@ curl -d '{
 >     "jsonrpc": "2.0",
 >     "method": "GetSmartContractSubState",
 >     "params": ["<ssn contract address>","deposit_amt_deleg",["<delegator address>"]]
-> }' -H "Content-Type: application/json" -X POST "api endpoing"
+> }' -H "Content-Type: application/json" -X POST "api endpoint"
 ```
 
 ### Output
