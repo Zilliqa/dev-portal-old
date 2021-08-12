@@ -1,6 +1,6 @@
 ---
 id: staking-phase1-overview
-title: Phase 1  Overview
+title: Phase 1.1 Overview
 keywords: 
 - staking
 - overview
@@ -8,7 +8,7 @@ keywords:
 - seed node
 - phase 1
 - zilliqa	
-description: Phase 1 Overview
+description: Phase 1.1 Overview
 ---
 
 Welcome to phase 1 of the Zilliqa seed node staking program. We invite interested participants to read through the formal documentation for phase 1 in [Zilliqa Improvement Proposal 11](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md).
