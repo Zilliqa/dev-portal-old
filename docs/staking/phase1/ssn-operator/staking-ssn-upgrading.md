@@ -15,8 +15,8 @@ description: SSN Upgrading
 
 ### Docker
 
-Please refer to the section  [Preparing the node for docker build](staking-getting-started#launching-the-node-using-docker).
+Please refer to the section  [Preparing the node for docker build](staking-ssn-setup#launching-the-node-using-docker).
 
 ### Native Build
 
-Please refer to the section  [Preparing the node for native build](staking-getting-started#launching-the-node-using-docker).
+Please refer to the section  [Preparing the node for native build](staking-ssn-setup#launching-the-node-using-docker).
