@@ -25,11 +25,11 @@ A seed node is a Zilliqa full node that does not participate in Zilliqa network 
 
 Seed nodes have been a part of the Zilliqa ecosystem since day 1. They are vital as they provide [API](https://apidocs.zilliqa.com/#introduction) access to dApps, wallets, explorers, and exchanges. Most seed nodes are private and access is restricted to the operator's infrastructure. Zilliqa has provided a set of seed nodes publicly accessible at [api.zilliqa.com](https://api.zilliqa.com).
 
-The purpose of staked seed nodes (SSNs) is to "open up" seed nodes to trusted operators, bringing us a step closer towards the decentralization of the overall seed node architecture. To attract high-quality seed node operators, a proper incentive mechanism must be put in place. This is described in both [ZIP-3](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-3.md) and [ZIP-11](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md). We highly recommend anyone who wishes to become an SSN operator in phase 1 to read ZIP-11.
+The purpose of staked seed nodes (SSNs) is to "open up" seed nodes to trusted operators, bringing us a step closer towards the decentralization of the overall seed node architecture. To attract high-quality seed node operators, a proper incentive mechanism must be put in place. This is described in both [ZIP-11](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md) and [ZIP-19](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-19.md). We highly recommend anyone who wishes to become an SSN operator in phase 1.1 to read ZIP-11 and ZIP-19.
 
-## Who is Eligible for Running an SSN in Phase 1?
+## Who is Eligible for Running an SSN in Phase 1.1?
 
-The SSN in phase 1 is admissible via a whitelisting of the public key of the SSN. We may not be able to accommodate all requests for running an SSN at the launch of phase 1.
+The SSN in phase 1.1 is admissible via a whitelisting of the public key of the SSN. We may not be able to accommodate all requests for running an SSN at the launch of phase 1.
 
 The rationale behind whitelisting is to:
 
@@ -44,8 +44,6 @@ As such, we will be prioritizing SSN operators based on the following factors. D
 - Ability to upgrade SSN promptly after network upgrades
 - Ability to provide value-added services such as wallet UI or explorers
 - Zilliqa community-oriented SSN operators
-
-We will have a gradual rollout of SSN operators for this phase. So, don't worry if you are not part of the SSN operators on day 1!
 
 ## What's Next?
 
