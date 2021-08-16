@@ -48,7 +48,8 @@ module.exports = {
     "apis/api-contract-get-smartcontract-init",
     "apis/api-contract-get-smartcontracts",
     "apis/api-contract-get-smartcontract-state",
-    "apis/api-contract-get-smartcontract-substate"],
+    "apis/api-contract-get-smartcontract-substate",
+    "apis/api-contract-get-state-proof"],
 
     "Account-related Methods":["apis/api-account-get-balance"]
   },
