@@ -256,7 +256,7 @@ end
 
 This transition is used by a host user to claim the accumulated rent from a listing that they own.
 
-The `_sender` wallet address is checked to ensure it is not the host of the listing.
+The `_sender` wallet address is checked to ensure it is indeed the host of the listing.
 
 The [`claim_rent_by_id`](dev-rentonzilliqa-procedures#claim_rent_by_id) procedure is used to claim the rent.
 
@@ -352,9 +352,9 @@ The `_sender` wallet address is checked to ensure it is the owner of the contrac
 
 The [`night_duration`](dev-rentonzilliqa-mutable-variables#owner-fields) field is updated to `new_night_duration`.
 
-| Arguments            | Description                    | Type     |
-| -------------------- | ------------------------------ | -------- |
-| `new_night_duration` | A new value for the commission | `Uint32` |
+| Arguments            | Description                        | Type     |
+| -------------------- | ---------------------------------- | -------- |
+| `new_night_duration` | A new value for the night duration | `Uint32` |
 
 ```ocaml
 transition update_night_duration (new_night_duration: Uint32)
