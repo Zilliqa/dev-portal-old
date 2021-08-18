@@ -1,0 +1,5 @@
+
+# Development folders and files #
+#################################
+.tmp/
+node_modules/
