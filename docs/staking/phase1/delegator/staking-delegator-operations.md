@@ -101,7 +101,7 @@ After withdrawal, the delegator remaining stake amount must be bigger than the m
 
 ### Parameters
 
-`ssnaddr`: the address of the SSN from which the delegator wishes to withdraw reward form  
+`ssnaddr`: the address of the SSN from which the delegator wishes to withdraw reward from  
 `amt`: the amount of stake amount to withdraw from the delegation to a particular SSN
 
 ### Transition
