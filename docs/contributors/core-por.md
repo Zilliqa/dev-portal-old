@@ -1,15 +1,16 @@
 ---
 id: core-por
 title: Proof of Reputation
-keywords: 
-- core 
-- por 
-- proof 
-- reputation
+keywords:
+  - core
+  - por
+  - proof
+  - reputation
 description: Core protocol design - proof of reputation.
 ---
 
 ---
+
 The [DS reputation](core-ds-reputation.md) feature uses node performance to regulate node tenure within the DS committee. In a similar manner, the PoW submission selection process is designed to prioritize nodes that generated more cosignatures (i.e., actively perform consensus to generate blocks) during their time in the network. When the Mainnet is full (i.e., the 2400-node limit is reached), the PoW submissions from nodes with higher priority ratings will be processed first. This feature is referred to as Proof of Reputation (PoR).
 
 :::note

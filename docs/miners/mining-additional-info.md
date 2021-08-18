@@ -1,17 +1,18 @@
 ---
 id: mining-additional-info
 title: Additional Information
-keywords: 
-- mining
-- pow
-- network difficulty
-- reward mechanism
-- epoch architecture
-- zilliqa	
+keywords:
+  - mining
+  - pow
+  - network difficulty
+  - reward mechanism
+  - epoch architecture
+  - zilliqa
 description: Mining Additional Informantion
 ---
 
 ---
+
 ## Network Epoch Architecture
 
 ![Zilliqa Epoch Architecture](https://i.imgur.com/Da4t6FW.png)

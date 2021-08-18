@@ -4,13 +4,13 @@ title: GetDSBlockRate
 ---
 
 ---
+
 Returns the current Directory Service blockrate per second.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,6 +33,7 @@ curl -d '{
     "params": [""]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -40,6 +41,7 @@ curl -d '{
 const dsBlockRate = await zilliqa.blockchain.getDSBlockRate();
 console.log(dsBlockRate.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -60,6 +63,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetDSBlockRate())
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -72,9 +76,9 @@ func GetDSBlockRate() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
-
 
 ### Example Response
 
@@ -88,11 +92,11 @@ func GetDSBlockRate() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

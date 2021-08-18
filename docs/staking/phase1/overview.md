@@ -1,21 +1,22 @@
 ---
 id: staking-phase1-overview
 title: Phase 1.1 Overview
-keywords: 
-- staking
-- overview
-- ssn
-- seed node
-- phase 1
-- zilliqa	
+keywords:
+  - staking
+  - overview
+  - ssn
+  - seed node
+  - phase 1
+  - zilliqa
 description: Phase 1.1 Overview
 ---
 
 Welcome to phase 1.1 of the Zilliqa seed node staking program. We invite interested participants to read through the formal documentation for phase 1 in [Zilliqa Improvement Proposal 19](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-19.md).
 
-Phase 1.1 builds on the design laid out in [ZIP-3](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-3.md) and [ZIP-11](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md). 
+Phase 1.1 builds on the design laid out in [ZIP-3](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-3.md) and [ZIP-11](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md).
 
 In phase 0, we introduced our staking program with a simple mechanism involving 3 different roles:
+
 1. SSN operator
 1. Verifier
 1. Contract admin

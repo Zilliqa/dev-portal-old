@@ -1,11 +1,11 @@
 ---
 id: exchange-tracking-deposits
 title: Polling for Deposits
-keywords: 
-- track deposits
-- exchanges
-- cron job
-- zilliqa
+keywords:
+  - track deposits
+  - exchanges
+  - cron job
+  - zilliqa
 description: Track Exchange Deposits
 ---
 
@@ -35,10 +35,10 @@ We will use a simple `class` called `DepositCron` to set up our cron job.
 We'll start by implementing a handler method, aptly named `handler`.
 
 ```ts
-import {flatten, range} from 'lodash';
+import { flatten, range } from 'lodash';
 import pMap from 'p-map';
 import * as cron from 'node-cron';
-import {ZilliqaService} from '../services/zilliqa';
+import { ZilliqaService } from '../services/zilliqa';
 
 export class DepositCron {
   addresses: string[] = [];
@@ -64,14 +64,16 @@ export class DepositCron {
       // lastFetchedTxBlock to current
       const transactions = await pMap(
         range(this.lastFetchedTxBlock + 1, currentTxBlock),
-        blk => this.svc.getDeposits(this.addresses, blk),
+        (blk) => this.svc.getDeposits(this.addresses, blk)
       ).then(flatten);
 
       this.lastFetchedTxBlock = currentTxBlock;
 
       // we are only logging to stdout, but in a real application, you would
       // be writing the result to the database.
-      console.log(`Found ${transactions.length} deposits for ${this.addresses}`);
+      console.log(
+        `Found ${transactions.length} deposits for ${this.addresses}`
+      );
     }
   }
 }
@@ -97,10 +99,10 @@ So far we have no way of starting up or controlling our `CronJob`. We'll do that
 implementing `start`, `stop`, and `nuke` methods.
 
 ```ts
-import {flatten, range} from 'lodash';
+import { flatten, range } from 'lodash';
 import pMap from 'p-map';
 import * as cron from 'node-cron';
-import {ZilliqaService} from '../services/zilliqa';
+import { ZilliqaService } from '../services/zilliqa';
 
 export class DepositCron {
   addresses: string[] = [];
@@ -127,14 +129,16 @@ export class DepositCron {
       // lastFetchedTxBlock to current
       const transactions = await pMap(
         range(this.lastFetchedTxBlock + 1, currentTxBlock),
-        blk => this.svc.getDeposits(this.addresses, blk),
+        (blk) => this.svc.getDeposits(this.addresses, blk)
       ).then(flatten);
 
       this.lastFetchedTxBlock = currentTxBlock;
 
       // we are only logging to stdout, but in a real application, you would
       // be writing the result to the database.
-      console.log(`Found ${transactions.length} deposits for ${this.addresses}`);
+      console.log(
+        `Found ${transactions.length} deposits for ${this.addresses}`
+      );
     }
   }
 
@@ -164,7 +168,7 @@ const zilliqaSvc = new services.ZilliqaService(
   'https://stress-test-api.aws.z7a.xyz',
   {
     [config.get('mnemonic')]: 8,
-  },
+  }
 );
 
 // boot up cron jobs

@@ -2,9 +2,9 @@
 id: dev-rentonzilliqa-procedures
 title: Procedures
 keywords:
-    - scilla
-    - procedures
-    - rentonzilliqa
+  - scilla
+  - procedures
+  - rentonzilliqa
 description: The Procedures of the Scilla Contract for the RentOnZilliqa Application
 ---
 
@@ -12,9 +12,9 @@ description: The Procedures of the Scilla Contract for the RentOnZilliqa Applica
 
 We proceed to declare the procedures that we will use in the RentOnZilliqa Smart Contract. We will declare the following types of procedures in this section. [The source code](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/main/src/scilla/RentOnZilliqa.scilla).
 
--   [General Procedures](#general-procedures)
--   [Listing Management Procedures](#listing-management-procedures)
--   [Listing Booking Procedures](#listing-booking-procedures)
+- [General Procedures](#general-procedures)
+- [Listing Management Procedures](#listing-management-procedures)
+- [Listing Booking Procedures](#listing-booking-procedures)
 
 ## General Procedures
 

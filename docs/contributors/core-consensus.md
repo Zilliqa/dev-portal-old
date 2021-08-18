@@ -1,14 +1,15 @@
 ---
 id: core-consensus
 title: Consensus
-keywords: 
-- core
-- consensus
-- PBFT
+keywords:
+  - core
+  - consensus
+  - PBFT
 description: Core protocol design - consensus.
 ---
 
 ---
+
 This section describes how PBFT consensus (as initially designed in the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf)) is implemented and used in the core Zilliqa code.
 
 ## Usage in the Protocol
@@ -16,7 +17,7 @@ This section describes how PBFT consensus (as initially designed in the Zilliqa 
 Consensus is used in the following stages of the protocol:
 
 | Data                     | Members      | Timing                                 |
-|--------------------------|--------------|----------------------------------------|
+| ------------------------ | ------------ | -------------------------------------- |
 | DS Block                 | DS committee | After PoW window                       |
 | Shard Microblock         | Shard nodes  | After Tx processing by the shard nodes |
 | DS Microblock + Tx Block | DS committee | After Tx processing by the DS nodes    |
@@ -54,7 +55,7 @@ There are a couple of differences between rounds. First, the announcement trigge
 
 ### Consensus Subsets
 
-The consensus protocol was initially designed as a single linear sequence from `INITIAL` to `DONE`.  However, network instability inevitably would frequently lead to one or more view changes, slowing down the progress of the Mainnet.
+The consensus protocol was initially designed as a single linear sequence from `INITIAL` to `DONE`. However, network instability inevitably would frequently lead to one or more view changes, slowing down the progress of the Mainnet.
 
 To address this situation, we changed the consensus implementation to support multiple concurrently running consensuses across different subsets of peers. This is how it works:
 
@@ -62,10 +63,10 @@ To address this situation, we changed the consensus implementation to support mu
 For the Mainnet we have set the number of subsets to 2 at the DS level and just 1 at the shard level. The steps below assume this count. Other counts are theoretically supported by the code but may not have been fully tested at this point.
 :::
 
-
 1. Instead of immediately progressing after receiving the required 2/3 commits, the leader now waits for a maximum duration of `COMMIT_WINDOW_IN_SECONDS` seconds to receive commits. It cuts the waiting time short only if the percentage of peers specified by `COMMIT_TOLERANCE_PERCENT` has already committed. This is done for both rounds of consensus.
 
 1. Once the leader has stopped accepting commits, it generates two subsets out of the committed peers (both subsets are of size 2/3+1 and includes the leader):
+
    - Subset 0 = If consensus is within DS committee, prioritize DS guards, and fill in the remaining slots with other DS nodes. If consensus is within shard, nodes are randomly selected, with no bias towards guards.
    - Subset 1 = Nodes are randomly selected, with no bias towards guards (regardless of whether consensus is done at DS or shard level).
 

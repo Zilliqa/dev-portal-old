@@ -1,10 +1,10 @@
 ---
 id: dev-tools-cli
 title: CLI-Tools
-keywords: 
-- cli tools
-- go-zli
-- zilliqa
+keywords:
+  - cli tools
+  - go-zli
+  - zilliqa
 description: Zilliqa CLI Tools
 ---
 
@@ -19,7 +19,9 @@ description: Zilliqa CLI Tools
 The Github repository can be found at [https://github.com/Zilliqa/zli](https://github.com/Zilliqa/zli)
 
 ## Getting zli
+
 Run the following to clone the repository to your local machine
+
 ```bash
 git clone https://github.com/Zilliqa/zli.git
 ```
@@ -76,27 +78,27 @@ Run `zli [command] --help` to see the usage details for each available command. 
 
 #### Wallet
 
-* `zli wallet init`: Generate a new wallet (configuration file) for `zli` to use. A default account (using randomly generated private key) is created inside the wallet.
-* `zli wallet echo`: Print out the contents of the wallet (i.e., the configuration file).
-* `zli wallet from [flags]` : Generate a new wallet from a specific private key.
+- `zli wallet init`: Generate a new wallet (configuration file) for `zli` to use. A default account (using randomly generated private key) is created inside the wallet.
+- `zli wallet echo`: Print out the contents of the wallet (i.e., the configuration file).
+- `zli wallet from [flags]` : Generate a new wallet from a specific private key.
 
 #### Contract
 
-* `zli contract deploy [flags]`: Deploy a new contract.
-* `zli contract call [flags]`: Call an existing contract.
-* `zli contract state [flags]`: Get the state data for a specific smart contract.
+- `zli contract deploy [flags]`: Deploy a new contract.
+- `zli contract call [flags]`: Call an existing contract.
+- `zli contract state [flags]`: Get the state data for a specific smart contract.
 
 #### Account
 
-* `zli account generate [flags]`: Generate a random private key.
+- `zli account generate [flags]`: Generate a random private key.
 
 #### Transfer
 
-* `zli transfer [flags]`: Transfer Zilliqa tokens to a specific account.
+- `zli transfer [flags]`: Transfer Zilliqa tokens to a specific account.
 
 ### RPC
 
-* `zli rpc transaction [flags]`: Get the transaction details for a specific transaction ID.
+- `zli rpc transaction [flags]`: Get the transaction details for a specific transaction ID.
 
 ### Examples
 
@@ -106,20 +108,22 @@ Run `zli [command] --help` to see the usage details for each available command. 
 
 ```json
 {
-	"api": "https://ipc-ud-api.dev.z7a.xyz",
-	"chain_id": 2,
-	"default_account": {
-		"private_key": "227159779c78c9a920cba73086cf73fb3ee15cdd95380aa3b93757669e345300",
-		"public_key": "0324cdd72db3de0e9f570d550631438d581056fb0d9c4daddbad2928eaf49f54ee",
-		"address": "31f33d13ad6aa724cde1f3d12d75fb344a1df9de",
-		"bech_32_address": "zil1x8en6yadd2njfn0p70gj6a0mx39pm7w7lz3kpm"
-	},
-	"accounts": [{
-		"private_key": "227159779c78c9a920cba73086cf73fb3ee15cdd95380aa3b93757669e345300",
-		"public_key": "0324cdd72db3de0e9f570d550631438d581056fb0d9c4daddbad2928eaf49f54ee",
-		"address": "31f33d13ad6aa724cde1f3d12d75fb344a1df9de",
-		"bech_32_address": "zil1x8en6yadd2njfn0p70gj6a0mx39pm7w7lz3kpm"
-	}]
+  "api": "https://ipc-ud-api.dev.z7a.xyz",
+  "chain_id": 2,
+  "default_account": {
+    "private_key": "227159779c78c9a920cba73086cf73fb3ee15cdd95380aa3b93757669e345300",
+    "public_key": "0324cdd72db3de0e9f570d550631438d581056fb0d9c4daddbad2928eaf49f54ee",
+    "address": "31f33d13ad6aa724cde1f3d12d75fb344a1df9de",
+    "bech_32_address": "zil1x8en6yadd2njfn0p70gj6a0mx39pm7w7lz3kpm"
+  },
+  "accounts": [
+    {
+      "private_key": "227159779c78c9a920cba73086cf73fb3ee15cdd95380aa3b93757669e345300",
+      "public_key": "0324cdd72db3de0e9f570d550631438d581056fb0d9c4daddbad2928eaf49f54ee",
+      "address": "31f33d13ad6aa724cde1f3d12d75fb344a1df9de",
+      "bech_32_address": "zil1x8en6yadd2njfn0p70gj6a0mx39pm7w7lz3kpm"
+    }
+  ]
 }
 ```
 

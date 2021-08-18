@@ -1,25 +1,25 @@
 ---
 id: dev-tools-sdks
 title: Other SDKs
-keywords: 
-- sdks
-- other
-- community
-- pyzil
-- python
-- viewblock sdk
-- moonlet core
-- ruby
-- dart
-- swift
-- go
-- js
-- Zesame
-- Zilliqa-API-CSharp
-- LaksaRuby
-- LaksaDart
-- zilean
-- zilliqa
+keywords:
+  - sdks
+  - other
+  - community
+  - pyzil
+  - python
+  - viewblock sdk
+  - moonlet core
+  - ruby
+  - dart
+  - swift
+  - go
+  - js
+  - Zesame
+  - Zilliqa-API-CSharp
+  - LaksaRuby
+  - LaksaDart
+  - zilean
+  - zilliqa
 description: Zilliqa Community Maintained SDKs
 ---
 
@@ -34,23 +34,29 @@ on this repository.
 ## SDKs Maintained By the Community
 
 **JavaScript/TypeScript**
+
 - [zilliqa-js/viewblock](https://github.com/Ashlar/zilliqa-js-viewblock)
 - [laksaj](https://github.com/FireStack-Lab/Laksa)
 - [moonlet-core](https://github.com/cryptolandtech/moonlet-core)
 
 **Python**
+
 - [pyzil](https://github.com/deepgully/pyzil)
 
 **C#**
+
 - [zilliqa-api-csharp](https://github.com/musenzi/Zilliqa-API-CSharp)
 
 **Swift**
+
 - [zesame](https://github.com/OpenZesame/Zesame)
 
 **Ruby**
+
 - [laksaruby](https://github.com/FireStack-Lab/LaksaRuby)
 
 **Dart**
+
 - [laksadart](https://github.com/FireStack-Lab/LaksaDart)
 
 ## SDKs Discontinued
@@ -58,4 +64,5 @@ on this repository.
 Listed below are SDKs not longer maintained
 
 **Go**
+
 - [zilean](https://github.com/GincoInc/zillean)

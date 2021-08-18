@@ -4,7 +4,8 @@ title: GetNetworkId
 ---
 
 ---
-Returns the `CHAIN_ID` of the specified network. This is represented as a `String`. 
+
+Returns the `CHAIN_ID` of the specified network. This is represented as a `String`.
 
 See table below for the `CHAIN_ID` for different chains:
 
@@ -14,14 +15,12 @@ See table below for the `CHAIN_ID` for different chains:
 | **Developer testnet** | `333`      |
 | **Isolated server**   | `222`      |
 
-
 **NOTE:** `CHAIN_ID` from `2` to `9` are reserved for Zilliqa Core use.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -44,6 +43,7 @@ curl -d '{
     "params": [""]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -51,6 +51,7 @@ curl -d '{
 const NetworkId = await zilliqa.network.GetNetworkId();
 console.log(NetworkId);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -63,6 +64,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -80,6 +82,7 @@ new_api = ZilliqaAPI(endpoint="https://api.zilliqa.com")
 network_id = new_api.GetNetworkId()
 print(network_id)
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -92,12 +95,11 @@ func GetNetworkId() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
-
 ### Example Response
-
 
 ```json
 {
@@ -109,11 +111,11 @@ func GetNetworkId() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

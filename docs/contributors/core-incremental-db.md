@@ -1,14 +1,15 @@
 ---
 id: core-incremental-db
 title: Incremental DB
-keywords: 
-- core 
-- incremental 
-- database
+keywords:
+  - core
+  - incremental
+  - database
 description: Core protocol design - incremental DB.
 ---
 
 ---
+
 The incremental DB feature leverages on AWS Simple Storage Service (S3) to provide an efficient way for miners and seed nodes to get blockchain data in order to join the network.
 
 ## Background
@@ -33,17 +34,19 @@ The script `uploadIncrDB.py` runs on a lookup node managed by Zilliqa Research. 
 
 1. Add `Lock` file to S3 bucket **incremental**
 1. Perform sync between local `persistence` folder (i.e., within this lookup node) and `incremental\persistence` on AWS S3 every Tx epoch. More specifically, syncing is done according to different criteria based on the Tx epoch number. These are the possibilities:
-  - At script startup
-    1. Clear both buckets, i.e., **incremental** and **statedelta**
-    1. Sync entire `persistence` (i.e., everything that exists in the folder, including `state`, `stateroot`, `txBlocks`, `txnBodies`, `txnBodiesTmp`, `microblock`, etc) to bucket **incremental**
-    1. Clear all state deltas from bucket **statedelta**
-  - At every 10th DS epoch (i.e., the first Tx epoch following the 10th DS epoch)
-    1. Sync entire `persistence` to bucket **incremental**
-    1. Clear all state deltas from bucket **statedelta**
-  - At all other Tx epochs
-    1. Sync entire `persistence` (excluding `state`, `stateroot`, `contractCode`, `contractStateData`, `contractStateIndex`) to bucket **incremental**
-    1. For the first Tx block within the DS epoch (e.g., 100, 200, 300, ...), we don't need to upload state delta differences. Instead, the complete `stateDelta` LevelDB (composed as a tarball, e.g.,  `stateDelta_100.tar.gz`) is uploaded to S3 bucket **statedelta**
-    1. For other Tx blocks, we upload the state delta differences (composed as tarballs, e.g., `stateDelta_101.tar.gz`, `stateDelta_102.tar.gz`, .... `stateDelta_199.tar.gz`) to S3 bucket **statedelta**
+
+- At script startup
+  1. Clear both buckets, i.e., **incremental** and **statedelta**
+  1. Sync entire `persistence` (i.e., everything that exists in the folder, including `state`, `stateroot`, `txBlocks`, `txnBodies`, `txnBodiesTmp`, `microblock`, etc) to bucket **incremental**
+  1. Clear all state deltas from bucket **statedelta**
+- At every 10th DS epoch (i.e., the first Tx epoch following the 10th DS epoch)
+  1. Sync entire `persistence` to bucket **incremental**
+  1. Clear all state deltas from bucket **statedelta**
+- At all other Tx epochs
+  1. Sync entire `persistence` (excluding `state`, `stateroot`, `contractCode`, `contractStateData`, `contractStateIndex`) to bucket **incremental**
+  1. For the first Tx block within the DS epoch (e.g., 100, 200, 300, ...), we don't need to upload state delta differences. Instead, the complete `stateDelta` LevelDB (composed as a tarball, e.g., `stateDelta_100.tar.gz`) is uploaded to S3 bucket **statedelta**
+  1. For other Tx blocks, we upload the state delta differences (composed as tarballs, e.g., `stateDelta_101.tar.gz`, `stateDelta_102.tar.gz`, .... `stateDelta_199.tar.gz`) to S3 bucket **statedelta**
+
 1. Remove `Lock` file from S3 bucket **incremental**
 
 ### Download Incremental DB Script

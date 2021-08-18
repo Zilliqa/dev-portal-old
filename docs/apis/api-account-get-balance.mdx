@@ -4,6 +4,7 @@ title: GetBalance
 ---
 
 ---
+
 - Returns the current `balance` of an account, measured in the smallest accounting unit **Qa** (or 10^-12 **Zil**). This is represented as a `String`.
 
 - Returns the current `nonce` of an account. This is represented as a `Number`.
@@ -12,7 +13,6 @@ title: GetBalance
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -35,15 +35,17 @@ curl -d '{
     "params": ["1eefc4f453539e5ee732b49eb4792b268c2f3908"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
 ```js
 const balance = await zilliqa.blockchain.getBalance(
-  "1eefc4f453539e5ee732b49eb4792b268c2f3908"
+  '1eefc4f453539e5ee732b49eb4792b268c2f3908'
 );
 console.log(balance.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -56,6 +58,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="python">
@@ -78,6 +81,7 @@ func TestGetBalance() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -97,18 +101,18 @@ func TestGetBalance() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments
 
-| Parameter | Type   | Required | Description                                                                                       |
-| --------- | ------ | -------- | ------------------------------------------------------------------------------------------------- |
-| `id`      | string | Required | `"1"`                                                                                             |
-| `jsonrpc` | string | Required | `"2.0"`                                                                                           |
-| `method`  | string | Required | `"GetBalance"`                                                                                    |
+| Parameter | Type   | Required | Description                                                                                        |
+| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                                                                              |
+| `jsonrpc` | string | Required | `"2.0"`                                                                                            |
+| `method`  | string | Required | `"GetBalance"`                                                                                     |
 | `params`  | string | Required | An User's account address of 20 bytes. <br/> Example: `"1eefc4f453539e5ee732b49eb4792b268c2f3908"` |

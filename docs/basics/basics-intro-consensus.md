@@ -1,13 +1,13 @@
 ---
 id: basics-intro-consensus
 title: Consensus mechanism
-keywords: 
-- intro 
-- conesnsus
-- mechanism
-- pbft
-- proof of work
-- proof of stake
+keywords:
+  - intro
+  - conesnsus
+  - mechanism
+  - pbft
+  - proof of work
+  - proof of stake
 description: Types of Blockchain consensus mechanisms
 ---
 
@@ -16,12 +16,10 @@ description: Types of Blockchain consensus mechanisms
 The blockchain network being decentralized has to have a mechanism to agree
 upon the next state of system. This is achieved via a _consensus protocol_.
 
-
 ## Types of Consensus Mechanism
 
 Over the last two decades, several new consensus protocols have been developed
 and used in the blockchain space. The most common ones are:
-
 
 ### BFT: Byzantine Fault Tolerance Protocol
 
@@ -46,4 +44,4 @@ In Proof-of-Stake, nodes are required to stake an amount of assets (e.g.,
 native currency of the blockchain). Those who stake are allowed to decide on
 the next state of the system. By putting a stake, the expectation is that they
 will not make detrimental decisions. And in fact, the probability that a
-certain node is chosen to propose the next state is proportional to its stake. 
+certain node is chosen to propose the next state is proportional to its stake.

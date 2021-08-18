@@ -2,9 +2,9 @@
 id: exchange-key-whitelisting-1
 title: Key Whitelisting (option 1)
 keywords:
-- exchanges
-- docker setup
-- zilliqa
+  - exchanges
+  - docker setup
+  - zilliqa
 description: Run seed node in key Whitelisting mode (with open inbound port)
 ---
 
@@ -16,6 +16,7 @@ This section describes Option 1 for key whitelisting mode, which uses `seed-conf
 ## Preparing the Machine
 
 Before you start, please ensure the steps below are done.
+
 1. Choose and note down a port you wish to reserve for your seed node to receive incoming blockchain data.
 
 :::important

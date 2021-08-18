@@ -1,10 +1,10 @@
 ---
 id: staking-disclaimer
 title: Disclaimer
-keywords: 
-- staking
-- disclaimer
-- zilliqa	
+keywords:
+  - staking
+  - disclaimer
+  - zilliqa
 description: Disclaimer
 ---
 
@@ -16,4 +16,3 @@ By participating in the staking of ZILs (“Staking Program”), each participat
 - The ZILs are not intended to represent any formal or legally binding investment. Cryptographic tokens that possess value in public markets, such as Ether and Bitcoin, have demonstrated extreme fluctuations in price over short periods of time on a regular basis. Participants should be prepared to expect similar fluctuations in the price of the ZILs and Participants may experience a complete and permanent loss of their initial purchase.
 
 The ZILs are not intended to be securities (or any other regulated instrument) under the laws of any jurisdiction where they are intended to be, or will be, purchased or sold and no action has been or will be taken in any jurisdiction by Zilliqa Research or any of its affiliates that would permit a public offering, or any other offering under circumstances not permitted by applicable law of the ZILs, in any country or jurisdiction where action for that purpose is required. Accordingly, the ZILs may not be offered or sold, directly or indirectly, by any holder, in or from any country or jurisdiction, except in circumstances which will result in compliance with all applicable rules and regulations of any such country or jurisdiction.
-

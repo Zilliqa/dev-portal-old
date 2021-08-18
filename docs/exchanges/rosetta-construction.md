@@ -1,25 +1,26 @@
 ---
 id: rosetta-construction
 title: Introduction
-keywords: 
-- rosetta
-- middleware
-- exchanges
-- zilliqa
-- API
-- contruction
+keywords:
+  - rosetta
+  - middleware
+  - exchanges
+  - zilliqa
+  - API
+  - contruction
 description: Introduction
 ---
 
 ---
-
 
 ## Construction
 
 Construction API enables developers to write to a blockchain (i.e. construct transactions) in a standard format. Implementations are stateless and can operate entirely offline, and support detached key generation and signing.
 
 ### Construction Flow
+
 The construction flow is in this sequence:
+
 1. [/construction/derive](rosetta-construction-derive)
 2. [/construction/preprocess](rosetta-construction-preprocess)
 3. [/construction/metadata](rosetta-construction-metadata)

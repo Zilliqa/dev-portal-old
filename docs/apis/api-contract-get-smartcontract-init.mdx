@@ -4,13 +4,13 @@ title: GetSmartContractInit
 ---
 
 ---
+
 Returns the initialization (immutable) parameters of a given smart contract, represented in a JSON format.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,15 +33,17 @@ curl -d '{
     "params": ["fe001824823b12b58708bf24edd94d8b5e1cfcf7"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
 ```js
 const smartContractInit = await zilliqa.blockchain.getSmartContractInit(
-  "fe001824823b12b58708bf24edd94d8b5e1cfcf7"
+  'fe001824823b12b58708bf24edd94d8b5e1cfcf7'
 );
 console.log(smartContractInit.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -54,6 +56,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="python">
@@ -63,6 +66,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetSmartContractInit("fe001824823b12b58708bf24edd94d8b5e1cfcf7"))
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -75,6 +79,7 @@ func GetSmartContractInit() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -111,18 +116,18 @@ func GetSmartContractInit() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments
 
-| Parameter | Type   | Required | Description                                                                                      |
-| --------- | ------ | -------- | ------------------------------------------------------------------------------------------------ |
-| `id`      | string | Required | `"1"`                                                                                            |
-| `jsonrpc` | string | Required | `"2.0"`                                                                                          |
-| `method`  | string | Required | `"GetSmartContractInit"`                                                                         |
+| Parameter | Type   | Required | Description                                                                                       |
+| --------- | ------ | -------- | ------------------------------------------------------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                                                                             |
+| `jsonrpc` | string | Required | `"2.0"`                                                                                           |
+| `method`  | string | Required | `"GetSmartContractInit"`                                                                          |
 | `params`  | string | Required | A smart contract address of 20 bytes. <br/> Example: `"fe001824823b12b58708bf24edd94d8b5e1cfcf7"` |

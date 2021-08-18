@@ -4,6 +4,7 @@ title: GetTransactionStatus
 ---
 
 ---
+
 Returns the status of a specified transaction. This API is available from Zilliqa `V7.0.0` onwards and supports all transaction statuses (unconfirmed, confirmed, and rejected).
 
 :::note
@@ -36,6 +37,7 @@ curl -d '{
     "params": ["1bb178b023f816e950d862f6505cd79a32bb97e71fd78441cbc3486940a2e1b7"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 
 </Tabs>
@@ -84,33 +86,33 @@ curl -d '{
 
 ### Status Codes
 
-| `modificationState` | `status` | Description                                                               |
-| ------------------- | -------- | -------------------------------------------------------                   |
-| 0                   | 1        | Pending - Dispatched                                                      |
-| 1                   | 2        | Pending - Soft-confirmed (awaiting Tx block generation)                   |
-| 1                   | 4        | Pending - Nonce is higher than expected                                   |
-| 1                   | 5        | Pending - Microblock gas limit exceeded                                   |
-| 1                   | 6        | Pending - Consensus failure in network                                    |
-| 2                   | 3        | Confirmed                                                                 |
-| 2                   | 10       | Rejected - Transaction caused math error                                  | 
-| 2                   | 11       | Rejected - Scilla invocation error                                        |
-| 2                   | 12       | Rejected - Contract account initialization error                          |
-| 2                   | 13       | Rejected - Invalid source account                                         |
-| 2                   | 14       | Rejected - Gas limit higher than shard gas limit                          |
-| 2                   | 15       | Rejected - Unknown transaction type                                       |
-| 2                   | 16       | Rejected - Transaction sent to wrong shard                                |
-| 2                   | 17       | Rejected - Contract & source account cross-shard issue                    |
-| 2                   | 18       | Rejected - Code size exceeded limit                                       |
-| 2                   | 19       | Rejected - Transaction verification failed                                |
-| 2                   | 20       | Rejected - Gas limit too low                                              |
-| 2                   | 21       | Rejected - Insufficient balance                                           |
-| 2                   | 22       | Rejected - Insufficient gas to invoke Scilla checker                      |
-| 2                   | 23       | Rejected - Duplicate transaction exists                                   |
-| 2                   | 24       | Rejected - Transaction with same nonce but same/higher gas price exists   |
-| 2                   | 25       | Rejected - Invalid destination address                                    |
-| 2                   | 26       | Rejected - Failed to add contract account to state                        |
-| 2                   | 27       | Rejected - Nonce is lower than expected                                   |
-| 2                   | 255      | Rejected - Internal error                                                 |
+| `modificationState` | `status` | Description                                                             |
+| ------------------- | -------- | ----------------------------------------------------------------------- |
+| 0                   | 1        | Pending - Dispatched                                                    |
+| 1                   | 2        | Pending - Soft-confirmed (awaiting Tx block generation)                 |
+| 1                   | 4        | Pending - Nonce is higher than expected                                 |
+| 1                   | 5        | Pending - Microblock gas limit exceeded                                 |
+| 1                   | 6        | Pending - Consensus failure in network                                  |
+| 2                   | 3        | Confirmed                                                               |
+| 2                   | 10       | Rejected - Transaction caused math error                                |
+| 2                   | 11       | Rejected - Scilla invocation error                                      |
+| 2                   | 12       | Rejected - Contract account initialization error                        |
+| 2                   | 13       | Rejected - Invalid source account                                       |
+| 2                   | 14       | Rejected - Gas limit higher than shard gas limit                        |
+| 2                   | 15       | Rejected - Unknown transaction type                                     |
+| 2                   | 16       | Rejected - Transaction sent to wrong shard                              |
+| 2                   | 17       | Rejected - Contract & source account cross-shard issue                  |
+| 2                   | 18       | Rejected - Code size exceeded limit                                     |
+| 2                   | 19       | Rejected - Transaction verification failed                              |
+| 2                   | 20       | Rejected - Gas limit too low                                            |
+| 2                   | 21       | Rejected - Insufficient balance                                         |
+| 2                   | 22       | Rejected - Insufficient gas to invoke Scilla checker                    |
+| 2                   | 23       | Rejected - Duplicate transaction exists                                 |
+| 2                   | 24       | Rejected - Transaction with same nonce but same/higher gas price exists |
+| 2                   | 25       | Rejected - Invalid destination address                                  |
+| 2                   | 26       | Rejected - Failed to add contract account to state                      |
+| 2                   | 27       | Rejected - Nonce is lower than expected                                 |
+| 2                   | 255      | Rejected - Internal error                                               |
 
 :::warning
 The transaction pool is cleared by design **at the start of a new DS epoch**. Any transaction left in "Pending" state (e.g., "Pending - Dispatched", "Pending - Nonce is higher than expected", ...) after a new DS epoch has started will have most likely been dropped and will no longer be processed further at that point.
