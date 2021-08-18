@@ -1,13 +1,14 @@
 ---
 id: core-multisignatures
 title: Multisignatures
-keywords: 
-- core 
-- multisignatures
+keywords:
+  - core
+  - multisignatures
 description: Core protocol design - multisignatures.
 ---
 
 ---
+
 The end result of any consensus round is basically the generation of an EC-Schnorr signature that is the product of co-signing the consensus data by 2/3+1 of the participants.
 
 This section briefly describes how multisignatures are implemented and used in the Zilliqa core. For more information on how multisignatures work, refer to the Zilliqa [whitepaper](https://docs.zilliqa.com/whitepaper.pdf).

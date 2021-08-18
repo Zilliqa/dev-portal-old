@@ -19,21 +19,27 @@ $ yarn start
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Local Deployment via Docker container
+
 To build the docker container
+
 ```
 ./build_container.sh
 ```
 
 To run the container
+
 ```
 ./run_container.sh
 ```
+
 You can then access the site via
+
 ```
 http://localhost:8080
 ```
 
 To stop and remove the container
+
 ```
 ./stop_container.sh
 ```

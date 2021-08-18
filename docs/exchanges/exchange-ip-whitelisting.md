@@ -1,11 +1,11 @@
 ---
 id: exchange-ip-whitelisting
-title: IP Whitelisting 
+title: IP Whitelisting
 keywords:
-- exchanges
-- docker setup
-- zilliqa
-description: Run seed node in IP Whitelisting mode. 
+  - exchanges
+  - docker setup
+  - zilliqa
+description: Run seed node in IP Whitelisting mode.
 ---
 
 In IP whitelisting mode, blockchain data is pushed directly to exchanges in periodic intervals.
@@ -14,10 +14,11 @@ Exchange IP addresses must be whitelisted by Zilliqa Research to receive these d
 ## Preparing the Machine
 
 Before you start, please ensure the steps below are done.
+
 1. Choose and note down a port you wish to reserve for your seed node to receive incoming blockchain data.
 1. Share the static IP address and port of the node with the Zilliqa support team for whitelisting.
-This step is critical, as failing to provide the correct IP and port will result in failure to receive blockchain data.
-The static IP address and port of choice have to be shared with the Zilliqa team in the KYC form.
+   This step is critical, as failing to provide the correct IP and port will result in failure to receive blockchain data.
+   The static IP address and port of choice have to be shared with the Zilliqa team in the KYC form.
 
 :::important
 The port of choice must be opened to inbound connections. Otherwise, the seed node will be unreachable.

@@ -1,19 +1,18 @@
 ---
 id: dev-tools-java
 title: laksaj - java sdk
-keywords: 
-- sdk
-- java
-- laksaj
-- installation
-- apis
-- exmample
-- zilliqa
+keywords:
+  - sdk
+  - java
+  - laksaj
+  - installation
+  - apis
+  - exmample
+  - zilliqa
 description: Zilliqa Java SDK LaksaJ
 ---
 
 ---
-
 
 ## Source Code
 
@@ -24,6 +23,7 @@ The Github repository can be found at [https://github.com/FireStack-Lab/LaksaJ](
 You can get start with the installation by using Maven, Gradle or manually building the `jar` file.
 
 ## Maven
+
 ```xml
 <dependency>
   <groupId>org.firestack</groupId>
@@ -45,6 +45,7 @@ dependencies {
 ## Manually Build the Jar File
 
 First clone the `laksaj` repository
+
 ```bash
 git clone https://github.com/FireStack-Lab/LaksaJ.git
 ```
@@ -85,7 +86,6 @@ gradle build -x test
 - isInitialised isDeployed isRejected
 - getState
 - getAddressForContract
-
 
 ### Crypto API
 
@@ -168,7 +168,6 @@ gradle build -x test
 - bech32 encode decode
 - fromBech32Address toBech32Address
 
-
 ## Demo
 
 ### Generate Large Amount of Addresses
@@ -220,7 +219,7 @@ public class ValidateAddress {
 }
 ```
 
-### Validate Checksum Address 
+### Validate Checksum Address
 
 ```java
 package com.firestack.example;
@@ -351,7 +350,7 @@ public class TransactionOperation {
         //deploy contract, this will take a while to track transaction util it has been confirmed or failed
         Pair<Transaction, Contract> deployResult = contract.deploy(deployParams, 300, 3);
         System.out.println("result is: " + deployResult);
-        
+
         //calculate transaction fee
         String transactionFee = new BigInteger(deployResult.getKey().getReceipt().getCumulative_gas()).multiply(new BigInteger(deployResult.getKey().getGasPrice())).toString();
         System.out.println("transaction fee is: " + transactionFee);

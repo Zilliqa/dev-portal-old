@@ -4,13 +4,13 @@ title: GetLatestTxBlock
 ---
 
 ---
+
 Returns the details of the most recent Transaction block.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,6 +33,7 @@ curl -d '{
     "params": [""]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -40,6 +41,7 @@ curl -d '{
 const txBlock = await zilliqa.blockchain.getLatestTxBlock();
 console.log(txBlock.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -60,6 +63,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetLatestTxBlock())
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -72,15 +76,15 @@ func GetLatestTxBlock() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
-
 
 ### Example Response
 
 :::note
-  From Zilliqa `V7.2.0` onwards, an additional `NumPages` field is included in the `header` response section.
-  This field is used by [GetTransactionsForTxBlockEx](api-transaction-get-txs-for-txblock-ex.mdx) and [GetTxnBodiesForTxBlockEx](api-transaction-get-txbodies-for-txblock-ex.mdx).
+From Zilliqa `V7.2.0` onwards, an additional `NumPages` field is included in the `header` response section.
+This field is used by [GetTransactionsForTxBlockEx](api-transaction-get-txs-for-txblock-ex.mdx) and [GetTxnBodiesForTxBlockEx](api-transaction-get-txbodies-for-txblock-ex.mdx).
 :::
 
 ```json
@@ -138,11 +142,11 @@ func GetLatestTxBlock() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

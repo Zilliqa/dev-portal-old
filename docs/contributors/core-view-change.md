@@ -1,14 +1,15 @@
 ---
 id: core-view-change
 title: View Change
-keywords: 
-- core 
-- view 
-- change
+keywords:
+  - core
+  - view
+  - change
 description: Core protocol design - view change.
 ---
 
 ---
+
 In the event of a network stall, the core protocol falls back to a view change. This process occurs within the DS committee, and involves the selection of a new DS committee leader to pick the blockchain's progress back up at the point just before the stall.
 
 The general steps are as follows:
@@ -42,12 +43,14 @@ These are the conditions that can cause a view change to occur:
    1. If no new block is obtained, proceed with view change
    1. If a new block is obtained, rejoin as a DS node
 1. All nodes calculate the new candidate leader index using `CalculateNewLeaderIndex()`, which uses this algorithm
-    ```text
-    H(finalblock or vc block hash, vc counter) % size (or num of DS guard)
 
-    If a previous vc block (for current consensus) exists, use vc block hash. Else use Tx block hash. If new candidate leader index is current faulty leader, re-calculate using
-    H(H(finalblock or vc block hash, vc counter)) repeatedly till an index is not the current faulty leader.
-    ```
+   ```text
+   H(finalblock or vc block hash, vc counter) % size (or num of DS guard)
+
+   If a previous vc block (for current consensus) exists, use vc block hash. Else use Tx block hash. If new candidate leader index is current faulty leader, re-calculate using
+   H(H(finalblock or vc block hash, vc counter)) repeatedly till an index is not the current faulty leader.
+   ```
+
 1. Candidate leader and backups proceed with view change consensus until completion or stall
    1. If stalled, wait for timeout and re-run view change consensus with a new candidate leader
 1. All nodes remove faulty leaders (found in the VC block header's list) from DS Committee

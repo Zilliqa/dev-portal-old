@@ -1,15 +1,16 @@
 ---
 id: staking-delegator-operations
 title: Smart Contract Operations
-keywords: 
-- staking
-- ssn
-- smart contract
-- zilliqa	
-- delegator
-- delegation
+keywords:
+  - staking
+  - ssn
+  - smart contract
+  - zilliqa
+  - delegator
+  - delegation
 description: Smart contract operations
 ---
+
 ---
 
 The operations available to the delegator on the smart contract are as follows:
@@ -22,7 +23,7 @@ The operations available to the delegator on the smart contract are as follows:
 
 ## Representation of Values in the Smart Contract
 
-`_amount` and `amt` are represented in `Qa`, where 1 `ZIL` = 1 * 1E12 `Qa`.
+`_amount` and `amt` are represented in `Qa`, where 1 `ZIL` = 1 \* 1E12 `Qa`.
 
 ## Delegate Stake
 
@@ -44,16 +45,16 @@ Due to the non-custodial nature of the phase 1 staking program, only the owner o
 ### Transition
 
 ```
-transition DelegateStake(ssnaddr: ByStr20) 
+transition DelegateStake(ssnaddr: ByStr20)
 ```
 
 ### Sample Code
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |
 
 ## Withdraw Stake Rewards and gZIL
 
@@ -79,9 +80,9 @@ transition WithdrawStakeRewards(ssnaddr: ByStr20)
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |
 
 ## Withdraw Stake Amount
 
@@ -96,6 +97,7 @@ If the delegator delegates to multiple SSNs and wishes to withdraw all rewards f
 :::
 
 ### Pre-condition
+
 Thee delegator should not have any unclaimed stake reward or buffered depsoit.
 After withdrawal, the delegator remaining stake amount must be bigger than the min delegator stake amount specify in the contract i.e 10 ZIL
 
@@ -108,15 +110,15 @@ After withdrawal, the delegator remaining stake amount must be bigger than the m
 
 ```
  WithdrawStakeAmt(ssnaddr: ByStr20, amt: Uint128)
- ```
+```
 
 ### Sample Code
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |
 
 ## Complete Withdrawal
 
@@ -127,6 +129,7 @@ After withdrawal, the delegator remaining stake amount must be bigger than the m
 `CompleteWithdrawal` will iterate through all stake amount that has transitted to `unbonding` state, identify the amount that have completed the unbonding process and withdraw it back to delegator's wallet. This operation is agnostic to SSN.
 
 ### Pre-condition
+
 Thee delegator should not have any unclaimed stake reward or buffered depsoit.
 
 ### Parameters
@@ -137,15 +140,15 @@ None
 
 ```
  CompleteWithdrawal()
- ```
+```
 
 ### Sample code
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |
 
 ## Stake Amount Redelegation
 
@@ -169,6 +172,6 @@ transition ReDelegateStake(ssnaddr: ByStr20, to_ssn: ByStr20, amount: Uint128)
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |

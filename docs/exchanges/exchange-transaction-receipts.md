@@ -1,12 +1,12 @@
 ---
 id: exchange-transaction-receipts
 title: Understanding Transaction Receipts
-keywords: 
-- transaction receipts
-- fields
-- polling
-- exchanges
-- zilliqa
+keywords:
+  - transaction receipts
+  - fields
+  - polling
+  - exchanges
+  - zilliqa
 description: Transaction Receipts Exchanges
 ---
 
@@ -20,11 +20,11 @@ Confirmed transactions come with a **receipt** under the **result** field when [
 
 The following are the fields a **receipt** may have. These fields generally apply to both payment and contract transactions.
 
-| Field              | Type       | Description                                               |
-|:------------------ |:---------- |:--------------------------------------------------------- |
-| **cumulative_gas** | string     | The total gas consumed in this transaction                |
-| **epoch_num**      | string     | The epoch number in which this transaction was confirmed  |
-| **success**        | boolean    | The result of this transaction (`true` on success)          |
+| Field              | Type    | Description                                              |
+| :----------------- | :------ | :------------------------------------------------------- |
+| **cumulative_gas** | string  | The total gas consumed in this transaction               |
+| **epoch_num**      | string  | The epoch number in which this transaction was confirmed |
+| **success**        | boolean | The result of this transaction (`true` on success)       |
 
 For example:
 
@@ -44,11 +44,11 @@ For smart contract transactions, additional information relating to smart contra
 
 If a transaction is successful (i.e., the **success** field is `true`), these fields will be present:
 
-| Field              | Type       | Description                                                                                  |
-|:------------------ |:---------- |:-------------------------------------------------------------------------------------------- |
-| **accepted**       | boolean    | Indicates whether the last transition in this transaction incurred a **balance transfer**        |
-| **event_logs**     | json-array | A list of event logs emitted by the contract during processing. Each log contains:<ol><li>**_eventname**: [string] The name of the event</li><li>**address**: [string] The address of the contract that emitted this event</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ol>                                                                |
-| **transitions**    | json-array | A list of internal transitions invoked during the processing of the transaction by the Scilla interpreter. Each transition contains:<ol><li>**addr**: [string] The address of the contract account that emitted this transition</li><li>**depth**: [int] The depth of the current transition. The transitions directly emitted by the recipient in the transaction will be in depth 0. If those transitions in depth 0 invoked transitions from other contracts, those will be in depth 1. And so on and so forth.</li><li>**msg**: [json-object] The message field emitted by the Scilla interpreter, which includes:<ul><li>**_amount**: [string] The balance transferred from this transition</li><li>**_recipient**: [string] The recipient of this transition, which can either be a wallet account or contract account</li><li>**_tag**: [string] The contract-defined transition name</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ul></li></ol>             |
+| Field           | Type       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| :-------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **accepted**    | boolean    | Indicates whether the last transition in this transaction incurred a **balance transfer**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **event_logs**  | json-array | A list of event logs emitted by the contract during processing. Each log contains:<ol><li>**\_eventname**: [string] The name of the event</li><li>**address**: [string] The address of the contract that emitted this event</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ol>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **transitions** | json-array | A list of internal transitions invoked during the processing of the transaction by the Scilla interpreter. Each transition contains:<ol><li>**addr**: [string] The address of the contract account that emitted this transition</li><li>**depth**: [int] The depth of the current transition. The transitions directly emitted by the recipient in the transaction will be in depth 0. If those transitions in depth 0 invoked transitions from other contracts, those will be in depth 1. And so on and so forth.</li><li>**msg**: [json-object] The message field emitted by the Scilla interpreter, which includes:<ul><li>**\_amount**: [string] The balance transferred from this transition</li><li>**\_recipient**: [string] The recipient of this transition, which can either be a wallet account or contract account</li><li>**\_tag**: [string] The contract-defined transition name</li><li>**params**: [json-array] A list of parameters under the transition. Each entry contains:<ul><li>**vname**: [string] The name of the variable</li><li>**type**: [string] The type of the variable</li><li>**value**: [string] The value of the variable</li></ul></li></ul></li></ol> |
 
 For example:
 
@@ -100,10 +100,10 @@ For example:
 
 If a transaction is unsuccessful (i.e., the **success** field is `false`), no balance transfer will be executed. Additionally, these fields will be present:
 
-| Field              | Type        | Description                                                                                  |
-|:------------------ |:----------- |:-------------------------------------------------------------------------------------------- |
-| **errors**         | json-object | An object containing a key-value field. The key [string] indicates the depth at which the error occurred. The value part is a JSON array that lists the error codes [int] reported. The list of possible error codes can be found [here](https://github.com/Zilliqa/Zilliqa/blob/8b088f8ea63f1aab43fde8bbb9741ecaf36b089b/src/libData/AccountData/TransactionReceipt.h#L32).                                  |
-| **exceptions**     | json-array  | A list of exceptions returned by the Scilla interpreter. Each exception contains:<ol><li>**line”**: [int] The line in the Scilla contract code where the exception was detected</li><li>**message**: [string] The message describing the exception</li></ol> |
+| Field          | Type        | Description                                                                                                                                                                                                                                                                                                                                                                  |
+| :------------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **errors**     | json-object | An object containing a key-value field. The key [string] indicates the depth at which the error occurred. The value part is a JSON array that lists the error codes [int] reported. The list of possible error codes can be found [here](https://github.com/Zilliqa/Zilliqa/blob/8b088f8ea63f1aab43fde8bbb9741ecaf36b089b/src/libData/AccountData/TransactionReceipt.h#L32). |
+| **exceptions** | json-array  | A list of exceptions returned by the Scilla interpreter. Each exception contains:<ol><li>**line”**: [int] The line in the Scilla contract code where the exception was detected</li><li>**message**: [string] The message describing the exception</li></ol>                                                                                                                 |
 
 For example:
 
@@ -138,12 +138,12 @@ For example:
 
 1. Confirm that the **success** field is set to `true`.
 1. Traverse the **transitions** JSON array. For each transition, for a successful deposit of `$ZIL` via the smart contract, the following must be fulfilled:
-   1. **_recipient** corresponds to a known deposit address controlled by the exchange.
-   2. **_tag** is either `AddFunds` or empty.
-   :::note
-    `_tag` can be found under `msg` field. If either `_tag` or `msg` is not present, there is no incoming deposit from this particular transition.
-   :::
-   3. **_amount** is non-zero.
-   4. Check the **_recipient** and **_amount** to complete the information on the balance transfer. In such a case, you can confirm that there is a deposit
-   to address **_recipient** with value **_amount** (in `Qa`).
+   1. **\_recipient** corresponds to a known deposit address controlled by the exchange.
+   2. **\_tag** is either `AddFunds` or empty.
+      :::note
+      `_tag` can be found under `msg` field. If either `_tag` or `msg` is not present, there is no incoming deposit from this particular transition.
+      :::
+   3. **\_amount** is non-zero.
+   4. Check the **\_recipient** and **\_amount** to complete the information on the balance transfer. In such a case, you can confirm that there is a deposit
+      to address **\_recipient** with value **\_amount** (in `Qa`).
    5. Continue traversing the remaining transitions and checking for more deposits.

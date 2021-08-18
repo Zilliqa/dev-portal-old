@@ -1,14 +1,15 @@
 ---
 id: core-transaction-dispatch
 title: Transaction Dispatch
-keywords: 
-- core 
-- transaction 
-- dispatch
+keywords:
+  - core
+  - transaction
+  - dispatch
 description: Core protocol design - transaction dispatch.
 ---
 
 ---
+
 From creation to confirmation, a transaction lifecycle proceeds in the following sequence:
 
 1. An end user sends a `CreateTransaction` JSON request through the Zilliqa API. The transaction JSON contains the essential information about the transaction

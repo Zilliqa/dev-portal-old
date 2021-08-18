@@ -4,13 +4,13 @@ title: GetRecentTransactions
 ---
 
 ---
+
 Returns the most recent **100** transactions that are validated by the Zilliqa network.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,6 +33,7 @@ curl -d '{
     "params": [""]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -40,6 +41,7 @@ curl -d '{
 const recentTransactions = await zilliqa.blockchain.getRecentTransactions();
 console.log(recentTransactions.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="python">
@@ -61,6 +64,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetRecentTransactions())
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -73,6 +77,7 @@ func GetRecentTransactions() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -112,11 +117,11 @@ func GetRecentTransactions() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

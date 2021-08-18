@@ -1,9 +1,9 @@
 ---
 id: basics-zil-schnorr-signatures
 title: Schnorr Signatures
-keywords: 
-- schnorr signatures
-- zilliqa
+keywords:
+  - schnorr signatures
+  - zilliqa
 description: Schnorr Signatures
 ---
 

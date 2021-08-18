@@ -4,13 +4,13 @@ title: GetTransaction
 ---
 
 ---
+
 Returns the details of a specified Transaction.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,15 +33,17 @@ curl -d '{
     "params": ["cd8727674bc05e0ede405597a218164e1c13c7103b9d0ba43586785f3d8cede5"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
 ```js
 const txn = await zilliqa.blockchain.getTransaction(
-  "cd8727674bc05e0ede405597a218164e1c13c7103b9d0ba43586785f3d8cede5"
+  'cd8727674bc05e0ede405597a218164e1c13c7103b9d0ba43586785f3d8cede5'
 );
 console.log(txn.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -54,6 +56,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -62,6 +65,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetTransaction("cd8727674bc05e0ede405597a218164e1c13c7103b9d0ba43586785f3d8cede5"))
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -74,11 +78,11 @@ func GetTransaction() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
 ### Example Response
-
 
 ```json
 // Note: If the transaction is a for payment.
@@ -184,9 +188,7 @@ func GetTransaction() {
       "cumulative_gas": "1220",
       "epoch_num": "588004",
       "errors": {
-        "0": [
-          7
-        ]
+        "0": [7]
       },
       "exceptions": [
         {
@@ -214,11 +216,11 @@ func GetTransaction() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

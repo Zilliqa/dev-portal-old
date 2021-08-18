@@ -1,13 +1,14 @@
 ---
 id: core-gossip
 title: Gossip
-keywords: 
-- core 
-- gossip
+keywords:
+  - core
+  - gossip
 description: Core protocol design - gossip.
 ---
 
 ---
+
 A `RumorManager` library is available in the Zilliqa core to support message gossiping between nodes.
 
 ## Overview
@@ -45,7 +46,7 @@ This enables the node to initiate spreading of the rumor received from a node th
 ### StopRounds
 
 Stops the gossip round, thereby stopping the gossiping of rumors to peers.
-  
+
 ## Rumor State Machine
 
 The rumor state machine is managed by `RumorHolder`.
@@ -72,7 +73,7 @@ The total rounds is configured to not exceed `<MAX_TOTAL_ROUNDS>`, after which t
 ## Gossip Message Format
 
 | Field             | Description                          |
-|-------------------|--------------------------------------|
+| ----------------- | ------------------------------------ |
 | START_BYTE_GOSSIP | 0x33 (indicates gossip message type) |
 | HDR               | Message header                       |
 | GOSSIP_MSGTYPE    | See next section                     |

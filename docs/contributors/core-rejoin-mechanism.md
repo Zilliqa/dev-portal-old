@@ -1,14 +1,15 @@
 ---
 id: core-rejoin-mechanism
 title: Rejoin Mechanism
-keywords: 
-- core 
-- rejoin 
-- mechanism
+keywords:
+  - core
+  - rejoin
+  - mechanism
 description: Core protocol design - rejoin mechanism.
 ---
 
 ---
+
 The sections below explain the joining and rejoining process for the different types of nodes.
 
 Some terms used are:
@@ -19,7 +20,7 @@ Some terms used are:
 The joining or rejoining process relies on a `m_syncType` setting, which can be any of these values:
 
 | SyncType                | Purpose                                           |
-|-------------------------|---------------------------------------------------|
+| ----------------------- | ------------------------------------------------- |
 | `(0) NO_SYNC`           | Indicates that a node is fully synced             |
 | `(1) NEW_SYNC`          | New node (possibly sharded) joining or rejoining  |
 | `(2) NORMAL_SYNC`       | New node (unsharded) joining                      |

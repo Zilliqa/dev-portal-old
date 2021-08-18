@@ -4,6 +4,7 @@ title: GetMinerInfo
 ---
 
 ---
+
 Returns the mining nodes (i.e., the members of the DS committee and shards) at the specified DS block.
 
 **Notes:**
@@ -16,7 +17,6 @@ Returns the mining nodes (i.e., the members of the DS committee and shards) at t
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -39,6 +39,7 @@ curl -d '{
     "params": ["5500"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 
 </Tabs>
@@ -91,11 +92,11 @@ curl -d '{
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

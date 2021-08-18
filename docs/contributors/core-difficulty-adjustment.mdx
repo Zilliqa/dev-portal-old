@@ -1,14 +1,15 @@
 ---
 id: core-difficulty-adjustment
 title: Difficulty Adjustment
-keywords: 
-- core 
-- difficulty 
-- adjustment
+keywords:
+  - core
+  - difficulty
+  - adjustment
 description: Core protocol design - difficulty adjustment.
 ---
 
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Zilliqa has a dynamic difficulty level adjustment mechanism. The goal of this mechanism is to adjust the difficulty level according to the number of PoW submissions received.
@@ -58,10 +59,15 @@ This process is implemented in the function `DifficultyLevelInIntDevided()`.
 
 The graphs below illustrate the benchmarks of the hash power required if `POW_BOUNDARY_N_DIVIDED_START` is 32 and `POW_BOUNDARY_N_DIVIDED_START` is 1, 2, 4, 6, and 8.
 
-<img alt="Difficulty Adjustment Image 1" src={useBaseUrl('img/contributors/core/difficulty-adjustment/image01.png')} />
+<img
+  alt="Difficulty Adjustment Image 1"
+  src={useBaseUrl('img/contributors/core/difficulty-adjustment/image01.png')}
+/>
 
-<img alt="Difficulty Adjustment Image 2" src={useBaseUrl('img/contributors/core/difficulty-adjustment/image02.png')} />
-
+<img
+  alt="Difficulty Adjustment Image 2"
+  src={useBaseUrl('img/contributors/core/difficulty-adjustment/image02.png')}
+/>
 
 ## References
 

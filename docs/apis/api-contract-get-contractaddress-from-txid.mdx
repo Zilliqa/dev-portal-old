@@ -4,6 +4,7 @@ title: GetContractAddressFromTransactionID
 ---
 
 ---
+
 Returns a smart contract address of 20 bytes. This is represented as a `String`.
 
 **NOTE:** This only works for contract deployment transactions.
@@ -12,7 +13,6 @@ Returns a smart contract address of 20 bytes. This is represented as a `String`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -35,15 +35,18 @@ curl -d '{
     "params": ["AAF3089596437A7C6984FA2627B6F38B5F5B80FAEAAC6993C2E82C6A8EE2615E"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
 ```js
-const contractAddress = await zilliqa.blockchain.getContractAddressFromTransactionID(
-  "AAF3089596437A7C6984FA2627B6F38B5F5B80FAEAAC6993C2E82C6A8EE2615E"
-);
+const contractAddress =
+  await zilliqa.blockchain.getContractAddressFromTransactionID(
+    'AAF3089596437A7C6984FA2627B6F38B5F5B80FAEAAC6993C2E82C6A8EE2615E'
+  );
 console.log(contractAddress.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -56,6 +59,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="python">
@@ -67,6 +71,7 @@ print(chain.active_chain.api.GetContractAddressFromTransactionID(
      "AAF3089596437A7C6984FA2627B6F38B5F5B80FAEAAC6993C2E82C6A8EE2615E"
 ))
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -79,11 +84,11 @@ func GetContractAddressFromTransactionID() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
 ### Example Response
-
 
 ```json
 {
@@ -95,18 +100,18 @@ func GetContractAddressFromTransactionID() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments
 
-| Parameter | Type   | Required | Description                                                                                                      |
-| --------- | ------ | -------- | ---------------------------------------------------------------------------------------------------------------- |
-| `id`      | string | Required | `"1"`                                                                                                            |
-| `jsonrpc` | string | Required | `"2.0"`                                                                                                          |
-| `method`  | string | Required | `"GetSmartContracts"`                                                                                            |
+| Parameter | Type   | Required | Description                                                                                                       |
+| --------- | ------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                                                                                             |
+| `jsonrpc` | string | Required | `"2.0"`                                                                                                           |
+| `method`  | string | Required | `"GetSmartContracts"`                                                                                             |
 | `params`  | string | Required | A Transaction ID of 32 bytes. <br/> Example: `"AAF3089596437A7C6984FA2627B6F38B5F5B80FAEAAC6993C2E82C6A8EE2615E"` |

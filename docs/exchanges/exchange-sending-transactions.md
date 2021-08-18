@@ -1,11 +1,11 @@
 ---
 id: exchange-sending-transactions
 title: Sending Transactions
-keywords: 
-- constructing transaction object
-- signing transaction
-- sending transaction
-- zilliqa
+keywords:
+  - constructing transaction object
+  - signing transaction
+  - sending transaction
+  - zilliqa
 description: Sending Zilliqa Transactions For Exchanges
 ---
 
@@ -24,22 +24,23 @@ using the transaction factory that is on the umbrella Zilliqa object, like
 so:
 
 ```js
-const { Zilliqa } = require("@zilliqa-js/zilliqa");
-const { getPubKeyFromPrivateKey } = require("@zilliqa-js/crypto");
-const { BN, Long, bytes, units } = require("@zilliqa-js/util");
+const { Zilliqa } = require('@zilliqa-js/zilliqa');
+const { getPubKeyFromPrivateKey } = require('@zilliqa-js/crypto');
+const { BN, Long, bytes, units } = require('@zilliqa-js/util');
 
-const api = "https://dev-api.zilliqa.com";
+const api = 'https://dev-api.zilliqa.com';
 const chainId = 333; // Testnet
 const msgVersion = 1;
 const zilliqa = new Zilliqa(api);
 
-const toAddress = "BENCH32_ADDRESS";
-const fromPrivateKey = "SENDER_PRIVATE_KEY";
-const fromPublicKey = getPubKeyFromPrivateKey(fromPrivateKey)
-const fromAddress = getAddressFromPrivateKey(fromPrivateKey)
+const toAddress = 'BENCH32_ADDRESS';
+const fromPrivateKey = 'SENDER_PRIVATE_KEY';
+const fromPublicKey = getPubKeyFromPrivateKey(fromPrivateKey);
+const fromAddress = getAddressFromPrivateKey(fromPrivateKey);
 const amountToSendInZil = 0.17;
 const gasPriceInZil = 0.002;
-const nextNonce = (await zilliqa.blockchain.getBalance(fromAddress)).result.nonce + 1;
+const nextNonce =
+  (await zilliqa.blockchain.getBalance(fromAddress)).result.nonce + 1;
 
 const rawTx = zilliqa.transactions.new({
   version: bytes.pack(chainId, msgVersion),
@@ -75,7 +76,7 @@ If the `Transaction` is successfully signed, you will be able to access the
 `signature` property on `txParams`.
 
 ```ts
-console.log(signedTx.txParams.signature) // 128-bit signature
+console.log(signedTx.txParams.signature); // 128-bit signature
 ```
 
 At this stage, you'll be able to broadcast your newly-signed transaction to
@@ -91,14 +92,14 @@ We demonstrate a lower-level way to broadcast a transaction using the built-in
 `HTTPProvider`, as follows:
 
 ```js
-const res = await zilliqa.provider.send("CreateTransaction", signedTx.txParams)
+const res = await zilliqa.provider.send('CreateTransaction', signedTx.txParams);
 ```
 
 This returns a `Promise` that, if successful, will contain your transaction
 hash:
 
 ```js
-console.log(res.result && res.result.TranID) // 32-byte transaction hash
+console.log(res.result && res.result.TranID); // 32-byte transaction hash
 ```
 
 However, note that `result` will not exist on the response if there is an
@@ -114,7 +115,7 @@ poll the lookup for confirmation:
 // in this case, we try polling the node 33 times, increasing the interval
 // between attempts by 1000ms each time. this works out roughly to the block
 // time on the Zilliqa main net.
-const tx = await signedTx.confirm(res.result.TranID, 33, 1000)
+const tx = await signedTx.confirm(res.result.TranID, 33, 1000);
 ```
 
 The `confirm` method returns a Promise the status of which signifies the

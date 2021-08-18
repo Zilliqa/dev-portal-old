@@ -1,15 +1,16 @@
 ---
 id: staking-commission-management
 title: Commission Management
-keywords: 
-- staking
-- ssn
-- smart contract
-- zilliqa	
-- node operator 
-- commission
+keywords:
+  - staking
+  - ssn
+  - smart contract
+  - zilliqa
+  - node operator
+  - commission
 description: Commission management
 ---
+
 ---
 
 The operations available to delegators on the smart contract are as follows:
@@ -46,11 +47,11 @@ transition UpdateComm(new_rate: Uint128)
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |
 
-## Withdraw Commission 
+## Withdraw Commission
 
 ### Description
 
@@ -74,9 +75,9 @@ transition WithdrawComm()
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |
 
 ## Update Address for Receiving Commission
 
@@ -98,6 +99,6 @@ transition UpdateReceivedAddr(new_addr: ByStr20)
 
 | Language | Link to Sample Code |
 | -------- | ------------------- |
-| NodeJS   | coming soon |
-| Java     | coming soon |
-| Golang   | coming soon |
+| NodeJS   | coming soon         |
+| Java     | coming soon         |
+| Golang   | coming soon         |

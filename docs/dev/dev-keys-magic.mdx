@@ -1,12 +1,12 @@
 ---
 id: dev-keys-magic
 title: Magic
-keywords: 
-- magic
-- zilliqa
-- email login
-- simple singup
-- fortmatic
+keywords:
+  - magic
+  - zilliqa
+  - email login
+  - simple singup
+  - fortmatic
 description: Zilliqa Magic Integration Email Login Without Private Key
 ---
 
@@ -28,7 +28,6 @@ You can skip straight to our reference example:
 👉 [Magic Zilliqa Integration](https://github.com/Zilliqa/dev-portal-examples)
 :::
 
-
 ## Installation
 
 Magic interacts with the Zilliqa blockchain via Magic's extension NPM package @magic-ext/zilliqa. The Zilliqa extension also lets you interact with the blockchain using methods from Zilliqa's Javascript SDK.
@@ -49,6 +48,7 @@ import TabItem from '@theme/TabItem';
 ```js
 npm install --save @magic-ext/zilliqa
 ```
+
 </TabItem>
 
 <TabItem value="yarn">
@@ -56,13 +56,14 @@ npm install --save @magic-ext/zilliqa
 ```js
 yarn add @magic-ext/zilliqa
 ```
+
 </TabItem>
 
 </Tabs>
 
 ## Initializing Extension
 
-To initialize the magic extension, you would need to specify the Zilliqa RPC Node URL which can be found [here](/docs/dev/dev-started-env). 
+To initialize the magic extension, you would need to specify the Zilliqa RPC Node URL which can be found [here](/docs/dev/dev-started-env).
 You would need to specify your API Key for Magic, which you'll get by signing up on Magic's [dashboard](https://dashboard.magic.link/signup) - if you face any issues, refer to Magic's [documentation](https://dashboard.magic.link/signup).
 
 <Tabs
@@ -77,20 +78,19 @@ You would need to specify your API Key for Magic, which you'll get by signing up
 ```js
 import { Magic } from 'magic-sdk';
 import { ZilliqaExtension } from '@magic-ext/zilliqa';
- 
+
 const magic = new Magic('YOUR_API_KEY', {
   extensions: [
     new ZilliqaExtension({
-      rpcUrl: 'Zilliqa_RPC_NODE_URL'
-    })
-  ]
+      rpcUrl: 'Zilliqa_RPC_NODE_URL',
+    }),
+  ],
 });
 ```
 
 </TabItem>
 
 </Tabs>
-
 
 ## Get User Wallet
 
@@ -110,13 +110,13 @@ Using getWallet function to get a Zilliqa wallet for the current user.
 ```js
 import { Magic } from 'magic-sdk';
 import { ZilliqaExtension } from '@magic-ext/zilliqa';
- 
+
 const magic = new Magic('YOUR_API_KEY', {
   extensions: [
     new ZilliqaExtension({
-      rpcUrl: 'Zilliqa_RPC_NODE_URL'
-    })
-  ]
+      rpcUrl: 'Zilliqa_RPC_NODE_URL',
+    }),
+  ],
 });
 
 // Get user's Zilliqa wallet info
@@ -127,7 +127,6 @@ console.log('Zilliqa wallet: ', wallet);
 </TabItem>
 
 </Tabs>
-
 
 ## Send Transaction
 
@@ -160,13 +159,13 @@ To send a standard Zilliqa blockchain transaction, you can call the magic.zil.se
 import { Magic } from 'magic-sdk';
 import { ZilliqaExtension } from '@magic-ext/zilliqa';
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
- 
+
 const magic = new Magic('YOUR_API_KEY', {
   extensions: [
     new ZilliqaExtension({
-      rpcUrl: 'Zilliqa_RPC_NODE_URL'
-    })
-  ]
+      rpcUrl: 'Zilliqa_RPC_NODE_URL',
+    }),
+  ],
 });
 
 const chainId = 333; // chainId of the developer testnet
@@ -176,28 +175,21 @@ const VERSION = bytes.pack(chainId, msgVersion);
 const myGasPrice = units.toQa('1000', units.Units.Li);
 
 const params = {
-   version: VERSION,
-   toAddr: "zil14vut0rh7q78ydc0g7yt7e5zkfyrmmps00lk6r7",
-   amount: (new BN(units.toQa('0.5', units.Units.Zil))), 
-   gasPrice: myGasPrice,
-   gasLimit: Long.fromNumber(1),
+  version: VERSION,
+  toAddr: 'zil14vut0rh7q78ydc0g7yt7e5zkfyrmmps00lk6r7',
+  amount: new BN(units.toQa('0.5', units.Units.Zil)),
+  gasPrice: myGasPrice,
+  gasLimit: Long.fromNumber(1),
 };
 
 // Send a transaction
-const tx = await magic.zil.sendTransaction(
-   params,
-   false,
-);
-console.log('send transaction', tx)
-
+const tx = await magic.zil.sendTransaction(params, false);
+console.log('send transaction', tx);
 ```
 
 </TabItem>
 
 </Tabs>
-
-
-
 
 ## Deploy Smart Contract
 
@@ -230,13 +222,13 @@ To deploy a smart contract, you can call the magic.zilliqa.deployContract method
 import { Magic } from 'magic-sdk';
 import { ZilliqaExtension } from '@magic-ext/zilliqa';
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
- 
+
 const magic = new Magic('YOUR_API_KEY', {
   extensions: [
     new ZilliqaExtension({
-      rpcUrl: 'Zilliqa_RPC_NODE_URL'
-    })
-  ]
+      rpcUrl: 'Zilliqa_RPC_NODE_URL',
+    }),
+  ],
 });
 
 const wallet = await magic.zilliqa.getWallet();
@@ -285,18 +277,18 @@ const code = `scilla_version 0
         e = {_eventname: "getHello()"; msg: r};
         event e
     end`;
- 
+
 const init = [
   // this parameter is mandatory for all init arrays
   {
-      vname: '_scilla_version',
-      type: 'Uint32',
-      value: '0',
+    vname: '_scilla_version',
+    type: 'Uint32',
+    value: '0',
   },
   {
-      vname: 'owner',
-      type: 'ByStr20',
-      value: `${address}`,
+    vname: 'owner',
+    type: 'ByStr20',
+    value: `${address}`,
   },
 ];
 
@@ -310,11 +302,16 @@ const params = {
   version: VERSION,
   gasPrice: myGasPrice,
   gasLimit: Long.fromNumber(10000),
-}
+};
 
 const result = await magic.zil.deployContract(
-  init, code, params, 33, 1000, false
-)
+  init,
+  code,
+  params,
+  33,
+  1000,
+  false
+);
 
 console.log('deploy contract', result);
 ```

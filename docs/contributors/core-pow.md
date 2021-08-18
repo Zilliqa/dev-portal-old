@@ -1,16 +1,17 @@
 ---
 id: core-pow
 title: PoW Algorithm
-keywords: 
-- core 
-- por 
-- proof 
-- work 
-- algorithm
+keywords:
+  - core
+  - por
+  - proof
+  - work
+  - algorithm
 description: Core protocol design - PoW algorithm.
 ---
 
 ---
+
 ## Proof-of-Work
 
 Proof-of-Work, or PoW, is the original consensus algorithm in a blockchain network. In other blockchains (e.g., Bitcoin and Ethereum), this algorithm is used to confirm transactions and produce new blocks in the chain. With PoW, miners compete against each other to complete transactions on the network and get rewarded.
@@ -21,7 +22,7 @@ In Zilliqa, PoW is used as a threshold the shard nodes need to meet to join the 
 
 The main benefits of using PoW are the anti-DoS attacks defense and low impact of stake on mining possibilities.
 
-**Defense from DoS attacks**.  PoW imposes some limits on actions in the network. Firstly, it needs a lot of effort to be executed. Efficient attacks require a lot of computational power and a lot of time to do these calculations. Therefore, the attack is possible but also kind of useless since the costs are too high.
+**Defense from DoS attacks**. PoW imposes some limits on actions in the network. Firstly, it needs a lot of effort to be executed. Efficient attacks require a lot of computational power and a lot of time to do these calculations. Therefore, the attack is possible but also kind of useless since the costs are too high.
 
 **Mining possibilities**. It doesn’t matter how much money you have in your wallet. What matters is to have large computational power to solve the puzzles and form new blocks. Thus, the holders of huge amounts of money are not in charge of making decisions for the entire network.
 

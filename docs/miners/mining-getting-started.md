@@ -1,15 +1,16 @@
 ---
 id: mining-getting-started
 title: Getting Started
-keywords: 
-- proxy mining
-- participating as miner
-- mining pools
-- zilliqa	
+keywords:
+  - proxy mining
+  - participating as miner
+  - mining pools
+  - zilliqa
 description: Mining Getting Started
 ---
 
 ---
+
 ## Participating as a Miner
 
 There are theoretically multiple ways to participate in the Zilliqa Mainnet as a miner.

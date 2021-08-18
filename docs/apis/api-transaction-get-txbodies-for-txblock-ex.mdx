@@ -4,6 +4,7 @@ title: GetTxnBodiesForTxBlockEx
 ---
 
 ---
+
 This API behaves similar to [GetTxBodiesForTxBlock](api-transaction-get-txbodies-for-txblock.mdx) except it returns the transactions in batches (or pages) of 2,500.
 
 The number of pages available is defined by the `NumPages` header value in the [GetTxBlock](api-blockchain-get-tx-block.mdx) or [GetLatestTxBlock](api-blockchain-get-latest-tx-block.mdx) response. Page indexing is zero-based and indicated in the request after the block number.
@@ -16,7 +17,6 @@ This API is available from Zilliqa `V7.2.0` onwards.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -35,6 +35,7 @@ curl -d '{
     "params": ["1002353", "2"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 
 </Tabs>
@@ -89,11 +90,11 @@ curl -d '{
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

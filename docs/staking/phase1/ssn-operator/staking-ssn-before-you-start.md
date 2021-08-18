@@ -1,14 +1,15 @@
 ---
 id: staking-ssn-before-you-start
 title: Before You Start
-keywords: 
-- staking
-- ssn
-- smart contract
-- zilliqa	
-- node operator 
+keywords:
+  - staking
+  - ssn
+  - smart contract
+  - zilliqa
+  - node operator
 description: Before you start
 ---
+
 ---
 
 Before you begin your journey as a Staked Seed Node (SSN) operator, please read through the following to get a better understanding of the role and purpose of a staked seed node.

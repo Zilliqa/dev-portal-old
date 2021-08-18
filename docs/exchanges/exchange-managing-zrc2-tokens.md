@@ -1,11 +1,11 @@
 ---
 id: exchange-managing-zrc2-tokens
 title: Managing Fungible Tokens (ZRC-2)
-keywords: 
-- zrc2
-- polling
-- exchanges
-- zilliqa
+keywords:
+  - zrc2
+  - polling
+  - exchanges
+  - zilliqa
 description: Managing Fungible Tokens (ZRC-2)
 ---
 
@@ -15,7 +15,8 @@ description: Managing Fungible Tokens (ZRC-2)
 
 [ZRC-2](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md) is the formal standard for Fungible Token in Zilliqa. It is an open standard for creating currencies on the Zilliqa blockchain.
 
-The ZRC-2 standard allows for functionalities like 
+The ZRC-2 standard allows for functionalities like
+
 - Minting/burning tokens
 - Transferring tokens from one account to another
 - Querying account token balance
@@ -23,7 +24,7 @@ The ZRC-2 standard allows for functionalities like
 - Approving third party to spend a certain amount of tokens
 - Etc.
 
-## Examples of ZRC-2 
+## Examples of ZRC-2
 
 - [XSGD](https://www.zilliqa.com/xsgd) - the first Singapore dollar-pegged stablecoin built by Xfers
 - [gZIL](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#governance-tokens-aka-gzil) - Governance ZIL token earned through Zilliqa Seed Node Staking Program
@@ -41,6 +42,7 @@ Please check the [Integrating with ZRC-2 Fungible Tokens Contract](../dev/dev-ke
 ## Tracking Incoming ZRC-2 Deposit
 
 To track any new **incoming deposit** of a specific ZRC-2 token:
+
 1. Poll the blockchain block by block using API [`GetTxnBodiesForTxBlock`](../apis/api-transaction-get-txbodies-for-txblock) API and process each transactions
 2. For each transaction in the TxBlock, perform the following:
    - Check whether `toAddr` matches the corresponding ZRC-2 token contract address. For example, contract address [a845c1034cd077bd8d32be0447239c7e4be6cb21](https://viewblock.io/zilliqa/address/0xa845c1034cd077bd8d32be0447239c7e4be6cb21) for gZIL ZRC-2 token.
@@ -55,11 +57,12 @@ When handling `value`, please note the number of decimal places used by the smar
 3. **[Optional checks]** You can also check `event_logs` and ensure the following:
    - `_eventname` matches `TransferSuccess` and `address` matches your deposit address
    - Under `params` map:
-      - vname `sender` refers to the sender of the transactions
-      - vname `recipient` refers your deposit address
-      - vname `amount` is the amount of token transferred
+     - vname `sender` refers to the sender of the transactions
+     - vname `recipient` refers your deposit address
+     - vname `amount` is the amount of token transferred
 
 Sample transaction receipt of a ZRC-2 token
+
 ```bash
 {
   "id": "1",
@@ -161,5 +164,7 @@ Sample transaction receipt of a ZRC-2 token
   }
 }
 ```
+
 ## Other References
+
 - [Sample codes for various ZRC-2 operations](https://github.com/Zilliqa/ZRC/tree/master/example/zrc2)

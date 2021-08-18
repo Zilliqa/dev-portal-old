@@ -1,25 +1,29 @@
 ---
 id: basics-zil-sharding
 title: Sharding Mechanism
-keywords: 
-- types of sharding
-- network sharding
-- transaction sharding
-- transaction types
-- zilliqa
+keywords:
+  - types of sharding
+  - network sharding
+  - transaction sharding
+  - transaction types
+  - zilliqa
 description: Zilliqa Sharding Mechanism
 ---
 
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-In this section, we present the core idea of sharding that makes Zilliqa scale. Sharding in Zilliqa takes many forms: *network sharding*, *transaction sharding*, and *computational sharding*. The most important among these is network sharding as the other sharding mechanisms are built atop the network sharding layer.
+In this section, we present the core idea of sharding that makes Zilliqa scale. Sharding in Zilliqa takes many forms: _network sharding_, _transaction sharding_, and _computational sharding_. The most important among these is network sharding as the other sharding mechanisms are built atop the network sharding layer.
 
 ## Network Sharding
 
-<img alt="Network sharding" src={useBaseUrl('img/basics/networksharding.png')} />
+<img
+  alt="Network sharding"
+  src={useBaseUrl('img/basics/networksharding.png')}
+/>
 
-Network sharding (which will be referred to simply as *sharding* in this context) is a mechanism that allows the Zilliqa network to be divided into smaller groups of nodes each referred to as a *shard*. Simply put, imagine a network of 1,000 nodes, then, one may divide the network into 10 shards each composed of 100 nodes.
+Network sharding (which will be referred to simply as _sharding_ in this context) is a mechanism that allows the Zilliqa network to be divided into smaller groups of nodes each referred to as a _shard_. Simply put, imagine a network of 1,000 nodes, then, one may divide the network into 10 shards each composed of 100 nodes.
 
 Network sharding is the secret sauce that makes Zilliqa truly scalable. Imagine our example network of 1,000 nodes. Zilliqa would automatically divide the network into 10 shards each with 100 nodes. Now, these shards can process transactions in parallel. If each shard is capable of processing 10 transactions per second, then all shards together can process 100 transactions per second. The ability to process transactions in parallel due to the sharded architecture ensures that the throughput in Zilliqa linearly increases with the size of the network.
 
@@ -27,15 +31,18 @@ The idea of sharding is certainly not new, and it can be traced back to the fiel
 
 ## Transaction Sharding
 
-As discussed above, network sharding opens up avenues for parallel transaction processing — each shard should now be able to independently process transactions and hence yield high throughput. Whenever a transaction reaches the network, it gets assigned to a specific shard. The assignment is determined by the first few bits of the sending address of the transaction. This is called *transaction sharding*.
+As discussed above, network sharding opens up avenues for parallel transaction processing — each shard should now be able to independently process transactions and hence yield high throughput. Whenever a transaction reaches the network, it gets assigned to a specific shard. The assignment is determined by the first few bits of the sending address of the transaction. This is called _transaction sharding_.
 
 For example, to assign transactions in a network with two shards S1 and S2, we first check the sender’s address. If the sender’s address ends with 0, then the transaction should be assigned to S1, else it should be assigned to S2.
 
 This assignment strategy, however, only works with payment transactions. To properly handle both payment and smart contract transactions, a different solution is employed by categorizing transactions so that we can have a separate assignment strategy for each category.
 
-Transactions received by the network can be classified into the following categories depending on the type of accounts involved. Below, we call an account a *user account* (or a non-contract account) if it is controlled by a user and does not hold contract code. As an extension, an account that holds contract code will be referred to as a *contract account*.
+Transactions received by the network can be classified into the following categories depending on the type of accounts involved. Below, we call an account a _user account_ (or a non-contract account) if it is controlled by a user and does not hold contract code. As an extension, an account that holds contract code will be referred to as a _contract account_.
 
-<img alt="Transaction sharding" src={useBaseUrl('img/basics/txnsharding.png')} />
+<img
+  alt="Transaction sharding"
+  src={useBaseUrl('img/basics/txnsharding.png')}
+/>
 
 ### Type I
 

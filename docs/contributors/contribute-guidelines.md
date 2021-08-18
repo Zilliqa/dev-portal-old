@@ -1,13 +1,14 @@
 ---
 id: contribute-guidelines
 title: Contribution Guidelines
-keywords: 
-- development
-- guidelines
+keywords:
+  - development
+  - guidelines
 description: Development guidelines for contributing to Zilliqa core.
 ---
 
 ---
+
 ## Development Process
 
 We keep our development process fairly simple and enforce any hard rules through automation.
