@@ -23,7 +23,7 @@ The operations available to the delegator on the smart contract are as follows:
 
 ## Representation of Values in the Smart Contract
 
-`_amount` and `amt` are represented in `Qa`, where 1 `ZIL` = 1 \* 1E12 `Qa`.
+`_amount` and `amt` are represented in `Qa`, where 1 `ZIL` = 1 \* 1e12 `Qa`.
 
 ## Delegate Stake
 
@@ -34,7 +34,7 @@ The operations available to the delegator on the smart contract are as follows:
 In case of failure to accept the stake, an `exception` will be thrown and the transaction will be reverted. This stake will be buffered if the SSN is already active else it will be added to the stake pool of the SSN. The transition should throw an error in case the amount being delegated is less than `mindelegstake`.
 
 :::info
-Due to the non-custodial nature of the phase 1 staking program, only the owner of the wallet will be able to withdraw the stake amount and stake reward. The SSN operator will not have access to the fund.
+Due to the non-custodial nature of the staking program, only the owner of the wallet will be able to withdraw the stake amount and stake reward. The SSN operator will not have access to the fund.
 :::
 
 ### Parameters
@@ -88,9 +88,9 @@ transition WithdrawStakeRewards(ssnaddr: ByStr20)
 
 ### Description
 
-`WithdrawStakeAmt` is the first of two operations to withdraw the delegator's stake amount from an SSN. Upon successful calling of this transition, the withdrawn stake amount will enter an **unbonding** state. The delegator will need to wait for 24,000 blocks (~2 weeks) before the delegator can successfully invoke `CompleteWithdrawal` transition to complete the withdrawal back to the delegator's wallet. When the stake amount is in unbonding state, it will not be eligible for any new rewards ($ZIL and/or gZIL).
+`WithdrawStakeAmt` is the first of two operations to withdraw the delegator's stake amount from an SSN. Upon successful calling of this transition, the withdrawn stake amount will enter an **unbonding** state. The delegator will need to wait for the unbonding period to complete before the delegator can successfully invoke `CompleteWithdrawal` transition to complete the withdrawal back to the delegator's wallet. When the stake amount is in unbonding state, it will not be eligible for any new rewards ($ZIL and/or gZIL).
 
-For testnet, the unbonding period is 50 blocks instead of 24,00 blocks.
+The current unbounding period can be found at [general information](../staking-general-information) page.
 
 :::info
 If the delegator delegates to multiple SSNs and wishes to withdraw all rewards from SSNs, the user will need to call this transition multiple times, specifying a different SSN address each time.
@@ -103,7 +103,7 @@ After withdrawal, the delegator remaining stake amount must be bigger than the m
 
 ### Parameters
 
-`ssnaddr`: the address of the SSN from which the delegator wishes to withdraw reward form
+`ssnaddr`: the address of the SSN from which the delegator wishes to withdraw reward from  
 `amt`: the amount of stake amount to withdraw from the delegation to a particular SSN
 
 ### Transition
@@ -124,9 +124,11 @@ After withdrawal, the delegator remaining stake amount must be bigger than the m
 
 ### Description
 
-`CompleteWithdrawal` is the second of two operations required for the withdrawal of delegator's stake amount from a SSN, The delegator will first need to invoke `WithdrawStakeAmt` transition successfully, wait for 24,000 blocks (~2 weeks) for unbonding of stake amount to be over, and finally call `CompleteWithdrawal` in a separate transaction to complete the withdrawal and receive the stake amount back into the delegator's wallet.
+`CompleteWithdrawal` is the second of two operations required for the withdrawal of delegator's stake amount from a SSN, The delegator will first need to invoke `WithdrawStakeAmt` transition successfully, wait for unbonding of stake amount to be over, and finally call `CompleteWithdrawal` in a separate transaction to complete the withdrawal and receive the stake amount back into the delegator's wallet.
 
 `CompleteWithdrawal` will iterate through all stake amount that has transitted to `unbonding` state, identify the amount that have completed the unbonding process and withdraw it back to delegator's wallet. This operation is agnostic to SSN.
+
+The current unbounding period can be found at [general information](../staking-general-information) page.
 
 ### Pre-condition
 
