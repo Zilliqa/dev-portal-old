@@ -1,20 +1,22 @@
 ---
 id: mining-zilclient
 title: Running the Zilliqa Client
-keywords: 
-- mining steps
-- client setup
-- zilclient
-- zilliqa	
+keywords:
+  - mining steps
+  - client setup
+  - zilclient
+  - zilliqa
 description: Running the Zilliqa Client Mining
 ---
 
 ---
+
 ## Hardware Requirements
 
 The [**Zilliqa Client**](https://github.com/Zilliqa/zilliqa) is officially supported on Ubuntu 18.04 OS.
 
 The **minimum** requirements for running the **Zilliqa Client** are:
+
 - x64 Linux operating system (e.g Ubuntu 18.04.5)
 - Recent dual-core processor @ 2.2 GHZ. Examples: Intel Xeon (Skylake)
 - 4GB DRR3 RAM or higher
@@ -46,17 +48,21 @@ Port forward to port `33133` for both external port (port range) and internal po
 ### Option 1b
 
 Enable UPnP mode on your home router. Please Google how to access your home router setting to enable UPnP, an example can be found [**HERE**](https://routerguide.net/how-to-enable-upnp-for-rt-ac66u/). You can check if you have enabled it UPnP by installing the following tool:
-   ```shell
-   sudo apt-get install miniupnpc
-   ```
+
+```shell
+sudo apt-get install miniupnpc
+```
+
 Then type the following in the command line:
-   ```shell
-   upnpc -s
-   ```
+
+```shell
+upnpc -s
+```
+
 You should get a message showing either:
 
-   - "List of UPNP devices found on the network : ..."
-   - **OR** "No IGD UPnP Device found on the network !".
+- "List of UPNP devices found on the network : ..."
+- **OR** "No IGD UPnP Device found on the network !".
 
 The first message means UPnP mode has been enabled successfully, while the latter means the enabling of UPnP mode has failed. If you receive the latter message, proceed with using [**Option 1a**](#option-1a) instead.
 
@@ -68,22 +74,22 @@ The first message means UPnP mode has been enabled successfully, while the latte
 
 3. Make a new directory in your Desktop and change directory to it:
 
-    ```shell
-    cd ~/Desktop && mkdir join && cd join
-    ```
+   ```shell
+   cd ~/Desktop && mkdir join && cd join
+   ```
 
 4. Get the joining configuration files:
 
-    ```shell
-    wget https://mainnet-join.zilliqa.com/configuration.tar.gz
-    tar zxvf configuration.tar.gz
-    ```
+   ```shell
+   wget https://mainnet-join.zilliqa.com/configuration.tar.gz
+   tar zxvf configuration.tar.gz
+   ```
 
 5. Find out your current IP address in the command prompt and record it down:
 
-    ```shell
-    curl https://ipinfo.io/ip
-    ```
+   ```shell
+   curl https://ipinfo.io/ip
+   ```
 
 :::note
 Please consult the previous section if you are in a NAT environment.
@@ -91,42 +97,42 @@ Please consult the previous section if you are in a NAT environment.
 
 6. Edit your _constant.xml_ file in your configuration folder:
 
-    * Set `GETWORK_SERVER_MINE` to `true`.
-    * Set `GETWORK_SERVER_PORT` to the port you will be using to GetWork. (default is `4202`)
-    * Set the following mining parameters to `false`:
+   - Set `GETWORK_SERVER_MINE` to `true`.
+   - Set `GETWORK_SERVER_PORT` to the port you will be using to GetWork. (default is `4202`)
+   - Set the following mining parameters to `false`:
 
-        ```shell
-        <CUDA_GPU_MINE>false</CUDA_GPU_MINE>
-        <FULL_DATASET_MINE>false</FULL_DATASET_MINE>
-        <OPENCL_GPU_MINE>false</OPENCL_GPU_MINE>
-        <REMOTE_MINE>false</REMOTE_MINE>
-        ```
-        
+     ```shell
+     <CUDA_GPU_MINE>false</CUDA_GPU_MINE>
+     <FULL_DATASET_MINE>false</FULL_DATASET_MINE>
+     <OPENCL_GPU_MINE>false</OPENCL_GPU_MINE>
+     <REMOTE_MINE>false</REMOTE_MINE>
+     ```
+
 7. Install the python dependencies:
-    
-    ```shell
-    sudo apt install python-pip
-    export LC_ALL=C
-    pip install request requests clint futures
-    ```
+
+   ```shell
+   sudo apt install python-pip
+   export LC_ALL=C
+   pip install request requests clint futures
+   ```
 
 8. Run the shell script in your command prompt to launch your docker image:
 
-    ```shell
-    ./launch_docker.sh
-    ```
+   ```shell
+   ./launch_docker.sh
+   ```
 
 9. You will be prompted to enter some information as shown below:
 
-    :::note
-    **DO NOT** duplicate your IP address and use different ports to create different CPU nodes. You will be blacklisted by the network and hence not be able to receive any rewards.
-    :::
+   :::note
+   **DO NOT** duplicate your IP address and use different ports to create different CPU nodes. You will be blacklisted by the network and hence not be able to receive any rewards.
+   :::
 
-    - `Assign a name to your container (default: zilliqa):` <br/> [Press **Enter** to skip if using default]
+   - `Assign a name to your container (default: zilliqa):` <br/> [Press **Enter** to skip if using default]
 
-    - `Enter your IP address ('NAT' or *.*.*.*):` <br/> [Key in your IP address as found in step 5 **OR** `NAT` if you chose [Option 1b](mining-zilclient#option-1b) for network setup]
+   - `Enter your IP address ('NAT' or *.*.*.*):` <br/> [Key in your IP address as found in step 5 **OR** `NAT` if you chose [Option 1b](mining-zilclient#option-1b) for network setup]
 
-    - `Enter your listening port (default: 33133):` <br/> [Press **Enter** to skip if using default]
+   - `Enter your listening port (default: 33133):` <br/> [Press **Enter** to skip if using default]
 
 ## Monitoring Progress
 

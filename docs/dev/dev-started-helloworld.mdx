@@ -1,16 +1,18 @@
 ---
 id: dev-started-helloworld
 title: Hello World
-keywords: 
-- hello world
-- example dapp
-- example project
-- zilliqajs
-- zilpay
-- zilliqa
+keywords:
+  - hello world
+  - example dapp
+  - example project
+  - zilliqajs
+  - zilpay
+  - zilliqa
 description: Zilliqa Hello World Example
 ---
+
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we will deploy and interact with a `Hello World` smart contract onto the Zilliqa testnet using [Neo-Savant web IDE](https://ide.zilliqa.com/#/) and [ZilPay wallet](https://zilpay.xyz/).
@@ -22,14 +24,18 @@ It does not store any user's private keys on the server. Instead, they are passw
 It is a non-custodial wallet, meaning, only the user has full access and responsibility for their private key.
 
 To create a ZilPay wallet:
+
 1. Visit ZilPay's [website](https://zilpay.xyz/) and download the extension for your respective browser.
 2. Open the extension, create a new wallet by verifying your 12 words recovery phrase and selecting a password for your wallet.
-:::note
-Please store your 12 words recovery phrase securely
-:::
+   :::note
+   Please store your 12 words recovery phrase securely
+   :::
 3. Click on the `network change` button (shown below) and select the `network` as testnet.
 
-<img alt="Change Network Button" src={useBaseUrl('img/dev/getting-started/zilpay-change-network-btn.png')} />
+<img
+  alt="Change Network Button"
+  src={useBaseUrl('img/dev/getting-started/zilpay-change-network-btn.png')}
+/>
 
 Voila! You have now successfully set up a testnet ZilPay wallet.
 
@@ -38,11 +44,14 @@ Voila! You have now successfully set up a testnet ZilPay wallet.
 Deploying a contract to zilliqa's testnet will consume gas. As such you will need testnet $ZIL in your ZilPay account to pay for the gas.
 
 To request for testnet $ZIL from the faucet,
+
 1. Visit [Nucleus wallet testnet faucet](https://dev-wallet.zilliqa.com/faucet)
 2. Enter and submit your ZilPay address to the faucet, you will receive 300 testnet $ZIL shortly. This will take about 30s to 1 min, as the transactions will need to be confirmed on the blockchain.
 
-<img alt="Nucleus Wallet Faucet" src={useBaseUrl('img/dev/getting-started/nucleus-faucet.png')} />
-
+<img
+  alt="Nucleus Wallet Faucet"
+  src={useBaseUrl('img/dev/getting-started/nucleus-faucet.png')}
+/>
 
 ## Deploying Contract on Testnet
 
@@ -50,15 +59,24 @@ To deploy the `Hello World` contract on the Zilliqa testnet, we will use the Sci
 
 1. Change the `network` to testnet and import your wallet by connecting with Zilpay.
 
-<img alt="IDE Step1" src={useBaseUrl('img/dev/getting-started/neo-savant-step1.png')} />
+<img
+  alt="IDE Step1"
+  src={useBaseUrl('img/dev/getting-started/neo-savant-step1.png')}
+/>
 
 2. Select the `Hello World` contract under the files tab and click on `Check` button to use the [typechecker](https://scilla.readthedocs.io/en/latest/scilla-checker.html) to check for any syntax errors in your contract.
 
-<img alt="IDE Step2" src={useBaseUrl('img/dev/getting-started/neo-savant-step2.png')} />
+<img
+  alt="IDE Step2"
+  src={useBaseUrl('img/dev/getting-started/neo-savant-step2.png')}
+/>
 
 3. Once the typechecker result is passed, click on `Deploy` button to deploy the contract to testnet. Use your wallet address (Base16 format) for the "owner" initialisation parameter.
 
-<img alt="IDE Step3" src={useBaseUrl('img/dev/getting-started/neo-savant-step3.png')} />
+<img
+  alt="IDE Step3"
+  src={useBaseUrl('img/dev/getting-started/neo-savant-step3.png')}
+/>
 
 Yay! Your contract is now deployed on the testnet and can be accessed under the "Contracts" tab on the left side of the IDE.
 
@@ -66,12 +84,13 @@ Yay! Your contract is now deployed on the testnet and can be accessed under the 
 To convert from `Bech32` address format into base16 address format, you can use the address converter in the IDE. Click on `Tools > Address converter`.
 :::
 
-
 ## Understanding the Hello World Contract
 
 The Hello World contract written in the scilla smart contract programming language essentially consists of two transitions. The transitions of a scilla contract define the public interface for the contract and are a way to define how the state of the contract may change.<br/>
 The two transitions in the Hello World are:
+
 1. `setHello()` - `setHello` transition updates the value of the mutable variable - 'welcomeMsg' to the value of the transition parameter.
+
 ```ocaml
 transition setHello (msg : String)
   is_owner = builtin eq owner _sender;
@@ -89,6 +108,7 @@ end
 ```
 
 2. `getHello()` - `getHello` transition fetches the value of the mutable variable - 'welcomeMsg' and emits it as an entry of an emitted event.
+
 ```ocaml
 transition getHello ()
     r <- welcome_msg;
@@ -113,7 +133,7 @@ The above repository builds on the create-react-app starter kit. If you don't ha
 ## Change Contract State Using ZilPay
 
 After following the installation steps, you need to run the code locally by using the command
-``` npm start ```
+`npm start`
 
 On successfully running the web application locally on your system, enter the address of your Hello World contract deployed on the testnet and connect your ZilPay wallet with the front-end by clicking on the **Connect** button.
 
@@ -131,7 +151,7 @@ The following code snippet achieves this functionality:
     let contractAddress = localStorage.getItem("contract_address");
     const CHAIN_ID = 333;
     const MSG_VERSION = 1;
-    const VERSION = bytes.pack(CHAIN_ID, MSG_VERSION);   
+    const VERSION = bytes.pack(CHAIN_ID, MSG_VERSION);
     const myGasPrice = units.toQa('1000', units.Units.Li); // Gas Price that will be used by all transactions
     contractAddress = contractAddress.substring(2);
     const ftAddr = toBech32Address(contractAddress);
@@ -154,12 +174,13 @@ The following code snippet achieves this functionality:
                 gasLimit: Long.fromNumber(10000),
             }
         );
-  
+
     } catch (err) {
         console.log(err);
     }
   }
 ```
+
 2. `getHello()` - Upon clicking the 'Get Hello' button and approving the transaction via ZilPay, the `getHello()` transition will be called and the value of the `welcomeMsg` mutable variable is emitted as part of a contract event.
 
 We will use the Zilliqa WebSocket Server (ZWS) to subscribe to all new event logs generated for our Hello World contract. This allows us to update the Welcome Msg on the web application as soon as the `getHello()` transaction gets confirmed and an event is emitted.
@@ -169,12 +190,12 @@ The following code snippet achieves this functionality:
 ```javascript
 
   async getWelcomeMsg(){
-    
+
     const zilliqa = window.zilPay;
     let contractAddress = localStorage.getItem("contract_address");
     const CHAIN_ID = 333;
     const MSG_VERSION = 1;
-    const VERSION = bytes.pack(CHAIN_ID, MSG_VERSION);   
+    const VERSION = bytes.pack(CHAIN_ID, MSG_VERSION);
     const myGasPrice = units.toQa('1000', units.Units.Li); // Gas Price that will be used by all transactions
     contractAddress = contractAddress.substring(2);
     const ftAddr = toBech32Address(contractAddress);
@@ -193,7 +214,7 @@ The following code snippet achieves this functionality:
             }
         );
         console.log(JSON.stringify(callTx.TranID));
-        this.eventLogSubscription();  
+        this.eventLogSubscription();
     } catch (err) {
         console.log(err);
     }
@@ -205,16 +226,16 @@ The following code snippet achieves this functionality:
     const subscriber = zilliqa.subscriptionBuilder.buildEventLogSubscriptions(
       'wss://dev-ws.zilliqa.com',
       {
-        // smart contract address you want to listen on  
+        // smart contract address you want to listen on
         addresses: [localStorage.getItem("contract_address")],
       },
     );
-    
+
     subscriber.emitter.on(StatusType.SUBSCRIBE_EVENT_LOG, (event) => {
       // if subscribe success, it will echo the subscription info
       console.log('get SubscribeEventLog echo : ', event);
     });
-    
+
     subscriber.emitter.on(MessageType.EVENT_LOG, (event) => {
       console.log('get new event log: ', JSON.stringify(event));
       // updating the welcome msg when a new event log is received related to getHello() transition
@@ -225,12 +246,13 @@ The following code snippet achieves this functionality:
           console.log("welcomeMsg", welcomeMsg);
         }
       }
-    });  
+    });
     await subscriber.start();
   }
 ```
 
 ## View Receipt on ViewBlock Explorer
+
 [ViewBlock explorer](https://viewblock.io/zilliqa?network=testnet) is a block explorer that supports both Zilliqa mainnet and testnet. It allows you to look at the status of your transaction, current status of the Zilliqa network, contract source code etc.
 
 For example, this is the ViewBlock's [transaction link](https://viewblock.io/zilliqa/tx/c4030c73d6dae558ff0c9d98237101e342888115f13219a00bb14a8ee46fa3be?network=testnet) for a getHello() transition transaction.

@@ -1,14 +1,15 @@
 ---
 id: core-messaging-limits
 title: Messaging Limits
-keywords: 
-- core 
-- messaging 
-- limits
+keywords:
+  - core
+  - messaging
+  - limits
 description: Core protocol design - messaging limits.
 ---
 
 ---
+
 The volume and size of peer-to-peer communication for a Zilliqa node is controlled by several factors at different parts of the stack.
 
 ## Message Size

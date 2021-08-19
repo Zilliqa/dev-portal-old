@@ -4,13 +4,13 @@ title: GetDsBlock
 ---
 
 ---
+
 Returns the details of a specified Directory Service block.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,13 +33,15 @@ curl -d '{
     "params": ["9000"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
 ```js
-const dsBlock = await zilliqa.blockchain.getDSBlock("1");
+const dsBlock = await zilliqa.blockchain.getDSBlock('1');
 console.log(dsBlock.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -60,6 +63,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetDsBlock("9000
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -72,12 +76,11 @@ func GetDsBlock() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
-
 ### Example Response
-
 
 ```json
 {
@@ -111,18 +114,18 @@ func GetDsBlock() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments
 
-| Parameter | Type   | Required | Description                                         |
-| --------- | ------ | -------- | --------------------------------------------------- |
-| `id`      | string | Required | `"1"`                                               |
-| `jsonrpc` | string | Required | `"2.0"`                                             |
-| `method`  | string | Required | `"GetDsBlock"`                                      |
+| Parameter | Type   | Required | Description                                          |
+| --------- | ------ | -------- | ---------------------------------------------------- |
+| `id`      | string | Required | `"1"`                                                |
+| `jsonrpc` | string | Required | `"2.0"`                                              |
+| `method`  | string | Required | `"GetDsBlock"`                                       |
 | `params`  | string | Required | Specified DS block number to return. Example: `"40"` |

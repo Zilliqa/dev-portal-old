@@ -1,14 +1,15 @@
 ---
 id: staking-ssn-setup
 title: Setting up the SSN
-keywords: 
-- staking
-- getting started
-- seed node
-- launching node
-- zilliqa
+keywords:
+  - staking
+  - getting started
+  - seed node
+  - launching node
+  - zilliqa
 description: Setting up the SSN
 ---
+
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +18,7 @@ import TabItem from '@theme/TabItem';
 ## Default Port Requirements for SSNs
 
 | Type     | Default  | Purpose                                                  |
-|----------|--------- | -------------------------------------------------------- |
+| -------- | -------- | -------------------------------------------------------- |
 | Inbound  | 33133    | Protocol level port for receiving network data           |
 | Inbound  | 4201/443 | [API service](https://apidocs.zilliqa.com/#introduction) |
 | Inbound  | 4401     | [WebSocket service](../../../dev/dev-tools-websockets)   |
@@ -91,15 +92,17 @@ $ tar -zxvf ssn-configuration.tar.gz
 The seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory you extracted ssn-configuration.tar.gz to. Minimally, the following changes are required:
 
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
-  :::caution Important notice 
+  :::caution Important notice
   If you have used a port other than 33133, and have opted for IP-based whitelisting, please notify us immediately so that we can adjust our whitelisted port for you.
   :::
 - **Optional:** Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support WebSockets (refer to the [Zilliqa Websocket Server](../../../dev/dev-tools-websockets) documentation).
 
 Finally, launch the seed node:
+
 ```
 $ ./launch_docker.sh
 ```
+
 :::info
 A seed node needs a key pair to communicate with other nodes in the network. launch_docker.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder.
 :::
@@ -120,12 +123,14 @@ This approach has only been tested on `Ubuntu 18.04.5 LTS` and involves compilin
 :::
 
 First, clone the Zilliqa repository:
+
 ```bash
 # clone Zilliqa source files
 $ git clone https://github.com/Zilliqa/Zilliqa.git && cd Zilliqa && git checkout <<release tag>> && cd Zilliqa
 ```
 
 Install system dependencies:
+
 ```bash
 # install system dependencies
 $ sudo apt-get update && sudo apt-get install \
@@ -159,6 +164,7 @@ $ pip3 install requests clint futures
 ```
 
 Build the staked seed node:
+
 ```bash
 # Build the binary. This may take a while.
 $ ./build.sh
@@ -204,15 +210,17 @@ $ tar -zxvf ssn-configuration.tar.gz
 The staked seed node requires some configuring before it can successfully join the network and be used for staking. Most configuration is contained in `constants.xml`, which should be in the directory you extracted `ssn-configuration.tar.gz` to. Minimally, the following changes are required:
 
 - **Optional:** Change the value of `SEED_PORT` to `33133` (default), or a port of your choice. If you do not select `33133`, be sure to note this down for the subsequent whitelisting step.
-  :::caution Important notice 
+  :::caution Important notice
   If you have used a port other than 33133, and have opted for IP-based whitelisting, please notify us immediately so that we can adjust our whitelisted port for you.
   :::
 - Change the value of `ENABLE_WEBSOCKET` to `true` if your seed node will support WebSockets (refer to the [Zilliqa Websocket Server](../../../dev/dev-tools-websockets) documentation).
 
 Finally, launch the seed node:
+
 ```bash
 $ ./launch.sh
 ```
+
 :::info
 A seed node needs a key pair to communicate with other nodes in the network. launch.sh will automatically generate and use a key pair stored in the file mykey.txt in the same folder
 :::
@@ -226,7 +234,7 @@ We highly recommend to use another keypair for depositing stake, withdrawing sta
 
 ### Configuring Domain Name
 
-Once your seed node is fully set up, it is time to configure your domain name to point to the address of your seed node. 
+Once your seed node is fully set up, it is time to configure your domain name to point to the address of your seed node.
 
 If your seed node is not behind a load balancer, you can set an `A record` in your domain registrar to point your domain/subdomain to your seed node’s IP address.
 
@@ -238,7 +246,7 @@ As the staked seed nodes are for public consumption, we expect these nodes to ha
 
 ## Whitelisting and API Servicing
 
-It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 1 in order to receive data broadcasts about the blockchain and its state. 
+It is necessary for the staked seed node to be whitelisted by Zilliqa in phase 1 in order to receive data broadcasts about the blockchain and its state.
 Currently, there are 2 forms of whitelisting supported:
 
 1. Whitelisting via a static IP

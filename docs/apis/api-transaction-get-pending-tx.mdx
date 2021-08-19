@@ -4,13 +4,13 @@ title: GetPendingTxn
 ---
 
 ---
+
 Returns the status (code) of a specified unconfirmed Transaction.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,6 +33,7 @@ curl -d '{
     "params": ["b9e545ab3ed0b61a4d326425569605255e0990da7dda18b4658fdb17b390844e"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -40,6 +41,7 @@ curl -d '{
 const pendingTransaction = await zilliqa.blockchain.getPendingTxn(txId);
 console.log(pendingTransaction.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -64,6 +67,7 @@ func GetPendingTxn() {
   fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -98,14 +102,13 @@ Refer to [GetTransactionStatus](https://dev.zilliqa.com/docs/apis/api-transactio
 
 _Note: Dropped transactions are available for querying for up to 5 transaction epochs only._
 
-
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

@@ -1,11 +1,11 @@
 ---
 id: exchange-account-management
 title: Account Management
-keywords: 
-- generating account
-- exporting account
-- importing account
-- zilliqa
+keywords:
+  - generating account
+  - exporting account
+  - importing account
+  - zilliqa
 description: Exchange Account Management
 ---
 
@@ -21,14 +21,14 @@ export class ZilliqaService {
   accounts: string[] = [];
   zil: Zilliqa;
 
-  constructor(api: string, mnemonics: {[mnemonic: string]: number}) {
+  constructor(api: string, mnemonics: { [mnemonic: string]: number }) {
     const zilliqa = new Zilliqa(api);
     this.zil = zilliqa;
 
     // you can use one or more mnemonics to manage/generate a large number of accounts
     for (let m in mnemonics) {
       const num = mnemonics[m];
-      range(num).forEach(i => {
+      range(num).forEach((i) => {
         const address = this.zil.wallet.addByMnemonic(m, i);
         this.accounts.push(address);
       });
@@ -85,7 +85,7 @@ Now, you should be able to find your file containing your passphrase-encrypted
 private key at the path you specified. Remember to always keep this file, and
 especially your passphrase, secret!
 
-## Importing an Account 
+## Importing an Account
 
 :::caution
 Ethereum's implementation differs from Zilliqa's. You will **not** be able to decrypt a Zilliqa keystore file using web3 and vice-versa.
@@ -138,5 +138,6 @@ export class ZilliqaService {
 
   /* truncated */
 ```
+
 These two methods allow you to securely serialise and deserialise your
 accounts.

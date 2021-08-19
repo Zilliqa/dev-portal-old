@@ -2,10 +2,10 @@
 id: dev-rentonzilliqa-mutable-variables
 title: Mutable Variables
 keywords:
-    - scilla
-    - mutable
-    - variables
-    - rentonzilliqa
+  - scilla
+  - mutable
+  - variables
+  - rentonzilliqa
 description: The Fields of the Scilla Contract for the RentOnZilliqa Application
 ---
 

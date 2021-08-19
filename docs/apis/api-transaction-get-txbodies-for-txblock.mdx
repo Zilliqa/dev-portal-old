@@ -4,13 +4,13 @@ title: GetTxnBodiesForTxBlock
 ---
 
 ---
+
 Returns the validated transactions (in verbose form) included within a specified final transaction block.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,13 +33,15 @@ curl -d '{
     "params": ["2"]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
 ```js
-const txns = await zilliqa.blockchain.getTxnBodiesForTxBlock("2");
+const txns = await zilliqa.blockchain.getTxnBodiesForTxBlock('2');
 console.log(txns.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="python">
@@ -61,6 +64,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetTxnBodiesForTxBlock("2"))
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -73,6 +77,7 @@ func GetTxnBodiesForTxBlock() {
   fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -121,11 +126,11 @@ func GetTxnBodiesForTxBlock() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

@@ -1,14 +1,15 @@
 ---
 id: core-coinbase
 title: Coinbase Rewards
-keywords: 
-- core 
-- coinbase 
-- rewards
+keywords:
+  - core
+  - coinbase
+  - rewards
 description: Core protocol design - coinbase rewards.
 ---
 
 ---
+
 At each DS epoch, a total of `COINBASE_REWARD_PER_DS` QA is distributed to reward miners. Out of this amount, 25% is allocated as the base reward, 5% the lookup reward, and the remainder the cosignature-based reward.
 
 The base reward is given to each node equally. Specifically, these nodes are those who gained membership into a shard or the DS committee by doing PoW.

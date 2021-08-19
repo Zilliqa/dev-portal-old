@@ -1,20 +1,22 @@
 ---
 id: dev-txn-confirmation
 title: Confirmation
-keywords: 
-- confirmation
-- receipt
-- transaction
-- zilliqa
+keywords:
+  - confirmation
+  - receipt
+  - transaction
+  - zilliqa
 description: Zilliqa Transaction Confirmation
 ---
+
 ---
-Now the transaction object is in one of the shards. Each shard will produce a __Micro Block__. Micro Blocks are aggregated by the DS Committee into a Transaction Block, after the DS Committee agrees on the Transaction Block through the pBFT consensus mechanism.
+
+Now the transaction object is in one of the shards. Each shard will produce a **Micro Block**. Micro Blocks are aggregated by the DS Committee into a Transaction Block, after the DS Committee agrees on the Transaction Block through the pBFT consensus mechanism.
 
 After the DS Committee reaches consensus on the Transaction Block, it multicasts the result to all shard nodes and lookup nodes. At this stage, the seed node will have a result for our transaction object. The result can be retrieved using the same `GetTransaction` JSON RPC API.
 
 :::info
-The example below uses the zilliqa-js SDK to retrieve the transaction response. The structure may be _slightly different_ from the __JSON RPC__ `GetTransaction` results.
+The example below uses the zilliqa-js SDK to retrieve the transaction response. The structure may be _slightly different_ from the **JSON RPC** `GetTransaction` results.
 :::
 
 Example of getting transaction:
@@ -33,7 +35,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="js">
 
 ```js
-const txn = await zilliqa.blockchain.getTransaction("1899b381d644a4892ca5ba5d8d60bbcc7bd121d511d55e438a8ddbdcc53272c4");
+const txn = await zilliqa.blockchain.getTransaction(
+  '1899b381d644a4892ca5ba5d8d60bbcc7bd121d511d55e438a8ddbdcc53272c4'
+);
 console.log(JSON.stringify(txn));
 ```
 
@@ -59,8 +63,8 @@ System.out.println(new Gson().toJson(transaction))
 </TabItem>
 </Tabs>
 
-
 Example of a contract call transaction response:
+
 ```
 {
    "gasPrice" : "3b9aca00",
@@ -234,4 +238,5 @@ Example of a contract call transaction response:
    }
 }
 ```
+
 A transaction is confirmed if, under the `receipt` section, `"success": true` is shown.

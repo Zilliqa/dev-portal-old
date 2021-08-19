@@ -4,6 +4,7 @@ title: GetBlockchainInfo
 ---
 
 ---
+
 Returns the current network statistics for the specified network.
 
 **NOTE:** `CHAIN_ID` from `2` to `9` are reserved for Zilliqa Core use.
@@ -12,7 +13,6 @@ Returns the current network statistics for the specified network.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -35,6 +35,7 @@ curl -d '{
     "params": [""]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -42,6 +43,7 @@ curl -d '{
 const blockChainInfo = await zilliqa.blockchain.getBlockChainInfo();
 console.log(blockChainInfo.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -54,6 +56,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -62,6 +65,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.GetBlockchainInfo())
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -74,12 +78,11 @@ func GetBlockchainInfo() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
 
-
 ### Example Response
-
 
 ```json
 {
@@ -106,11 +109,11 @@ func GetBlockchainInfo() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments

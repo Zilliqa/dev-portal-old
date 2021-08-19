@@ -1,16 +1,17 @@
 ---
 id: core-ds-reputation
 title: DS Reputation
-keywords: 
-- core 
-- directory 
-- service 
-- committee 
-- reputation
+keywords:
+  - core
+  - directory
+  - service
+  - committee
+  - reputation
 description: Core protocol design - DS reputation.
 ---
 
 ---
+
 The integration of the DS reputation within DS MIMO enables identification and removal of underperforming DS nodes instead of simply the oldest DS nodes. This encourages node owners to use better hardware for the DS nodes, improving the stability and efficiency of the network, particularly during consensus protocol.
 
 The steps are:

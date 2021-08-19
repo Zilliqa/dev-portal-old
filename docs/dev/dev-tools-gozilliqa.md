@@ -1,19 +1,21 @@
 ---
 id: dev-tools-gozilliqa
 title: gozilliqa
-keywords: 
-- go
-- gozilliqa
-- sdk
-- installation
-- apis
-- examples
-- zilliqa
+keywords:
+  - go
+  - gozilliqa
+  - sdk
+  - installation
+  - apis
+  - examples
+  - zilliqa
 description: gozilliqa
 ---
 
 ---
+
 ## Introduction
+
 [gozilliqa](https://github.com/Zilliqa/gozilliqa-sdk) is a Golang library for interacting with the Zilliqa network. It can create wallets, deploy contracts, and invoke transitions to interact with smart contracts on the Zilliqa network.
 
 ## Source Code
@@ -27,6 +29,7 @@ All releases of gozilliqa can be found at [https://github.com/Zilliqa/gozilliqa-
 ## Getting gozilliqa
 
 Run the following to clone the repository to your local machine
+
 ```
 git clone https://github.com/Zilliqa/gozilliqa-sdk.git
 ```
@@ -43,7 +46,7 @@ Install the dependent libraries:
 go get ./...
 ```
 
-The SDK itself cannot be built into a binary as it does not contains any `main` function, you can directly add it to your own project as a library. Also, we recommend that you can run the `golang uint test` or go through 
+The SDK itself cannot be built into a binary as it does not contains any `main` function, you can directly add it to your own project as a library. Also, we recommend that you can run the `golang uint test` or go through
 the section `quick start` first to get a basic understanding before you start to use this SDK.
 
 ## Methods and APIs
@@ -78,7 +81,6 @@ the section `quick start` first to get a basic understanding before you start to
 - isInitialised isDeployed isRejected
 - getState
 - getAddressForContract
-
 
 ##### Crypto API
 
@@ -158,12 +160,9 @@ Account-related methods
 - isBech32
 - fromBech32Address toBech32Address
 
-
-
-
 ## Demo
-Golang code for zilliqa-js methods found in [ZRC-2 Wallet Repository](https://github.com/arnavvohra/dev-portal-examples/tree/master/zrc-2-wallet)
 
+Golang code for zilliqa-js methods found in [ZRC-2 Wallet Repository](https://github.com/arnavvohra/dev-portal-examples/tree/master/zrc-2-wallet)
 
 ##### Decrypt Private Key from a Keystore File
 
@@ -182,6 +181,7 @@ func TestKeystore_DecryptPrivateKey(t *testing.T) {
 	}
 }
 ```
+
 #### Get User's $Zil Balance
 
 ```go
@@ -233,4 +233,3 @@ func TestSendTransaction(t *testing.T) {
 	assert.True(t, tx.Status == core.Confirmed)
 }
 ```
-

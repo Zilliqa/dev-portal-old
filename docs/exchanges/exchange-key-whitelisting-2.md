@@ -2,9 +2,9 @@
 id: exchange-key-whitelisting-2
 title: Key Whitelisting (option 2)
 keywords:
-- exchanges
-- docker setup
-- zilliqa
+  - exchanges
+  - docker setup
+  - zilliqa
 description: Run seed node in key whitelisting mode (no open inbound port)
 ---
 

@@ -1,13 +1,13 @@
 ---
 id: staking-delegator-reading-contract-states
 title: Reading Contract States
-keywords: 
-- staking
-- ssn
-- smart contract
-- zilliqa	
-- delegator
-- contract states
+keywords:
+  - staking
+  - ssn
+  - smart contract
+  - zilliqa
+  - delegator
+  - contract states
 description: Reading contract states
 ---
 
@@ -31,7 +31,7 @@ In order to read the above information from the smart contract, you should use t
 - Address of `ssnlist` smart contract
 - `ssnlist`
 
-```json 
+```json
 curl -d '{
     "id": "1",
     "jsonrpc": "2.0",
@@ -48,48 +48,44 @@ Map SSN address -> [SSN data type](https://github.com/Zilliqa/staking-contract/t
 
 ```json
 {
-   "id":"1",
-   "jsonrpc":"2.0",
-   "result":{
-      "ssnlist":{
-         "<ssn addr>":{
-            "argtypes":[
-               
-            ],
-            "arguments":[
-               {
-                  "argtypes":[
-                     
-                  ],
-                  "arguments":[
-                     
-                  ],
-                  "constructor":"<ActiveStatus>"
-               },
-               "<StakeAmount>",
-               "<StakeRewards>",
-               "<name of ssn>",
-               "<staking api url>",
-               "<api url>",
-               "<buffered deposit>",
-               "<comission rate>",
-               "<commssion rewards>",
-               "<ssn commission receiving address>"
-            ]
-         }
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+    "ssnlist": {
+      "<ssn addr>": {
+        "argtypes": [],
+        "arguments": [
+          {
+            "argtypes": [],
+            "arguments": [],
+            "constructor": "<ActiveStatus>"
+          },
+          "<StakeAmount>",
+          "<StakeRewards>",
+          "<name of ssn>",
+          "<staking api url>",
+          "<api url>",
+          "<buffered deposit>",
+          "<comission rate>",
+          "<commssion rewards>",
+          "<ssn commission receiving address>"
+        ]
       }
-   }
+    }
+  }
 }
 ```
 
 ## Getting the List of Delegators for a SSN
 
 ### Inputs
+
 - Address of `ssnlist` smart contract
 - `ssn_deleg_amt`
 - Address of SSN
 
-__Example__  
+**Example**
+
 ```bash
 curl -d '{
     "id": "1",
@@ -100,11 +96,13 @@ curl -d '{
 ```
 
 ### Output
+
 Map `SSN addreess` -> Map `delegator address` `stake deposit amount`
 
-__Example__  
+**Example**
+
 ```json
-{"<ssn address>":{"<delegator address>":"<stake deposit amount>"}}
+{ "<ssn address>": { "<delegator address>": "<stake deposit amount>" } }
 ```
 
 ## Getting the Delegator's Buffered Deposit
@@ -115,7 +113,8 @@ __Example__
 - `buff_deposit_deleg`
 - Address of delegator
 
-__Example__  
+**Example**
+
 ```bash
 curl -d '{
 >     "id": "1",
@@ -127,17 +126,18 @@ curl -d '{
 
 ### Output
 
-Map of `ssn address` with the value being a map of `cycle number` and the `buffered deposit` at that particular `cycle number` 
+Map of `ssn address` with the value being a map of `cycle number` and the `buffered deposit` at that particular `cycle number`
 
-Map `SSN address` -> Map `Cycle number` `buffered deposit amount in Qa` 
+Map `SSN address` -> Map `Cycle number` `buffered deposit amount in Qa`
 
 :::info
 Cycle number refers to the cycle number of the smart contract when the deposit was submitted to buffered deposit.
 :::
 
-__Example__  
+**Example**
+
 ```json
-{"<ssn address>":{"<cycle number>":"<deposit amount>"}}
+{ "<ssn address>": { "<cycle number>": "<deposit amount>" } }
 ```
 
 ## Getting the Delegator's Stake Amount
@@ -148,7 +148,8 @@ __Example__
 - `deposit_amt_deleg`
 - Address of `delegator`
 
-__Example__  
+**Example**
+
 ```bash
 curl -d '{
 >     "id": "1",
@@ -163,9 +164,9 @@ curl -d '{
 Map consisting of SSN address and the corresponding delegated amount for a particular delegator
 
 Map `ssn address` -> `delegated amount`
+
 ```json
-{"<ssn addr>":"<delegated amount>",
-"<ssn addr>":"<delegated amount>"}
+{ "<ssn addr>": "<delegated amount>", "<ssn addr>": "<delegated amount>" }
 ```
 
 ## Getting the Delegator's Stake Reward
@@ -184,7 +185,8 @@ Coming soon
 - `withdrawal_pending`
 - Address of `delegator`
 
-__Example__  
+**Example**
+
 ```bash
 curl -d '{
     "id": "1",
@@ -200,11 +202,14 @@ curl -d '{
 Map consisting of the `epoch number` when the withdrawal was initiated and the corresponding `amount` to withdraw
 
 Map `epoch number` -> `Pending withdrawal amount`
+
 ```json
-{"<epoch number>":"<amount (Qa) to be withdrawn>",
-"<epoch number>":"<amount (Qa) to be withdrawn>"}
+{
+  "<epoch number>": "<amount (Qa) to be withdrawn>",
+  "<epoch number>": "<amount (Qa) to be withdrawn>"
+}
 ```
 
 ## Getting Delegation History
 
-Coming soon 
+Coming soon

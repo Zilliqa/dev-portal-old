@@ -1,13 +1,14 @@
 ---
 id: contribute-buildzil
 title: Building Zilliqa
-keywords: 
-- contribution 
-- core
+keywords:
+  - contribution
+  - core
 description: Contribution guide for Zilliqa core.
 ---
 
 ---
+
 The Zilliqa core is implemented in C++ and archived in our open-source [Github repository](https://github.com/Zilliqa/Zilliqa/).
 
 Zilliqa Research primarily maintains the code base and moderates contributions from external developers.

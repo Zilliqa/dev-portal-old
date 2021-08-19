@@ -2,9 +2,9 @@
 id: dev-rentonzilliqa-library
 title: Library
 keywords:
-    - scilla
-    - library
-    - rentonzilliqa
+  - scilla
+  - library
+  - rentonzilliqa
 description: The Library of the Scilla Contract for the RentOnZilliqa Application
 ---
 
@@ -18,9 +18,9 @@ Then we get to creating a handful of message codes we will use to communicate wi
 
 The codes are grouped into three categories:
 
--   [Account codes](#account-codes)
--   [Host account codes](#host-account-codes)
--   [Renter account codes](#renter-account-codes)
+- [Account codes](#account-codes)
+- [Host account codes](#host-account-codes)
+- [Renter account codes](#renter-account-codes)
 
 ### Account Codes
 

@@ -1,14 +1,16 @@
 ---
 id: dev-started-introduction
 title: Introduction
-keywords: 
-- getting started
-- dapp development
-- address formats
-- zilliqa
+keywords:
+  - getting started
+  - dapp development
+  - address formats
+  - zilliqa
 description: Zilliqa developer getting started
 ---
+
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Getting Started with dApp Development
@@ -27,21 +29,21 @@ An application can have a user-facing components ("client"), which could be a we
 
 The entry to Zilliqa blockchain lies on the RPC interface. SDKs are not compulsory for you to interact with the blockchain, but they do make your life easier.
 
-Saw the `0x1`, `0x2` on the entities on the blockchain? Those are [addresses](#addresses). 
+Saw the `0x1`, `0x2` on the entities on the blockchain? Those are [addresses](#addresses).
 
-Addresses are an identifier to an entity on the blockchain. An entity on the blockchain can be either a user or a contract. 
+Addresses are an identifier to an entity on the blockchain. An entity on the blockchain can be either a user or a contract.
 
 ### Addresses
 
 Zilliqa currently supports two address formats.
 
-* `ByStr20`: 20 byte hexadecimal string (e.g. `0x573EC96638C8bB1c386394602E1460634F02aDdA`)
-* `bech32`: A [bech32](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-1.md) with a human-readable prefix of `zil` (e.g. `zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p`)
+- `ByStr20`: 20 byte hexadecimal string (e.g. `0x573EC96638C8bB1c386394602E1460634F02aDdA`)
+- `bech32`: A [bech32](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-1.md) with a human-readable prefix of `zil` (e.g. `zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p`)
 
 The reason behind this design is to prevent confusion with Ethereum addresses. For more detailed explanation on the address, refer to [this post](https://blog.zilliqa.com/zilliqa-migrates-to-new-address-format-bf1fa6d7e41d)
 
 ```javascript
-const { toBech32Address, toChecksumAddress } = require("@zilliqa-js/crypto");
+const { toBech32Address, toChecksumAddress } = require('@zilliqa-js/crypto');
 
 // not checksummed address (will not be accepted by blockchain)
 const address = '573EC96638C8BB1C386394602E1460634F02ADDA';
@@ -54,7 +56,7 @@ const bech32_address = toBech32Address(address);
 // returns zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p
 ```
 
-We __strongly recommend__ that developers use `bech32` formatted addresses for token transfers. This prevents users from mistaking Zilliqa addresses from Ethereum addresses. All wallets and exchanges that deal with token transfers currently use the `bech32` standard for security purposes.
+We **strongly recommend** that developers use `bech32` formatted addresses for token transfers. This prevents users from mistaking Zilliqa addresses from Ethereum addresses. All wallets and exchanges that deal with token transfers currently use the `bech32` standard for security purposes.
 
 `ByStr20` checksummed addresses are supported by [RPC](https://apidocs.zilliqa.com), SDKs and `scilla` contracts.
 
@@ -63,15 +65,14 @@ How do you know if an address is a smart contract or an account? One way to go a
 In Javascript, you can do the following:
 
 ```javascript
-const { Zilliqa } = require("@zilliqa-js/zilliqa");
+const { Zilliqa } = require('@zilliqa-js/zilliqa');
 
 (async () => {
-  const zilliqa = new Zilliqa("https://dev-api.zilliqa.com");
-  const address = "573EC96638C8BB1C386394602E1460634F02ADDA";
+  const zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
+  const address = '573EC96638C8BB1C386394602E1460634F02ADDA';
 
   const res = await zilliqa.blockchain.getSmartContractInit(address);
   const isContract = !!res.result;
   // returns false
 })();
 ```
-

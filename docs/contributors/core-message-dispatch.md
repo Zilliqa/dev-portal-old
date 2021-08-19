@@ -1,15 +1,16 @@
 ---
 id: core-message-dispatch
 title: Message Dispatch and Processing
-keywords: 
-- core 
-- message 
-- dispatch 
-- processing
+keywords:
+  - core
+  - message
+  - dispatch
+  - processing
 description: Core protocol design - message dispatch and processing.
 ---
 
 ---
+
 In `src/cmd/main.cpp`, we assign `Zilliqa::Dispatch` as the dispatcher inside `P2PComm::StartMessagePump`. Every message that is read from a socket by `P2PComm` then gets sent to `Zilliqa::Dispatch`.
 
 When Zilliqa starts to process a message, it will call `Zilliqa::ProcessMessage`. The first byte of any message defines the **message type**.

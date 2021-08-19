@@ -4,13 +4,13 @@ title: DSBlockListing
 ---
 
 ---
+
 Returns a paginated list of up to **10** Directory Service (DS) blocks and their block hashes for a specified page. The `maxPages` variable that specifies the maximum number of pages available is also returned.
 
 ### Example Request
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs
   defaultValue="cURL"
@@ -33,6 +33,7 @@ curl -d '{
     "params": [1]
 }' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
 ```
+
 </TabItem>
 <TabItem value="node.js">
 
@@ -40,6 +41,7 @@ curl -d '{
 const dsBlockListing = await zilliqa.blockchain.getDSBlockListing(1);
 console.log(dsBlockListing.result);
 ```
+
 </TabItem>
 <TabItem value="java">
 
@@ -52,6 +54,7 @@ public class App {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="python">
 
@@ -60,6 +63,7 @@ from pyzil.zilliqa import chain
 chain.set_active_chain(chain.MainNet)
 print(chain.active_chain.api.DSBlockListing(1))
 ```
+
 </TabItem>
 
 <TabItem value="go">
@@ -72,9 +76,9 @@ func DSBlockListing() {
 	fmt.Println(string(result))
 }
 ```
+
 </TabItem>
 </Tabs>
-
 
 ### Example Response
 
@@ -132,11 +136,11 @@ func DSBlockListing() {
 
 ### HTTP Request
 
-| Chain(s)              | URL(s)                       |
-| --------------------- | ---------------------------- |
-| **Zilliqa mainnet**   | https://api.zilliqa.com/     |
-| **Developer testnet** | https://dev-api.zilliqa.com/ |
-| **Local testnet**     | http://localhost:4201/       |
+| Chain(s)              | URL(s)                                       |
+| --------------------- | -------------------------------------------- |
+| **Zilliqa mainnet**   | https://api.zilliqa.com/                     |
+| **Developer testnet** | https://dev-api.zilliqa.com/                 |
+| **Local testnet**     | http://localhost:4201/                       |
 | **Isolated server**   | https://zilliqa-isolated-server.zilliqa.com/ |
 
 ### Arguments
