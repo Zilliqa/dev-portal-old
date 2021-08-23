@@ -19,52 +19,15 @@ The **minimum** requirements for running the **Zilliqa Client** are:
 
 - x64 Linux operating system (e.g Ubuntu 18.04.5)
 - Recent dual-core processor @ 2.2 GHZ. Examples: Intel Xeon (Skylake)
-- 4GB DRR3 RAM or higher
-- NAT environment **OR** Public static IP address
+- 8GB DRR3 RAM or higher
+- Public static IP address
+- 50GB Solid State Drive
 - Any GPUs with at least 2 GB RAM
 - 100MB/s upload and download bandwidth
 
 :::info
 Hashing rate of the network is currently very high. A single GPU will be insufficient. You will need to setup [mining proxy](mining-proxy.mdx) connecting to multiple GPUs.
 :::
-
-## Network Setup for Zilliqa Client
-
-:::note
-If you are using a home router, you are most probably in a NAT environment.
-:::
-
-If you are in a NAT environment, you can either:
-
-- Do single port forwarding using **Option 1a**. This should be your **DEFAULT OPTION**.
-- Enable UPnP mode using **Option 1b** if your router does support UPnP.
-
-If you have a public IP address, you can skip this network setup section entirely.
-
-### Option 1a
-
-Port forward to port `33133` for both external port (port range) and internal port (local port). You will also have to select the option for **BOTH** TCP and UDP protocol in your router menu when port forwarding. <br/>An example of this process can be found [**HERE**](https://www.linksys.com/us/support-article?articleNum=136711). After port forwarding, you may check if you have successfully port forwarded with this [**Open Port Check Tool**](https://www.yougetsignal.com/tools/open-ports/).
-
-### Option 1b
-
-Enable UPnP mode on your home router. Please Google how to access your home router setting to enable UPnP, an example can be found [**HERE**](https://routerguide.net/how-to-enable-upnp-for-rt-ac66u/). You can check if you have enabled it UPnP by installing the following tool:
-
-```shell
-sudo apt-get install miniupnpc
-```
-
-Then type the following in the command line:
-
-```shell
-upnpc -s
-```
-
-You should get a message showing either:
-
-- "List of UPNP devices found on the network : ..."
-- **OR** "No IGD UPnP Device found on the network !".
-
-The first message means UPnP mode has been enabled successfully, while the latter means the enabling of UPnP mode has failed. If you receive the latter message, proceed with using [**Option 1a**](#option-1a) instead.
 
 ## Mining Steps
 
@@ -130,7 +93,7 @@ Please consult the previous section if you are in a NAT environment.
 
    - `Assign a name to your container (default: zilliqa):` <br/> [Press **Enter** to skip if using default]
 
-   - `Enter your IP address ('NAT' or *.*.*.*):` <br/> [Key in your IP address as found in step 5 **OR** `NAT` if you chose [Option 1b](mining-zilclient#option-1b) for network setup]
+   - `Enter your IP address (*.*.*.*):` <br/> [Key in your IP address as found in step 5]
 
    - `Enter your listening port (default: 33133):` <br/> [Press **Enter** to skip if using default]
 
