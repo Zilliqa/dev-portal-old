@@ -24,11 +24,14 @@ Do note that the last **40%** of the rewards are given to the Zilliqa seed node 
 Say for example, if there are a total of `2400` nodes in the Zilliqa network and the `COINBASE_REWARD` is set at `20400` $ZIL per DS Epoch, the reward distribution will be:
 
 - For Base rewards:
+
   ```shell
   204000 * 0.20 / 2400
   = 17 $ZIL per node per DS Epoch
   ```
+
 - For cosignature-based rewards: (on a first-come-first-serve basis)
+
   ```shell
   204000 * 0.40 / (2,400 * 2/3 [Successful signers] * 99 [TX blocks]) = ~0.0515 $ZIL per valid and accepted signature
   ```
