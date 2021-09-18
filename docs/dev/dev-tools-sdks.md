@@ -10,6 +10,7 @@ keywords:
   - viewblock sdk
   - moonlet core
   - ruby
+  - php
   - dart
   - swift
   - go
@@ -58,6 +59,10 @@ on this repository.
 **Dart**
 
 - [laksadart](https://github.com/FireStack-Lab/LaksaDart)
+
+**PHP**
+
+- [Zilliqa-PHP](https://github.com/defser/zilliqa-php)
 
 ## SDKs Discontinued
 
