@@ -2,7 +2,6 @@
 id: dev-wrapped-tokens
 title: Wrapped Tokens
 keywords:
-  - bridge
   - wrapped
   - assets
   - wzil
