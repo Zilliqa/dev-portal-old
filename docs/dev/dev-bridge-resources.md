@@ -25,9 +25,7 @@ Wrapped tokens are exchangable and are pegged to the value of the asset they der
 When bridging cross-chain, trusted custodians entities take a deposit of native tokens (ETH) and mint a non-native wrapped version of the asset (wETH) on the destination chain. 
 Wrapped tokens can also operative natively and some dapps may work exclusively on wrapped tokens.
 
-Developers may choose to consume in their contracts a wrapped ZRC2 form of Zilliqa called "wZIL" if they so choose.
-The main reasons to use wZIL are x,y and z.
-
+wZIL is a wrapped tokenised version of native ZIL. Developers may choose to consume in their contracts "wZIL" if they so choose.
 The wZil contract exposes ZRC-2 compliant transitions names. Users are able to call "Mint" with an amount of ZIL, LI or QA and have an equal amount of wZIL returned to them. Similarly when calling "Burn" the contract returns an amount of ZIL, LI or QA equal to the amount burnt to the user calling. The example below shows the Mint and Burn implementation of wrapping and unwrapping wZIL. 
 
 <br />
@@ -80,10 +78,3 @@ Users may be asked to provide wrapped tokens to use specific dapps or want to un
 <b> Note the internal transaction returning ZIL from the wrapper in exchange for an equal burn of wZIL</b>
 
 ![Docusaurus](/img/dev/wzil/burn_wzil_2.png)
-
-
-## ZRC-2 Tokens as ERC20s
-Soon?
-
-## ERC20s as wERC20's
-Soon?
