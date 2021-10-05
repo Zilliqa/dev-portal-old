@@ -57,15 +57,17 @@ module.exports = {
 
     "Getting Started": ["dev/dev-started-introduction", "dev/dev-started-helloworld", "dev/dev-started-env"],
     "Upgrade Notices": ["dev/dev-upgrade-v8"],
-    "Bridge Resources": ["dev/dev-bridge-resources"],
 
     "User Key Management": ["dev/dev-keys-introduction", "dev/dev-keys-zilpay", "dev/dev-keys-pkey", "dev/dev-keys-zrc2-wallet-support", "dev/dev-keys-magic"],
 
     "Developer Toolings": ["dev/dev-tools-ceres", { "SDKs": ["dev/dev-tools-zilliqajs", "dev/dev-tools-gozilliqa", "dev/dev-tools-java", "dev/dev-tools-sdks"] },
       "dev/dev-tools-websockets", "dev/dev-tools-cli", "dev/dev-tools-ide", "dev/dev-tools-explorer", "dev/dev-tools-faucet"],
 
+    "Other Developer Information": ["dev/dev-wrapped-tokens"],
+
     "Transaction Lifecycle": ["dev/dev-txn-signing", "dev/dev-txn-broadcasting", "dev/dev-txn-polling", "dev/dev-txn-confirmation",
       "dev/dev-txn-receipt"],
+
     "Educational Resources": [
       "dev/dev-education-videos",
       { "Sample app – RentOnZilliqa": ["dev/dev-rentonzilliqa-introduction", { "Scilla Contract": ["dev/dev-rentonzilliqa-contract", "dev/dev-rentonzilliqa-library", "dev/dev-rentonzilliqa-mutable-variables", "dev/dev-rentonzilliqa-procedures", "dev/dev-rentonzilliqa-transitions"] }, { "Frontend Application": ["dev/dev-rentonzilliqa-frontend", "dev/dev-rentonzilliqa-components", "dev/dev-rentonzilliqa-scripting", "dev/dev-rentonzilliqa-modals", "dev/dev-rentonzilliqa-pages"] }] },
