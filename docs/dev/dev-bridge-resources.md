@@ -13,20 +13,20 @@ description: Resources about the Bridge
 
 ---
 
-The following section describes the functional interoperability benefits following recent protocol and language upgrades to support the ETH-ZIL bridge.  Bridges allow for assets to be moved from one blockchain to another. Allowing assets to be distributed across different blockchains increases the interoperability of the asset to be bought and used in a range of applications including DeFi. This article discusses a range of technologies which developers can choose to consume in their applications. 
+The following section describes the functional interoperability benefits following recent protocol and language upgrades to support the ETH-ZIL bridge.  Bridges allow for assets to be moved from one blockchain to another. Allowing assets to be distributed across different blockchains increases the interoperability of the asset. This article discusses a range of technologies that are now available for developers and users to use.  
 
 ## How To Bridge Assets to/from ETH
 In the initial phase of the bridge launch, a select pool of ERC-20 assets will be supported for users to bridge to Zilliqa Mainnet. Users may choose to move these selected assets across the ETH-ZIL bridge. Please consult the Switcheo documentation at https://docs.zilswap.io/how-to/zilbridge for related infomation. 
 
 ## Wrapped Tokens
+Currently, a majority of blockchains can only read and write data to the native chain, this limits blockchain interoperability. With greater interoperability, users and developers can benefit from cross-chain ecosystem offerings. 
 
-A wrapped token is a tokenized version of a cryptocurrency. Many blockchains implement wrapped tokens to allow non-native tokens to be traded and used on an blockchain. 
-Wrapped tokens are exchangable and are pegged to the value of the asset they derive from (1BTC = 1WBTC). Wrapped Tokens on Zilliqa implement the ZRC-2 Fungible Token standard. 
+A wrapped token is a tokenized version of a cryptocurrency. Wrapped tokens are exchangable and are pegged to the value of the asset they derive from (1BTC = 1WBTC). Wrapped Tokens on Zilliqa implement the ZRC-2 Fungible Token standard. The backing asset is deposited in a smart contract called a "Wrapper" and users are returned a wrapped version of the backing asset. It's notable to mention that native wrappers are inherently "trustless" and do not need to rely on a third party for the contract to function. 
+
 When bridging cross-chain, trusted custodians entities take a deposit of native tokens (ETH) and mint a non-native wrapped version of the asset (wETH) on the destination chain. 
-Wrapped tokens can also operative natively and some dapps may work exclusively on wrapped tokens.
 
 wZIL is a wrapped tokenised version of native ZIL. Developers may choose to consume in their contracts "wZIL" if they so choose.
-The wZil contract exposes ZRC-2 compliant transitions names. Users are able to call "Mint" with an amount of ZIL, LI or QA and have an equal amount of wZIL returned to them. Similarly when calling "Burn" the contract returns an amount of ZIL, LI or QA equal to the amount burnt to the user calling. The example below shows the Mint and Burn implementation of wrapping and unwrapping wZIL. 
+The wZil contract exposes ZRC-2 compliant transitions names. Users are able to call "Mint" with an amount of ZIL, LI or QA and have an equal amount of wZIL returned to them. Similarly when calling "Burn" the contract returns an amount of ZIL, LI or QA equal to the amount burnt to the user calling. The example below shows the Mint and Burn implementation of wrapping and unwrapping wZIL. The wZIL contract is a trustless 
 
 <br />
 
