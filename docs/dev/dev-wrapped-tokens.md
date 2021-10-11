@@ -1,32 +1,27 @@
 ---
-id: dev-wrapped-tokens
-title: Wrapped Tokens
+id: dev-wrapped-zil
+title: Wrapped ZIL
 keywords:
   - wrapped
   - assets
   - wzil
-  - wbtc
-  - weth
 description: wZIL
 ---
 
 ---
 
-## Wrapped Tokens
-Currently, a majority of blockchains can only read and write data to the native chain, this limits blockchain interoperability. With greater interoperability, users and developers can benefit from cross-chain ecosystem offerings. 
+## Motivation for wZIL
+A wrapped token is a tokenized version of a cryptocurrency. Wrapped tokens are exchangable 1:1 value of the asset they derive from (1 ZIL = 1 wZIL). Wrapped Tokens on Zilliqa implement the ZRC-2 Fungible Token standard. The backing asset is deposited in a smart contract called a "Wrapper" and users are returned a wrapped version of the backing asset.
 
-A wrapped token is a tokenized version of a cryptocurrency. Wrapped tokens are exchangable and are pegged to the value of the asset they derive from (1BTC = 1 zWBTC). Wrapped Tokens on Zilliqa implement the ZRC-2 Fungible Token standard. The backing asset is deposited in a smart contract called a "Wrapper" and users are returned a wrapped version of the backing asset. It's notable to mention that native wrappers are inherently "trustless" and do not need to rely on a third party for the contract to function. 
+It's notable to mention that native wrappers are inherently "trustless" and do not need to rely on a third party for the contract to function. Whereas bridging cross-chain, trusted custodians entities take a deposit of a native tokens (ETH) and mint a non-native wrapped version of the asset (zETH) on the destination chain. 
 
-When bridging cross-chain, trusted custodians entities take a deposit of native tokens (ETH) and mint a non-native wrapped version of the asset (zWETH) on the destination chain. 
+wZIL is a wrapped tokenised version of native ZIL. As mentioned above, anyone may interact with the wZIL contract to either be issued wZIL or be returned native ZIL. This is a trustless contract interaction with no approval being needed by a custodian and the tokens being immediately issued to the caller.  
 
-The standard naming convention of non native wrapped assets on Zilliqa is "zW". Developers may choose to consume wZIL instead of ZIL in their smart contracts as it already provides standard ZRC-2 transitions.
+Developers can take advantage of transitions existing on the ZRC-2 without needing to implement these functions for native ZIL in contract by consuming wZIL.
 
-## wZIL
+## Implementation details
+Users are able to call "Mint" with an amount of ZIL, LI or QA and have an equal amount of wZIL returned to them. Similarly when calling "Burn" the contract returns an amount of ZIL, LI or QA equal to the amount burnt to the user calling. 
 
-wZIL is a wrapped tokenised version of native ZIL. Developers may choose to consume in their contracts "wZIL" if they so choose.
-The wZil contract exposes ZRC-2 compliant transitions names. Users are able to call "Mint" with an amount of ZIL, LI or QA and have an equal amount of wZIL returned to them. Similarly when calling "Burn" the contract returns an amount of ZIL, LI or QA equal to the amount burnt to the user calling. The example below shows the Mint and Burn implementation of wrapping and unwrapping wZIL.
-
-<br />
 
 ```ocaml
 transition Mint()
@@ -42,37 +37,36 @@ transition Burn(amount: Uint128)
 end
 ```
 
-<br />
-
-## How to wrap/unwrap wZIL
+wZIL can be consumed from the following addresses.
 
 |               | Contract Address                                                                                                                                |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Mainnet wZIL  | [`zil1gvr0jgwfsfmxsyx0xsnhtlte4gks6r3yk8x5fn`](https://viewblock.io/zilliqa/address/zil1gvr0jgwfsfmxsyx0xsnhtlte4gks6r3yk8x5fn)                 |
 | Testnet wZIL  | [`zil1nzn3k336xwal7egdzgalqnclxtgu3dggxed85m`](https://viewblock.io/zilliqa/address/zil1nzn3k336xwal7egdzgalqnclxtgu3dggxed85m?network=testnet) |
 
-<br />
 
- [`Pillar Protocol`](https://app.pillarprotocol.com/vaultFactory/WZIL) has an interface which can be used to wrap ZIL or unwrap wZIL. 
-Users can interact directly with the wZIL contract from the web interface.
+## How to wrap/unwrap wZIL
 
-<br />
+Two examples are shown below, the first being how to wrap and unwrap wZIL using Pillar Protocols user interface. The second example shows how to directly call the contract using the Neo Savant IDE. 
 
-<b>  </b>
+
+### Interacting with Pillar Protocol
+
+ [`Pillar Protocol`](https://app.pillarprotocol.com/vaultFactory/WZIL) has a graphical interface which can be used to wrap ZIL or unwrap wZIL. 
+Users can interact directly with the wZIL contract from the web interface once they are signed into their wallet.
+
+<b> When logged into the Pillar Protocols wZIL vault, buttons are displayed for converting ZIL/wZIL. </b>
 
 ![Docusaurus](/img/dev/wzil/pillar_wzil.png)
 
-<br /> 
 
-<hr />
+### Interacting with Neo-Savant IDE
 
-Users may choose to manually wrap or unwrap ZIL manually from the wrapper contract. To wrap or unwrap tokens, firstly import the wZIL contract to the IDE.
+Users may choose to manually wrap or unwrap ZIL manually from the contract. To wrap or unwrap tokens, firstly import the wZIL contract to the Neo-Savant IDE.
 
-<b> Open the import contract window and import the wZIL contract </b>
+<b> Open the import contract window and import the wZIL contract. </b>
 
 ![Docusaurus](/img/dev/wzil/import_contract_1.png)
-
-<br />
 
 <b> Call Mint with the QA amount of ZIL required to be wrapped. </b>
 
@@ -81,8 +75,6 @@ Users may choose to manually wrap or unwrap ZIL manually from the wrapper contra
 <b> Successful mint of wZIL in exchange for ZIL. </b>
 
 ![Docusaurus](/img/dev/wzil/mint_wzil_2.png)
-
-<br />
 
 <b> Having a wZIL token, call burn with the amount as a parameter.</b>
 

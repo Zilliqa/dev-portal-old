@@ -63,7 +63,7 @@ module.exports = {
     "Developer Toolings": ["dev/dev-tools-ceres", { "SDKs": ["dev/dev-tools-zilliqajs", "dev/dev-tools-gozilliqa", "dev/dev-tools-java", "dev/dev-tools-sdks"] },
       "dev/dev-tools-websockets", "dev/dev-tools-cli", "dev/dev-tools-ide", "dev/dev-tools-explorer", "dev/dev-tools-faucet"],
 
-    "Other Developer Information": ["dev/dev-wrapped-tokens"],
+    "Other Developer Information": ["dev/dev-wrapped-zil"],
 
     "Transaction Lifecycle": ["dev/dev-txn-signing", "dev/dev-txn-broadcasting", "dev/dev-txn-polling", "dev/dev-txn-confirmation",
       "dev/dev-txn-receipt"],
