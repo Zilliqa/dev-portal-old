@@ -39,6 +39,7 @@ on this repository.
 - [zilliqa-js/viewblock](https://github.com/Ashlar/zilliqa-js-viewblock)
 - [laksaj](https://github.com/FireStack-Lab/Laksa)
 - [moonlet-core](https://github.com/cryptolandtech/moonlet-core)
+- [mszbednarski/boost-zil](https://github.com/MszBednarski/boost-zil)
 
 **Python**
 
