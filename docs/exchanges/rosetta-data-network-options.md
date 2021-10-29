@@ -57,10 +57,10 @@ Sample
       }
     ],
     "operation_types": [
-      "transfer",
-      "contract_deployment",
-      "contract_call",
-      "contract_call_transfer"
+      "TRANSFER",
+      "CONTRACT_DEPLOYMENT",
+      "CONTRACT_CALL",
+      "CONTRACT_CALL_TRANSFER"
     ],
     "errors": [
       {

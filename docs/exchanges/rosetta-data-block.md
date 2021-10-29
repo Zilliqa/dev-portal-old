@@ -56,7 +56,7 @@ Sample
             "operation_identifier": {
               "index": 0
             },
-            "type": "transfer",
+            "type": "TRANSFER",
             "status": "SUCCESS",
             "account": {
               "address": "zil14dzm27r68jpdjdnjrnw98ezs8unlp5mrhwal7x",
@@ -81,7 +81,7 @@ Sample
                 "index": 0
               }
             ],
-            "type": "transfer",
+            "type": "TRANSFER",
             "status": "SUCCESS",
             "account": {
               "address": "zil1dthkxpk6dh30lkjfjysn9xz75s4d5xtd6gmv04",
@@ -126,7 +126,7 @@ Sample
             "operation_identifier": {
               "index": 0
             },
-            "type": "transfer",
+            "type": "TRANSFER",
             "status": "SUCCESS",
             "account": {
               "address": "zil1z3zky3kv20f37z3wkq86qfy00t4a875fxxw7sw",
@@ -151,7 +151,7 @@ Sample
                 "index": 0
               }
             ],
-            "type": "transfer",
+            "type": "TRANSFER",
             "status": "SUCCESS",
             "account": {
               "address": "zil1sfxppp4fvg9s20myeawzz6p5kqau448eh5npar",
@@ -196,7 +196,7 @@ Sample
             "operation_identifier": {
               "index": 0
             },
-            "type": "transfer",
+            "type": "TRANSFER",
             "status": "SUCCESS",
             "account": {
               "address": "zil1z3zky3kv20f37z3wkq86qfy00t4a875fxxw7sw",
@@ -221,7 +221,7 @@ Sample
                 "index": 0
               }
             ],
-            "type": "transfer",
+            "type": "TRANSFER",
             "status": "SUCCESS",
             "account": {
               "address": "zil12xnu6zvlulr6qceqlxqr7pyznjfgsyd8a909t6",
