@@ -36,7 +36,7 @@ Request:
 Response:
 
 Sample
-**Note**: The operation type is `transfer`.
+**Note**: The operation type is `TRANSFER`.
 
 ```json
 {
@@ -49,7 +49,7 @@ Sample
         "operation_identifier": {
           "index": 0
         },
-        "type": "transfer",
+        "type": "TRANSFER",
         "status": "SUCCESS",
         "account": {
           "address": "zil17z645g0dr8nwgs5r8tafyekpv6kk882nxaqr70",
@@ -74,7 +74,7 @@ Sample
             "index": 0
           }
         ],
-        "type": "transfer",
+        "type": "TRANSFER",
         "status": "SUCCESS",
         "account": {
           "address": "zil1yz8putzpxrjrlrcn9xukwe6fyeg9jlyjmnw70a",

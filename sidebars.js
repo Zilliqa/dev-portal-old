@@ -97,7 +97,6 @@ module.exports = {
           "Block": [
             "exchanges/rosetta-data-block",
             "exchanges/rosetta-data-block-transaction"],
-          "Mempool": ["exchanges/rosetta-data-mempool"]
         }]
       },
       {

@@ -32,7 +32,7 @@ Request:
       "operation_identifier": {
         "index": 0
       },
-      "type": "transfer",
+      "type": "TRANSFER",
       "status": "",
       "account": {
         "address": "zil1n8uafq4thhzlq5nj50p55al9jvamr3s45hm49r",
@@ -57,7 +57,7 @@ Request:
           "index": 0
         }
       ],
-      "type": "transfer",
+      "type": "TRANSFER",
       "status": "",
       "account": {
         "address": "zil1f9uqwhwkq7fnzgh5x4djyzg4a7j3apx8dsnnc0",
@@ -89,7 +89,7 @@ Sample
 {
   "options": {
     "amount": "2000000000000",
-    "gasLimit": "1",
+    "gasLimit": "50",
     "gasPrice": "2000000000",
     "senderAddr": "zil1n8uafq4thhzlq5nj50p55al9jvamr3s45hm49r",
     "toAddr": "zil1f9uqwhwkq7fnzgh5x4djyzg4a7j3apx8dsnnc0"
