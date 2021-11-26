@@ -57,7 +57,6 @@ $ sudo docker run --rm zilliqa/zilliqa:<version> -c genkeypair
 ```
 
 The first value from the ouput is the public key and second value is the private key.
-The public key has to be shared in advance while submitting the KYC form.
 The private key is required to start the seed node.
 
 :::info
@@ -156,10 +155,6 @@ following changes are required:
 
 ## Joining the Network
 
-:::note
-Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
-:::
-
 Once the preliminary steps have been completed, joining the network is relatively
 straightforward.
 
@@ -173,8 +168,7 @@ $ ./launch.sh
 
 You will be asked a series of questions.
 When asked to enter your listening port, please enter the value you noted down earlier.
-When asked to enter the private key, please enter the value you provided us when you submitted
-the KYC form. This is crucial, as your node **will not work** with anything else.
+When asked to enter the private key. This is crucial, as your node **will not work** with anything else.
 
 Sample instructions to be followed for launch are provided below.
 
