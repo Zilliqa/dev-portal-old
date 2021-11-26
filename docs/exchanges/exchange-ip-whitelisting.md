@@ -18,7 +18,6 @@ Before you start, please ensure the steps below are done.
 1. Choose and note down a port you wish to reserve for your seed node to receive incoming blockchain data.
 1. Share the static IP address and port of the node with the Zilliqa support team for whitelisting.
    This step is critical, as failing to provide the correct IP and port will result in failure to receive blockchain data.
-   The static IP address and port of choice have to be shared with the Zilliqa team in the KYC form.
 
 :::important
 The port of choice must be opened to inbound connections. Otherwise, the seed node will be unreachable.
@@ -136,10 +135,6 @@ following changes are required:
 
 ## Joining the Network
 
-:::note
-Before proceeding with this step, make sure you have completed the necessary KYC (for an individual).
-:::
-
 Once the preliminary steps have been completed, joining the network is relatively
 straightforward.
 
@@ -152,8 +147,7 @@ $ ./launch.sh
 ```
 
 You will be asked a series of questions. When asked to enter your IP address
-and listening port, please enter the values you provided us when you submitted
-the KYC form. This is crucial, as your node **will not work** with anything
+and listening port. This is crucial, as your node **will not work** with anything
 else.
 
 Sample instructions to be followed for launch are provided below.
