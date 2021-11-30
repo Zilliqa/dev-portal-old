@@ -39,8 +39,8 @@ The current global minimum gas price is 0.002 ZIL.
 
 ## Payment Transactions
 
-Each payment transaction consumes 1 gas unit and therefore, the gas to be paid
-for a payment transaction is 0.002 ZIL.
+Each payment transaction consumes 50 gas unit and therefore, the gas to be paid
+for a payment transaction is 0.1 ZIL.
 
 ## Smart Contract Transactions
 
