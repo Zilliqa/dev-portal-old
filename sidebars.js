@@ -4,9 +4,7 @@ module.exports = {
       "basics/basics-intro-txns", "basics/basics-intro-gas"],
 
     "Zilliqa Architecture": ["basics/basics-zil-nodes", "basics/basics-zil-sharding", "basics/basics-zil-consensus",
-      "basics/basics-zil-schnorr-signatures", "basics/basics-zil-reward", "basics/basics-zil-contract", "basics/basics-zil-gas"],
-
-    "Zilliqa Ecosystem": ["basics/overview"]
+      "basics/basics-zil-schnorr-signatures", "basics/basics-zil-reward", "basics/basics-zil-contract", "basics/basics-zil-gas"]
   },
   APIsSideBar: {
     "Introduction": ["apis/api-introduction"],
