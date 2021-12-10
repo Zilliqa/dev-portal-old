@@ -147,7 +147,7 @@ module.exports = {
       { "Consensus Layer": ["contributors/core-consensus", "contributors/core-multisignatures"] },
       { "Network Layer": ["contributors/core-gossip", "contributors/core-broadcasting", "contributors/core-blacklist", "contributors/core-messaging-limits"] },
       { "Messaging Layer": ["contributors/core-message-dispatch", "contributors/core-message-queues"] },
-      { "Data Layer": ["contributors/core-accounts", "contributors/core-incremental-db"] },
+      { "Data Layer": ["contributors/core-accounts", "contributors/core-incremental-db", "contributors/core-scilla-operation"] },
       { "Directory Service": ["contributors/core-ds-mimo", "contributors/core-ds-reputation"] },
       { "Lookup": ["contributors/core-websocket-server", "contributors/core-transaction-dispatch", "contributors/core-multipliers"] },
       { "Mining": ["contributors/core-pow", "contributors/core-difficulty-adjustment", "contributors/core-por", "contributors/core-coinbase", "contributors/core-global-gas-price"] },
