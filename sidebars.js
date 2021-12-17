@@ -149,7 +149,7 @@ module.exports = {
       { "Messaging Layer": ["contributors/core-message-dispatch", "contributors/core-message-queues"] },
       { "Data Layer": ["contributors/core-accounts", "contributors/core-incremental-db", "contributors/core-scilla-operation"] },
       { "Directory Service": ["contributors/core-ds-mimo", "contributors/core-ds-reputation"] },
-      { "Lookup": ["contributors/core-websocket-server", "contributors/core-transaction-dispatch", "contributors/core-multipliers"] },
+      { "Lookup": ["contributors/core-isolated-server", "contributors/core-websocket-server", "contributors/core-transaction-dispatch", "contributors/core-multipliers"] },
       { "Mining": ["contributors/core-pow", "contributors/core-difficulty-adjustment", "contributors/core-por", "contributors/core-coinbase", "contributors/core-global-gas-price"] },
       {
         "Mitigation Measures": ["contributors/core-guard-mode", "contributors/core-rejoin-mechanism", "contributors/core-view-change",
