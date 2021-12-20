@@ -28,4 +28,5 @@ The Isolated Server is built as a binary file `isolatedServer` (from source `iso
 Apart from these differences, developers just need to take note of the other features supported by the Isolated Server as described in detail in the other available documentation, namely:
 - Two ways to artificially produce Tx Blocks (i.e., using either automated block time or the `IncreaseBlocknum` API)
 - Ability to pre-generate accounts from an input JSON file
+- Ability to pre-load existing blockchain data during launch
 - Ability to pause the Isolated Server using the `TogglePause` API (which prevents automated block generation and disables `CreateTransaction` API)
