@@ -12,7 +12,7 @@ description: Core protocol design - isolated server.
 
 ## Overview
 
-The Isolated Server is a standalone Zilliqa lookup node specifically configured to allow instantaneous blockchain operations (e.g., transaction creation) outside of any network (e.g., Zilliqa Mainnet). This makes it a very useful tool for dApp development and testing.
+The Isolated Server is a standalone Zilliqa seed node specifically configured to allow instantaneous blockchain operations (e.g., transaction creation) outside of any network (e.g., Zilliqa Mainnet). This makes it a very useful tool for dApp development and testing.
 
 These are the available documentation on Isolated Server:
 - Isolated server design and API list in [ZIP-6](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-6.md)
