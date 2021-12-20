@@ -30,3 +30,7 @@ Apart from these differences, developers just need to take note of the other fea
 - Ability to pre-generate accounts from an input JSON file
 - Ability to pre-load existing blockchain data during launch
 - Ability to pause the Isolated Server using the `TogglePause` API (which prevents automated block generation and disables `CreateTransaction` API)
+
+:::info
+In the Isolated Server there are no properly-formed DS or Tx blocks. While the artificially-produced blocks conform to the Tx block template, all the Tx block fields are not set properly. Only the transaction information is set in the block.
+:::
