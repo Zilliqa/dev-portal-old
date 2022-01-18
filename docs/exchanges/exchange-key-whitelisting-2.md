@@ -169,7 +169,7 @@ Sample instructions to be followed for launch are provided below.
 ```sh
 $ ./launch_docker.sh
 Assign a name to your container (default: zilliqa): <container_name>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: <private key generated for key whitelisting>
 ```
 
@@ -179,7 +179,7 @@ Enter the private key (32-byte hex string) to be used by this node and whitelist
 $ ./launch.sh
 Enter the full path of your zilliqa source code directory: <zilliqa code directory path>
 Enter the full path for persistence storage (default: current working directory): <default or custom path>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: <private key generated for key whitelisting>
 ```
 
