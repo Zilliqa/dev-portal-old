@@ -157,7 +157,7 @@ Sample instructions to be followed for launch are provided below.
 ```sh
 $ ./launch_docker.sh
 Assign a name to your container (default: zilliqa): <container_name>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter your listening port (default: 33133): <33133 or other selected port>
 Use IP whitelisting registration approach (default: Y): Y
 ```
@@ -168,7 +168,7 @@ Use IP whitelisting registration approach (default: Y): Y
 $ ./launch.sh
 Enter the full path of your zilliqa source code directory: <zilliqa code directory path>
 Enter the full path for persistence storage (default: current working directory): <default or custom path>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter your listening port (default: 33133): <33133 or other selected port>
 Use IP whitelisting registration approach (default: Y): Y
 ```
