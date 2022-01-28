@@ -30,7 +30,7 @@ Zilliqa has a number of SDKs implemented in various programming languages. If yo
 listed here, please [create a PR](https://github.com/Zilliqa/dev-portal/pulls)
 on this repository.
 
-[zilliqa-js](https://github.com/Zilliqa/Zilliqa-Javascript-Library), [gozilliqa (formerly laksago)](https://github.com/Zilliqa/gozilliqa-sdk) and [laksaj](https://github.com/FireStack-Lab/LaksaJ) are active SDKs maintained by the Zilliqa core team but the zilliqa community members also actively maintain multiple SDKs.
+[zilliqa-js](https://github.com/Zilliqa/zilliqa-js), [gozilliqa (formerly laksago)](https://github.com/Zilliqa/gozilliqa-sdk) and [laksaj](https://github.com/FireStack-Lab/LaksaJ) are active SDKs maintained by the Zilliqa core team but the zilliqa community members also actively maintain multiple SDKs.
 
 ## SDKs Maintained By the Community
 
