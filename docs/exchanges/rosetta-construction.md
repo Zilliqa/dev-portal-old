@@ -27,7 +27,7 @@ The construction flow is in this sequence:
 4. [/construction/payloads](rosetta-construction-payload.md)
 5. [/construction/parse](rosetta-construction-parse.md)
 6. [/construction/combine](rosetta-construction-combine.md)
-7. [/construction/parse] (to confirm correctness.md)
+7. /construction/parse (to confirm correctness)
 8. [/construction/hash](rosetta-construction-hash.md)
 9. [/construction/submit](rosetta-construction-hash.md)
 
