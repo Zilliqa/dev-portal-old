@@ -32,7 +32,7 @@ To enter the shard network requires >300 modern GPUs. As such, it will be advisa
 
 To proceed with proxy mining:
 
-1. An introduction to proxy mining is provided [here](mining-proxy.md)
+1. An introduction to proxy mining is provided [here](mining-proxy.mdx)
 1. The Zilliqa Client instructions can be found [here](mining-zilclient.md)
 1. The ZilMiner instructions can be found [here](mining-zilminer.md)
 

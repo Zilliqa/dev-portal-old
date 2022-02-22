@@ -15,7 +15,7 @@ A `RumorManager` library is available in the Zilliqa core to support message gos
 
 - The goal is to provide an alternative communication method to broadcasting, particularly in large-scale clusters.
 - The broadcasting implemented in `P2PComm::SendBroadcastMessage` is resource-hungry; it sends `O(n^2)` messages, requires a lot of threads, and opens too many TCP connections.
-- The gossip algorithm, described in detail in this [paper](https://zoo.cs.yale.edu/classes/cs426/2013/bib/karp00randomized.pdf), provides a method to spread a message in `O(logn)` rounds and `O(ln(ln(n)))` rumor messages (where `n` is the number of peers participating in the gossip).
+- The gossip algorithm, described in detail in this [paper](https://web.archive.org/web/20180329145609/https://zoo.cs.yale.edu/classes/cs426/2013/bib/karp00randomized.pdf), provides a method to spread a message in `O(logn)` rounds and `O(ln(ln(n)))` rumor messages (where `n` is the number of peers participating in the gossip).
 - `RumorManager` plays the role of managing all the gossips/rumors and their states.
 
 ## Interfaces

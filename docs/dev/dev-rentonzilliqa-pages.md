@@ -154,7 +154,7 @@ export default App;
 
 ## `index.tsx`
 
-Next, we wrap the [`App`](#app) component with the [`ContextContainer`](dev-rentonzilliqa-scripting#contextcontainer) that we created earlier.
+Next, we wrap the [`App`](#app) component with the [`ContextContainer`](dev-rentonzilliqa-scripting.md#contextcontainer) that we created earlier.
 
 ```tsx
 import React from 'react';
@@ -181,16 +181,16 @@ reportWebVitals();
 
 ## Listings Page
 
-Now we get to the [Listings Page](dev-rentonzilliqa-frontend#listings-page).
+Now we get to the [Listings Page](dev-rentonzilliqa-frontend.mdx).
 
 When there is a change in the `contractState` or `blockNumber`, using the `useEffect` hook, we update the `listings` displayed on the page. We create a `hostedListings` object that filters out the listings that are hosted by the current user.
 
-The listings are presented using the [`ListingCard`](dev-rentonzilliqa-components#listingcard) component.
+The listings are presented using the [`ListingCard`](dev-rentonzilliqa-components.md#listingcard) component.
 
 Using the `useState` hook, we create `boolean` state variables for showing and hiding the modals as required. The modals are conditionally mounted based on these variables. To trigger the modals, we set up `onClick` listeners as follows:
 
-- On a "New Listing" [`Button`](dev-rentonzilliqa-components#button), which triggers the [`CreateListing`](dev-rentonzilliqa-modals#create-listing-modal) Modal
-- On each Listing Card, which triggers the [`ManageListing`](dev-rentonzilliqa-modals/#manage-listing-modal) Modal
+- On a "New Listing" [`Button`](dev-rentonzilliqa-components.md#button), which triggers the [`CreateListing`](dev-rentonzilliqa-modals.md#create-listing-modal) Modal
+- On each Listing Card, which triggers the [`ManageListing`](dev-rentonzilliqa-modals.md#manage-listing-modal) Modal
 
 ```tsx
 import React, { useEffect, useState } from 'react';
@@ -318,13 +318,13 @@ export default Listings;
 
 ## Individual Listing Page
 
-This component presents a detailed view of the individual listing on the [Listing Page](dev-rentonzilliqa-frontend#listing-page).
+This component presents a detailed view of the individual listing on the [Listing Page](dev-rentonzilliqa-frontend.mdx#listing-page).
 
-The description, rooms, amenities, map, and description are presented in a detailed manner. The [`ListingIcons`](dev-rentonzilliqa-components#listing-icons) are used to provide a clear view of the Rooms and Amenities sections.
+The description, rooms, amenities, map, and description are presented in a detailed manner. The [`ListingIcons`](dev-rentonzilliqa-components.md#listing-icons) are used to provide a clear view of the Rooms and Amenities sections.
 
-Users can book the listing within this component, which uses the [`bookListingTransition`](dev-rentonzilliqa-scripting#booklistingtransition) function.
+Users can book the listing within this component, which uses the [`bookListingTransition`](dev-rentonzilliqa-scripting.md#booklistingtransition) function.
 
-The embed url for the Map is built using the [Google Maps Plus Code](https://maps.google.com/pluscodes/) and the [Google Maps API Key](https://developers.google.com/maps/documentation/embed/get-api-keys).
+The embed url for the Map is built using the [Google Maps Plus Code](https://maps.google.com/pluscodes/) and the [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en).
 
 ```tsx
 import React, { useEffect, useState } from 'react';

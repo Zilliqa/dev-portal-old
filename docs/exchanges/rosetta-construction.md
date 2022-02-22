@@ -21,15 +21,15 @@ Construction API enables developers to write to a blockchain (i.e. construct tra
 
 The construction flow is in this sequence:
 
-1. [/construction/derive](rosetta-construction-derive)
-2. [/construction/preprocess](rosetta-construction-preprocess)
-3. [/construction/metadata](rosetta-construction-metadata)
-4. [/construction/payloads](rosetta-construction-payload)
-5. [/construction/parse](rosetta-construction-parse)
-6. [/construction/combine](rosetta-construction-combine)
-7. /construction/parse (to confirm correctness)
-8. [/construction/hash](rosetta-construction-hash)
-9. [/construction/submit](rosetta-construction-hash)
+1. [/construction/derive](rosetta-construction-derive.md)
+2. [/construction/preprocess](rosetta-construction-preprocess.md)
+3. [/construction/metadata](rosetta-construction-metadata.md)
+4. [/construction/payloads](rosetta-construction-payload.md)
+5. [/construction/parse](rosetta-construction-parse.md)
+6. [/construction/combine](rosetta-construction-combine.md)
+7. [/construction/parse] (to confirm correctness.md)
+8. [/construction/hash](rosetta-construction-hash.md)
+9. [/construction/submit](rosetta-construction-hash.md)
 
 ### Flow of Operations
 

@@ -29,7 +29,7 @@ description: Zilliqa Development Environments - Testnet, Mainnet & Isolated Serv
 |                        | URL(s)                                                   |
 | :--------------------- | :------------------------------------------------------- |
 | **API URL**            | `https://dev-api.zilliqa.com/`                           |
-| **Faucet**             | [**Link**](https://dev-wallet.zilliqa.com)               |
+| **Faucet**             | [**Link**](https://dev-wallet.zilliqa.com/home?network=testnet)               |
 | **Block Explorer**     | [**Link**](https://viewblock.io/zilliqa?network=testnet) |
 | **WebSocket endpoint** | `wss://dev-ws.zilliqa.com`                               |
 | **Chain ID**           | 333                                                      |
