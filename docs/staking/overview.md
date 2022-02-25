@@ -36,7 +36,7 @@ Phase 1 introduces:
 
 ## Phase 1.1
 
-[Phase 1.1](phase1/staking-phase1-overview) is the current phase of SSN staking. It build on top of phase 1 staking and is formally described in [ZIP-19](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-19.md).
+[Phase 1.1](phase1/overview.md) is the current phase of SSN staking. It build on top of phase 1 staking and is formally described in [ZIP-19](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-19.md).
 
 Phase 1.1 consists of all features from phase 1 and further introduces
 

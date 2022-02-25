@@ -11,14 +11,14 @@ description: Creating the Modals for the RentOnZilliqa frontend application
 
 ---
 
-In this section, we will create the Modals for the frontend application. We use the [`Modal`](dev-rentonzilliqa-components/#modal) component that we created earlier.
+In this section, we will create the Modals for the frontend application. We use the [`Modal`](dev-rentonzilliqa-components.md#modal) component that we created earlier.
 
 ## Create Account Modal
 
-We start with [Create Account Modal](dev-rentonzilliqa-frontend#account-creation-and-zilpay) that will be used to connect to the ZilPay wallet as well as access the smart contract.
+We start with [Create Account Modal](dev-rentonzilliqa-frontend.mdx#account-creation-and-zilpay) that will be used to connect to the ZilPay wallet as well as access the smart contract.
 
-It uses [`Input`](dev-rentonzilliqa-components/#input) and [`Button`](dev-rentonzilliqa-components/#button) components.
-It uses [`CheckBox`](dev-rentonzilliqa-components/#checkbox) for selecting the user role. A button is presented for connecting ZilPay when required.
+It uses [`Input`](dev-rentonzilliqa-components.md#input) and [`Button`](dev-rentonzilliqa-components.md#button) components.
+It uses [`CheckBox`](dev-rentonzilliqa-components.md#checkbox) for selecting the user role. A button is presented for connecting ZilPay when required.
 
 The [`createAccountTransition`](#createaccounttransition) function is used.
 
@@ -137,10 +137,10 @@ export default CreateAccountModal;
 
 ## Create Listing Modal
 
-We now get to the [Create Listing Modal](dev-rentonzilliqa-frontend#creating-and-managing-listings) that will be used by host users to post new listings.
+We now get to the [Create Listing Modal](dev-rentonzilliqa-frontend.mdx) that will be used by host users to post new listings.
 
-It uses [`Input`](dev-rentonzilliqa-components/#input) and [`Button`](dev-rentonzilliqa-components/#button) components.
-It uses [`AmenitiesInput`](dev-rentonzilliqa-components/#amenitiesinput) for selecting the available amenities. A button is presented for connecting ZilPay when required.
+It uses [`Input`](dev-rentonzilliqa-components.md#input) and [`Button`](dev-rentonzilliqa-components.md#button) components.
+It uses [`AmenitiesInput`](dev-rentonzilliqa-components.md#amenitiesinput) for selecting the available amenities. A button is presented for connecting ZilPay when required.
 
 The [`createListingTransition`](#createlistingtransition) function is used.
 
@@ -278,10 +278,10 @@ export default CreateListingModal;
 
 ## Manage Listing Modal
 
-We now get to the [Create Listing Modal](dev-rentonzilliqa-frontend#creating-and-managing-listings) that will be used by host users to post new listings.
+We now get to the [Create Listing Modal](dev-rentonzilliqa-frontend.mdx#creating-and-managing-listings) that will be used by host users to post new listings.
 
-It uses [`Input`](dev-rentonzilliqa-components/#input) and [`Button`](dev-rentonzilliqa-components/#button) components.
-It uses [`AmenitiesInput`](dev-rentonzilliqa-components/#amenitiesinput) for selecting the available amenities. A button is presented for connecting ZilPay when required.
+It uses [`Input`](dev-rentonzilliqa-components.md#modal) and [`Button`](dev-rentonzilliqa-components.md#button) components.
+It uses [`AmenitiesInput`](dev-rentonzilliqa-components.md#amenitiesinput) for selecting the available amenities. A button is presented for connecting ZilPay when required.
 
 The [`deleteListingTransition`](#createlistingtransition), [`updateListingTransition`](#updatelistingtransition), and [`claimRentTransition`](#claimrenttransition) functions are called as required.
 

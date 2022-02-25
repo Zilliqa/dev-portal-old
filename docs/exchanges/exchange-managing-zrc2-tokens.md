@@ -26,24 +26,24 @@ The ZRC-2 standard allows for functionalities like
 
 ## Examples of ZRC-2
 
-- [XSGD](https://www.zilliqa.com/xsgd) - the first Singapore dollar-pegged stablecoin built by Xfers
+- [XSGD](https://www.xfers.com) - the first Singapore dollar-pegged stablecoin built by Xfers
 - [gZIL](https://github.com/Zilliqa/ZIP/blob/master/zips/zip-11.md#governance-tokens-aka-gzil) - Governance ZIL token earned through Zilliqa Seed Node Staking Program
 
 ## Checking Whether a Contract is ZRC-2 Compliant
 
 Before you start any integration with ZRC-2, it is important to check the smart contract to ensure it conforms to the ZRC-2 standard. Non-conformance to the standard may lead to composability issues with other contracts or dApp/exchange integration.
 
-Please check the [ZRC-2 specification](../dev/dev-keys-zrc2-wallet-support#zrc-2-specification) subsection in the Developers section of this developer portal.
+Please check the [ZRC-2 specification](../dev/dev-keys-zrc2-wallet-support.mdx#zrc-2-specification) subsection in the Developers section of this developer portal.
 
 ## Contract Operations
 
-Please check the [Integrating with ZRC-2 Fungible Tokens Contract](../dev/dev-keys-zrc2-wallet-support#integrating-with-zrc-2-fungible-tokens-contract) subsection on how to get token balance and transfer tokens.
+Please check the [Integrating with ZRC-2 Fungible Tokens Contract](../dev/dev-keys-zrc2-wallet-support.mdx#integrating-with-zrc-2-fungible-tokens-contract) subsection on how to get token balance and transfer tokens.
 
 ## Tracking Incoming ZRC-2 Deposit
 
 To track any new **incoming deposit** of a specific ZRC-2 token:
 
-1. Poll the blockchain block by block using API [`GetTxnBodiesForTxBlock`](../apis/api-transaction-get-txbodies-for-txblock) API and process each transactions
+1. Poll the blockchain block by block using API [`GetTxnBodiesForTxBlock`](../apis/api-transaction-get-txbodies-for-txblock.mdx) API and process each transactions
 2. For each transaction in the TxBlock, perform the following:
    - Check whether `toAddr` matches the corresponding ZRC-2 token contract address. For example, contract address [a845c1034cd077bd8d32be0447239c7e4be6cb21](https://viewblock.io/zilliqa/address/0xa845c1034cd077bd8d32be0447239c7e4be6cb21) for gZIL ZRC-2 token.
    - Check that the **success** field is set to `true`. If it is `false`, it means that this transaction was not accepted by the network.

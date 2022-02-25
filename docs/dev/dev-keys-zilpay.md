@@ -60,8 +60,4 @@ window.zilPay.wallet.observableNetwork().subscribe(function (net) {
 
 ZilPay provides a set of documentation for your references
 
-- [Provider API](https://zilpay.xyz/Documentation/zilliqa-provider/)
-- [Blockchain related APIs](https://zilpay.xyz/Documentation/zilliqa-api-blockchain/)
-- [Crypto related APIs](https://zilpay.xyz/Documentation/zilliqa-api-crypto/)
-- [Utils related APIs](https://zilpay.xyz/Documentation/zilliqa-api-utils/)
-- [Contract related APIs](https://zilpay.xyz/Documentation/zilliqa-contracts/)
+- [Zilpay - Getting Started](https://zilpay.github.io/zilpay-docs/getting-started/#getting-started)

@@ -27,7 +27,7 @@ Consensus is used in the following stages of the protocol:
 
 The consensus protocol is implemented across two classes: `ConsensusLeader` and `ConsensusBackup`. The diagram below shows the state transitions for both leader and backup.
 
-![image01](../../img/contributors/core/consensus-protocol/image01.jpg)
+![image01](/img/contributors/core/consensus-protocol/image01.jpg)
 
 #### Initial State
 

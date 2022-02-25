@@ -13,8 +13,15 @@ description: The Procedures of the Scilla Contract for the RentOnZilliqa Applica
 We proceed to declare the procedures that we will use in the RentOnZilliqa Smart Contract. We will declare the following types of procedures in this section. [The source code](https://github.com/Quinence/zilliqa-fullstack-app-rentOnZilliqa/blob/main/src/scilla/RentOnZilliqa.scilla).
 
 - [General Procedures](#general-procedures)
+  - [`send_message`](#send_message)
 - [Listing Management Procedures](#listing-management-procedures)
+  - [`set_listing_details`](#set_listing_details)
+  - [`claim_rent_by_id`](#claim_rent_by_id)
+  - [`delete_listing_by_id`](#delete_listing_by_id)
 - [Listing Booking Procedures](#listing-booking-procedures)
+  - [`check_listing_available`](#check_listing_available)
+  - [`check_amount_and_book`](#check_amount_and_book)
+  - [`book_listing_by_id`](#book_listing_by_id)
 
 ## General Procedures
 
@@ -27,7 +34,7 @@ This procedure creates a message with the passed arguments. It uses the `one_msg
 | Arguments | Description                                                                             | Type      |
 | --------- | --------------------------------------------------------------------------------------- | --------- |
 | `amount`  | The amount to be sent with the message                                                  | `Uint128` |
-| `code`    | The [message code](dev-rentonzilliqa-library#message-codes) to be sent with the message | `Int32`   |
+| `code`    | The [message code](dev-rentonzilliqa-library.md#message-codes) to be sent with the message | `Int32`   |
 
 ```ocaml
 procedure send_message (amount: Uint128, code: Int32)
@@ -50,7 +57,7 @@ This group of procedures is used in the transitions that a host account user may
 
 ### `set_listing_details`
 
-This procedure creates or updates the [Listing Details](dev-rentonzilliqa-mutable-variables#listing-details-fields) for the given ID. It is used by the `create_listing` and `update_listing` transitions.
+This procedure creates or updates the [Listing Details](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) for the given ID. It is used by the `create_listing` and `update_listing` transitions.
 
 | Arguments     | Description                                                                                   | Type      |
 | ------------- | --------------------------------------------------------------------------------------------- | --------- |
@@ -93,7 +100,7 @@ end
 
 ### `claim_rent_by_id`
 
-This procedure is used in conjunction with the `claim_rent` transition. The accumulated rent is checked for the listing with the given ID, in the [`listing_accumulated_rent`](dev-rentonzilliqa-mutable-variables#listing-details-fields) field. If the rent is missing or empty, the corresponding messages are sent using the `send_message` procedure. If there is non-zero accumulated rent, it is sent to the `_sender` using the `send_message` procedure. The accumulated rent is passed as an argument to `send_message`, along with the `rent_claimed` message code. A "Rent Claimed" event is also emitted. The accumulated rent in the [`listing_accumulated_rent`](dev-rentonzilliqa-mutable-variables#listing-details-fields) field is set to zero for that ID, as it is claimed by the host account.
+This procedure is used in conjunction with the `claim_rent` transition. The accumulated rent is checked for the listing with the given ID, in the [`listing_accumulated_rent`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) field. If the rent is missing or empty, the corresponding messages are sent using the `send_message` procedure. If there is non-zero accumulated rent, it is sent to the `_sender` using the `send_message` procedure. The accumulated rent is passed as an argument to `send_message`, along with the `rent_claimed` message code. A "Rent Claimed" event is also emitted. The accumulated rent in the [`listing_accumulated_rent`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) field is set to zero for that ID, as it is claimed by the host account.
 
 | Arguments | Description           | Type      |
 | --------- | --------------------- | --------- |
@@ -124,7 +131,7 @@ end
 
 ### `delete_listing_by_id`
 
-This procedure is used in conjunction with the `delete_listing` transition. It deletes the [Listing Details](dev-rentonzilliqa-mutable-variables#listing-details-fields) entries for the listing with the given ID.
+This procedure is used in conjunction with the `delete_listing` transition. It deletes the [Listing Details](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) entries for the listing with the given ID.
 
 | Arguments | Description           | Type      |
 | --------- | --------------------- | --------- |
@@ -159,7 +166,7 @@ end
 
 ### `check_listing_available`
 
-This procedure is used in conjunction with the `book_listing` transition. It checks if the listing is available by checking the [`listing_rented_till`](dev-rentonzilliqa-mutable-variables#listing-details-fields) field. If it is not available, the [`listing_unavailable`](dev-rentonzilliqa-library#renter-account-codes) message is sent back. When the listing is available, the [`check_amount_and_book`](#check_amount_and_book) procedure is called with the `id`.
+This procedure is used in conjunction with the `book_listing` transition. It checks if the listing is available by checking the [`listing_rented_till`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) field. If it is not available, the [`listing_unavailable`](dev-rentonzilliqa-library.md#renter-account-codes) message is sent back. When the listing is available, the [`check_amount_and_book`](#check_amount_and_book) procedure is called with the `id`.
 
 | Arguments | Description           | Type      |
 | --------- | --------------------- | --------- |
@@ -190,7 +197,7 @@ end
 
 ### `check_amount_and_book`
 
-This procedure is used in conjunction with the `book_listing` transition. It is called after the listing's availibility is checked by the [`check_listing_available`](#check_listing_available) procedure. It checks if the sent amount is equal to the [`listing_price`](dev-rentonzilliqa-mutable-variables#listing-details-fields). If not, the [`wrong_amount_sent`](dev-rentonzilliqa-library#renter-account-codes) is sent back. If the correct amount is sent, the [`book_listing_by_id`](#book_listing_by_id) procedure is called with the `id`.
+This procedure is used in conjunction with the `book_listing` transition. It is called after the listing's availibility is checked by the [`check_listing_available`](#check_listing_available) procedure. It checks if the sent amount is equal to the [`listing_price`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields). If not, the [`wrong_amount_sent`](dev-rentonzilliqa-library.md#renter-account-codes) is sent back. If the correct amount is sent, the [`book_listing_by_id`](#book_listing_by_id) procedure is called with the `id`.
 
 | Arguments | Description           | Type      |
 | --------- | --------------------- | --------- |
@@ -218,7 +225,7 @@ end
 
 ### `book_listing_by_id`
 
-This procedure is used in conjunction with the `book_listing` transition. In this procedure, the `accept` command is called. The [`night_duration`](dev-rentonzilliqa-mutable-variables#owner-fields) is added to the current `BLOCKNUMBER` and assigned to the [`listing_rented_till`](dev-rentonzilliqa-mutable-variables#listing-details-fields) field. The `_sender` wallet address is assigned to the [`listing_renter`](dev-rentonzilliqa-mutable-variables#listing-details-fields) field. The rent amount is added to the [`listing_accumulated_rent`](dev-rentonzilliqa-mutable-variables#listing-details-fields) field, after subtracting the commission set in the [`owners_commission`](dev-rentonzilliqa-mutable-variables#owner-fields) field. A "ListingBooked" event is emitted and a [`listing_booked`](dev-rentonzilliqa-library#renter-account-codes) message is sent.
+This procedure is used in conjunction with the `book_listing` transition. In this procedure, the `accept` command is called. The [`night_duration`](dev-rentonzilliqa-mutable-variables.md#owner-fields) is added to the current `BLOCKNUMBER` and assigned to the [`listing_rented_till`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) field. The `_sender` wallet address is assigned to the [`listing_renter`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) field. The rent amount is added to the [`listing_accumulated_rent`](dev-rentonzilliqa-mutable-variables.md#listing-details-fields) field, after subtracting the commission set in the [`owners_commission`](dev-rentonzilliqa-mutable-variables.md#owner-fields) field. A "ListingBooked" event is emitted and a [`listing_booked`](dev-rentonzilliqa-library.md#renter-account-codes) message is sent.
 
 As the commission amount is stored in the contract balance, it can be claimed by the contract owner via the `_balance` implicit variable.
 

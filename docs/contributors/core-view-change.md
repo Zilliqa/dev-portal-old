@@ -54,7 +54,7 @@ These are the conditions that can cause a view change to occur:
 1. Candidate leader and backups proceed with view change consensus until completion or stall
    1. If stalled, wait for timeout and re-run view change consensus with a new candidate leader
 1. All nodes remove faulty leaders (found in the VC block header's list) from DS Committee
-1. All nodes add faulty leaders to the back of DS Committee (unless those are [DS guards](core-guard-mode.md))
+1. All nodes add faulty leaders to the back of DS Committee (unless those are [DS guards](core-guard-mode.mdx))
 1. All nodes recalculate `m_consensusMyID` and `m_consensusLeaderID` according to the updated DS committee
 1. All nodes store the VC block to persistent storage
 1. If stalled consensus is at Tx block consensus:

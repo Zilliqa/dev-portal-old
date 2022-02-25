@@ -40,7 +40,7 @@ Refer to the [Core Protocol Documentation](../contributors/core-pow.md) for more
 
 ## Network Difficulty
 
-Refer to the [Core Protocol Documentation](../contributors/core-difficulty-adjustment.md) for more details on the difficulty adjustment algorithm.
+Refer to the [Core Protocol Documentation](../contributors/core-difficulty-adjustment.mdx) for more details on the difficulty adjustment algorithm.
 
 ## Network Reward Mechanism
 

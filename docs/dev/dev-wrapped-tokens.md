@@ -41,7 +41,6 @@ To get back native ZIL, users can call the  "Burn" transition. This will
 2. wZIL contract burn away the wZIL received
 3. wZIL contract transfer native ZIL to the users
 
-
 ```ocaml
 transition Burn(amount: Uint128)
   AuthorizedBurnIfSufficientBalance _sender amount;    (* Burns amount *)
@@ -57,11 +56,9 @@ wZIL can be consumed from the following addresses.
 | Mainnet wZIL  | [`zil1gvr0jgwfsfmxsyx0xsnhtlte4gks6r3yk8x5fn`](https://viewblock.io/zilliqa/address/zil1gvr0jgwfsfmxsyx0xsnhtlte4gks6r3yk8x5fn)                 |
 | Testnet wZIL  | [`zil1nzn3k336xwal7egdzgalqnclxtgu3dggxed85m`](https://viewblock.io/zilliqa/address/zil1nzn3k336xwal7egdzgalqnclxtgu3dggxed85m?network=testnet) |
 
-
 ## How to wrap/unwrap wZIL
 
-Two examples are shown below, the first being how to wrap and unwrap wZIL using Pillar Protocols user interface. The second example shows how to directly call the contract using the Neo Savant IDE. 
-
+Two examples are shown below, the first being how to wrap and unwrap wZIL using Pillar Protocols user interface. The second example shows how to directly call the contract using the Neo Savant IDE.
 
 ### Interacting with Pillar Protocol
 
@@ -71,7 +68,6 @@ Users can interact directly with the wZIL contract from the web interface once t
 <b> When logged into the Pillar Protocols wZIL vault, buttons are displayed for converting ZIL/wZIL. </b>
 
 ![Docusaurus](/img/dev/wzil/pillar_wzil.png)
-
 
 ### Interacting with Neo-Savant IDE
 
@@ -83,7 +79,7 @@ Users may choose to manually wrap or unwrap ZIL manually from the contract. To w
 
 <b> Call Mint with the QA amount of ZIL required to be wrapped. </b>
 
-![Docusaurus](/img/dev/wzil/mint_wzil_1.png)
+![Docusaurus(/img/dev/wzil/mint_wzil_1.png)
 
 <b> Successful mint of wZIL in exchange for ZIL. </b>
 
@@ -96,7 +92,6 @@ Users may choose to manually wrap or unwrap ZIL manually from the contract. To w
 <b> Note the internal transaction returning ZIL from the wrapper in exchange for an equal burn of wZIL.</b>
 
 ![Docusaurus](/img/dev/wzil/burn_wzil_2.png)
-
 
 ### Interacting programmatically
 
