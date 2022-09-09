@@ -57,7 +57,7 @@ svg:not(:root) {
   min-height: 550px;
   height: 100vh;
   background-color: var(--cover-bg-color);
-  background-image: url("/img/chain_bg.png");
+  background-image: url("../img/chain_bg.png");
   background-repeat: no-repeat;
   background-size: 60%;
   background-position:90% 50%;
