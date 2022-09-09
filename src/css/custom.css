@@ -57,6 +57,10 @@ svg:not(:root) {
   min-height: 550px;
   height: 100vh;
   background-color: var(--cover-bg-color);
+  /* This breaks in staging; sadly, docusaurus doesn't seem to provide
+   * a way to fix it - https://github.com/facebook/docusaurus/issues/2365 
+   * - rrw 2022-09-09
+   */
   background-image: url("/img/chain_bg.png");
   background-repeat: no-repeat;
   background-size: 60%;
