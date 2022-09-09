@@ -30,4 +30,5 @@ jobs:
         path: './build'
     - name: Deploy to gh pages
       id: deployment
+      token: ${{ secrets.GITHUB_TOKEN }}
       uses: actions/deploy-pages@v1
