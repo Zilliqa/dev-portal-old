@@ -18,4 +18,4 @@ Contributors may also be interested to review these related documents:
 
 In the diagram, it is worth emphasizing that epoch time has been optimized by configuring the lookup nodes to dispatch transaction packets (for next epoch) to shards during the time these shards are idle (i.e., while waiting for the Tx block after microblock generation), and to similarly dispatch transaction packets (for current epoch) to the DS committee during the time the committee is idle (i.e., while waiting for the shard microblocks after Tx block generation). This setup reduces network latency incurred by node-to-node communication.
 
-![image01](../../img/contributors/core/transaction-lifecycle/image01.png)
+![image01](/img/contributors/core/transaction-lifecycle/image01.png)

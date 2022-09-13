@@ -25,7 +25,7 @@ Relevant documentation on operating the Scilla interpreter and server can be fou
 
 In the diagram below, transaction processing is handled by `UpdateAccounts()` in `AccountStoreSC` through the `AccountStoreTemp` instance. `AccountStoreSC` also contains most of the internal functions related to interacting with the Scilla server.
 
-![image01](../../img/contributors/core/scilla-operation/image01.png)
+![image01](/img/contributors/core/scilla-operation/image01.png)
 
 ## Scilla Operation Steps
 
@@ -39,4 +39,4 @@ The diagram below details the steps related to Scilla server execution for both 
 1. After interpreter invocation, the output from the server is evaluated. This is in JSON format, and different members are expected for contract deployment check, contract deployment call, and contract call.
 1. Finally, in the case of contract call, the output may include one or more messages. Each message is basically a chain call and will require repeating all the steps starting from input files preparation. Of course, the context (e.g., the source and destination account) will be different for each call in the chain.
 
-![image02](../../img/contributors/core/scilla-operation/image02.png)
+![image02](/img/contributors/core/scilla-operation/image02.png)

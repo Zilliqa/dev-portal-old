@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import useThemeContext from '@theme/hooks/useThemeContext';
 import StarSvg from './components/cards_img01.js';
 import CodeSvg from './components/cards_img02.js';
 import MineSvg from './components/cards_img03.js';
@@ -13,7 +13,8 @@ import ExchangeSvg from './components/cards_img04.js';
 import ContributeSvg from './components/cards_img05.js';
 
 const CoverImgDiv = () => {
-  const {isDarkTheme} = useThemeContext();
+    const colorMode = useThemeConfig().colorMode;
+    const isDarkTheme = colorMode == 'dark';
   if (isDarkTheme) {
     return (
       <>
@@ -49,13 +50,14 @@ function Feature({imageUrl, title, description}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const {isDarkTheme} = useThemeContext();
+    const colorMode = useThemeConfig().colorMode;
+    const isDarkTheme = colorMode == 'dark';
+
   if (isDarkTheme) {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
-
   return (
-      <Layout>
+          <Layout>
         <div className="cover-container">
           <div className="cover-title">
             <h1 className="hero__title">{siteConfig.title}</h1>
