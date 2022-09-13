@@ -481,26 +481,12 @@ func GetSmartContractState() {
 
 ```json
 {
-  "id": "1",
-  "jsonrpc": "2.0",
-  "result": {
-    "_balance": "0",
-    "admin": "0x2f604cbd408e2c8b7442b1b629a1288c44945130",
-    "allowances": {},
-    "balances": {
-      "0x05d087623bc636108d450e0550ddbfc03da99fa9": "10000000",
-      "0x0f8167a0cbffb8ab1d1919e31f83dc26c863d0f9": "24250000",
-      "0x18c241a5f0d6cf380f721618880f2c2b7aa5ea97": "9975750000",
-      "0x5abf71d798ca594b7317b04f52ad5a31fae62170": "10000000",
-      "0x8c3de413a9d8d602a1757210ab539853103e08d8": "250000000000",
-      "0x93eb1d0cb7ba3962fcc86cd28aa45b241c888277": "20000",
-      "0xab61c57a9a4b2742a4a325ecd9e77b5da67f663a": "980000",
-      "0xabe1e844c776e97beb619f3ca64faa2b3edc2840": "400000",
-      "0xc48565c853fe4ffa5d7eac33e255141134640ceb": "600000",
-      "0xf5f9e1ad8ea6439f625e12b8ef57e1e99ac2d383": "7000000"
-    },
-    "implementation": "0x3bd9ad6fee7bfdf5b5875828b555e4f702e427cd",
-    "total_supply": "260029000000"
+  "id":"1",
+  "jsonrpc":"2.0",
+  "result":{
+    "balances":{
+      "0x00034c431f642dfca0129694061263d72049a909":"1033606"
+    }
   }
 }
 ```
@@ -621,10 +607,59 @@ func GetSmartContractState() {
 }
 ```
 
-If the value of user's address is stored in the variable `userAddress`, and the response json received above is stored in the variable `smartContractState`, a user's token balance would then be:
+
+### Fetch Token Balance For A Single Key
+
+If the need to fetch a single token value from the `balances` map arises. Instead of requesting the whole map state over the network, using `getSmartContractSubState` is the most efficent method to use when you don't need to fetch the whole map. It returns one value per key, instead of the entire map. Allowing for quicker response times when only certain key values are required to be fetched.
+
+#### Example Request
+
+<Tabs
+  defaultValue="cURL"
+  values={[
+    { label: 'cURL', value: 'cURL', },
+    { label: 'js', value: 'js', },
+  ]
+}>
+
+<TabItem value="cURL">
+
+```shell
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetSmartContractSubState",
+    "params": ["173ca6770aa56eb00511dac8e6e13b3d7f16a5a5", "balances", ["0x00034c431f642dfca0129694061263d72049a909, ..."] ]
+}' -H "Content-Type: application/json" -X POST "https://api.zilliqa.com/"
+```
+
+</TabItem>
+<TabItem value="js">
 
 ```js
-smartContractState.result.balances[userAddress];
+const smartContractState = await zilliqa.blockchain.getSmartContractSubState(
+  '173Ca6770Aa56EB00511Dac8e6E13B3D7f16a5a5',
+  'balances',
+  ['0x8c3de413a9d8d602a1757210ab539853103e08d8, ...']
+);
+console.log(smartContractState.result);
+```
+
+</TabItem>
+
+</Tabs>
+
+#### Example Response
+
+```json
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "result": {
+      "0x8c3de413a9d8d602a1757210ab539853103e08d8": "250000000000",
+      ...
+  }
+}
 ```
 
 ### Transfer Token

@@ -67,3 +67,11 @@ If you do, we'll use that as the base URL - for the staging repo, set the `BASE_
 You can then issue a PR to the production repo against your staging repo with (hopefully!) the security that it will deploy correctly.
 
 
+### Utilities
+
+#### Check all links return HTTP status 200
+
+```
+cd docs
+find */*.md -exec npx markdown-link-check {} \;
+```
