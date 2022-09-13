@@ -20,5 +20,6 @@ Some of the API are not relevant or critical for interacting with Zilliqa blockc
 
 | API            | Reason                          |
 | -------------- | ------------------------------- |
+| /mempool       | Zilliqa does not rely on monitoring the mempool |
 | /account/coins | Zilliqa is not UTXO-based chain |
 | Indexer APIs   | Not yet implemented             |

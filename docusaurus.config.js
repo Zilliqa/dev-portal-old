@@ -2,7 +2,7 @@ module.exports = {
   title: 'Zilliqa Developer Portal',
   tagline: 'Technical documentation for participating in the Zilliqa network.',
   url: 'https://dev.zilliqa.com',
-  baseUrl: '/',
+  baseUrl: (!process.env.BASE_URL || process.env.BASE_URL == "") ? '/' : process.env.BASE_URL,
   favicon: 'img/favicon.png',
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
@@ -17,7 +17,7 @@ module.exports = {
         alt: 'Zilliqa Logo',
         src: 'img/logo.png',
       },
-      links: [
+      items: [
         {
           to: 'docs/basics/basics-intro-blockchain',
           activeBasePath: 'docs/basics',
@@ -107,18 +107,16 @@ module.exports = {
       ],
       copyright: `Copyright © 2022 Zilliqa Research Pte. Ltd.`,
     },
-    algolia: {
-      apiKey: 'f1777493b2d9d1824a5daf3be87092db',
-      indexName: 'zilliqa_developer',
-    },
+    //algolia: {
+    //  apiKey: 'f1777493b2d9d1824a5daf3be87092db',
+    //  indexName: 'zilliqa_developer',
+    //},
   },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'basics-intro-blockchain',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:

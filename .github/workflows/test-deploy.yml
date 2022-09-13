@@ -1,0 +1,24 @@
+# Checks if the PR can be built
+name: Test if PR can be built
+
+on:
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build-n-test:
+    name: Build & test PR
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        cache: yarn
+    - name: Test build
+      working-directory: docs
+      run: |
+        rm -rf node_modules && yarn cache clean
+        yarn install --frozen-lockfile
+        yarn build

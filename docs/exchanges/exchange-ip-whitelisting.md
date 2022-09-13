@@ -18,7 +18,6 @@ Before you start, please ensure the steps below are done.
 1. Choose and note down a port you wish to reserve for your seed node to receive incoming blockchain data.
 1. Share the static IP address and port of the node with the Zilliqa support team for whitelisting.
    This step is critical, as failing to provide the correct IP and port will result in failure to receive blockchain data.
-   The static IP address and port of choice have to be shared with the Zilliqa team in the KYC form.
 
 :::important
 The port of choice must be opened to inbound connections. Otherwise, the seed node will be unreachable.
@@ -136,10 +135,6 @@ following changes are required:
 
 ## Joining the Network
 
-:::note
-Before proceeding with this step, make sure you have completed the necessary KYC (for an individual).
-:::
-
 Once the preliminary steps have been completed, joining the network is relatively
 straightforward.
 
@@ -152,8 +147,7 @@ $ ./launch.sh
 ```
 
 You will be asked a series of questions. When asked to enter your IP address
-and listening port, please enter the values you provided us when you submitted
-the KYC form. This is crucial, as your node **will not work** with anything
+and listening port. This is crucial, as your node **will not work** with anything
 else.
 
 Sample instructions to be followed for launch are provided below.
@@ -163,7 +157,7 @@ Sample instructions to be followed for launch are provided below.
 ```sh
 $ ./launch_docker.sh
 Assign a name to your container (default: zilliqa): <container_name>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter your listening port (default: 33133): <33133 or other selected port>
 Use IP whitelisting registration approach (default: Y): Y
 ```
@@ -174,10 +168,38 @@ Use IP whitelisting registration approach (default: Y): Y
 $ ./launch.sh
 Enter the full path of your zilliqa source code directory: <zilliqa code directory path>
 Enter the full path for persistence storage (default: current working directory): <default or custom path>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter your listening port (default: 33133): <33133 or other selected port>
 Use IP whitelisting registration approach (default: Y): Y
 ```
+
+## Testing Your Seed Node's JSON-RPC Port
+
+To check whether your node's JSON-RPC server is publicly available, you can use the following curl command.
+
+```bash
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetBlockchainInfo",
+    "params": [""]
+}' -H "Content-Type: application/json" -X POST "<seed node address>"
+```
+
+If you received the latest blockchain information (similar to the one below) from the seed node, your JSON-RPC service is running well.
+
+```bash
+{"id":"1","jsonrpc":"2.0","result":{"CurrentDSEpoch":"4789","CurrentMiniEpoch":"478809","DSBlockRate":0.00013455546527607284,"NumDSBlocks":"4790","NumPeers":2400,"NumTransactions":"3091806","NumTxBlocks":"478809","NumTxnsDSEpoch":"185","NumTxnsTxEpoch":"0","ShardingStructure":{"NumPeers":[600,600,600]},"TransactionRate":0,"TxBlockRate":0.013450003515398927}}
+```
+
+## Testing Your Seed Node's WebSocket Port
+
+You can use an online WebSocket test utility to test whether your WebSocket is publicly accessible.
+
+1. Visit https://www.websocket.org/echo.html
+1. Under location, put your WebSocket URL link (e.g., `wss://<yourdomain here or ip:port>`)
+1. Click on connect
+1. If **“CONNECTED”** is shown in the log, your WebSocket port is publicly accessible
 
 ## Next Steps
 

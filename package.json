@@ -11,12 +11,13 @@
     "format": "yarn prettier -- --write"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.58",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.58",
+    "@docusaurus/core": "^2.0.0",
+    "@docusaurus/preset-classic": "^2.0.0",
     "clsx": "^1.1.1",
     "markdown-link-check": "^3.9.3",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-loadable" : "^5.5.0"
   },
   "browserslist": {
     "production": [
@@ -32,5 +33,9 @@
   },
   "devDependencies": {
     "prettier": "^2.3.2"
-  }
+  },
+    "resolutions": {
+        "got": "^12.4.1",
+        "trim": "^1.0.1"
+    }
 }

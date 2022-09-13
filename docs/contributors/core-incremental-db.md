@@ -39,7 +39,7 @@ The script `uploadIncrDB.py` runs on a lookup node managed by Zilliqa Research. 
   1. Clear both buckets, i.e., **incremental** and **statedelta**
   1. Sync entire `persistence` (i.e., everything that exists in the folder, including `state`, `stateroot`, `txBlocks`, `txnBodies`, `txnBodiesTmp`, `microblock`, etc) to bucket **incremental**
   1. Clear all state deltas from bucket **statedelta**
-- At every 10th DS epoch (i.e., the first Tx epoch following the 10th DS epoch)
+- At every `(INCRDB_DSNUMS_WITH_STATEDELTAS * NUM_FINAL_BLOCK_PER_POW) == 0` DS epoch (where INCRDB_DSNUMS_WITH_STATEDELTAS and NUM_FINAL_BLOCK_PER_POW are the constants from `constants.xml` file)
   1. Sync entire `persistence` to bucket **incremental**
   1. Clear all state deltas from bucket **statedelta**
 - At all other Tx epochs

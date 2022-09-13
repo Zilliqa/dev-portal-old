@@ -49,7 +49,6 @@ $ sudo docker run --rm zilliqa/zilliqa:<version> -c genkeypair
 ```
 
 The first value from the ouput is the public key and second value is the private key.
-The public key has to be shared in advance while submitting the KYC form.
 The private key is required to start the seed node.
 
 :::info
@@ -148,10 +147,6 @@ following changes are required:
 
 ## Joining the Network
 
-:::note
-Before proceeding with this step, make sure you have completed the necessary KYC (for individual).
-:::
-
 Once the preliminary steps have been completed, joining the network is relatively
 straightforward.
 
@@ -164,8 +159,8 @@ $ ./launch.sh
 ```
 
 You will be asked a series of questions.
-When asked to enter the private key, please enter the value you provided us when you submitted
-the KYC form. This is crucial, as your node **will not work** with anything else.
+When asked to enter the private key, please enter the value you provided to us 
+This is crucial, as your node **will not work** with anything else.
 
 Sample instructions to be followed for launch are provided below.
 
@@ -174,7 +169,7 @@ Sample instructions to be followed for launch are provided below.
 ```sh
 $ ./launch_docker.sh
 Assign a name to your container (default: zilliqa): <container_name>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: <private key generated for key whitelisting>
 ```
 
@@ -184,9 +179,37 @@ Enter the private key (32-byte hex string) to be used by this node and whitelist
 $ ./launch.sh
 Enter the full path of your zilliqa source code directory: <zilliqa code directory path>
 Enter the full path for persistence storage (default: current working directory): <default or custom path>
-Enter your IP address ('NAT' or *.*.*.*): <static ip address>
+Enter your IP address (*.*.*.*): <static ip address>
 Enter the private key (32-byte hex string) to be used by this node and whitelisted by upper seeds: <private key generated for key whitelisting>
 ```
+
+## Testing Your Seed Node's JSON-RPC Port
+
+To check whether your node's JSON-RPC server is publicly available, you can use the following curl command.
+
+```bash
+curl -d '{
+    "id": "1",
+    "jsonrpc": "2.0",
+    "method": "GetBlockchainInfo",
+    "params": [""]
+}' -H "Content-Type: application/json" -X POST "<seed node address>"
+```
+
+If you received the latest blockchain information (similar to the one below) from the seed node, your JSON-RPC service is running well.
+
+```bash
+{"id":"1","jsonrpc":"2.0","result":{"CurrentDSEpoch":"4789","CurrentMiniEpoch":"478809","DSBlockRate":0.00013455546527607284,"NumDSBlocks":"4790","NumPeers":2400,"NumTransactions":"3091806","NumTxBlocks":"478809","NumTxnsDSEpoch":"185","NumTxnsTxEpoch":"0","ShardingStructure":{"NumPeers":[600,600,600]},"TransactionRate":0,"TxBlockRate":0.013450003515398927}}
+```
+
+## Testing Your Seed Node's WebSocket Port
+
+You can use an online WebSocket test utility to test whether your WebSocket is publicly accessible.
+
+1. Visit https://www.websocket.org/echo.html
+1. Under location, put your WebSocket URL link (e.g., `wss://<yourdomain here or ip:port>`)
+1. Click on connect
+1. If **“CONNECTED”** is shown in the log, your WebSocket port is publicly accessible
 
 ## Next Steps
 
