@@ -1,0 +1,106 @@
+---
+id: zrc2-all-balances
+title: All Balances
+keywords:
+  - zrc2
+  - wallet
+  - balances
+description: All ZRC2 tokens for a given wallet
+---
+
+
+---
+
+Get all available ZR2 token balances for a given wallet
+
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="GraphQL"
+  values={[
+    { label: 'GraphQL', value: 'GraphQL', },
+    { label: 'cURL', value: 'cURL', },
+  ]
+}>
+
+<TabItem value="GraphQL">
+
+#### Query
+
+
+```graphql
+query UserBalances($input: WalletBalancesInput) {
+  getUserBalances(input: $input) {
+    list {
+      lastBlockID
+      amount
+      tokenAddress
+      walletAddress
+    }
+  }
+}
+```
+
+#### Query Variables
+
+```graphql
+{
+  "input": {
+    "wallet": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b"
+  }
+}
+```
+
+#### HTTP Headers
+
+```graphql
+{
+  "Authorization": "Bearer <insert token>" 
+}
+```
+
+</TabItem>
+
+
+<TabItem value="cURL">
+
+```curl
+```
+
+</TabItem>
+</Tabs>
+
+### Example Response
+
+```json
+{
+  "data": {
+    "getUserBalances": {
+      "list": [
+        {
+          "lastBlockID": null,
+          "amount": "24447040",
+          "tokenAddress": "0xd574c40140c1616afef928d157189a91f4a0e31e",
+          "walletAddress": "0x3973558fa4ece2e22ea60c77d8883addd65d1e80"
+        },
+        {
+          "lastBlockID": null,
+          "amount": "2001000001",
+          "tokenAddress": "0x96c538f595164231a45415792fb464aa36c03790",
+          "walletAddress": "0x3973558fa4ece2e22ea60c77d8883addd65d1e80"
+        },
+        {
+          "lastBlockID": null,
+          "amount": "19990069827867",
+          "tokenAddress": "0xb9e942ade6a128d8afeea8a70606dedb654b2edd",
+          "walletAddress": "0x3973558fa4ece2e22ea60c77d8883addd65d1e80"
+        }
+      ]
+    }
+  }
+}
+```
+

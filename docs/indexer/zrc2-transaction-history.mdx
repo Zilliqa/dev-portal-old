@@ -1,0 +1,105 @@
+---
+id: zrc2-transaction-history
+title: Transaction history
+keywords:
+  - indexer
+  - zrc2 contract
+  - transaction history
+description: Get ZRC2 transaction history
+---
+
+---
+
+Retrieve the details of a given ZRC-2 contract
+
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="GraphQL"
+  values={[
+    { label: 'GraphQL', value: 'GraphQL', },
+    { label: 'cURL', value: 'cURL', },
+  ]
+}>
+
+<TabItem value="GraphQL">
+
+#### Query
+
+
+```graphql
+query TxDetails($input: TransactionDetailsInput) {
+  getTransactionDetails(input: $input) {
+    list {
+      blockID
+      TxId
+      sender
+      toAddress
+      fromAddress
+      isTransferFrom
+      tokenAddress
+      amount
+    }
+  }
+}
+```
+
+#### Query Variables
+
+```graphql
+{
+    "input": {
+        "tokenAddress": "0x7a1b5b6089a14e4f78050f0a5cc359400814f194",
+        "sender": "0x6988b0fbfd8f7b10a806eb243b00e20297580a9c",
+        "toAddress": ""
+    }
+}
+```
+
+#### HTTP Headers
+
+```graphql
+{
+  "Authorization": "Bearer <insert token>" 
+}
+```
+
+</TabItem>
+
+
+
+<TabItem value="cURL">
+
+```curl
+
+```
+
+</TabItem>
+</Tabs>
+
+### Example Response
+
+```json
+{
+    "data": {
+        "getTransactionDetails": {
+            "list": [
+                {
+                    "blockID": "4677972",
+                    "TxId": "2b530fd6a06c6068bf24c5298625090c33b3a4fddc32c827069e92a7fb133443",
+                    "sender": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b",
+                    "toAddress": "0x51ae0206ea062e6a2a13886f5ce1596e1241cdfe",
+                    "fromAddress": null,
+                    "isTransferFrom": false,
+                    "tokenAddress": "0xc5c5f8786574522e83242e5981482d63c9ac7101",
+                    "amount": "10000000000"
+                }
+            ]
+        }
+    }
+}
+```
+
