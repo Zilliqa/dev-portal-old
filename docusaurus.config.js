@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Zilliqa Developer Portal',
+  title: 'Zilliqa Developer Portal - Staging',
   tagline: 'Technical documentation for participating in the Zilliqa network.',
   url: 'https://dev.zilliqa.com',
   baseUrl: (!process.env.BASE_URL || process.env.BASE_URL == "") ? '/' : process.env.BASE_URL,
