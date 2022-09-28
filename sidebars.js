@@ -138,6 +138,15 @@ module.exports = {
       "staking/phase1/staking-error-codes",
     ],
   },
+  IndexerSidebar: {
+    "Introduction": [ "indexer/indexer-introduction"],
+    "ZRC-2" : [
+      "indexer/zrc2-contract-details",
+      "indexer/zrc2-balance",
+      "indexer/zrc2-all-balances",
+      "indexer/zrc2-transaction-history"
+    ]
+  },  
   ContributorsSidebar: {
     "Contributors": ["contributors/contribute-buildzil", "contributors/contribute-guidelines", "contributors/contribute-standards",
       "contributors/contribute-bug-bounty"],
