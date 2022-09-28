@@ -1,0 +1,89 @@
+---
+id: zrc2-balance
+title: Wallet Balance
+keywords:
+  - zrc2
+  - wallet
+  - balance
+description: Balance for a given wallet
+---
+
+
+---
+
+Get the balance of a specific ZRC2 token for a given wallet
+
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="GraphQL"
+  values={[
+    { label: 'GraphQL', value: 'GraphQL', },
+    { label: 'cURL', value: 'cURL', },
+  ]
+}>
+
+<TabItem value="GraphQL">
+
+#### Query
+
+
+```graphql
+query UserBalance($input: WalletBalanceInput) {
+  getUserBalanceByToken(input: $input) {
+    tokenAddress
+    walletAddress
+    lastBlockID
+    amount
+  }
+}
+```
+
+#### Query Variables
+
+```graphql
+{
+  "input": {
+    "wallet": "0x22b251cc155ac0a181a156aaec74e964a82011c1",
+    "token": "0x98a71b463a33bbff650d123bf04f1f32d1c8b508"
+  }
+}
+```
+
+#### HTTP Headers
+
+```graphql
+{
+  "Authorization": "Bearer <insert token>" 
+}
+```
+
+</TabItem>
+
+
+<TabItem value="cURL">
+
+```curl
+```
+
+</TabItem>
+</Tabs>
+
+### Example Response
+
+```json
+{
+  "data": {
+    "getUserBalanceByToken": {
+      "tokenAddress": "0x98a71b463a33bbff650d123bf04f1f32d1c8b508",
+      "walletAddress": "0x22b251cc155ac0a181a156aaec74e964a82011c1",
+      "lastBlockID": "4734719",
+      "amount": "100000000000000"
+    }
+  }
+}
+```
+

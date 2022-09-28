@@ -1,0 +1,98 @@
+---
+id: zrc2-contract-details
+title: Contract Details
+keywords:
+  - indexer
+  - zrc2 contract
+description: Get ZRC2 contract details
+---
+
+---
+
+Retrieve the details of a given ZRC-2 contract
+
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="GraphQL"
+  values={[
+    { label: 'GraphQL', value: 'GraphQL', },
+    { label: 'cURL', value: 'cURL', },
+  ]
+}>
+
+<TabItem value="GraphQL">
+
+#### Query
+
+
+```graphql
+query ContractDetails($input: TokenDetailsInput) {
+  getTokenDetails(input: $input) {
+    contractAddress
+    tokenName
+    tokenSymbol
+    init_supply
+    totalSupply
+    standard
+    decimals
+    ownerAddress
+    type
+  }
+}
+```
+
+#### Query Variables
+
+```graphql
+{
+  "input": {
+    "token": "0x98a71b463a33bbff650d123bf04f1f32d1c8b508"
+  }
+}
+```
+
+#### HTTP Headers
+
+```graphql
+{
+  "Authorization": "Bearer <insert token>" 
+}
+```
+
+</TabItem>
+
+
+
+<TabItem value="cURL">
+
+```curl
+
+```
+
+</TabItem>
+</Tabs>
+
+### Example Response
+
+```json
+{
+  "data": {
+    "getTokenDetails": {
+      "contractAddress": "0x98a71b463a33bbff650d123bf04f1f32d1c8b508",
+      "tokenName": "Wrapped ZIL Token",
+      "tokenSymbol": "wZIL",
+      "init_supply": "0",
+      "totalSupply": "41166677135704200",
+      "standard": "ZRC2",
+      "decimals": "12",
+      "ownerAddress": "0x7E30D1c942282784630EBfedba1FFbDE3647f472",
+      "type": "ASSET_CONTRACT"
+    }
+  }
+}
+```
+

@@ -55,6 +55,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/indexer/indexer-introduction',
+          activeBasePath: 'docs/indexer',
+          label: 'Indexer (Experimental)',
+          position: 'right',
+        },        
+        {
           to: 'docs/contributors/contribute-buildzil',
           activeBasePath: 'docs/contributors',
           label: 'Contributors',

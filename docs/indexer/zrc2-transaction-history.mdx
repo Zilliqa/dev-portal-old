@@ -1,0 +1,126 @@
+---
+id: zrc2-transaction-history
+title: Transaction history
+keywords:
+  - indexer
+  - zrc2 contract
+  - transaction history
+description: Get ZRC2 transaction history
+---
+
+---
+
+Retrieve the details of a given ZRC-2 contract
+
+### Example Request
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="GraphQL"
+  values={[
+    { label: 'GraphQL', value: 'GraphQL', },
+    { label: 'cURL', value: 'cURL', },
+  ]
+}>
+
+<TabItem value="GraphQL">
+
+#### Query
+
+
+```graphql
+query TxDetails($input: TransactionDetailsInput) {
+  getTransactionDetails(input: $input) {
+    list {
+      blockID
+      TxId
+      sender
+      toAddress
+      fromAddress
+      isTransferFrom
+      tokenAddress
+      amount
+    }
+  }
+}
+```
+
+#### Query Variables
+
+```graphql
+{
+    "input": {
+        "tokenAddress": "0xc5c5f8786574522e83242e5981482d63c9ac7101",
+        "sender": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b",
+        "toAddress": "0x22b251cc155ac0a181a156aaec74e964a82011c1"
+    }
+}
+
+```
+
+#### HTTP Headers
+
+```graphql
+{
+  "Authorization": "Bearer <insert token>" 
+}
+```
+
+</TabItem>
+
+
+
+<TabItem value="cURL">
+
+```curl
+
+```
+
+</TabItem>
+</Tabs>
+
+
+##### Notes
+
+- To get all transactions for a given token
+  - Set `tokenAddress` to the ZRC2 contract address
+  - Set both `sender` and `toAddress` as empty
+- To get all token transactions sent to a particular wallet
+  - set `tokenAddress` to the ZRC2 contract address
+  - set `sender` as empty
+  - set `toAddress` to the desired wallet address
+
+### Example Response
+
+```json
+{
+  "data": {
+    "getTransactionDetails": {
+      "list": [
+        {
+          "blockID": "4738791",
+          "TxId": "450c0936f9fee544ae646da30c6321e0d00dbeb3ebdb72662a99550b39a9e0f9",
+          "sender": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b",
+          "toAddress": "0x22b251cc155ac0a181a156aaec74e964a82011c1",
+          "fromAddress": null,
+          "isTransferFrom": false,
+          "tokenAddress": "0xc5c5f8786574522e83242e5981482d63c9ac7101",
+          "amount": "10000000000"
+        },
+        {
+          "blockID": "4738797",
+          "TxId": "d14d02e620f9c0e0d8d9f8109237689c8da5ec8b8694df3e45fcdc8c1af85e95",
+          "sender": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b",
+          "toAddress": "0x22b251cc155ac0a181a156aaec74e964a82011c1",
+          "fromAddress": null,
+          "isTransferFrom": false,
+          "tokenAddress": "0xc5c5f8786574522e83242e5981482d63c9ac7101",
+          "amount": "10000000000"
+        }
+      ]
+    }
+  }
+}
+```
