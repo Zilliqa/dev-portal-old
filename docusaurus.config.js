@@ -9,7 +9,7 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
-  scripts: [{ src: '/removeAlternateLinks.js', defer: true }],
+  scripts: [{ src: '/removeDefaultHreflang.js', defer: true }],
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
