@@ -1,6 +1,6 @@
 ---
 id: zrc2-transaction-history
-title: Transaction history
+title: TxDetails
 keywords:
   - indexer
   - zrc2 contract
@@ -10,7 +10,28 @@ description: Get ZRC2 transaction history
 
 ---
 
-Retrieve the details of a given ZRC-2 contract
+Retrieve the details of transactions based on the given parameters.
+
+
+### Parameters
+
+| Name            | Type    | Required | Description                                                                                                                                                                                              |
+| --------------- | ------- | -------- | ----------------------------------
+| `tokenAddress`  | String  | Required | Contract address of the ZRC2 token
+| `sender`        | String  | Optional | Sender of the transaction. If set to empty string `""`, this parameter is ignored.
+| `toAddress`     | String  | Optional | Recipient of the token. If set to empty string `""`, this parameter is ignored.
+
+
+##### Notes
+
+- To get all transactions for a given token
+  - Set `tokenAddress` to the ZRC2 contract address
+  - Set both `sender` and `toAddress` as empty
+- To get all token transactions sent to a particular wallet
+  - set `tokenAddress` to the ZRC2 contract address
+  - set `sender` as empty
+  - set `toAddress` to the desired wallet address
+
 
 ### Example Request
 
@@ -81,16 +102,6 @@ query TxDetails($input: TransactionDetailsInput) {
 </TabItem>
 </Tabs>
 
-
-##### Notes
-
-- To get all transactions for a given token
-  - Set `tokenAddress` to the ZRC2 contract address
-  - Set both `sender` and `toAddress` as empty
-- To get all token transactions sent to a particular wallet
-  - set `tokenAddress` to the ZRC2 contract address
-  - set `sender` as empty
-  - set `toAddress` to the desired wallet address
 
 ### Example Response
 
