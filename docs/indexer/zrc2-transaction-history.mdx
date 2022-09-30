@@ -1,6 +1,6 @@
 ---
 id: zrc2-transaction-history
-title: TxDetails
+title: Transaction History
 keywords:
   - indexer
   - zrc2 contract
@@ -12,15 +12,15 @@ description: Get ZRC2 transaction history
 
 Retrieve the details of transactions based on the given parameters.
 
-
 ### Parameters
 
-| Name            | Type    | Required | Description                                                                                                                                                                                              |
-| --------------- | ------- | -------- | ----------------------------------
-| `tokenAddress`  | String  | Required | Contract address of the ZRC2 token
-| `sender`        | String  | Optional | Sender of the transaction. If set to empty string `""`, this parameter is ignored.
-| `toAddress`     | String  | Optional | Recipient of the token. If set to empty string `""`, this parameter is ignored.
-
+| Name           | Type   | Required | Description                                                                        |
+| -------------- | ------ | -------- | ---------------------------------------------------------------------------------- |
+| `tokenAddress` | String | Required | Contract address of the ZRC2 token                                                 |
+| `sender`       | String | Optional | Sender of the transaction. If set to empty string `""`, this parameter is ignored. |
+| `toAddress`    | String | Optional | Recipient of the token. If set to empty string `""`, this parameter is ignored.    |
+| `fromAddress`  | String | Optional | From Address of the token. If set to empty string `""`, this parameter is ignored.  |
+| `filter`       | JSON   | Optional | Filter is used for pagination. Ex: {"limit": 15, "after": "2"}                     |
 
 ##### Notes
 
@@ -31,7 +31,7 @@ Retrieve the details of transactions based on the given parameters.
   - set `tokenAddress` to the ZRC2 contract address
   - set `sender` as empty
   - set `toAddress` to the desired wallet address
-
+  - set `fromAddress` to the desired tx initiator
 
 ### Example Request
 
@@ -49,7 +49,6 @@ import TabItem from '@theme/TabItem';
 <TabItem value="GraphQL">
 
 #### Query
-
 
 ```graphql
 query TxDetails($input: TransactionDetailsInput) {
@@ -72,11 +71,16 @@ query TxDetails($input: TransactionDetailsInput) {
 
 ```graphql
 {
-    "input": {
-        "tokenAddress": "0xc5c5f8786574522e83242e5981482d63c9ac7101",
-        "sender": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b",
-        "toAddress": "0x22b251cc155ac0a181a156aaec74e964a82011c1"
+  "input": {
+    "tokenAddress": "0xc5c5f8786574522e83242e5981482d63c9ac7101",
+    "sender": "0x86f0875da311ee5332d5d4a8485c8d3db0f7f57b",
+    "toAddress": "0x22b251cc155ac0a181a156aaec74e964a82011c1",
+    "fromAddress": "",
+    "filter": {
+      "limit": 15,
+      "after": "2"
     }
+  }
 }
 
 ```
@@ -85,13 +89,11 @@ query TxDetails($input: TransactionDetailsInput) {
 
 ```graphql
 {
-  "Authorization": "Bearer <insert token>" 
+  "Authorization": "Bearer <insert token>"
 }
 ```
 
 </TabItem>
-
-
 
 <TabItem value="cURL">
 
@@ -101,7 +103,6 @@ query TxDetails($input: TransactionDetailsInput) {
 
 </TabItem>
 </Tabs>
-
 
 ### Example Response
 

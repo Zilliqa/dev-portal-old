@@ -142,6 +142,7 @@ module.exports = {
     "Introduction": [ "indexer/indexer-introduction"],
     "ZRC-2" : [
       "indexer/zrc2-contract-details",
+      "indexer/zrc2-contract-list",
       "indexer/zrc2-balance",
       "indexer/zrc2-all-balances",
       "indexer/zrc2-transaction-history"
