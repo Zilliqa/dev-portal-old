@@ -146,7 +146,15 @@ module.exports = {
       "indexer/zrc2-balance",
       "indexer/zrc2-all-balances",
       "indexer/zrc2-transaction-history"
+    ],
+    "ZRC-6" : [
+      "indexer/zrc6-recently-minted",
+      "indexer/zrc6-asset-details",
+      "indexer/zrc6-user-assets",
+      "indexer/zrc6-asset-metadata",
+      "indexer/zrc6-search-attribute"
     ]
+
   },  
   ContributorsSidebar: {
     "Contributors": ["contributors/contribute-buildzil", "contributors/contribute-guidelines", "contributors/contribute-standards",
