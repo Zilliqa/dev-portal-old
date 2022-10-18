@@ -15,6 +15,10 @@ This section describes Option 2 for key whitelisting mode, which uses `p2pseed-c
 
 ## Preparing the Machine
 
+:::important
+Make sure to open ports 33133 and 33135 for outbound connection so that your seed node can connect with public seeds.
+:::
+
 ### Docker Setup
 
 We highly recommend using [Docker](https://docker.com) to set up a seed node,
