@@ -35,16 +35,9 @@ import TabItem from '@theme/TabItem';
 
 
 ```graphql
-query {
-  assets(
-    input: {
-      filter: {
-        attributes: [
-          { type: "Metaverse Id", value: "metaverse1" }
-        ]
-      }
-    }
-  ) {
+query getAssets($input: AssetsInput!) {
+  assets(input: $input) {
+    cursor
     assetsList {
       contractAddress
       tokenId
@@ -64,6 +57,7 @@ query {
         value
       }
       contractPaused
+      contractPaused
     }
   }
 }
@@ -72,7 +66,16 @@ query {
 #### Query Variables
 
 ```graphql
-
+{
+  "input": {
+      "filter": {
+        "after": "0",
+        "limit": 12,
+        "keyword": "",
+        "attributes": [{ "type": "Metaverse Id", "value": "metaverse1" }]
+      }
+    }
+}
 ```
 
 #### HTTP Headers
@@ -100,6 +103,7 @@ query {
 {
   "data": {
     "assets": {
+      "cursor": "12",
       "assetsList": [
         {
           "contractAddress": "0x4aba00e6039b4f9626b66098c4b499cc76c04536",
@@ -139,5 +143,4 @@ query {
     }
   }
 }
-
 ```
