@@ -99,6 +99,10 @@ module.exports = {
               href: 'https://blog.zilliqa.com/',
             },
             {
+              label: 'Scilla Cookbook',
+              href: 'https://scilla-cookbook.org',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/zilliqa',
             },

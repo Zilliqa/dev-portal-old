@@ -71,6 +71,12 @@ module.exports = {
       { "Sample app – RentOnZilliqa": ["dev/dev-rentonzilliqa-introduction", { "Scilla Contract": ["dev/dev-rentonzilliqa-contract", "dev/dev-rentonzilliqa-library", "dev/dev-rentonzilliqa-mutable-variables", "dev/dev-rentonzilliqa-procedures", "dev/dev-rentonzilliqa-transitions"] }, { "Frontend Application": ["dev/dev-rentonzilliqa-frontend", "dev/dev-rentonzilliqa-components", "dev/dev-rentonzilliqa-scripting", "dev/dev-rentonzilliqa-modals", "dev/dev-rentonzilliqa-pages"] }] },
     ]
   },
+  EVMSidebar: {
+    "EVM Introduction": ["zilevm/evm-introduction"],
+    "Users": ["zilevm/user-introduction", "zilevm/user-wallets", "zilevm/user-concepts", "zilevm/user-technical-infomation"],
+    "Developers": ["zilevm/developer-introduction", "zilevm/developer-quick-connect", "zilevm/developer-testnet", "zilevm/developer-localnet", "zilevm/developer-clients", "zilevm/developer-libraries", "zilevm/developer-rpc"],
+    "Protocol": ["zilevm/protocol-introduction"],
+  },
   MinersSidebar: {
     "Miners": ["miners/mining-getting-started", "miners/mining-zilclient", "miners/mining-zilminer", "miners/mining-proxy",
       "miners/mining-additional-info"]
