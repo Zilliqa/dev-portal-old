@@ -55,6 +55,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/zilevm/zilevm-introduction',
+          activeBasePath: 'docs/zilevm',
+          label: 'ZILEVM',
+          position: 'right',
+        },
+        {
           to: 'docs/contributors/contribute-buildzil',
           activeBasePath: 'docs/contributors',
           label: 'Contributors',

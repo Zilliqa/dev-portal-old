@@ -72,10 +72,10 @@ module.exports = {
     ]
   },
   EVMSidebar: {
-    "EVM Introduction": ["zilevm/evm-introduction"],
+    "EVM Introduction": ["zilevm/zilevm-introduction"],
     "Users": ["zilevm/user-introduction", "zilevm/user-wallets", "zilevm/user-concepts", "zilevm/user-technical-infomation"],
     "Developers": ["zilevm/developer-introduction", "zilevm/developer-quick-connect", "zilevm/developer-testnet", "zilevm/developer-localnet", "zilevm/developer-clients", "zilevm/developer-libraries", "zilevm/developer-rpc"],
-    "Protocol": ["zilevm/protocol-introduction"],
+    "Protocol": ["zilevm/protocol-introduction", "zilevm/protocol-opcodes", "zilevm/protocol-gas"],
   },
   MinersSidebar: {
     "Miners": ["miners/mining-getting-started", "miners/mining-zilclient", "miners/mining-zilminer", "miners/mining-proxy",
