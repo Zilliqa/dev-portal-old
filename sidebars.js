@@ -153,8 +153,14 @@ module.exports = {
       "indexer/zrc6-user-assets",
       "indexer/zrc6-asset-metadata",
       "indexer/zrc6-search-attribute"
+    ],
+    "Marketplace" : [
+      "indexer/fixed-price",
+      "indexer/english-auction",
+      "indexer/brand-collectible-list",
+      "indexer/brand-collectible-asset",
+      "indexer/brand-collectible-details"
     ]
-
   },  
   ContributorsSidebar: {
     "Contributors": ["contributors/contribute-buildzil", "contributors/contribute-guidelines", "contributors/contribute-standards",
