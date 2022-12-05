@@ -140,6 +140,10 @@ module.exports = {
   },
   IndexerSidebar: {
     "Introduction": [ "indexer/indexer-introduction"],
+    "Zils" : [
+      "indexer/zil-all-transactions",
+      "indexer/zil-balance"
+    ],
     "ZRC-2" : [
       "indexer/zrc2-contract-details",
       "indexer/zrc2-contract-list",
