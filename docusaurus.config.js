@@ -1,8 +1,11 @@
 module.exports = {
   title: 'Zilliqa Developer Portal',
   tagline: 'Technical documentation for participating in the Zilliqa network.',
-  url: 'https://dev.zilliqa.com',
-  baseUrl: (!process.env.BASE_URL || process.env.BASE_URL == "") ? '/' : process.env.BASE_URL,
+  url: 'https://stg-dev.zilliqa.com',
+  baseUrl:
+    !process.env.BASE_URL || process.env.BASE_URL == ''
+      ? '/'
+      : process.env.BASE_URL,
   favicon: 'img/favicon.png',
   organizationName: 'zilliqa', // Usually your GitHub org/user name.
   projectName: 'dev-portal', // Usually your repo name.
@@ -55,6 +58,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/indexer/indexer-introduction',
+          activeBasePath: 'docs/indexer',
+          label: 'Indexer (Experimental)',
+          position: 'right',
+        },
+        {
           to: 'docs/contributors/contribute-buildzil',
           activeBasePath: 'docs/contributors',
           label: 'Contributors',
@@ -75,7 +84,6 @@ module.exports = {
               label: 'Telegram',
               href: 'https://t.me/ZilliqaDevs',
             },
- 
           ],
         },
         {
@@ -119,8 +127,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/Zilliqa/dev-portal/tree/master/',
+          editUrl: 'https://github.com/Zilliqa/dev-portal/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

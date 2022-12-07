@@ -138,6 +138,34 @@ module.exports = {
       "staking/phase1/staking-error-codes",
     ],
   },
+  IndexerSidebar: {
+    "Introduction": [ "indexer/indexer-introduction"],
+    "Zils" : [
+      "indexer/zil-all-transactions",
+      "indexer/zil-balance"
+    ],
+    "ZRC-2" : [
+      "indexer/zrc2-contract-details",
+      "indexer/zrc2-contract-list",
+      "indexer/zrc2-balance",
+      "indexer/zrc2-all-balances",
+      "indexer/zrc2-transaction-history"
+    ],
+    "ZRC-6" : [
+      "indexer/zrc6-recently-minted",
+      "indexer/zrc6-asset-details",
+      "indexer/zrc6-user-assets",
+      "indexer/zrc6-asset-metadata",
+      "indexer/zrc6-search-attribute"
+    ],
+    "Marketplace" : [
+      "indexer/fixed-price",
+      "indexer/english-auction",
+      "indexer/brand-collectible-list",
+      "indexer/brand-collectible-asset",
+      "indexer/brand-collectible-details"
+    ]
+  },  
   ContributorsSidebar: {
     "Contributors": ["contributors/contribute-buildzil", "contributors/contribute-guidelines", "contributors/contribute-standards",
       "contributors/contribute-bug-bounty"],
