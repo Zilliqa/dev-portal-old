@@ -20,7 +20,8 @@ Before you start, please ensure the steps below are done.
 1. Choose and note down a port you wish to reserve for your seed node to receive incoming blockchain data.
 
 :::important
-The port of choice must be opened to inbound connections. Otherwise, the seed node will be unreachable.
+The port of choice must be opened to inbound connections. Otherwise, the seed node will be unreachable. Also, please make sure
+to open port 33133 for outbound connection so that your seed node can connect with public seeds.
 :::
 
 ### Docker Setup
