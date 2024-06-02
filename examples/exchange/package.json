@@ -17,7 +17,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "@zilliqa-js/util": "^0.5.0",
-    "@zilliqa-js/zilliqa": "^0.5.2",
+    "@zilliqa-js/zilliqa": "^3.3.4",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
     "chalk": "^2.4.2",
